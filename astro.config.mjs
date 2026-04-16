@@ -4,7 +4,8 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   integrations: [tailwind(), mdx()],
-  site: 'https://classroom-tools.netlify.app',
+  site: 'https://ikeanorweegway.github.io',
+  base: '/science-6-materials',
   markdown: {
     shikiConfig: {
       theme: 'github-light',

@@ -4,6 +4,8 @@ interface Props {
 }
 const { teacherMode = false } = Astro.props;
 
+const base = import.meta.env.BASE_URL;
+
 const units = [
   { slug: 'matter', label: 'Matter' },
   { slug: 'forces', label: 'Forces' },
@@ -21,7 +23,7 @@ const currentPath = Astro.url.pathname;
     <div class="flex items-center justify-between h-14">
 
       <!-- Logo -->
-      <a href="/" class={`font-bold text-base tracking-tight ${teacherMode ? 'text-white' : 'text-science-700'}`}>
+      <a href={base} class={`font-bold text-base tracking-tight ${teacherMode ? 'text-white' : 'text-science-700'}`}>
         Gr. 6 Science
       </a>
 
@@ -29,7 +31,7 @@ const currentPath = Astro.url.pathname;
       <div class="hidden md:flex items-center gap-1">
         {units.map(u => (
           <a
-            href={`/units/${u.slug}`}
+            href={`${base}units/${u.slug}`}
             class={`text-xs px-2.5 py-1.5 rounded-md font-medium transition-colors
               ${currentPath.includes(u.slug)
                 ? (teacherMode ? 'bg-teacher-600 text-white' : 'bg-science-600 text-white')
@@ -43,7 +45,7 @@ const currentPath = Astro.url.pathname;
 
       <!-- Teacher toggle -->
       <a
-        href={teacherMode ? '/' : '/teacher'}
+        href={teacherMode ? base : `${base}teacher`}
         class={`text-xs px-3 py-1.5 rounded-md font-medium border transition-colors
           ${teacherMode
             ? 'border-teacher-500 text-teacher-400 hover:bg-teacher-700 hover:text-white'
@@ -58,7 +60,7 @@ const currentPath = Astro.url.pathname;
     <div class="md:hidden flex gap-1 pb-2 overflow-x-auto">
       {units.map(u => (
         <a
-          href={`/units/${u.slug}`}
+          href={`${base}units/${u.slug}`}
           class={`text-xs px-2.5 py-1 rounded-md font-medium whitespace-nowrap transition-colors
             ${currentPath.includes(u.slug)
               ? 'bg-science-600 text-white'

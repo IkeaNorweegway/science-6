@@ -26,10 +26,11 @@ const unitColors: Record<string, string> = {
 };
 
 const accent = unitColors[slug] ?? 'border-l-slate-400';
+const base = import.meta.env.BASE_URL;
 ---
 
 <a
-  href={`/units/${slug}`}
+  href={`${base}units/${slug}`}
   class={`block bg-white rounded-xl border border-slate-200 border-l-4 ${accent} p-5 hover:shadow-md transition-shadow group`}
 >
   <div class="flex items-start justify-between gap-3">
