@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import UnitCard from '../components/UnitCard.astro';
+import { getCollection } from 'astro:content';
+
+const units = (await getCollection('units')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Grade 6 Science">
+  <!-- Hero -->
+  <div class="mb-10">
+    <p class="text-xs font-bold uppercase tracking-widest text-science-600 mb-2">Alberta Curriculum 2023</p>
+    <h1 class="text-4xl font-bold text-slate-900 mb-3">Grade 6 Science</h1>
+    <p class="text-slate-500 text-lg max-w-xl">
+      Six units. Evidence-based lessons. Built for Alberta classrooms.
+    </p>
+  </div>
+
+  <!-- Quick stats -->
+  <div class="grid grid-cols-3 gap-4 mb-10">
+    <div class="bg-white rounded-xl border border-slate-200 p-4 text-center">
+      <p class="text-2xl font-bold text-science-700">6</p>
+      <p class="text-xs text-slate-400 mt-1 uppercase tracking-wide">Units</p>
+    </div>
+    <div class="bg-white rounded-xl border border-slate-200 p-4 text-center">
+      <p class="text-2xl font-bold text-science-700">~28</p>
+      <p class="text-xs text-slate-400 mt-1 uppercase tracking-wide">Teaching weeks</p>
+    </div>
+    <div class="bg-white rounded-xl border border-slate-200 p-4 text-center">
+      <p class="text-2xl font-bold text-science-700">3×</p>
+      <p class="text-xs text-slate-400 mt-1 uppercase tracking-wide">Per week</p>
+    </div>
+  </div>
+
+  <!-- Units -->
+  <div class="space-y-3">
+    {units.map(unit => (
+      <UnitCard
+        title={unit.data.title}
+        slug={unit.slug}
+        tier={unit.data.tier}
+        weeks={unit.data.weeks}
+        guidingQuestion={unit.data.guidingQuestion}
+        order={unit.data.order}
+      />
+    ))}
+  </div>
+</BaseLayout>

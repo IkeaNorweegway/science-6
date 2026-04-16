@@ -1,0 +1,92 @@
+---
+interface Props {
+  type: 'retrieval' | 'instruction' | 'practice' | 'exit' | 'engage' | 'note' | 'misconception' | 'vocab';
+  title?: string;
+  time?: string;
+}
+
+const { type, title, time } = Astro.props;
+
+const config = {
+  retrieval: {
+    label: 'Retrieval Warm-Up',
+    icon: '🔁',
+    bg: 'bg-blue-50',
+    border: 'border-blue-200',
+    badge: 'bg-blue-100 text-blue-800',
+    heading: 'text-blue-900',
+  },
+  instruction: {
+    label: 'Direct Instruction',
+    icon: '📖',
+    bg: 'bg-slate-50',
+    border: 'border-slate-200',
+    badge: 'bg-slate-200 text-slate-700',
+    heading: 'text-slate-900',
+  },
+  practice: {
+    label: 'Guided Practice',
+    icon: '✏️',
+    bg: 'bg-violet-50',
+    border: 'border-violet-200',
+    badge: 'bg-violet-100 text-violet-800',
+    heading: 'text-violet-900',
+  },
+  exit: {
+    label: 'Exit Ticket',
+    icon: '🎫',
+    bg: 'bg-emerald-50',
+    border: 'border-emerald-200',
+    badge: 'bg-emerald-100 text-emerald-800',
+    heading: 'text-emerald-900',
+  },
+  engage: {
+    label: 'Engage',
+    icon: '💡',
+    bg: 'bg-amber-50',
+    border: 'border-amber-200',
+    badge: 'bg-amber-100 text-amber-800',
+    heading: 'text-amber-900',
+  },
+  note: {
+    label: 'Key Idea',
+    icon: '📌',
+    bg: 'bg-science-50',
+    border: 'border-science-200',
+    badge: 'bg-science-100 text-science-800',
+    heading: 'text-science-900',
+  },
+  misconception: {
+    label: 'Common Misconception',
+    icon: '⚠️',
+    bg: 'bg-red-50',
+    border: 'border-red-200',
+    badge: 'bg-red-100 text-red-800',
+    heading: 'text-red-900',
+  },
+  vocab: {
+    label: 'Vocabulary',
+    icon: '🔤',
+    bg: 'bg-slate-50',
+    border: 'border-slate-300',
+    badge: 'bg-slate-200 text-slate-700',
+    heading: 'text-slate-900',
+  },
+};
+
+const c = config[type];
+---
+
+<div class={`rounded-xl border ${c.border} ${c.bg} p-5 my-6`}>
+  <div class="flex items-center gap-2 mb-3">
+    <span class="text-base">{c.icon}</span>
+    <span class={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${c.badge}`}>
+      {c.label}
+    </span>
+    {time && <span class="text-xs text-slate-400 ml-auto">{time}</span>}
+  </div>
+  {title && <h3 class={`font-semibold text-base mb-2 ${c.heading}`}>{title}</h3>}
+  <div class="prose text-sm">
+    <slot />
+  </div>
+</div>

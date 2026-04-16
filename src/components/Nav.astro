@@ -1,0 +1,73 @@
+---
+interface Props {
+  teacherMode?: boolean;
+}
+const { teacherMode = false } = Astro.props;
+
+const units = [
+  { slug: 'matter', label: 'Matter' },
+  { slug: 'forces', label: 'Forces' },
+  { slug: 'living-systems', label: 'Living Systems' },
+  { slug: 'climate', label: 'Climate' },
+  { slug: 'energy-resources', label: 'Energy Resources' },
+  { slug: 'space', label: 'Space' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class={`border-b ${teacherMode ? 'bg-slate-900 border-slate-700' : 'bg-white border-slate-200'} sticky top-0 z-50`}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-14">
+
+      <!-- Logo -->
+      <a href="/" class={`font-bold text-base tracking-tight ${teacherMode ? 'text-white' : 'text-science-700'}`}>
+        Gr. 6 Science
+      </a>
+
+      <!-- Unit nav (hidden on small screens) -->
+      <div class="hidden md:flex items-center gap-1">
+        {units.map(u => (
+          <a
+            href={`/units/${u.slug}`}
+            class={`text-xs px-2.5 py-1.5 rounded-md font-medium transition-colors
+              ${currentPath.includes(u.slug)
+                ? (teacherMode ? 'bg-teacher-600 text-white' : 'bg-science-600 text-white')
+                : (teacherMode ? 'text-slate-300 hover:bg-slate-700 hover:text-white' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900')
+              }`}
+          >
+            {u.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Teacher toggle -->
+      <a
+        href={teacherMode ? '/' : '/teacher'}
+        class={`text-xs px-3 py-1.5 rounded-md font-medium border transition-colors
+          ${teacherMode
+            ? 'border-teacher-500 text-teacher-400 hover:bg-teacher-700 hover:text-white'
+            : 'border-slate-300 text-slate-500 hover:bg-slate-100 hover:text-slate-800'
+          }`}
+      >
+        {teacherMode ? '← Student view' : 'Teacher '}
+      </a>
+    </div>
+
+    <!-- Mobile unit nav -->
+    <div class="md:hidden flex gap-1 pb-2 overflow-x-auto">
+      {units.map(u => (
+        <a
+          href={`/units/${u.slug}`}
+          class={`text-xs px-2.5 py-1 rounded-md font-medium whitespace-nowrap transition-colors
+            ${currentPath.includes(u.slug)
+              ? 'bg-science-600 text-white'
+              : 'text-slate-600 hover:bg-slate-100'
+            }`}
+        >
+          {u.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>

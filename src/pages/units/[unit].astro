@@ -1,0 +1,55 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import UnitLayout from '../../layouts/UnitLayout.astro';
+
+export async function getStaticPaths() {
+  const units = await getCollection('units');
+  return units.map(unit => ({ params: { unit: unit.slug } }));
+}
+
+const { unit: unitSlug } = Astro.params;
+const entry = await getEntry('units', unitSlug!);
+if (!entry) return Astro.redirect('/404');
+
+const lessons = (await getCollection('lessons'))
+  .filter(l => l.data.unit === unitSlug)
+  .sort((a, b) => a.data.lessonNumber - b.data.lessonNumber);
+
+const { Content } = await entry.render();
+const { title, tier, weeks, guidingQuestion, learningOutcome } = entry.data;
+---
+
+<UnitLayout
+  title={title}
+  tier={tier}
+  weeks={weeks}
+  guidingQuestion={guidingQuestion}
+  learningOutcome={learningOutcome}
+  slug={unitSlug!}
+>
+  <Content />
+
+  {lessons.length > 0 && (
+    <div class="mt-8 not-prose">
+      <h2 class="text-lg font-bold text-slate-900 mb-3">Lessons</h2>
+      <div class="space-y-2">
+        {lessons.map(lesson => (
+          <a
+            href={`/units/${unitSlug}/lesson-${String(lesson.data.lessonNumber).padStart(2,'0')}`}
+            class="flex items-center gap-3 bg-white border border-slate-200 rounded-lg px-4 py-3 hover:shadow-sm hover:border-science-300 transition-all group"
+          >
+            <span class="text-xs font-bold text-slate-400 w-14 flex-shrink-0">
+              Lesson {lesson.data.lessonNumber}
+            </span>
+            <span class="text-sm font-medium text-slate-700 group-hover:text-science-700 flex-1">
+              {lesson.data.title}
+            </span>
+            <svg class="w-4 h-4 text-slate-300 group-hover:text-science-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+</UnitLayout>

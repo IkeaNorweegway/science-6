@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import LessonLayout from '../../../layouts/LessonLayout.astro';
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('lessons');
+  return lessons.map(lesson => ({
+    params: {
+      unit: lesson.data.unit,
+      lesson: `lesson-${String(lesson.data.lessonNumber).padStart(2, '0')}`,
+    },
+    props: { lesson },
+  }));
+}
+
+const { lesson } = Astro.props;
+const { unit: unitSlug } = Astro.params;
+
+// Get unit title
+const units = await getCollection('units');
+const unitEntry = units.find(u => u.slug === unitSlug);
+
+// Get prev/next lessons
+const allLessons = (await getCollection('lessons'))
+  .filter(l => l.data.unit === unitSlug)
+  .sort((a, b) => a.data.lessonNumber - b.data.lessonNumber);
+
+const idx = allLessons.findIndex(l => l.data.lessonNumber === lesson.data.lessonNumber);
+const prev = idx > 0 ? allLessons[idx - 1] : null;
+const next = idx < allLessons.length - 1 ? allLessons[idx + 1] : null;
+
+const { Content } = await lesson.render();
+---
+
+<LessonLayout
+  title={lesson.data.title}
+  unit={unitEntry?.data.title ?? unitSlug!}
+  unitSlug={unitSlug!}
+  lessonNumber={lesson.data.lessonNumber}
+  objectives={lesson.data.objectives}
+  duration={lesson.data.duration}
+  phase={lesson.data.phase}
+  prevLesson={prev ? {
+    slug: `lesson-${String(prev.data.lessonNumber).padStart(2,'0')}`,
+    title: prev.data.title
+  } : null}
+  nextLesson={next ? {
+    slug: `lesson-${String(next.data.lessonNumber).padStart(2,'0')}`,
+    title: next.data.title
+  } : null}
+>
+  <Content />
+</LessonLayout>
