@@ -43,17 +43,29 @@ const currentPath = Astro.url.pathname;
         ))}
       </div>
 
-      <!-- Teacher toggle -->
-      <a
-        href={teacherMode ? base : `${base}teacher`}
-        class={`text-xs px-3 py-1.5 rounded-md font-medium border transition-colors
-          ${teacherMode
-            ? 'border-teacher-500 text-teacher-400 hover:bg-teacher-700 hover:text-white'
-            : 'border-slate-300 text-slate-500 hover:bg-slate-100 hover:text-slate-800'
-          }`}
-      >
-        {teacherMode ? '← Student view' : 'Teacher '}
-      </a>
+      <!-- Right side: Materials + Teacher toggle -->
+      <div class="flex items-center gap-2">
+        <a
+          href={`${base}materials`}
+          class={`text-xs px-3 py-1.5 rounded-md font-medium transition-colors
+            ${currentPath.includes('materials')
+              ? (teacherMode ? 'bg-teacher-600 text-white' : 'bg-science-600 text-white')
+              : (teacherMode ? 'text-slate-300 hover:bg-slate-700 hover:text-white' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900')
+            }`}
+        >
+          Materials
+        </a>
+        <a
+          href={teacherMode ? base : `${base}teacher`}
+          class={`text-xs px-3 py-1.5 rounded-md font-medium border transition-colors
+            ${teacherMode
+              ? 'border-teacher-500 text-teacher-400 hover:bg-teacher-700 hover:text-white'
+              : 'border-slate-300 text-slate-500 hover:bg-slate-100 hover:text-slate-800'
+            }`}
+        >
+          {teacherMode ? '← Student view' : 'Teacher '}
+        </a>
+      </div>
     </div>
 
     <!-- Mobile unit nav -->
@@ -70,6 +82,16 @@ const currentPath = Astro.url.pathname;
           {u.label}
         </a>
       ))}
+      <a
+        href={`${base}materials`}
+        class={`text-xs px-2.5 py-1 rounded-md font-medium whitespace-nowrap transition-colors
+          ${currentPath.includes('materials')
+            ? 'bg-science-600 text-white'
+            : 'text-slate-600 hover:bg-slate-100'
+          }`}
+      >
+        Materials
+      </a>
     </div>
   </div>
 </nav>

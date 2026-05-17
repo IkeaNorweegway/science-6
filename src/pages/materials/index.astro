@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const unitColors: Record<string, { bg: string; text: string; border: string }> = {
+  matter:             { bg: 'bg-cyan-50',    text: 'text-cyan-800',    border: 'border-cyan-400' },
+  forces:             { bg: 'bg-violet-50',  text: 'text-violet-800',  border: 'border-violet-400' },
+  'living-systems':   { bg: 'bg-emerald-50', text: 'text-emerald-800', border: 'border-emerald-400' },
+  climate:            { bg: 'bg-amber-50',   text: 'text-amber-800',   border: 'border-amber-400' },
+  'energy-resources': { bg: 'bg-orange-50',  text: 'text-orange-800',  border: 'border-orange-400' },
+  space:              { bg: 'bg-indigo-50',  text: 'text-indigo-800',  border: 'border-indigo-400' },
+  'all-units':        { bg: 'bg-science-50', text: 'text-science-800', border: 'border-science-400' },
+};
+
+const notes = [
+  {
+    title: 'Year Notes — Standard',
+    description: 'Guided fill-in notes covering all six units. Two-column layout with vocab and misconception callouts in the margin.',
+    unit: 'all-units',
+    unitLabel: 'All Units',
+    level: 'Grade 6',
+    href: `${base}materials/sci6-year-notes-v1.html`,
+  },
+  {
+    title: 'Year Notes — Easy Read',
+    description: 'Same content at an E–F reading level. Short sentences, generous white space, vocab defined immediately in the margin.',
+    unit: 'all-units',
+    unitLabel: 'All Units',
+    level: 'E–F Level',
+    href: `${base}materials/sci6-year-notes-ef-v1.html`,
+  },
+];
+
+const workbooks = [
+  {
+    title: 'Forces Workbook',
+    description: 'Interleaved practice workbook for the Forces unit. Core and Extended questions, retrieval across all Force concepts.',
+    unit: 'forces',
+    unitLabel: 'Forces',
+    href: `${base}materials/sci6-forces-workbook-v1.html`,
+  },
+  {
+    title: 'Year Review Workbook',
+    description: 'End-of-year retrieval workbook spanning all six units. Interleaved questions, synthesis tasks, and self-assessment.',
+    unit: 'all-units',
+    unitLabel: 'All Units',
+    href: `${base}materials/sci6-year-review-workbook-gr6-v1.html`,
+  },
+];
+---
+
+<BaseLayout title="Materials">
+  <div class="mb-10">
+    <p class="text-xs font-bold uppercase tracking-widest text-science-600 mb-2">Grade 6 Science</p>
+    <h1 class="text-4xl font-bold text-slate-900 mb-3">Materials</h1>
+    <p class="text-slate-500 text-lg max-w-xl">
+      Print-ready classroom materials. Open in the browser or download to print.
+    </p>
+  </div>
+
+  <!-- Notes Packages -->
+  <section class="mb-12">
+    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Notes Packages</h2>
+    <div class="space-y-3">
+      {notes.map(m => {
+        const c = unitColors[m.unit] ?? unitColors['all-units'];
+        return (
+          <div class={`bg-white rounded-xl border border-slate-200 border-l-4 ${c.border} p-5 flex items-start justify-between gap-4`}>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1">
+                <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${c.bg} ${c.text}`}>
+                  {m.unitLabel}
+                </span>
+                {m.level && (
+                  <span class="text-xs text-slate-400 font-medium">{m.level}</span>
+                )}
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mb-1">{m.title}</h3>
+              <p class="text-sm text-slate-500">{m.description}</p>
+            </div>
+            <a
+              href={m.href}
+              target="_blank"
+              rel="noopener"
+              class="flex-shrink-0 text-sm font-semibold text-science-700 hover:text-science-900 border border-science-300 hover:border-science-500 px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Open ↗
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Workbooks -->
+  <section class="mb-12">
+    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Workbooks</h2>
+    <div class="space-y-3">
+      {workbooks.map(m => {
+        const c = unitColors[m.unit] ?? unitColors['all-units'];
+        return (
+          <div class={`bg-white rounded-xl border border-slate-200 border-l-4 ${c.border} p-5 flex items-start justify-between gap-4`}>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1">
+                <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${c.bg} ${c.text}`}>
+                  {m.unitLabel}
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mb-1">{m.title}</h3>
+              <p class="text-sm text-slate-500">{m.description}</p>
+            </div>
+            <a
+              href={m.href}
+              target="_blank"
+              rel="noopener"
+              class="flex-shrink-0 text-sm font-semibold text-science-700 hover:text-science-900 border border-science-300 hover:border-science-500 px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Open ↗
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

@@ -15,7 +15,7 @@ csConnection: Scratch simulation of a food web uses conditional structures — i
 
 ## What this unit is about
 
-Ecosystems are more than a list of plants and animals. They are complex, interdependent systems where every component — living and non-living — influences every other. Remove one piece and the whole system shifts.
+Ecosystems are more than a list of plants and animals. They are complex, interdependent systems where every component — living and non-living — influences every other. Remove one piece and the whole system shifts. How systems work together. 
 
 The conceptual peak of this unit is **photosynthesis**: the process by which plants convert light, water, and CO₂ into glucose and oxygen. This is the foundation of almost all food webs on Earth — and one of the most persistently misunderstood processes in all of biology.
 
@@ -26,3 +26,7 @@ The conceptual peak of this unit is **photosynthesis**: the process by which pla
 2. **Photosynthesis** — light + water + CO₂ → glucose + oxygen. Chlorophyll collects light. Glucose is stored as starch. Three controlled experiments test this directly.
 
 3. **Plant-animal relationships** — interdependence beyond food: oxygen, CO₂, soil erosion, habitat. Includes FNMI sacred plants and their ecological and cultural roles.
+
+4. **Organism interactions** - mutualism - predation- competition. The many ways organisms interact 
+
+5. **human impact on the environment** How have humans affected the ecosystems for the positive and negative. 
