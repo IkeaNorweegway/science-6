@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sciences 6e année — Les forces : notes guidées</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #fff;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 28px 32px 48px;
+  }
+
+  :root {
+    --accent: #7c3aed;
+    --accent-light: #ede9fe;
+    --accent-mid: #8b5cf6;
+  }
+
+  h1 { font-size: 22pt; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+  h2 { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 28px 0 10px; border-bottom: 2px solid var(--accent-light); padding-bottom: 4px; }
+  h3 { font-size: 11pt; font-weight: 700; color: #334155; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+  h4 { font-size: 11pt; font-weight: 700; color: #334155; margin: 14px 0 4px; }
+  p  { margin-bottom: 8px; }
+  ul, ol { margin: 6px 0 10px 20px; }
+  li { margin-bottom: 4px; }
+  strong { font-weight: 700; }
+  em { font-style: italic; color: #475569; }
+
+  .b { display: inline-block; border-bottom: 1.5px solid #334155; vertical-align: bottom; }
+  .b-sm  { width: 60px; }
+  .b-md  { width: 110px; }
+  .b-lg  { width: 170px; }
+  .b-xl  { width: 240px; }
+
+  .al { display: block; border-bottom: 1px solid #94a3b8; height: 1.8rem; margin: 6px 0; }
+  .al-sm { display: inline-block; border-bottom: 1px solid #94a3b8; width: 200px; vertical-align: bottom; }
+
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
+  th { background: var(--accent-light); color: var(--accent); font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid #ddd6fe; }
+  td { padding: 8px 10px; border: 1px solid #e2e8f0; vertical-align: top; }
+  tr:nth-child(even) td { background: #faf5ff; }
+
+  pre, code {
+    font-family: 'Courier New', monospace;
+    font-size: 10pt;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+  }
+  pre { padding: 10px 14px; margin: 10px 0; white-space: pre; overflow-x: auto; }
+  code { padding: 1px 5px; }
+
+  .misconception {
+    border-left: 4px solid #dc2626;
+    background: #fef2f2;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .misconception .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #dc2626; margin-bottom: 4px;
+  }
+
+  .connection {
+    border-left: 4px solid #f97316;
+    background: #fff7ed;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .connection .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #ea580c; margin-bottom: 4px;
+  }
+
+  .cs-connection {
+    border-left: 4px solid #0284c7;
+    background: #f0f9ff;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .cs-connection .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #0284c7; margin-bottom: 4px;
+  }
+
+  .retrieval {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 18px 0;
+  }
+  .retrieval-header {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: #1d4ed8; margin-bottom: 10px;
+  }
+  .retrieval ol { margin-left: 18px; }
+  .retrieval li { margin-bottom: 14px; }
+
+  .self-check {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 10.5pt;
+  }
+  .self-check .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #16a34a; margin-bottom: 6px;
+  }
+
+  .workbook-prompt {
+    background: var(--accent-light);
+    border: 1px solid #c4b5fd;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 12px 0 0;
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .learning-target {
+    font-size: 10pt; font-style: italic; color: #475569;
+    margin-bottom: 12px; padding: 6px 12px;
+    border-left: 3px solid var(--accent-mid);
+    background: #faf5ff;
+  }
+
+  .section-break { border: none; border-top: 2px dashed #e2e8f0; margin: 28px 0; }
+
+  .header-strip {
+    border-left: 5px solid var(--accent);
+    padding: 10px 16px;
+    margin-bottom: 24px;
+    background: #faf5ff;
+    border-radius: 0 8px 8px 0;
+  }
+  .header-strip .course-label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--accent-mid); margin-bottom: 4px;
+  }
+
+  .name-row { display: flex; gap: 24px; margin: 16px 0 24px; font-size: 10.5pt; }
+  .name-row span { color: #64748b; }
+  .name-row .b { flex: 1; }
+
+  .pre-knowledge {
+    border: 1px solid #ddd6fe;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0 24px;
+    background: #faf5ff;
+  }
+  .pre-knowledge .pk-label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: var(--accent); margin-bottom: 8px;
+  }
+
+  .synthesis { margin: 24px 0; }
+  .synthesis-item { margin-bottom: 20px; }
+  .synthesis-item strong { display: block; color: var(--accent); font-size: 10.5pt; margin-bottom: 6px; }
+
+  .rubric table th { background: var(--accent-light); }
+  .rubric td:nth-child(2) { text-align: center; font-size: 10pt; }
+
+  @media print {
+    body { padding: 18px 22px 32px; font-size: 10.5pt; }
+    .section-break { margin: 18px 0; }
+    h2 { margin: 20px 0 8px; }
+    pre { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header-strip">
+  <div class="course-label">Sciences 6e année — Les forces</div>
+  <h1>Notes guidées</h1>
+</div>
+
+<div class="name-row">
+  <span>Nom :</span><span class="b b-xl">&nbsp;</span>
+  <span>Date de début :</span><span class="b b-lg">&nbsp;</span>
+</div>
+
+<div class="pre-knowledge">
+  <div class="pk-label">Avant de commencer — Ce que je sais déjà</div>
+  <p><em>Pas de note. Pas de correction. Sois honnête.</em></p>
+  <p style="margin-top:8px;">Écris tout ce que tu crois savoir sur les forces. Qu'est-ce qu'une force ? D'où viennent les forces ? Que font les forces sur les objets ?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <p style="margin-top:10px; font-size:10pt; color:#64748b; font-style:italic;">Tu reviendras à cette page à la fin de l'unité. Sois honnête — voir comment ta pensée a changé fait partie de l'apprentissage.</p>
+</div>
+
+<hr class="section-break">
+
+<h2>Section 1 : Qu'est-ce qu'une force ?</h2>
+<p class="learning-target">Objectif : Je peux expliquer ce qu'est une force. Je peux décrire sa grandeur et sa direction. Je peux représenter une force avec une flèche.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead>
+    <tr><th>Terme</th><th>Définition dans tes mots</th><th>Un exemple</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Force</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Newton (N)</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Grandeur</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Direction</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Diagramme de forces</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+
+<p>Une force est une <span class="b b-sm">&nbsp;</span> ou une <span class="b b-sm">&nbsp;</span> sur un objet.</p>
+
+<p>Toute force a deux propriétés :</p>
+<ol>
+  <li><strong>Grandeur</strong> — la <span class="b b-sm">&nbsp;</span> de la force, mesurée en <strong>newtons (N)</strong></li>
+  <li><strong>Direction</strong> — vers où la force <span class="b b-md">&nbsp;</span></li>
+</ol>
+
+<p>Une force de 10 N vers la droite est différente de 10 N vers la gauche. Les deux propriétés comptent.</p>
+
+<h4>Les flèches de force</h4>
+<p>On dessine les forces comme des flèches. La flèche montre deux choses :</p>
+<ul>
+  <li>La <span class="b b-sm">&nbsp;</span> vers laquelle pointe la flèche montre la <strong>direction</strong></li>
+  <li>La <span class="b b-sm">&nbsp;</span> de la flèche montre la <strong>grandeur</strong> — une flèche plus longue = une force plus grande</li>
+</ul>
+
+<div class="cs-connection">
+  <div class="label">Lien avec l'informatique</div>
+  <p><strong>Les diagrammes de forces sont des abstractions.</strong> Un diagramme de forces montre seulement les <span class="b b-md">&nbsp;</span> qui agissent sur un objet. Il enlève tous les autres détails. C'est la même idée qu'en programmation : garde ce qui est essentiel, enlève le reste. La forme et la couleur de l'objet ne comptent pas. Seules la direction et la taille de chaque force comptent.</p>
+</div>
+
+<h4>Exemple — lire un diagramme de forces</h4>
+<pre>        20 N →   [BOÎTE]   ← 8 N</pre>
+<p>La force de 20 N pousse vers la <span class="b b-sm">&nbsp;</span>. La force de 8 N pousse vers la <span class="b b-sm">&nbsp;</span>. L'effet global est une poussée de <span class="b b-sm">&nbsp;</span> N vers la droite.</p>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>
+      Quelles sont les deux propriétés de toute force ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Quelle unité utilise-t-on pour mesurer une force ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Une flèche est plus longue qu'une autre sur un diagramme. Qu'est-ce que ça veut dire ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Dessine deux flèches sur la boîte : 15 N vers la droite, 5 N vers la gauche. Étiquette chacune.
+      <pre>[              BOÎTE              ]</pre>
+    </li>
+    <li>
+      <strong>★★</strong> Un élève dit : « La boîte ne bouge pas, donc il n'y a pas de forces. » Est-ce vrai ? Explique.
+      <div class="al"></div>
+      <div class="al"></div>
+    </li>
+  </ol>
+</div>
+
+<div class="self-check">
+  <div class="label">Auto-évaluation</div>
+  <p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>J'y arrive</em> &nbsp;/&nbsp; <em>Pas encore</em></p>
+</div>
+<div class="workbook-prompt">Maintenant — ouvre le cahier de travail. Tu peux répondre à <strong>4 questions</strong>. Ferme tes notes d'abord.</div>
+
+<hr class="section-break">
+
+<h2>Section 2 : Les forces externes</h2>
+<p class="learning-target">Objectif : Je peux nommer la force appliquée, la friction et la force élastique. Je peux décrire leur direction. Je peux expliquer comment les forces externes agissent sur les objets.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead>
+    <tr><th>Terme</th><th>Définition dans tes mots</th><th>Un exemple</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Force externe</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Force appliquée</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Friction</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Force élastique</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+
+<p>Une <strong>force externe</strong> vient de l'<span class="b b-lg">&nbsp;</span> de l'objet. Elle vient d'une personne, d'un autre objet ou de l'environnement.</p>
+
+<p>Il y a trois forces externes principales en 6e année :</p>
+
+<h4>1. La force appliquée</h4>
+<p>C'est une force qu'une personne ou un objet exerce directement sur un autre objet.</p>
+<ul>
+  <li>Direction : vers <span class="b b-xl">&nbsp;</span> tu pousses ou tires</li>
+  <li>Exemple : pousser un chariot vers l'avant</li>
+</ul>
+
+<h4>2. La friction</h4>
+<p>C'est une force qui <span class="b b-md">&nbsp;</span> le mouvement entre deux surfaces en contact.</p>
+<ul>
+  <li>Direction : toujours <span class="b b-md">&nbsp;</span> au mouvement</li>
+  <li>Exemple : un livre qui glisse sur un bureau ralentit. La friction agit <span class="b b-md">&nbsp;</span> au glissement</li>
+</ul>
+
+<h4>3. La force élastique</h4>
+<p>C'est une force créée quand un matériau élastique est <span class="b b-sm">&nbsp;</span> ou <span class="b b-sm">&nbsp;</span>.</p>
+<ul>
+  <li>Direction : agit pour <span class="b b-md">&nbsp;</span> le matériau à sa forme originale</li>
+  <li>Exemple : étirer un élastique — il tire vers sa position de départ</li>
+</ul>
+
+<div class="misconception">
+  <div class="label">Idée fausse</div>
+  <p><em>« La friction n'est pas une vraie force — elle ralentit seulement les objets. »</em></p>
+  <p>La friction EST une force. Elle a une <strong>direction</strong> (opposée au mouvement) et une <strong>grandeur</strong> (en newtons). On peut la mesurer avec un dynamomètre. Elle agit entre deux surfaces quand l'une essaie de bouger contre l'autre. Elle est aussi réelle que n'importe quelle poussée ou traction.</p>
+</div>
+
+<p><strong>Lien important :</strong> Les forces externes créent des forces à l'<span class="b b-md">&nbsp;</span> du matériau. On appelle ça des forces internes. (Voir la section 3.)</p>
+
+<h4>Diagramme de forces — trois forces sur une boîte</h4>
+<pre>          ↑ Force normale (plancher poussant vers le haut)
+          |
+Friction ←  [BOÎTE]  → Force appliquée
+          |
+          ↓ Gravité (poids vers le bas)</pre>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Pense à la dernière fois que tu as fait du vélo. Où la friction t'aidait-elle ? Où travaillait-elle contre toi ? Écris ta réponse avant de continuer.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>
+      Nomme les trois types de forces externes de cette section.
+      <div class="al"></div>
+    </li>
+    <li>
+      Une rondelle glisse sur la glace. Dans quelle direction la friction agit-elle ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Tu comprimes un ressort puis tu le lâches. Quel type de force le pousse à reprendre sa forme ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Une boîte est poussée vers la droite sur un plancher rugueux.
+      <ul>
+        <li>Quel type de force la pousse vers la droite ? <span class="al-sm">&nbsp;</span></li>
+        <li>Dans quelle direction la friction agit-elle ? <span class="al-sm">&nbsp;</span></li>
+      </ul>
+    </li>
+    <li>
+      <strong>★★</strong> Une boîte ne bouge pas. On la pousse avec 15 N. Qu'est-ce que ça veut dire pour la force de friction ?
+      <div class="al"></div>
+      <div class="al"></div>
+    </li>
+  </ol>
+</div>
+
+<div class="self-check">
+  <div class="label">Auto-évaluation</div>
+  <p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>J'y arrive</em> &nbsp;/&nbsp; <em>Pas encore</em></p>
+</div>
+<div class="workbook-prompt">Maintenant — ouvre le cahier de travail. Tu peux répondre à <strong>3 questions</strong>. Ferme tes notes d'abord.</div>
+
+<hr class="section-break">
+
+<h2>Section 3 : Les forces internes</h2>
+<p class="learning-target">Objectif : Je peux nommer et distinguer la tension, la compression, le cisaillement et la torsion. Je peux expliquer comment les forces externes créent des forces internes.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead>
+    <tr><th>Terme</th><th>Définition dans tes mots</th><th>Un exemple</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Force interne</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Tension</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Compression</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Cisaillement</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Torsion</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+
+<p>Les <strong>forces internes</strong> agissent à l'<span class="b b-md">&nbsp;</span> d'un matériau. Elles sont causées par des forces externes qui poussent, tirent ou tordent l'objet depuis l'extérieur.</p>
+<p>Quand une force externe agit sur un objet, les particules à l'intérieur bougent les unes par rapport aux autres. C'est la force <span class="b b-md">&nbsp;</span>. Il y a quatre types :</p>
+
+<h4>Tension — force de <span class="b b-sm">&nbsp;</span> ou d'<span class="b b-sm">&nbsp;</span></h4>
+<p>Les particules sont tirées <span class="b b-sm">&nbsp;</span> les unes des autres.</p>
+<pre>  ←—————[   MATÉRIAU   ]—————→
+  Traction                    Traction</pre>
+<p><em>Exemples : une corde dans un tir à la corde ; un câble de pont suspendu ; un élastique étiré</em></p>
+
+<h4>Compression — force de <span class="b b-sm">&nbsp;</span> ou d'<span class="b b-sm">&nbsp;</span></h4>
+<p>Les particules sont poussées <span class="b b-sm">&nbsp;</span> les unes vers les autres.</p>
+<pre>  →—————[   MATÉRIAU   ]←—————
+  Poussée                     Poussée</pre>
+<p><em>Exemples : les pieds d'une chaise quand tu t'assieds ; un ressort écrasé ; un pilier de béton</em></p>
+
+<h4>Cisaillement — force de <span class="b b-sm">&nbsp;</span></h4>
+<p>Des couches de particules glissent dans des directions <span class="b b-md">&nbsp;</span>.</p>
+<pre>  ———→  [COUCHE DU HAUT  ]
+        [COUCHE DU BAS   ]  ←———</pre>
+<p><em>Exemples : des ciseaux qui coupent du papier ; couper du fromage</em></p>
+
+<h4>Torsion — force de <span class="b b-sm">&nbsp;</span></h4>
+<p>Les particules tournent autour d'un axe central dans des directions opposées.</p>
+<p><em>Exemples : essorer un linge mouillé ; une clé qui tourne un boulon</em></p>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Les pieds de ta chaise sont sous compression en ce moment. Ton poids appuie vers le bas. Le plancher pousse vers le haut. Regarde autour de toi. Trouve : (a) un objet sous tension, et (b) un objet soumis à du cisaillement.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>
+      Quelle est la différence entre une force externe et une force interne ?
+      <div class="al"></div>
+      <div class="al"></div>
+    </li>
+    <li>
+      Un câble tient un pont suspendu. Quel type de force interne agit dans le câble ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Un pilier de béton soutient un viaduc. Quel type de force interne agit dans le pilier ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Tu essores une serviette mouillée. Quel type de force interne crées-tu ?
+      <div class="al"></div>
+    </li>
+    <li>
+      <strong>★★</strong> Tu pousses les deux bouts d'un bloc de mousse dans des directions opposées. Quel type de force interne crées-tu ? Fais un croquis avec des flèches. Étiquette le type de force.
+      <p style="font-style:italic; color:#64748b; font-size:10pt;">Croquis :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <div class="al"></div>
+      <p>Type de force : <span class="al-sm">&nbsp;</span></p>
+    </li>
+  </ol>
+</div>
+
+<div class="self-check">
+  <div class="label">Auto-évaluation</div>
+  <p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>J'y arrive</em> &nbsp;/&nbsp; <em>Pas encore</em></p>
+</div>
+<div class="workbook-prompt">Maintenant — ouvre le cahier de travail. Tu peux répondre à <strong>4 questions</strong>. Ferme tes notes d'abord.</div>
+
+<hr class="section-break">
+
+<h2>Section 4 : La plasticité et l'élasticité</h2>
+<p class="learning-target">Objectif : Je peux expliquer la différence entre une déformation élastique et une déformation plastique. Je peux donner des exemples de chacune. Je peux expliquer ce qu'est la limite élastique.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead>
+    <tr><th>Terme</th><th>Définition dans tes mots</th><th>Un exemple</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Déformation</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Déformation élastique</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Déformation plastique</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Limite élastique</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+
+<p>Quand une force agit sur un matériau, le matériau peut changer de forme. C'est ce qu'on appelle une <span class="b b-md">&nbsp;</span>. Il y a deux types :</p>
+
+<h4>Déformation élastique</h4>
+<p>Le matériau <span class="b b-xl">&nbsp;</span> à sa forme originale quand on enlève la force. C'est un changement <span class="b b-sm">&nbsp;</span>.</p>
+<p><em>Exemples : étirer un élastique ; presser une balle en caoutchouc</em></p>
+
+<h4>Déformation plastique</h4>
+<p>Le matériau <span class="b b-xl">&nbsp;</span> dans sa nouvelle forme même après avoir enlevé la force. C'est un changement <span class="b b-sm">&nbsp;</span>.</p>
+<p><em>Exemples : écraser de la pâte à modeler ; plier un fil de métal</em></p>
+
+<h4>La limite élastique</h4>
+<p>Chaque matériau a une <strong>limite élastique</strong>. C'est la force maximale avant que la déformation devienne plastique.</p>
+<ul>
+  <li>En dessous de la limite : le matériau revient <span class="b b-sm">&nbsp;</span> (élastique)</li>
+  <li>Au-dessus de la limite : le matériau reste <span class="b b-sm">&nbsp;</span> (plastique)</li>
+</ul>
+<p>Un trombone légèrement plié → revient à sa forme (sous la limite élastique).<br>Un trombone très plié → reste plié (<span class="b b-md">&nbsp;</span> la limite élastique).</p>
+
+<h4>Avant / pendant / après — élastique contre plastique</h4>
+<pre>ÉLASTIQUE :
+Avant :   [— — — —]
+Pendant : [— — — — — —]   ← étiré
+Après :   [— — — —]        ← revient comme avant
+
+PLASTIQUE :
+Avant :   [— — — —]
+Pendant : [— — — — — —]   ← étiré
+Après :   [— — — — —]      ← reste plus long : changement permanent</pre>
+
+<h4>Pourquoi c'est important en ingénierie</h4>
+<ul>
+  <li>Les casques utilisent de la mousse plastique. La mousse se déforme <span class="b b-md">&nbsp;</span> lors d'un choc. Elle absorbe la force au lieu de la renvoyer vers ton crâne.</li>
+  <li>Les câbles de ponts sont en acier élastique. Ils doivent revenir à leur longueur originale sous la charge.</li>
+</ul>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>
+      Quelle est la différence entre une déformation élastique et une déformation plastique ?
+      <div class="al"></div>
+      <div class="al"></div>
+    </li>
+    <li>
+      Un ressort est comprimé puis relâché. Est-ce élastique ou plastique ? Comment le sais-tu ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Une tige de métal est pliée à 90° et reste ainsi. Est-ce élastique ou plastique ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Que se passe-t-il quand on dépasse la limite élastique d'un matériau ?
+      <div class="al"></div>
+    </li>
+    <li>
+      <strong>★★</strong> Une entreprise conçoit un pare-chocs de voiture. Doit-elle utiliser un matériau élastique ou plastique pour un choc ? Explique ton raisonnement.
+      <div class="al"></div>
+      <div class="al"></div>
+      <div class="al"></div>
+    </li>
+  </ol>
+</div>
+
+<div class="self-check">
+  <div class="label">Auto-évaluation</div>
+  <p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>J'y arrive</em> &nbsp;/&nbsp; <em>Pas encore</em></p>
+</div>
+<div class="workbook-prompt">Maintenant — ouvre le cahier de travail. Tu peux répondre à <strong>3 questions</strong>. Ferme tes notes d'abord.</div>
+
+<hr class="section-break">
+
+<h2>Section 5 : La troisième loi de Newton</h2>
+<p class="learning-target">Objectif : Je peux énoncer la troisième loi de Newton. Je peux trouver des paires action-réaction. Je peux expliquer pourquoi ces forces ne s'annulent pas.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead>
+    <tr><th>Terme</th><th>Définition dans tes mots</th><th>Un exemple</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Troisième loi de Newton</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Force d'action</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Force de réaction</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Paire d'interaction</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+
+<p><strong>Troisième loi de Newton :</strong> Quand un objet exerce une force sur un autre, l'autre exerce une force <span class="b b-md">&nbsp;</span> en grandeur et <span class="b b-md">&nbsp;</span> en direction.</p>
+<p>Version courte : À toute <span class="b b-md">&nbsp;</span>, il correspond une <span class="b b-md">&nbsp;</span> égale et opposée.</p>
+
+<h4>Les trois propriétés de toute paire action-réaction</h4>
+<ol>
+  <li>Égales en <span class="b b-sm">&nbsp;</span></li>
+  <li>Opposées en <span class="b b-sm">&nbsp;</span></li>
+  <li>Sur <span class="b b-md">&nbsp;</span> objets différents</li>
+</ol>
+<p>Si les deux forces agissent sur le même objet, ce n'est <strong>pas</strong> une paire action-réaction.</p>
+
+<h4>Exemples</h4>
+<table>
+  <thead>
+    <tr><th>Situation</th><th>Force d'action</th><th>Force de réaction</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tu sautes</td>
+      <td>Tu pousses vers le <span class="b b-sm">&nbsp;</span> sur le sol</td>
+      <td>Le sol pousse vers le <span class="b b-sm">&nbsp;</span> sur toi</td>
+    </tr>
+    <tr>
+      <td>Tu rames</td>
+      <td>La pagaie pousse l'eau vers l'<span class="b b-sm">&nbsp;</span></td>
+      <td>L'eau pousse la pagaie vers l'<span class="b b-sm">&nbsp;</span></td>
+    </tr>
+    <tr>
+      <td>Tu t'appuies sur un mur</td>
+      <td>Tu pousses vers l'<span class="b b-sm">&nbsp;</span> sur le mur</td>
+      <td>Le mur pousse vers l'<span class="b b-sm">&nbsp;</span> sur toi</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="misconception">
+  <div class="label">Idée fausse 1</div>
+  <p><em>« L'objet le plus lourd pousse toujours plus fort lors d'un choc. »</em></p>
+  <p>Quand un camion et un vélo entrent en collision, la force du camion sur le vélo est <strong>exactement égale</strong> à la force du vélo sur le camion. La troisième loi n'a pas d'exception selon la taille. La différence, c'est ce qui arrive à chaque objet. Le vélo bouge plus parce qu'il a moins de masse. Les forces sont égales. Les effets ne le sont pas.</p>
+</div>
+
+<div class="misconception">
+  <div class="label">Idée fausse 2</div>
+  <p><em>« Les forces d'action et de réaction s'annulent. Donc rien ne bouge jamais. »</em></p>
+  <p>Les forces d'action et de réaction <strong>ne peuvent pas</strong> s'annuler. Elles agissent sur des <strong>objets différents</strong>. Les forces ne s'annulent que sur le <strong>même</strong> objet. Quand tu sautes, le sol pousse sur <em>toi</em>. Tu pousses sur le <em>sol</em>. Ce sont deux objets différents. Chaque objet ne ressent que les forces qui agissent sur <em>lui</em>.</p>
+</div>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Pense à la natation. Tu pousses l'eau vers l'arrière avec tes mains et tes pieds. Quelle force de réaction te fait avancer ? Sur quel objet agit-elle ?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>
+      Énonce la troisième loi de Newton dans tes propres mots.
+      <div class="al"></div>
+      <div class="al"></div>
+    </li>
+    <li>
+      Tu pousses un chariot vers l'avant. Nomme la force d'action et la force de réaction.
+      <p>Action : <span class="al-sm">&nbsp;</span></p>
+      <p>Réaction : <span class="al-sm">&nbsp;</span></p>
+    </li>
+    <li>
+      Un poisson pousse l'eau vers l'arrière. Quelle force de réaction lui permet d'avancer ?
+      <div class="al"></div>
+    </li>
+    <li>
+      Un élève dit : « Les forces d'action et de réaction s'annulent. » Quelle est l'erreur ?
+      <div class="al"></div>
+      <div class="al"></div>
+    </li>
+    <li>
+      <strong>★★</strong> Un livre de 5 kg repose sur une table. Trouve deux paires action-réaction. Pour chacune, nomme la force d'action, la force de réaction et les deux objets.
+      <p>Paire 1 : <span class="al-sm">&nbsp;</span></p>
+      <div class="al"></div>
+      <p>Paire 2 : <span class="al-sm">&nbsp;</span></p>
+      <div class="al"></div>
+    </li>
+  </ol>
+</div>
+
+<div class="self-check">
+  <div class="label">Auto-évaluation</div>
+  <p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>J'y arrive</em> &nbsp;/&nbsp; <em>Pas encore</em></p>
+</div>
+<div class="workbook-prompt">Maintenant — ouvre le cahier de travail. Tu peux répondre à <strong>7 questions</strong>. Ferme tes notes d'abord.</div>
+
+<hr class="section-break">
+
+<h2>Synthèse de l'unité — De mémoire</h2>
+<p><em>Ferme tes notes. Reconstitue.</em></p>
+<p>Pour chaque section, écris l'idée la plus importante en une phrase. De mémoire, sans regarder en arrière.</p>
+
+<div class="synthesis">
+  <div class="synthesis-item">
+    <strong>Section 1 — Qu'est-ce qu'une force ?</strong>
+    <div class="al"></div>
+  </div>
+  <div class="synthesis-item">
+    <strong>Section 2 — Les forces externes</strong>
+    <div class="al"></div>
+  </div>
+  <div class="synthesis-item">
+    <strong>Section 3 — Les forces internes</strong>
+    <div class="al"></div>
+  </div>
+  <div class="synthesis-item">
+    <strong>Section 4 — La plasticité et l'élasticité</strong>
+    <div class="al"></div>
+  </div>
+  <div class="synthesis-item">
+    <strong>Section 5 — La troisième loi de Newton</strong>
+    <div class="al"></div>
+  </div>
+</div>
+
+<p><em>Ouvre maintenant tes notes et vérifie.</em></p>
+
+<hr class="section-break">
+
+<h3>Dernière étape — retourne à tes connaissances antérieures</h3>
+<p>Lis ce que tu as écrit avant le début de l'unité.</p>
+<p>Qu'est-ce que tu avais raison ? <div class="al"></div></p>
+<p>En quoi avais-tu tort ? <div class="al"></div></p>
+<p>Qu'est-ce qui t'a le plus surpris ? <div class="al"></div></p>
+
+<hr class="section-break">
+
+<h2>Grille d'auto-évaluation</h2>
+<p><em>Évalue-toi honnêtement après la dernière séance. Ceci t'aide à savoir ce qu'il faut revoir avant l'examen.</em></p>
+
+<div class="rubric">
+  <table>
+    <thead>
+      <tr>
+        <th>Groupe de connaissances</th>
+        <th>Je peux l'expliquer sans mes notes</th>
+        <th>Une question que j'ai encore</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Force ; flèches de force ; diagrammes de forces</td>
+        <td>Oui / J'y arrive / Pas encore</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Forces externes : appliquée, friction, élastique</td>
+        <td>Oui / J'y arrive / Pas encore</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Forces internes : tension, compression, cisaillement, torsion</td>
+        <td>Oui / J'y arrive / Pas encore</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Plasticité et élasticité ; limite élastique</td>
+        <td>Oui / J'y arrive / Pas encore</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Troisième loi de Newton ; paires action-réaction</td>
+        <td>Oui / J'y arrive / Pas encore</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top:14px; font-style:italic; color:#64748b; font-size:10pt;">Apporte tes questions sans réponse en classe. Elles apparaîtront dans le projet d'investigation et dans l'examen de l'unité.</p>
+
+</body>
+</html>

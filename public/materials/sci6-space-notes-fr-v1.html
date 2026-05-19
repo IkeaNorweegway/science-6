@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'espace — Notes guidées | Sciences 6</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #fff;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 28px 32px 48px;
+  }
+
+  :root {
+    --accent: #4f46e5;
+    --accent-light: #eef2ff;
+    --accent-mid: #6366f1;
+    --accent-border: #c7d2fe;
+  }
+
+  h1 { font-size: 22pt; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+  h2 { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 28px 0 10px; border-bottom: 2px solid var(--accent-border); padding-bottom: 4px; }
+  h3 { font-size: 11pt; font-weight: 700; color: #334155; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+  h4 { font-size: 11pt; font-weight: 700; color: #334155; margin: 14px 0 4px; }
+  p  { margin-bottom: 8px; }
+  ul, ol { margin: 6px 0 10px 20px; }
+  li { margin-bottom: 4px; }
+  strong { font-weight: 700; }
+  em { font-style: italic; color: #475569; }
+
+  .b { display: inline-block; border-bottom: 1.5px solid #334155; vertical-align: bottom; }
+  .b-sm  { width: 60px; }
+  .b-md  { width: 110px; }
+  .b-lg  { width: 170px; }
+  .b-xl  { width: 240px; }
+
+  .al { display: block; border-bottom: 1px solid #94a3b8; height: 1.8rem; margin: 6px 0; }
+  .al-sm { display: inline-block; border-bottom: 1px solid #94a3b8; width: 200px; vertical-align: bottom; }
+
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
+  th { background: var(--accent-light); color: #3730a3; font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid var(--accent-border); }
+  td { padding: 8px 10px; border: 1px solid #e2e8f0; vertical-align: top; }
+  tr:nth-child(even) td { background: #f5f3ff; }
+
+  pre, code {
+    font-family: 'Courier New', monospace;
+    font-size: 10pt;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+  }
+  pre { padding: 10px 14px; margin: 10px 0; white-space: pre; overflow-x: auto; }
+  code { padding: 1px 5px; }
+
+  .misconception {
+    border-left: 4px solid #dc2626;
+    background: #fef2f2;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .misconception .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #dc2626; margin-bottom: 4px;
+  }
+
+  .connection {
+    border-left: 4px solid #f97316;
+    background: #fff7ed;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .connection .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #ea580c; margin-bottom: 4px;
+  }
+
+  .cs-connection {
+    border-left: 4px solid #0284c7;
+    background: #f0f9ff;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .cs-connection .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #0284c7; margin-bottom: 4px;
+  }
+
+  .science-methods {
+    border-left: 4px solid var(--accent-mid);
+    background: var(--accent-light);
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .science-methods .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--accent); margin-bottom: 4px;
+  }
+
+  .indigenous {
+    border-left: 4px solid #059669;
+    background: #ecfdf5;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .indigenous .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #065f46; margin-bottom: 4px;
+  }
+
+  .retrieval {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 18px 0;
+  }
+  .retrieval-header {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: #1d4ed8; margin-bottom: 10px;
+  }
+  .retrieval ol { margin-left: 18px; }
+  .retrieval li { margin-bottom: 14px; }
+
+  .self-check {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 10.5pt;
+  }
+  .self-check .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #16a34a; margin-bottom: 6px;
+  }
+
+  .workbook-prompt {
+    background: var(--accent-light);
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 12px 0 0;
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #3730a3;
+  }
+
+  .learning-target {
+    font-size: 10pt; font-style: italic; color: #475569;
+    margin-bottom: 12px; padding: 6px 12px;
+    border-left: 3px solid var(--accent-mid);
+    background: var(--accent-light);
+  }
+
+  .section-break { border: none; border-top: 2px dashed #e2e8f0; margin: 28px 0; }
+
+  .header-strip {
+    border-left: 5px solid var(--accent);
+    padding: 10px 16px;
+    margin-bottom: 24px;
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+  }
+  .header-strip .course-label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--accent-mid); margin-bottom: 4px;
+  }
+
+  .name-row { display: flex; gap: 24px; margin: 16px 0 24px; font-size: 10.5pt; }
+  .name-row span { color: #64748b; }
+  .name-row .b { flex: 1; }
+
+  .pre-knowledge {
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0 24px;
+    background: var(--accent-light);
+  }
+  .pre-knowledge .pk-label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: var(--accent); margin-bottom: 8px;
+  }
+
+  .guiding-q {
+    background: #1e1b4b;
+    color: #e0e7ff;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin: 0 0 24px;
+    font-style: italic;
+    font-size: 11pt;
+  }
+
+  .synthesis { margin: 24px 0; }
+  .synthesis-item { margin-bottom: 20px; }
+  .synthesis-item strong { display: block; color: var(--accent); font-size: 10.5pt; margin-bottom: 6px; }
+
+  .rubric table th { background: var(--accent-light); }
+  .rubric td:nth-child(2) { text-align: center; font-size: 10pt; }
+
+  @media print {
+    body { padding: 18px 22px 32px; font-size: 10.5pt; }
+    .section-break { margin: 18px 0; }
+    h2 { margin: 20px 0 8px; }
+    pre { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header-strip">
+  <div class="course-label">Sciences 6 — L'espace</div>
+  <h1>Cahier de notes guidées</h1>
+</div>
+
+<div class="name-row">
+  <span>Nom :</span><span class="b b-xl">&nbsp;</span>
+  <span>Date de début :</span><span class="b b-lg">&nbsp;</span>
+</div>
+
+<!-- PRE-KNOWLEDGE -->
+<div class="pre-knowledge">
+  <div class="pk-label">Avant de commencer — Ce que je sais déjà</div>
+  <p><em>Pas de notes. Pas de correction. Sois honnête.</em></p>
+  <p style="margin-top:8px;">Écris tout ce que tu sais sur le système solaire. Quels objets s'y trouvent ? Quelle est sa taille ? Comment apprend-on des choses sur l'espace ? Que sais-tu déjà sur les planètes, les étoiles, les lunes ou quoi que ce soit là-haut ?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <p style="margin-top:10px; font-size:10pt; color:#64748b; font-style:italic;">Tu reviendras à cette page à la fin de l'unité. Sois honnête — voir comment ta pensée a changé fait partie de l'apprentissage.</p>
+</div>
+
+<div class="guiding-q">Question directrice de l'unité : De quelles façons peut-on explorer le système solaire ?</div>
+
+<hr class="section-break">
+
+<!-- SECTION 1 — LES OBJETS DU SYSTÈME SOLAIRE ET L'ÉCHELLE -->
+<h2>Section 1 : Les objets du système solaire et l'échelle</h2>
+<p class="learning-target">Objectif : Je peux identifier et décrire les principaux types d'objets dans le système solaire, expliquer la différence entre émettre et réfléchir la lumière, et expliquer pourquoi les dessins du système solaire dans les livres ne sont pas à l'échelle.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>Le système solaire</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une étoile</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une planète</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une planète naine</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une lune (satellite naturel)</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Un astéroïde</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une comète</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Météoroïde / météore / météorite</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Émettre</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Réfléchir</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+
+<p><strong>Qu'est-ce que le système solaire ?</strong><br>
+Le système solaire, c'est le Soleil et tout ce qui <span class="b b-md">&nbsp;</span> autour de lui — attiré par la gravité du Soleil.</p>
+
+<p><strong>Le Soleil</strong><br>
+Le Soleil est une <span class="b b-md">&nbsp;</span>. Il est au <span class="b b-md">&nbsp;</span> du système solaire. Contrairement aux planètes, le Soleil produit sa propre <span class="b b-md">&nbsp;</span> par un processus appelé <strong>fusion nucléaire</strong> — des atomes d'hydrogène se combinent sous une énorme pression et chaleur pour libérer de l'énergie.</p>
+
+<h4>Les huit planètes (dans l'ordre à partir du Soleil)</h4>
+<pre>Mercure → Vénus → Terre → Mars → Jupiter → Saturne → Uranus → Neptune</pre>
+<p><em>Une phrase utile pour retenir l'ordre : <strong>M</strong>on <strong>V</strong>ieux <strong>T</strong>u <strong>M</strong>'as <strong>J</strong>eté <strong>S</strong>ur <strong>U</strong>ne <strong>N</strong>avette</em></p>
+<p>Les quatre premières (Mercure, Vénus, Terre, Mars) sont les <strong>planètes internes</strong> — elles sont <span class="b b-md">&nbsp;</span>, rocheuses et proches du Soleil.</p>
+<p>Les quatre dernières (Jupiter, Saturne, Uranus, Neptune) sont les <strong>planètes externes</strong> — elles sont <span class="b b-md">&nbsp;</span> et faites surtout de gaz.</p>
+
+<h4>Les autres objets du système solaire</h4>
+<table>
+  <thead><tr><th>Type d'objet</th><th>Ce que c'est</th><th>Exemple</th><th>Émet ou réfléchit ?</th><th>Caractéristique clé</th></tr></thead>
+  <tbody>
+    <tr><td>Étoile</td><td>Énorme boule de gaz qui produit de l'énergie par fusion nucléaire</td><td>Le Soleil</td><td><span class="b b-sm">&nbsp;</span></td><td>Produit sa propre lumière et sa propre chaleur</td></tr>
+    <tr><td>Planète</td><td>Grand corps qui orbite autour du Soleil ; dégage son voisinage orbital</td><td>La Terre, Jupiter</td><td><span class="b b-sm">&nbsp;</span></td><td>8 dans notre système solaire ; 3 conditions requises</td></tr>
+    <tr><td>Planète naine</td><td>Orbite autour du Soleil ; assez grande pour être ronde ; ne dégage PAS son voisinage orbital</td><td>Pluton</td><td><span class="b b-sm">&nbsp;</span></td><td>Reclassée en 2006</td></tr>
+    <tr><td>Lune</td><td>Satellite naturel qui orbite autour d'une planète</td><td>La Lune de la Terre ; Titan (Saturne)</td><td><span class="b b-sm">&nbsp;</span></td><td>La Terre en a une ; certaines planètes en ont des dizaines</td></tr>
+    <tr><td>Astéroïde</td><td>Corps rocheux, plus petit qu'une planète</td><td>Cérès, Vesta</td><td><span class="b b-sm">&nbsp;</span></td><td>La plupart orbitent dans la ceinture d'astéroïdes entre <span class="b b-sm">&nbsp;</span> et <span class="b b-sm">&nbsp;</span></td></tr>
+    <tr><td>Comète</td><td>Corps glacé avec une longue orbite elliptique</td><td>La comète de Halley</td><td><span class="b b-sm">&nbsp;</span></td><td>Développe une <span class="b b-md">&nbsp;</span> lumineuse près du Soleil (la glace se transforme en gaz)</td></tr>
+    <tr><td>Météoroïde</td><td>Petit objet rocheux ou métallique dans l'espace</td><td>—</td><td><span class="b b-sm">&nbsp;</span></td><td>Devient une <span class="b b-sm">&nbsp;</span> en entrant dans l'atmosphère ; une <span class="b b-sm">&nbsp;</span> si elle atterrit</td></tr>
+  </tbody>
+</table>
+
+<h4>Pluton — pourquoi a-t-elle été reclassée ?</h4>
+<p>Pendant la majeure partie du 20e siècle, Pluton était appelée la 9e planète. En 2006, l'Union astronomique internationale (UAI) l'a officiellement reclassée comme <span class="b b-md">&nbsp;</span>.</p>
+<p>Pour être une vraie planète, un corps doit :</p>
+<ol>
+  <li>Orbiter autour du <span class="b b-md">&nbsp;</span></li>
+  <li>Avoir assez de masse pour prendre une forme à peu près <span class="b b-md">&nbsp;</span></li>
+  <li>Avoir <span class="b b-md">&nbsp;</span> son voisinage orbital des autres débris</li>
+</ol>
+<p>Pluton satisfait les conditions 1 et 2, mais pas la <span class="b b-sm">&nbsp;</span>. Les astronomes ont découvert beaucoup d'autres objets glacés de taille similaire dans la <strong>ceinture de Kuiper</strong>. Pluton n'est pas unique. La reclasser rendait la définition plus <span class="b b-md">&nbsp;</span> et précise.</p>
+
+<h4>Émettre et réfléchir la lumière</h4>
+<p><span class="b b-md">&nbsp;</span> veut dire produire et envoyer de la lumière. Le Soleil fait ça — il génère sa propre énergie.</p>
+<p><span class="b b-md">&nbsp;</span> veut dire renvoyer la lumière qui vient d'ailleurs. Les planètes, les lunes et les astéroïdes font ça — on les voit parce que la lumière du Soleil les frappe et rebondit vers nos yeux.</p>
+<p>C'est pourquoi on peut voir les planètes la nuit même si elles ne brûlent pas — elles <span class="b b-md">&nbsp;</span> la lumière du Soleil, elles ne la produisent pas.</p>
+
+<h4>L'échelle — pourquoi les dessins ne disent pas tout</h4>
+<p>Chaque dessin du système solaire que tu as vu n'est <span class="b b-md">&nbsp;</span> à l'échelle. Les dessins dans les livres font paraître les planètes grandes et proches les unes des autres. Le vrai système solaire est presque entièrement fait d'<span class="b b-md">&nbsp;</span>.</p>
+
+<blockquote style="border-left:4px solid var(--accent-mid); background:var(--accent-light); padding:10px 16px; margin:12px 0; border-radius:0 6px 6px 0;">
+  <p>Si le Soleil était un <strong>ballon de basketball</strong> (environ 24 cm), la Terre serait une <strong>petite tête d'épingle</strong> à environ <strong>30 mètres</strong>. Neptune — la planète la plus éloignée — serait à environ <strong>1 kilomètre</strong>.</p>
+  <p style="margin-top:6px;">Sur cette même échelle, les planètes seraient chacune plus petites qu'un grain de sable.</p>
+</blockquote>
+
+<div class="science-methods">
+  <div class="label">Méthodes scientifiques — Les maquettes à l'échelle</div>
+  <p>Une maquette à l'échelle montre des proportions exactes. Un dessin qui n'est PAS à l'échelle peut quand même montrer l'ordre et les relations — mais il ne peut pas nous renseigner sur les <span class="b b-md">&nbsp;</span> ou la <span class="b b-md">&nbsp;</span> réelle. Demande-toi toujours : «Est-ce que cette maquette est à l'échelle ? Qu'est-ce que je peux — et ne peux pas — apprendre d'elle ?»</p>
+</div>
+
+<div class="misconception">
+  <div class="label">Idée fausse — « Le dessin du livre montre que le système solaire est assez compact »</div>
+  <p>Les dessins dans les livres ne sont pas à l'échelle. Ils compriment d'énormes distances pour tenir sur une page. En réalité, le système solaire est presque entièrement fait de vide. Si les planètes étaient montrées à leurs vraies distances du Soleil, la plupart du dessin serait blanc. L'ordre des planètes est correct dans ces dessins — les distances, non.</p>
+</div>
+
+<div class="misconception">
+  <div class="label">Idée fausse — « Les planètes sont visibles la nuit parce qu'elles produisent leur propre lumière »</div>
+  <p>Les planètes ne produisent pas leur propre lumière. Elles réfléchissent la lumière du Soleil. La différence est importante : une étoile est assez massive pour que la fusion nucléaire s'y produise — le processus qui génère la lumière et la chaleur. Les planètes ne le sont pas. Quand tu vois Vénus, Mars ou Jupiter dans le ciel nocturne, tu vois la lumière du Soleil qui rebondit sur leur surface ou leur atmosphère — pas de la lumière qu'elles produisent elles-mêmes.</p>
+</div>
+
+<div class="indigenous">
+  <div class="label">Savoir autochtone sur le ciel</div>
+  <p>Les peuples autochtones partout dans ce qui est maintenant le Canada ont de longues et riches traditions d'observation du ciel. Les Cris, les Pieds-Noirs et beaucoup d'autres Premières Nations ont des noms et des histoires pour les étoiles, les constellations et les modèles saisonniers du ciel. Ce savoir n'était pas informel — il était systématique et pratique : utilisé pour naviguer, suivre les saisons, choisir les moments de plantation et de récolte et comprendre les cycles de l'année. C'est une forme d'observation scientifique à long terme. Il s'est développé sur des générations d'observation attentive et de tenue de registres. L'astronomie occidentale et le savoir autochtone sur le ciel sont deux systèmes de connaissance qui ont observé le même ciel — chacun produisant des cadres qui sont importants, utiles et fondés sur une attention soutenue au monde au-dessus de nous.</p>
+</div>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Regarde dehors ce soir (ou rappelle-toi une nuit récente sans nuages). Quelles «lumières» dans le ciel penses-tu être des étoiles ? Lesquelles pourraient être des planètes ? Comment pourrais-tu faire la différence ? Écris ta réflexion ci-dessous.</p>
+  <p><em>Indice : les étoiles scintillent parce que la lumière se courbe en passant dans notre atmosphère ; les planètes sont plus proches et paraissent plus stables</em></p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Nomme quatre types d'objets qu'on trouve dans le système solaire (autres que le Soleil et les planètes).<div class="al"></div></li>
+    <li>C'est quoi la ceinture d'astéroïdes, et où se trouve-t-elle ?<div class="al"></div></li>
+    <li>Une comète est loin du Soleil. Elle n'a pas de queue. Quand elle se rapproche du Soleil, une queue se développe. Pourquoi ?<div class="al"></div><div class="al"></div></li>
+    <li>En utilisant le vocabulaire de cette section : est-ce que la Lune émet ou réfléchit la lumière ? Explique.<div class="al"></div></li>
+    <li><strong>★★</strong> Un élève dit : «Je sais que le système solaire est grand, mais le livre montre les planètes proches les unes des autres, alors ça ne peut pas être si loin.» Explique l'erreur. Utilise la comparaison ballon de basketball — tête d'épingle dans ta réponse.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>5 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SECTION 2 — LES TECHNOLOGIES D'EXPLORATION -->
+<h2>Section 2 : Les technologies d'exploration</h2>
+<p class="learning-target">Objectif : Je peux décrire les principaux outils utilisés pour explorer l'espace, expliquer pourquoi on utilise différents outils pour différentes questions, et décrire Ex-Alta 1 comme exemple d'un satellite scientifique construit par des étudiants.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>Un télescope</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une sonde spatiale</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Un rover</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Un satellite</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>La modélisation par ordinateur</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+<p>L'espace est très loin. On ne peut presque jamais s'y rendre directement. Les scientifiques utilisent donc beaucoup d'<span class="b b-md">&nbsp;</span> différents — chacun conçu pour répondre à un type de question différent.</p>
+
+<h4>Tableau des technologies d'exploration</h4>
+<table>
+  <thead><tr><th>Outil</th><th>Ce qu'il fait</th><th>Exemple de mission ou d'utilisation</th></tr></thead>
+  <tbody>
+    <tr><td>Télescope optique</td><td>Recueille la lumière <span class="b b-sm">&nbsp;</span> ; permet d'observer des objets lointains depuis la Terre</td><td>Télescopes d'arrière-cour ; grands observatoires</td></tr>
+    <tr><td>Radiotélescope</td><td>Détecte les ondes <span class="b b-sm">&nbsp;</span> venant de l'espace ; peut «voir» à travers la poussière et le gaz qui bloquent la lumière visible</td><td>Observatoire d'Arecibo ; étude des pulsars et des galaxies lointaines</td></tr>
+    <tr><td>Télescope spatial</td><td>Orbite autour de la Terre au-dessus de l'atmosphère ; pas de flou atmosphérique ; images plus nettes</td><td>Télescope spatial Hubble ; Télescope spatial James Webb</td></tr>
+    <tr><td>Sonde spatiale</td><td>Vaisseau robotique sans équipage ; voyage <span class="b b-md">&nbsp;</span> vers d'autres corps pour recueillir des données et les renvoyer</td><td>Voyager 1 (espace interstellaire) ; New Horizons (survol de Pluton)</td></tr>
+    <tr><td>Rover</td><td>Atterrit sur une surface et se <span class="b b-md">&nbsp;</span> ; prend des échantillons et des mesures</td><td>Curiosity (Mars) ; Perseverance (Mars)</td></tr>
+    <tr><td>Vaisseau/station habité(e)</td><td>Transporte des astronautes humains ; permet un travail humain direct dans l'espace</td><td>Missions Apollo (Lune) ; Station spatiale internationale</td></tr>
+    <tr><td>Modélisation par ordinateur</td><td>Utilise des logiciels pour <span class="b b-md">&nbsp;</span> des conditions qu'on ne peut pas observer directement ; teste des hypothèses mathématiquement</td><td>Simuler la formation des étoiles ; modéliser les atmosphères planétaires</td></tr>
+  </tbody>
+</table>
+
+<h4>Pourquoi utiliser différents outils pour différentes questions ?</h4>
+<ul>
+  <li>Un télescope nous montre de <span class="b b-md">&nbsp;</span> — on peut observer mais pas interagir.</li>
+  <li>Une sonde spatiale s'approche <span class="b b-md">&nbsp;</span> — elle peut prendre des mesures à la source, mais ne peut pas se déplacer.</li>
+  <li>Un rover permet une <span class="b b-md">&nbsp;</span> détaillée — il peut tester des matériaux, photographier de près et forer.</li>
+  <li>Une mission habitée ajoute le <span class="b b-md">&nbsp;</span> humain — mais c'est coûteux et risqué.</li>
+  <li>Les modèles par ordinateur peuvent aller là où rien d'autre ne peut aller — à l'intérieur d'une étoile, des milliards d'années dans le passé — mais ils dépendent des <span class="b b-md">&nbsp;</span> qu'on a déjà. Un modèle n'est fiable que si les hypothèses qui l'ont construit le sont.</li>
+</ul>
+<p>Les scientifiques choisissent l'outil qui correspond à la <span class="b b-md">&nbsp;</span>. Il n'y a pas un seul meilleur outil pour toute la science spatiale.</p>
+
+<h4>Ex-Alta 1 — le satellite de l'Alberta</h4>
+<p>Ex-Alta 1 est un petit satellite appelé un <strong>CubeSat</strong>. Il a été conçu et construit par des étudiants de l'Université de l'Alberta. Il a été lancé en orbite en <span class="b b-md">&nbsp;</span>.</p>
+<p>Ex-Alta 1 orbite autour de la <span class="b b-md">&nbsp;</span> et recueille des données sur la <strong>haute atmosphère</strong> — surtout sur les événements météorologiques spatiaux qui affectent le champ magnétique de la Terre.</p>
+<p>C'est important parce que : (1) ça montre que la technologie satellitaire n'est pas réservée aux grandes agences spatiales — des étudiants avec les bonnes connaissances peuvent construire une technologie qui sert un but scientifique réel ; (2) c'est un exemple d'<strong>artefact informatique</strong> — un système construit par des humains pour recueillir des données d'un endroit inaccessible, les transmettre à la Terre et contribuer aux connaissances scientifiques.</p>
+
+<div class="cs-connection">
+  <div class="label">Lien avec l'informatique — Ex-Alta 1 comme système conçu</div>
+  <p><strong>Quel problème Ex-Alta 1 résout-il ?</strong> Il étend la capacité des humains à percevoir la haute atmosphère — une région où on ne peut pas envoyer de gens. <strong>Quelles données recueille-t-il ?</strong> Des mesures de particules chargées et de changements du champ magnétique liés aux tempêtes solaires. <strong>Comment transmet-il les données ?</strong> Par signal radio — les données sont codées, envoyées à une station au sol, décodées et analysées.</p>
+  <p style="margin-top:6px;">C'est la même logique que tout système de télédétection : un capteur dans un endroit difficile d'accès, relié à une sortie lisible par un humain. Le satellite ne pense pas — il est conçu pour capter, coder et transmettre. Le sens vient des scientifiques qui interprètent les données au sol.</p>
+</div>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Si tu concevais une sonde spatiale pour répondre à une question sur le système solaire, quelle serait cette question ? Que devrait faire ta sonde pour y répondre ? Écris ta réponse ci-dessous.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Nomme deux différences entre une sonde spatiale et un rover.<div class="al"></div><div class="al"></div></li>
+    <li>Pourquoi les scientifiques utilisent-ils des télescopes spatiaux plutôt que de simples télescopes au sol ?<div class="al"></div></li>
+    <li>La sonde Voyager a été lancée dans les années 1970. Elle est maintenant au-delà du système solaire. Elle envoie encore des données. Quel type d'outil d'exploration est-ce ? <span class="al-sm">&nbsp;</span></li>
+    <li>Un scientifique veut savoir de quoi est fait le sol sur Mars. Quel outil serait le mieux — un télescope, une sonde ou un rover ? Explique.<div class="al"></div><div class="al"></div></li>
+    <li><strong>★★</strong> Les modèles par ordinateur peuvent simuler l'intérieur d'une étoile — un endroit qu'aucune sonde ni aucun rover ne pourrait jamais atteindre. Mais un élève dit : «Alors pourquoi a-t-on besoin de sondes ? On peut juste tout modéliser.» Explique le problème avec cet argument. Qu'est-ce que les mesures directes peuvent faire que la modélisation ne peut pas ?<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>4 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SECTION 3 — SATELLITES NATURELS ET ARTIFICIELS ET LA VIE DANS L'ESPACE -->
+<h2>Section 3 : Satellites naturels et artificiels et la vie dans l'espace</h2>
+<p class="learning-target">Objectif : Je peux distinguer les satellites naturels des satellites artificiels, décrire ce qui maintient un satellite en orbite, identifier les défis de vivre dans l'espace, et expliquer comment la reclassification de Pluton montre que la science se corrige elle-même.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>Un satellite naturel</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Un satellite artificiel</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une orbite</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>La microgravité</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>La Station spatiale internationale (SSI)</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+
+<p><strong>Les satellites naturels</strong><br>
+Un satellite naturel est tout corps qui <span class="b b-md">&nbsp;</span> autour d'un autre corps dans l'espace — formé par des processus naturels, pas construit par des humains. Le satellite naturel le plus connu est la <span class="b b-md">&nbsp;</span> de la Terre. D'autres planètes ont aussi des lunes : Mars en a 2, Jupiter en a 95, Saturne en a plus de 140.</p>
+
+<p><strong>Les satellites artificiels</strong><br>
+Un satellite artificiel est un objet construit par des humains et placé en <span class="b b-md">&nbsp;</span> autour de la Terre ou d'un autre corps.</p>
+<table>
+  <thead><tr><th>Type de satellite</th><th>Ce qu'il fait</th><th>Pourquoi c'est important</th></tr></thead>
+  <tbody>
+    <tr><td>Satellites GPS</td><td>Déterminent la position précise en mesurant les signaux de plusieurs satellites</td><td>Navigation, intervention d'urgence, arpentage</td></tr>
+    <tr><td>Satellites météorologiques</td><td>Imagent l'atmosphère de la Terre ; suivent les tempêtes et les nuages</td><td>Prévisions météo ; avertissements de catastrophes</td></tr>
+    <tr><td>Satellites de communication</td><td>Relaient les signaux de téléphone, internet et télévision sur de longues distances</td><td>Communication mondiale</td></tr>
+    <tr><td>Satellites scientifiques</td><td>Recueillent des données pour la recherche (comme Ex-Alta 1)</td><td>Science atmosphérique, observation de la Terre</td></tr>
+  </tbody>
+</table>
+<p>Les satellites naturels et artificiels sont différents par leur origine, mais semblables par leur <span class="b b-md">&nbsp;</span> — les deux restent en orbite grâce aux mêmes lois physiques.</p>
+
+<div class="cs-connection">
+  <div class="label">Lien avec l'informatique — systèmes conçus et systèmes naturels</div>
+  <p>Les satellites GPS et météorologiques sont des systèmes conçus par des humains dans un but précis. La Lune de la Terre est un système naturel — elle s'est formée à partir d'une collision entre la Terre primitive et un autre corps il y a des milliards d'années. Les deux orbitent autour de la Terre. La différence clé, c'est l'<span class="b b-md">&nbsp;</span> — les satellites naturels viennent de processus physiques ; les satellites artificiels sont conçus pour résoudre un problème.</p>
+</div>
+
+<h4>Comment un satellite reste-t-il en orbite ?</h4>
+<p>Les satellites n'ont pas besoin de moteurs qui tournent sans arrêt pour rester en orbite. Un satellite se déplace <span class="b b-md">&nbsp;</span> si vite que pendant qu'il tombe vers la Terre, la surface de la Terre <span class="b b-md">&nbsp;</span> sous lui au même rythme. Le résultat : il continue de tomber en <span class="b b-md">&nbsp;</span>.</p>
+<p><em>Imagine ça : si tu lançais une balle parfaitement à l'horizontale, elle descendrait en courbe et toucherait le sol. Lance-la plus fort — elle va plus loin avant de toucher. Lance-la assez fort, et la courbure de la Terre descend au même rythme que la balle. La balle ne touche jamais le sol. C'est une orbite.</em></p>
+<p>Les satellites ne <span class="b b-md">&nbsp;</span> pas en place au-dessus de la Terre. Ils tombent toujours — ils <span class="b b-md">&nbsp;</span> simplement la courbure de la Terre.</p>
+
+<h4>La Station spatiale internationale (SSI)</h4>
+<p>La SSI est un laboratoire de recherche en orbite à environ <span class="b b-sm">&nbsp;</span> km au-dessus de la surface de la Terre. Des humains y vivent sans interruption depuis l'an <span class="b b-sm">&nbsp;</span>.</p>
+<p>La SSI est une collaboration entre plusieurs pays, notamment le Canada, les États-Unis, la Russie, le Japon et des nations européennes. La contribution du Canada est le <strong>Canadarm2</strong> — un bras robotique utilisé pour déplacer de l'équipement et aider à amarrer les vaisseaux entrants.</p>
+
+<h4>Les défis de vivre dans l'espace</h4>
+<table>
+  <thead><tr><th>Défi</th><th>Pourquoi c'est un problème</th></tr></thead>
+  <tbody>
+    <tr><td>Pas d'air respirable</td><td>L'espace est un vide — il n'y a pas d'oxygène. Tout l'air doit être <span class="b b-md">&nbsp;</span> ou produit à bord.</td></tr>
+    <tr><td>Le rayonnement</td><td>Le champ magnétique et l'atmosphère de la Terre nous protègent. Dans l'espace, les astronautes sont exposés à des <span class="b b-md">&nbsp;</span> rayonnements du Soleil et des rayons cosmiques.</td></tr>
+    <tr><td>La microgravité</td><td>En orbite, tout semble sans poids. Avec le temps, les muscles <span class="b b-md">&nbsp;</span> et les os perdent de la densité parce qu'ils ne travaillent pas contre la gravité.</td></tr>
+    <tr><td>Les températures extrêmes</td><td>Au soleil, les surfaces peuvent dépasser 120 °C. Dans l'ombre, elles tombent en dessous de −150 °C. Les vaisseaux doivent <span class="b b-md">&nbsp;</span> ces variations de température.</td></tr>
+    <tr><td>L'approvisionnement en nourriture et en eau</td><td>Tout doit être <span class="b b-md">&nbsp;</span> depuis la Terre ou recyclé à bord. L'eau sur la SSI est presque entièrement <span class="b b-md">&nbsp;</span>.</td></tr>
+    <tr><td>Les défis psychologiques</td><td>Les astronautes sont isolés, dans un petit espace, loin de leur famille, sans possibilité de partir. Les missions longues demandent une attention particulière à la santé <span class="b b-md">&nbsp;</span>.</td></tr>
+  </tbody>
+</table>
+
+<h4>La science se corrige elle-même — le cas de Pluton</h4>
+<p>Pluton a été appelée une planète depuis sa découverte en 1930 jusqu'en 2006. Les scientifiques l'ont reclassée parce qu'ils avaient de <span class="b b-md">&nbsp;</span> données. Quand de puissants télescopes ont révélé beaucoup d'autres corps glacés de taille similaire dans la ceinture de Kuiper, il est devenu clair que Pluton n'était pas une planète unique. L'ancienne définition de «planète» ne <span class="b b-md">&nbsp;</span> pas à ces nouvelles preuves. Alors les scientifiques ont mis à jour la définition.</p>
+<p>Changer une classification quand les preuves le demandent, ce n'est pas un échec. C'est exactement ce que la science est <span class="b b-md">&nbsp;</span> de faire.</p>
+
+<div class="science-methods">
+  <div class="label">Méthodes scientifiques — L'autocorrection</div>
+  <p>La science progresse en étant prête à se mettre à jour. Un scientifique qui refuse de changer de point de vue quand de nouvelles preuves arrivent ne fait pas bien de la science. Un scientifique qui met à jour sa compréhension quand les preuves le demandent, oui. La reclassification de Pluton est un exemple de la science qui fonctionne correctement : nouvelles données → meilleur système de classification → compréhension plus précise du système solaire.</p>
+</div>
+
+<div class="misconception">
+  <div class="label">Idée fausse — « Les scientifiques ont changé les règles pour être injustes envers Pluton »</div>
+  <p>La reclassification de Pluton n'était pas arbitraire. Au début des années 2000, les astronomes avaient découvert des dizaines d'objets glacés de taille similaire au-delà de Neptune. Si Pluton était une planète, ils l'étaient aussi — ce qui aurait voulu dire ajouter beaucoup de nouvelles planètes à la liste. L'Union astronomique internationale a créé une définition claire en trois conditions et l'a appliquée de façon cohérente. Pluton ne satisfait pas la condition 3 (dégager son voisinage orbital). Mettre à jour une classification quand de nouvelles preuves changent la situation, c'est un signe de bonne science — pas d'injustice envers un caillou.</p>
+</div>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Pense à un moment où tu as changé d'avis sur quelque chose parce que tu as eu de nouvelles informations. Comment est-ce que ça ressemble à ce qui s'est passé avec Pluton ? Écris ta comparaison ci-dessous.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Donne un exemple de satellite naturel et un exemple de satellite artificiel.
+      <p>Naturel : <span class="al-sm">&nbsp;</span> &nbsp; Artificiel : <span class="al-sm">&nbsp;</span></p>
+    </li>
+    <li>Les satellites GPS orbitent autour de la Terre sans arrêt. Qu'est-ce qui les maintient en orbite sans que les moteurs tournent constamment ?<div class="al"></div><div class="al"></div></li>
+    <li>Nomme trois défis que les humains doivent affronter quand ils vivent à bord de la SSI.<div class="al"></div></li>
+    <li>Pluton satisfait deux des trois conditions pour être une planète, mais pas la troisième. Quelle est la condition qu'elle ne satisfait pas ?<div class="al"></div></li>
+    <li><strong>★★</strong> Un élève dit : «Les scientifiques ont changé la définition de "planète" en 2006, ce qui montre qu'on ne peut pas faire confiance à la science — ils inventent ça au fur et à mesure.» Écris une réponse à cet élève qui explique ce qui s'est vraiment passé avec Pluton et pourquoi changer une classification scientifique est un signe que la science fonctionne bien, pas qu'elle échoue.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>5 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SYNTHÈSE DE L'UNITÉ -->
+<h2>Synthèse de l'unité — De mémoire</h2>
+<p><em>Ferme tes notes. Reconstruit.</em></p>
+<p>Pour chaque section, écris l'idée la plus importante en une phrase — de mémoire, sans regarder en arrière.</p>
+
+<div class="synthesis">
+  <div class="synthesis-item"><strong>Section 1 — Les objets du système solaire et l'échelle</strong><div class="al"></div></div>
+  <div class="synthesis-item"><strong>Section 2 — Les technologies d'exploration</strong><div class="al"></div></div>
+  <div class="synthesis-item"><strong>Section 3 — Satellites naturels et artificiels et la vie dans l'espace</strong><div class="al"></div></div>
+</div>
+
+<p><em>Maintenant ouvre tes notes et vérifie.</em></p>
+
+<hr class="section-break">
+
+<h3>Étape finale — retourne à ta vérification des connaissances antérieures</h3>
+<p>Lis ce que tu as écrit avant le début de l'unité.</p>
+<p>Qu'est-ce que tu avais bien ? <div class="al"></div></p>
+<p>Sur quoi tu te trompais ? <div class="al"></div></p>
+<p>Qu'est-ce qui t'a le plus surpris ? <div class="al"></div></p>
+
+<hr class="section-break">
+
+<!-- GRILLE D'AUTO-ÉVALUATION -->
+<h2>Grille d'auto-évaluation</h2>
+<p><em>Évalue-toi honnêtement après la dernière séance. Utilise cela pour identifier ce que tu dois revoir avant le test de l'unité.</em></p>
+
+<div class="rubric">
+  <table>
+    <thead><tr><th>Groupe de connaissances</th><th>Je peux l'expliquer sans notes</th><th>Une question que j'ai encore</th></tr></thead>
+    <tbody>
+      <tr><td>Types d'objets dans le système solaire ; exemples de chacun</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Émettre et réfléchir la lumière ; pourquoi les planètes sont visibles</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>L'échelle du système solaire ; pourquoi les dessins ne sont pas à l'échelle</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Les technologies d'exploration ; quel outil pour quelle question</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Ex-Alta 1 ; ce qu'il fait et pourquoi c'est important</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Satellites naturels et artificiels ; comment fonctionnent les orbites</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Les défis de vivre dans l'espace</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>La reclassification de Pluton ; la science comme processus d'autocorrection</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top:14px; font-style:italic; color:#64748b; font-size:10pt;">Apporte tes questions sans réponse en classe. Elles apparaîtront dans le projet d'enquête et le test de l'unité.</p>
+
+</body>
+</html>

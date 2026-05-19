@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'espace — Cahier d'exercices | Sciences 6e année</title>
+<style>
+  /* ── Reset & base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 15px; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1e293b;
+    background: #f8fafc;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ── Colour variables (indigo) ── */
+  :root {
+    --unit:        #4f46e5;
+    --unit-mid:    #818cf8;
+    --unit-light:  #eef2ff;
+    --unit-border: #c7d2fe;
+    --unit-dark:   #3730a3;
+    --ext-bg:      #fdf4ff;
+    --ext-color:   #7e22ce;
+    --ext-border:  #d8b4fe;
+  }
+
+  /* ── Page wrapper ── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 36px 44px 56px;
+  }
+
+  /* ── Cover block ── */
+  .cover {
+    background: var(--unit);
+    border-radius: 10px;
+    padding: 28px 32px 22px;
+    margin-bottom: 24px;
+    color: #fff;
+  }
+  .cover .kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 6px;
+  }
+  .cover h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .cover .student-line {
+    display: flex;
+    gap: 32px;
+    font-size: 0.88rem;
+    opacity: 0.9;
+  }
+  .cover .student-line span { white-space: nowrap; }
+  .cover .student-line .uline {
+    display: inline-block;
+    width: 180px;
+    border-bottom: 1.5px solid rgba(255,255,255,0.6);
+    vertical-align: bottom;
+    margin-left: 4px;
+  }
+
+  /* ── Instruction box ── */
+  .instr-box {
+    background: var(--unit-light);
+    border-left: 4px solid var(--unit);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    font-size: 0.88rem;
+    color: var(--unit-dark);
+    line-height: 1.6;
+  }
+  .instr-box p + p { margin-top: 6px; }
+  .instr-box strong { color: var(--unit-dark); }
+
+  /* ── Teacher note ── */
+  .t-note {
+    background: #faf5ff;
+    border: 1px dashed var(--ext-border);
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    color: var(--ext-color);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  /* ── Forethought / Amorce ── */
+  .forethought {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .forethought h2 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 6px;
+  }
+  .forethought .sub { font-size: 0.8rem; color: #94a3b8; font-style: italic; margin-bottom: 10px; }
+  .forethought blockquote {
+    background: #fff;
+    border-left: 3px solid #94a3b8;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 0.88rem;
+    color: #475569;
+    border-radius: 0 4px 4px 0;
+  }
+  .forethought .prompt-line { font-size: 0.88rem; color: #334155; margin-bottom: 6px; }
+
+  /* ── Answer lines ── */
+  .al { display: block; width: 100%; border-bottom: 1.5px solid #94a3b8; min-height: 1.8rem; margin: 4px 0 10px; }
+  .al-sm { display: inline-block; width: 200px; border-bottom: 1.5px solid #94a3b8; vertical-align: bottom; margin: 0 4px; }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 4px;
+    margin: 28px 0 16px;
+  }
+
+  /* ── Question cards ── */
+  .q-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    background: #fff;
+    page-break-inside: avoid;
+  }
+  .q-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .q-num {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--unit-dark);
+  }
+  .badge-core {
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: var(--unit-light);
+    color: var(--unit);
+    border: 1px solid var(--unit-border);
+    border-radius: 20px;
+    padding: 1px 8px;
+  }
+  .badge-ext {
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: var(--ext-bg);
+    color: var(--ext-color);
+    border: 1px solid var(--ext-border);
+    border-radius: 20px;
+    padding: 1px 8px;
+  }
+  .q-tag {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    font-style: italic;
+    margin-left: auto;
+  }
+  .q-body { font-size: 0.9rem; line-height: 1.65; color: #1e293b; }
+  .q-body p + p { margin-top: 8px; }
+  .q-body strong { color: #0f172a; }
+
+  /* ── Word bank / banque de mots ── */
+  .word-bank {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.84rem;
+    color: #475569;
+    margin: 10px 0;
+  }
+  .word-bank strong { color: #334155; }
+
+  /* ── Tables ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+    margin: 10px 0;
+  }
+  th {
+    background: var(--unit-light);
+    color: var(--unit-dark);
+    font-weight: 700;
+    padding: 6px 10px;
+    border: 1px solid var(--unit-border);
+    text-align: left;
+    font-size: 0.8rem;
+  }
+  td {
+    border: 1px solid #e2e8f0;
+    padding: 7px 10px;
+    vertical-align: top;
+    min-height: 28px;
+  }
+  td.write-here { min-height: 36px; }
+
+  /* ── Fill-in blanks ── */
+  .b    { display: inline-block; border-bottom: 1.5px solid #334155; width: 90px;  margin: 0 3px; vertical-align: bottom; }
+  .b-sm { width: 60px; }
+  .b-md { width: 120px; }
+  .b-lg { width: 180px; }
+  .b-xl { width: 240px; }
+
+  /* ── Hint / Indice ── */
+  .hint {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    border-radius: 0 5px 5px 0;
+    padding: 7px 12px;
+    font-size: 0.82rem;
+    color: #15803d;
+    margin: 10px 0 0;
+    font-style: italic;
+  }
+
+  /* ── Mid-check / Reflection ── */
+  .meta-block {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 28px 0;
+    page-break-inside: avoid;
+  }
+  .meta-block h2 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 4px;
+  }
+  .meta-block .sub { font-size: 0.8rem; color: #94a3b8; font-style: italic; margin-bottom: 12px; }
+  .meta-block p, .meta-block label { font-size: 0.88rem; color: #334155; margin-bottom: 8px; line-height: 1.6; }
+
+  /* ── Zone défi ── */
+  .zone-defi-header {
+    background: var(--unit-dark);
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 18px;
+    margin-top: 32px;
+    margin-bottom: 0;
+  }
+  .zone-defi-header h2 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .zone-defi-header p { font-size: 0.8rem; opacity: 0.8; margin-top: 2px; }
+  .zone-defi {
+    border: 2px solid var(--unit-dark);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 12px 18px 18px;
+    margin-bottom: 28px;
+  }
+
+  /* ── Self-assessment rubric ── */
+  .rubric-section { margin-top: 32px; }
+  .rubric-section h2 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+  .rubric-section .sub { font-size: 0.8rem; color: #94a3b8; font-style: italic; margin-bottom: 12px; }
+  .rubric-table th { background: var(--unit-dark); color: #fff; border-color: var(--unit); }
+  .rubric-table td:first-child { font-weight: 600; color: #1e293b; width: 38%; }
+  .rubric-table td:nth-child(2) { width: 24%; color: var(--unit-dark); font-size: 0.82rem; }
+
+  /* ── Diagram / code blocks ── */
+  .diagram {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    color: #334155;
+    margin: 10px 0;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  /* ── Footer ── */
+  .doc-footer {
+    margin-top: 48px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 10px;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-align: center;
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background: #fff; }
+    .page { padding: 16px 20px 32px; max-width: 100%; }
+    .q-card { page-break-inside: avoid; }
+    .meta-block { page-break-inside: avoid; }
+    .rubric-section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <div class="cover">
+    <p class="kicker">Sciences 6e année · Programme d'études de l'Alberta 2023 · Immersion française</p>
+    <h1>L'espace — Cahier d'exercices</h1>
+    <div class="student-line">
+      <span>Nom : <span class="uline"></span></span>
+      <span>Date de début : <span class="uline" style="width:110px"></span></span>
+    </div>
+  </div>
+
+  <!-- Instructions -->
+  <div class="instr-box">
+    <p><strong>Ce cahier est ta pratique intercalée.</strong> Les questions sont mélangées intentionnellement — elles proviennent de différentes leçons et concepts, dans un ordre délibérément varié. Le travail de comprendre ce que chaque question demande fait partie de l'apprentissage. Ne saute pas cette étape.</p>
+    <p><strong>★ De base</strong> — accessible à tous les élèves. Des aides sont fournies là où elles sont utiles.<br>
+    <strong>★★ Approfondie</strong> — même concept, niveau de difficulté plus élevé. Explique, justifie ou applique à une nouvelle situation.</p>
+    <p>Commence par les questions De base. Passe aux questions Approfondies quand tu es prêt(e). Les deux comptent.</p>
+  </div>
+
+  <div class="t-note">
+    [Ens. : Distribue les questions par étapes au fur et à mesure que chaque leçon est complétée. Les marqueurs de disponibilité sont indiqués pour chaque question. Recueille les cahiers à la fin de chaque séance et lis les pages du bilan intermédiaire et de réflexion avant le prochain cours.]
+  </div>
+
+  <!-- Amorce de réflexion anticipatoire -->
+  <div class="forethought">
+    <h2>Avant de commencer — Amorce de réflexion anticipatoire</h2>
+    <p class="sub">L'enseignant(e) lit ceci à voix haute avant chaque séance. Les élèves écrivent leur réponse avant d'ouvrir le cahier.</p>
+    <blockquote>Regarde les questions disponibles aujourd'hui. Laquelle penses-tu sera la plus difficile ? Écris le numéro de la question et explique pourquoi tu penses qu'elle sera difficile.</blockquote>
+    <p class="prompt-line">Numéro de question : <span class="b b-sm"></span> &nbsp;&nbsp; Pourquoi je pense que ce sera difficile :</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+
+  <!-- Questions -->
+  <h3 class="section-label">Questions</h3>
+
+  <!-- Q1 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q1</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 1 · objets-du-système-solaire</span>
+    </div>
+    <div class="q-body">
+      <p>Classe les éléments suivants dans la bonne colonne. Utilise chaque terme une seule fois.</p>
+      <div class="word-bank"><strong>Banque de mots :</strong> le Soleil · la Lune · la comète de Halley · Jupiter · Vesta · Pluton · Mars · Titan</div>
+      <table>
+        <tr>
+          <th>Étoile</th><th>Planète</th><th>Planète naine</th><th>Lune (satellite naturel)</th><th>Astéroïde</th><th>Comète</th>
+        </tr>
+        <tr>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+        </tr>
+        <tr>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+          <td class="write-here"></td>
+        </tr>
+      </table>
+      <div class="hint">Indice : Une étoile produit sa propre lumière. Une planète orbite autour du Soleil et dégage son orbite. Une planète naine orbite autour du Soleil, mais ne dégage PAS son orbite.</div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q2</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 2 · technologies-d'exploration</span>
+    </div>
+    <div class="q-body">
+      <p>Relie chaque outil à ce qu'il fait le mieux en traçant une ligne.</p>
+      <table>
+        <tr><th>Outil</th><th>Utilisé surtout pour…</th></tr>
+        <tr><td>Télescope optique</td><td>Se déplacer à la surface d'une planète et analyser des échantillons de roche</td></tr>
+        <tr><td>Sonde spatiale</td><td>S'approcher d'un objet lointain et transmettre des données sans atterrir</td></tr>
+        <tr><td>Rover</td><td>Observer des objets lointains depuis la Terre en utilisant la lumière visible</td></tr>
+        <tr><td>Modèle informatique</td><td>Simuler des conditions qu'aucun vaisseau spatial ne peut atteindre</td></tr>
+      </table>
+      <p style="margin-top:10px;">Nomme une vraie mission pour deux des outils ci-dessus.</p>
+      <p>Outil 1 : <span class="b b-md"></span> &nbsp;&nbsp; Mission : <span class="b b-xl"></span></p>
+      <p>Outil 2 : <span class="b b-md"></span> &nbsp;&nbsp; Mission : <span class="b b-xl"></span></p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q3</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 1 · émettre-vs-réfléchir</span>
+    </div>
+    <div class="q-body">
+      <p>Encercle le bon mot dans chaque phrase.</p>
+      <ol style="padding-left:20px; margin:8px 0; font-size:0.9rem; line-height:1.8;">
+        <li>Le Soleil <strong>émet / réfléchit</strong> la lumière parce qu'il génère de l'énergie par fusion nucléaire.</li>
+        <li>Vénus est visible la nuit parce qu'elle <strong>émet / réfléchit</strong> la lumière du Soleil.</li>
+        <li>La Lune paraît brillante parce qu'elle <strong>émet / réfléchit</strong> la lumière du Soleil vers nous.</li>
+        <li>Les étoiles que tu vois la nuit <strong>émettent / réfléchissent</strong> leur propre lumière.</li>
+      </ol>
+      <p>Explique maintenant en une phrase pourquoi on peut voir les planètes la nuit même si elles ne brûlent pas :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q4</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 3 · satellites-naturels-vs-artificiels</span>
+    </div>
+    <div class="q-body">
+      <p>Complète le tableau. Utilise la banque de mots pour t'aider.</p>
+      <div class="word-bank"><strong>Banque de mots :</strong> la Lune · satellite GPS · Titan · Ex-Alta 1 · satellite météorologique · processus naturel · construit par l'humain</div>
+      <table>
+        <tr><th>Satellite</th><th>Naturel ou artificiel ?</th><th>Comment il s'est retrouvé en orbite</th></tr>
+        <tr><td>La Lune</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Satellite GPS</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Titan (lune de Saturne)</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Ex-Alta 1</td><td class="write-here"></td><td class="write-here"></td></tr>
+      </table>
+      <p style="margin-top:10px;">Qu'est-ce que ces quatre objets ont en commun, même si deux sont naturels et deux sont artificiels ?</p>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q5</span>
+      <span class="badge-ext">★★ Approfondie</span>
+      <span class="q-tag">disponible après la leçon 1 · idée-fausse-sur-l'échelle</span>
+    </div>
+    <div class="q-body">
+      <p><strong>Analyse d'erreur.</strong> Un(e) élève a dessiné un schéma du système solaire. Les huit planètes sont espacées de quelques centimètres. Le Soleil est un grand cercle sur le bord gauche de la feuille.</p>
+      <p>L'élève dit : <em>« Mon schéma est exact — le système solaire est assez rempli. Les planètes sont assez proches pour se voir dans le ciel. »</em></p>
+      <p>Identifie deux erreurs dans ce que l'élève a dit.</p>
+      <p>Erreur 1 :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <p>Erreur 2 :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <p>Utilise la comparaison ballon de basketball/tête d'épingle pour corriger l'une des erreurs :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <div class="hint">Indice : Si le Soleil était un ballon de basketball, à quelle distance se trouverait la Terre ? Quelle serait la taille de la Terre ?</div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q6</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 2 · Ex-Alta-1-info</span>
+    </div>
+    <div class="q-body">
+      <p>Ex-Alta 1 est un petit satellite appelé CubeSat. Il a été construit par des étudiant(e)s de l'Université de l'Alberta.</p>
+      <p>Complète les espaces avec la banque de mots.</p>
+      <div class="word-bank"><strong>Banque de mots :</strong> signal radio · haute atmosphère · données · orbite · station au sol · météorologie spatiale</div>
+      <p>Ex-Alta 1 a été lancé en <span class="b b-md"></span> autour de la Terre. Il recueille des <span class="b"></span> sur la <span class="b b-lg"></span> — en particulier sur les événements de <span class="b b-md"></span> qui influent sur le champ magnétique terrestre. Il envoie les résultats à une <span class="b b-md"></span> sur Terre à l'aide d'un <span class="b b-md"></span>. Les scientifiques lisent et analysent ensuite les résultats.</p>
+      <p style="margin-top:10px;">Pourquoi Ex-Alta 1 est-il décrit comme un « système conçu » ? Écris une phrase.</p>
+      <div class="al"></div>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q7</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 3 · mécanique-orbitale</span>
+    </div>
+    <div class="q-body">
+      <p>Un satellite n'a pas besoin de moteurs pour rester en orbite. Explique comment cela fonctionne.</p>
+      <p>Complète les phrases ci-dessous.</p>
+      <p>Un satellite se déplace <span class="b b-md"></span> vite. En tombant vers la Terre, la surface de la Terre s'<span class="b b-md"></span> sous lui au même rythme. Le résultat est que le satellite continue de tomber en <span class="b b-md"></span>.</p>
+      <p style="margin-top:8px;">Imagine que tu lances une balle horizontalement. Si tu la lances plus vite, elle parcourt <span class="b b-md"></span> avant de toucher le sol. Si tu la lances assez vite, elle ne touche jamais le sol parce que <span class="b b-xl"></span>.</p>
+      <div class="hint">Indice : La courbure de la Terre a son importance ici.</div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q8</span>
+      <span class="badge-ext">★★ Approfondie</span>
+      <span class="q-tag">disponible après la leçon 1 · classification-des-planètes · émettre-vs-réfléchir</span>
+    </div>
+    <div class="q-body">
+      <p><strong>Deux explications — une seule est juste.</strong> Lis les deux et décide.</p>
+      <blockquote style="background:#f8fafc; border-left:3px solid #94a3b8; padding:8px 12px; margin:8px 0; border-radius:0 4px 4px 0; font-size:0.88rem; color:#475569;">
+        <strong>Explication A :</strong> « Jupiter est tellement grande qu'elle produit probablement sa propre lumière, comme une petite étoile. C'est pourquoi elle paraît si brillante dans le ciel nocturne. »
+      </blockquote>
+      <blockquote style="background:#f8fafc; border-left:3px solid #94a3b8; padding:8px 12px; margin:8px 0; border-radius:0 4px 4px 0; font-size:0.88rem; color:#475569;">
+        <strong>Explication B :</strong> « Jupiter réfléchit la lumière du Soleil. Elle paraît brillante parce qu'elle est grande et que ses sommets de nuages sont très réfléchissants — mais elle ne produit aucune lumière propre. »
+      </blockquote>
+      <p>Quelle explication est scientifiquement exacte ? <span class="b b-sm"></span></p>
+      <p>Comment le sais-tu ? Utilise ce que tu as appris sur émettre vs. réfléchir dans ta réponse.</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q9</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 1 · objets-du-système-solaire · visuel</span>
+    </div>
+    <div class="q-body">
+      <p><strong>Question visuelle.</strong> Identifie chaque objet dans le schéma ci-dessous. Choisis dans la banque de mots. Chaque étiquette est utilisée une seule fois.</p>
+      <div class="word-bank"><strong>Banque de mots :</strong> étoile · planète · planète naine · astéroïde · comète · météore</div>
+      <div class="diagram">                     ☀
+                 [  A  ]
+                     |
+       ○  ○  ○  ○  ○  ○  ○  ○
+       [B][C][D][E][F][G][H][I]
+
+  [  J  ] — rocheux, plus petit qu'une planète,
+            en orbite entre Mars et Jupiter
+
+  [  K  ] — corps glacé ; développe une queue lumineuse
+            en s'approchant du Soleil
+
+  [  L  ] — traînée de lumière lorsqu'un petit rocher
+            brûle dans l'atmosphère terrestre
+
+  [  M  ] — corps rond en orbite autour du Soleil
+            qui ne dégage PAS son voisinage orbital</div>
+      <table>
+        <tr><th>Lettre</th><th>Type d'objet</th></tr>
+        <tr><td>A</td><td class="write-here"></td></tr>
+        <tr><td>B–I (les 8 planètes, de gauche à droite)</td><td>planètes : <span class="b b-sm"></span>, <span class="b b-sm"></span>, <span class="b b-sm"></span>, <span class="b b-sm"></span>, <span class="b b-sm"></span>, <span class="b b-sm"></span>, <span class="b b-sm"></span>, <span class="b b-sm"></span></td></tr>
+        <tr><td>J</td><td class="write-here"></td></tr>
+        <tr><td>K</td><td class="write-here"></td></tr>
+        <tr><td>L</td><td class="write-here"></td></tr>
+        <tr><td>M</td><td class="write-here"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q10</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 3 · vie-dans-l'espace-SSI</span>
+    </div>
+    <div class="q-body">
+      <p>Les astronautes à bord de la Station spatiale internationale (SSI) font face à de nombreux défis.</p>
+      <p>Complète le tableau. Écris un problème précis et une façon d'y faire face.</p>
+      <table>
+        <tr><th>Défi</th><th>Pourquoi c'est un problème</th><th>Comment les astronautes y font face</th></tr>
+        <tr><td>Absence d'air respirable</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Microgravité</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Radiation</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Températures extrêmes</td><td class="write-here"></td><td class="write-here"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q11</span>
+      <span class="badge-ext">★★ Approfondie</span>
+      <span class="q-tag">disponible après la leçon 2 · technologies-d'exploration · méthodes-scientifiques</span>
+    </div>
+    <div class="q-body">
+      <p>Une scientifique veut savoir quels minéraux se trouvent dans le sol de Mars. Elle hésite entre trois outils : un télescope spatial, une sonde spatiale qui survolera Mars, et un rover.</p>
+      <p>Complète le tableau. Pour chaque outil, indique s'il fonctionnerait pour cette question et explique pourquoi.</p>
+      <table>
+        <tr><th>Outil</th><th>Fonctionnerait-il ?</th><th>Explication</th></tr>
+        <tr><td>Télescope spatial</td><td>Oui / Non</td><td class="write-here"></td></tr>
+        <tr><td>Sonde spatiale (survol)</td><td>Oui / Non</td><td class="write-here"></td></tr>
+        <tr><td>Rover</td><td>Oui / Non</td><td class="write-here"></td></tr>
+      </table>
+      <p style="margin-top:10px;">Quel outil devrait-elle choisir ? <span class="b b-md"></span></p>
+      <p>Écris une limite de cet outil — quelque chose qu'il ne peut toujours pas faire même pour cette question :</p>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q12</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 1 · modèles-à-l'échelle</span>
+    </div>
+    <div class="q-body">
+      <p>Les notes décrivent cette comparaison à l'échelle :</p>
+      <blockquote style="background:#f8fafc; border-left:3px solid #94a3b8; padding:8px 12px; margin:8px 0; border-radius:0 4px 4px 0; font-size:0.88rem; color:#475569;">
+        Si le Soleil était un ballon de basketball (environ 24 cm de diamètre), la Terre serait une tête d'épingle à environ 30 mètres de distance. Neptune se trouverait à environ 1 kilomètre.
+      </blockquote>
+      <p>Utilise cette comparaison pour répondre aux questions.</p>
+      <p>À cette échelle, les planètes elles-mêmes seraient plus petites qu'une <span class="b b-md"></span>.</p>
+      <p>Le système solaire est presque entièrement composé d'espace <span class="b b-md"></span>.</p>
+      <p style="margin-top:8px;">Nomme une chose qu'un modèle à l'échelle PEUT te montrer, et une chose qu'il NE PEUT PAS te montrer s'il n'est pas à l'échelle.</p>
+      <p>Peut montrer : <span class="b b-xl"></span></p>
+      <p>Ne peut pas montrer : <span class="b b-xl"></span></p>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q13</span>
+      <span class="badge-ext">★★ Approfondie</span>
+      <span class="q-tag">disponible après la leçon 3 · reclassification-de-Pluton · science-autocorrectrice</span>
+    </div>
+    <div class="q-body">
+      <p>En 2006, l'Union astronomique internationale (UAI) a reclassifié Pluton de planète à planète naine.</p>
+      <p>Un(e) élève dit : <em>« Les scientifiques ont changé les règles en 2006. Ça prouve que la science n'est pas fiable — on ne peut pas lui faire confiance. »</em></p>
+      <p>Réponds aux trois parties.</p>
+      <p><strong>(a)</strong> Quelle nouvelle preuve a motivé la reclassification ?</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <p><strong>(b)</strong> Quelles sont les trois conditions qu'un corps doit remplir pour être appelé une vraie planète ? Laquelle Pluton ne remplit-il PAS ?</p>
+      <p>Trois conditions :</p>
+      <ol style="padding-left:20px; margin:6px 0; font-size:0.9rem; line-height:2.0;">
+        <li><span class="b b-xl"></span></li>
+        <li><span class="b b-xl"></span></li>
+        <li><span class="b b-xl"></span></li>
+      </ol>
+      <p>Pluton ne remplit pas la condition numéro : <span class="b b-sm"></span></p>
+      <p><strong>(c)</strong> Écris une réponse à l'élève. Explique pourquoi changer une classification lorsque les preuves l'exigent est un signe que la science fonctionne bien — et non qu'elle échoue.</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q14</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 2 · Ex-Alta-1-info · suite de Q6</span>
+    </div>
+    <div class="q-body">
+      <p>Ex-Alta 1 est décrit comme un « artéfact informatique » — un système conçu pour collecter, coder et transmettre des données.</p>
+      <p>Associe chaque étape du pipeline de données d'Ex-Alta 1 à la bonne description.</p>
+      <table>
+        <tr><th>Étape</th><th>Description</th></tr>
+        <tr><td>Capteur en orbite</td><td>A. Les scientifiques sur Terre lisent les résultats et tirent des conclusions</td></tr>
+        <tr><td>Données codées</td><td>B. L'information est convertie en signal pouvant voyager dans l'espace</td></tr>
+        <tr><td>Signal radio envoyé</td><td>C. Le satellite mesure les particules chargées et les variations du champ magnétique</td></tr>
+        <tr><td>Station au sol reçoit</td><td>D. Le signal arrive et est décodé en données lisibles</td></tr>
+        <tr><td>Scientifiques analysent</td><td>E. L'onde radio voyage de l'orbite jusqu'à la Terre</td></tr>
+      </table>
+      <p style="margin-top:10px;">En quoi Ex-Alta 1 est-il semblable à d'autres systèmes de télédétection — comme un satellite météorologique ou un capteur océanique sous-marin ? Écris une phrase.</p>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q15</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 1 · savoir-du-ciel-PPCA</span>
+    </div>
+    <div class="q-body">
+      <p>Les peuples autochtones du Canada — notamment les nations Cries et Pieds-Noirs — ont de longues traditions d'observation du ciel.</p>
+      <p>Réponds aux deux parties.</p>
+      <p><strong>(a)</strong> Nomme <strong>deux</strong> façons dont les communautés autochtones utilisaient leur connaissance du ciel dans la vie quotidienne :</p>
+      <ol style="padding-left:20px; margin:6px 0; font-size:0.9rem; line-height:2.2;">
+        <li><span class="b b-xl"></span></li>
+        <li><span class="b b-xl"></span></li>
+      </ol>
+      <p><strong>(b)</strong> Un(e) scientifique possède des relevés remontant à 10 ans. Un(e) Aîné(e) Pied-Noir partage des connaissances transmises depuis de nombreuses générations. Tous deux décrivent des changements dans le moment où certaines étoiles se lèvent à chaque saison.</p>
+      <p>Qui couvre la plus longue période d'observation ? <span class="b b-lg"></span></p>
+      <p>Pourquoi une plus longue période d'observation est-elle importante en science ?</p>
+      <div class="al"></div>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q16</span>
+      <span class="badge-ext">★★ Approfondie</span>
+      <span class="q-tag">disponible après la leçon 1 · émettre-vs-réfléchir · suite de Q3</span>
+    </div>
+    <div class="q-body">
+      <p>Un(e) élève écrit dans ses notes :</p>
+      <blockquote style="background:#fef2f2; border-left:3px solid #f87171; padding:8px 12px; margin:8px 0; border-radius:0 4px 4px 0; font-size:0.88rem; color:#7f1d1d; font-style:italic;">
+        « Les étoiles et les planètes se ressemblent dans le ciel nocturne — elles émettent toutes les deux de la lumière. La seule différence, c'est que les planètes sont plus proches de la Terre. »
+      </blockquote>
+      <p>Identifie ce qui est scientifiquement faux dans cet énoncé. Écris ensuite la bonne explication.</p>
+      <p>Ce qui est faux :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <p>La bonne explication :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Bilan intermédiaire -->
+  <div class="meta-block">
+    <h2>Bilan intermédiaire</h2>
+    <p class="sub">Non noté. Lu par l'enseignant(e) avant le prochain cours pour repérer les difficultés des élèves.</p>
+    <p>Quelle question a été la plus difficile jusqu'ici ? Écris le numéro : <span class="b b-sm"></span></p>
+    <p>C'était difficile parce que :<br>
+    ☐ Je ne connaissais pas le concept &nbsp;&nbsp; ☐ Je connaissais une partie mais j'ai bloqué en chemin &nbsp;&nbsp; ☐ La question me demandait quelque chose d'inhabituel</p>
+    <p>Qu'as-tu fait quand tu as bloqué ?</p>
+    <div class="al"></div>
+    <p>Évalue ta confiance à propos du système solaire en ce moment (encercle) : &nbsp; <strong>1 — 2 — 3 — 4</strong></p>
+    <p style="font-size:0.8rem; color:#64748b;">(1 = perdu(e) · 2 = partiel · 3 = je comprends · 4 = je pourrais l'enseigner)</p>
+    <p>Une preuve pour ta cote :</p>
+    <div class="al"></div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q17</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 3 · satellites-naturels-vs-artificiels · visuel</span>
+    </div>
+    <div class="q-body">
+      <p><strong>Question visuelle.</strong> Complète le tableau comparatif de la Lune (satellite naturel) et d'Ex-Alta 1 (satellite artificiel).</p>
+      <table>
+        <tr><th>Caractéristique</th><th>La Lune</th><th>Ex-Alta 1</th></tr>
+        <tr><td>Naturel ou construit par l'humain ?</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Autour de quoi orbite-t-il ?</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Comment s'est-il retrouvé en orbite ?</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Quelle est son utilité pour nous ?</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Produit-il sa propre lumière ?</td><td class="write-here"></td><td class="write-here"></td></tr>
+      </table>
+      <p style="margin-top:10px;">Écris une phrase expliquant pourquoi les deux objets sont appelés « satellites » même s'ils sont très différents :</p>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q18</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 1 · objets-du-système-solaire · suite de Q1</span>
+    </div>
+    <div class="q-body">
+      <p>Une comète est loin du Soleil. Elle n'a pas de queue et ressemble à une faible tache floue. En s'approchant du Soleil, une queue lumineuse brillante se développe.</p>
+      <p>Explique ce qui cause l'apparition de la queue :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <p>Explique maintenant pourquoi la queue d'une comète pointe toujours à l'opposé du Soleil, et non derrière la comète comme la fumée d'une fusée :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <div class="hint">Indice : Le vent solaire — un flux de particules provenant du Soleil — repousse les matières loin du Soleil.</div>
+    </div>
+  </div>
+
+  <!-- Q19 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q19</span>
+      <span class="badge-ext">★★ Approfondie</span>
+      <span class="q-tag">disponible après la leçon 3 · vie-dans-l'espace-SSI · méthodes-scientifiques</span>
+    </div>
+    <div class="q-body">
+      <p>Les astronautes à bord de la SSI font environ deux heures d'exercice par jour. Ils utilisent des machines spéciales qui résistent à leurs muscles.</p>
+      <p><strong>(a)</strong> Pourquoi les astronautes doivent-ils faire autant d'exercice dans l'espace ? Utilise le mot « microgravité » dans ta réponse.</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <p><strong>(b)</strong> Des scientifiques sur Terre étudient comment les os et les muscles des astronautes changent au cours de longues missions. En quoi est-ce un exemple de scientifiques qui utilisent une situation difficile pour apprendre quelque chose d'utile ?</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <p><strong>(c)</strong> Cette recherche pourrait aussi aider des personnes sur Terre. Nomme un groupe de personnes qui pourrait bénéficier de cette recherche et explique pourquoi.</p>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q20</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 2 · technologies-d'exploration · visuel</span>
+    </div>
+    <div class="q-body">
+      <p><strong>Question visuelle.</strong> Pour chaque question ci-dessous, choisis le meilleur outil d'exploration. Écris-le dans la colonne de droite. Explique ensuite ton choix en une phrase.</p>
+      <div class="word-bank"><strong>Outils :</strong> télescope optique · sonde spatiale · rover · modèle informatique · vaisseau spatial habité</div>
+      <table>
+        <tr><th>Question à laquelle un(e) scientifique veut répondre</th><th>Meilleur outil</th><th>Raison en une phrase</th></tr>
+        <tr><td>Quelle est la surface d'un objet de la ceinture d'astéroïdes ?</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Comment une étoile se formerait-elle sous des conditions de gravité différentes ?</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Quels gaz composent l'atmosphère d'une planète lointaine que nous n'avons jamais visitée ?</td><td class="write-here"></td><td class="write-here"></td></tr>
+        <tr><td>Quelle est la texture et la composition du sol près d'un volcan martien ?</td><td class="write-here"></td><td class="write-here"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Q21 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q21</span>
+      <span class="badge-ext">★★ Approfondie</span>
+      <span class="q-tag">disponible après la leçon 1 · modèles-à-l'échelle · méthodes-scientifiques</span>
+    </div>
+    <div class="q-body">
+      <p>Les modèles à l'échelle sont un outil que les scientifiques utilisent pour comprendre les systèmes complexes. Un(e) enseignant(e) de sciences construit un modèle à l'échelle du système solaire dans le couloir de l'école avec ces dimensions :</p>
+      <ul style="padding-left:20px; margin:8px 0; font-size:0.9rem; line-height:1.8;">
+        <li>Soleil = un ballon de basketball de 24 cm, placé à la porte du gymnase</li>
+        <li>Terre = une petite bille de 2 mm, placée à 30 mètres de distance</li>
+        <li>Neptune = une petite bille de 2 mm, placée à 1 kilomètre de distance</li>
+      </ul>
+      <p><strong>(a)</strong> Qu'est-ce qu'un(e) élève peut apprendre de ce modèle à l'échelle qu'il ne peut pas apprendre du schéma du manuel scolaire ?</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <p><strong>(b)</strong> Le modèle de l'enseignant(e) a encore un problème : la taille de toutes les planètes est représentée par 2 mm, même si Neptune est environ 4 fois plus large que la Terre. Nomme ce type d'erreur et explique ce qu'un(e) élève pourrait conclure incorrectement à cause de cela.</p>
+      <div class="al"></div>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q22 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q22</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 3 · reclassification-de-Pluton · suite de Q13</span>
+    </div>
+    <div class="q-body">
+      <p>Utilise la liste à trois conditions pour classer chaque objet ci-dessous. Coche Oui ou Non pour chaque condition, puis écris la bonne classification dans la dernière colonne.</p>
+      <p><strong>Trois conditions pour être une vraie planète :</strong></p>
+      <ol style="padding-left:20px; margin:4px 0 10px; font-size:0.88rem; line-height:1.8;">
+        <li>Orbite autour du Soleil</li>
+        <li>Assez massive pour prendre une forme ronde</li>
+        <li>A dégagé son voisinage orbital</li>
+      </ol>
+      <table>
+        <tr><th>Objet</th><th>Orbite le Soleil ?</th><th>Forme ronde ?</th><th>Voisinage dégagé ?</th><th>Classification</th></tr>
+        <tr><td>Terre</td><td>Oui</td><td>Oui</td><td>Oui</td><td class="write-here"></td></tr>
+        <tr><td>Pluton</td><td>Oui</td><td>Oui</td><td>Non</td><td class="write-here"></td></tr>
+        <tr><td>Un grand astéroïde (Cérès)</td><td>Oui</td><td>Oui</td><td>Non</td><td class="write-here"></td></tr>
+        <tr><td>Le Soleil</td><td>—</td><td>—</td><td>—</td><td>(pas une planète — c'est une <span class="b b-md"></span>)</td></tr>
+        <tr><td>La Lune</td><td>Non (orbite la Terre)</td><td>Oui</td><td>—</td><td>(pas une planète — c'est un <span class="b b-md"></span>)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Q23 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q23</span>
+      <span class="badge-ext">★★ Approfondie</span>
+      <span class="q-tag">disponible après la leçon 2 · Ex-Alta-1-info · technologies-d'exploration</span>
+    </div>
+    <div class="q-body">
+      <p>Ex-Alta 1 a été construit par des étudiant(e)s universitaires — et non par une grande agence spatiale comme la NASA.</p>
+      <p>Un(e) élève dit : <em>« Seules de grandes organisations avec d'énormes budgets peuvent construire des satellites qui font de la vraie science. Les satellites construits par des étudiant(e)s ne sont que des jouets. »</em></p>
+      <p>Écris une réponse qui inclut :</p>
+      <ul style="padding-left:20px; margin:6px 0 10px; font-size:0.9rem; line-height:1.8;">
+        <li>Ce qu'Ex-Alta 1 mesure réellement et pourquoi c'est important</li>
+        <li>Quel type de système conçu c'est et à quoi ressemble son pipeline de données</li>
+        <li>Une raison pour laquelle les petits satellites construits par des étudiant(e)s ont de la valeur même comparés aux satellites des grandes agences</li>
+      </ul>
+      <p>Réponse :</p>
+      <div class="al"></div>
+      <div class="al"></div>
+      <div class="al"></div>
+      <div class="al"></div>
+    </div>
+  </div>
+
+  <!-- Q24 -->
+  <div class="q-card">
+    <div class="q-header">
+      <span class="q-num">Q24</span>
+      <span class="badge-core">★ De base</span>
+      <span class="q-tag">disponible après la leçon 3 · satellites-naturels-vs-artificiels · suite de Q4</span>
+    </div>
+    <div class="q-body">
+      <p>Complète les phrases en utilisant la banque de mots.</p>
+      <div class="word-bank"><strong>Banque de mots :</strong> GPS · météorologique · orbite · conçus · processus naturel · communication · scientifique · gravité</div>
+      <p>Les satellites artificiels sont placés en <span class="b b-md"></span> par les humains. Ils y restent grâce à la <span class="b b-md"></span>, et non à des moteurs. Différents types de satellites servent différents objectifs : les satellites <span class="b b-sm"></span> t'aident à trouver ta position ; les satellites <span class="b b-md"></span> suivent les tempêtes ; les satellites de <span class="b b-lg"></span> relaient les signaux téléphoniques et Internet ; les satellites <span class="b b-md"></span> recueillent des données pour la recherche (comme Ex-Alta 1).</p>
+      <p style="margin-top:8px;">Contrairement aux satellites artificiels, les satellites naturels comme la Lune se sont formés par un <span class="b b-lg"></span> — pas parce qu'ils ont été <span class="b b-md"></span> pour être là.</p>
+    </div>
+  </div>
+
+  <!-- Bloc de réflexion -->
+  <div class="meta-block">
+    <h2>Bloc de réflexion</h2>
+    <p class="sub">À la fin de chaque séance de travail. Non noté.</p>
+    <p>1. Quelles questions étaient les plus difficiles aujourd'hui ? Écris les numéros : <span class="b b-lg"></span></p>
+    <p>2. C'était difficile parce que tu ne connaissais pas le concept, ou parce que la question te demandait quelque chose d'inhabituel ?</p>
+    <div class="al"></div>
+    <p>3. Quelle est une chose que tu ferais différemment avant la prochaine séance de travail ?</p>
+    <div class="al"></div>
+    <p>4. Évalue ta compréhension du concept le plus difficile d'aujourd'hui :</p>
+    <p style="margin:6px 0;"><strong>1</strong> (perdu(e)) — <strong>2</strong> (partiel) — <strong>3</strong> (je comprends) — <strong>4</strong> (je pourrais l'enseigner)</p>
+    <p>Concept le plus difficile : <span class="b b-lg"></span> &nbsp;&nbsp; Ma cote : <span class="b b-sm"></span></p>
+    <p>Une preuve pour ma cote :</p>
+    <div class="al"></div>
+  </div>
+
+  <!-- Zone défi -->
+  <div class="zone-defi-header">
+    <h2>Zone défi</h2>
+    <p>À compléter après avoir terminé toutes les questions précédentes. Zone de défi — aucune aide fournie.</p>
+  </div>
+  <div class="zone-defi">
+
+    <!-- D1 -->
+    <div class="q-card" style="margin-top:12px;">
+      <div class="q-header">
+        <span class="q-num">D1</span>
+        <span class="badge-ext">★★ Approfondie</span>
+        <span class="q-tag">échelle + objets-du-système-solaire + méthodes-scientifiques</span>
+      </div>
+      <div class="q-body">
+        <p>Un(e) élève regarde un schéma dans son manuel scolaire. Les huit planètes sont représentées à peu près à égale distance. Le Soleil est à gauche. L'élève dit : « Je peux voir d'après ce schéma que les planètes extérieures sont un peu plus loin du Soleil que les planètes intérieures, mais ce n'est pas une grande différence. »</p>
+        <p><strong>(a)</strong> Identifie tout ce qui est faux dans cette conclusion. Utilise des chiffres ou des comparaisons précises tirées du modèle à l'échelle basketball dans ta réponse.</p>
+        <div class="al"></div>
+        <div class="al"></div>
+        <div class="al"></div>
+        <p><strong>(b)</strong> Le schéma du manuel donne le bon ordre des planètes, mais pas les bonnes distances. Nomme une chose qu'un(e) scientifique peut encore utiliser légitimement ce schéma pour faire, et une chose qu'il ne peut absolument pas l'utiliser pour faire.</p>
+        <p>Peut légitimement utiliser pour : <span class="b b-xl"></span></p>
+        <p>Ne peut pas utiliser pour : <span class="b b-xl"></span></p>
+        <p><strong>(c)</strong> Conçois une meilleure démonstration qui aiderait un(e) élève à ressentir la vraie échelle du système solaire. Elle n'a pas besoin d'utiliser du papier — utilise n'importe quel matériel ou espace. Décris-la en 3–4 phrases.</p>
+        <div class="al"></div>
+        <div class="al"></div>
+        <div class="al"></div>
+      </div>
+    </div>
+
+    <!-- D2 -->
+    <div class="q-card">
+      <div class="q-header">
+        <span class="q-num">D2</span>
+        <span class="badge-ext">★★ Approfondie</span>
+        <span class="q-tag">reclassification-de-Pluton + science-autocorrectrice + classification-des-planètes</span>
+      </div>
+      <div class="q-body">
+        <p>Au début des années 2000, les astronomes avaient découvert des dizaines d'objets glacés dans la Ceinture de Kuiper — la région au-delà de Neptune — de taille similaire à Pluton. L'Union astronomique internationale devait prendre une décision.</p>
+        <p><strong>(a)</strong> Elle avait deux options :</p>
+        <ul style="padding-left:20px; margin:6px 0; font-size:0.9rem; line-height:1.8;">
+          <li><strong>Option A :</strong> Garder Pluton comme planète et ajouter tous les objets similaires de la Ceinture de Kuiper comme planètes également.</li>
+          <li><strong>Option B :</strong> Créer une nouvelle catégorie de classification (planète naine) basée sur une définition à trois conditions, et l'appliquer de façon cohérente.</li>
+        </ul>
+        <p>Quelle option ont-ils choisie ? <span class="b b-sm"></span> &nbsp;&nbsp; Explique pourquoi c'était le choix le plus scientifiquement solide.</p>
+        <div class="al"></div>
+        <div class="al"></div>
+        <div class="al"></div>
+        <p><strong>(b)</strong> En quoi la reclassification de Pluton est-elle semblable à tout autre moment dans la science où de nouvelles preuves ont obligé les scientifiques à mettre à jour leurs croyances ?</p>
+        <div class="al"></div>
+        <div class="al"></div>
+        <p><strong>(c)</strong> Écris une définition claire en une phrase de « planète naine » qui résisterait au test des trois conditions :</p>
+        <div class="al"></div>
+      </div>
+    </div>
+
+    <!-- D3 -->
+    <div class="q-card">
+      <div class="q-header">
+        <span class="q-num">D3</span>
+        <span class="badge-ext">★★ Approfondie</span>
+        <span class="q-tag">savoir-du-ciel-PPCA + technologies-d'exploration + méthodes-scientifiques</span>
+      </div>
+      <div class="q-body">
+        <p>Le savoir du ciel des Cris et des Pieds-Noirs s'est construit sur de nombreuses générations. Il comprend les noms des étoiles, le suivi des configurations saisonnières des étoiles, et l'utilisation des événements célestes pour la navigation et la mesure du temps.</p>
+        <p><strong>(a)</strong> Un(e) scientifique qui étudie les changements à long terme dans la position des étoiles visibles possède des relevés remontant à 15 ans. Un(e) Aîné(e) partage des connaissances observées et transmises depuis plus de 200 ans. Explique ce que les connaissances de l'Aîné(e) offrent que les données du/de la scientifique ne peuvent pas encore égaler.</p>
+        <div class="al"></div>
+        <div class="al"></div>
+        <p><strong>(b)</strong> Décris une façon dont le savoir autochtone du ciel et la technologie moderne d'exploration spatiale pourraient être utilisés ensemble pour répondre à une question qu'aucun des deux ne pourrait répondre seul. Sois précis(e) sur ce que chacun apporterait.</p>
+        <p>Le savoir autochtone du ciel apporte : <span class="b b-xl"></span></p>
+        <p>La technologie moderne apporte : <span class="b b-xl"></span></p>
+        <p>La question à laquelle ils pourraient répondre ensemble : <span class="b b-xl"></span></p>
+        <p><strong>(c)</strong> L'astronomie occidentale et le savoir autochtone du ciel ont tous deux observé le même ciel. Qu'est-ce que cela nous dit sur la connaissance scientifique — sur qui peut la produire et ce qui compte comme preuve ?</p>
+        <div class="al"></div>
+        <div class="al"></div>
+      </div>
+    </div>
+
+    <!-- D4 -->
+    <div class="q-card">
+      <div class="q-header">
+        <span class="q-num">D4</span>
+        <span class="badge-ext">★★ Approfondie</span>
+        <span class="q-tag">Ex-Alta-1 + technologies-d'exploration + systèmes-conçus + émettre-vs-réfléchir</span>
+      </div>
+      <div class="q-body">
+        <p>On te demande de concevoir un nouveau CubeSat — un petit satellite construit par des étudiant(e)s — pour répondre à une question scientifique précise sur la Terre ou le système solaire.</p>
+        <p>Écris un cahier de conception complet. Inclus les six parties.</p>
+        <p><strong>(a)</strong> La question scientifique à laquelle ton satellite répondra :</p>
+        <div class="al"></div>
+        <p><strong>(b)</strong> Ce qu'il mesurera ou détectera (sois précis(e) — quelles données ?) :</p>
+        <div class="al"></div>
+        <p><strong>(c)</strong> Quel capteur ou instrument il nécessite :</p>
+        <div class="al"></div>
+        <p><strong>(d)</strong> Comment il renverra les données à la Terre :</p>
+        <div class="al"></div>
+        <p><strong>(e)</strong> Un défi technique que tu devrais résoudre :</p>
+        <div class="al"></div>
+        <p><strong>(f)</strong> En quoi ton satellite est différent d'un satellite naturel — et en quoi il est similaire (pense à l'orbite et à la gravité) :</p>
+        <div class="al"></div>
+        <div class="al"></div>
+      </div>
+    </div>
+
+  </div><!-- fin zone-defi -->
+
+  <!-- Bilan d'autoévaluation -->
+  <div class="rubric-section">
+    <h2>Bilan d'autoévaluation</h2>
+    <p class="sub">À compléter à la fin de l'unité, avant l'examen. Notes autorisées.</p>
+    <table class="rubric-table">
+      <tr>
+        <th>Groupe de connaissances</th>
+        <th>Je peux expliquer cela sans mes notes</th>
+        <th>Une question que j'ai encore</th>
+      </tr>
+      <tr>
+        <td>Types d'objets du système solaire ; exemples de chacun</td>
+        <td>Oui / En cours / Pas encore</td>
+        <td class="write-here"></td>
+      </tr>
+      <tr>
+        <td>Émettre vs. réfléchir la lumière ; pourquoi les planètes sont visibles la nuit</td>
+        <td>Oui / En cours / Pas encore</td>
+        <td class="write-here"></td>
+      </tr>
+      <tr>
+        <td>Échelle du système solaire ; pourquoi les schémas ne sont pas à l'échelle</td>
+        <td>Oui / En cours / Pas encore</td>
+        <td class="write-here"></td>
+      </tr>
+      <tr>
+        <td>Technologies d'exploration ; quel outil pour quelle question</td>
+        <td>Oui / En cours / Pas encore</td>
+        <td class="write-here"></td>
+      </tr>
+      <tr>
+        <td>Ex-Alta 1 comme système conçu et artéfact informatique</td>
+        <td>Oui / En cours / Pas encore</td>
+        <td class="write-here"></td>
+      </tr>
+      <tr>
+        <td>Satellites naturels vs. artificiels ; comment fonctionnent les orbites</td>
+        <td>Oui / En cours / Pas encore</td>
+        <td class="write-here"></td>
+      </tr>
+      <tr>
+        <td>Défis de la vie dans l'espace (SSI)</td>
+        <td>Oui / En cours / Pas encore</td>
+        <td class="write-here"></td>
+      </tr>
+      <tr>
+        <td>Reclassification de Pluton ; la science comme processus autocorrecteur</td>
+        <td>Oui / En cours / Pas encore</td>
+        <td class="write-here"></td>
+      </tr>
+      <tr>
+        <td>Savoir autochtone du ciel ; observation à long terme</td>
+        <td>Oui / En cours / Pas encore</td>
+        <td class="write-here"></td>
+      </tr>
+    </table>
+    <p style="margin-top:12px; font-size:0.88rem;">Avant l'examen d'unité, je dois revoir : <span class="b b-xl"></span></p>
+    <div class="al"></div>
+    <div class="t-note" style="margin-top:12px;">
+      [Ens. : Recueille cette page. Les élèves qui ont « Pas encore » pour émettre-vs-réfléchir, l'échelle ou la reclassification de Pluton ont besoin d'une récupération ciblée avant l'examen. Les élèves solides dans tous les groupes sont prêts pour l'option d'extension par projet d'enquête.]
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    sci6-space-workbook-fr-v1 &nbsp;·&nbsp; Sciences 6e année &nbsp;·&nbsp; Programme d'études de l'Alberta 2023 &nbsp;·&nbsp; Immersion française
+  </div>
+
+</div><!-- fin page -->
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sciences 6 — Notes de l'année</title>
+<style>
+  :root {
+    --matter:        #0891b2;
+    --matter-light:  #e0f2fe;
+    --living:        #059669;
+    --living-light:  #d1fae5;
+    --forces:        #7c3aed;
+    --forces-light:  #ede9fe;
+    --climate:       #d97706;
+    --climate-light: #fef3c7;
+    --energy:        #ea580c;
+    --energy-light:  #ffedd5;
+    --space:         #4338ca;
+    --space-light:   #e0e7ff;
+    --text:          #1a1a1a;
+    --muted:         #4b5563;
+    --border:        #d1d5db;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  /* ── Document header ── */
+  .doc-header {
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .doc-header h1 { font-size: 1.75rem; font-weight: bold; letter-spacing: -0.02em; }
+  .doc-header .subtitle { font-family: system-ui, sans-serif; font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+  .doc-header .name-line { font-family: system-ui, sans-serif; font-size: 0.95rem; margin-top: 0.75rem; border-bottom: 1px solid #1a1a1a; display: inline-block; padding-bottom: 2px; }
+  .doc-intro { font-style: italic; color: var(--muted); font-size: 0.9rem; margin-bottom: 2.5rem; }
+
+  /* ══════════════════════════════════════
+     TWO-COLUMN GRID — 70 / 30
+  ══════════════════════════════════════ */
+  .page-grid {
+    display: grid;
+    grid-template-columns: 1fr 270px;
+    column-gap: 2rem;
+    align-items: start;
+  }
+
+  .main-col { min-width: 0; }
+  .margin-col { min-width: 0; }
+
+  .full-span { grid-column: 1 / -1; }
+
+  /* ── Unit sections ── */
+  .unit { margin-bottom: 3.5rem; }
+
+  .unit-header {
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.75rem;
+    color: #fff;
+    font-family: system-ui, sans-serif;
+  }
+  .unit-header h2 { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.01em; }
+  .unit-header .guiding { font-size: 0.85rem; opacity: 0.9; margin-top: 0.15rem; font-style: italic; }
+
+  .matter  .unit-header { background: var(--matter); }
+  .living  .unit-header { background: var(--living); }
+  .forces  .unit-header { background: var(--forces); }
+  .climate .unit-header { background: var(--climate); }
+  .energy  .unit-header { background: var(--energy); }
+  .space   .unit-header { background: var(--space); }
+
+  /* ── Big Ideas ── */
+  .big-ideas {
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 1rem;
+    background: #fafafa;
+  }
+  .big-ideas h4 { font-family: system-ui, sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.4rem; }
+  .big-ideas ul { padding-left: 1.2rem; font-size: 0.93rem; }
+  .big-ideas li { margin-bottom: 0.2rem; }
+
+  /* ── Key Vocab table ── */
+  .vocab-section { margin-bottom: 1rem; }
+  .vocab-section h4 { font-family: system-ui, sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.5rem; }
+
+  /* ── Section h3 (full-span within grid) ── */
+  .section-h3 {
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Row spacing within grid ── */
+  .main-col  { padding-bottom: 0.6rem; }
+  .margin-col { padding-bottom: 0.6rem; }
+
+  /* ── Body text ── */
+  p { margin-bottom: 0.65rem; }
+  ul, ol { padding-left: 1.4rem; margin-bottom: 0.65rem; }
+  li { margin-bottom: 0.2rem; }
+
+  /* ── Tables ── */
+  table { width: 100%; border-collapse: collapse; font-family: system-ui, sans-serif; font-size: 0.88rem; margin-bottom: 0.65rem; }
+  th { background: #f3f4f6; font-weight: 600; text-align: left; padding: 0.45rem 0.6rem; border: 1px solid var(--border); }
+  td { padding: 0.4rem 0.6rem; border: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: #fafafa; }
+
+  /* ── ASCII diagrams ── */
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    background: #f8f9fa;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.65rem;
+    overflow-x: auto;
+    white-space: pre;
+    line-height: 1.5;
+  }
+
+  /* ── Alberta example ── */
+  .alberta {
+    border-left: 4px solid #9ca3af;
+    background: #f9fafb;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.93rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 0.65rem;
+  }
+
+  /* ── Horizontal rule ── */
+  hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+
+  /* ══════════════════════════════════════
+     MARGIN CALLOUTS
+  ══════════════════════════════════════ */
+
+  .vocab-callout {
+    border-left: 4px solid #06b6d4;
+    background: #f0f9ff;
+    padding: 0.4rem 0.7rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0 4px 4px 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+  .vocab-callout .pin { color: #0891b2; margin-right: 0.2rem; }
+  .vocab-callout strong { font-weight: 700; }
+
+  .misconception {
+    border-left: 5px solid #dc2626;
+    background: #fef2f2;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0 5px 5px 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+  .misconception-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: #b91c1c;
+    margin-bottom: 0.3rem;
+  }
+  .misconception .wrong-idea {
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 0.35rem;
+    color: #7f1d1d;
+    font-size: 0.83rem;
+  }
+  .misconception p { margin-bottom: 0.3rem; font-family: system-ui, sans-serif; }
+  .misconception p:last-child { margin-bottom: 0; }
+
+  /* ── Key Ideas ── */
+  .key-ideas {
+    border-radius: 0 5px 5px 0;
+    padding: 0.9rem 1.1rem;
+    margin-top: 0.5rem;
+  }
+  .key-ideas h4 { font-family: system-ui, sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 0.5rem; }
+  .key-ideas ul { padding-left: 1.2rem; }
+  .key-ideas li { margin-bottom: 0.25rem; font-size: 0.93rem; }
+
+  .matter  .key-ideas { background: var(--matter-light);  border-left: 5px solid var(--matter);  }
+  .matter  .key-ideas h4 { color: var(--matter); }
+  .living  .key-ideas { background: var(--living-light);  border-left: 5px solid var(--living);  }
+  .living  .key-ideas h4 { color: var(--living); }
+  .forces  .key-ideas { background: var(--forces-light);  border-left: 5px solid var(--forces);  }
+  .forces  .key-ideas h4 { color: var(--forces); }
+  .climate .key-ideas { background: var(--climate-light); border-left: 5px solid var(--climate); }
+  .climate .key-ideas h4 { color: var(--climate); }
+  .energy  .key-ideas { background: var(--energy-light);  border-left: 5px solid var(--energy);  }
+  .energy  .key-ideas h4 { color: var(--energy); }
+  .space   .key-ideas { background: var(--space-light);   border-left: 5px solid var(--space);   }
+  .space   .key-ideas h4 { color: var(--space); }
+
+  /* ── Footer ── */
+  .doc-footer { font-family: system-ui, sans-serif; font-size: 0.8rem; color: var(--muted); text-align: center; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 3rem; }
+
+  /* ── Print ── */
+  @media print {
+    body { font-size: 11pt; padding: 1.5cm; max-width: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-grid { grid-template-columns: 1fr 210px; column-gap: 1.5rem; }
+    .unit { page-break-before: always; }
+    .unit:first-of-type { page-break-before: avoid; }
+    pre { white-space: pre-wrap; font-size: 8pt; }
+    a { text-decoration: none; color: inherit; }
+    .misconception, .vocab-callout, .big-ideas, .alberta, .key-ideas, .unit-header {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <h1>Sciences 6 — Notes de l'année</h1>
+  <div class="subtitle">Programme d'études de l'Alberta 2023 | Toutes les unités</div>
+  <div class="name-line">Nom : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+<p class="doc-intro">Ces notes couvrent les six unités de Sciences 6. Garde ce livret toute l'année. Chaque unité utilise un exemple albertain réel.</p>
+
+
+<!-- ════════════════════════════════════════
+     UNITÉ 1 : LA MATIÈRE
+════════════════════════════════════════ -->
+<div class="unit matter">
+  <div class="unit-header">
+    <h2>Unité 1 : La matière</h2>
+    <div class="guiding">Question directrice : Comment les particules changent-elles quand la matière est chauffée ou refroidie ?</div>
+  </div>
+
+  <div class="big-ideas">
+    <h4>Grandes idées</h4>
+    <ul>
+      <li>Toute la matière est faite de petites particules. Les particules bougent toujours.</li>
+      <li>La chaleur fait bouger les particules plus vite. Elles s'écartent.</li>
+      <li>La matière peut changer d'état. Les particules restent les mêmes — seul leur arrangement change.</li>
+      <li>L'eau est un cas spécial. La glace est moins dense que l'eau liquide.</li>
+    </ul>
+  </div>
+
+  <div class="vocab-section">
+    <h4>Vocabulaire clé</h4>
+    <table>
+      <tr><th>Mot</th><th>Ce que ça veut dire</th><th>Exemple</th></tr>
+      <tr><td><strong>Matière</strong></td><td>Tout ce qui a une masse et un volume</td><td>Rails d'acier près de Lethbridge</td></tr>
+      <tr><td><strong>Particule</strong></td><td>Petite unité qui forme la matière</td><td>Trop petite pour voir — des millions dans un rail</td></tr>
+      <tr><td><strong>Température</strong></td><td>Mesure de la vitesse de mouvement des particules</td><td>−30°C en hiver à Lethbridge</td></tr>
+      <tr><td><strong>Changement d'état</strong></td><td>La matière passe d'un état à un autre</td><td>La glace fond sur les rails au printemps</td></tr>
+      <tr><td><strong>Fusion</strong></td><td>Un solide devient liquide (chauffage)</td><td>La glace sur le joint de rail fond en avril</td></tr>
+      <tr><td><strong>Évaporation</strong></td><td>Un liquide devient gaz (chauffage)</td><td>Les flaques sur le rail sèchent</td></tr>
+      <tr><td><strong>Dilatation</strong></td><td>Le matériau grossit quand les particules s'écartent</td><td>Le rail s'allonge par la chaleur en été</td></tr>
+      <tr><td><strong>Contraction</strong></td><td>Le matériau rétrécit quand les particules se rapprochent</td><td>Le rail raccourcit par le froid en hiver</td></tr>
+      <tr><td><strong>Densité</strong></td><td>Masse dans un volume donné</td><td>La glace est moins dense que l'eau liquide</td></tr>
+      <tr><td><strong>Joint de dilatation</strong></td><td>Espace laissé pour que le matériau puisse se dilater</td><td>Espaces entre les sections de rail</td></tr>
+      <tr><td><strong>Limite élastique</strong></td><td>Force maximale avant un changement de forme permanent</td><td>L'acier du rail se plie si la force est trop grande</td></tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <div class="page-grid">
+
+    <h3 class="section-h3 full-span">Le modèle particulaire</h3>
+
+    <div class="main-col">
+      <p><strong>La matière</strong>, c'est tout ce qui a une masse et un volume.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>matière</strong> — a une masse, prend de l'espace</div>
+    </div>
+
+    <div class="main-col">
+      <p>Le <strong>modèle particulaire</strong> dit quatre choses. Toute la matière est faite de petites <strong>particules</strong>. Il y a de l'espace entre les particules. Les particules bougent toujours. La température change leur vitesse.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>modèle particulaire</strong> — explique comment la matière se comporte</div>
+    </div>
+
+    <div class="main-col">
+      <p>Quand la matière se chauffe, les particules bougent plus vite. Elles s'écartent. Le matériau prend plus d'espace. Quand la matière refroidit, les particules ralentissent. Elles se rapprochent. Le matériau rétrécit.</p>
+<pre>PARTICULES FROIDES          PARTICULES CHAUDES
+
+  o  o  o                   o       o
+   o  o  o                      o
+  o  o  o                   o       o
+
+Lentes, rapprochées         Rapides, espacées</pre>
+    </div>
+    <div class="margin-col"></div>
+
+    <div class="main-col">
+      <p class="alberta"><strong>Exemple albertain :</strong> Les rails d'acier près de Lethbridge s'allongent par la chaleur en été. Ils raccourcissent par le froid en janvier. Les ingénieurs laissent des espaces entre les sections de rail — appelés <strong>joints de dilatation</strong> — pour que l'acier puisse se dilater sans se déformer.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>joint de dilatation</strong> — espace qui permet au matériau de se dilater</div>
+      <div class="misconception">
+        <div class="misconception-label">Idée fausse</div>
+        <p class="wrong-idea">« Une particule est juste un petit morceau d'acier. »</p>
+        <p>Une particule n'est pas une mini version du matériau. Il y a de l'espace vide entre les particules. C'est cet espace qui permet à la matière de se dilater et de se contracter.</p>
+      </div>
+    </div>
+
+    <h3 class="section-h3 full-span">Les états de la matière</h3>
+
+    <div class="main-col">
+      <p>La matière a trois états : solide, liquide et gaz.</p>
+      <table>
+        <tr><th>État</th><th>Espacement des particules</th><th>Mouvement des particules</th><th>Forme</th><th>Volume</th></tr>
+        <tr><td><strong>Solide</strong></td><td>Très serrées</td><td>Vibrent sur place</td><td>Fixe</td><td>Fixe</td></tr>
+        <tr><td><strong>Liquide</strong></td><td>Proches, non fixées</td><td>Glissent les unes sur les autres</td><td>Prend la forme du contenant</td><td>Fixe</td></tr>
+        <tr><td><strong>Gaz</strong></td><td>Très éloignées</td><td>Rapides et désordonnées</td><td>Remplit le contenant</td><td>Change</td></tr>
+      </table>
+<pre>SOLIDE           LIQUIDE          GAZ
+
+|o|o|o|         o  o  o         o         o
+|o|o|o|        o    o  o              o
+|o|o|o|         o  o  o          o         o</pre>
+      <p>Les six <strong>changements d'état</strong> sont :</p>
+<pre>SOLIDE ──fusion──→ LIQUIDE ──évaporation──→ GAZ
+       ←─congélation──     ←─condensation──
+
+SOLIDE ←─déposition──────────────────────── GAZ
+       ──sublimation────────────────────────→</pre>
+      <p>Quand la matière change d'état, la <strong>masse est conservée</strong>. Le nombre de particules ne change pas. Seul leur arrangement change.</p>
+      <p>100 g de glace fond → encore 100 g d'eau liquide.</p>
+    </div>
+    <div class="margin-col"></div>
+
+    <h3 class="section-h3 full-span">Dilatation, contraction et l'anomalie de l'eau</h3>
+
+    <div class="main-col">
+      <p>La règle générale : la chaleur cause la <strong>dilatation</strong>. Le froid cause la <strong>contraction</strong>.</p>
+      <p>C'est pourquoi les sections de rail à Lethbridge ont de petits espaces. En été, l'acier se dilate et les espaces se ferment. En hiver, l'acier se contracte et les espaces s'ouvrent. Sans espaces, l'acier qui se dilate se déformerait ou craquellerait le rail.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>dilatation</strong> — le matériau prend plus d'espace</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>contraction</strong> — le matériau prend moins d'espace</div>
+    </div>
+
+    <div class="main-col">
+      <p>L'eau brise la règle générale. C'est <strong>l'anomalie de l'eau</strong>.</p>
+      <p>La plupart des solides sont plus denses que leur forme liquide. La glace est moins dense que l'eau liquide. C'est pourquoi la glace flotte. Quand l'eau gèle, les particules forment une structure cristalline hexagonale. Cette structure pousse les particules un peu plus loin — alors la glace prend plus d'espace, pas moins.</p>
+<pre>EAU LIQUIDE                 GLACE
+  o  o  o                o       o
+o    o  o             o     o     o
+  o  o                   o       o
+                      (hexagonal — PLUS d'espace)
+
+Densité : PLUS ÉLEVÉE       Densité : PLUS FAIBLE → la glace flotte</pre>
+      <p>Parce que la glace flotte, elle forme une couche à la surface des lacs en hiver. L'eau liquide reste en dessous. Les poissons survivent dans la couche liquide en dessous.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>anomalie de l'eau</strong> — la glace est moins dense que l'eau liquide</div>
+      <div class="misconception">
+        <div class="misconception-label">Idée fausse</div>
+        <p class="wrong-idea">« Les solides sont toujours plus denses que les liquides. »</p>
+        <p>Pour la plupart des matériaux, c'est vrai. L'eau est la grande exception. La glace est moins dense que l'eau liquide. La glace flotte. C'est important pour chaque lac et rivière en Alberta chaque hiver.</p>
+      </div>
+    </div>
+
+    <div class="key-ideas full-span">
+      <h4>Idées clés — La matière</h4>
+      <ul>
+        <li>Toute la matière est faite de particules. Les particules bougent toujours. La chaleur les fait bouger plus vite.</li>
+        <li>Les solides ont une forme fixe. Les liquides coulent. Les gaz remplissent leur contenant.</li>
+        <li>Les changements d'état sont des changements dans l'arrangement des particules. La masse est toujours conservée.</li>
+        <li>La plupart des matériaux se dilatent quand ils chauffent et se contractent quand ils refroidissent.</li>
+        <li>L'eau est une exception. La glace est moins dense que l'eau liquide, alors la glace flotte.</li>
+      </ul>
+    </div>
+
+  </div><!-- end page-grid -->
+</div><!-- end unit matter -->
+
+
+<!-- ════════════════════════════════════════
+     UNITÉ 2 : LES SYSTÈMES VIVANTS
+════════════════════════════════════════ -->
+<div class="unit living">
+  <div class="unit-header">
+    <h2>Unité 2 : Les systèmes vivants</h2>
+    <div class="guiding">Question directrice : Comment les parties vivantes et non vivantes d'un écosystème dépendent-elles les unes des autres ?</div>
+  </div>
+
+  <div class="big-ideas">
+    <h4>Grandes idées</h4>
+    <ul>
+      <li>Chaque écosystème a des parties biotiques (vivantes) et abiotiques (non vivantes). Les deux comptent.</li>
+      <li>Les plantes fabriquent leur propre nourriture par la photosynthèse. Elles ne tirent pas leur nourriture du sol.</li>
+      <li>L'énergie circule des producteurs aux consommateurs dans les réseaux alimentaires.</li>
+      <li>Chaque organisme dans un écosystème dépend des autres. Enlève une partie et tout le système change.</li>
+    </ul>
+  </div>
+
+  <div class="vocab-section">
+    <h4>Vocabulaire clé</h4>
+    <table>
+      <tr><th>Mot</th><th>Ce que ça veut dire</th><th>Exemple</th></tr>
+      <tr><td><strong>Écosystème</strong></td><td>Tous les êtres vivants et non vivants d'une région, en interaction</td><td>Forêt boréale près de Fort McMurray</td></tr>
+      <tr><td><strong>Biotique</strong></td><td>Partie vivante d'un écosystème</td><td>Épinette noire, orignal, champignons</td></tr>
+      <tr><td><strong>Abiotique</strong></td><td>Partie non vivante d'un écosystème</td><td>Lumière solaire, température, eau, sol</td></tr>
+      <tr><td><strong>Photosynthèse</strong></td><td>Les plantes fabriquent de la nourriture avec lumière, eau et CO₂</td><td>Les épinettes dans la forêt boréale</td></tr>
+      <tr><td><strong>Chlorophylle</strong></td><td>Substance verte qui capte la lumière</td><td>Ce qui rend les aiguilles d'épinette vertes</td></tr>
+      <tr><td><strong>Glucose</strong></td><td>Sucre fabriqué par photosynthèse — nourriture de la plante</td><td>Stocké dans les racines et les graines</td></tr>
+      <tr><td><strong>Producteur</strong></td><td>Fabrique sa propre nourriture</td><td>L'épinette noire</td></tr>
+      <tr><td><strong>Consommateur</strong></td><td>Mange des producteurs ou d'autres consommateurs</td><td>Orignal, loup, faucon</td></tr>
+      <tr><td><strong>Décomposeur</strong></td><td>Décompose la matière morte</td><td>Champignons sur un tronc d'épinette tombé</td></tr>
+      <tr><td><strong>Réseau alimentaire</strong></td><td>Réseau de relations alimentaires</td><td>Épinette → scarabée → pic-bois → faucon</td></tr>
+      <tr><td><strong>Interdépendance</strong></td><td>Chaque organisme dépend des autres</td><td>L'épinette a besoin des insectes; les insectes ont besoin de l'épinette</td></tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <div class="page-grid">
+
+    <h3 class="section-h3 full-span">Biotique et abiotique — Qu'est-ce qui forme un écosystème ?</h3>
+
+    <div class="main-col">
+      <p>Un <strong>écosystème</strong> comprend tous les êtres vivants et toutes les choses non vivantes d'une région — et toutes les façons dont ils interagissent.</p>
+      <p><strong>Biotique</strong> veut dire vivant. <strong>Abiotique</strong> veut dire non vivant.</p>
+      <table>
+        <tr><th>Biotique (vivant)</th><th>Abiotique (non vivant)</th></tr>
+        <tr><td>Épinettes noires</td><td>Lumière solaire</td></tr>
+        <tr><td>Orignaux, loups, castors</td><td>Température</td></tr>
+        <tr><td>Insectes, oiseaux</td><td>Eau et précipitations</td></tr>
+        <tr><td>Champignons, bactéries</td><td>Type de sol et nutriments</td></tr>
+      </table>
+      <p>Dans la forêt boréale près de Fort McMurray, la lumière solaire fait marcher la photosynthèse dans les épinettes. Les hivers froids limitent quels animaux peuvent survivre toute l'année. Le sol garde les nutriments retournés par les décomposeurs. Chaque facteur abiotique détermine quels organismes peuvent y vivre.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>écosystème</strong> — vivants + non vivants, en interaction</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>biotique</strong> — tout ce qui est vivant ou récemment vivant</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>abiotique</strong> — conditions physiques non vivantes</div>
+    </div>
+
+    <div class="main-col">
+      <p>Les <strong>décomposeurs</strong> décomposent la matière morte. Ils retournent les nutriments au sol.</p>
+      <p>Sans décomposeurs, les organismes morts s'accumulent. Les nutriments restent bloqués dans le tissu mort. Les producteurs n'auraient rien pour grandir.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>décomposeur</strong> — décompose la matière morte en nutriments</div>
+    </div>
+
+    <h3 class="section-h3 full-span">La photosynthèse — D'où vient la nourriture d'une plante ?</h3>
+
+    <div class="main-col">
+      <p>Les plantes ne tirent pas leur nourriture du sol. Le sol fournit des minéraux — pas de la nourriture. Les plantes <strong>fabriquent</strong> leur propre nourriture. Ce processus s'appelle la <strong>photosynthèse</strong>.</p>
+      <p><strong>L'équation de la photosynthèse :</strong></p>
+<pre>         Énergie lumineuse
+              ↓
+  CO₂    +   H₂O  ────────────→  Glucose  +  Oxygène
+(de l'air)  (des racines)       (nourriture)  (libéré)</pre>
+      <p>La <strong>chlorophylle</strong> dans les feuilles capte la lumière.</p>
+      <p>Le <strong>glucose</strong> est la nourriture que la plante fabrique.</p>
+      <p>Le glucose fournit de l'énergie pour la croissance. Le glucose extra est stocké comme amidon dans les racines, les graines et les fruits. Les épinettes noires près de Fort McMurray fabriquent leur nourriture à partir du CO₂ dans l'air — pas du sol en dessous.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>photosynthèse</strong> — les plantes fabriquent de la nourriture avec la lumière</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>chlorophylle</strong> — pigment vert qui capte la lumière</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>glucose</strong> — sucre fabriqué par photosynthèse</div>
+      <div class="misconception">
+        <div class="misconception-label">Idée fausse</div>
+        <p class="wrong-idea">« Les plantes tirent leur nourriture du sol par leurs racines. »</p>
+        <p>Le sol fournit des minéraux. Les minéraux ne sont pas de la nourriture. Les plantes fabriquent du glucose avec la lumière, l'eau et le dioxyde de carbone. Presque toute la masse d'un arbre vient du CO₂ dans l'air — pas du sol.</p>
+      </div>
+    </div>
+
+    <h3 class="section-h3 full-span">Les réseaux alimentaires et l'interdépendance</h3>
+
+    <div class="main-col">
+      <p>Une <strong>chaîne alimentaire</strong> montre un seul chemin du flux d'énergie. Un <strong>réseau alimentaire</strong> montre le réseau complet. Chaque flèche veut dire « est mangé par » — l'énergie circule dans le sens de la flèche.</p>
+<pre>      [Soleil]
+        ↓
+  [Épinette noire / Arbustes]
+       ↙        ↘
+  [Orignal]  [Scarabées / Insectes]
+     ↓               ↓
+  [Loup]          [Pic-bois]
+                      ↓
+                  [Faucon]
+                      ↓
+              [Décomposeurs (champignons)]</pre>
+      <p>Les écosystèmes sont des systèmes. Chaque partie est liée à toutes les autres. Dans la forêt boréale, si la population d'orignaux baissait beaucoup, les loups suivraient. La végétation changerait sans le broutage des orignaux. Les insectes, les oiseaux et les organismes du sol changeraient tous en réponse.</p>
+      <p>Les animaux dépendent des plantes pour la nourriture, l'oxygène et l'abri. Les plantes dépendent des animaux pour la pollinisation, la dispersion des graines, le CO₂ et la décomposition. <strong>L'interdépendance</strong> veut dire qu'aucun ne peut survivre sans l'autre.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>réseau alimentaire</strong> — réseau complet de qui mange qui</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>interdépendance</strong> — les organismes ont besoin les uns des autres pour survivre</div>
+    </div>
+
+    <div class="key-ideas full-span">
+      <h4>Idées clés — Les systèmes vivants</h4>
+      <ul>
+        <li>Les écosystèmes ont des parties biotiques (vivantes) et abiotiques (non vivantes). Les deux sont essentielles.</li>
+        <li>Les plantes fabriquent leur nourriture par photosynthèse. CO₂ + eau + lumière → glucose + oxygène.</li>
+        <li>Les réseaux alimentaires montrent comment l'énergie circule des producteurs aux consommateurs aux décomposeurs.</li>
+        <li>Enlever une partie d'un écosystème cause des changements dans tout le système.</li>
+        <li>Les décomposeurs sont essentiels — ils retournent les nutriments au sol pour que les producteurs les utilisent.</li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- end unit living -->
+
+
+<!-- ════════════════════════════════════════
+     UNITÉ 3 : LES FORCES
+════════════════════════════════════════ -->
+<div class="unit forces">
+  <div class="unit-header">
+    <h2>Unité 3 : Les forces</h2>
+    <div class="guiding">Question directrice : Comment les forces agissent-elles sur les structures, et que se passe-t-il aux matériaux quand une force est appliquée ?</div>
+  </div>
+
+  <div class="big-ideas">
+    <h4>Grandes idées</h4>
+    <ul>
+      <li>Une force est une poussée ou une traction. Elle a une amplitude et une direction.</li>
+      <li>Les forces peuvent être externes (de l'extérieur) ou internes (qui s'accumulent dans le matériau).</li>
+      <li>Les matériaux répondent aux forces par déformation élastique ou déformation plastique.</li>
+      <li>Troisième loi de Newton : chaque force d'action a une force de réaction égale et opposée sur un objet différent.</li>
+    </ul>
+  </div>
+
+  <div class="vocab-section">
+    <h4>Vocabulaire clé</h4>
+    <table>
+      <tr><th>Mot</th><th>Ce que ça veut dire</th><th>Exemple</th></tr>
+      <tr><td><strong>Force</strong></td><td>Poussée ou traction sur un objet</td><td>Charge sur le tablier du pont de Riverside</td></tr>
+      <tr><td><strong>Newton (N)</strong></td><td>Unité de force</td><td>Un manuel scolaire pèse environ 10 N</td></tr>
+      <tr><td><strong>Force appliquée</strong></td><td>Force exercée directement par une personne ou un objet</td><td>Élèves marchant sur le pont</td></tr>
+      <tr><td><strong>Friction</strong></td><td>Force qui s'oppose au mouvement entre deux surfaces</td><td>Les bottes agrippent les planches du pont</td></tr>
+      <tr><td><strong>Tension</strong></td><td>Force interne d'étirement</td><td>Les câbles du pont sont tirés</td></tr>
+      <tr><td><strong>Compression</strong></td><td>Force interne de compression</td><td>Les poteaux du pont sont écrasés</td></tr>
+      <tr><td><strong>Cisaillement</strong></td><td>Force interne de glissement</td><td>Deux couches glissent l'une sur l'autre</td></tr>
+      <tr><td><strong>Torsion</strong></td><td>Force interne de torsion</td><td>Une rampe qui est tordue</td></tr>
+      <tr><td><strong>Déformation élastique</strong></td><td>La forme revient après que la force est retirée</td><td>Les câbles du pont fléchissent sous la charge</td></tr>
+      <tr><td><strong>Déformation plastique</strong></td><td>La forme reste changée après que la force est retirée</td><td>Une rampe courbée reste courbée</td></tr>
+      <tr><td><strong>Limite élastique</strong></td><td>Force maximale avant que la déformation soit permanente</td><td>Limite du câble d'acier avant étirement permanent</td></tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <div class="page-grid">
+
+    <h3 class="section-h3 full-span">Qu'est-ce qu'une force ?</h3>
+
+    <div class="main-col">
+      <p>Une <strong>force</strong> est une poussée ou une traction. Chaque force a deux propriétés :</p>
+      <ol>
+        <li><strong>L'amplitude</strong> — la grandeur de la force, mesurée en <strong>newtons (N)</strong></li>
+        <li><strong>La direction</strong> — dans quel sens la force agit</li>
+      </ol>
+      <p>On représente les forces par des flèches. Les flèches plus longues représentent des forces plus grandes.</p>
+<pre>  20 N →    [TABLIER DU PONT]    ← 8 N
+
+  Force nette = 12 N vers la droite (les forces en sens opposés se soustraient)</pre>
+      <p class="alberta"><strong>Exemple albertain :</strong> Le pont piétonnier en bois à l'école Riverside reçoit beaucoup de forces à la fois. Les élèves qui marchent dessus exercent une force appliquée vers le bas. La friction entre les bottes et les planches agit horizontalement. La structure doit gérer toutes ces forces en même temps.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>force</strong> — poussée ou traction sur un objet</div>
+    </div>
+
+    <h3 class="section-h3 full-span">Les forces externes et internes</h3>
+
+    <div class="main-col">
+      <p>Les <strong>forces externes</strong> agissent sur un objet de l'extérieur.</p>
+      <table>
+        <tr><th>Force externe</th><th>Direction</th><th>Exemple du pont</th></tr>
+        <tr><td>Force appliquée</td><td>Direction dans laquelle tu pousses ou tires</td><td>Élèves marchant sur le tablier</td></tr>
+        <tr><td>Friction</td><td>En sens inverse du mouvement</td><td>Les bottes agrippent les planches</td></tr>
+        <tr><td>Force élastique</td><td>Revient à la forme originale</td><td>Flexion des câbles du pont sous la charge</td></tr>
+      </table>
+<pre>        ↑ Force normale (les supports du pont poussent vers le haut)
+        |
+Friction ← [TABLIER DU PONT] → Force appliquée (élèves marchant)
+        |
+        ↓ Poids (la gravité tire le tablier vers le bas)</pre>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>force externe</strong> — vient de l'extérieur de l'objet</div>
+    </div>
+
+    <div class="main-col">
+      <p>Les <strong>forces internes</strong> s'accumulent dans le matériau quand des forces externes agissent sur lui.</p>
+      <table>
+        <tr><th>Force interne</th><th>Ce qu'elle fait</th><th>Exemple du pont</th></tr>
+        <tr><td><strong>Tension</strong></td><td>Étire le matériau</td><td>Les câbles de suspension du pont</td></tr>
+        <tr><td><strong>Compression</strong></td><td>Comprime le matériau</td><td>Les poteaux de soutien verticaux</td></tr>
+        <tr><td><strong>Cisaillement</strong></td><td>Fait glisser les couches l'une sur l'autre</td><td>Les boulons reliant les planches</td></tr>
+        <tr><td><strong>Torsion</strong></td><td>Tord le matériau</td><td>Une rampe tordue par un élève</td></tr>
+      </table>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>force interne</strong> — force qui agit dans le matériau</div>
+      <div class="misconception">
+        <div class="misconception-label">Idée fausse</div>
+        <p class="wrong-idea">« La friction n'est pas une vraie force — elle ralentit juste les objets. »</p>
+        <p>La friction est une vraie force. Elle a une direction (en sens inverse du mouvement) et une amplitude (mesurée en newtons). Sur le pont de Riverside, la friction garde les bottes de glisser sur les planches mouillées.</p>
+      </div>
+    </div>
+
+    <h3 class="section-h3 full-span">Élasticité, plasticité et la troisième loi de Newton</h3>
+
+    <div class="main-col">
+      <p>Quand une force agit sur un matériau, le matériau change de forme — c'est la <strong>déformation</strong>.</p>
+      <p><strong>Déformation élastique :</strong> le matériau reprend sa forme d'origine quand la force est retirée. C'est un changement temporaire. Les câbles du pont de Riverside fléchissent quand les élèves marchent dessus — mais reprennent leur forme d'origine quand les élèves partent.</p>
+      <p><strong>Déformation plastique :</strong> le matériau garde sa nouvelle forme. C'est un changement permanent. Si un rail du tablier se plie au-delà de sa <strong>limite élastique</strong>, il reste plié.</p>
+<pre>ÉLASTIQUE : force appliquée → le matériau s'étire → force retirée → revient à la forme originale
+PLASTIQUE : force appliquée → le matériau s'étire → force retirée → reste déformé</pre>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>déformation</strong> — changement de forme dû à une force</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>limite élastique</strong> — force au-delà de laquelle la déformation est permanente</div>
+    </div>
+
+    <div class="main-col">
+      <p><strong>La troisième loi de Newton :</strong> quand un objet pousse sur un autre, le deuxième objet repousse avec une force égale en sens contraire.</p>
+      <table>
+        <tr><th>Situation</th><th>Force d'action</th><th>Force de réaction</th></tr>
+        <tr><td>L'élève marche sur le tablier</td><td>L'élève pousse vers le BAS sur le tablier</td><td>Le tablier pousse vers le HAUT sur l'élève</td></tr>
+        <tr><td>L'élève pousse sur la rampe</td><td>L'élève pousse la rampe vers l'EXTÉRIEUR</td><td>La rampe pousse l'élève vers l'INTÉRIEUR</td></tr>
+        <tr><td>Les bottes poussent sur les planches</td><td>Les bottes poussent les planches vers l'arrière</td><td>Les planches poussent les bottes vers l'avant</td></tr>
+      </table>
+      <p>Les forces d'action et de réaction ne s'annulent pas. Elles agissent sur des objets différents. Le mouvement de chaque objet dépend seulement des forces qui agissent sur lui.</p>
+    </div>
+    <div class="margin-col">
+      <div class="misconception">
+        <div class="misconception-label">Idée fausse</div>
+        <p class="wrong-idea">« Les forces d'action et de réaction s'annulent, donc rien ne bouge. »</p>
+        <p>Elles ne peuvent pas s'annuler. Elles agissent sur des objets différents. Le tablier pousse vers le haut sur l'élève — ça agit seulement sur l'élève. Deux objets séparés, deux effets séparés.</p>
+      </div>
+    </div>
+
+    <div class="key-ideas full-span">
+      <h4>Idées clés — Les forces</h4>
+      <ul>
+        <li>Chaque force a une amplitude (en newtons) et une direction.</li>
+        <li>Les forces externes viennent de l'extérieur. Les forces internes s'accumulent dans le matériau.</li>
+        <li>Les quatre forces internes sont : tension, compression, cisaillement et torsion.</li>
+        <li>La déformation élastique est temporaire. La déformation plastique est permanente.</li>
+        <li>Troisième loi de Newton : les forces d'action et de réaction sont égales, opposées et agissent sur des objets différents.</li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- end unit forces -->
+
+
+<!-- ════════════════════════════════════════
+     UNITÉ 4 : LE CLIMAT
+════════════════════════════════════════ -->
+<div class="unit climate">
+  <div class="unit-header">
+    <h2>Unité 4 : Le climat</h2>
+    <div class="guiding">Question directrice : Qu'est-ce qui cause les changements climatiques, et comment affectent-ils l'Alberta ?</div>
+  </div>
+
+  <div class="big-ideas">
+    <h4>Grandes idées</h4>
+    <ul>
+      <li>La météo est à court terme. Le climat est un pattern à long terme mesuré sur des décennies.</li>
+      <li>L'effet de serre garde la Terre au chaud. Des gaz à effet de serre en excès retiennent plus de chaleur.</li>
+      <li>Les changements climatiques se produisent maintenant en Alberta — ce n'est pas seulement un problème futur.</li>
+      <li>Les scientifiques utilisent beaucoup d'outils pour mesurer le climat. Le savoir écologique traditionnel est une source de données à long terme valide.</li>
+    </ul>
+  </div>
+
+  <div class="vocab-section">
+    <h4>Vocabulaire clé</h4>
+    <table>
+      <tr><th>Mot</th><th>Ce que ça veut dire</th><th>Exemple</th></tr>
+      <tr><td><strong>Météo</strong></td><td>Conditions atmosphériques à un endroit, à un moment</td><td>Pluies fortes à High River, juin 2013</td></tr>
+      <tr><td><strong>Climat</strong></td><td>Pattern de météo à long terme sur des décennies</td><td>La région de la rivière Bow inonde plus souvent</td></tr>
+      <tr><td><strong>Effet de serre</strong></td><td>L'atmosphère retient la chaleur près de la surface de la Terre</td><td>Processus naturel qui garde la Terre au chaud</td></tr>
+      <tr><td><strong>Gaz à effet de serre</strong></td><td>Gaz qui ralentit la fuite de chaleur de la Terre</td><td>CO₂, méthane, vapeur d'eau</td></tr>
+      <tr><td><strong>Combustible fossile</strong></td><td>Carburant formé à partir d'anciens êtres vivants</td><td>Charbon, pétrole, gaz naturel</td></tr>
+      <tr><td><strong>Albédo</strong></td><td>Quantité de lumière solaire qu'une surface réfléchit</td><td>La neige réfléchit 80% ; l'eau sombre 6%</td></tr>
+      <tr><td><strong>Déforestation</strong></td><td>Couper des forêts</td><td>Libère le CO₂ stocké dans l'air</td></tr>
+      <tr><td><strong>Données de substitution</strong></td><td>Preuves climatiques passées tirées de traces physiques</td><td>Carottes de glace, cernes des arbres</td></tr>
+      <tr><td><strong>Savoir écologique traditionnel</strong></td><td>Observations autochtones à long terme des écosystèmes</td><td>Records des aînés sur la débâcle de la rivière Bow</td></tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <div class="page-grid">
+
+    <h3 class="section-h3 full-span">Météo et climat</h3>
+
+    <div class="main-col">
+      <p>La <strong>météo</strong>, c'est l'état de l'atmosphère à un endroit et à un moment précis.</p>
+      <p>Le <strong>climat</strong>, c'est la moyenne de la météo sur au moins 30 ans.</p>
+      <p>Une semaine froide à High River nous renseigne sur la météo. Les données d'inondation de la rivière Bow sur 50 ans nous renseignent sur le climat.</p>
+<pre>COMPARAISON DES ÉCHELLES DE TEMPS
+
+Météo :  |──jour──|──jour──|──jour──|
+         utile pour : « Dois-je prendre un parapluie ? »
+
+Climat : |──10 ans──|──10 ans──|──10 ans──|
+         utile pour : « La rivière Bow déborde-t-elle plus souvent ? »</pre>
+      <p>Les affirmations sur le climat ont besoin de données à long terme. Un seul mois de janvier froid à High River ne nous dit rien sur une tendance climatique de 30 ans.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>météo</strong> — atmosphère en ce moment, à un endroit</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>climat</strong> — pattern moyen sur des décennies</div>
+      <div class="misconception">
+        <div class="misconception-label">Idée fausse</div>
+        <p class="wrong-idea">« Une semaine froide prouve que les changements climatiques ne sont pas réels. »</p>
+        <p>La météo et le climat fonctionnent sur des échelles de temps différentes. Une semaine froide est un seul point de données. Le climat est la moyenne de milliers de points sur des décennies. Une semaine froide dans une tendance au réchauffement à long terme reste une tendance au réchauffement.</p>
+      </div>
+    </div>
+
+    <h3 class="section-h3 full-span">Les systèmes climatiques de la Terre</h3>
+
+    <div class="main-col">
+      <p>Le Soleil fait marcher le climat de la Terre. La lumière solaire atteint la Terre. Une partie est réfléchie vers l'espace. Une partie est absorbée par les terres, les océans et l'atmosphère. L'énergie absorbée réchauffe la surface. La chaleur remonte vers l'espace.</p>
+      <p><strong>L'effet de serre</strong> ralentit la fuite de cette chaleur.</p>
+<pre>L'EFFET DE SERRE
+
+     ☀ LUMIÈRE SOLAIRE ☀
+         ↓↓↓↓
+  ┌─────────────────────────┐
+  │  ATMOSPHÈRE             │ ← Les gaz à effet de serre absorbent
+  │  CO₂, CH₄, vapeur H₂O  │   la chaleur sortante et la renvoient
+  └─────────────────────────┘   vers la Terre
+       ↓↓↓↓         ↑↑↑↑
+  Lumière entrante  Chaleur sortante
+       ↓↓↓↓         ↑↑↑↑
+  ═══════════════════════════
+       SURFACE DE LA TERRE
+  ═══════════════════════════</pre>
+      <p>Sans l'effet de serre naturel, la température moyenne de la Terre serait d'environ −18°C — bien trop froide pour l'eau liquide et la plupart des êtres vivants.</p>
+      <p>Le problème : les activités humaines ajoutent des gaz à effet de serre en excès. Ces gaz retiennent plus de chaleur. Les températures moyennes augmentent.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>effet de serre</strong> — l'atmosphère ralentit la fuite de chaleur de la Terre</div>
+    </div>
+
+    <div class="main-col">
+      <p><strong>L'albédo</strong>, c'est la quantité de lumière solaire qu'une surface réfléchit.</p>
+      <p>La neige fraîche réfléchit environ 80% de la lumière solaire. L'eau sombre des océans réfléchit environ 6%. Quand la glace fond, une surface plus sombre est exposée. Cette surface plus sombre absorbe plus de chaleur. Plus de chaleur fait fondre plus de glace. Ce cycle qui se renforce lui-même s'appelle la <strong>boucle de rétroaction glace-albédo</strong>.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>albédo</strong> — fraction de lumière solaire réfléchie par une surface</div>
+    </div>
+
+    <h3 class="section-h3 full-span">Causes et effets des changements climatiques</h3>
+
+    <div class="main-col">
+      <p>Les <strong>causes naturelles</strong> des changements climatiques comprennent les éruptions volcaniques, les changements dans l'orbite de la Terre et les changements dans l'énergie solaire. Ces causes fonctionnent sur des milliers à des millions d'années.</p>
+      <p>Les <strong>causes humaines</strong> sont maintenant le principal facteur des changements climatiques actuels. Brûler des <strong>combustibles fossiles</strong> libère du CO₂ stocké sous terre depuis des millions d'années — très vite.</p>
+      <p>La <strong>déforestation</strong> libère le CO₂ stocké et enlève des arbres qui auraient absorbé le CO₂ futur. Les niveaux de CO₂ aujourd'hui (~420 ppm) sont plus élevés qu'à n'importe quel moment des 800 000 dernières années.</p>
+      <p><strong>Effets déjà mesurés en Alberta :</strong></p>
+      <table>
+        <tr><th>Changement</th><th>Ce qu'on observe</th></tr>
+        <tr><td>Température moyenne</td><td>Augmentation de ~1,5°C depuis 1950</td></tr>
+        <tr><td>Printemps</td><td>Arrive plus tôt — les rivières dégèlent plus vite</td></tr>
+        <tr><td>Saison des feux de forêt</td><td>Commence plus tôt, finit plus tard</td></tr>
+        <tr><td>Glaciers de montagne</td><td>Diminuent — moins d'eau de fonte l'été pour les rivières</td></tr>
+        <tr><td>Inondations</td><td>High River 2013 — les pluies extrêmes augmentent</td></tr>
+        <tr><td>Routes de glace autochtones</td><td>Moins de semaines de voyage sécuritaire chaque année</td></tr>
+      </table>
+      <p>Le savoir écologique traditionnel (SET) des aînés autochtones couvre souvent de plus longues périodes que les données des instruments. Les aînés le long de la rivière Bow ont documenté le moment de la débâcle de glace printanière à travers les générations — la débâcle se produit maintenant environ deux semaines plus tôt qu'il y a 40 ans. Le SET est une observation systématique à long terme. C'est une source de données scientifiques valide.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>combustible fossile</strong> — carbone ancien stocké sous terre</div>
+    </div>
+
+    <div class="key-ideas full-span">
+      <h4>Idées clés — Le climat</h4>
+      <ul>
+        <li>La météo est à court terme. Le climat est une moyenne sur des décennies. Ils ont besoin de types de preuves différents.</li>
+        <li>L'effet de serre est naturel. Les gaz à effet de serre en excès venant des activités humaines retiennent plus de chaleur.</li>
+        <li>Les causes humaines (combustibles fossiles, déforestation) sont maintenant le principal facteur des changements climatiques actuels.</li>
+        <li>L'Alberta montre des effets mesurables maintenant : températures plus chaudes, saisons de feux plus longues, glaciers qui diminuent, inondations plus extrêmes.</li>
+        <li>Les scientifiques et les gardiens du savoir autochtone recueillent tous les deux des preuves climatiques à long terme.</li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- end unit climate -->
+
+
+<!-- ════════════════════════════════════════
+     UNITÉ 5 : LES RESSOURCES ÉNERGÉTIQUES
+════════════════════════════════════════ -->
+<div class="unit energy">
+  <div class="unit-header">
+    <h2>Unité 5 : Les ressources énergétiques</h2>
+    <div class="guiding">Question directrice : Comment choisissons-nous les ressources énergétiques de façon sage ?</div>
+  </div>
+
+  <div class="big-ideas">
+    <h4>Grandes idées</h4>
+    <ul>
+      <li>Les ressources énergétiques sont renouvelables ou non renouvelables selon la vitesse à laquelle elles se renouvellent.</li>
+      <li>Certaines ressources sont utilisées directement (avant transformation). D'autres doivent être converties d'abord (après transformation).</li>
+      <li>Choisir une ressource énergétique implique cinq facteurs. Aucune ressource n'est parfaite.</li>
+      <li>Renouvelable ne veut pas dire propre. Chaque ressource a des compromis.</li>
+    </ul>
+  </div>
+
+  <div class="vocab-section">
+    <h4>Vocabulaire clé</h4>
+    <table>
+      <tr><th>Mot</th><th>Ce que ça veut dire</th><th>Exemple</th></tr>
+      <tr><td><strong>Ressource énergétique</strong></td><td>Tout ce qu'on utilise pour faire du travail ou générer de l'énergie</td><td>Vent, gaz naturel, solaire</td></tr>
+      <tr><td><strong>Renouvelable</strong></td><td>Se renouvelle naturellement plus vite qu'on l'utilise</td><td>Vent soufflant sur le sud de l'Alberta</td></tr>
+      <tr><td><strong>Non renouvelable</strong></td><td>Ne peut pas être remplacé de notre vivant</td><td>Gaz naturel sous l'Alberta</td></tr>
+      <tr><td><strong>Avant transformation</strong></td><td>Ressource utilisée directement sous sa forme naturelle</td><td>Moulin à vent qui moud du grain</td></tr>
+      <tr><td><strong>Après transformation</strong></td><td>Ressource convertie avant l'utilisation</td><td>Éolienne qui produit de l'électricité</td></tr>
+      <tr><td><strong>Disponibilité</strong></td><td>La ressource est-elle présente en quantités utilisables ?</td><td>Vents forts dans la région de Pincher Creek</td></tr>
+      <tr><td><strong>Impact social</strong></td><td>Comment l'utilisation affecte les gens et les communautés ?</td><td>Emplois créés par la construction d'un parc éolien</td></tr>
+      <tr><td><strong>Impact économique</strong></td><td>Combien ça coûte ?</td><td>Coût d'installation élevé pour le solaire; faibles coûts de fonctionnement</td></tr>
+      <tr><td><strong>Impact environnemental</strong></td><td>Comment l'utilisation affecte l'environnement ?</td><td>CO₂ du gaz naturel; utilisation des terres pour le vent</td></tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <div class="page-grid">
+
+    <h3 class="section-h3 full-span">Les ressources renouvelables et non renouvelables</h3>
+
+    <div class="main-col">
+      <p>Une <strong>ressource énergétique</strong>, c'est tout ce qu'on utilise pour faire du travail, produire de la chaleur ou générer de l'électricité.</p>
+      <p>Les ressources <strong>renouvelables</strong> se renouvellent naturellement. Elles ne s'épuisent pas.</p>
+      <p>Les ressources <strong>non renouvelables</strong> ont mis des millions d'années à se former. Une fois utilisées, elles sont parties.</p>
+      <table>
+        <tr><th>Renouvelable</th><th>Non renouvelable</th></tr>
+        <tr><td>Vent</td><td>Charbon</td></tr>
+        <tr><td>Solaire</td><td>Pétrole</td></tr>
+        <tr><td>Hydroélectrique (eau en mouvement)</td><td>Gaz naturel</td></tr>
+        <tr><td>Biomasse (matières végétales/animales)</td><td>Uranium</td></tr>
+      </table>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>ressource énergétique</strong> — source d'énergie utilisable</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>renouvelable</strong> — la nature la remplace assez vite</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>non renouvelable</strong> — ne peut pas être remplacé de notre vivant</div>
+      <div class="misconception">
+        <div class="misconception-label">Idée fausse</div>
+        <p class="wrong-idea">« Renouvelable = propre. »</p>
+        <p>Renouvelable veut dire que ça ne s'épuisera pas. Ça ne veut pas dire sans danger. Les grands barrages inondent des écosystèmes. Les éoliennes ont besoin de terres et affectent les oiseaux migrateurs. La fabrication des panneaux solaires utilise des matériaux toxiques. Renouvelable et propre sont des idées séparées.</p>
+      </div>
+    </div>
+
+    <h3 class="section-h3 full-span">Avant et après transformation</h3>
+
+    <div class="main-col">
+      <p>Certaines ressources sont utilisées <strong>avant transformation</strong> — directement sous leur forme naturelle. D'autres sont utilisées <strong>après transformation</strong> — converties en une autre forme d'abord. Ça n'a rien à voir avec renouvelable ou non renouvelable.</p>
+      <table>
+        <tr><th>Ressource</th><th>Avant transformation</th><th>Après transformation</th></tr>
+        <tr><td>Vent</td><td>Le moulin à vent moud le grain directement avec le vent</td><td>L'éolienne convertit le vent en électricité</td></tr>
+        <tr><td>Solaire</td><td>Une fenêtre orientée au sud chauffe une pièce directement</td><td>Une cellule photovoltaïque convertit la lumière en électricité</td></tr>
+        <tr><td>Bois</td><td>Brûler des bûches chauffe une pièce</td><td>Le bois transformé en charbon brûle plus chaud</td></tr>
+        <tr><td>Pétrole brut</td><td>Non utilisé directement</td><td>Raffiné en essence, diesel, carburant</td></tr>
+      </table>
+    </div>
+    <div class="margin-col"></div>
+
+    <h3 class="section-h3 full-span">Choisir les ressources énergétiques — Cinq facteurs</h3>
+
+    <div class="main-col">
+      <p>Choisir une ressource énergétique demande de peser <strong>cinq facteurs</strong> :</p>
+      <ol>
+        <li><strong>Disponibilité</strong> — La ressource est-elle présente en quantités utilisables, là où et quand on en a besoin ?</li>
+        <li><strong>Impact social</strong> — Comment l'utilisation affecte-t-elle les gens, les emplois et les communautés ?</li>
+        <li><strong>Impact économique</strong> — Combien ça coûte à construire, entretenir et utiliser ?</li>
+        <li><strong>Impact environnemental</strong> — Comment affecte-t-elle l'air, les terres, l'eau et la faune ?</li>
+        <li><strong>Gestion responsable</strong> — Sera-t-elle encore disponible et abordable dans 50 ans ?</li>
+      </ol>
+      <table>
+        <tr><th>Facteur</th><th>Gaz naturel</th><th>Vent</th><th>Solaire</th></tr>
+        <tr><td>Disponibilité</td><td>Un pipeline relie déjà la ville</td><td>Vents forts toute l'année</td><td>Bon soleil en été; lumière limitée en hiver</td></tr>
+        <tr><td>Impact social</td><td>Emplois existants; quelques inquiétudes sur la qualité de l'air</td><td>Nouveaux emplois; un peu de bruit près des éoliennes</td><td>Peu de perturbation; silencieux</td></tr>
+        <tr><td>Impact économique</td><td>Faible coût d'installation; coûts de carburant en hausse</td><td>Coût d'installation élevé; coûts de fonctionnement très faibles</td><td>Coût d'installation élevé; coûts de fonctionnement très faibles</td></tr>
+        <tr><td>Impact environnemental</td><td>Émissions de CO₂ et de méthane</td><td>Utilisation des terres; préoccupation pour les oiseaux migrateurs</td><td>La fabrication des panneaux utilise des matériaux toxiques</td></tr>
+        <tr><td>Gestion responsable</td><td>Non renouvelable — les réserves diminueront</td><td>Renouvelable indéfiniment</td><td>Renouvelable indéfiniment</td></tr>
+      </table>
+      <p>Aucune option n'est parfaite. Chaque choix implique des compromis. La ville doit peser les cinq facteurs en utilisant des preuves.</p>
+    </div>
+    <div class="margin-col"></div>
+
+    <div class="key-ideas full-span">
+      <h4>Idées clés — Les ressources énergétiques</h4>
+      <ul>
+        <li>Les ressources renouvelables se renouvellent naturellement. Les ressources non renouvelables ne peuvent pas être remplacées de notre vivant.</li>
+        <li>Les ressources peuvent être utilisées avant transformation (directement) ou après transformation (converties d'abord).</li>
+        <li>Cinq facteurs guident les décisions énergétiques : disponibilité, impact social, impact économique, impact environnemental et gestion responsable.</li>
+        <li>Aucune ressource n'est parfaite. Chaque choix implique des compromis.</li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- end unit energy -->
+
+
+<!-- ════════════════════════════════════════
+     UNITÉ 6 : L'ESPACE
+════════════════════════════════════════ -->
+<div class="unit space">
+  <div class="unit-header">
+    <h2>Unité 6 : L'espace</h2>
+    <div class="guiding">Question directrice : De quelles façons peut-on explorer le système solaire ?</div>
+  </div>
+
+  <div class="big-ideas">
+    <h4>Grandes idées</h4>
+    <ul>
+      <li>Le système solaire contient de nombreux types d'objets. Les étoiles émettent de la lumière. Les planètes et les lunes la réfléchissent.</li>
+      <li>Le système solaire est presque entièrement de l'espace vide. Les diagrammes des manuels ne sont pas à l'échelle.</li>
+      <li>Différents outils d'exploration répondent à différentes questions. Aucun outil ne fait tout.</li>
+      <li>La science met à jour ses classifications quand de nouvelles preuves arrivent. La reclassification de Pluton en est un exemple.</li>
+    </ul>
+  </div>
+
+  <div class="vocab-section">
+    <h4>Vocabulaire clé</h4>
+    <table>
+      <tr><th>Mot</th><th>Ce que ça veut dire</th><th>Exemple</th></tr>
+      <tr><td><strong>Étoile</strong></td><td>Grand corps de gaz qui produit sa propre lumière</td><td>Le Soleil</td></tr>
+      <tr><td><strong>Planète</strong></td><td>Grand corps qui orbite le Soleil et dégage son orbite</td><td>Terre, Jupiter</td></tr>
+      <tr><td><strong>Planète naine</strong></td><td>Orbite le Soleil; ronde; ne dégage PAS son orbite</td><td>Pluton</td></tr>
+      <tr><td><strong>Lune</strong></td><td>Satellite naturel qui orbite une planète</td><td>La Lune de la Terre; Titan (Saturne)</td></tr>
+      <tr><td><strong>Astéroïde</strong></td><td>Corps rocheux plus petit qu'une planète</td><td>Objets dans la ceinture d'astéroïdes</td></tr>
+      <tr><td><strong>Comète</strong></td><td>Corps glacé avec une longue orbite elliptique</td><td>Développe une queue près du Soleil</td></tr>
+      <tr><td><strong>Émettre</strong></td><td>Produire et envoyer de la lumière</td><td>Le Soleil émet de la lumière</td></tr>
+      <tr><td><strong>Réfléchir</strong></td><td>Renvoyer la lumière d'une autre source</td><td>Les planètes réfléchissent la lumière solaire</td></tr>
+      <tr><td><strong>Satellite naturel</strong></td><td>Corps qui orbite un autre corps — formé naturellement</td><td>La Lune de la Terre</td></tr>
+      <tr><td><strong>Satellite artificiel</strong></td><td>Objet construit par des humains et placé en orbite</td><td>Ex-Alta 1 (Université de l'Alberta)</td></tr>
+      <tr><td><strong>Microgravité</strong></td><td>Quasi-apesanteur ressentie en orbite</td><td>Les astronautes de l'ISS flottent</td></tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <div class="page-grid">
+
+    <h3 class="section-h3 full-span">Les objets du système solaire et l'échelle</h3>
+
+    <div class="main-col">
+      <p>Le système solaire, c'est le Soleil et tout ce qui l'orbite.</p>
+      <p><strong>Les huit planètes (dans l'ordre depuis le Soleil) :</strong></p>
+<pre>Mercure → Vénus → Terre → Mars → Jupiter → Saturne → Uranus → Neptune
+
+Moyen mnémotechnique : Mon Vieux Tu M'as Jeté Sur Une Navette</pre>
+      <p>Les planètes intérieures (Mercure–Mars) sont petites et rocheuses. Les planètes extérieures (Jupiter–Neptune) sont grandes et faites surtout de gaz.</p>
+      <table>
+        <tr><th>Objet</th><th>Émet ou réfléchit la lumière ?</th><th>Caractéristique principale</th></tr>
+        <tr><td>Étoile (le Soleil)</td><td>ÉMET</td><td>Produit de la lumière par fusion nucléaire</td></tr>
+        <tr><td>Planète</td><td>RÉFLÉCHIT</td><td>Réfléchit la lumière solaire — ne produit pas de lumière</td></tr>
+        <tr><td>Planète naine (Pluton)</td><td>RÉFLÉCHIT</td><td>Ronde, orbite le Soleil, ne dégage pas son orbite</td></tr>
+        <tr><td>Lune</td><td>RÉFLÉCHIT</td><td>Satellite naturel d'une planète</td></tr>
+        <tr><td>Astéroïde</td><td>RÉFLÉCHIT</td><td>Rocheux; la plupart orbitent entre Mars et Jupiter</td></tr>
+        <tr><td>Comète</td><td>RÉFLÉCHIT</td><td>Développe une queue lumineuse près du Soleil</td></tr>
+      </table>
+      <p>Le <strong>Soleil émet</strong> de la lumière. Tout le reste la <strong>réfléchit</strong>. Quand tu vois Vénus dans le ciel de nuit, tu vois de la lumière solaire réfléchie — pas de la lumière que Vénus produit elle-même.</p>
+      <p class="alberta"><strong>Échelle :</strong> Si le Soleil était un ballon de basketball (24 cm de diamètre), la Terre serait une épingle à environ 30 mètres. Neptune serait à environ 1 kilomètre. Le système solaire est presque entièrement de l'espace vide.</p>
+    </div>
+    <div class="margin-col">
+      <div class="misconception">
+        <div class="misconception-label">Idée fausse</div>
+        <p class="wrong-idea">« Les planètes produisent leur propre lumière, comme les étoiles. »</p>
+        <p>Les planètes ne produisent pas de lumière. Elles réfléchissent la lumière solaire. Une étoile est assez massive pour la fusion nucléaire — c'est ça qui génère la lumière. Les planètes ne le sont pas. C'est une différence fondamentale entre les étoiles et les planètes.</p>
+      </div>
+    </div>
+
+    <h3 class="section-h3 full-span">Les technologies d'exploration</h3>
+
+    <div class="main-col">
+      <p>On explore l'espace avec différents outils. Chaque outil répond à un type de question différent.</p>
+      <table>
+        <tr><th>Outil</th><th>Ce qu'il fait</th><th>Exemple</th></tr>
+        <tr><td>Télescope optique</td><td>Capte la lumière visible pour observer des objets lointains</td><td>Observatoires au sol</td></tr>
+        <tr><td>Radiotélescope</td><td>Capte les ondes radio — voit à travers la poussière et le gaz</td><td>Étude des galaxies lointaines</td></tr>
+        <tr><td>Télescope spatial</td><td>Au-dessus de l'atmosphère — images plus nettes</td><td>Hubble; James Webb</td></tr>
+        <tr><td>Sonde spatiale</td><td>Se rend directement vers d'autres corps; pas d'équipage</td><td>Voyager 1 (maintenant au-delà du système solaire)</td></tr>
+        <tr><td>Rover</td><td>Se pose et se déplace sur une surface; recueille des échantillons</td><td>Curiosity et Perseverance sur Mars</td></tr>
+        <tr><td>Vaisseau spatial habité</td><td>Transporte des humains; permet un travail direct flexible</td><td>Missions Apollo; ISS</td></tr>
+        <tr><td>Modèle informatique</td><td>Simule des conditions que nous ne pouvons pas visiter</td><td>Modéliser l'intérieur d'une étoile</td></tr>
+      </table>
+      <p class="alberta"><strong>Exemple albertain :</strong> <strong>Ex-Alta 1</strong> est un petit satellite (CubeSat) construit par des étudiants de l'Université de l'Alberta. Il orbite la Terre et recueille des données sur la haute atmosphère — en particulier sur les événements météorologiques spatiaux qui affectent le champ magnétique de la Terre.</p>
+<pre>PIPELINE DE DONNÉES D'EX-ALTA 1
+
+Capteur dans la haute atmosphère
+         ↓
+  Données codées à bord
+         ↓
+Signal radio envoyé à la station au sol
+         ↓
+   Les scientifiques analysent les données</pre>
+    </div>
+    <div class="margin-col"></div>
+
+    <h3 class="section-h3 full-span">Satellites naturels et artificiels, et la vie dans l'espace</h3>
+
+    <div class="main-col">
+      <p>Un <strong>satellite naturel</strong> orbite un autre corps — formé par des processus naturels.</p>
+      <p>Un <strong>satellite artificiel</strong> est construit par des humains et placé en orbite.</p>
+      <table>
+        <tr><th>Type de satellite artificiel</th><th>Ce qu'il fait</th></tr>
+        <tr><td>Satellites GPS</td><td>Déterminent la position grâce aux signaux</td></tr>
+        <tr><td>Satellites météo</td><td>Photographient l'atmosphère; suivent les tempêtes</td></tr>
+        <tr><td>Satellites de communication</td><td>Relaient les signaux de téléphone, internet et télévision</td></tr>
+        <tr><td>Satellites scientifiques</td><td>Recueillent des données de recherche (Ex-Alta 1)</td></tr>
+      </table>
+      <p>Les satellites restent en orbite parce qu'ils se déplacent si vite que quand ils tombent vers la Terre, la surface de la Terre se courbe en dessous d'eux au même rythme. Ils tombent toujours — mais ratent toujours le sol.</p>
+      <table>
+        <tr><th>Défi</th><th>Pourquoi c'est un problème</th></tr>
+        <tr><td>Pas d'air respirable</td><td>L'espace est un vide — tout l'air doit être fourni</td></tr>
+        <tr><td>Rayonnement</td><td>L'atmosphère de la Terre nous protège normalement</td></tr>
+        <tr><td>Microgravité</td><td>Les muscles s'affaiblissent et les os perdent de la densité</td></tr>
+        <tr><td>Variations extrêmes de température</td><td>De +120°C au soleil à −150°C dans l'ombre</td></tr>
+        <tr><td>Nourriture et eau</td><td>Tout doit être transporté ou recyclé à bord</td></tr>
+      </table>
+      <p>Pluton était appelée une planète de 1930 à 2006. Quand les astronomes ont découvert de nombreux objets glacés de taille similaire dans la ceinture de Kuiper, les scientifiques ont mis à jour la définition de planète : elle orbite le Soleil, est ronde, et a dégagé son voisinage orbital. Pluton répond aux deux premières conditions, mais pas à la troisième. Nouvelles preuves → meilleure classification → compréhension plus précise.</p>
+    </div>
+    <div class="margin-col">
+      <div class="vocab-callout"><span class="pin">📌</span><strong>satellite naturel</strong> — formé naturellement, orbite un autre corps</div>
+      <div class="vocab-callout"><span class="pin">📌</span><strong>satellite artificiel</strong> — conçu et lancé par des humains</div>
+      <div class="misconception">
+        <div class="misconception-label">Idée fausse</div>
+        <p class="wrong-idea">« Les scientifiques ont changé les règles pour être injustes envers Pluton. »</p>
+        <p>La reclassification était basée sur de nouvelles preuves — des dizaines d'objets glacés de taille similaire trouvés au-delà de Neptune. La nouvelle définition est plus précise et s'applique de façon cohérente. Mettre à jour une classification quand les preuves le demandent, c'est exactement ce que la science est censée faire.</p>
+      </div>
+    </div>
+
+    <div class="key-ideas full-span">
+      <h4>Idées clés — L'espace</h4>
+      <ul>
+        <li>Les étoiles émettent de la lumière. Les planètes, les lunes et les astéroïdes réfléchissent la lumière du Soleil.</li>
+        <li>Le système solaire est presque entièrement de l'espace vide. Les diagrammes des manuels ne sont pas à l'échelle.</li>
+        <li>Différents outils d'exploration (télescopes, sondes, rovers, modèles) répondent à différentes questions.</li>
+        <li>Ex-Alta 1 est un CubeSat construit par des étudiants qui recueille des données sur la haute atmosphère de la Terre.</li>
+        <li>La science met à jour ses classifications quand les preuves changent. La reclassification de Pluton en est un bon exemple.</li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- end unit space -->
+
+<div class="doc-footer">
+  Fin des notes de l'année — sci6-year-notes-fr-v1 &nbsp;|&nbsp; Programme d'études de l'Alberta 2023 | Sciences 6
+</div>
+
+</body>
+</html>

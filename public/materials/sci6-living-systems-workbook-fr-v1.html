@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sciences 6 — Les systèmes vivants : Cahier d'exercices</title>
+<style>
+  :root { --unit: #059669; --unit-dark: #047857; --unit-light: #ecfdf5; --unit-border: #a7f3d0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.75; color: #1e293b; max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem; background: #fff; }
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2 { font-family: system-ui, sans-serif; font-size: 1rem; font-weight: 700; color: white; background: var(--unit); padding: 0.5rem 1rem; border-radius: 0.35rem; margin: 2.5rem 0 1rem; }
+  h2.stretch { background: #6d28d9; }
+  h2.reflect { background: #475569; }
+  h3 { font-family: system-ui, sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--unit-dark); text-transform: uppercase; letter-spacing: 0.06em; margin: 1.25rem 0 0.35rem; }
+  p { margin-bottom: 0.6rem; }
+  strong { color: #0f172a; }
+  .cover { border-left: 6px solid var(--unit); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; background: var(--unit-light); border-radius: 0 0.5rem 0.5rem 0; }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.2rem 0 0; }
+  .name-line { font-family: system-ui, sans-serif; font-size: 0.85rem; color: #64748b; margin-top: 0.85rem; display: flex; gap: 2rem; }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+  .instructions { background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 0.88rem; color: #475569; }
+  .q-card { border: 1.5px solid #e2e8f0; border-radius: 0.5rem; padding: 1.1rem 1.25rem; margin-bottom: 1.1rem; }
+  .q-header { font-family: system-ui, sans-serif; font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+  .q-num { font-size: 0.9rem; font-weight: 800; color: #0f172a; }
+  .s-num { color: #6d28d9; font-size: 0.9rem; font-weight: 800; }
+  .badge-core { background: #d1fae5; color: #065f46; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 999px; letter-spacing: 0.05em; }
+  .badge-ext { background: #ede9fe; color: #6d28d9; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 999px; letter-spacing: 0.05em; }
+  .t-note { font-family: system-ui, sans-serif; font-size: 0.72rem; color: #94a3b8; font-style: italic; margin-left: auto; }
+  .q-body { font-size: 0.92rem; }
+  .q-body p { margin-bottom: 0.5rem; }
+  .q-body ul, .q-body ol { padding-left: 1.3rem; margin-bottom: 0.5rem; }
+  .q-card.stretch { border-color: #ddd6fe; background: #faf5ff; }
+  .al { display: block; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; margin: 0.35rem 0; width: 100%; }
+  .al-sm { width: 30%; display: inline-block; border-bottom: 1.5px solid #94a3b8; height: 1.4rem; vertical-align: bottom; }
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 3.5rem; } .b-md { width: 6.5rem; } .b-lg { width: 11rem; } .b-xl { width: 16rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.87rem; margin: 0.6rem 0; }
+  th { font-family: system-ui, sans-serif; font-size: 0.73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--unit-light); color: var(--unit-dark); padding: 0.45rem 0.65rem; border: 1px solid var(--unit-border); text-align: left; }
+  td { padding: 0.5rem 0.65rem; border: 1px solid #e2e8f0; vertical-align: top; min-height: 2rem; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  .rubric th { background: #1e293b; color: white; }
+  .rubric td:first-child { font-weight: 400; }
+  pre { font-family: 'Courier New', Courier, monospace; font-size: 0.8rem; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 0.35rem; padding: 0.75rem 0.9rem; overflow-x: auto; white-space: pre; margin: 0.6rem 0; line-height: 1.45; }
+  .hint { font-family: system-ui, sans-serif; font-size: 0.78rem; color: #c2410c; font-style: italic; margin-top: 0.3rem; }
+  blockquote { border-left: 4px solid #e2e8f0; padding: 0.5rem 0.85rem; margin: 0.5rem 0; font-style: italic; font-size: 0.9rem; color: #475569; background: #f8fafc; border-radius: 0 0.25rem 0.25rem 0; }
+  .word-bank { font-family: system-ui, sans-serif; font-size: 0.82rem; font-weight: 600; background: #fefce8; border: 1px solid #fde68a; border-radius: 0.35rem; padding: 0.4rem 0.75rem; display: inline-block; margin: 0.35rem 0; }
+  .check-box { background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 0.5rem; padding: 1.1rem 1.25rem; margin: 1.5rem 0; }
+  .check-box h3 { color: #166534; margin-top: 0; }
+  .reflect-box { background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 0.5rem; padding: 1.1rem 1.25rem; margin: 1.5rem 0; }
+  .reflect-box h3 { color: #475569; margin-top: 0; }
+  .cb-row { font-family: system-ui, sans-serif; font-size: 0.85rem; display: flex; gap: 1.25rem; margin: 0.35rem 0; flex-wrap: wrap; }
+  .cb-item { display: flex; align-items: center; gap: 0.3rem; }
+  .cb-item input { width: 1rem; height: 1rem; }
+  .rating-row { font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 700; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin: 0.5rem 0; }
+  .rating-item { width: 2rem; height: 2rem; border: 2px solid #e2e8f0; border-radius: 0.35rem; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; }
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 1.75rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+  .forethought { border: 2px dashed #94a3b8; border-radius: 0.5rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; background: #f8fafc; font-size: 0.9rem; }
+  .forethought .label { font-family: system-ui, sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 0.4rem; }
+  @media print { body { font-size: 10.5pt; padding: 1.5cm; max-width: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; } .q-card { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Les systèmes vivants — Cahier d'exercices</h1>
+  <p>Sciences 6 &nbsp;·&nbsp; Programme d'études de l'Alberta 2023</p>
+  <div class="name-line">
+    <span>Nom : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date de début : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<div class="instructions">
+  <p>Ce cahier est ta pratique entrelacée. Les questions sont mélangées exprès — elles viennent de différentes leçons et de différents concepts, dans un ordre voulu. Le travail de comprendre ce que chaque question demande fait partie de l'apprentissage.</p>
+  <p><strong>★ De base</strong> — pour tous les élèves. Des aides sont offertes quand c'est utile.<br>
+  <strong>★★ Approfondi</strong> — même concept, plus difficile. Explique, justifie ou applique à une nouvelle situation.</p>
+</div>
+
+<div class="forethought">
+  <div class="label">Avant de commencer — Question de réflexion initiale</div>
+  <p><em>Regarde les questions disponibles aujourd'hui. Laquelle penses-tu être la plus difficile? Écris le numéro de la question et explique pourquoi.</em></p>
+  <p>Numéro de question : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Pourquoi je pense que ce sera difficile :</p>
+  <div class="al"></div><div class="al"></div>
+</div>
+
+<h2>Questions</h2>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q1</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 1 · biotique-abiotique</span></div>
+  <div class="q-body">
+    <p>Classe les éléments suivants dans la bonne colonne. Utilise chaque terme une fois.</p>
+    <div class="word-bank">lumière du soleil · aigle · bactéries · température · épinette · courant de rivière · sauterelle · pH du sol</div>
+    <table style="margin-top:0.5rem;">
+      <thead><tr><th>Biotique (vivant)</th><th>Abiotique (non vivant)</th></tr></thead>
+      <tbody><tr><td style="height:5rem;">&nbsp;</td><td>&nbsp;</td></tr></tbody>
+    </table>
+    <p class="hint">Indice : Biotique = était ou est vivant maintenant. Abiotique = n'a jamais été vivant.</p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q2</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · équation de la photosynthèse</span></div>
+  <div class="q-body">
+    <p>Complète l'équation de la photosynthèse. Pour chaque ingrédient, écris où la plante l'obtient.</p>
+    <table>
+      <thead><tr><th>Ingrédient ou produit</th><th>Nom</th><th>D'où ça vient / où ça va</th></tr></thead>
+      <tbody>
+        <tr><td><span class="b b-lg">&nbsp;</span></td><td>Dioxyde de carbone</td><td>De <span class="b b-lg">&nbsp;</span></td></tr>
+        <tr><td><span class="b b-lg">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td><td>Absorbé par les racines</td></tr>
+        <tr><td><span class="b b-lg">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td><td>Du soleil</td></tr>
+        <tr><td><span class="b b-lg">&nbsp;</span></td><td>Glucose</td><td><span class="b b-xl">&nbsp;</span> par la plante comme nourriture</td></tr>
+        <tr><td><span class="b b-lg">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td><td>Libéré dans l'air</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q3</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 1 · producteur-consommateur-décomposeur</span></div>
+  <div class="q-body">
+    <p>Relie chaque organisme à son rôle. Ensuite, donne un exemple de ton choix pour chaque rôle.</p>
+    <table>
+      <thead><tr><th>Organisme</th><th>Rôle</th><th>Ton propre exemple</th></tr></thead>
+      <tbody>
+        <tr><td>Un loup qui mange un cerf</td><td>Producteur</td><td>&nbsp;</td></tr>
+        <tr><td>Une épinette qui fabrique du glucose</td><td>Consommateur</td><td>&nbsp;</td></tr>
+        <tr><td>Des champignons qui décomposent un arbre tombé</td><td>Décomposeur</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q4</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 3 · photosynthèse · idée fausse : nourriture du sol</span></div>
+  <div class="q-body">
+    <p><strong>Analyse d'erreur.</strong> Un élève a écrit :</p>
+    <blockquote>« Les plantes grandissent en absorbant de la nourriture du sol par leurs racines. Plus il y a de nutriments dans le sol, plus la plante a de nourriture pour grandir. »</blockquote>
+    <p>Ce qui est faux :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>L'explication correcte :</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q5</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 1 · facteurs abiotiques</span></div>
+  <div class="q-body">
+    <p>Une forêt boréale et une prairie se trouvent toutes les deux en Alberta, parfois à quelques kilomètres l'une de l'autre. Elles accueillent des organismes très différents. Choisis <strong>deux</strong> facteurs abiotiques et explique comment chacun contribue à cette différence.</p>
+    <p>Facteur abiotique 1 : <span class="al-sm">&nbsp;</span></p>
+    <p>Comment il contribue : <div class="al"></div><div class="al"></div></p>
+    <p>Facteur abiotique 2 : <span class="al-sm">&nbsp;</span></p>
+    <p>Comment il contribue : <div class="al"></div><div class="al"></div></p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q6</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · sources des ingrédients · visuel</span></div>
+  <div class="q-body">
+    <p>Une plante pousse sur un rebord de fenêtre. Étiquette l'endroit où chaque ingrédient de la photosynthèse entre dans la plante.</p>
+    <pre>                ☀ Lumière du soleil
+                    |
+          ┌─────────┴─────────┐
+          │      FEUILLE      │
+          │                   │
+          │  CO₂ entre : ___  │
+          │  O₂ sort :   ___  │
+          └─────────┬─────────┘
+                    │ TIGE
+          ┌─────────┴─────────┐
+          │      RACINES      │
+          │  _____ entre      │
+          └───────────────────┘</pre>
+    <p>Pourquoi cette plante doit-elle être près d'une fenêtre? Utilise l'équation de la photosynthèse dans ta réponse.</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q7</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 1 · rôle des décomposeurs · idée fausse</span></div>
+  <div class="q-body">
+    <p>Un élève dit : <em>« Si on enlevait tous les décomposeurs d'une zone humide, les plantes et les animaux iraient bien — l'écosystème serait juste un peu plus désordonné. »</em></p>
+    <p>Décris ce qui arriverait vraiment :</p>
+    <p>Décomposeurs enlevés → La matière morte commence à <div class="al"></div></p>
+    <p>Les nutriments ne peuvent plus <div class="al"></div></p>
+    <p>Les producteurs (plantes) commencent à <div class="al"></div></p>
+    <p>Les consommateurs qui dépendent des producteurs <div class="al"></div></p>
+    <p>Après plusieurs années, la zone humide <div class="al"></div></p>
+    <p>En une phrase, explique pourquoi les décomposeurs ne sont PAS à part de l'écosystème :</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q8</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · où se passe la photosynthèse</span></div>
+  <div class="q-body">
+    <p>Encercle la bonne réponse, puis explique ton raisonnement.</p>
+    <p>La photosynthèse se passe surtout dans : &nbsp;&nbsp; <strong>A. les racines</strong> &nbsp;&nbsp; <strong>B. la tige</strong> &nbsp;&nbsp; <strong>C. les parties vertes de la plante</strong> &nbsp;&nbsp; <strong>D. les fleurs</strong></p>
+    <p>J'ai choisi ___ parce que : <div class="al"></div><div class="al"></div></p>
+    <p>Quel est le nom de la substance verte dans les feuilles qui capte la lumière? <span class="al-sm">&nbsp;</span></p>
+    <p>Pourquoi une plante avec des feuilles qui jaunissent produit-elle moins de nourriture qu'une plante verte et saine?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q9</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 4 · interdépendance plante-animal</span></div>
+  <div class="q-body">
+    <p>Donne <strong>deux</strong> façons dont les animaux dépendent des plantes pour autre chose que la nourriture :</p>
+    <p>1. <div class="al"></div></p>
+    <p>2. <div class="al"></div></p>
+    <p>Donne <strong>une</strong> façon dont les plantes dépendent des animaux :</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q10</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · photosynthèse · visuel : compléter le diagramme</span></div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Complète le diagramme résumé de la photosynthèse en remplissant chaque case vide.</p>
+    <pre>[_____________]    [_____________]    [_____________]
+ de l'air           des racines         du soleil
+       \                 |                 /
+        \                |                /
+         └──────────────┬──────────────┘
+                        │
+                 PHOTOSYNTHÈSE
+                 (dans les _____)
+                        │
+           ┌────────────┴──────────────┐
+           │                           │
+    [_____________]            [_____________]
+    nourriture de la plante    libéré dans l'air</pre>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q11</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 1 · types d'écosystèmes</span></div>
+  <div class="q-body">
+    <p>Un élève déménage d'Edmonton à une forêt pluviale côtière en Colombie-Britannique.</p>
+    <p>Nomme <strong>deux</strong> différences abiotiques entre une forêt boréale albertaine et une forêt pluviale côtière :</p>
+    <p>1. <div class="al"></div></p>
+    <p>2. <div class="al"></div></p>
+    <p>Prédit une façon dont les composantes <strong>biotiques</strong> de chaque écosystème diffèrent à cause de ces différences abiotiques :</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q12</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 4 · chaîne alimentaire — direction de l'énergie</span></div>
+  <div class="q-body">
+    <p>Utilise les organismes suivants pour construire une chaîne alimentaire d'une prairie albertaine. Dessine ta chaîne et ajoute des flèches montrant la direction du flux d'énergie.</p>
+    <div class="word-bank">Organismes : coyote · herbe · campagnol · faucon</div>
+    <pre>________ → ________ → ________ → ________</pre>
+    <p>Qu'est-ce que chaque flèche veut dire dans une chaîne alimentaire?</p>
+    <div class="al"></div>
+    <p>Ajoute maintenant un organisme de plus pour allonger la chaîne dans un sens ou dans l'autre. Nomme l'organisme et explique où il se place.</p>
+    <p>Nouvel organisme : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Il se place <span class="b b-md">&nbsp;</span> parce que <div class="al"></div></p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q13</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 3 · idée fausse : photosynthèse et respiration s'annulent</span></div>
+  <div class="q-body">
+    <p><strong>Deux explications — une seule est juste.</strong></p>
+    <blockquote><strong>Explication A :</strong> « La photosynthèse et la respiration s'annulent. Les plantes absorbent autant de CO₂ par la respiration qu'elles en libèrent par la photosynthèse, donc les plantes n'ont aucun effet net sur les niveaux d'oxygène. »</blockquote>
+    <blockquote><strong>Explication B :</strong> « Pendant la journée, une plante saine fait beaucoup plus de photosynthèse que de respiration. Le résultat net, c'est que de l'oxygène sort et du CO₂ entre. Les plantes produisent de l'oxygène au total. »</blockquote>
+    <p>Quelle explication est scientifiquement exacte? <span class="al-sm">&nbsp;</span></p>
+    <p>Comment le sais-tu? Utilise des preuves précises dans ta réponse.</p>
+    <div class="al"></div><div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q14</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 4 · cascade trophique</span></div>
+  <div class="q-body">
+    <p>Dans le parc national de Yellowstone, les loups ont été enlevés dans les années 1920. Complète la cascade qui a suivi.</p>
+    <p>Loups enlevés → population d'élans <div class="al"></div></p>
+    <p>Élans sans contrôle → végétation des berges de rivières <div class="al"></div></p>
+    <p>Sans racines de plantes → les berges ont commencé à <div class="al"></div></p>
+    <p>Les oiseaux chanteurs ont diminué parce que <div class="al"></div></p>
+    <p>Quand les loups ont été réintroduits en 1995 → la végétation <div class="al"></div></p>
+    <p>Comment s'appelle ce type de réaction en chaîne dans un écosystème? <div class="al"></div></p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q15</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · stockage glucose-amidon</span></div>
+  <div class="q-body">
+    <p>Une plante produit plus de glucose qu'elle n'en a besoin tout de suite.</p>
+    <p>En quoi convertit-elle le glucose en surplus? <span class="al-sm">&nbsp;</span></p>
+    <p>Nomme <strong>deux</strong> parties de la plante où cette forme stockée se trouve, et donne un exemple d'aliment pour chacune :</p>
+    <table>
+      <thead><tr><th>Partie de la plante</th><th>Exemple d'aliment que tu as mangé</th></tr></thead>
+      <tbody><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr></tbody>
+    </table>
+    <p>Pourquoi stocker de l'énergie sous cette forme est-il important pour les animaux (y compris les humains) qui mangent des plantes?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Point de mi-parcours -->
+<div class="check-box">
+  <h3>Point de mi-parcours</h3>
+  <p style="font-family:system-ui,sans-serif; font-size:0.8rem; color:#475569;"><em>Non noté. Lu par l'enseignant·e lors du prochain cours.</em></p>
+  <p>Quelle question a été la plus difficile jusqu'ici? <span class="al-sm">&nbsp;</span></p>
+  <div class="cb-row">
+    <label class="cb-item"><input type="checkbox"> Je ne connaissais pas le concept</label>
+    <label class="cb-item"><input type="checkbox"> J'en savais une partie mais je me suis bloqué·e</label>
+    <label class="cb-item"><input type="checkbox"> La question était posée d'une façon inhabituelle</label>
+  </div>
+  <p>Qu'as-tu fait quand tu étais bloqué·e? <div class="al"></div></p>
+  <p>Évalue ta confiance avec la photosynthèse maintenant :</p>
+  <div class="rating-row">
+    <div class="rating-item">1</div><div class="rating-item">2</div><div class="rating-item">3</div><div class="rating-item">4</div>
+    <span style="font-family:system-ui,sans-serif; font-size:0.78rem; color:#64748b;">&nbsp;(1 = perdu·e · 2 = partiel · 3 = je comprends · 4 = je pourrais l'enseigner)</span>
+  </div>
+  <p>Une preuve qui justifie ta cote : <div class="al"></div></p>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q16</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 1 · biotique-abiotique · nouveau contexte</span></div>
+  <div class="q-body">
+    <p>Un élève étudie l'écosystème d'un stationnement d'école.</p>
+    <p>Donne <strong>deux composantes biotiques</strong> et <strong>deux composantes abiotiques</strong> qu'il trouverait probablement :</p>
+    <p>Biotiques : <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span> &nbsp;&nbsp;&nbsp; Abiotiques : <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span></p>
+    <p>Explique une interaction précise entre une composante biotique et une composante abiotique dans cet écosystème :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Est-ce qu'un stationnement est un écosystème valide à étudier? Justifie ta réponse en utilisant la définition d'un écosystème.</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q17</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 4 · plantes sacrées des Premières Nations</span></div>
+  <div class="q-body">
+    <p>Choisis <strong>une</strong> des quatre plantes sacrées étudiées en classe : <strong>sauge · herbe sainte · cèdre · tabac</strong></p>
+    <p>Plante choisie : <span class="al-sm">&nbsp;</span></p>
+    <p>Décris son <strong>rôle écologique</strong> dans un écosystème albertain :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Décris son <strong>importance culturelle</strong> pour les communautés des Premières Nations en Alberta :</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q18</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · expérience 1 — lumière</span></div>
+  <div class="q-body">
+    <p>Un élève place deux plantes identiques dans des pots identiques avec le même sol et la même quantité d'eau. La plante A est près d'une fenêtre ensoleillée. La plante B est dans un placard sombre. Après deux semaines, elle teste les feuilles des deux plantes pour détecter de l'amidon.</p>
+    <p>Prédit le résultat : <div class="al"></div></p>
+    <p>Explique pourquoi en utilisant l'équation de la photosynthèse :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Qu'est-ce que cette expérience nous dit sur le rôle de la lumière dans la photosynthèse?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q19</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 4 · interdépendance · idée fausse : animaux indépendants des plantes</span></div>
+  <div class="q-body">
+    <p>Un élève dit : <em>« Si toutes les plantes disparaissaient, les animaux pourraient se manger entre eux et survivre. La chaîne alimentaire continuerait, juste sans le bas. »</em></p>
+    <p>Identifie <strong>deux erreurs précises</strong> dans ce raisonnement et corrige chacune.</p>
+    <p>Erreur 1 : <div class="al"></div></p>
+    <p>Correction : <div class="al"></div></p>
+    <p>Erreur 2 : <div class="al"></div></p>
+    <p>Correction : <div class="al"></div></p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q20</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · où se passe la photosynthèse · visuel</span></div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Une plante a des feuilles vertes et d'autres qui sont devenues jaunes par manque de lumière. Prédit si chaque type de feuille donnera un résultat positif au test d'amidon. Explique pourquoi.</p>
+    <table>
+      <thead><tr><th>Type de feuille</th><th>L'amidon est-il présent? (Oui / Non)</th><th>Explication</th></tr></thead>
+      <tbody>
+        <tr><td>Feuille verte et saine</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>Feuille jaune</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+    <p>Qu'est-ce que ça nous dit sur le lien entre la chlorophylle et la photosynthèse?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q21</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 1 · rôle des décomposeurs · nouveau contexte</span></div>
+  <div class="q-body">
+    <p>Trois types d'organismes sont enlevés d'une forêt dans trois expériences séparées :</p>
+    <table>
+      <thead><tr><th>Expérience</th><th>Ce qui a été enlevé</th><th>Effet prédit</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>Tous les loups (prédateurs au sommet)</td><td>&nbsp;</td></tr>
+        <tr><td>B</td><td>Tous les lapins (consommateurs primaires)</td><td>&nbsp;</td></tr>
+        <tr><td>C</td><td>Tous les décomposeurs</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+    <p>Quelle expérience (A, B ou C) causerait les dommages les plus graves à long terme?</p>
+    <p>Ma réponse : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Justifie en 2–3 phrases :</p>
+    <div class="al"></div><div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q22</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 4 · réseau alimentaire · visuel : dessiner et étiqueter</span></div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Dessine un réseau alimentaire qui relie ces organismes d'une zone humide albertaine. Les flèches pointent dans la direction du flux d'énergie.</p>
+    <div class="word-bank">Organismes : quenouille · canard · rat musqué · brochet · algues · libellule · héron · bactéries décomposeurs</div>
+    <pre>Utilise cet espace pour dessiner ton réseau alimentaire :
+
+
+
+
+(dessine tes organismes et tes flèches ici)
+
+
+
+</pre>
+    <p>Quel organisme de ton réseau, s'il était enlevé, causerait le plus de perturbation? Encercle-le et explique :</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q23</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 3 · idée fausse : nourriture du sol · arbre en pot</span></div>
+  <div class="q-body">
+    <p>Un élève plante un jeune arbre de 1 kg dans un grand pot de 50 kg de sol. Il l'arrose régulièrement et le laisse près d'une fenêtre. Après 20 ans, l'arbre pèse 800 kg. Il pèse le sol — il fait toujours environ 50 kg.</p>
+    <p>1. L'élève s'attendait à ce que le sol soit beaucoup plus léger après 20 ans. Pourquoi pensait-il ça?</p>
+    <div class="al"></div>
+    <p>2. La masse du sol n'a presque pas changé. Qu'est-ce que ça nous dit sur l'origine de la masse de l'arbre?</p>
+    <div class="al"></div>
+    <p>3. En utilisant l'équation de la photosynthèse, explique d'où viennent les 799 kg de nouvelle masse de l'arbre.</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q24</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 4 · interdépendance plante-animal</span></div>
+  <div class="q-body">
+    <p>Complète le tableau montrant les dépendances mutuelles.</p>
+    <table>
+      <thead><tr><th>Les plantes donnent aux animaux...</th><th>Les animaux donnent aux plantes...</th></tr></thead>
+      <tbody>
+        <tr><td>Oxygène (produit par <span class="b b-lg">&nbsp;</span>)</td><td>CO₂ (utilisé dans <span class="b b-lg">&nbsp;</span>)</td></tr>
+        <tr><td><span class="b b-lg">&nbsp;</span> (source d'énergie)</td><td><span class="b b-lg">&nbsp;</span> (transporte le pollen entre les fleurs)</td></tr>
+        <tr><td><span class="b b-lg">&nbsp;</span> (abri / nidification)</td><td><span class="b b-lg">&nbsp;</span> (disperse les graines)</td></tr>
+        <tr><td>&nbsp;</td><td>Décomposition — retourne <span class="b b-lg">&nbsp;</span> au sol</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q25</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · expérience 2 — oxygène · contexte Elodea</span></div>
+  <div class="q-body">
+    <p>Un élève place une plante Elodea (plante aquatique) dans un bécher d'eau et la met sous une lampe brillante. Après quelques minutes, de petites bulles commencent à monter des feuilles de la plante.</p>
+    <p>De quoi sont faites les bulles? <span class="al-sm">&nbsp;</span></p>
+    <p>L'élève couvre ensuite la lampe avec un tissu. Prédit ce qui arrive aux bulles :</p>
+    <div class="al"></div>
+    <p>Explique pourquoi — utilise l'équation de la photosynthèse dans ta réponse :</p>
+    <div class="al"></div><div class="al"></div>
+    <p class="hint">Indice : Pense à quel ingrédient la lampe fournit.</p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q26</span><span class="badge-core">★ De base</span><span class="t-note">après leçon SC 5 · logique conditionnelle</span></div>
+  <div class="q-body">
+    <p>Complète la cascade conditionnelle. Chaque SI mène au ALORS suivant.</p>
+    <p><strong>Condition de départ :</strong> Une longue sécheresse réduit l'eau disponible dans une prairie.</p>
+    <pre>SI le niveau d'eau baisse ALORS ___________________________________________
+
+SI _________________________ ALORS les producteurs (herbe) ne peuvent pas ____
+
+SI l'herbe ne peut pas _____ ALORS les consommateurs primaires (campagnols) vont
+
+SI la population de campagnols _____ ALORS les consommateurs secondaires (coyotes)</pre>
+    <p>Quel type de raisonnement cette cascade démontre-t-elle? Fais le lien avec ce que tu sais de la programmation informatique.</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q27</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 3 · glucose-amidon · nouveau contexte</span></div>
+  <div class="q-body">
+    <p>Un élève dit : <em>« L'amidon et la nourriture, c'est deux choses différentes. La nourriture, c'est ce qu'on mange; l'amidon, c'est juste un produit chimique. »</em></p>
+    <p>Est-ce que cet élève a raison, tort, ou partiellement raison? Explique en utilisant ce que tu sais de la photosynthèse et du stockage de l'énergie.</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Explique maintenant pourquoi l'amidon est utile aux animaux, pas seulement aux plantes :</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q28</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 4 · savoirs traditionnels · nouveau contexte</span></div>
+  <div class="q-body">
+    <p>Un·e Gardien·ne du savoir du nord de l'Alberta signale que l'herbe sainte — observée dans une zone humide locale depuis des générations — a disparu de cette zone au cours de la dernière décennie.</p>
+    <p><strong>Partie A :</strong> Quelles conclusions écologiques un·e scientifique pourrait-il/elle tirer de cette disparition?</p>
+    <div class="al"></div><div class="al"></div>
+    <p><strong>Partie B :</strong> Pourquoi l'observation du Gardien du savoir est-elle plus précieuse que celle d'un·e scientifique qui étudie cette zone humide depuis seulement deux ans?</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q29</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · expérience 3 — parties vertes · visuel</span></div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Un élève trouve une feuille qui est en partie verte et en partie jaune pâle. Il teste toute la feuille pour détecter l'amidon à l'aide d'une solution d'iode.</p>
+    <p>Dans le schéma de feuille ci-dessous, colorie les zones qui deviendront sombres (amidon présent) et laisse les zones non colorées (pas d'amidon).</p>
+    <pre>   Schéma de feuille :
+  ┌──────────────────┐
+  │  VERTE  │ JAUNE  │
+  │  zone   │ zone   │
+  │         │        │
+  └──────────────────┘</pre>
+    <p>Colorie la zone avec de l'amidon : <span class="al-sm">&nbsp;</span></p>
+    <p>Explique ta prédiction :</p>
+    <div class="al"></div>
+    <p>Qu'est-ce que cette expérience nous dit sur le lien entre la chlorophylle et la photosynthèse?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header"><span class="q-num">Q30</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">après leçon 4 · cascade trophique · nouveau contexte</span></div>
+  <div class="q-body">
+    <p>Une nouvelle espèce d'insecte envahissante arrive dans une forêt boréale albertaine et mange rapidement toutes les chenilles (consommateurs primaires qui mangent des feuilles). Décris la cascade trophique. Nomme au moins <strong>trois</strong> organismes ou groupes qui seraient touchés et explique comment.</p>
+    <p>Organisme/groupe touché : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Effet : <div class="al"></div></p>
+    <p>Organisme/groupe touché : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Effet : <div class="al"></div></p>
+    <p>Organisme/groupe touché : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Effet : <div class="al"></div></p>
+    <p>Est-ce une perturbation à long terme ou à court terme? Explique pourquoi :</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="reflect-box">
+  <h3>Bloc de réflexion</h3>
+  <p style="font-family:system-ui,sans-serif; font-size:0.8rem; color:#64748b;"><em>À la fin de chaque séance du cahier. Non noté.</em></p>
+  <p>1. Quelles questions étaient les plus difficiles aujourd'hui? <span class="al-sm">&nbsp;</span></p>
+  <p>2. C'était difficile parce que tu ne connaissais pas le concept, ou parce que la question était posée d'une façon inhabituelle?</p>
+  <div class="al"></div>
+  <p>3. Quelle est une chose que tu ferais différemment avant la prochaine séance du cahier?</p>
+  <div class="al"></div>
+  <p>4. Évalue ta compréhension du concept le plus difficile aujourd'hui :</p>
+  <div class="rating-row">
+    <div class="rating-item">1</div><div class="rating-item">2</div><div class="rating-item">3</div><div class="rating-item">4</div>
+    <span style="font-family:system-ui,sans-serif; font-size:0.78rem; color:#64748b;">&nbsp;(1 = perdu·e · 2 = partiel · 3 = je comprends · 4 = je pourrais l'enseigner)</span>
+  </div>
+  <p>Concept le plus difficile : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Ma cote : <span class="al-sm">&nbsp;</span></p>
+  <p>Une preuve : <div class="al"></div></p>
+</div>
+
+<hr class="section-break">
+<h2 class="stretch">Zone de dépassement</h2>
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#6d28d9; margin-bottom:1rem;"><em>Tente ces questions après avoir complété toutes les précédentes. Pas d'aide.</em></p>
+
+<div class="q-card stretch">
+  <div class="q-header"><span class="s-num">S1</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">multi-concepts : photosynthèse + système fermé + réseau alimentaire</span></div>
+  <div class="q-body">
+    <p>Un·e scientifique scelle une plante en pot, du sol humide et une petite quantité de CO₂ dans une boîte de verre complètement hermétique placée en plein soleil. La plante pousse régulièrement pendant six mois.</p>
+    <p><strong>(a)</strong> La masse du sol change à peine après six mois. D'où la plante tire-t-elle la matière pour grandir?</p>
+    <div class="al"></div>
+    <p><strong>(b)</strong> Du CO₂ a été enfermé au début. Après six mois, les niveaux de CO₂ dans la boîte sont beaucoup plus bas. Qu'est-il arrivé au carbone du CO₂?</p>
+    <div class="al"></div>
+    <p><strong>(c)</strong> Un petit animal est ensuite placé dans la boîte fermée. Prédit si l'animal peut survivre à long terme. Explique en utilisant la photosynthèse et le réseau alimentaire.</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card stretch">
+  <div class="q-header"><span class="s-num">S2</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">multi-concepts : conception d'expérience + photosynthèse</span></div>
+  <div class="q-body">
+    <p>Tu veux tester si le CO₂ — et pas seulement la lumière ou l'eau — est un ingrédient nécessaire à la photosynthèse. Conçois une expérience contrôlée.</p>
+    <p><strong>Hypothèse :</strong> (Si le CO₂ est réduit, alors <span class="b b-xl">&nbsp;</span> parce que <span class="b b-xl">&nbsp;</span>)</p>
+    <p><strong>Ce que je contrôlerais :</strong> <div class="al"></div></p>
+    <p><strong>Ce que je changerais :</strong> <div class="al"></div></p>
+    <p><strong>Ce que je mesurerais :</strong> <div class="al"></div></p>
+    <p><strong>Résultat qui soutiendrait mon hypothèse :</strong> <div class="al"></div></p>
+    <p><strong>Résultat qui l'infirmerait :</strong> <div class="al"></div></p>
+  </div>
+</div>
+
+<div class="q-card stretch">
+  <div class="q-header"><span class="s-num">S3</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">multi-concepts : savoirs traditionnels + santé des écosystèmes + méthodes scientifiques</span></div>
+  <div class="q-body">
+    <p>Un·e Gardien·ne du savoir signale que les cèdres disparaissent des bords des zones humides dans son territoire traditionnel. Sa communauté a documenté ce changement pendant trois générations d'observation.</p>
+    <p><strong>(a)</strong> Un·e scientifique étudie cette zone humide depuis deux ans et n'a pas encore remarqué le changement. Explique pourquoi l'observation du Gardien du savoir est scientifiquement précieuse d'une façon que les données du ou de la scientifique ne peuvent pas encore égaler.</p>
+    <div class="al"></div><div class="al"></div>
+    <p><strong>(b)</strong> Le cèdre joue un rôle écologique comme grand fournisseur d'habitat et puits de carbone durable. Décris deux effets précis sur l'écosystème si le cèdre disparaît des bords des zones humides.</p>
+    <p>Effet 1 : <div class="al"></div></p>
+    <p>Effet 2 : <div class="al"></div></p>
+    <p><strong>(c)</strong> Comment concevrais-tu une étude qui combine à la fois les savoirs écologiques traditionnels et les méthodes scientifiques pour étudier cette disparition?</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card stretch">
+  <div class="q-header"><span class="s-num">S4</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">multi-concepts : logique conditionnelle + photosynthèse + réseau alimentaire</span></div>
+  <div class="q-body">
+    <p>Une énorme éruption volcanique envoie des cendres dans l'atmosphère, bloquant environ 70 % de la lumière du soleil en Amérique du Nord pendant deux ans. Écris une cascade conditionnelle d'<strong>au moins cinq étapes</strong>, reliant cet événement à ses effets sur les producteurs, les consommateurs, les décomposeurs et les conditions abiotiques.</p>
+    <pre>SI la lumière du soleil est réduite de 70 % ALORS _________________________
+
+SI ___________________________ ALORS ___________________________________
+
+SI ___________________________ ALORS ___________________________________
+
+SI ___________________________ ALORS ___________________________________
+
+SI ___________________________ ALORS ___________________________________</pre>
+    <p>Après la disparition des cendres et le retour du soleil, décris une raison pour laquelle l'écosystème pourrait se rétablir et une raison pour laquelle il pourrait ne pas revenir à son état d'origine.</p>
+    <p>Raison pour laquelle il pourrait se rétablir : <div class="al"></div></p>
+    <p>Raison pour laquelle il pourrait ne pas se rétablir complètement : <div class="al"></div></p>
+  </div>
+</div>
+
+<div class="q-card stretch">
+  <div class="q-header"><span class="s-num">S5</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">synthèse — tous les concepts</span></div>
+  <div class="q-body">
+    <p>Un élève écrit :</p>
+    <blockquote>« Un écosystème, c'est juste une liste d'organismes dans un endroit. Si tu enlèves un organisme, la liste devient plus courte, mais tout le reste continue. »</blockquote>
+    <p>Écris une réponse qui : identifie ce qui est fondamentalement faux dans l'idée de « liste »; utilise au moins <strong>trois exemples précis</strong> de cette unité; se termine par une définition d'un écosystème en une phrase qui capture ce que l'élève oublie.</p>
+    <div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div>
+    <p>Ma définition : <div class="al"></div></p>
+  </div>
+</div>
+
+<hr class="section-break">
+<h2 class="reflect">Grille d'auto-évaluation</h2>
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:0.85rem;"><em>Complète à la fin de l'unité, avant le test. Notes autorisées.</em></p>
+<table class="rubric">
+  <thead><tr><th style="width:50%">Groupe de connaissances</th><th style="width:25%">Je peux expliquer sans mes notes</th><th style="width:25%">Une question que j'ai encore</th></tr></thead>
+  <tbody>
+    <tr><td>Composantes biotiques et abiotiques</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Photosynthèse — équation et sources des ingrédients</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Photosynthèse — les trois expériences</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Interdépendance plante-animal</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Réseaux alimentaires et cascades trophiques</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Plantes sacrées des Premières Nations et savoirs traditionnels</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>SC — logique conditionnelle dans les écosystèmes</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+  </tbody>
+</table>
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; margin-top:0.75rem;">Avant le projet d'enquête, je dois revoir : <div class="al"></div></p>
+<p style="font-family:system-ui,sans-serif; font-size:0.75rem; color:#94a3b8; margin-top:2rem; text-align:center;">sci6-living-systems-workbook-fr-v1 &nbsp;·&nbsp; Sciences 6 &nbsp;·&nbsp; Programme d'études de l'Alberta 2023</p>
+
+</body>
+</html>

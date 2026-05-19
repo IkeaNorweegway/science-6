@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le climat — Notes guidées | Sciences 6</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #fff;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 28px 32px 48px;
+  }
+
+  :root {
+    --accent: #d97706;
+    --accent-light: #fef3c7;
+    --accent-mid: #f59e0b;
+  }
+
+  h1 { font-size: 22pt; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+  h2 { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 28px 0 10px; border-bottom: 2px solid var(--accent-light); padding-bottom: 4px; }
+  h3 { font-size: 11pt; font-weight: 700; color: #334155; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+  h4 { font-size: 11pt; font-weight: 700; color: #334155; margin: 14px 0 4px; }
+  p  { margin-bottom: 8px; }
+  ul, ol { margin: 6px 0 10px 20px; }
+  li { margin-bottom: 4px; }
+  strong { font-weight: 700; }
+  em { font-style: italic; color: #475569; }
+
+  .b { display: inline-block; border-bottom: 1.5px solid #334155; vertical-align: bottom; }
+  .b-sm  { width: 60px; }
+  .b-md  { width: 110px; }
+  .b-lg  { width: 170px; }
+  .b-xl  { width: 240px; }
+
+  .al { display: block; border-bottom: 1px solid #94a3b8; height: 1.8rem; margin: 6px 0; }
+  .al-sm { display: inline-block; border-bottom: 1px solid #94a3b8; width: 200px; vertical-align: bottom; }
+
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
+  th { background: var(--accent-light); color: #92400e; font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid #fcd34d; }
+  td { padding: 8px 10px; border: 1px solid #e2e8f0; vertical-align: top; }
+  tr:nth-child(even) td { background: #fffbeb; }
+
+  pre, code {
+    font-family: 'Courier New', monospace;
+    font-size: 10pt;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+  }
+  pre { padding: 10px 14px; margin: 10px 0; white-space: pre; overflow-x: auto; }
+  code { padding: 1px 5px; }
+
+  .misconception {
+    border-left: 4px solid #dc2626;
+    background: #fef2f2;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .misconception .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #dc2626; margin-bottom: 4px;
+  }
+
+  .connection {
+    border-left: 4px solid #f97316;
+    background: #fff7ed;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .connection .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #ea580c; margin-bottom: 4px;
+  }
+
+  .cs-connection {
+    border-left: 4px solid #0284c7;
+    background: #f0f9ff;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .cs-connection .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #0284c7; margin-bottom: 4px;
+  }
+
+  .retrieval {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 18px 0;
+  }
+  .retrieval-header {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: #1d4ed8; margin-bottom: 10px;
+  }
+  .retrieval ol { margin-left: 18px; }
+  .retrieval li { margin-bottom: 14px; }
+
+  .self-check {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 10.5pt;
+  }
+  .self-check .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #16a34a; margin-bottom: 6px;
+  }
+
+  .workbook-prompt {
+    background: var(--accent-light);
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 12px 0 0;
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #92400e;
+  }
+
+  .learning-target {
+    font-size: 10pt; font-style: italic; color: #475569;
+    margin-bottom: 12px; padding: 6px 12px;
+    border-left: 3px solid var(--accent-mid);
+    background: #fffbeb;
+  }
+
+  .section-break { border: none; border-top: 2px dashed #e2e8f0; margin: 28px 0; }
+
+  .header-strip {
+    border-left: 5px solid var(--accent);
+    padding: 10px 16px;
+    margin-bottom: 24px;
+    background: #fffbeb;
+    border-radius: 0 8px 8px 0;
+  }
+  .header-strip .course-label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--accent-mid); margin-bottom: 4px;
+  }
+
+  .name-row { display: flex; gap: 24px; margin: 16px 0 24px; font-size: 10.5pt; }
+  .name-row span { color: #64748b; }
+  .name-row .b { flex: 1; }
+
+  .pre-knowledge {
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0 24px;
+    background: #fffbeb;
+  }
+  .pre-knowledge .pk-label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: var(--accent); margin-bottom: 8px;
+  }
+
+  .synthesis { margin: 24px 0; }
+  .synthesis-item { margin-bottom: 20px; }
+  .synthesis-item strong { display: block; color: var(--accent); font-size: 10.5pt; margin-bottom: 6px; }
+
+  .rubric table th { background: var(--accent-light); }
+  .rubric td:nth-child(2) { text-align: center; font-size: 10pt; }
+
+  /* Greenhouse vs Ozone special table */
+  .compare-table th { background: #fef3c7; color: #92400e; }
+  .compare-table td:first-child { font-weight: 700; font-size: 10pt; }
+
+  @media print {
+    body { padding: 18px 22px 32px; font-size: 10.5pt; }
+    .section-break { margin: 18px 0; }
+    h2 { margin: 20px 0 8px; }
+    pre { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header-strip">
+  <div class="course-label">Sciences 6 — Le climat</div>
+  <h1>Cahier de notes guidées</h1>
+</div>
+
+<div class="name-row">
+  <span>Nom :</span><span class="b b-xl">&nbsp;</span>
+  <span>Date de début :</span><span class="b b-lg">&nbsp;</span>
+</div>
+
+<!-- PRE-KNOWLEDGE -->
+<div class="pre-knowledge">
+  <div class="pk-label">Avant de commencer — Ce que je sais déjà</div>
+  <p><em>Pas de notes. Pas de correction. Sois honnête.</em></p>
+  <p style="margin-top:8px;">Écris tout ce que tu sais sur le climat et les changements climatiques. C'est quoi le climat ? Comment est-ce différent de la météo ? Qu'est-ce qui cause les changements climatiques ? Quels effets as-tu remarqués ou entendus ?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <p style="margin-top:10px; font-size:10pt; color:#64748b; font-style:italic;">Tu reviendras à cette page à la fin de l'unité. Sois honnête — voir comment ta pensée a changé fait partie de l'apprentissage.</p>
+</div>
+
+<hr class="section-break">
+
+<!-- SECTION 1 — LA MÉTÉO ET LE CLIMAT -->
+<h2>Section 1 : La météo et le climat</h2>
+<p class="learning-target">Objectif : Je peux expliquer la différence entre la météo et le climat, décrire les échelles de temps et évaluer si une preuve soutient une affirmation sur la météo ou sur le climat.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>La météo</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Le climat</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Les conditions atmosphériques</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une tendance climatique</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Les données à long terme</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+<p><strong>La météo</strong> est l'état de l'atmosphère à un <span class="b b-sm">&nbsp;</span> endroit et un <span class="b b-sm">&nbsp;</span> moment précis — d'une heure à l'autre ou d'un jour à l'autre.</p>
+<p><strong>Le climat</strong> est le modèle <span class="b b-lg">&nbsp;</span> de la météo dans une région. On le mesure sur <span class="b b-md">&nbsp;</span> — au moins 30 ans.</p>
+<p>La météo peut changer d'un jour à l'autre. Le climat décrit ce qui est <span class="b b-md">&nbsp;</span> sur de longues périodes.</p>
+
+<h4>Ce que la météo nous dit — et ce qu'elle ne dit pas</h4>
+<p>Une semaine froide en janvier ne nous dit rien sur le climat. Un seul été chaud ne confirme pas les changements climatiques. Ce sont des données <span class="b b-md">&nbsp;</span>.</p>
+<p>Les affirmations sur le climat ont besoin de données <span class="b b-md">&nbsp;</span> : des mesures recueillies pendant des décennies, dans beaucoup d'endroits.</p>
+
+<pre>COMPARAISON DES ÉCHELLES DE TEMPS
+
+  Météo :   |----jour----|----jour----|----jour----|
+            ↑ utile pour : « Dois-je porter un manteau ? »
+
+  Climat :  |------10 ans------|------10 ans------|------10 ans------|
+            ↑ utile pour : « L'Alberta se réchauffe-t-elle avec le temps ? »</pre>
+
+<h4>Exemples en Alberta — faire la distinction</h4>
+<table>
+  <thead><tr><th>Observation</th><th>Ce que ça nous dit</th></tr></thead>
+  <tbody>
+    <tr><td>Edmonton a eu son mois de février le plus froid en 2024</td><td>Météo — une période froide dans un seul endroit</td></tr>
+    <tr><td>Les températures hivernales moyennes en Alberta ont augmenté de 2 °C en 50 ans</td><td>Tendance climatique — un modèle à grande échelle sur le long terme</td></tr>
+    <tr><td>Juillet 2023 était le mois le plus chaud dans le monde depuis le début des relevés</td><td>Signal climatique possible — il faut des décennies de contexte pour l'interpréter</td></tr>
+  </tbody>
+</table>
+
+<h4>Pourquoi cette différence est importante</h4>
+<p>Quand les scientifiques font des affirmations sur les changements climatiques, ils utilisent des données <span class="b b-md">&nbsp;</span> — souvent de milliers de stations, de capteurs océaniques et de satellites sur des décennies.</p>
+<p>Une affirmation comme «les changements climatiques n'existent pas parce qu'il a neigé en mai» confond <span class="b b-md">&nbsp;</span> (un événement court) avec <span class="b b-md">&nbsp;</span> (un modèle à long terme). Ce sont des questions différentes qui demandent des preuves différentes.</p>
+<p>L'échelle de temps de tes preuves doit correspondre à l'<span class="b b-md">&nbsp;</span> de ton affirmation.</p>
+
+<div class="misconception">
+  <div class="label">Idée fausse</div>
+  <p><em>« La météo et le climat, c'est la même chose — une année froide prouve que les changements climatiques sont faux. »</em></p>
+  <p>La météo et le climat fonctionnent sur des échelles de temps très différentes. Une semaine froide ou même une année froide ne nous dit rien sur une tendance de 30 ans. Les scientifiques étudient des décennies de données, pas des jours ou des mois. Une seule année froide dans une tendance au réchauffement, c'est quand même une tendance au réchauffement. La tendance est définie par l'ensemble des données, pas par les exceptions.</p>
+</div>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Pense à deux affirmations : «Il a fait chaud l'été dernier» et «Les étés en Alberta deviennent plus chauds.» Laquelle a besoin de plus de preuves ? Quel type de preuves faudrait-il pour chacune ? Écris ta réponse avant de continuer.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Quelle est la différence entre la météo et le climat ?<div class="al"></div><div class="al"></div></li>
+    <li>Combien d'années de données faut-il avant d'appeler un modèle une tendance climatique ?<div class="al"></div></li>
+    <li>Un ami dit : «Nous avons eu un mars très froid — ça prouve que les changements climatiques n'existent pas.» Qu'est-ce qui ne va pas dans ce raisonnement ?<div class="al"></div><div class="al"></div></li>
+    <li>Donne un exemple de météo et un exemple de tendance climatique en Alberta.
+      <p>Météo : <span class="al-sm">&nbsp;</span></p>
+      <p>Tendance climatique : <span class="al-sm">&nbsp;</span></p>
+    </li>
+    <li><strong>★★</strong> Un scientifique recueille des données de température d'une seule station pendant deux ans et conclut que «le climat mondial se refroidit.» Identifie deux problèmes avec cette conclusion — un sur l'échelle de temps et un sur l'étendue des données.
+      <p>Problème 1 (échelle de temps) :</p><div class="al"></div>
+      <p>Problème 2 (étendue des données) :</p><div class="al"></div>
+    </li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>4 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SECTION 2 — LES SYSTÈMES CLIMATIQUES DE LA TERRE -->
+<h2>Section 2 : Les systèmes climatiques de la Terre</h2>
+<p class="learning-target">Objectif : Je peux expliquer comment le Soleil crée le climat de la Terre, décrire l'effet de serre naturel, nommer les principaux gaz à effet de serre et expliquer comment la géographie crée différents climats.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>L'effet de serre</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Un gaz à effet de serre</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>La latitude</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>L'albédo</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Les vents dominants</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>L'altitude</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+<p><strong>Le Soleil est la source d'énergie du climat de la Terre.</strong></p>
+<p>Le Soleil envoie de l'énergie sous forme de rayonnement <span class="b b-md">&nbsp;</span> (lumière et chaleur). Quand cette énergie arrive sur Terre, trois choses peuvent se passer :</p>
+<ul>
+  <li>Une partie est <span class="b b-md">&nbsp;</span> dans l'espace (surtout par les nuages et la glace)</li>
+  <li>Une partie est absorbée par la <span class="b b-sm">&nbsp;</span> et les <span class="b b-sm">&nbsp;</span></li>
+  <li>Une partie est absorbée par l'<span class="b b-md">&nbsp;</span></li>
+</ul>
+<p>L'énergie absorbée par la surface de la Terre réchauffe la terre et les océans. Cette chaleur monte sous forme de rayonnement <span class="b b-md">&nbsp;</span> (chaleur) vers l'espace.</p>
+
+<h4>L'effet de serre — comment la Terre reste chaude</h4>
+<p>L'atmosphère contient des gaz qui agissent comme le verre dans une serre. Ils laissent entrer la <span class="b b-md">&nbsp;</span> mais ralentissent la <span class="b b-md">&nbsp;</span> qui s'échappe.</p>
+<p>Quand la chaleur monte de la surface de la Terre, les gaz à effet de serre la <span class="b b-sm">&nbsp;</span> et la <span class="b b-sm">&nbsp;</span> vers la Terre.</p>
+<p>C'est l'<strong>effet de serre naturel</strong>. Il est essentiel à la vie. Sans lui, la température moyenne de la Terre serait d'environ <span class="b b-sm">&nbsp;</span> °C — trop froid pour l'eau liquide et la plupart des êtres vivants.</p>
+
+<pre>L'EFFET DE SERRE
+
+     ☀ LUMIÈRE DU SOLEIL ☀
+         ↓↓↓↓
+  ┌──────────────────────────┐
+  │  ATMOSPHÈRE              │
+  │  (gaz à effet de serre)  │  ← Absorbe la chaleur sortante
+  │                          │    et la renvoie vers la Terre
+  └──────────────────────────┘
+         ↓↓↓↓          ↑↑↑↑
+    La lumière arrive   Chaleur
+    sur la Terre        (infrarouge)
+         ↓↓↓↓          ↑↑↑↑
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         SURFACE DE LA TERRE
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  (terre, océans, glace absorbent l'énergie)</pre>
+
+<p><em>Étiquette les flèches : laquelle montre l'énergie qui ENTRE du Soleil ? Laquelle montre la chaleur qui monte de la Terre ? Laquelle montre la chaleur renvoyée par les gaz à effet de serre ?</em></p>
+
+<h4>Les principaux gaz à effet de serre</h4>
+<table>
+  <thead><tr><th>Gaz</th><th>D'où il vient (naturellement)</th></tr></thead>
+  <tbody>
+    <tr><td>Vapeur d'eau (H₂O)</td><td>Évaporation des océans et des lacs</td></tr>
+    <tr><td>Dioxyde de carbone (CO₂)</td><td>Respiration, éruptions volcaniques</td></tr>
+    <tr><td>Méthane (CH₄)</td><td>Zones humides, décomposition</td></tr>
+  </tbody>
+</table>
+<p>Ces gaz font <span class="b b-md">&nbsp;</span> partie de l'atmosphère de la Terre. L'effet de serre naturel maintient la Terre à environ <span class="b b-sm">&nbsp;</span> °C — assez chaud pour la vie.</p>
+<p>Le problème commence quand les activités humaines ajoutent des quantités <span class="b b-md">&nbsp;</span> de ces gaz, ce qui piège <span class="b b-md">&nbsp;</span> de chaleur que prévu.</p>
+
+<h4>Les facteurs géographiques qui créent différents climats</h4>
+<p>La Terre n'a pas un seul climat — elle en a beaucoup. Quatre facteurs expliquent la plupart des différences :</p>
+
+<p><strong>1. La latitude</strong></p>
+<ul>
+  <li>Plus on est près de l'<span class="b b-sm">&nbsp;</span>, plus les rayons du Soleil frappent directement la surface — plus d'énergie par mètre carré</li>
+  <li>Près des <span class="b b-sm">&nbsp;</span> (pôles), la lumière arrive en angle et couvre une plus grande surface — moins d'énergie par mètre carré</li>
+  <li>C'est pourquoi les régions tropicales sont <span class="b b-sm">&nbsp;</span> et les régions polaires sont <span class="b b-sm">&nbsp;</span></li>
+</ul>
+<pre>LA LATITUDE ET L'ANGLE DE LA LUMIÈRE
+
+    ÉQUATEUR :    ↓↓↓↓  ← lumière directe — plus concentrée
+
+    HAUTE LAT. :  ↘↘↘↘  ← lumière en angle — répartie sur plus de surface</pre>
+
+<p><strong>2. La proximité des grandes étendues d'eau</strong></p>
+<ul>
+  <li>L'eau se réchauffe et se refroidit <span class="b b-md">&nbsp;</span> que la terre</li>
+  <li>Les régions côtières ont des températures <span class="b b-md">&nbsp;</span> — les hivers ne sont pas aussi froids, les étés pas aussi chauds</li>
+  <li>Les régions intérieures (comme la plupart de l'Alberta) ont de grands <span class="b b-md">&nbsp;</span> de température — hivers très froids, étés chauds</li>
+</ul>
+
+<p><strong>3. L'altitude</strong></p>
+<ul>
+  <li>Plus on monte, plus la température <span class="b b-md">&nbsp;</span> — environ 6,5 °C par 1000 m de hauteur</li>
+  <li>Les villes en montagne sont <span class="b b-md">&nbsp;</span> que les villes dans les vallées à la même latitude</li>
+</ul>
+
+<p><strong>4. Les vents dominants</strong></p>
+<ul>
+  <li>Les vents transportent <span class="b b-sm">&nbsp;</span> et <span class="b b-sm">&nbsp;</span> d'une région à l'autre</li>
+  <li>Les vents qui soufflent de l'océan apportent des températures <span class="b b-md">&nbsp;</span> et plus d'humidité</li>
+  <li>Les vents qui soufflent de la terre ou du nord apportent des conditions <span class="b b-md">&nbsp;</span></li>
+</ul>
+
+<h4>L'albédo — comment la réflexion affecte la température</h4>
+<p><strong>L'albédo</strong> mesure la quantité de <span class="b b-md">&nbsp;</span> qu'une surface réfléchit.</p>
+<ul>
+  <li>Neige fraîche : réfléchit environ <span class="b b-sm">&nbsp;</span> % de la lumière — albédo très élevé (les surfaces claires réfléchissent plus)</li>
+  <li>Eau sombre : réfléchit environ <span class="b b-sm">&nbsp;</span> % de la lumière — albédo très faible (les surfaces sombres absorbent plus)</li>
+  <li>Forêts : albédo faible à moyen</li>
+  <li>Calottes glaciaires : albédo très élevé</li>
+</ul>
+<p>Quand la glace <span class="b b-sm">&nbsp;</span>, une surface plus sombre est exposée. Elle absorbe <span class="b b-md">&nbsp;</span> de chaleur, ce qui fait fondre <span class="b b-md">&nbsp;</span> de glace — c'est une boucle de rétroaction appelée la <strong>boucle de rétroaction glace-albédo</strong>.</p>
+
+<pre>BOUCLE DE RÉTROACTION GLACE-ALBÉDO
+
+  La glace fond → une surface plus sombre est exposée
+       ↓
+  La surface sombre absorbe PLUS de chaleur
+       ↓
+  Plus de chaleur → encore plus de glace fond
+       ↓
+  (le cycle continue) →→→</pre>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Quelles sont les trois choses qui peuvent arriver à la lumière du Soleil quand elle atteint la Terre ?
+      <p>a. <div class="al"></div></p>
+      <p>b. <div class="al"></div></p>
+      <p>c. <div class="al"></div></p>
+    </li>
+    <li>Dans tes propres mots, explique comment l'effet de serre naturel fonctionne.<div class="al"></div><div class="al"></div></li>
+    <li>Nomme deux gaz à effet de serre et une source naturelle de chacun.
+      <p>Gaz 1 : <span class="al-sm">&nbsp;</span> &nbsp; Source : <span class="al-sm">&nbsp;</span></p>
+      <p>Gaz 2 : <span class="al-sm">&nbsp;</span> &nbsp; Source : <span class="al-sm">&nbsp;</span></p>
+    </li>
+    <li>Pourquoi une ville côtière en Colombie-Britannique a-t-elle probablement des hivers plus doux qu'Edmonton, même si les deux sont à la même latitude ?<div class="al"></div><div class="al"></div></li>
+    <li><strong>★★</strong> Une grande zone de glace de mer dans l'Arctique fond et est remplacée par de l'eau libre. En utilisant le concept d'albédo, explique ce qui arrive à la quantité de chaleur absorbée dans cette région et pourquoi cela crée une boucle de rétroaction.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>5 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SECTION 3 — LES CAUSES DES CHANGEMENTS CLIMATIQUES -->
+<h2>Section 3 : Les causes des changements climatiques</h2>
+<p class="learning-target">Objectif : Je peux décrire les causes naturelles et humaines des changements climatiques, expliquer pourquoi les causes humaines dominent maintenant et distinguer une variation naturelle du climat de la période actuelle de changement rapide.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>La variation naturelle du climat</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Les combustibles fossiles</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>La déforestation</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Le cycle du carbone</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>L'effet de serre amplifié</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+<p>Le climat de la Terre a toujours changé. Il a été plus chaud et plus froid dans le passé — bien avant que les humains existent. Comprendre ces changements passés aide à comprendre ce qui se passe maintenant.</p>
+
+<h4>Les causes naturelles des changements climatiques</h4>
+
+<p><strong>1. Les éruptions volcaniques</strong><br>
+Les grandes éruptions volcaniques libèrent de grandes quantités de <span class="b b-sm">&nbsp;</span> et de petites particules dans l'atmosphère. Ces particules peuvent bloquer temporairement la <span class="b b-md">&nbsp;</span> du Soleil, ce qui cause un refroidissement à court terme.</p>
+
+<p><strong>2. Les changements dans l'orbite de la Terre (cycles de Milankovitch)</strong><br>
+Sur des dizaines de milliers d'années, la forme de l'<span class="b b-md">&nbsp;</span> de la Terre autour du Soleil change légèrement. Cela change la quantité d'énergie solaire reçue. Ces cycles expliquent les <span class="b b-md">&nbsp;</span> glaciaires passés.</p>
+
+<p><strong>3. Les variations de l'énergie solaire</strong><br>
+Le Soleil ne produit pas une énergie parfaitement constante. Son énergie varie d'environ <span class="b b-sm">&nbsp;</span> sur un cycle d'environ 11 ans. Un peu plus d'énergie du Soleil réchauffe légèrement la Terre ; un peu moins la refroidit.</p>
+
+<p><strong>4. Les impacts de grandes météorites</strong><br>
+Un très grand impact peut envoyer de la <span class="b b-md">&nbsp;</span> dans l'atmosphère et bloquer la lumière du Soleil pendant des mois ou des années. Les scientifiques croient qu'un impact il y a 66 millions d'années a causé un refroidissement massif.</p>
+
+<h4>Les causes humaines des changements climatiques</h4>
+<p>Depuis la révolution industrielle (~1850), les activités humaines ont ajouté de grandes quantités de gaz à effet de serre dans l'atmosphère — bien <span class="b b-md">&nbsp;</span> que les seuls processus naturels.</p>
+
+<p><strong>1. Brûler des combustibles fossiles</strong><br>
+Le charbon, le pétrole et le gaz naturel contiennent du <span class="b b-sm">&nbsp;</span> stocké sous terre depuis des millions d'années. Quand on les brûle, ce carbone est libéré sous forme de CO₂ dans l'atmosphère très vite. C'est la <span class="b b-md">&nbsp;</span> cause humaine des changements climatiques.</p>
+
+<pre>CARBONE STOCKÉ vs. CARBONE LIBÉRÉ
+
+  Sous terre : [charbon] [pétrole] [gaz]  ← stocké pendant des millions d'années
+  En brûlant : CO₂ → → → atmosphère      ← libéré en quelques décennies</pre>
+
+<p><strong>2. La déforestation</strong><br>
+Les arbres absorbent le CO₂ par la <span class="b b-md">&nbsp;</span>. Quand on coupe et brûle des forêts, deux choses se passent :</p>
+<ul>
+  <li>Le CO₂ stocké dans l'arbre est <span class="b b-md">&nbsp;</span> dans l'atmosphère</li>
+  <li>Les arbres qui auraient absorbé le CO₂ futur sont <span class="b b-md">&nbsp;</span></li>
+</ul>
+
+<p><strong>3. L'agriculture industrielle — le méthane</strong></p>
+<ul>
+  <li>Le bétail produit du <span class="b b-md">&nbsp;</span> pendant la digestion (un processus appelé fermentation entérique)</li>
+  <li>Les rizières inondées produisent aussi du méthane par décomposition bactérienne</li>
+  <li>Le méthane piège <span class="b b-sm">&nbsp;</span> fois plus de chaleur par molécule que le CO₂ sur 20 ans</li>
+</ul>
+
+<p><strong>4. La pollution industrielle</strong><br>
+Les usines et les procédés industriels libèrent divers gaz à effet de serre, notamment l'oxyde <span class="b b-md">&nbsp;</span> (N₂O) provenant des engrais et d'autres gaz industriels à fort potentiel de réchauffement.</p>
+
+<div class="misconception">
+  <div class="label">Idée fausse</div>
+  <p><em>« Le climat a toujours changé naturellement, donc les changements actuels sont juste une variation naturelle. »</em></p>
+  <p>Les changements naturels du climat sont réels — la Terre a eu des âges glaciaires et des périodes chaudes. Mais le rythme des changements actuels sort des variations naturelles. Les données des carottes de glace montrent que les niveaux de CO₂ d'aujourd'hui (~420 ppm) sont plus élevés que jamais au cours des 800 000 dernières années. Les variations naturelles prennent des milliers d'années. Le réchauffement actuel s'est produit en environ 150 ans. Ce rythme correspond à l'utilisation des combustibles fossiles par les humains, pas à un cycle naturel connu.</p>
+</div>
+
+<h4>Pourquoi les causes humaines dominent maintenant</h4>
+<p>Les facteurs climatiques naturels n'ont pas beaucoup changé au cours des 150 dernières années :</p>
+<ul>
+  <li>Énergie solaire : <span class="b b-md">&nbsp;</span> — n'a pas assez augmenté pour expliquer le réchauffement observé</li>
+  <li>Activité volcanique : <span class="b b-md">&nbsp;</span> — causerait un refroidissement temporaire, pas un réchauffement soutenu</li>
+  <li>Cycles orbitaux : <span class="b b-md">&nbsp;</span> — ces cycles prennent des dizaines de milliers d'années</li>
+</ul>
+<p>Le seul grand changement qui correspond au rythme du réchauffement observé, c'est la hausse rapide du CO₂ et d'autres gaz à effet de serre causée par les activités <span class="b b-md">&nbsp;</span>.</p>
+
+<div class="connection">
+  <div class="label">Question de réflexion — lien avec les systèmes vivants</div>
+  <p>Pense au carbone dans un morceau de charbon. D'où vient ce carbone à l'origine ? (Indice : pense à l'unité sur les systèmes vivants — quel processus les plantes utilisent-elles ?) Écris ta réponse et explique le lien entre la photosynthèse et les combustibles fossiles.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Nomme deux causes naturelles des changements climatiques et explique brièvement comment chacune affecte la température de la Terre.
+      <p>Cause 1 : <div class="al"></div></p>
+      <p>Cause 2 : <div class="al"></div></p>
+    </li>
+    <li>Que se passe-t-il avec le carbone stocké quand une forêt est coupée et brûlée ?<div class="al"></div></li>
+    <li>Pourquoi brûler des combustibles fossiles est-il la plus grande cause humaine des changements climatiques ?<div class="al"></div><div class="al"></div></li>
+    <li>Un élève dit : «Le climat a toujours changé avant que les humains existent, donc ce n'est pas nous cette fois.» Quelle preuve précise utiliserais-tu pour contester cette affirmation ?<div class="al"></div><div class="al"></div></li>
+    <li><strong>★★</strong> Le méthane est un gaz à effet de serre bien plus puissant que le CO₂ sur 20 ans. Identifie deux activités humaines qui produisent du méthane et explique pourquoi réduire les émissions de méthane pourrait produire des résultats climatiques plus rapides que de réduire seulement le CO₂.
+      <p>Activité 1 : <div class="al"></div></p>
+      <p>Activité 2 : <div class="al"></div></p>
+      <p>Explication : <div class="al"></div><div class="al"></div></p>
+    </li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>4 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SECTION 4 — LES EFFETS EN ALBERTA -->
+<h2>Section 4 : Les effets des changements climatiques en Alberta</h2>
+<p class="learning-target">Objectif : Je peux décrire les effets mesurables des changements climatiques en Alberta, y compris les changements météorologiques, les feux de forêt, les ressources en eau, l'agriculture et les impacts sur les communautés PNMI et leurs pratiques traditionnelles.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>Un événement météorologique extrême</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Un glacier</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Les pratiques traditionnelles</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>La saison de récolte</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une route de glace</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+
+<div class="misconception">
+  <div class="label">Idée fausse</div>
+  <p><em>« Les changements climatiques, c'est un problème pour le futur — ils n'affectent pas encore vraiment l'Alberta. »</em></p>
+  <p>Les changements climatiques sont mesurables maintenant. Ils affectent déjà l'Alberta de façons documentées et précises. La température moyenne de l'Alberta a augmenté d'environ 1,5 °C depuis 1950. La saison des feux de forêt est mesurée comme étant plus longue. Les glaciers sont plus petits. Les zones agricoles ont déjà changé. Ce sont des changements actuels, pas des prévisions.</p>
+</div>
+
+<h4>Les changements de la météo</h4>
+<ul>
+  <li>Les températures annuelles moyennes ont augmenté d'environ <span class="b b-sm">&nbsp;</span> °C depuis 1950</li>
+  <li>Le printemps arrive <span class="b b-md">&nbsp;</span> — la glace fond sur les rivières plus tôt, les oiseaux migrent plus tôt, les insectes apparaissent plus tôt</li>
+  <li>Les périodes d'hiver sont <span class="b b-md">&nbsp;</span> — moins de jours consécutifs de grand froid</li>
+  <li>Les vagues de chaleur estivales sont <span class="b b-md">&nbsp;</span> fréquentes et plus intenses</li>
+</ul>
+
+<h4>Les événements météorologiques extrêmes</h4>
+<p>Une atmosphère plus chaude retient <span class="b b-md">&nbsp;</span> d'humidité. Plus d'humidité veut dire :</p>
+<ul>
+  <li>Des précipitations plus <span class="b b-md">&nbsp;</span> (plus de pluie quand il pleut)</li>
+  <li>Des tempêtes de grêle plus <span class="b b-md">&nbsp;</span> en Alberta</li>
+  <li>Des sécheresses plus intenses entre les précipitations — le sol se dessèche plus vite par temps chaud</li>
+</ul>
+
+<h4>La saison des feux de forêt</h4>
+<p>La saison des feux de forêt en Alberta est mesurée comme étant plus <span class="b b-md">&nbsp;</span> — elle commence plus tôt au printemps et se termine plus tard à l'automne. Facteurs :</p>
+<ul>
+  <li>Les étés plus chauds et plus <span class="b b-md">&nbsp;</span> dessèchent la végétation plus vite</li>
+  <li>Moins de <span class="b b-md">&nbsp;</span> et de neige veut dire des forêts plus sèches au début de la saison</li>
+  <li>Un printemps plus <span class="b b-md">&nbsp;</span> veut dire plus de mois avec des conditions propices aux feux</li>
+</ul>
+<p><em>Le feu de Fort McMurray en 2016 et le feu de Donnie Creek en 2023 sont des exemples de feux de plus en plus sévères liés au dessèchement causé par le climat.</em></p>
+
+<h4>Les ressources en eau — glaciers et rivières</h4>
+<p>Les glaciers de montagne de l'Alberta alimentent plusieurs grandes rivières, notamment la Bow, l'Athabasca et la North Saskatchewan. Ces glaciers libèrent de l'eau de fonte en été, maintenant les rivières en <span class="b b-md">&nbsp;</span> même quand il ne pleut pas.</p>
+<p>Les glaciers de l'Alberta <span class="b b-md">&nbsp;</span> depuis la fin des années 1800, et le rythme s'accélère.</p>
+<p>Effets :</p>
+<ul>
+  <li>Le débit des rivières peut <span class="b b-md">&nbsp;</span> au début de l'été à mesure que les glaciers fondent plus vite</li>
+  <li>Le débit <span class="b b-md">&nbsp;</span> plus tard dans le siècle à mesure que les glaciers deviennent trop petits</li>
+  <li>Les communautés et les fermes qui dépendent de l'<span class="b b-md">&nbsp;</span> de ces rivières feront face à des pénuries d'eau</li>
+</ul>
+
+<h4>Les changements en agriculture</h4>
+<ul>
+  <li>Certaines cultures qui poussaient seulement plus au <span class="b b-sm">&nbsp;</span> peuvent maintenant pousser en Alberta</li>
+  <li>Les cultures qui poussaient bien dans le sud de l'Alberta font maintenant face à plus de <span class="b b-md">&nbsp;</span> dû à la sécheresse</li>
+  <li>Les zones de ravageurs et de maladies se déplacent vers le <span class="b b-md">&nbsp;</span> à mesure que les hivers deviennent moins sévères</li>
+  <li>Les agriculteurs doivent adapter leurs calendriers de plantation, leur utilisation de l'eau et leurs choix de cultures</li>
+</ul>
+
+<h4>Les impacts sur les communautés PNMI et leurs pratiques traditionnelles</h4>
+<p>Les changements climatiques n'affectent pas tout le monde de la même façon. Pour les communautés des Premières Nations, des Métis et des Inuits en Alberta et partout au Canada, les changements climatiques perturbent des pratiques utilisées depuis des générations.</p>
+
+<p><strong>Les routes de glace :</strong><br>
+Beaucoup de communautés éloignées du nord — y compris des communautés des Premières Nations dans le nord de l'Alberta — dépendent de <span class="b b-md">&nbsp;</span> construites sur des lacs et rivières gelés pour accéder aux provisions, aux soins médicaux et à la famille en hiver. À mesure que les hivers se réchauffent, la glace forme plus <span class="b b-sm">&nbsp;</span> et fond plus <span class="b b-sm">&nbsp;</span>. Cela veut dire :</p>
+<ul>
+  <li>Les routes de glace sont praticables pendant <span class="b b-md">&nbsp;</span> de semaines chaque année</li>
+  <li>Certaines routes ne se forment plus du tout certaines années</li>
+  <li>Les communautés font face à des coûts <span class="b b-md">&nbsp;</span> et à des défis d'approvisionnement</li>
+</ul>
+
+<p><strong>Les saisons de récolte traditionnelles :</strong><br>
+Les communautés autochtones pratiquent la récolte durable de plantes, de poissons, d'animaux et de plantes médicinales selon des cycles saisonniers stables depuis des milliers d'années. Les changements climatiques font bouger ces cycles :</p>
+<ul>
+  <li>Les moments de frai des poissons <span class="b b-md">&nbsp;</span></li>
+  <li>Les animaux migrateurs arrivent à des moments <span class="b b-md">&nbsp;</span> de ce que le savoir traditionnel prédit</li>
+  <li>Les saisons de chasse et de piégeage traditionnelles ne correspondent <span class="b b-md">&nbsp;</span> aux déplacements réels des animaux</li>
+</ul>
+
+<p><strong>Les plantes médicinales et sacrées :</strong><br>
+Beaucoup d'espèces végétales utilisées en médecine traditionnelle et en pratique spirituelle sont sensibles à des conditions précises de température et d'humidité :</p>
+<ul>
+  <li>Certaines espèces se déplacent vers le <span class="b b-md">&nbsp;</span>, hors des territoires traditionnels où elles ont toujours poussé</li>
+  <li>D'autres diminuent à mesure que leurs conditions d'habitat <span class="b b-md">&nbsp;</span></li>
+  <li>Le savoir sur où et quand récolter ces plantes — transmis de génération en génération — devient moins <span class="b b-md">&nbsp;</span> à mesure que les plantes bougent ou disparaissent</li>
+</ul>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Choisis un impact précis sur les communautés autochtones (routes de glace, saisons de récolte ou plantes sacrées) et explique dans tes propres mots pourquoi cet impact est important — pas seulement pour la personne, mais pour la communauté dans son ensemble.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>D'environ combien de degrés la température moyenne de l'Alberta a-t-elle augmenté depuis 1950 ?<div class="al"></div></li>
+    <li>Quel rôle jouent les glaciers de montagne dans les systèmes fluviaux de l'Alberta ? Pourquoi leur diminution est-elle importante ?<div class="al"></div><div class="al"></div></li>
+    <li>Explique comment des températures plus chaudes mènent à des précipitations plus intenses ET à des sécheresses plus intenses.<div class="al"></div><div class="al"></div></li>
+    <li>Décris un impact précis des changements climatiques sur une communauté des Premières Nations dans le nord de l'Alberta. Explique le mécanisme — pourquoi ce changement se produit-il ?<div class="al"></div><div class="al"></div></li>
+    <li><strong>★★</strong> Un camarade dit : «Les changements climatiques pourraient être bons pour les agriculteurs albertains — des saisons de croissance plus longues veut dire plus de nourriture.» Évalue cette affirmation. Qu'est-ce qui est partiellement vrai ? Qu'est-ce qu'elle omet ?
+      <p>Ce qui est partiellement vrai : <div class="al"></div></p>
+      <p>Ce qu'elle omet : <div class="al"></div><div class="al"></div></p>
+    </li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>5 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SECTION 5 — MESURER ET COLLABORER -->
+<h2>Section 5 : Mesurer les changements climatiques et la collaboration</h2>
+<p class="learning-target">Objectif : Je peux décrire les outils que les scientifiques utilisent pour mesurer les changements climatiques, expliquer ce qu'est le savoir écologique traditionnel et pourquoi c'est une source de données scientifique valide, et expliquer pourquoi plusieurs types de preuves renforcent une conclusion.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>Un modèle climatique</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une carotte de glace</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Le savoir écologique traditionnel (SET)</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Les données indirectes</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Les données quantitatives</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Les données qualitatives</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+<p>Pour faire des affirmations fiables sur le climat, il faut des données fiables. Les scientifiques utilisent beaucoup d'outils différents. Certains mesurent ce qui se passe maintenant. D'autres permettent de reconstruire ce qui s'est passé il y a des milliers d'années.</p>
+
+<h4>Les outils que les scientifiques utilisent</h4>
+
+<p><strong>1. Les stations météorologiques</strong></p>
+<ul>
+  <li>Des milliers de stations dans le monde mesurent la <span class="b b-md">&nbsp;</span>, les précipitations, le vent et l'humidité</li>
+  <li>Beaucoup fonctionnent depuis plus de 100 ans — un enregistrement continu</li>
+  <li>Elles permettent de détecter les <span class="b b-md">&nbsp;</span> à long terme en température et en précipitations</li>
+</ul>
+
+<p><strong>2. Les satellites</strong></p>
+<ul>
+  <li>Mesurent la température, l'étendue des glaces, le niveau de la mer, la végétation et les nuages depuis l'orbite</li>
+  <li>Couvrent des zones <span class="b b-md">&nbsp;</span> à atteindre avec des stations au sol — océans, régions polaires, forêts tropicales</li>
+</ul>
+
+<p><strong>3. Les carottes de glace</strong></p>
+<ul>
+  <li>Les scientifiques forent dans les nappes de glace du Groenland et de l'Antarctique — de la glace accumulée depuis des <span class="b b-md">&nbsp;</span> d'années</li>
+  <li>Chaque année de neige forme une nouvelle <span class="b b-md">&nbsp;</span> qui emprisonne des bulles d'air de cette année-là</li>
+  <li>En analysant ces bulles, on peut mesurer les niveaux de CO₂, la température et même les éruptions volcaniques sur des <span class="b b-md">&nbsp;</span> d'années</li>
+  <li>Les carottes de glace sont des <strong>données indirectes</strong> — elles ne mesurent pas directement le climat passé, mais elles le <span class="b b-md">&nbsp;</span> à partir de preuves physiques</li>
+</ul>
+
+<pre>CAROTTE DE GLACE — LIRE LES COUCHES
+
+  Surface (la plus récente) ────── [couche 2026]
+                                   [couche 2025]
+                                   [couche 2024]
+                                        ⋮
+                                   [couche 1000]
+                                        ⋮
+  Profond (la plus ancienne) ──── [couche il y a 200 000+ ans]
+
+  Chaque couche contient : bulles d'air → mesures de CO₂
+                           particules   → événements volcaniques
+                           isotopes     → estimations de température</pre>
+
+<p><strong>4. Les cernes des arbres</strong></p>
+<ul>
+  <li>Les arbres forment un cerne par année — un cerne <span class="b b-sm">&nbsp;</span> veut dire une bonne année (chaude, humide) ; un cerne <span class="b b-sm">&nbsp;</span> veut dire une mauvaise année (froide, sèche)</li>
+  <li>Les archives de cernes (dendrochronologie) peuvent étendre les données climatiques sur des <span class="b b-md">&nbsp;</span> d'années</li>
+  <li>Ce sont aussi des données indirectes — elles reconstituent le passé à partir de preuves biologiques</li>
+</ul>
+
+<p><strong>5. Les bouées océaniques</strong></p>
+<ul>
+  <li>Des instruments flottants qui mesurent la <span class="b b-md">&nbsp;</span> et la chimie des océans</li>
+  <li>L'océan absorbe environ <span class="b b-sm">&nbsp;</span> de la chaleur supplémentaire piégée par les gaz à effet de serre — mesurer la température des océans nous dit où va cette chaleur</li>
+  <li>Elles mesurent aussi l'<span class="b b-md">&nbsp;</span> des océans, qui augmente à mesure qu'ils absorbent du CO₂</li>
+</ul>
+
+<div class="cs-connection">
+  <div class="label">Lien avec l'informatique</div>
+  <p>Les scientifiques du climat construisent des <strong>modèles climatiques par ordinateur</strong> — des programmes qui simulent le fonctionnement du système climatique de la Terre. Ces modèles sont des <strong>artefacts informatiques</strong> : des outils créés par la programmation pour résoudre un problème précis. Un modèle climatique est une <strong>abstraction</strong> — il représente les variables clés (niveaux de CO₂, température des océans, couverture de glace, énergie solaire, circulation atmosphérique) et élimine tout le reste. C'est le même principe qu'un diagramme de forces : garde les relations essentielles, élimine les détails inutiles.</p>
+  <p style="margin-top:6px;">Les scientifiques écrivent du code qui représente des lois physiques, font tourner le modèle dans le temps et comparent les résultats aux données observées. Ils utilisent ces modèles pour prévoir ce qui se passe dans différents scénarios — que se passe-t-il si les émissions restent élevées ? Et si elles baissent rapidement ?</p>
+</div>
+
+<h4>Les données à long terme vs. le bruit à court terme</h4>
+<p>Les données climatiques varient beaucoup d'une année à l'autre — c'est ce qu'on appelle le <strong>bruit</strong>. La <span class="b b-md">&nbsp;</span> nous dit la direction dans laquelle le système se déplace sur des décennies, malgré les variations annuelles.</p>
+
+<pre>SIGNAL vs. BRUIT
+
+Température
+  │
+  │         *        *
+  │    *         *         *         *
+  │        *         *         *
+  │──────────────────────────────────────→ ligne de tendance (signal)
+  │  *
+  │
+  └──────────────────────────────── Temps (décennies)
+
+  Chaque * est une seule année de données (bruit).
+  La ligne de tendance, c'est le signal climatique.</pre>
+
+<p>C'est pourquoi les scientifiques ont besoin de <span class="b b-md">&nbsp;</span> d'années de données avant de faire une affirmation confiante sur une tendance climatique — pas pour être lents, mais pour séparer le signal du bruit de façon fiable.</p>
+
+<h4>Le savoir écologique traditionnel comme source de données à long terme valide</h4>
+<p>Le savoir écologique traditionnel (SET) veut dire les observations détaillées des environnements locaux accumulées par les peuples autochtones sur des <span class="b b-md">&nbsp;</span> de générations — dans certains cas, des centaines à des milliers d'années.</p>
+<p>Le SET n'est pas du folklore ou une tradition culturelle séparée de la science. C'est un ensemble de <span class="b b-md">&nbsp;</span> construit grâce à des observations soigneuses et à long terme des mêmes environnements, transmis et testé de génération en génération.</p>
+
+<p><strong>Pourquoi le SET est précieux sur le plan scientifique :</strong></p>
+<ul>
+  <li>C'est souvent le plus <span class="b b-md">&nbsp;</span> enregistrement des conditions écologiques locales — plus long que tout enregistrement d'instruments</li>
+  <li>Il saisit la variété <span class="b b-md">&nbsp;</span> — à quoi ressemblait la «normale» avant les instruments</li>
+  <li>Il enregistre les relations entre les espèces, les saisons et les conditions à un niveau de <span class="b b-md">&nbsp;</span> que les satellites ou les stations ne peuvent pas égaler</li>
+  <li>Il a été accumulé par des gens qui dépendaient de sa précision pour leur <span class="b b-md">&nbsp;</span> et leur survie — la qualité des observations était maintenue par nécessité</li>
+</ul>
+
+<p><strong>L'exemple de la rivière Bow :</strong><br>
+Les Aînés des communautés le long de la rivière Bow dans le sud de l'Alberta ont documenté le moment de la débâcle printanière à travers la tradition orale depuis des générations. En comparant les archives orales des Aînés avec les archives d'instruments, on voit que la débâcle se produit maintenant environ <span class="b b-sm">&nbsp;</span> semaines plus tôt qu'il y a 40 ans. Ce n'est pas une anecdote — c'est un ensemble de <span class="b b-md">&nbsp;</span> : des observations cohérentes, à long terme et vérifiées localement du même événement annuel.</p>
+
+<h4>Les données qualitatives et quantitatives — les deux sont valides</h4>
+<table>
+  <thead><tr><th>Type</th><th>À quoi ça ressemble</th><th>Exemples</th></tr></thead>
+  <tbody>
+    <tr><td>Quantitatif</td><td>Chiffres, mesures</td><td>Lectures de température par satellite, concentrations de CO₂ en ppm, données de carottes de glace</td></tr>
+    <tr><td>Qualitatif</td><td>Descriptions, modèles, relations</td><td>Observations des Aînés sur les dates de première gelée, les changements dans l'arrivée des oiseaux, les moments de floraison</td></tr>
+  </tbody>
+</table>
+<p>Les deux types de preuves peuvent soutenir une conclusion scientifique. L'utilisation de <span class="b b-md">&nbsp;</span> types de preuves — données d'instruments ET SET — produit une conclusion plus solide que l'une ou l'autre source seule.</p>
+
+<h4>Les modèles de recherche collaborative</h4>
+<p>De plus en plus, les scientifiques du climat et les gardiens du savoir autochtone travaillent <span class="b b-md">&nbsp;</span> sur des projets de recherche :</p>
+<ul>
+  <li>Les scientifiques apportent des instruments <span class="b b-md">&nbsp;</span> et des outils d'analyse</li>
+  <li>Les gardiens du savoir apportent des archives d'observation à <span class="b b-md">&nbsp;</span> terme et une compréhension écologique locale approfondie</li>
+  <li>Ensemble, ils peuvent détecter des changements, vérifier des résultats et comprendre le contexte qu'aucun des deux ne pourrait atteindre seul</li>
+</ul>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Les données de la rivière Bow sur la débâcle des glaces fournies par les Aînés remontent plus loin que tout enregistrement de thermomètre dans cette région. Pourquoi une série temporelle plus longue est-elle importante pour étudier le climat ? Écris ta réponse en utilisant ce que tu sais sur le signal par rapport au bruit et ce qui compte comme preuve pour une tendance à long terme.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Nomme trois outils que les scientifiques utilisent pour mesurer les changements climatiques et dis brièvement ce que chacun mesure.
+      <p>Outil 1 : <div class="al"></div></p>
+      <p>Outil 2 : <div class="al"></div></p>
+      <p>Outil 3 : <div class="al"></div></p>
+    </li>
+    <li>Que sont les données indirectes ? Donne un exemple.<div class="al"></div><div class="al"></div></li>
+    <li>Dans tes propres mots, explique ce qu'est un modèle climatique et pourquoi c'est une abstraction.<div class="al"></div><div class="al"></div></li>
+    <li>Pourquoi le savoir écologique traditionnel des Aînés est-il considéré comme une source de données scientifique valide — pas seulement comme un enregistrement culturel ?<div class="al"></div><div class="al"></div></li>
+    <li><strong>★★</strong> Un chercheur a deux sources de données sur le début du printemps dans un lac du nord de l'Alberta : (a) des images satellites sur 25 ans montrant les dates de fonte des glaces, et (b) des archives orales des Aînés sur le moment de la fonte des glaces sur 80 ans. Explique pourquoi utiliser les deux sources ensemble produit une conclusion plus solide que l'une ou l'autre seule. Dans ta réponse, réfère-toi au signal par rapport au bruit et au concept de plusieurs types de preuves.<div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>6 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- UNIT SYNTHESIS -->
+<h2>Synthèse de l'unité — De mémoire</h2>
+<p><em>Ferme tes notes. Reconstruit.</em></p>
+<p>Pour chaque section, écris l'idée la plus importante en une phrase — de mémoire, sans regarder en arrière.</p>
+
+<div class="synthesis">
+  <div class="synthesis-item"><strong>Section 1 — La météo et le climat</strong><div class="al"></div></div>
+  <div class="synthesis-item"><strong>Section 2 — Les systèmes climatiques de la Terre</strong><div class="al"></div></div>
+  <div class="synthesis-item"><strong>Section 3 — Les causes des changements climatiques</strong><div class="al"></div></div>
+  <div class="synthesis-item"><strong>Section 4 — Les effets des changements climatiques en Alberta</strong><div class="al"></div></div>
+  <div class="synthesis-item"><strong>Section 5 — Mesurer les changements climatiques et la collaboration</strong><div class="al"></div></div>
+</div>
+
+<p><em>Maintenant ouvre tes notes et vérifie.</em></p>
+
+<hr class="section-break">
+
+<h3>Ce que chaque idée fausse avait de faux</h3>
+<p>La météo ≠ le climat<div class="al"></div></p>
+<p>Le climat a toujours changé (mais PAS comme ça)<div class="al"></div></p>
+<p>Les changements climatiques ne sont PAS un problème pour le futur<div class="al"></div></p>
+
+<hr class="section-break">
+
+<h3>Étape finale — retourne à ta vérification des connaissances antérieures</h3>
+<p>Lis ce que tu as écrit avant le début de l'unité.</p>
+<p>Qu'est-ce que tu avais bien ? <div class="al"></div></p>
+<p>Sur quoi tu te trompais ? <div class="al"></div></p>
+<p>Qu'est-ce qui t'a le plus surpris ? <div class="al"></div></p>
+
+<hr class="section-break">
+
+<!-- SPECIAL CALLOUT — EFFET DE SERRE vs. TROU D'OZONE -->
+<h2>Effet de serre et trou dans la couche d'ozone — Une distinction importante</h2>
+
+<div class="misconception">
+  <div class="label">Idée fausse</div>
+  <p><em>« L'effet de serre et le trou dans la couche d'ozone, c'est la même chose — les deux sont causés par la pollution et les deux réchauffent la planète. »</em></p>
+  <p>Ce sont deux phénomènes complètement séparés. Ils impliquent des gaz différents, des couches de l'atmosphère différentes et des effets différents :</p>
+</div>
+
+<div class="compare-table" style="margin-top:12px;">
+  <table>
+    <thead><tr><th></th><th>L'effet de serre</th><th>Le trou dans la couche d'ozone</th></tr></thead>
+    <tbody>
+      <tr><td>Gaz impliqués</td><td>CO₂, méthane, vapeur d'eau</td><td>CFC (chlorofluorocarbures)</td></tr>
+      <tr><td>Couche de l'atmosphère</td><td>Troposphère (basse atmosphère)</td><td>Stratosphère (~15–35 km de hauteur)</td></tr>
+      <tr><td>Ce qu'il fait</td><td>Piège la chaleur — réchauffe la planète</td><td>Diminue la protection contre les UV — laisse entrer plus de rayonnement UV</td></tr>
+      <tr><td>Effet principal</td><td>Hausse de la température mondiale</td><td>Exposition accrue aux UV (cancer de la peau, dommages aux écosystèmes)</td></tr>
+      <tr><td>Principale cause humaine</td><td>Brûler des combustibles fossiles, déforestation</td><td>Aérosols, anciens réfrigérants (maintenant interdits par le Protocole de Montréal)</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top:10px;">Confondre ces deux phénomènes mène à de mauvaises conclusions sur les causes et les solutions. Réparer l'appauvrissement de l'ozone (interdire les CFC) ne résout pas les changements climatiques (il faut quand même réduire le CO₂). Ce sont des problèmes séparés qui demandent des réponses séparées.</p>
+
+<hr class="section-break">
+
+<!-- GRILLE D'AUTO-ÉVALUATION -->
+<h2>Grille d'auto-évaluation</h2>
+<p><em>Évalue-toi honnêtement après la dernière séance. Utilise cela pour identifier ce que tu dois revoir avant le test de l'unité.</em></p>
+
+<div class="rubric">
+  <table>
+    <thead>
+      <tr><th>Groupe de connaissances</th><th>Je peux l'expliquer sans notes</th><th>Une question que j'ai encore</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>La météo et le climat ; les échelles de temps ; faire des affirmations valides</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>L'effet de serre ; les gaz à effet de serre ; les facteurs géographiques ; l'albédo</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Causes naturelles des changements climatiques ; causes humaines ; pourquoi les causes humaines dominent maintenant</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Effets en Alberta : météo, feux de forêt, glaciers, agriculture</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Impacts sur les communautés PNMI : routes de glace, saisons de récolte, plantes sacrées</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Outils pour mesurer le climat : stations, satellites, carottes de glace, cernes des arbres, bouées</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Le savoir écologique traditionnel comme données scientifiques ; recherche collaborative</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Les modèles climatiques comme artefacts informatiques et abstractions</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top:14px; font-style:italic; color:#64748b; font-size:10pt;">Apporte tes questions sans réponse en classe. Elles apparaîtront dans le projet d'enquête et le test de l'unité.</p>
+
+</body>
+</html>

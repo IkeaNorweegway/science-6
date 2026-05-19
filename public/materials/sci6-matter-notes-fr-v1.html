@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sciences 6e année — La matière : notes guidées</title>
+<style>
+  :root {
+    --unit: #0891b2;
+    --unit-dark: #0e7490;
+    --unit-light: #ecfeff;
+    --unit-border: #a5f3fc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--unit-dark);
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif; font-size: 0.85rem; color: #64748b;
+    margin-top: 1rem; display: flex; gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  .pre-knowledge {
+    border: 2px dashed #94a3b8; border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem; margin: 1.5rem 0; background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 0.5rem;
+  }
+
+  .vocab-wrap { margin: 1rem 0 1.5rem; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  table th {
+    font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    background: var(--unit-light); color: var(--unit-dark);
+    padding: 0.5rem 0.75rem; border: 1px solid var(--unit-border); text-align: left;
+  }
+  table td { padding: 0.55rem 0.75rem; border: 1px solid #e2e8f0; vertical-align: top; min-height: 2.2rem; }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 500; color: #0f172a; }
+
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  .al { display: block; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; margin: 0.4rem 0; width: 100%; }
+  .al-sm { display: inline-block; border-bottom: 1.5px solid #94a3b8; height: 1.4rem; width: 8rem; vertical-align: bottom; }
+
+  pre {
+    font-family: 'Courier New', Courier, monospace; font-size: 0.82rem;
+    background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 0.35rem;
+    padding: 0.85rem 1rem; overflow-x: auto; white-space: pre; margin: 0.75rem 0; line-height: 1.5;
+  }
+
+  .misconception {
+    border-left: 5px solid #dc2626; background: #fef2f2;
+    padding: 0.85rem 1.1rem; margin: 1.25rem 0; border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif; font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em; color: #dc2626; margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong { font-style: italic; font-weight: 700; margin-bottom: 0.4rem; }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  .connection {
+    border-left: 5px solid #f97316; background: #fff7ed;
+    padding: 0.85rem 1.1rem; margin: 1.25rem 0; border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif; font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em; color: #c2410c; margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  .note-box {
+    border-left: 4px solid var(--unit); background: var(--unit-light);
+    padding: 0.75rem 1rem; margin: 0.85rem 0; font-size: 0.9rem; border-radius: 0 0.25rem 0.25rem 0;
+  }
+
+  .retrieval {
+    background: #eff6ff; border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: #1d4ed8; margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif; font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; color: #6d28d9; margin-right: 0.3rem;
+  }
+
+  .self-check {
+    background: #f0fdf4; border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem; padding: 0.6rem 1.1rem; margin: 1rem 0;
+    font-family: system-ui, sans-serif; font-size: 0.85rem; color: #166534;
+  }
+
+  .workbook-prompt {
+    font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569;
+    background: #f1f5f9; border-radius: 0.35rem; padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.25rem; border-left: 4px solid #94a3b8;
+  }
+
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  .rubric th { background: #1e293b; color: white; }
+
+  @media print {
+    body { font-size: 11pt; padding: 1.5cm; max-width: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>La matière</h1>
+  <p>Sciences 6e année &nbsp;·&nbsp; Notes guidées &nbsp;·&nbsp; Programme d'études de l'Alberta 2023</p>
+  <div class="name-line">
+    <span>Nom : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date de début : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<div class="pre-knowledge">
+  <div class="label">Avant de commencer — Ce que je sais déjà</div>
+  <p><em>Pas de note. Pas de correction. Sois honnête.</em></p>
+  <p>Écris tout ce que tu sais sur la matière et les particules. De quoi est faite la matière ? Qu'est-ce qui arrive quand la matière chauffe ou refroidit ? Quelle est la différence entre un solide, un liquide et un gaz ?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <p style="margin-top:0.75rem; font-size:0.85rem; color:#64748b;"><em>Tu reviendras à cette page à la fin de l'unité. Sois honnête — voir comment ta pensée a changé, c'est une partie de l'apprentissage.</em></p>
+</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Section 1 &nbsp;·&nbsp; Le modèle particulaire</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:1.25rem;">
+  <strong style="color:#0f172a;">Objectif :</strong> Je peux expliquer le modèle particulaire. Je peux décrire comment les particules bougent. Je peux dire ce qui arrive aux particules quand on chauffe ou refroidit la matière.
+</p>
+
+<h3>Vocabulaire</h3>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:20%">Terme</th><th style="width:40%">Définition dans tes mots</th><th style="width:40%">Un exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Matière</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Particule</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Modèle particulaire</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Température</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Énergie cinétique</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Qu'est-ce que la matière ?</h4>
+<p>La matière, c'est tout ce qui a une <span class="b b-md">&nbsp;</span> et qui prend de la <span class="b b-md">&nbsp;</span>. Ta chaise, l'air que tu respires, l'eau que tu bois — tout cela est de la matière.</p>
+
+<h4>Le modèle particulaire</h4>
+<p>Les scientifiques utilisent le <strong>modèle particulaire</strong> pour expliquer comment la matière se comporte. Ce modèle a quatre idées clés :</p>
+<ol style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>Toute matière est faite de minuscules <span class="b b-md">&nbsp;</span>. On ne peut pas les voir à l'œil nu.</li>
+  <li>Il y a des <span class="b b-md">&nbsp;</span> entre les particules. Elles ne sont pas collées ensemble.</li>
+  <li>Les particules bougent <span class="b b-md">&nbsp;</span>. Elles ne s'arrêtent jamais.</li>
+  <li>La <span class="b b-md">&nbsp;</span> de ce mouvement change avec la température.</li>
+</ol>
+
+<div class="connection">
+  <div class="c-label">Lien avec l'informatique</div>
+  <p>Le modèle particulaire est une <strong>abstraction</strong>. Il garde seulement l'essentiel : l'espace entre les particules et leur vitesse. Il laisse de côté tous les autres détails. En informatique, une abstraction, c'est une version simplifiée de quelque chose de complexe. Une carte routière est une abstraction : elle montre les rues, mais pas les maisons ni les arbres.</p>
+  <p>Donne un autre exemple d'abstraction que tu utilises dans ta vie :</p>
+  <div class="al"></div>
+</div>
+
+<h4>Ce que mesure la température</h4>
+<p>La température mesure la <span class="b b-md">&nbsp;</span> des particules. Ce n'est pas une mesure de chaleur stockée.</p>
+<p>Quand la matière <span class="b b-md">&nbsp;</span>, les particules bougent plus vite et s'écartent.</p>
+<p>Quand la matière <span class="b b-md">&nbsp;</span>, les particules bougent moins vite et se rapprochent.</p>
+
+<h4>Diagrammes de particules à différentes températures</h4>
+<pre>FROID (basse température)         CHAUD (haute température)
+
+  o   o  o                          o       o
+    o   o                       o       o
+  o  o    o                         o      o
+    o  o                        o       o
+  o   o  o                          o      o
+
+Particules : lentes, proches       Particules : rapides, éloignées</pre>
+
+<p>Étiquette les cases : écris « chaud » ou « froid » et « plus vite » ou « moins vite » sous chacune.</p>
+<pre>Diagramme A :                       Diagramme B :
+o o o                                o          o
+ o o o                                    o
+o o o o                              o        o
+
+Température : ___________            Température : ___________
+Particules : _____________           Particules : _____________</pre>
+
+<div class="misconception">
+  <div class="m-label">Idée fausse</div>
+  <p class="m-wrong">« Une particule, c'est un tout petit morceau du matériau — comme un tout petit bout d'acier. »</p>
+  <p>Non. Une particule n'est pas une version miniature du matériau. Il y a de l'<strong>espace vide</strong> entre les particules. Cet espace est réel. C'est cet espace qui permet à la matière de se dilater et de se contracter. Si les particules étaient collées sans espace, rien ne pourrait changer de taille avec la température.</p>
+</div>
+
+<h4>Résumé du modèle particulaire</h4>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Ce que dit le modèle</th><th>Complète</th></tr></thead>
+    <tbody>
+      <tr><td>Toute matière est faite de</td><td><span class="b b-xl">&nbsp;</span></td></tr>
+      <tr><td>Il y a de l'<span class="b b-md">&nbsp;</span> entre les particules</td><td>espace</td></tr>
+      <tr><td>Les particules bougent</td><td><span class="b b-xl">&nbsp;</span></td></tr>
+      <tr><td>En chauffant, les particules bougent</td><td><span class="b b-lg">&nbsp;</span> et s'<span class="b b-md">&nbsp;</span></td></tr>
+      <tr><td>En refroidissant, les particules bougent</td><td><span class="b b-lg">&nbsp;</span> et se <span class="b b-md">&nbsp;</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="retrieval">
+  <div class="r-label">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Nomme deux choses qui sont toujours vraies pour les particules, peu importe la température.<div class="al"></div><div class="al"></div></li>
+    <li>Que mesure la température selon le modèle particulaire ?<div class="al"></div></li>
+    <li>Qu'arrive-t-il à l'espace entre les particules quand on chauffe la matière ?<div class="al"></div></li>
+    <li>On chauffe une tige de métal. Explique ce qui arrive aux particules à l'intérieur.<div class="al"></div><div class="al"></div></li>
+    <li><span class="stretch-label">★ Approfondissement</span> Un élève dit : « Le modèle particulaire est faux — on ne peut pas voir les particules. » Comment lui répondrais-tu ? Utilise au moins une preuve ou un raisonnement.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><strong>Auto-évaluation :</strong> &nbsp; Je pourrais l'enseigner &nbsp;/&nbsp; J'y arrive &nbsp;/&nbsp; Pas encore</div>
+<div class="workbook-prompt">Maintenant — ouvre le cahier de travail. Tu peux répondre à <strong>4 questions</strong>. Ferme tes notes d'abord.</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Section 2 &nbsp;·&nbsp; Les états de la matière et les changements d'état</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:1.25rem;">
+  <strong style="color:#0f172a;">Objectif :</strong> Je peux décrire comment les particules sont arrangées dans un solide, un liquide et un gaz. Je peux nommer les six changements d'état. Je peux expliquer pourquoi la masse ne change pas lors d'un changement d'état.
+</p>
+
+<h3>Vocabulaire</h3>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:20%">Terme</th><th style="width:40%">Définition dans tes mots</th><th style="width:40%">Un exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Solide</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Liquide</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Gaz</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Changement d'état</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Fusion</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Solidification</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Évaporation</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Condensation</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Les trois états de la matière</h4>
+<p>Le modèle particulaire explique les trois états. Il décrit comment les particules sont arrangées et à quelle vitesse elles bougent.</p>
+
+<h4>Solide</h4>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>Les particules sont <span class="b b-md">&nbsp;</span> ensemble en ordre régulier</li>
+  <li>Les particules <span class="b b-md">&nbsp;</span> mais ne se déplacent pas</li>
+  <li>La forme est <span class="b b-md">&nbsp;</span> — un solide garde sa forme</li>
+  <li>Le volume est <span class="b b-md">&nbsp;</span></li>
+</ul>
+<pre>Arrangement — SOLIDE :
+| o | o | o |
+| o | o | o |
+| o | o | o |
+(régulier, serré, les particules vibrent sur place)</pre>
+
+<h4>Liquide</h4>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>Les particules sont <span class="b b-md">&nbsp;</span> mais pas en ordre fixe</li>
+  <li>Les particules peuvent glisser <span class="b b-md">&nbsp;</span> les unes des autres</li>
+  <li>La forme est <span class="b b-md">&nbsp;</span> — un liquide prend la forme de son contenant</li>
+  <li>Le volume est <span class="b b-md">&nbsp;</span></li>
+</ul>
+<pre>Arrangement — LIQUIDE :
+    o  o
+  o    o  o
+    o o
+  o  o   o
+(proches, en désordre — les particules glissent les unes sur les autres)</pre>
+
+<h4>Gaz</h4>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>Les particules sont <span class="b b-md">&nbsp;</span> — elles remplissent tout l'espace</li>
+  <li>Les particules bougent <span class="b b-md">&nbsp;</span> dans toutes les directions</li>
+  <li>La forme est <span class="b b-md">&nbsp;</span> — un gaz remplit tout son contenant</li>
+  <li>Le volume est <span class="b b-md">&nbsp;</span> — on peut comprimer un gaz</li>
+</ul>
+<pre>Arrangement — GAZ :
+o               o
+      o
+            o
+     o             o
+(très espacées, rapides, en désordre)</pre>
+
+<h4>Tableau de comparaison — complète les espaces</h4>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Propriété</th><th>Solide</th><th>Liquide</th><th>Gaz</th></tr></thead>
+    <tbody>
+      <tr><td>Espace entre les particules</td><td><span class="b b-md">&nbsp;</span></td><td>proche</td><td><span class="b b-md">&nbsp;</span></td></tr>
+      <tr><td>Mouvement des particules</td><td>vibrent sur place</td><td><span class="b b-lg">&nbsp;</span> les unes sur les autres</td><td>rapide et en désordre</td></tr>
+      <tr><td>Forme fixe ?</td><td><span class="b b-sm">&nbsp;</span></td><td>Non</td><td>Non</td></tr>
+      <tr><td>Volume fixe ?</td><td>Oui</td><td><span class="b b-sm">&nbsp;</span></td><td><span class="b b-sm">&nbsp;</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Les changements d'état</h4>
+<p>Un <strong>changement d'état</strong> se produit quand la matière passe d'un état à un autre. La température change. Les particules bougent plus vite ou moins vite. Leur arrangement change.</p>
+
+<h4>Les six changements d'état</h4>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Changement</th><th>Direction</th><th>Nom</th></tr></thead>
+    <tbody>
+      <tr><td>Solide → Liquide</td><td>Chauffage</td><td><span class="b b-lg">&nbsp;</span></td></tr>
+      <tr><td>Liquide → Solide</td><td>Refroidissement</td><td><span class="b b-lg">&nbsp;</span></td></tr>
+      <tr><td>Liquide → Gaz</td><td>Chauffage</td><td><span class="b b-lg">&nbsp;</span></td></tr>
+      <tr><td>Gaz → Liquide</td><td>Refroidissement</td><td><span class="b b-lg">&nbsp;</span></td></tr>
+      <tr><td>Solide → Gaz</td><td>Chauffage rapide</td><td>Sublimation</td></tr>
+      <tr><td>Gaz → Solide</td><td>Refroidissement rapide</td><td>Déposition</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Diagramme des changements d'état — étiquette les flèches</h4>
+<pre>                    SUBLIMATION
+            ________________________
+           ↑                        ↓ DÉPOSITION
+           |                        |
+        SOLIDE →  fusion  →  LIQUIDE  →  évaporation  →  GAZ
+               ← solidification ←    ←  condensation ←</pre>
+<p><em>Entoure les changements d'état qui demandent un <strong>CHAUFFAGE</strong>. Mets un carré autour de ceux qui demandent un <strong>REFROIDISSEMENT</strong>.</em></p>
+
+<h4>Idée importante — la masse est conservée</h4>
+<p>Quand la matière change d'état, la <span class="b b-md">&nbsp;</span> ne change pas. Seul l'<span class="b b-md">&nbsp;</span> change.</p>
+<p>100 g de glace → fond → encore <span class="b b-sm">&nbsp;</span> g d'eau liquide</p>
+<p>100 g d'eau liquide → s'évapore → encore <span class="b b-sm">&nbsp;</span> g de vapeur d'eau</p>
+<p>La masse ne change pas. Le volume, lui, <span class="b b-md">&nbsp;</span> changer.</p>
+
+<div class="misconception">
+  <div class="m-label">Idée fausse</div>
+  <p class="m-wrong">« Quand la glace fond, une partie de la masse disparaît. »</p>
+  <p>La masse ne change <strong>jamais</strong> lors d'un changement d'état. La glace et la flaque d'eau pèsent exactement pareil. Ce qui change, c'est l'<strong>arrangement</strong> des particules et le <strong>volume</strong> qu'elles occupent. L'eau ne « disparaît » pas quand elle s'évapore. Elle devient de la vapeur d'eau dans l'air. La masse est toujours là.</p>
+</div>
+
+<div class="connection">
+  <div class="c-label">Question de réflexion</div>
+  <p>Pense à un changement d'état que tu as vu dans ta vie. Décris ce que tu as vu. Nomme le changement d'état. Explique ce qui arrive aux particules.</p>
+  <div class="al"></div><div class="al"></div><div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="r-label">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Décris l'arrangement des particules dans un solide comparé à un gaz. Utilise les mots « espace » et « mouvement ».<div class="al"></div><div class="al"></div></li>
+    <li>Nomme le changement d'état quand : (a) l'eau liquide devient de la glace, et (b) l'eau liquide devient de la vapeur.<div class="al"></div></li>
+    <li>On chauffe 50 g de glace jusqu'à ce qu'elle fonde. Quelle est la masse de l'eau liquide ? Explique pourquoi.<div class="al"></div><div class="al"></div></li>
+    <li>Pourquoi un gaz remplit-il tout son contenant, mais pas un solide ?<div class="al"></div><div class="al"></div></li>
+    <li><span class="stretch-label">★ Approfondissement</span> Un élève dit que l'eau bouillie perd de la masse parce que la vapeur s'en va. Corrige-le. Utilise la conservation de la masse et le modèle particulaire.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><strong>Auto-évaluation :</strong> &nbsp; Je pourrais l'enseigner &nbsp;/&nbsp; J'y arrive &nbsp;/&nbsp; Pas encore</div>
+<div class="workbook-prompt">Maintenant — ouvre le cahier de travail. Tu peux répondre à <strong>4 questions</strong>. Ferme tes notes d'abord.</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Section 3 &nbsp;·&nbsp; Les thermomètres et la température</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:1.25rem;">
+  <strong style="color:#0f172a;">Objectif :</strong> Je peux expliquer comment fonctionne un thermomètre. Je peux lire l'échelle Celsius. Je peux nommer les points de référence importants et les règles de sécurité.
+</p>
+
+<h3>Vocabulaire</h3>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:20%">Terme</th><th style="width:40%">Définition dans tes mots</th><th style="width:40%">Un exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Échelle Celsius</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Point de référence</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Dilatation thermique</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Étalonnage</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>L'échelle Celsius</h4>
+<p>On mesure la température en degrés Celsius (°C) en science et dans la vie de tous les jours au Canada. L'échelle Celsius utilise deux points de référence basés sur l'eau :</p>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Point de référence</th><th>Température</th></tr></thead>
+    <tbody>
+      <tr><td>L'eau <span class="b b-lg">&nbsp;</span> (liquide → solide)</td><td>0 °C</td></tr>
+      <tr><td>L'eau <span class="b b-lg">&nbsp;</span> (liquide → gaz)</td><td>100 °C</td></tr>
+      <tr><td>Température normale du corps humain</td><td>~37 °C</td></tr>
+      <tr><td>Température ambiante confortable</td><td>~20–22 °C</td></tr>
+      <tr><td>Une journée froide d'hiver en Alberta</td><td>~−20 °C</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Ces points de référence sont <span class="b b-xl">&nbsp;</span>. Ils se produisent toujours à la même température. On peut les reproduire dans n'importe quel laboratoire.</p>
+
+<h4>Comment fonctionne un thermomètre</h4>
+<p>Un thermomètre à liquide fonctionne grâce au comportement des particules :</p>
+<ol style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>Le thermomètre contient un liquide (souvent de l'alcool coloré) dans un tube de verre.</li>
+  <li>Quand la température <span class="b b-md">&nbsp;</span>, les particules bougent plus vite. Le liquide <span class="b b-md">&nbsp;</span> et monte dans le tube.</li>
+  <li>Quand la température <span class="b b-md">&nbsp;</span>, les particules bougent moins vite. Le liquide <span class="b b-md">&nbsp;</span> et descend dans le tube.</li>
+  <li>Une échelle sur le verre montre la température.</li>
+</ol>
+<p>Le thermomètre fonctionne parce que le <span class="b b-lg">&nbsp;</span> du liquide change de façon prévisible avec la température.</p>
+
+<h4>Diagramme — thermomètre à deux températures</h4>
+<pre>FROID :                     CHAUD :
+|   |                       |   |
+|   |                       |   |
+| ■ |  ← niveau du liquide  |   |
+| ■ |                       | ■ |  ← niveau monte
+| ■ |                       | ■ |
+| ■ |                       | ■ |
+|___|                       | ■ |
+                            | ■ |
+                            |___|
+
+Particules : lentes, proches    Particules : rapides, éloignées
+Volume : plus petit              Volume : plus grand</pre>
+
+<h4>Règles de sécurité — thermomètre au labo</h4>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>Ne jamais <span class="b b-lg">&nbsp;</span> le thermomètre — il peut se briser</li>
+  <li>Ne jamais l'utiliser pour <span class="b b-lg">&nbsp;</span> un liquide — ce n'est pas une tige de brassage</li>
+  <li>Si le thermomètre <span class="b b-lg">&nbsp;</span>, ne touche pas le verre ni le liquide — préviens ton enseignant</li>
+  <li>Lis le thermomètre à <span class="b b-lg">&nbsp;</span> — ton œil doit être au niveau du liquide</li>
+  <li>Attends que la lecture <span class="b b-lg">&nbsp;</span> avant de noter — le liquide a besoin de temps</li>
+</ul>
+
+<div class="connection">
+  <div class="c-label">Question de réflexion</div>
+  <p>Un thermomètre numérique n'utilise pas de liquide. Il utilise un capteur électrique. Qu'est-ce qui est pareil entre les deux types de thermomètre ? Qu'est-ce qui est différent ?</p>
+  <div class="al"></div><div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="r-label">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Quels sont les deux points de référence de l'échelle Celsius ? Donne la température pour chacun.<div class="al"></div></li>
+    <li>Explique pourquoi le liquide d'un thermomètre monte quand la température augmente. Utilise le modèle particulaire.<div class="al"></div><div class="al"></div></li>
+    <li>Un élève lit le thermomètre en regardant par-dessus le niveau du liquide. Quelle erreur peut-il faire ?<div class="al"></div></li>
+    <li>Un élève utilise le thermomètre pour brasser un bécher d'eau chaude. Qu'est-ce qui pourrait arriver ?<div class="al"></div></li>
+    <li><span class="stretch-label">★ Approfondissement</span> On dit que l'échelle Celsius est « étalonnée à l'eau ». Qu'est-ce que ça veut dire ? Pourquoi l'eau est-elle un bon choix comme point de référence ?<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><strong>Auto-évaluation :</strong> &nbsp; Je pourrais l'enseigner &nbsp;/&nbsp; J'y arrive &nbsp;/&nbsp; Pas encore</div>
+<div class="workbook-prompt">Maintenant — ouvre le cahier de travail. Tu peux répondre à <strong>3 questions</strong>. Ferme tes notes d'abord.</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Section 4 &nbsp;·&nbsp; La dilatation, la contraction et l'anomalie de l'eau</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:1.25rem;">
+  <strong style="color:#0f172a;">Objectif :</strong> Je peux expliquer pourquoi la plupart des matériaux se dilatent quand ils chauffent et se contractent quand ils refroidissent. Je peux expliquer pourquoi l'eau est différente. Je peux expliquer pourquoi la glace flotte.
+</p>
+
+<h3>Vocabulaire</h3>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:20%">Terme</th><th style="width:40%">Définition dans tes mots</th><th style="width:40%">Un exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Dilatation</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Contraction</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Masse volumique</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Anomalie</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Joint de dilatation</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>La règle générale : dilatation et contraction</h4>
+<p>Le modèle particulaire prédit un patron clair pour la plupart des matériaux :</p>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>Quand on <span class="b b-md">&nbsp;</span> un matériau, ses particules bougent plus vite et s'écartent. Le matériau prend plus de place — il se <span class="b b-md">&nbsp;</span>.</li>
+  <li>Quand on <span class="b b-md">&nbsp;</span> un matériau, ses particules bougent moins vite et se rapprochent. Le matériau prend moins de place — il se <span class="b b-md">&nbsp;</span>.</li>
+</ul>
+<p>Cela s'applique aux solides, aux liquides et aux gaz. Les gaz se dilatent et se contractent bien plus que les solides ou les liquides.</p>
+
+<h4>Les joints de dilatation dans les ponts et les routes</h4>
+<p>Les longs ponts et les sections de route ne sont pas une seule pièce. Les ingénieurs laissent de petits <span class="b b-lg">&nbsp;</span> entre les sections — ce sont des joints de dilatation. Un matériau qui ne peut pas se dilater va <span class="b b-lg">&nbsp;</span>, se fissurer ou se gondoler.</p>
+
+<pre>PONT — vue de côté :
+
+[  Section A  ]____écart____[  Section B  ]____écart____[  Section C  ]
+               ↑                          ↑
+        Joint de dilatation         Joint de dilatation
+
+En été (chaud) : les sections se dilatent → l'écart devient ___________
+En hiver (froid) : les sections se contractent → l'écart devient ___________</pre>
+
+<p>Les fils électriques pendent plus bas en <span class="b b-md">&nbsp;</span> (la chaleur cause la dilatation). Ils sont plus tendus en <span class="b b-md">&nbsp;</span> (le froid cause la contraction).</p>
+
+<div class="connection">
+  <div class="c-label">Question de réflexion</div>
+  <p>Pense à une route ou un pont près de ton école. Pourquoi une route en Alberta a-t-elle besoin de plus grands joints de dilatation qu'une route dans une région tropicale ?</p>
+  <div class="al"></div><div class="al"></div>
+</div>
+
+<h4>L'anomalie de l'eau — quand la règle ne s'applique pas</h4>
+<p>Pour presque tous les matériaux, le solide est <span class="b b-md">&nbsp;</span> que le liquide. Les particules sont plus serrées → moins de volume pour la même masse → masse volumique plus grande.</p>
+<p>L'eau brise cette règle. On appelle ça l'<strong>anomalie de l'eau</strong>.</p>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>La plupart des liquides deviennent plus <span class="b b-md">&nbsp;</span> quand ils gèlent</li>
+  <li>L'eau devient <span class="b b-md">&nbsp;</span> dense quand elle gèle</li>
+</ul>
+<p>La glace prend donc <span class="b b-md">&nbsp;</span> de place que la même masse d'eau liquide. La glace est moins dense que l'eau liquide. C'est pourquoi la glace <span class="b b-md">&nbsp;</span>.</p>
+
+<h4>Pourquoi l'eau est différente — explication avec le modèle particulaire</h4>
+<p>Dans l'eau liquide, les particules sont proches et bougent librement. Quand l'eau gèle, les particules ralentissent. Elles se fixent dans une structure cristalline. Cette structure pousse les particules <span class="b b-md">&nbsp;</span> les unes des autres — elle crée plus d'espace, pas moins.</p>
+
+<pre>Eau LIQUIDE :               GLACE :
+    o  o  o                        o       o
+  o  o    o                     o     o     o
+     o  o                          o       o
+  o    o  o                     o     o     o
+                                   o       o
+
+Proches, en désordre        Structure hexagonale fixe
+                            — PLUS d'espace entre les particules
+Masse volumique : PLUS GRANDE   Masse volumique : PLUS PETITE (la glace flotte)</pre>
+
+<div class="misconception">
+  <div class="m-label">Idée fausse</div>
+  <p class="m-wrong">« La glace est plus dense que l'eau liquide — les solides sont toujours plus denses que les liquides. »</p>
+  <p>Pour la plupart des matériaux, c'est vrai. Mais <strong>l'eau est une exception importante</strong>. La glace est <strong>moins</strong> dense que l'eau liquide. C'est pourquoi la glace flotte. Quand l'eau gèle, elle forme une structure cristalline hexagonale. Cette structure prend <strong>plus</strong> de place que l'eau liquide en désordre.</p>
+</div>
+
+<h4>Pourquoi l'anomalie de l'eau est importante</h4>
+
+<p><strong>La vie aquatique en hiver :</strong><br>
+Quand un lac refroidit en hiver, la glace se forme en <span class="b b-md">&nbsp;</span> et flotte. L'eau liquide en dessous reste à environ <span class="b b-sm">&nbsp;</span> °C. Les poissons et autres organismes peuvent survivre dans cette couche liquide.<br>
+Si la glace était plus dense, elle coulerait. Les lacs et rivières pourraient geler <span class="b b-md">&nbsp;</span> à <span class="b b-md">&nbsp;</span>. La plupart des organismes aquatiques ne survivraient pas.</p>
+
+<p><strong>Les fissures dans les roches :</strong><br>
+L'eau qui s'infiltre dans les fissures gèle et se dilate. Cela brise les roches. On appelle ça le gel-dégel.</p>
+
+<p><strong>Savoirs autochtones — observation de la glace dans le nord de l'Alberta :</strong><br>
+Les communautés cries, dénées et métisses du nord de l'Alberta observent les cycles de gel et de dégel sur les rivières et les lacs depuis des générations. Ce savoir comprend quand la glace est assez épaisse pour se déplacer, comment la glace change près des courants, et ce que la débâcle précoce indique pour l'écosystème. Ces observations à long terme correspondent à ce que les scientifiques mesurent aujourd'hui avec des capteurs et des satellites.</p>
+
+<h4>Résumé — dilatation, contraction et anomalie de l'eau</h4>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Situation</th><th>Ce qui arrive</th><th>Pourquoi</th></tr></thead>
+    <tbody>
+      <tr><td>Tige de métal chauffée</td><td><span class="b b-xl">&nbsp;</span></td><td>Les particules bougent plus vite et s'écartent</td></tr>
+      <tr><td>Tige de métal refroidie</td><td><span class="b b-xl">&nbsp;</span></td><td>Les particules bougent moins vite et se rapprochent</td></tr>
+      <tr><td>Eau liquide chauffée</td><td>se dilate légèrement</td><td>L'espace entre les particules augmente</td></tr>
+      <tr><td>Eau refroidie à 0 °C et gelée</td><td><span class="b b-xl">&nbsp;</span> (anomalie)</td><td>La structure cristalline pousse les particules <span class="b b-md">&nbsp;</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="retrieval">
+  <div class="r-label">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Quelle est la règle générale quand on chauffe la plupart des matériaux ?<div class="al"></div></li>
+    <li>Qu'est-ce qu'un joint de dilatation ? Pourquoi les ponts en ont-ils besoin ?<div class="al"></div><div class="al"></div></li>
+    <li>La glace flotte sur l'eau liquide. Qu'est-ce que ça te dit sur la masse volumique de la glace ?<div class="al"></div></li>
+    <li>Pourquoi les poissons peuvent-ils survivre dans un lac couvert de glace en hiver ? Utilise les mots « masse volumique » et « couche ».<div class="al"></div><div class="al"></div></li>
+    <li><span class="stretch-label">★ Approfondissement</span> Un élève dit : « Le fait que la glace flotte prouve que le modèle particulaire est faux — les solides sont censés être plus denses. » Est-ce une bonne critique ? Explique pourquoi l'anomalie de l'eau ne réfute pas le modèle.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><strong>Auto-évaluation :</strong> &nbsp; Je pourrais l'enseigner &nbsp;/&nbsp; J'y arrive &nbsp;/&nbsp; Pas encore</div>
+<div class="workbook-prompt">Maintenant — ouvre le cahier de travail. Tu peux répondre à <strong>5 questions</strong>. Ferme tes notes d'abord.</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Synthèse de l'unité — De mémoire</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.9rem; color:#475569; margin-bottom:1rem;"><em>Ferme tes notes. Reconstruit.</em></p>
+<p>Pour chaque section, écris l'idée la plus importante en une phrase. De mémoire, sans regarder en arrière.</p>
+
+<p><strong>Section 1 — Le modèle particulaire</strong></p>
+<div class="al"></div>
+
+<p style="margin-top:0.75rem;"><strong>Section 2 — Les états de la matière et les changements d'état</strong></p>
+<div class="al"></div>
+
+<p style="margin-top:0.75rem;"><strong>Section 3 — Les thermomètres et la température</strong></p>
+<div class="al"></div>
+
+<p style="margin-top:0.75rem;"><strong>Section 4 — La dilatation, la contraction et l'anomalie de l'eau</strong></p>
+<div class="al"></div>
+
+<hr>
+
+<p><em>Ouvre maintenant tes notes et vérifie.</em></p>
+
+<hr style="margin-top:1rem;">
+
+<p><strong>Question directrice de cette unité :</strong> Comment les particules de la matière sont-elles influencées par le chauffage ou le refroidissement ?</p>
+<p>Écris ta réponse de mémoire en 3 à 5 phrases. Utilise au moins trois termes scientifiques de cette unité.</p>
+<div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div>
+
+<hr>
+
+<p><strong>Dernière étape — retourne à tes connaissances antérieures.</strong></p>
+<p>Lis ce que tu as écrit avant le début de l'unité.</p>
+<p>Qu'est-ce que tu avais raison ? <span class="b b-xl">&nbsp;</span></p>
+<p>En quoi avais-tu tort ? <span class="b b-xl">&nbsp;</span></p>
+<p>Qu'est-ce qui t'a le plus surpris ? <span class="b b-xl">&nbsp;</span></p>
+
+<hr class="section-break">
+
+<h2 class="section-title">Grille d'auto-évaluation</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:1rem;"><em>Évalue-toi honnêtement après la dernière séance. Ceci t'aide à savoir ce qu'il faut revoir avant l'examen.</em></p>
+
+<div class="vocab-wrap">
+  <table class="rubric">
+    <thead><tr><th style="width:55%">Groupe de connaissances</th><th style="width:25%">Je peux l'expliquer sans mes notes</th><th style="width:20%">Une question que j'ai encore</th></tr></thead>
+    <tbody>
+      <tr><td>Modèle particulaire : espace, mouvement, vitesse selon la température</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td>&nbsp;</td></tr>
+      <tr><td>Les trois états : arrangement et mouvement des particules</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td>&nbsp;</td></tr>
+      <tr><td>Changements d'état : noms, directions, conservation de la masse</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td>&nbsp;</td></tr>
+      <tr><td>Thermomètres : fonctionnement, échelle Celsius, points de référence, sécurité</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td>&nbsp;</td></tr>
+      <tr><td>Dilatation et contraction : règle générale, applications réelles</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td>&nbsp;</td></tr>
+      <tr><td>Anomalie de l'eau : glace moins dense, flotte, importance pour la vie aquatique</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.82rem; color:#475569; margin-top:0.75rem;"><em>Apporte tes questions sans réponse en classe. Elles apparaîtront dans le projet d'investigation et dans l'examen de l'unité.</em></p>
+
+</body>
+</html>

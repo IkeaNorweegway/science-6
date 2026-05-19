@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les ressources énergétiques — Notes guidées | Sciences 6</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #fff;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 28px 32px 48px;
+  }
+
+  :root {
+    --accent: #ea580c;
+    --accent-light: #fff7ed;
+    --accent-mid: #f97316;
+    --accent-border: #fed7aa;
+  }
+
+  h1 { font-size: 22pt; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+  h2 { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 28px 0 10px; border-bottom: 2px solid var(--accent-border); padding-bottom: 4px; }
+  h3 { font-size: 11pt; font-weight: 700; color: #334155; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+  h4 { font-size: 11pt; font-weight: 700; color: #334155; margin: 14px 0 4px; }
+  p  { margin-bottom: 8px; }
+  ul, ol { margin: 6px 0 10px 20px; }
+  li { margin-bottom: 4px; }
+  strong { font-weight: 700; }
+  em { font-style: italic; color: #475569; }
+
+  .b { display: inline-block; border-bottom: 1.5px solid #334155; vertical-align: bottom; }
+  .b-sm  { width: 60px; }
+  .b-md  { width: 110px; }
+  .b-lg  { width: 170px; }
+  .b-xl  { width: 240px; }
+
+  .al { display: block; border-bottom: 1px solid #94a3b8; height: 1.8rem; margin: 6px 0; }
+  .al-sm { display: inline-block; border-bottom: 1px solid #94a3b8; width: 200px; vertical-align: bottom; }
+
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
+  th { background: var(--accent-light); color: #9a3412; font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid var(--accent-border); }
+  td { padding: 8px 10px; border: 1px solid #e2e8f0; vertical-align: top; }
+  tr:nth-child(even) td { background: #fff7ed; }
+
+  pre, code {
+    font-family: 'Courier New', monospace;
+    font-size: 10pt;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+  }
+  pre { padding: 10px 14px; margin: 10px 0; white-space: pre; overflow-x: auto; }
+  code { padding: 1px 5px; }
+
+  .misconception {
+    border-left: 4px solid #dc2626;
+    background: #fef2f2;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .misconception .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #dc2626; margin-bottom: 4px;
+  }
+
+  .connection {
+    border-left: 4px solid var(--accent-mid);
+    background: var(--accent-light);
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .connection .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--accent); margin-bottom: 4px;
+  }
+
+  .cs-connection {
+    border-left: 4px solid #0284c7;
+    background: #f0f9ff;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .cs-connection .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #0284c7; margin-bottom: 4px;
+  }
+
+  .retrieval {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 18px 0;
+  }
+  .retrieval-header {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: #1d4ed8; margin-bottom: 10px;
+  }
+  .retrieval ol { margin-left: 18px; }
+  .retrieval li { margin-bottom: 14px; }
+
+  .self-check {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 10.5pt;
+  }
+  .self-check .label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: #16a34a; margin-bottom: 6px;
+  }
+
+  .workbook-prompt {
+    background: var(--accent-light);
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 12px 0 0;
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #9a3412;
+  }
+
+  .learning-target {
+    font-size: 10pt; font-style: italic; color: #475569;
+    margin-bottom: 12px; padding: 6px 12px;
+    border-left: 3px solid var(--accent-mid);
+    background: var(--accent-light);
+  }
+
+  .section-break { border: none; border-top: 2px dashed #e2e8f0; margin: 28px 0; }
+
+  .header-strip {
+    border-left: 5px solid var(--accent);
+    padding: 10px 16px;
+    margin-bottom: 24px;
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+  }
+  .header-strip .course-label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--accent-mid); margin-bottom: 4px;
+  }
+
+  .name-row { display: flex; gap: 24px; margin: 16px 0 24px; font-size: 10.5pt; }
+  .name-row span { color: #64748b; }
+  .name-row .b { flex: 1; }
+
+  .pre-knowledge {
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0 24px;
+    background: var(--accent-light);
+  }
+  .pre-knowledge .pk-label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: var(--accent); margin-bottom: 8px;
+  }
+
+  .synthesis { margin: 24px 0; }
+  .synthesis-item { margin-bottom: 20px; }
+  .synthesis-item strong { display: block; color: var(--accent); font-size: 10.5pt; margin-bottom: 6px; }
+
+  .rubric table th { background: var(--accent-light); }
+  .rubric td:nth-child(2) { text-align: center; font-size: 10pt; }
+
+  @media print {
+    body { padding: 18px 22px 32px; font-size: 10.5pt; }
+    .section-break { margin: 18px 0; }
+    h2 { margin: 20px 0 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header-strip">
+  <div class="course-label">Sciences 6 — Les ressources énergétiques</div>
+  <h1>Cahier de notes guidées</h1>
+</div>
+
+<div class="name-row">
+  <span>Nom :</span><span class="b b-xl">&nbsp;</span>
+  <span>Date de début :</span><span class="b b-lg">&nbsp;</span>
+</div>
+
+<!-- PRE-KNOWLEDGE -->
+<div class="pre-knowledge">
+  <div class="pk-label">Avant de commencer — Ce que je sais déjà</div>
+  <p><em>Pas de notes. Pas de correction. Sois honnête.</em></p>
+  <p style="margin-top:8px;">Écris tout ce que tu sais sur les ressources énergétiques. C'est quoi une ressource énergétique ? D'où vient notre énergie ? Quelle est la différence entre renouvelable et non renouvelable ? Quelles ressources énergétiques l'Alberta utilise-t-elle ?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <p style="margin-top:10px; font-size:10pt; color:#64748b; font-style:italic;">Tu reviendras à cette page à la fin de l'unité. Sois honnête — voir comment ta pensée a changé fait partie de l'apprentissage.</p>
+</div>
+
+<hr class="section-break">
+
+<!-- SECTION 1 — QU'EST-CE QUE LES RESSOURCES ÉNERGÉTIQUES ? -->
+<h2>Section 1 : Qu'est-ce que les ressources énergétiques ?</h2>
+<p class="learning-target">Objectif : Je peux définir une ressource énergétique, distinguer les ressources renouvelables et non renouvelables, et donner des exemples de chacune dans un contexte albertain.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>Une ressource énergétique</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une ressource renouvelable</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Une ressource non renouvelable</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Un combustible fossile</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>L'uranium</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+<p>Une <strong>ressource énergétique</strong> est quelque chose qu'on utilise pour faire du <span class="b b-md">&nbsp;</span>, produire de la <span class="b b-md">&nbsp;</span> ou générer de l'<span class="b b-md">&nbsp;</span>.</p>
+<p>Les ressources énergétiques se divisent en deux catégories :</p>
+<p>Les <strong>ressources renouvelables</strong> sont remplacées <span class="b b-md">&nbsp;</span> — elles sont renouvelées par des processus naturels assez vite pour qu'on ne les épuise pas.</p>
+<p>Les <strong>ressources non renouvelables</strong> se sont formées sur des <span class="b b-md">&nbsp;</span> d'années. Une fois utilisées, elles ne peuvent pas être remplacées de notre vivant.</p>
+
+<h4>Renouvelable et non renouvelable — exemples</h4>
+<table>
+  <thead><tr><th>Renouvelable</th><th>Non renouvelable</th></tr></thead>
+  <tbody>
+    <tr><td>Vent</td><td>Charbon</td></tr>
+    <tr><td>Solaire (lumière du Soleil)</td><td>Pétrole</td></tr>
+    <tr><td>Hydraulique (eau en mouvement)</td><td>Gaz naturel</td></tr>
+    <tr><td>Géothermique (chaleur de la Terre)</td><td>Uranium</td></tr>
+    <tr><td>Biomasse (matières végétales et animales)</td><td></td></tr>
+  </tbody>
+</table>
+
+<h4>Les ressources énergétiques dans la vie quotidienne</h4>
+<p>Associe chaque usage à une ressource du tableau ci-dessus :</p>
+<table>
+  <thead><tr><th>Usage</th><th>Ressource(s) énergétique(s) possibles</th></tr></thead>
+  <tbody>
+    <tr><td>Chauffer une maison</td><td>&nbsp;</td></tr>
+    <tr><td>Faire la cuisine</td><td>&nbsp;</td></tr>
+    <tr><td>Transport (voitures, autobus)</td><td>&nbsp;</td></tr>
+    <tr><td>Éclairage (électricité)</td><td>&nbsp;</td></tr>
+    <tr><td>Fabrication (usines)</td><td>&nbsp;</td></tr>
+  </tbody>
+</table>
+
+<h4>Le contexte de l'Alberta</h4>
+<p>L'Alberta a utilisé le <span class="b b-md">&nbsp;</span> et le <span class="b b-md">&nbsp;</span> depuis longtemps — des combustibles fossiles trouvés en grandes quantités sous la province. Les sables bitumineux dans le nord de l'Alberta sont l'un des plus grands dépôts de pétrole au monde.</p>
+<p>L'Alberta développe aussi ses secteurs d'énergie <span class="b b-md">&nbsp;</span> et <span class="b b-md">&nbsp;</span>. De grandes fermes éoliennes fonctionnent dans le sud de l'Alberta, où les vents sont forts et réguliers.</p>
+<p>En 2018, l'Alberta a commencé à mettre fin à l'utilisation du <span class="b b-md">&nbsp;</span>. Aujourd'hui, le charbon n'est plus utilisé pour produire de l'électricité en Alberta.</p>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Pense à d'où vient la chaleur et l'électricité dans ta maison. Si tu ne sais pas, demande à quelqu'un chez toi ou cherche la réponse. Quelles ressources énergétiques chauffent ta maison et alimentent tes lumières ?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="misconception">
+  <div class="label">Idée fausse — « Renouvelable = propre »</div>
+  <p>Renouvelable veut dire que la ressource est remplacée <span class="b b-md">&nbsp;</span> et ne s'épuise pas. Ça ne veut <strong>pas</strong> dire qu'elle est sans danger pour l'environnement. Les grands barrages hydroélectriques inondent des écosystèmes entiers. Les éoliennes ont besoin de terres et affectent la migration des oiseaux. La fabrication de panneaux solaires utilise des matériaux toxiques. <strong>Renouvelable et propre, ce sont deux idées différentes</strong> — une ressource peut être l'un sans être l'autre.</p>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>C'est quoi une ressource énergétique ? Écris la définition dans tes propres mots.<div class="al"></div><div class="al"></div></li>
+    <li>Nomme deux ressources énergétiques renouvelables et deux non renouvelables.
+      <p>Renouvelables : <span class="al-sm">&nbsp;</span> et <span class="al-sm">&nbsp;</span></p>
+      <p>Non renouvelables : <span class="al-sm">&nbsp;</span> et <span class="al-sm">&nbsp;</span></p>
+    </li>
+    <li>Qu'est-ce que ça veut dire qu'une ressource est «renouvelable» ? Qu'est-ce qui doit se passer pour qu'une ressource soit renouvelable ?<div class="al"></div><div class="al"></div></li>
+    <li>L'Alberta a arrêté d'utiliser le charbon. Nomme une ressource renouvelable qui pourrait remplacer le charbon pour produire de l'électricité en Alberta.<div class="al"></div></li>
+    <li><strong>★★</strong> Un élève dit : «L'énergie solaire est renouvelable, donc elle n'a aucun impact négatif sur l'environnement.» Identifie ce qui est correct et ce qui est incorrect dans cette affirmation, et explique.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>4 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SECTION 2 — AVANT ET APRÈS TRANSFORMATION -->
+<h2>Section 2 : Avant et après transformation</h2>
+<p class="learning-target">Objectif : Je peux expliquer la différence entre utiliser une ressource énergétique directement et l'utiliser après transformation, et je peux donner des exemples des deux — y compris des ressources utilisées des deux façons.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>Avant transformation</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>Après transformation</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>La conversion</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+<p>Certaines ressources énergétiques peuvent être utilisées <span class="b b-md">&nbsp;</span> dans leur forme naturelle — avant toute transformation.</p>
+<p>Certaines ressources énergétiques doivent d'abord être <span class="b b-md">&nbsp;</span> en une autre forme — après transformation — avant qu'on puisse utiliser leur énergie.</p>
+<p>Ça ne correspond <strong>pas</strong> aux catégories renouvelable et non renouvelable. Une ressource peut être renouvelable ET utilisée avant transformation, ou renouvelable ET après transformation. Les deux catégories sont <span class="b b-md">&nbsp;</span>.</p>
+
+<h4>Le vent — l'exemple clé</h4>
+<p>Le vent est une ressource renouvelable utilisée à la <strong>fois</strong> avant et après transformation :</p>
+<table>
+  <thead><tr><th></th><th>Avant transformation</th><th>Après transformation</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Le vent</strong></td>
+      <td>Un moulin à vent traditionnel utilise le vent <span class="b b-md">&nbsp;</span> pour tourner une meule (moudre le grain) ou pomper de l'eau</td>
+      <td>Une <span class="b b-md">&nbsp;</span> moderne convertit le vent en électricité — une forme d'énergie différente</td>
+    </tr>
+  </tbody>
+</table>
+<p>Le moulin à vent et l'éolienne utilisent tous les deux le vent, mais de façons très différentes. L'éolienne ajoute une étape de conversion.</p>
+
+<h4>Avant et après transformation — plusieurs exemples</h4>
+<table>
+  <thead><tr><th>Ressource</th><th>Avant transformation</th><th>Après transformation</th></tr></thead>
+  <tbody>
+    <tr><td>Le bois</td><td>Brûler des bûches directement pour chauffer une pièce</td><td>Convertir le bois en <span class="b b-md">&nbsp;</span> (charbon de bois), qui brûle plus chaud et plus propre</td></tr>
+    <tr><td>L'énergie solaire</td><td>Une fenêtre orientée au sud laisse la lumière du Soleil chauffer une pièce <span class="b b-md">&nbsp;</span></td><td>Une cellule photovoltaïque convertit la lumière du Soleil en <span class="b b-md">&nbsp;</span></td></tr>
+    <tr><td>Le pétrole brut</td><td>— (non utilisé directement)</td><td>Raffiné en <span class="b b-md">&nbsp;</span>, en diesel et d'autres carburants</td></tr>
+    <tr><td>L'eau en mouvement</td><td>Une roue hydraulique utilise l'eau en mouvement <span class="b b-md">&nbsp;</span> pour tourner une meule</td><td>Un barrage <span class="b b-md">&nbsp;</span> produit de l'électricité</td></tr>
+    <tr><td>La biomasse (grain/sucre)</td><td>Mangé directement — le corps en tire de l'énergie</td><td>Fermenté et distillé en carburant d'<span class="b b-md">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<div class="misconception">
+  <div class="label">Idée fausse — « Avant transformation = renouvelable, après transformation = non renouvelable »</div>
+  <p>Ce n'est <strong>pas vrai</strong>. Les catégories avant/après transformation et renouvelable/non renouvelable sont complètement indépendantes. Regarde les exemples :</p>
+  <ul>
+    <li>Le vent (<span class="b b-md">&nbsp;</span> — renouvelable) peut être utilisé avant transformation (moulin à vent) ou après (éolienne)</li>
+    <li>Le bois (peut être renouvelable) peut être utilisé avant (brûler des bûches) ou après (charbon de bois)</li>
+    <li>Le pétrole brut (non renouvelable) est seulement utilisé après transformation — mais pas parce qu'il est non renouvelable. C'est parce que le pétrole brut n'est pas utile comme carburant dans sa forme naturelle.</li>
+  </ul>
+  <p><strong>Ne mélange pas ces deux systèmes de classification. Ils répondent à des questions différentes.</strong></p>
+</div>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Pense à quelque chose que tu utilises à la maison qui fonctionne avec de l'énergie transformée. Pense à quelque chose qui utilise l'énergie de façon plus directe. Écris tes exemples ci-dessous.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Quelle est la différence entre utiliser une ressource énergétique «avant transformation» et «après transformation» ?<div class="al"></div><div class="al"></div></li>
+    <li>Donne un exemple du vent utilisé avant transformation et un exemple après transformation.
+      <p>Avant : <div class="al"></div></p>
+      <p>Après : <div class="al"></div></p>
+    </li>
+    <li>Le pétrole brut est-il utilisé avant ou après transformation ? Explique.<div class="al"></div><div class="al"></div></li>
+    <li>Complète le tableau de mémoire :
+      <table>
+        <thead><tr><th>Ressource</th><th>Avant transformation</th><th>Après transformation</th></tr></thead>
+        <tbody>
+          <tr><td>Le bois</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-xl">&nbsp;</span></td></tr>
+          <tr><td>L'énergie solaire</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-xl">&nbsp;</span></td></tr>
+        </tbody>
+      </table>
+    </li>
+    <li><strong>★★</strong> Un élève dit : «Les ressources renouvelables sont toujours utilisées avant transformation — comme le vent et le solaire.» Utilise deux exemples précis pour expliquer pourquoi c'est incorrect.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>3 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SECTION 3 — CHOISIR LES RESSOURCES ÉNERGÉTIQUES -->
+<h2>Section 3 : Choisir les ressources énergétiques</h2>
+<p class="learning-target">Objectif : Je peux nommer et expliquer les cinq facteurs utilisés pour choisir une ressource énergétique, les appliquer à une vraie décision albertaine et expliquer pourquoi choisir une ressource énergétique implique des compromis.</p>
+
+<h3>Vocabulaire</h3>
+<table>
+  <thead><tr><th>Terme</th><th>Définition dans tes propres mots</th><th>Un exemple</th></tr></thead>
+  <tbody>
+    <tr><td>La disponibilité</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>L'impact social</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>L'impact économique</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>L'impact environnemental</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+    <tr><td>La gestion responsable</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+<p>Choisir quelle ressource énergétique utiliser n'est pas simple. Il faut considérer plusieurs facteurs. Les scientifiques, les ingénieurs, les gouvernements et les communautés comparent ces <span class="b b-md">&nbsp;</span> quand ils prennent des décisions énergétiques.</p>
+<p>Il y a <strong>cinq facteurs de sélection :</strong></p>
+
+<h4>Facteur 1 : La disponibilité</h4>
+<p>La ressource est-elle présente en quantité <span class="b b-md">&nbsp;</span> à cet endroit ?</p>
+<ul>
+  <li>Une région avec des <span class="b b-md">&nbsp;</span> réguliers peut bien utiliser l'énergie éolienne.</li>
+  <li>Une région peu ensoleillée en hiver ne recevra peut-être pas assez d'énergie des panneaux <span class="b b-md">&nbsp;</span> toute l'année.</li>
+  <li>Une communauté sans <span class="b b-md">&nbsp;</span> à proximité ne peut pas utiliser l'énergie hydraulique.</li>
+</ul>
+<p>La disponibilité dépend de la géographie et de la <span class="b b-md">&nbsp;</span> — la ressource existe-t-elle en quantités utilisables, là où et quand on en a besoin ?</p>
+
+<h4>Facteur 2 : L'impact social</h4>
+<p>Comment l'utilisation de cette ressource affecte-t-elle les gens et les communautés ? L'impact social comprend :</p>
+<ul>
+  <li>L'<span class="b b-md">&nbsp;</span> — est-ce que l'extraction ou la production de cette énergie crée des emplois ?</li>
+  <li>Les effets sur la <span class="b b-md">&nbsp;</span> — la ressource bénéficie-t-elle ou nuit-elle aux communautés proches ?</li>
+  <li>L'acceptation <span class="b b-md">&nbsp;</span> — les gens soutiennent-ils ou s'opposent-ils à ce projet énergétique ?</li>
+  <li>La <span class="b b-md">&nbsp;</span> — cette source peut-elle fournir de l'énergie de façon constante, ou seulement quand le Soleil brille ou le vent souffle ?</li>
+</ul>
+<p>Les principes autochtones de gérance des terres correspondent bien à ce facteur. Les communautés des Premières Nations et des Métis en Alberta considèrent les ressources comme quelque chose à garder en commun pour les <span class="b b-md">&nbsp;</span> futures — pas seulement à extraire pour le bénéfice d'aujourd'hui. Beaucoup de ces communautés ont été fortement touchées par l'exploitation des sables bitumineux. Aujourd'hui, beaucoup d'entre elles sont des leaders dans le développement des énergies <span class="b b-md">&nbsp;</span> sur leurs terres.</p>
+
+<h4>Facteur 3 : L'impact économique</h4>
+<p>Combien ça coûte ? L'impact économique comprend le coût pour :</p>
+<ul>
+  <li><span class="b b-md">&nbsp;</span> le système (construire une ferme éolienne, installer des panneaux solaires, forer pour le gaz naturel)</li>
+  <li><span class="b b-md">&nbsp;</span> le système (maintenance et réparations)</li>
+  <li>Faire <span class="b b-md">&nbsp;</span> le système (coûts d'exploitation)</li>
+</ul>
+<p>Une ressource peu coûteuse à extraire peut être coûteuse à transformer. Une ressource coûteuse à installer (comme le solaire) peut presque ne rien coûter à faire fonctionner une fois construite. Les décisions économiques regardent le coût <span class="b b-md">&nbsp;</span> sur toute la durée de vie du projet.</p>
+
+<h4>Facteur 4 : L'impact environnemental</h4>
+<p>Comment l'utilisation de cette ressource affecte-t-elle l'environnement ? L'impact environnemental comprend :</p>
+<ul>
+  <li>La <span class="b b-md">&nbsp;</span> de l'air — libérer des gaz à effet de serre ou des particules dans l'air</li>
+  <li>L'utilisation des <span class="b b-md">&nbsp;</span> — combien de terrain est perturbé ou occupé ?</li>
+  <li>La perturbation des <span class="b b-md">&nbsp;</span> — l'extraction ou l'infrastructure nuit-elle à la faune ou aux écosystèmes ?</li>
+  <li>L'impact sur l'<span class="b b-md">&nbsp;</span> — le processus d'extraction affecte-t-il les rivières, les eaux souterraines ou les lacs ?</li>
+</ul>
+
+<div class="cs-connection">
+  <div class="label">Lien avec l'informatique</div>
+  <p>La technologie est conçue pour résoudre des problèmes, mais elle a toujours des effets inattendus. Les réseaux intelligents, les véhicules électriques et l'infrastructure d'énergie renouvelable sont des <strong>artefacts informatiques</strong> — des systèmes conçus pour réduire les émissions et améliorer l'efficacité énergétique. Mais ils ont leurs propres effets inattendus : l'extraction de métaux rares pour les batteries et les panneaux solaires perturbe les écosystèmes ; l'expansion rapide des véhicules électriques crée des déchets électroniques ; connecter plus de sources renouvelables au réseau électrique peut causer de l'<span class="b b-md">&nbsp;</span> quand l'offre et la demande ne correspondent pas. Chaque solution technologique crée de nouveaux compromis à surveiller.</p>
+</div>
+
+<h4>Facteur 5 : La gestion responsable</h4>
+<p>Comment utilise-t-on la ressource de façon sage sur le long terme ? La gestion responsable comprend :</p>
+<ul>
+  <li>La <span class="b b-md">&nbsp;</span> — utiliser moins d'énergie, réduire les déchets</li>
+  <li>La durabilité à <span class="b b-md">&nbsp;</span> terme — cette ressource sera-t-elle encore disponible et abordable dans 50 ans ?</li>
+  <li>La surveillance des <span class="b b-md">&nbsp;</span> — utiliser les données pour suivre les impacts de l'utilisation de l'énergie et s'ajuster au besoin</li>
+  <li>Laisser des options ouvertes pour les générations <span class="b b-md">&nbsp;</span> — ne pas prendre de décisions irréversibles</li>
+</ul>
+<p>Ce facteur correspond aux méthodes scientifiques : la gestion responsable demande de recueillir des <span class="b b-md">&nbsp;</span>, de prendre des décisions basées sur des preuves et d'être prêt à changer de <span class="b b-md">&nbsp;</span> quand les preuves changent.</p>
+<p>Ce facteur correspond aussi à la gérance des terres autochtones — l'idée que la terre, l'eau et les ressources qu'on utilise aujourd'hui sont tenues en fiducie, pas possédées. Ce qu'on prend maintenant affecte ce qui sera disponible pour ceux qui viennent après nous.</p>
+
+<h4>Appliquer les cinq facteurs — une vraie décision albertaine</h4>
+<p>Une petite ville de l'Alberta doit choisir comment produire son électricité. Trois options sont sur la table :</p>
+<table>
+  <thead><tr><th>Facteur</th><th>Gaz naturel</th><th>Éolien</th><th>Solaire</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Disponibilité</strong></td><td>Les pipelines relient déjà la ville au gaz naturel</td><td>Vents forts dans la région toute l'année</td><td>Bon ensoleillement estival ; lumière limitée en hiver</td></tr>
+    <tr><td><strong>Impact social</strong></td><td>Emplois dans l'industrie existante ; quelques préoccupations sur la qualité de l'air</td><td>Nouveaux emplois industriels ; quelques préoccupations de bruit près des éoliennes</td><td>Peu de perturbations ; pas de bruit</td></tr>
+    <tr><td><strong>Impact économique</strong></td><td>Faible coût d'installation ; hausse des coûts à long terme</td><td>Coût d'installation élevé ; très faibles coûts d'exploitation</td><td>Coût d'installation élevé ; très faibles coûts d'exploitation</td></tr>
+    <tr><td><strong>Impact environnemental</strong></td><td>Émissions de CO₂ et de méthane</td><td>Utilisation des terres ; migration des oiseaux et des chauves-souris</td><td>La fabrication des panneaux utilise des matériaux toxiques</td></tr>
+    <tr><td><strong>Gestion responsable</strong></td><td>Combustible fossile — non renouvelable ; l'approvisionnement finira par diminuer</td><td>Renouvelable indéfiniment si entretenu</td><td>Renouvelable indéfiniment si entretenu</td></tr>
+  </tbody>
+</table>
+<p><em>Aucune option n'est parfaite. La ville doit peser les cinq facteurs et prendre une décision basée sur des preuves — en sachant qu'il y a des compromis.</em></p>
+
+<div class="connection">
+  <div class="label">Quelle serait ta recommandation ?</div>
+  <p>Écris ta recommandation et donne au moins deux raisons en utilisant les facteurs ci-dessus.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="connection">
+  <div class="label">Question de réflexion</div>
+  <p>Les décisions scientifiques ne portent pas seulement sur les données. Elles demandent de peser les preuves, de tenir compte de qui est touché et de penser à l'avenir. Pense à une décision énergétique prise dans ta communauté. Quels facteurs penses-tu qui ont le plus compté pour les gens concernés ?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<div class="retrieval">
+  <div class="retrieval-header">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Nomme les cinq facteurs utilisés pour choisir une ressource énergétique.
+      <p>1. <span class="al-sm">&nbsp;</span> &nbsp; 2. <span class="al-sm">&nbsp;</span> &nbsp; 3. <span class="al-sm">&nbsp;</span></p>
+      <p>4. <span class="al-sm">&nbsp;</span> &nbsp; 5. <span class="al-sm">&nbsp;</span></p>
+    </li>
+    <li>Une entreprise veut construire une ferme éolienne dans une vallée de montagne où les vents sont très faibles. Quel facteur de sélection pose problème le plus clairement ? Explique.<div class="al"></div><div class="al"></div></li>
+    <li>Quelle est la différence entre l'impact économique et l'impact environnemental ?
+      <p>Économique : <div class="al"></div></p>
+      <p>Environnemental : <div class="al"></div></p>
+    </li>
+    <li>Explique comment la gestion responsable correspond aux principes autochtones de gérance des terres en Alberta.<div class="al"></div><div class="al"></div></li>
+    <li><strong>★★</strong> Un élève dit : «On devrait toujours choisir la ressource énergétique la moins chère.» En utilisant au moins trois des cinq facteurs de sélection, explique pourquoi ce n'est pas une façon complète de prendre une décision énergétique.<div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check"><div class="label">Auto-évaluation</div><p><em>Je pourrais l'enseigner</em> &nbsp;/&nbsp; <em>Je progresse</em> &nbsp;/&nbsp; <em>Pas encore</em></p></div>
+<div class="workbook-prompt">Maintenant — va dans le cahier de travail. Tu peux répondre à <strong>5 questions</strong> dans le cahier. Ferme tes notes et va y répondre.</div>
+
+<hr class="section-break">
+
+<!-- SYNTHÈSE DE L'UNITÉ -->
+<h2>Synthèse de l'unité — De mémoire</h2>
+<p><em>Ferme tes notes. Reconstruit.</em></p>
+<p>Pour chaque section, écris l'idée la plus importante en une phrase — de mémoire, sans regarder en arrière.</p>
+
+<div class="synthesis">
+  <div class="synthesis-item"><strong>Section 1 — Qu'est-ce que les ressources énergétiques ?</strong><div class="al"></div></div>
+  <div class="synthesis-item"><strong>Section 2 — Avant et après transformation</strong><div class="al"></div></div>
+  <div class="synthesis-item"><strong>Section 3 — Choisir les ressources énergétiques</strong><div class="al"></div></div>
+</div>
+
+<p><em>Maintenant ouvre tes notes et vérifie.</em></p>
+
+<hr class="section-break">
+
+<h3>Étape finale — retourne à ta vérification des connaissances antérieures</h3>
+<p>Lis ce que tu as écrit avant le début de l'unité.</p>
+<p>Qu'est-ce que tu avais bien ? <div class="al"></div></p>
+<p>Sur quoi tu te trompais ? <div class="al"></div></p>
+<p>Qu'est-ce qui t'a le plus surpris ? <div class="al"></div></p>
+
+<p style="margin-top:14px;"><strong>Une idée fausse que tu as corrigée pendant cette unité</strong> (écris-la au complet — la mauvaise idée ET pourquoi elle est fausse) :</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+
+<hr class="section-break">
+
+<!-- GRILLE D'AUTO-ÉVALUATION -->
+<h2>Grille d'auto-évaluation</h2>
+<p><em>Évalue-toi honnêtement après la dernière séance. Utilise cela pour identifier ce que tu dois revoir avant le test de l'unité.</em></p>
+
+<div class="rubric">
+  <table>
+    <thead><tr><th>Groupe de connaissances</th><th>Je peux l'expliquer sans notes</th><th>Une question que j'ai encore</th></tr></thead>
+    <tbody>
+      <tr><td>Définition d'une ressource énergétique ; renouvelable et non renouvelable ; exemples albertains</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Avant et après transformation ; exemples incluant le vent utilisé des deux façons</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Les cinq facteurs de sélection et ce que chacun couvre</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Appliquer les cinq facteurs à une vraie décision énergétique</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Les compromis : pourquoi aucune ressource n'est parfaite ; pourquoi les décisions demandent des preuves</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top:14px; font-style:italic; color:#64748b; font-size:10pt;">Apporte tes questions sans réponse en classe. Elles apparaîtront dans le projet d'enquête et le test de l'unité.</p>
+
+</body>
+</html>

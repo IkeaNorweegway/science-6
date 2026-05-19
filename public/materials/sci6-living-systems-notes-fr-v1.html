@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sciences 6e année — Les systèmes vivants : notes guidées</title>
+<style>
+  :root {
+    --unit: #059669;
+    --unit-dark: #047857;
+    --unit-light: #ecfdf5;
+    --unit-border: #a7f3d0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--unit-dark);
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif; font-size: 0.85rem; color: #64748b;
+    margin-top: 1rem; display: flex; gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  .instructions {
+    background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 0.5rem;
+    padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 0.88rem; color: #475569;
+  }
+
+  .pre-knowledge {
+    border: 2px dashed #94a3b8; border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem; margin: 1.5rem 0; background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 0.5rem;
+  }
+
+  .vocab-wrap { margin: 1rem 0 1.5rem; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  table th {
+    font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    background: var(--unit-light); color: var(--unit-dark);
+    padding: 0.5rem 0.75rem; border: 1px solid var(--unit-border); text-align: left;
+  }
+  table td { padding: 0.55rem 0.75rem; border: 1px solid #e2e8f0; vertical-align: top; min-height: 2.2rem; }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 500; color: #0f172a; }
+
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  .al { display: block; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; margin: 0.4rem 0; width: 100%; }
+  .al-short { width: 60%; }
+  .al-sm { display: inline-block; border-bottom: 1.5px solid #94a3b8; height: 1.4rem; width: 8rem; vertical-align: bottom; }
+
+  pre {
+    font-family: 'Courier New', Courier, monospace; font-size: 0.82rem;
+    background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 0.35rem;
+    padding: 0.85rem 1rem; overflow-x: auto; white-space: pre; margin: 0.75rem 0; line-height: 1.5;
+  }
+
+  .misconception {
+    border-left: 5px solid #dc2626; background: #fef2f2;
+    padding: 0.85rem 1.1rem; margin: 1.25rem 0; border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif; font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em; color: #dc2626; margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong { font-style: italic; font-weight: 700; margin-bottom: 0.4rem; }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  .connection {
+    border-left: 5px solid #f97316; background: #fff7ed;
+    padding: 0.85rem 1.1rem; margin: 1.25rem 0; border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif; font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em; color: #c2410c; margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  .note-box {
+    border-left: 4px solid var(--unit); background: var(--unit-light);
+    padding: 0.75rem 1rem; margin: 0.85rem 0; font-size: 0.9rem; border-radius: 0 0.25rem 0.25rem 0;
+  }
+
+  .retrieval {
+    background: #eff6ff; border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: #1d4ed8; margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif; font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; color: #6d28d9; margin-right: 0.3rem;
+  }
+
+  .self-check {
+    background: #f0fdf4; border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem; padding: 0.6rem 1.1rem; margin: 1rem 0;
+    font-family: system-ui, sans-serif; font-size: 0.85rem; color: #166534;
+  }
+
+  .code-block {
+    font-family: 'Courier New', Courier, monospace; font-size: 0.82rem;
+    background: #1e293b; color: #e2e8f0;
+    border-radius: 0.35rem; padding: 0.85rem 1rem; margin: 0.75rem 0;
+    white-space: pre; overflow-x: auto; line-height: 1.55;
+  }
+
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  .synthesis-table th { background: #1e293b; color: white; }
+
+  @media print {
+    body { font-size: 11pt; padding: 1.5cm; max-width: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Les systèmes vivants</h1>
+  <p>Sciences 6e année &nbsp;·&nbsp; Notes guidées &nbsp;·&nbsp; Programme d'études de l'Alberta 2023</p>
+  <div class="name-line">
+    <span>Nom : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date de début : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<div class="instructions">
+  <p>Remplis les espaces au fur et à mesure. Réfléchis avant d'écrire. Après chaque section, ferme tes notes et fais la <strong>vérification par rappel</strong>. La première fois est difficile. C'est normal. Cette difficulté, c'est l'apprentissage.</p>
+</div>
+
+<div class="pre-knowledge">
+  <div class="label">Avant de commencer — Ce que je sais déjà</div>
+  <p><em>Pas de note. Pas de mauvaises réponses. Écris ce que tu penses.</em></p>
+  <p>1. Nomme trois choses <strong>vivantes</strong> et trois choses <strong>non vivantes</strong> dans une zone humide de l'Alberta.</p>
+  <p>Vivantes : <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span></p>
+  <p>Non vivantes : <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span></p>
+  <p>2. D'où les plantes tirent-elles leur <strong>nourriture</strong> ? (Écris ta première idée — tu y reviendras.)</p>
+  <p>Je pense que les plantes obtiennent leur nourriture de : <div class="al"></div></p>
+  <p>3. Que se passerait-il selon toi si toutes les plantes d'une zone disparaissaient ?</p>
+  <div class="al"></div>
+  <p style="margin-top:0.75rem; font-size:0.85rem; color:#64748b;"><em>Garde ces réponses. Tu les reliras à la fin de l'unité.</em></p>
+</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Section 1 &nbsp;·&nbsp; Biotique et abiotique — De quoi est fait un écosystème ?</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:1.25rem;">
+  <strong style="color:#0f172a;">Objectif :</strong> Je peux nommer les parties biotiques et abiotiques d'un écosystème. Je peux expliquer le rôle de chacune.
+</p>
+
+<h3>Vocabulaire</h3>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:20%">Terme</th><th style="width:40%">Définition dans tes mots</th><th style="width:40%">Un exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Écosystème</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Biotique</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Abiotique</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Biodiversité</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Décomposeur</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Habitat</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Qu'est-ce qu'un écosystème ?</h4>
+<p>Un <strong>écosystème</strong> comprend tout ce qui est <span class="b b-md">&nbsp;</span> et tout ce qui est <span class="b b-md">&nbsp;</span> dans une zone. Cela comprend aussi toutes leurs interactions.</p>
+<div class="note-box">Un écosystème n'est pas juste une liste de plantes et d'animaux. C'est un <strong>système</strong>. Chaque partie agit sur toutes les autres parties.</div>
+<p>Un écosystème peut être aussi grand qu'une forêt boréale ou aussi petit qu'une flaque d'eau. Il comprend toujours des parties vivantes et non vivantes qui <strong>agissent ensemble.</strong></p>
+<p><strong>Exemples en Alberta :</strong> forêt boréale · prairie · zone humide · alpin montagnard · rivière des prairies</p>
+
+<h4>Les parties biotiques (vivantes)</h4>
+<p><strong>Biotique</strong> veut dire <span class="b b-md">&nbsp;</span>.</p>
+<p>Les parties biotiques sont les organismes. Ce sont les choses vivantes ou qui étaient récemment vivantes.</p>
+<p><strong>Trois rôles dans tout écosystème :</strong></p>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Rôle</th><th>Ce qu'ils font</th><th>Exemples</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Producteurs</strong></td><td>Fabriquent leur nourriture avec la lumière du soleil. Ils sont à la base du réseau alimentaire.</td><td>Plantes vertes, algues</td></tr>
+      <tr><td><strong>Consommateurs</strong></td><td>Mangent des producteurs ou d'autres consommateurs pour avoir de l'énergie</td><td>Insectes, oiseaux, cerfs, loups</td></tr>
+      <tr><td><strong>Décomposeurs</strong></td><td>Décomposent la matière morte et rendent les nutriments au sol</td><td>Champignons, bactéries, vers de terre</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="misconception">
+  <div class="m-label">Idée fausse</div>
+  <p class="m-wrong">« Les décomposeurs sont juste les éboueurs de la nature. Ils ne font pas vraiment partie de l'écosystème. »</p>
+  <p>Les décomposeurs sont <strong>essentiels</strong>. Sans eux, la matière morte s'accumulerait. Les nutriments resteraient bloqués dans les tissus morts. Les producteurs n'auraient rien pour pousser. Enlève les décomposeurs et l'écosystème s'effondre en quelques années.</p>
+</div>
+
+<div class="connection">
+  <div class="c-label">Question de réflexion</div>
+  <p>Pense à la dernière fois que tu as vu quelque chose pourrir — une bûche, un fruit, des feuilles. C'était les décomposeurs au travail. Que se passerait-il si ce processus s'arrêtait ?</p>
+  <div class="al"></div>
+</div>
+
+<h4>Les parties abiotiques (non vivantes)</h4>
+<p><strong>Abiotique</strong> veut dire <span class="b b-md">&nbsp;</span>.</p>
+<p>Les parties abiotiques sont les conditions physiques non vivantes de l'écosystème. Elles décident quels organismes peuvent vivre là.</p>
+
+<h4>Les quatre grands facteurs abiotiques</h4>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Facteur abiotique</th><th>Comment il agit sur l'écosystème</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Lumière solaire</strong></td><td>Alimente la <span class="b b-xl">&nbsp;</span>. Sans elle, les producteurs ne peuvent pas faire de nourriture.</td></tr>
+      <tr><td><strong>Eau</strong></td><td>Toutes les cellules vivantes ont besoin d'eau. Elle détermine quels organismes peuvent survivre.</td></tr>
+      <tr><td><strong>Température</strong></td><td>Fixe les organismes possibles. Limite les saisons de croissance.</td></tr>
+      <tr><td><strong>Sol / substrat</strong></td><td>Donne des nutriments et un ancrage aux plantes. Influencé par les décomposeurs.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Un écosystème avec des conditions abiotiques variées a une <span class="b b-lg">&nbsp;</span> biodiversité. Il offre plus de <span class="b b-lg">&nbsp;</span> pour différentes espèces.</p>
+
+<h4>Types d'écosystèmes — complète le tableau</h4>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Type d'écosystème</th><th>Conditions abiotiques clés</th><th>Exemples d'organismes</th></tr></thead>
+    <tbody>
+      <tr><td>Forêt boréale</td><td>Hivers froids, humidité modérée, sol acide</td><td><span class="b b-lg">&nbsp;</span>, <span class="b b-lg">&nbsp;</span></td></tr>
+      <tr><td>Zone humide</td><td><span class="b b-xl">&nbsp;</span></td><td><span class="b b-lg">&nbsp;</span>, <span class="b b-lg">&nbsp;</span></td></tr>
+      <tr><td>Prairie</td><td><span class="b b-xl">&nbsp;</span>, peu de pluie</td><td><span class="b b-lg">&nbsp;</span>, <span class="b b-lg">&nbsp;</span></td></tr>
+      <tr><td>Marin / océan</td><td><span class="b b-xl">&nbsp;</span>, haute salinité</td><td><span class="b b-lg">&nbsp;</span>, <span class="b b-lg">&nbsp;</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="retrieval">
+  <div class="r-label">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Quelle est la différence entre biotique et abiotique ? Donne deux exemples de chacun.<div class="al"></div><div class="al"></div></li>
+    <li>Nomme les trois rôles des organismes dans un écosystème.<div class="al"></div></li>
+    <li>Un élève dit : « Les décomposeurs ne font pas vraiment partie de l'écosystème. » Qu'est-ce qui est faux là-dedans ?<div class="al"></div><div class="al"></div></li>
+    <li>Pourquoi une zone humide a-t-elle des organismes différents d'une prairie, même si elles sont dans la même région ?<div class="al"></div><div class="al"></div></li>
+    <li><span class="stretch-label">★ Approfondissement</span> Un feu passe dans une forêt boréale. Les plantes sont détruites, mais le sol reste intact. Décris la récupération. Quels organismes reviennent en premier ? Pourquoi ? Utilise les trois rôles de l'écosystème.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check">
+  <strong>Auto-évaluation :</strong> &nbsp;
+  <label><input type="checkbox"> Je pourrais l'enseigner</label> &nbsp;&nbsp;
+  <label><input type="checkbox"> J'y arrive</label> &nbsp;&nbsp;
+  <label><input type="checkbox"> Pas encore — je dois relire cette section</label>
+</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Section 2 &nbsp;·&nbsp; La photosynthèse — D'où vient la nourriture des plantes ?</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:1.25rem;">
+  <strong style="color:#0f172a;">Objectif :</strong> Je peux expliquer où se produit la photosynthèse, ce qui entre et ce qui sort. Je peux corriger l'idée que les plantes tirent leur nourriture du sol.
+</p>
+<div class="note-box">C'est le concept le plus important de cette unité. L'idée fausse ici est l'une des plus répandues de toute la biologie.</div>
+
+<h3>Vocabulaire</h3>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:20%">Terme</th><th style="width:40%">Définition dans tes mots</th><th style="width:40%">Un exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Photosynthèse</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Chlorophylle</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Glucose</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Amidon</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>La grande idée fausse — commençons par là</h4>
+<p>Retourne à ta réponse sur l'origine de la nourriture des plantes. La plupart des gens répondent : <strong>du sol</strong>, <strong>de l'eau</strong> ou <strong>du soleil</strong>. Ces réponses sont toutes fausses d'une façon importante.</p>
+
+<div class="misconception">
+  <div class="m-label">Idée fausse</div>
+  <p class="m-wrong">« Les plantes tirent leur nourriture du sol par leurs racines. »</p>
+  <p>Le sol donne des minéraux — mais les minéraux ne sont pas de la nourriture. La nourriture, ce sont des molécules avec de l'énergie. Les plantes <em>fabriquent</em> leur propre nourriture. Elles ne l'absorbent pas. La nourriture est faite à l'intérieur de la plante. La lumière est la source d'énergie. Le sol, c'est la réserve de minéraux — pas la réserve de nourriture.</p>
+</div>
+
+<p><strong>La preuve :</strong> Un arbre de 1 000 kg pousse dans un pot avec peu de sol. Après 20 ans, le sol a à peine changé de masse. D'où viennent les 1 000 kg de l'arbre ?</p>
+<p>Réponse : <div class="al"></div></p>
+<p style="font-size:0.85rem; color:#475569;"><em>(Indice : ça venait de l'air — du CO₂)</em></p>
+
+<h4>L'équation de la photosynthèse</h4>
+<p>La photosynthèse utilise <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span> et <span class="b b-md">&nbsp;</span> pour faire <span class="b b-md">&nbsp;</span> et <span class="b b-md">&nbsp;</span>.</p>
+<p><strong>L'équation — remplis les espaces :</strong></p>
+<pre>          Énergie lumineuse
+              ↓
+_______ + _______ ──────────────────→ _______ + _______
+(de l'air) (des racines)             (nourriture) (libéré)</pre>
+<p><strong>En mots :</strong> Dioxyde de carbone + eau + lumière → <span class="b b-lg">&nbsp;</span> et <span class="b b-lg">&nbsp;</span>.</p>
+
+<h4>D'où vient chaque ingrédient</h4>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Ingrédient</th><th>D'où la plante l'obtient</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Dioxyde de carbone (CO₂)</strong></td><td>De l'<span class="b b-md">&nbsp;</span> — absorbé par les feuilles</td></tr>
+      <tr><td><strong>Eau (H₂O)</strong></td><td>Du <span class="b b-md">&nbsp;</span> — absorbée par les racines</td></tr>
+      <tr><td><strong>Énergie lumineuse</strong></td><td>Du <span class="b b-md">&nbsp;</span> — absorbée par les parties vertes</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>La photosynthèse se produit dans les parties <span class="b b-md">&nbsp;</span> de la plante — surtout dans les <span class="b b-md">&nbsp;</span>.</p>
+<div class="note-box"><strong>Pourquoi les feuilles sont-elles vertes ?</strong> Les feuilles contiennent de la <strong>chlorophylle</strong>. La chlorophylle capte la lumière pour la photosynthèse. Elle est verte. Pas de chlorophylle = pas de photosynthèse.</div>
+
+<h4>Ce que la plante fait avec le glucose</h4>
+<p>Le glucose est la nourriture que la plante fabrique. Il a deux usages :</p>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li><strong>Énergie :</strong> Une partie du glucose sert tout de suite. Il donne de l'<span class="b b-md">&nbsp;</span> pour la croissance et les réparations.</li>
+  <li><strong>Stockage :</strong> Le reste devient de l'<span class="b b-md">&nbsp;</span>. Il est stocké dans les racines, les graines et les fruits.</li>
+</ul>
+<div class="note-box">Cet amidon stocké, c'est ce que les animaux — y compris les humains — mangent quand ils mangent des plantes. Tous les glucides que tu manges viennent de la photosynthèse.</div>
+
+<h4>Les trois expériences</h4>
+
+<p><strong>Expérience 1 — La lumière est-elle nécessaire ?</strong></p>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:35%">Composante</th><th></th></tr></thead>
+    <tbody>
+      <tr><td><strong>Question</strong></td><td>Une plante a-t-elle besoin de lumière pour faire de la nourriture ?</td></tr>
+      <tr><td><strong>Montage</strong></td><td>Une plante en pleine lumière ; une plante dans l'obscurité totale.</td></tr>
+      <tr><td><strong>Ce qu'on teste</strong></td><td>Présence d'<span class="b b-md">&nbsp;</span> dans les feuilles</td></tr>
+      <tr><td><strong>Prédiction si la lumière est nécessaire</strong></td><td>La plante dans l'obscurité n'aura <span class="b b-xl">&nbsp;</span> d'amidon</td></tr>
+      <tr><td><strong>Ce que ça nous dit</strong></td><td><span class="b b-xl">&nbsp;</span> est un ingrédient nécessaire</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p><strong>Expérience 2 — La photosynthèse produit-elle de l'oxygène ?</strong></p>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:35%">Composante</th><th></th></tr></thead>
+    <tbody>
+      <tr><td><strong>Montage</strong></td><td>Une plante aquatique sous une lampe. On compte les bulles qui s'en échappent.</td></tr>
+      <tr><td><strong>Ce que sont les bulles</strong></td><td><span class="b b-xl">&nbsp;</span> libéré comme sous-produit</td></tr>
+      <tr><td><strong>Ce que ça nous dit</strong></td><td>L'oxygène est produit par la photosynthèse. La plante ne l'<span class="b b-xl">&nbsp;</span> pas.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p><strong>Expérience 3 — Seules les parties vertes font-elles la photosynthèse ?</strong></p>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:35%">Composante</th><th></th></tr></thead>
+    <tbody>
+      <tr><td><strong>Montage</strong></td><td>Une feuille avec des parties vertes et des parties blanches. On teste les deux pour l'amidon.</td></tr>
+      <tr><td><strong>Prédiction</strong></td><td>Seules les parties <span class="b b-xl">&nbsp;</span> auront de l'amidon</td></tr>
+      <tr><td><strong>Ce que ça nous dit</strong></td><td>La chlorophylle est <span class="b b-xl">&nbsp;</span> pour la photosynthèse</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="misconception">
+  <div class="m-label">Idée fausse</div>
+  <p class="m-wrong">« La photosynthèse et la respiration sont des contraires. Elles s'annulent. Les plantes n'ajoutent pas vraiment d'oxygène dans l'air. »</p>
+  <p>En plein jour, une plante en bonne santé produit beaucoup plus d'oxygène qu'elle n'en utilise. Le résultat net : l'oxygène sort et le CO₂ entre. Une plante en bonne santé est un <strong>producteur net d'oxygène</strong>. L'atmosphère a 21 % d'oxygène. Cet oxygène vient de milliards d'années de photosynthèse. Si les deux processus s'annulaient parfaitement, il n'y aurait pas d'oxygène libre du tout.</p>
+</div>
+
+<p><strong>Dans tes propres mots, explique pourquoi la photosynthèse et la respiration ne s'annulent pas :</strong></p>
+<div class="al"></div><div class="al"></div>
+
+<div class="retrieval">
+  <div class="r-label">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Écris l'équation de la photosynthèse en mots. Pour chaque ingrédient, dis d'où la plante l'obtient.<div class="al"></div><div class="al"></div></li>
+    <li>Un élève dit : « Les plantes tirent leur énergie du sol — c'est à ça que servent les racines. » Quelle preuve montrerais-tu pour le corriger ?<div class="al"></div><div class="al"></div></li>
+    <li>Tu places une plante aquatique sous une lampe. Des bulles se forment sur les feuilles. Que sont ces bulles ? Pourquoi la lampe les cause-t-elle ?<div class="al"></div><div class="al"></div></li>
+    <li>Une plante passe une semaine dans le noir. Que lui arrive-t-il ? Explique pourquoi.<div class="al"></div><div class="al"></div></li>
+    <li><span class="stretch-label">★ Approfondissement</span> Pourquoi enlever toutes les plantes de la Terre rendrait-il l'atmosphère irrespirable ? Utilise l'équation de la photosynthèse.<div class="al"></div><div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check">
+  <strong>Auto-évaluation :</strong> &nbsp;
+  <label><input type="checkbox"> Je pourrais l'enseigner</label> &nbsp;&nbsp;
+  <label><input type="checkbox"> J'y arrive</label> &nbsp;&nbsp;
+  <label><input type="checkbox"> Pas encore — je dois revoir cette section</label>
+</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Section 3 &nbsp;·&nbsp; Les relations plantes-animaux — L'interdépendance</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:1.25rem;">
+  <strong style="color:#0f172a;">Objectif :</strong> Je peux expliquer comment les plantes et les animaux dépendent les uns des autres. Je peux décrire ce qui arrive quand on enlève une partie d'un écosystème.
+</p>
+
+<h3>Vocabulaire</h3>
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th style="width:22%">Terme</th><th style="width:39%">Définition dans tes mots</th><th style="width:39%">Un exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Interdépendance</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Réseau alimentaire</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Chaîne alimentaire</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Producteur</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Consommateur primaire</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Consommateur secondaire</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Prédateur apex</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Plante sacrée</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Au-delà de la nourriture — comment les plantes et les animaux dépendent les uns des autres</h4>
+
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Les animaux ont besoin des plantes pour...</th><th>Les plantes ont besoin des animaux pour...</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>La nourriture (glucose stocké comme amidon)</td>
+        <td>La pollinisation — les animaux transportent le <span class="b b-md">&nbsp;</span> entre les fleurs</td>
+      </tr>
+      <tr>
+        <td><span class="b b-xl">&nbsp;</span> — produit lors de la photosynthèse</td>
+        <td>La dispersion des graines — les animaux déplacent les <span class="b b-md">&nbsp;</span> dans de nouveaux endroits</td>
+      </tr>
+      <tr>
+        <td>L'habitat — structure, abri, nidification</td>
+        <td>Le CO₂ — les animaux libèrent du <span class="b b-md">&nbsp;</span> que les plantes utilisent</td>
+      </tr>
+      <tr>
+        <td>La stabilité du sol — les racines empêchent l'<span class="b b-md">&nbsp;</span></td>
+        <td>La décomposition — quand les animaux meurent, les nutriments retournent au <span class="b b-md">&nbsp;</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="note-box"><strong>La couche manquante :</strong> Les animaux ont besoin des plantes pour l'oxygène qu'ils respirent. Avant que les organismes photosynthétiques n'existent, l'atmosphère terrestre n'avait presque pas d'oxygène libre. Chaque respiration que tu prends vient de la photosynthèse.</div>
+
+<h4>Les chaînes alimentaires et les réseaux alimentaires</h4>
+<p>Une <strong>chaîne alimentaire</strong> montre un seul chemin de transfert d'énergie, du producteur au consommateur.</p>
+<p><strong>Exemple — prairie albertaine :</strong></p>
+<pre>Herbe → Sauterelle → Sturnelle → Buse</pre>
+<p>Chaque flèche veut dire : « <span class="b b-xl">&nbsp;</span> »</p>
+<div class="note-box">La direction de la flèche compte. Elle pointe toujours vers le consommateur — là où l'énergie va.</div>
+
+<p><strong>Pourquoi les réseaux alimentaires sont plus précis que les chaînes :</strong></p>
+<p>Dans la réalité, la plupart des organismes mangent plus d'une chose. Ils sont mangés par plus d'une chose. Un <strong>réseau alimentaire</strong> montre tout ce réseau de relations.</p>
+
+<p><strong>Étiquette ce réseau alimentaire — ajoute les organismes manquants :</strong></p>
+<pre>      [Soleil]
+        ↓
+    [Herbe / Arbustes]
+      ↙        ↘
+[Cerf]        [Sauterelle]
+   ↘               ↓
+  [Loup]       [__________]
+                    ↓
+              [__________]</pre>
+
+<h4>Que se passe-t-il quand on enlève une partie ?</h4>
+<p>Un écosystème est un <strong>système</strong>. Tout est connecté. Enlever un organisme peut tout changer.</p>
+
+<p><strong>Étude de cas — les loups à Yellowstone :</strong><br>
+Les loups ont été retirés du parc en 1920. Dans les années 1990 :</p>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>Les élans ont trop grossi. Ils ont <span class="b b-xl">&nbsp;</span> la végétation au bord des rivières.</li>
+  <li>Sans végétation, les rivières ont commencé à <span class="b b-xl">&nbsp;</span>. Les racines ne retenaient plus le sol.</li>
+  <li>Les oiseaux chanteurs ont diminué. Il y avait moins d'<span class="b b-xl">&nbsp;</span> pour nicher.</li>
+  <li>Quand les loups sont revenus en 1995, la végétation a repris. Les rivières se sont stabilisées. La biodiversité a augmenté.</li>
+</ul>
+<p>C'est ce qu'on appelle une <strong>cascade trophique</strong>. Un changement à un niveau du réseau alimentaire se répercute dans tout le système.</p>
+
+<div class="connection">
+  <div class="c-label">Question de réflexion</div>
+  <p>Dans tes propres mots, explique pourquoi l'exemple de Yellowstone montre que les écosystèmes sont des systèmes — pas juste des collections d'espèces.</p>
+  <div class="al"></div><div class="al"></div>
+</div>
+
+<h4>Les plantes sacrées des peuples autochtones et leurs rôles écologiques</h4>
+<p>Les peuples autochtones du Canada ont des connaissances détaillées sur les plantes. Ils observent les plantes, leurs rôles dans l'écosystème et leur importance culturelle depuis des milliers d'années. C'est le <strong>savoir écologique traditionnel</strong>. C'est une source de données scientifiques valide.</p>
+
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Plante</th><th>Rôle écologique</th><th>Importance culturelle</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sauge</strong></td><td>Fixe l'azote ; donne un habitat aux insectes ; couvre-sol résistant à la sécheresse</td><td>Utilisée dans les cérémonies et la purification par la fumée</td></tr>
+      <tr><td><strong>Foin d'odeur</strong></td><td>Stabilise le sol des zones humides ; indicateur de zones humides saines</td><td>Tressé et utilisé dans les cérémonies ; symbole de bonté</td></tr>
+      <tr><td><strong>Cèdre</strong></td><td>Grand habitat ; résistant à la pourriture ; puits de carbone</td><td>Protecteur ; utilisé en médecine, en cérémonie, en construction</td></tr>
+      <tr><td><strong>Tabac</strong></td><td>Attire les pollinisateurs ; plante pionnière</td><td>Offert en signe de respect ; utilisé dans la prière</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="connection">
+  <div class="c-label">Question de réflexion</div>
+  <p>Le savoir traditionnel sur la santé des plantes sacrées peut te dire quelque chose sur la santé de tout l'écosystème. Qu'est-ce qu'un scientifique manquerait s'il ne consultait pas les gardiens du savoir ?</p>
+  <div class="al"></div><div class="al"></div>
+</div>
+
+<h4>La dépendance des humains envers les plantes</h4>
+<p>Au-delà de la nourriture et de l'oxygène, les humains ont besoin des plantes pour :</p>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li><span class="b b-xl">&nbsp;</span> — presque tous les textiles viennent de fibres végétales (coton, lin)</li>
+  <li><span class="b b-xl">&nbsp;</span> — bois, bambou, fibres</li>
+  <li><span class="b b-xl">&nbsp;</span> — beaucoup de médicaments viennent des plantes (aspirine → écorce de saule)</li>
+  <li><span class="b b-xl">&nbsp;</span> — les forêts absorbent le CO₂ et régulent le climat</li>
+  <li><span class="b b-xl">&nbsp;</span> — les arbres stabilisent les berges et les terres agricoles</li>
+</ul>
+
+<div class="retrieval">
+  <div class="r-label">Vérification par rappel — notes fermées</div>
+  <ol>
+    <li>Donne deux exemples où les animaux ont besoin des plantes pour quelque chose d'autre que la nourriture.<div class="al"></div><div class="al"></div></li>
+    <li>Donne deux exemples où les plantes ont besoin des animaux.<div class="al"></div><div class="al"></div></li>
+    <li>Un élève dit : « Si les cerfs disparaissaient, les loups en souffriraient — mais tout le reste irait bien. » Pourquoi est-ce faux ? Utilise l'idée d'interdépendance.<div class="al"></div><div class="al"></div></li>
+    <li>Qu'est-ce qu'une cascade trophique ? Donne un exemple.<div class="al"></div><div class="al"></div></li>
+    <li><span class="stretch-label">★ Approfondissement</span> Pourquoi le savoir écologique traditionnel sur les plantes sacrées est-il une source de données valide pour les scientifiques ?<div class="al"></div><div class="al"></div></li>
+  </ol>
+</div>
+
+<div class="self-check">
+  <strong>Auto-évaluation :</strong> &nbsp;
+  <label><input type="checkbox"> Je pourrais l'enseigner</label> &nbsp;&nbsp;
+  <label><input type="checkbox"> J'y arrive</label> &nbsp;&nbsp;
+  <label><input type="checkbox"> Pas encore — je dois revoir cette section</label>
+</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Section 4 &nbsp;·&nbsp; Lien avec l'informatique — La logique conditionnelle dans les écosystèmes</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:1.25rem;">
+  <strong style="color:#0f172a;">Objectif :</strong> Je peux trouver des structures si/alors dans les relations des écosystèmes. Je peux les relier à la façon dont les programmes informatiques fonctionnent.
+</p>
+
+<h4>La logique si/alors dans un réseau alimentaire</h4>
+<p>Les écosystèmes suivent une <strong>logique conditionnelle</strong>. Si une chose change, alors une autre change. C'est la même structure qu'en programmation.</p>
+
+<div class="vocab-wrap">
+  <table>
+    <thead><tr><th>Événement dans l'écosystème</th><th>Structure conditionnelle</th></tr></thead>
+    <tbody>
+      <tr><td>Si pas de lumière → pas de photosynthèse</td><td><code>SI lumière = 0 ALORS photosynthèse = 0</code></td></tr>
+      <tr><td>Si pas de photosynthèse → pas de glucose</td><td><code>SI photosynthèse = 0 ALORS glucose = 0</code></td></tr>
+      <tr><td>Si pas de glucose → les producteurs ne poussent pas</td><td><code>SI glucose = 0 ALORS croissance_producteurs = 0</code></td></tr>
+      <tr><td>Si les producteurs ne poussent pas → les consommateurs meurent de faim</td><td><code>SI croissance_producteurs = 0 ALORS consommateurs_primaires = déclin</code></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p><strong>Écris ta propre chaîne conditionnelle :</strong> Commence avec « une sécheresse réduit l'eau... »</p>
+<pre>SI eau = faible ALORS _______________________________________________
+
+SI __________________ ALORS _________________________________________
+
+SI __________________ ALORS _________________________________________</pre>
+
+<h4>Simulation Scratch (aperçu)</h4>
+<p>Dans l'activité informatique, tu utiliseras <strong>Scratch</strong> pour simuler un réseau alimentaire avec des si/alors et des boucles.</p>
+
+<div class="code-block">répéter indéfiniment :
+  si lumière_solaire > 0 :
+    augmenter population_plantes
+  si population_plantes > 0 :
+    augmenter population_herbivores
+  si population_herbivores > 0 :
+    augmenter population_prédateurs</div>
+
+<p><strong>Avant de coder, planifie ton écosystème :</strong></p>
+<div class="vocab-wrap">
+  <table>
+    <tbody>
+      <tr><td><strong>Mon type d'écosystème :</strong></td><td>&nbsp;</td></tr>
+      <tr><td><strong>Mon producteur :</strong></td><td>&nbsp;</td></tr>
+      <tr><td><strong>Mon consommateur primaire (herbivore) :</strong></td><td>&nbsp;</td></tr>
+      <tr><td><strong>Mon consommateur secondaire (prédateur) :</strong></td><td>&nbsp;</td></tr>
+      <tr><td><strong>Facteur abiotique que je vais simuler :</strong></td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="note-box">Une simulation Scratch est une <strong>abstraction</strong> d'un vrai écosystème. Elle garde la logique essentielle (les relations conditionnelles). Elle enlève la complexité (la biologie réelle, la météo, les événements aléatoires). C'est le même principe que le modèle particulaire : utile précisément parce qu'il est simplifié.</div>
+
+<hr class="section-break">
+
+<h2 class="section-title">Synthèse de l'unité — Remplis de mémoire</h2>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.9rem; color:#475569; margin-bottom:1rem;"><em>Complète cette section sans regarder tes notes. Puis vérifie.</em></p>
+
+<p><strong>Groupe 1 — Biotique et abiotique</strong></p>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>3 composantes biotiques : <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span></li>
+  <li>3 composantes abiotiques : <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span></li>
+  <li>Les trois rôles des organismes : <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span></li>
+  <li>Pourquoi les décomposeurs sont importants (une phrase) : <div class="al"></div></li>
+</ul>
+
+<p><strong>Groupe 2 — Photosynthèse</strong></p>
+<p>Écris l'équation de la photosynthèse en mots :</p>
+<div class="al"></div>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem; margin-top:0.5rem;">
+  <li>Le CO₂ vient de : <span class="al-sm">&nbsp;</span></li>
+  <li>L'eau vient de : <span class="al-sm">&nbsp;</span></li>
+  <li>Le glucose est stocké comme : <span class="al-sm">&nbsp;</span></li>
+  <li>L'oxygène va vers : <span class="al-sm">&nbsp;</span></li>
+</ul>
+<p>Explique l'idée fausse sur le sol en une phrase : <div class="al"></div></p>
+
+<p style="margin-top:0.75rem;"><strong>Groupe 3 — Relations plantes-animaux</strong></p>
+<ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
+  <li>Les animaux ont besoin des plantes pour (3 choses autre que la nourriture) : <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span></li>
+  <li>Les plantes ont besoin des animaux pour (2 choses) : <span class="al-sm">&nbsp;</span>, <span class="al-sm">&nbsp;</span></li>
+  <li>Une plante sacrée autochtone et son rôle écologique : <div class="al"></div></li>
+  <li>Définis cascade trophique dans tes mots : <div class="al"></div></li>
+</ul>
+
+<hr>
+
+<div class="vocab-wrap" style="margin-top:1.5rem;">
+  <table class="synthesis-table">
+    <thead><tr><th>Groupe de connaissances</th><th>Je peux l'expliquer sans notes</th><th>Confiance (1–4)</th></tr></thead>
+    <tbody>
+      <tr><td>Composantes biotiques et abiotiques</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">1 — 2 — 3 — 4</td></tr>
+      <tr><td>Photosynthèse (équation + processus)</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">1 — 2 — 3 — 4</td></tr>
+      <tr><td>Photosynthèse (expériences)</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">1 — 2 — 3 — 4</td></tr>
+      <tr><td>Interdépendance plantes-animaux</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">1 — 2 — 3 — 4</td></tr>
+      <tr><td>Plantes sacrées autochtones + savoir traditionnel</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">1 — 2 — 3 — 4</td></tr>
+      <tr><td>Informatique — logique conditionnelle</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / J'y arrive / Pas encore</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">1 — 2 — 3 — 4</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top:1rem;"><strong>Une chose que je comprends maintenant et que je ne comprenais pas avant :</strong></p>
+<div class="al"></div>
+<p><strong>Une question que j'ai encore :</strong></p>
+<div class="al"></div>
+
+<hr>
+
+<p><strong>Retourne à tes connaissances antérieures à la première page. Lis ce que tu as écrit.</strong></p>
+<p>Comment ta réponse à la question 2 a-t-elle changé ?</p>
+<div class="al"></div><div class="al"></div>
+
+</body>
+</html>

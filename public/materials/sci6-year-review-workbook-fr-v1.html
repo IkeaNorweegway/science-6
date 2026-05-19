@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cahier de révision annuelle — Sciences 6e année</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #f8fafc;
+  }
+
+  .page-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  :root {
+    --matter:     #0891b2;
+    --living:     #059669;
+    --forces:     #7c3aed;
+    --climate:    #d97706;
+    --energy:     #ea580c;
+    --space:      #4f46e5;
+    --methods:    #475569;
+  }
+
+  .page-header { text-align: center; margin-bottom: 0; }
+
+  .page-header h1 {
+    font-family: Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .page-header .subtitle {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 16px;
+  }
+
+  .color-band {
+    display: flex;
+    height: 7px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 14px 0 20px;
+  }
+
+  .color-band span { flex: 1; }
+
+  .name-date-row {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    color: #374151;
+    margin-bottom: 28px;
+  }
+
+  .name-date-row label { display: inline-flex; align-items: center; gap: 8px; }
+
+  .name-date-row .field-line {
+    display: inline-block;
+    border-bottom: 2px solid #94a3b8;
+    width: 240px;
+    height: 1.4em;
+    vertical-align: bottom;
+  }
+
+  .name-date-row .field-line-short { width: 120px; }
+
+  .about-callout {
+    background: #f0f6ff;
+    border-left: 4px solid #94a3b8;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+  }
+
+  .about-callout p { margin-bottom: 8px; }
+  .about-callout p:last-child { margin-bottom: 0; }
+
+  .badge-star {
+    display: inline-block;
+    font-family: system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 999px;
+    vertical-align: middle;
+    margin-right: 3px;
+  }
+
+  .badge-star-1 { background: #fef3c7; color: #92400e; }
+  .badge-star-2 { background: #ede9fe; color: #5b21b6; }
+
+  .section-heading {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 6px;
+    margin: 36px 0 20px;
+  }
+
+  .section-break { margin-top: 48px; }
+
+  .forethought-block {
+    background: #fffbeb;
+    border-left: 4px solid #d97706;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+  }
+
+  .forethought-block .instruct {
+    font-style: italic;
+    color: #78350f;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+  }
+
+  .forethought-block .prompt-label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1e293b;
+  }
+
+  .question-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+
+  .question-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .badge-qnum {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    background: #1e293b;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  .badge-visual {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #ccfbf1;
+    color: #0f766e;
+    padding: 2px 9px;
+    border-radius: 999px;
+  }
+
+  .blank-short {
+    display: inline-block;
+    border-bottom: 2px solid #94a3b8;
+    width: 200px;
+    height: 1.3em;
+    vertical-align: bottom;
+    margin: 0 3px;
+  }
+
+  .blank-medium {
+    display: block;
+    border-bottom: 2px solid #94a3b8;
+    width: 100%;
+    height: 1.5em;
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .blank-line {
+    display: block;
+    border-bottom: 2px solid #94a3b8;
+    width: 100%;
+    height: 1.5em;
+    margin-top: 8px;
+  }
+
+  .blank-line + .blank-line { margin-top: 10px; }
+
+  .fill-pair {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .fill-pair .fill-item {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    font-size: 0.93rem;
+  }
+
+  .fill-pair .fill-item .blank-short { width: 180px; }
+
+  .numbered-prompts { margin-top: 10px; }
+
+  .num-prompt { margin-bottom: 18px; }
+
+  .num-prompt .num-label { font-weight: 600; margin-bottom: 4px; }
+
+  .feature-prompt { margin-bottom: 18px; }
+
+  .feature-prompt .feat-label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #334155;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    margin: 12px 0;
+  }
+
+  .data-table th {
+    background: #1e293b;
+    color: #fff;
+    font-weight: 600;
+    padding: 9px 14px;
+    text-align: left;
+    border: 1px solid #334155;
+  }
+
+  .data-table td {
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    height: 40px;
+  }
+
+  .data-table tr:nth-child(even) td { background: #f8fafc; }
+
+  .hint {
+    font-style: italic;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 6px 0 8px;
+  }
+
+  .inline-fill { margin-top: 10px; line-height: 2.4; }
+
+  .midpoint-block {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 36px 0;
+  }
+
+  .midpoint-block .midpoint-title {
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1e40af;
+    margin-bottom: 4px;
+  }
+
+  .midpoint-block .midpoint-instruct {
+    font-style: italic;
+    color: #3b82f6;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  .sub-prompt { margin-bottom: 16px; }
+
+  .sub-prompt .sub-label { font-weight: 600; margin-bottom: 4px; }
+
+  .stretch-header {
+    background: linear-gradient(135deg, #6d28d9, #4338ca);
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px 24px;
+    margin: 40px 0 20px;
+  }
+
+  .stretch-header h2 {
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .stretch-header p { font-size: 0.9rem; opacity: 0.88; font-style: italic; }
+
+  .stretch-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #7c3aed;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+
+  .badge-stretch {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    background: #ede9fe;
+    color: #5b21b6;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-right: 6px;
+  }
+
+  .unit-tag {
+    display: inline-block;
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-right: 4px;
+  }
+
+  .tag-matter   { background: #cffafe; color: #164e63; }
+  .tag-living   { background: #d1fae5; color: #064e3b; }
+  .tag-forces   { background: #ede9fe; color: #4c1d95; }
+  .tag-climate  { background: #fef3c7; color: #78350f; }
+  .tag-energy   { background: #ffedd5; color: #7c2d12; }
+  .tag-space    { background: #e0e7ff; color: #312e81; }
+  .tag-methods  { background: #f1f5f9; color: #334155; }
+
+  .reflection-block {
+    background: #f0fdf4;
+    border-left: 4px solid #059669;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 36px 0;
+  }
+
+  .reflection-block .section-heading {
+    border-bottom-color: #a7f3d0;
+    color: #064e3b;
+    margin-top: 0;
+  }
+
+  .rating-scale {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+  }
+
+  .rating-box {
+    border: 2px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    text-align: center;
+    min-width: 130px;
+    flex: 1;
+    color: #374151;
+  }
+
+  .rating-box .rating-num {
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+    color: #1e293b;
+  }
+
+  .rubric-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    margin: 12px 0;
+  }
+
+  .rubric-table th {
+    background: #1e293b;
+    color: #fff;
+    font-weight: 600;
+    padding: 9px 10px;
+    text-align: left;
+    border: 1px solid #334155;
+  }
+
+  .rubric-table td {
+    padding: 9px 10px;
+    border: 1px solid #e2e8f0;
+    vertical-align: middle;
+  }
+
+  .rubric-table tr:nth-child(even) td { background: #f8fafc; }
+
+  .rubric-table .check-cell { text-align: center; width: 80px; }
+
+  .checkbox-sq {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #64748b;
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+
+  .rubric-table .question-cell { min-width: 140px; }
+
+  .rubric-table .question-cell .blank-line { margin-top: 4px; }
+
+  .q-part { margin-top: 14px; }
+
+  .q-part-label {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+
+  /* Particle states diagram */
+  .particle-diagram {
+    display: flex;
+    gap: 16px;
+    margin: 18px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .particle-box-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .particle-box {
+    width: 200px;
+    height: 160px;
+    border: 2px solid #94a3b8;
+    border-radius: 8px;
+    background: #f8fafc;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 4px;
+    align-content: flex-start;
+    position: relative;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: #64748b;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .particle-box.solid {
+    gap: 5px;
+    padding: 12px;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .particle-box.liquid { gap: 0; padding: 10px; align-items: flex-start; align-content: flex-start; }
+
+  .particle-box.liquid .dot:nth-child(2)  { margin-left: 8px; margin-top: 3px; }
+  .particle-box.liquid .dot:nth-child(3)  { margin-left: 4px; margin-top: 1px; }
+  .particle-box.liquid .dot:nth-child(4)  { margin-left: 11px; margin-top: 2px; }
+  .particle-box.liquid .dot:nth-child(5)  { margin-left: 2px; margin-top: 6px; }
+  .particle-box.liquid .dot:nth-child(6)  { margin-top: 4px; margin-left: 7px; }
+  .particle-box.liquid .dot:nth-child(7)  { margin-left: 3px; margin-top: 2px; }
+  .particle-box.liquid .dot:nth-child(8)  { margin-left: 9px; margin-top: 5px; }
+  .particle-box.liquid .dot:nth-child(9)  { margin-top: 8px; margin-left: 2px; }
+  .particle-box.liquid .dot:nth-child(10) { margin-left: 14px; margin-top: 3px; }
+  .particle-box.liquid .dot:nth-child(11) { margin-left: 5px; margin-top: 1px; }
+  .particle-box.liquid .dot:nth-child(12) { margin-left: 8px; margin-top: 7px; }
+  .particle-box.liquid .dot:nth-child(13) { margin-top: 10px; margin-left: 3px; }
+  .particle-box.liquid .dot:nth-child(14) { margin-left: 12px; margin-top: 4px; }
+  .particle-box.liquid .dot:nth-child(15) { margin-left: 6px; margin-top: 2px; }
+  .particle-box.liquid .dot:nth-child(16) { margin-left: 9px; margin-top: 6px; }
+
+  .particle-box.gas { gap: 0; padding: 10px; position: relative; }
+
+  .particle-box.gas .dot { position: absolute; }
+
+  .particle-box.gas .dot:nth-child(1)  { top: 18px;  left: 22px; }
+  .particle-box.gas .dot:nth-child(2)  { top: 14px;  left: 140px; }
+  .particle-box.gas .dot:nth-child(3)  { top: 55px;  left: 70px; }
+  .particle-box.gas .dot:nth-child(4)  { top: 48px;  left: 160px; }
+  .particle-box.gas .dot:nth-child(5)  { top: 90px;  left: 30px; }
+  .particle-box.gas .dot:nth-child(6)  { top: 85px;  left: 110px; }
+  .particle-box.gas .dot:nth-child(7)  { top: 125px; left: 60px; }
+  .particle-box.gas .dot:nth-child(8)  { top: 120px; left: 155px; }
+
+  .particle-box-label { font-family: system-ui, sans-serif; font-weight: 700; font-size: 0.88rem; color: #334155; }
+
+  .particle-box-desc { font-style: italic; font-size: 0.82rem; color: #64748b; text-align: center; max-width: 200px; }
+
+  /* Photosynthesis flowchart */
+  .photosynthesis-diagram { margin: 18px 0; display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+  .flow-box {
+    border: 2px solid #94a3b8;
+    border-radius: 8px;
+    background: #f8fafc;
+    padding: 10px 18px;
+    min-width: 220px;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+
+  .flow-box.input-box { border-color: #94a3b8; }
+
+  .flow-box.tree-box {
+    border-color: #059669;
+    border-width: 2px;
+    background: #ecfdf5;
+    min-width: 300px;
+    padding: 14px 22px;
+    font-weight: 600;
+    color: #064e3b;
+    font-size: 0.95rem;
+  }
+
+  .flow-arrow { font-size: 1.4rem; color: #64748b; line-height: 1; margin: 2px 0; }
+
+  .flow-blank {
+    display: inline-block;
+    border-bottom: 2px solid #94a3b8;
+    width: 160px;
+    height: 1.3em;
+    vertical-align: bottom;
+    margin-top: 4px;
+  }
+
+  .flow-label { font-size: 0.78rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+
+  .outputs-row { display: flex; gap: 20px; margin-top: 12px; align-items: flex-start; justify-content: center; width: 100%; }
+
+  .output-box {
+    border: 2px solid #94a3b8;
+    border-radius: 8px;
+    background: #f8fafc;
+    padding: 10px 16px;
+    min-width: 190px;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+
+  .tree-outputs-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; width: 100%; }
+
+  .tree-row { display: flex; align-items: center; gap: 16px; justify-content: center; width: 100%; }
+
+  .output-branch { display: flex; flex-direction: column; gap: 10px; }
+
+  .h-arrow { font-size: 1.2rem; color: #64748b; }
+
+  .word-bank {
+    margin: 14px 0 0;
+    padding: 12px 16px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #334155;
+  }
+
+  .word-bank strong { color: #1e293b; }
+
+  .word-pill {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    padding: 2px 12px;
+    margin: 3px 3px;
+    font-size: 0.82rem;
+    font-family: system-ui, sans-serif;
+    color: #334155;
+  }
+
+  /* Force diagram */
+  .force-diagram {
+    margin: 18px auto;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    font-family: system-ui, sans-serif;
+  }
+
+  .force-student-box {
+    border: 2px solid #64748b;
+    border-radius: 6px;
+    background: #f1f5f9;
+    padding: 10px 32px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #1e293b;
+    text-align: center;
+    width: 160px;
+  }
+
+  .force-arrow-down { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+
+  .force-arrow-shaft { width: 4px; height: 40px; background: #7c3aed; }
+
+  .force-arrow-head { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 14px solid #7c3aed; }
+
+  .force-arrow-label { font-size: 0.78rem; color: #5b21b6; font-weight: 600; text-align: center; margin: 2px 0 4px; }
+
+  .bridge-deck { width: 260px; border-top: 6px solid #374151; position: relative; }
+
+  .bridge-deck-label { font-size: 0.75rem; color: #64748b; text-align: center; margin-top: 3px; }
+
+  .draw-zone {
+    border: 2px dashed #94a3b8;
+    border-radius: 6px;
+    background: #fafafa;
+    width: 260px;
+    height: 90px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-family: system-ui, sans-serif;
+    font-style: italic;
+  }
+
+  /* Earth energy balance */
+  .energy-balance-diagram { margin: 18px 0; font-family: system-ui, sans-serif; font-size: 0.85rem; }
+
+  .eb-sun { text-align: center; font-size: 1.5rem; margin-bottom: 4px; }
+
+  .eb-sun-label { text-align: center; font-weight: 700; font-size: 0.85rem; color: #d97706; margin-bottom: 4px; }
+
+  .eb-arrow-down { display: flex; flex-direction: column; align-items: center; margin: 0 auto 4px; width: fit-content; }
+
+  .eb-arrow-shaft-down { width: 3px; height: 28px; background: #d97706; }
+
+  .eb-arrow-head-down { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 12px solid #d97706; }
+
+  .eb-label-row { text-align: center; margin-bottom: 2px; }
+
+  .eb-number-badge {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #334155;
+    font-weight: 700;
+    font-size: 0.78rem;
+    border-radius: 999px;
+    padding: 1px 7px;
+    margin-right: 4px;
+  }
+
+  .eb-atmosphere-band {
+    background: #bfdbfe;
+    border: 2px solid #60a5fa;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 4px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .eb-atm-label { font-weight: 700; color: #1e40af; font-size: 0.85rem; position: absolute; left: 50%; transform: translateX(-50%); }
+
+  .eb-side-arrow { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+
+  .eb-arrow-up-shaft { width: 3px; height: 28px; background: #475569; }
+
+  .eb-arrow-head-up { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 12px solid #475569; margin-top: -3px; order: -1; }
+
+  .eb-side-label { font-size: 0.75rem; color: #475569; font-weight: 600; text-align: center; width: 100px; }
+
+  .eb-surface-band { background: #dcfce7; border: 2px solid #86efac; border-radius: 8px; padding: 10px 16px; margin: 4px 0; text-align: center; }
+
+  .eb-surface-label { font-weight: 700; color: #166534; font-size: 0.85rem; }
+
+  .eb-arrow-up-center { display: flex; flex-direction: column; align-items: center; margin: 0 auto; width: fit-content; }
+
+  .eb-arrow-shaft-up { width: 3px; height: 28px; background: #ea580c; }
+
+  .eb-arrow-head-up-c { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 12px solid #ea580c; }
+
+  .eb-arrow-down-c { display: flex; flex-direction: column; align-items: center; margin: 0 auto; width: fit-content; }
+
+  .eb-arrow-shaft-down-c { width: 3px; height: 28px; background: #7c3aed; }
+
+  .eb-arrow-head-down-c { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 12px solid #7c3aed; }
+
+  .eb-label-num { font-size: 0.78rem; color: #374151; text-align: center; margin: 2px 0; }
+
+  .instruct-block { font-style: italic; color: #64748b; font-size: 0.9rem; margin-bottom: 10px; }
+
+  .q-body { margin-top: 2px; }
+
+  .context-scenario { color: #334155; margin-bottom: 10px; font-size: 0.97rem; }
+
+  .sub-item { margin-top: 2px; margin-left: 12px; list-style: disc; color: #334155; }
+
+  hr.divider { border: none; border-top: 1px solid #e2e8f0; margin: 28px 0; }
+
+  @media print {
+    body { background: white; font-size: 11pt; }
+    .no-print { display: none; }
+    .question-card, .stretch-card { box-shadow: none; border: 1px solid #cbd5e1; break-inside: avoid; }
+    .section-break { page-break-before: always; }
+    .midpoint-block { break-inside: avoid; }
+    .forethought-block { break-inside: avoid; }
+    .reflection-block { break-inside: avoid; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-wrap { padding: 0 12px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <div class="page-header">
+    <h1>Cahier de révision annuelle</h1>
+    <div class="subtitle">Sciences 6e année &nbsp;·&nbsp; Programme d'études de l'Alberta 2023 &nbsp;·&nbsp; Immersion française &nbsp;·&nbsp; Fin d'année</div>
+    <div class="color-band">
+      <span style="background:#0891b2;"></span>
+      <span style="background:#059669;"></span>
+      <span style="background:#7c3aed;"></span>
+      <span style="background:#d97706;"></span>
+      <span style="background:#ea580c;"></span>
+      <span style="background:#4f46e5;"></span>
+    </div>
+    <div class="name-date-row">
+      <label>Nom : <span class="field-line"></span></label>
+      <label>Date : <span class="field-line field-line-short"></span></label>
+    </div>
+  </div>
+
+  <div class="about-callout">
+    <p><strong>À propos de ce cahier</strong></p>
+    <p>Ce cahier révise tout ce que tu as appris en Sciences de la 6e année. Les questions sont mélangées intentionnellement. Tu ne sauras pas de quelle unité provient une question avant de la lire. Trouver cela fait partie de la révision.</p>
+    <p><span class="badge-star badge-star-1">★ De base</span> <strong>Questions de base</strong> — pour tout le monde. Certaines incluent une amorce de phrase ou un indice. Essaie d'abord toutes les questions De base.</p>
+    <p><span class="badge-star badge-star-2">★★ Approfondie</span> <strong>Questions approfondies</strong> — mêmes idées, niveau de difficulté plus élevé. Celles-ci te demandent d'expliquer, de trouver des erreurs ou de relier des idées. Essaie-les après avoir terminé les questions De base.</p>
+    <p><strong>Zone défi</strong> (dernière section) — questions qui relient deux unités ou plus. Essaie-les seulement après avoir terminé toutes les questions précédentes.</p>
+  </div>
+
+  <div class="section-heading">Avant de commencer</div>
+  <div class="forethought-block">
+    <div class="instruct">Prends 2 minutes. Parcours le cahier avant d'écrire quoi que ce soit.</div>
+    <div class="prompt-label">Prédis : quelle question penses-tu sera la plus difficile pour toi ? Écris le numéro et une raison.</div>
+    <div>Je pense que la question <span class="blank-short" style="width:60px;"></span> sera la plus difficile parce que : <span class="blank-short" style="width:260px;"></span></div>
+    <div class="blank-line"></div>
+    <div style="margin-top:18px;" class="prompt-label">À propos de quelle unité ou quel sujet te sens-tu le/la plus confiant(e) avant cette révision ?</div>
+    <div class="blank-line"></div>
+  </div>
+
+  <div class="section-heading section-break">Questions</div>
+
+  <!-- Q1 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q1</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Des élèves de l'école Riverside construisent un pont de bois au-dessus d'un petit ruisseau. La poutre principale mesure 4 mètres de long.</div>
+    <p>Quand un(e) élève marche sur le milieu de la poutre, le dessus de la poutre est <strong>comprimé ensemble</strong>. Le dessous de la poutre est <strong>étiré</strong>.</p>
+    <div class="q-part">
+      <div class="q-part-label">(a) Quel est le nom de la force interne qui agit sur la partie <strong>supérieure</strong> de la poutre ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Quel est le nom de la force interne qui agit sur la partie <strong>inférieure</strong> de la poutre ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Qu'est-ce qui cause l'apparition de ces forces internes dans la poutre ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q2</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Une forêt boréale près de Fort McMurray comprend : des épinettes, des loups, des insectes, de la mousse, des roches, du sol, de la lumière solaire et de l'eau.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) De la liste ci-dessus, nomme <strong>deux éléments biotiques</strong> et <strong>deux éléments abiotiques</strong>.</div>
+      <table class="data-table" style="margin-top:8px;">
+        <thead><tr><th>Biotique</th><th>Abiotique</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td></tr>
+          <tr><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Les décomposeurs ne sont pas listés ci-dessus, mais ils existent dans tout écosystème sain. Quel rôle jouent les décomposeurs ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q3</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Des rails de chemin de fer en acier traversent le sud de l'Alberta. L'acier — comme toute matière — est composé de minuscules particules. Par une chaude journée d'été, le rail en acier est chaud au toucher. Sa longueur totale augmente légèrement.</div>
+    <p>Utilise le modèle particulaire pour expliquer ce qui se passe à l'intérieur du rail en acier lorsqu'il se réchauffe.</p>
+    <div class="hint">Amorce de phrase : Lorsque le rail se réchauffe, les particules à l'intérieur...</div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q4</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Au cours des 30 dernières années, la ville de High River, en Alberta, a connu trois grandes inondations. Un(e) résident(e) dit : <em>« Le temps est de plus en plus mauvais. »</em> Un(e) climatologue dit : <em>« Le climat de cette région a changé. »</em></div>
+    <p>Ces deux personnes font des affirmations de types différents.</p>
+    <div class="q-part">
+      <div class="q-part-label">(a) Quelle est la différence entre la <strong>météo</strong> et le <strong>climat</strong> ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Laquelle des affirmations — celle du/de la résident(e) ou celle du/de la climatologue — nécessite des données à long terme pour être appuyée ? Explique pourquoi.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q5</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Ex-Alta 1 est un petit satellite conçu et construit par des étudiant(e)s de l'Université de l'Alberta. Il orbite autour de la Terre et recueille des données sur la haute atmosphère.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Ex-Alta 1 est-il un satellite <strong>naturel</strong> ou <strong>artificiel</strong> ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Ex-Alta 1 ne produit pas sa propre lumière. Comment peut-on le détecter depuis la Terre ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Nomme <strong>un objet du système solaire</strong> qui produit sa propre lumière, et <strong>un objet</strong> qui ne fait que réfléchir la lumière.</div>
+      <div class="fill-pair" style="margin-top:8px;">
+        <div class="fill-item">Produit sa propre lumière : <span class="blank-short"></span></div>
+        <div class="fill-item">Réfléchit la lumière : <span class="blank-short"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q6</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Une petite ville albertaine décide comment alimenter sa communauté pour les 20 prochaines années. Elle choisit entre le gaz naturel, les éoliennes et les panneaux solaires.</div>
+    <p>Nomme <strong>trois facteurs</strong> que le conseil municipal doit peser lors du choix entre ces options.</p>
+    <div class="numbered-prompts">
+      <div class="num-prompt"><div class="num-label">1.</div><div class="blank-line"></div></div>
+      <div class="num-prompt"><div class="num-label">2.</div><div class="blank-line"></div></div>
+      <div class="num-prompt"><div class="num-label">3.</div><div class="blank-line"></div></div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q7</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Un(e) chercheur(euse) qui étudie la forêt boréale près de Fort McMurray veut tester si des températures plus élevées font pousser les épinettes plus vite.</div>
+    <p>Nomme <strong>deux caractéristiques</strong> qu'une expérience contrôlée doit inclure pour que les résultats soient valides. Pour chaque caractéristique, explique pourquoi elle est importante.</p>
+    <div class="feature-prompt" style="margin-top:14px;">
+      <div class="feat-label">Caractéristique 1 :</div>
+      <div class="blank-line"></div>
+      <div class="feat-label" style="margin-top:10px;">Pourquoi elle est importante :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="feature-prompt">
+      <div class="feat-label">Caractéristique 2 :</div>
+      <div class="blank-line"></div>
+      <div class="feat-label" style="margin-top:10px;">Pourquoi elle est importante :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q8</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <p>Les épinettes de la forêt boréale fabriquent leur nourriture par photosynthèse.</p>
+    <div class="q-part">
+      <div class="q-part-label">(a) D'où l'épinette tire-t-elle l'<strong>énergie</strong> nécessaire pour effectuer la photosynthèse ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Liste tous les <strong>intrants</strong> dont l'épinette a besoin pour la photosynthèse, et tous les <strong>extrants</strong> qu'elle produit.</div>
+      <table class="data-table" style="margin-top:8px;">
+        <thead><tr><th>Intrants</th><th>Extrants</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td></tr>
+          <tr><td></td><td></td></tr>
+          <tr><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q9</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Le pont de bois de la question 1 a deux types de pièces en bois.</div>
+    <ul style="margin: 6px 0 10px 20px; color:#334155;">
+      <li>Les <strong>planches de marche</strong> fléchissent légèrement quand un(e) élève marche dessus, puis reviennent à leur forme d'origine.</li>
+      <li>Un <strong>poteau de garde-corps</strong> a été heurté par un vélo et est maintenant tordu de façon permanente.</li>
+    </ul>
+    <div class="q-part">
+      <div class="q-part-label">(a) Quelle propriété décrit le comportement des planches de marche ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Quelle propriété décrit ce qui est arrivé au poteau de garde-corps ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Quelle est la principale différence entre ces deux propriétés ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q10 — Visual -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q10</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+      <span class="badge-visual">Visuel</span>
+    </div>
+    <div class="instruct-block">Le schéma ci-dessous montre trois contenants de particules d'eau, étiquetés A, B et C. Chaque contenant montre un arrangement différent de particules.</div>
+
+    <div class="particle-diagram">
+      <div class="particle-box-wrap">
+        <div class="particle-box-label">Boîte A</div>
+        <div class="particle-box solid">
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+        <div class="particle-box-desc">tassées, rangées régulières</div>
+      </div>
+      <div class="particle-box-wrap">
+        <div class="particle-box-label">Boîte B</div>
+        <div class="particle-box liquid">
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+        <div class="particle-box-desc">proches, désordonnées</div>
+      </div>
+      <div class="particle-box-wrap">
+        <div class="particle-box-label">Boîte C</div>
+        <div class="particle-box gas">
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+        <div class="particle-box-desc">éloignées, mouvement libre</div>
+      </div>
+    </div>
+
+    <div class="q-part">
+      <div class="q-part-label">(a) Identifie chaque boîte avec l'<strong>état de la matière</strong> qu'elle représente.</div>
+      <div class="fill-pair" style="flex-wrap:wrap; gap:16px; margin-top:8px;">
+        <div class="fill-item">Boîte A : <span class="blank-short"></span></div>
+        <div class="fill-item">Boîte B : <span class="blank-short"></span></div>
+        <div class="fill-item">Boîte C : <span class="blank-short"></span></div>
+      </div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Quel est le nom scientifique du changement d'état de la Boîte A → Boîte B ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Que se passe-t-il avec les particules lors du changement de la Boîte B → Boîte C qui nécessite l'ajout d'énergie ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q11</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">La ville albertaine de la question 6 pense aux éoliennes. Le vent est particulier parce qu'il peut être utilisé comme ressource énergétique <strong>avant transformation</strong> et <strong>après transformation</strong>.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Donne un exemple d'utilisation du vent <strong>avant transformation</strong> (sous sa forme naturelle).</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Donne un exemple d'utilisation du vent <strong>après transformation</strong> (converti en une autre forme d'énergie).</div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q12</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Un(e) élève pousse sur le garde-corps du pont de bois avec une force de 40 N.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Selon la troisième loi de Newton, quelle force le garde-corps exerce-t-il en retour sur les mains de l'élève ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Complète la phrase :</div>
+      <div class="inline-fill" style="margin-top:8px; line-height:2.6;">
+        La troisième loi de Newton dit que pour toute force d'action, il y a une force de réaction qui est
+        <span class="blank-short"></span> en magnitude,
+        <span class="blank-short"></span> en direction, et agit sur un
+        <span class="blank-short"></span> objet.
+      </div>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q13</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Les loups de la forêt boréale près de Fort McMurray dépendent des plantes — mais pas seulement pour se nourrir.</div>
+    <p>Nomme <strong>une autre façon</strong> dont les loups (et les animaux en général) dépendent des plantes pour survivre.</p>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q14</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <p>Le changement climatique a des causes naturelles et humaines.</p>
+    <div class="q-part">
+      <div class="q-part-label">(a) Nomme <strong>deux facteurs naturels</strong> qui ont causé des changements climatiques sur Terre au cours de sa longue histoire.</div>
+      <div class="numbered-prompts" style="margin-top:8px;">
+        <div class="num-prompt"><div class="num-label">1.</div><div class="blank-line"></div></div>
+        <div class="num-prompt"><div class="num-label">2.</div><div class="blank-line"></div></div>
+      </div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Nomme <strong>deux facteurs humains</strong> qui ont alimenté le changement climatique depuis l'industrialisation.</div>
+      <div class="numbered-prompts" style="margin-top:8px;">
+        <div class="num-prompt"><div class="num-label">1.</div><div class="blank-line"></div></div>
+        <div class="num-prompt"><div class="num-label">2.</div><div class="blank-line"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q15</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Un(e) travailleur(euse) de chemin de fer utilise un thermomètre à liquide pour mesurer la température de l'air près des rails en acier.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Pourquoi le liquide dans le thermomètre <strong>monte-t-il</strong> quand la température augmente ? Utilise le modèle particulaire dans ta réponse.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Sur quelle échelle de température les scientifiques mesurent-ils la température ? Que représente 0° sur cette échelle ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Mid-Point Check-In -->
+  <div class="midpoint-block section-break">
+    <div class="midpoint-title">Bilan intermédiaire</div>
+    <div class="midpoint-instruct">ARRÊTE. Ne saute pas cette section.</div>
+    <div class="sub-prompt">
+      <div class="sub-label">(a) Quelle question a été la plus difficile jusqu'ici ? Écris le numéro :</div>
+      <span class="blank-short" style="width:80px;"></span>
+    </div>
+    <div class="sub-prompt">
+      <div class="sub-label">(b) C'était difficile parce que tu <strong>ne connaissais pas le concept</strong>, ou parce que la <strong>question te le demandait d'une façon inhabituelle</strong> ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="sub-prompt">
+      <div class="sub-label">(c) Que feras-tu pour combler cette lacune avant ton prochain test ou ta prochaine révision ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q16 — Visual -->
+  <div class="question-card section-break">
+    <div class="question-header">
+      <span class="badge-qnum">Q16</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+      <span class="badge-visual">Visuel</span>
+    </div>
+    <div class="instruct-block">Le schéma ci-dessous montre la photosynthèse dans une épinette. Cinq cases sont vides. Utilise la banque de mots pour remplir chaque case.</div>
+
+    <div class="photosynthesis-diagram">
+      <div class="flow-box input-box">
+        <div class="flow-label">INTRANT 1</div>
+        <span class="flow-blank"></span>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box input-box">
+        <div class="flow-label">INTRANT 2</div>
+        <span class="flow-blank"></span>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="tree-outputs-wrap" style="width:100%;">
+        <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
+          <div class="flow-box input-box">
+            <div class="flow-label">INTRANT 3</div>
+            <span class="flow-blank"></span>
+          </div>
+          <div class="flow-arrow">↓</div>
+        </div>
+        <div class="tree-row">
+          <div style="flex:1; display:flex; justify-content:flex-end;"></div>
+          <div class="flow-box tree-box">
+            ÉPINETTE<br>
+            <span style="font-size:0.8rem; font-weight:400;">(parties vertes / feuilles)</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; gap:10px; align-items:flex-start; padding-left:12px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:1rem; color:#64748b;">▶</span>
+              <div class="output-box">
+                <div class="flow-label">EXTRANT 1</div>
+                <span class="flow-blank"></span>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:1rem; color:#64748b;">▶</span>
+              <div class="output-box">
+                <div class="flow-label">EXTRANT 2</div>
+                <span class="flow-blank"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="word-bank">
+      <strong>Banque de mots :</strong>
+      <span class="word-pill">dioxyde de carbone (CO₂)</span>
+      <span class="word-pill">eau</span>
+      <span class="word-pill">lumière solaire</span>
+      <span class="word-pill">glucose (sucre)</span>
+      <span class="word-pill">oxygène</span>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q17</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Pluton a été appelée une planète pendant 76 ans. Les scientifiques l'ont reclassifiée en planète naine en 2006.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Que nous dit la reclassification de Pluton sur la façon dont la science fonctionne avec le temps ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Un(e) élève dit : <em>« Les scientifiques avaient simplement tort pendant 76 ans — ça veut dire qu'on ne peut pas faire confiance à la science. »</em> Es-tu d'accord ? Explique pourquoi la reclassification de Pluton est en fait un signe que la science fonctionne correctement.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q18</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+    </div>
+    <div class="context-scenario">Des gardiens du savoir aîné(e)s de communautés près de High River ont documenté, par la tradition orale et l'observation, que la glace de la rivière Bow se brise <strong>trois semaines plus tôt</strong> au printemps qu'il y a 40 ans. Un(e) climatologue possède 30 ans de données de température montrant un réchauffement régional moyen de 1,8 °C.</div>
+    <p>Comment ces deux types de preuves — le savoir traditionnel et les données scientifiques à long terme — <strong>se complètent-ils</strong> pour bâtir une explication scientifique plus solide qu'aucun des deux séparément ?</p>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+  </div>
+
+  <!-- Q19 — Visual -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q19</span>
+      <span class="badge-star badge-star-1">★ De base</span>
+      <span class="badge-visual">Visuel</span>
+    </div>
+    <div class="instruct-block">Le schéma ci-dessous montre un(e) élève (rectangle) debout sur le tablier du pont de bois (ligne horizontale). La flèche A pointe vers le bas depuis l'élève — c'est le poids de l'élève qui appuie sur le tablier.</div>
+
+    <div class="force-diagram">
+      <div class="force-student-box">ÉLÈVE</div>
+      <div class="force-arrow-down">
+        <div class="force-arrow-shaft"></div>
+        <div class="force-arrow-head"></div>
+      </div>
+      <div class="force-arrow-label">Flèche A — 500 N — vers le bas<br>Force appliquée (poids)</div>
+      <div class="bridge-deck"></div>
+      <div class="bridge-deck-label">Tablier du pont</div>
+      <div class="draw-zone">Dessine ici la flèche de force de réaction manquante</div>
+    </div>
+
+    <div class="q-part">
+      <div class="q-part-label">(a) Quel est le nom scientifique de la flèche A — la force vers le bas que l'élève exerce sur le pont ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Le tablier du pont doit repousser l'élève vers le haut. <strong>Sur le schéma ci-dessus, dessine la flèche de force de réaction manquante.</strong> Étiquette-la avec : direction, grandeur (500 N) et nom.</div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Cette force de réaction et la flèche A forment une paire selon la troisième loi de Newton. Quelle est une chose qui distingue une paire selon la troisième loi de Newton de deux forces qui se « neutralisent » simplement ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q20</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">L'eau dans les fissures des roches près de la voie ferrée gèle en hiver. Contrairement à presque toutes les autres substances, l'eau est <strong>moins dense à l'état solide qu'à l'état liquide</strong> — c'est pourquoi la glace flotte.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Utilise le modèle particulaire pour expliquer pourquoi la glace est moins dense que l'eau liquide. Qu'est-ce qui est inhabituel dans la façon dont les particules d'eau s'arrangent quand elles gèlent ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Imagine que l'eau se comportait comme la plupart des substances — que l'eau solide était <strong>plus dense</strong> que l'eau liquide. Que se passerait-il dans un lac en hiver ? Quel effet cela aurait-il sur la vie aquatique ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q21 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q21</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">Un(e) élève écrit dans ses notes : <em>« Le réchauffement climatique agrandit le trou d'ozone. Les deux sont causés par les gaz à effet de serre. »</em></div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Trouve l'erreur dans cet énoncé.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Explique dans tes propres mots ce qu'est réellement l'<strong>effet de serre</strong> et ce qui le cause.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Explique ce qu'est réellement le <strong>trou d'ozone</strong> et ce qui l'a causé. Ce sont deux choses distinctes.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q22 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q22</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">Un(e) conseiller(ère) de la ville albertaine dit : <em>« Le vent et le solaire sont tous les deux renouvelables, donc ils doivent tous les deux être des sources d'énergie propres. »</em></div>
+    <p>Vérifie cette affirmation. Est-ce que renouvelable signifie la même chose que propre ?</p>
+    <p style="margin-top:8px; font-size:0.92rem; color:#475569;">Ta réponse doit :</p>
+    <ul style="margin: 4px 0 10px 22px; font-size:0.92rem; color:#475569; line-height:1.8;">
+      <li>Indiquer si l'affirmation est entièrement correcte, partiellement correcte ou incorrecte</li>
+      <li>Expliquer ce que signifie « renouvelable »</li>
+      <li>Expliquer pourquoi « propre » est une idée distincte</li>
+      <li>Utiliser au moins un exemple précis</li>
+    </ul>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+  </div>
+
+  <!-- Q23 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q23</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">Un(e) élève écrit : <em>« Les épinettes de la forêt boréale tirent leur nourriture du sol et de l'eau que leurs racines absorbent. C'est pourquoi on ajoute de l'engrais pour aider les plantes à pousser. »</em></div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Quelle partie de cet énoncé est <strong>correcte</strong> ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Qu'est-ce qui est <strong>scientifiquement faux</strong> dans cet énoncé ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Écris une explication corrigée indiquant d'où les plantes tirent réellement leur nourriture et leur énergie.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q24 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q24</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">Deux élèves testent le garde-corps du pont de bois. L'élève A (masse 80 kg) et l'élève B (masse 40 kg) poussent simultanément sur la même section du garde-corps avec le même effort — tous deux poussent avec exactement 60 N. Un troisième élève qui regarde dit : <em>« L'élève A est plus lourd, donc le garde-corps le repousse plus fort. »</em></div>
+    <p>Utilise la troisième loi de Newton pour vérifier cette affirmation. Le garde-corps peut-il repousser avec des forces différentes deux personnes qui poussent avec la même force ?</p>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+  </div>
+
+  <!-- Q25 — Visual -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q25</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+      <span class="badge-visual">Visuel</span>
+    </div>
+    <div class="instruct-block">Le schéma ci-dessous montre un modèle simplifié du bilan énergétique de la Terre. Quatre flèches sont numérotées mais pas étiquetées.</div>
+
+    <div class="energy-balance-diagram">
+      <div class="eb-sun">&#9728;</div>
+      <div class="eb-sun-label">SOLEIL</div>
+
+      <div style="text-align:center; margin:4px 0 2px; font-family:system-ui; font-size:0.82rem; color:#374151;">
+        <span class="eb-number-badge">①</span> <span class="blank-short" style="width:220px; display:inline-block; border-bottom:2px solid #94a3b8; height:1.2em; vertical-align:bottom;"></span>
+      </div>
+      <div class="eb-arrow-down" style="margin:2px auto 2px;">
+        <div class="eb-arrow-shaft-down"></div>
+        <div class="eb-arrow-head-down"></div>
+      </div>
+
+      <div class="eb-atmosphere-band">
+        <div class="eb-side-arrow">
+          <div class="eb-arrow-head-up"></div>
+          <div class="eb-arrow-up-shaft"></div>
+          <div class="eb-side-label"><span class="eb-number-badge">②</span> s'échappe dans l'espace</div>
+        </div>
+        <div class="eb-atm-label">ATMOSPHÈRE</div>
+        <div class="eb-side-arrow" style="flex-direction:column-reverse;">
+          <div style="order:2;">
+            <div style="width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:12px solid #475569;"></div>
+          </div>
+          <div style="width:3px;height:28px;background:#475569; order:1;"></div>
+          <div class="eb-side-label" style="order:0;"><span class="eb-number-badge">④</span> redirigée</div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; font-family:system-ui; font-size:0.8rem; color:#374151; margin:6px 0 2px; gap:16px;">
+        <div style="flex:1;">
+          <span class="eb-number-badge">②</span>
+          <span class="blank-short" style="width:100%; display:inline-block; border-bottom:2px solid #94a3b8; height:1.2em; vertical-align:bottom;"></span>
+        </div>
+        <div style="flex:1; text-align:right;">
+          <span class="eb-number-badge">④</span>
+          <span class="blank-short" style="width:100%; display:inline-block; border-bottom:2px solid #94a3b8; height:1.2em; vertical-align:bottom;"></span>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin:2px 0; font-family:system-ui; font-size:0.82rem; color:#374151;">
+        <span class="eb-number-badge">③</span> <span class="blank-short" style="width:220px; display:inline-block; border-bottom:2px solid #94a3b8; height:1.2em; vertical-align:bottom;"></span>
+      </div>
+      <div class="eb-arrow-up-center" style="margin:2px auto;">
+        <div class="eb-arrow-head-up-c"></div>
+        <div class="eb-arrow-shaft-up"></div>
+      </div>
+
+      <div class="eb-surface-band">
+        <div class="eb-surface-label">SURFACE TERRESTRE</div>
+      </div>
+    </div>
+
+    <div class="q-part">
+      <div class="q-part-label">(a) Étiquette chaque flèche en utilisant la banque de mots.</div>
+      <div class="word-bank" style="margin:8px 0 12px;">
+        <strong>Banque de mots :</strong>
+        <span class="word-pill">rayonnement solaire entrant</span>
+        <span class="word-pill">rayonnement réfléchi vers l'espace</span>
+        <span class="word-pill">chaleur rayonnée depuis la surface terrestre</span>
+        <span class="word-pill">chaleur à effet de serre piégée et redirigée par l'atmosphère</span>
+      </div>
+      <table class="data-table">
+        <thead><tr><th style="width:80px;">Flèche</th><th>Ce qu'elle représente</th></tr></thead>
+        <tbody>
+          <tr><td style="font-weight:700; text-align:center;">①</td><td></td></tr>
+          <tr><td style="font-weight:700; text-align:center;">②</td><td></td></tr>
+          <tr><td style="font-weight:700; text-align:center;">③</td><td></td></tr>
+          <tr><td style="font-weight:700; text-align:center;">④</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Lorsque davantage de gaz à effet de serre sont ajoutés à l'atmosphère, quelle flèche change de puissance ? Qu'arrive-t-il à la température terrestre en conséquence ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q26 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q26</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">Un(e) élève écrit dans ses notes : <em>« Quand l'eau dans les fissures des roches gèle, les particules d'eau gèlent aussi — elles durcissent et cessent d'être des particules d'eau. »</em></div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Qu'est-ce qui est scientifiquement faux dans cet énoncé ? Utilise le modèle particulaire pour expliquer.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Écris une version corrigée de cet énoncé.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q27 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q27</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <p>La plupart des gens imaginent le système solaire avec des planètes assez rapprochées, à peu près également espacées et de taille similaire.</p>
+    <p style="margin-top:8px;">Trouve <strong>deux erreurs précises</strong> dans cette image. Pour chaque erreur, décris ce qu'une image exacte devrait montrer et pourquoi l'idée fausse est si répandue.</p>
+    <div class="feature-prompt" style="margin-top:14px;">
+      <div class="feat-label">Erreur 1 :</div>
+      <div class="blank-line"></div>
+      <div class="feat-label" style="margin-top:10px;">Ce qui est réellement vrai :</div>
+      <div class="blank-line"></div>
+      <div class="feat-label" style="margin-top:10px;">Pourquoi les gens l'imaginent ainsi :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="feature-prompt">
+      <div class="feat-label">Erreur 2 :</div>
+      <div class="blank-line"></div>
+      <div class="feat-label" style="margin-top:10px;">Ce qui est réellement vrai :</div>
+      <div class="blank-line"></div>
+      <div class="feat-label" style="margin-top:10px;">Pourquoi les gens l'imaginent ainsi :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q28 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q28</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">L'ingénieur(e) en structure qui conçoit le pont de bois doit penser à trois forces internes différentes.</div>
+    <p>Pour chaque partie ci-dessous, <strong>nomme la force interne</strong> en jeu et <strong>explique comment tu le sais</strong>.</p>
+    <div class="q-part">
+      <div class="q-part-label">(a) Une corde horizontale reliant deux poteaux du pont est tendue par le poids du tablier.</div>
+      <div style="margin-top:8px; font-size:0.93rem;">Force interne : <span class="blank-short"></span></div>
+      <div style="margin-top:6px; font-size:0.93rem; font-weight:600;">Comment tu le sais :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Un poteau de support vertical supporte tout le poids du tablier au-dessus de lui.</div>
+      <div style="margin-top:8px; font-size:0.93rem;">Force interne : <span class="blank-short"></span></div>
+      <div style="margin-top:6px; font-size:0.93rem; font-weight:600;">Comment tu le sais :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Une contrefiche diagonale résiste à la torsion du pont causée par le vent latéral.</div>
+      <div style="margin-top:8px; font-size:0.93rem;">Force interne : <span class="blank-short"></span></div>
+      <div style="margin-top:6px; font-size:0.93rem; font-weight:600;">Comment tu le sais :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q29 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q29</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">Un(e) chercheur(euse) qui étudie la forêt boréale veut prouver que la <strong>lumière est nécessaire</strong> à la photosynthèse chez les semis d'épinettes. C'est une des trois expériences sur la photosynthèse de l'unité Systèmes vivants.</div>
+    <p>Décris la logique de cette expérience :</p>
+    <div class="q-part">
+      <div class="q-part-label">(a) Quelle question l'expérience teste-t-elle ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Décris le montage expérimental. À quoi ressemblerait le groupe témoin ? À quoi ressemblerait le groupe expérimental ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Quel résultat confirmerait que la lumière est nécessaire à la photosynthèse ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q30 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q30</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">La ville albertaine de la question 6 chauffe actuellement tous ses bâtiments au gaz naturel. Le conseil municipal veut passer à l'électricité produite par des éoliennes.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Nomme <strong>deux avantages</strong> de ce changement, en utilisant les critères de sélection de cette unité.</div>
+      <div class="feature-prompt" style="margin-top:10px;">
+        <div class="feat-label">Avantage 1 :</div>
+        <div class="blank-line"></div>
+      </div>
+      <div class="feature-prompt">
+        <div class="feat-label">Avantage 2 :</div>
+        <div class="blank-line"></div>
+      </div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Nomme <strong>une limite ou un risque potentiel</strong> de ce changement. Explique ce que la ville devrait planifier.</div>
+      <div style="margin-top:8px; font-size:0.93rem; font-weight:600;">Limite :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q31 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q31</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <p>Si tu regardes de près un trottoir en béton ou une voie ferrée en Alberta, tu remarqueras de petits espaces construits à intervalles réguliers. On les appelle <strong>joints de dilatation</strong>.</p>
+    <div class="q-part">
+      <div class="q-part-label">(a) Utilise tes connaissances sur la dilatation et la contraction pour expliquer pourquoi ces espaces sont nécessaires.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Que se passerait-il avec la voie ferrée au fil de plusieurs saisons si les joints de dilatation n'étaient pas là ? Utilise le langage du modèle particulaire dans ta réponse.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Q32 -->
+  <div class="question-card">
+    <div class="question-header">
+      <span class="badge-qnum">Q32</span>
+      <span class="badge-star badge-star-2">★★ Approfondie</span>
+    </div>
+    <div class="context-scenario">Un(e) chercheur(euse) en climatologie montre des données indiquant que la température moyenne près de High River a augmenté de 1,8 °C sur 30 ans. Un(e) résident(e) répond : <em>« Un degré et demi — ça ne semble pas assez pour causer de grandes inondations. »</em> Un(e) scientifique répond : <em>« La science est autocorrectrice — à mesure que nous recueillons plus de données, notre compréhension s'améliore. Les preuves indiquent maintenant clairement un changement climatique mesurable. »</em></div>
+    <p>Qu'est-ce que cela signifie pour la science d'être « autocorrectrice » ? Utilise <strong>un exemple précis de cette année en sciences</strong> pour illustrer l'idée — ce n'est pas obligatoirement à propos du climat.</p>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+    <div class="blank-line"></div>
+  </div>
+
+  <!-- Zone défi -->
+  <div class="stretch-header section-break">
+    <h2>Zone défi</h2>
+    <p>Essaie ces questions seulement après avoir terminé toutes les questions précédentes. Elles te demandent de relier des idées de deux unités ou plus.</p>
+  </div>
+
+  <!-- S1 -->
+  <div class="stretch-card">
+    <div class="question-header">
+      <span class="badge-stretch">S1 ★★</span>
+      <span class="unit-tag tag-matter">La matière</span>
+      <span class="unit-tag tag-forces">Les forces</span>
+    </div>
+    <div class="context-scenario">La voie ferrée près de Lethbridge est faite de sections de rail en acier, chacune de 25 m de long. En été, chaque section se dilate d'environ 1,5 cm. Les ingénieur(e)s installent de petits <strong>espaces de dilatation</strong> entre les sections pour permettre cette dilatation.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Utilise le modèle particulaire pour expliquer ce qui cause la dilatation de l'acier.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Lorsque deux sections appuient l'une contre l'autre à un espace de dilatation fermé, quel type de <strong>force interne</strong> agit au point de contact entre elles ? Comment le sais-tu ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Si les rails étaient soudés solidement sans espace, que se passerait-il finalement avec la voie ? Quel type de défaillance structurale se produirait ? Nomme la force interne en jeu.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- S2 -->
+  <div class="stretch-card">
+    <div class="question-header">
+      <span class="badge-stretch">S2 ★★</span>
+      <span class="unit-tag tag-living">Systèmes vivants</span>
+      <span class="unit-tag tag-climate">Le climat</span>
+    </div>
+    <div class="context-scenario">La forêt boréale près de Fort McMurray est l'un des plus grands écosystèmes forestiers intacts sur Terre.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Utilise tes connaissances sur la photosynthèse pour expliquer comment une forêt boréale saine <strong>ralentit</strong> l'accumulation de CO₂ dans l'atmosphère.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Lorsque la forêt brûle dans un feu de forêt, les arbres morts libèrent de grandes quantités de CO₂. En même temps, il y a moins d'arbres vivants pour absorber le CO₂. Comment cela crée-t-il une <strong>boucle de rétroaction</strong> qui accélère le changement climatique ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Comment ce lien entre les Systèmes vivants et le Climat rend-il la forêt boréale importante au-delà de l'Alberta ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- S3 -->
+  <div class="stretch-card">
+    <div class="question-header">
+      <span class="badge-stretch">S3 ★★</span>
+      <span class="unit-tag tag-energy">Ressources énergétiques</span>
+      <span class="unit-tag tag-methods">Méthodes scientifiques</span>
+    </div>
+    <div class="context-scenario">Le conseil municipal de la ville albertaine veut vérifier si le passage à l'énergie éolienne est scientifiquement solide. Ils ont embauché une équipe de recherche. Ils ont aussi invité des Aîné(e)s de la communauté métisse locale à partager leurs connaissances.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Conçois un processus scientifique pour tester si l'énergie éolienne est <strong>disponible et praticable</strong> pour la vallée de cette ville. Quelles données recueillerais-tu ? À quoi ressemblerait une approche contrôlée ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Un(e) Aîné(e) de la communauté note que les régimes de vent dans cette vallée ont changé de façon perceptible au cours de la dernière génération — la direction principale du vent a changé. Comment ce savoir traditionnel pourrait-il <strong>améliorer</strong> l'étude de l'équipe de recherche d'une façon que les instruments seuls ne pourraient pas capter ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- S4 -->
+  <div class="stretch-card">
+    <div class="question-header">
+      <span class="badge-stretch">S4 ★★</span>
+      <span class="unit-tag tag-forces">Les forces</span>
+      <span class="unit-tag tag-living">Systèmes vivants</span>
+    </div>
+    <div class="context-scenario">Une grande épinette dans la forêt boréale se plie beaucoup dans une violente tempête mais ne casse pas. Une branche plus petite et morte sur le même arbre se brise net.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Nomme et décris les <strong>forces internes</strong> qui agissent sur le tronc vivant de l'arbre lorsqu'il se plie.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Le tronc vivant revient à sa position verticale quand le vent s'arrête. Quelle propriété du bois vivant rend cela possible ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) La branche morte s'est cassée définitivement. Quelle propriété a été dépassée ? Qu'est-ce qui est différent dans le bois mort qui rend cela plus probable ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- S5 -->
+  <div class="stretch-card">
+    <div class="question-header">
+      <span class="badge-stretch">S5 ★★</span>
+      <span class="unit-tag tag-matter">La matière</span>
+      <span class="unit-tag tag-living">Systèmes vivants</span>
+      <span class="unit-tag tag-methods">Informatique</span>
+    </div>
+    <div class="context-scenario">Le <strong>modèle particulaire de la matière</strong> et le <strong>modèle de processus de photosynthèse</strong> sont tous les deux des modèles simplifiés. Ils ne montrent pas tous les détails de ce qui se passe réellement au niveau moléculaire.</div>
+    <div class="q-part">
+      <div class="q-part-label">(a) Dans ton travail en Informatique cette année, tu as appris un terme précis pour désigner la création d'une version simplifiée de quelque chose de complexe. Quel est ce terme ?</div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(b) Le modèle particulaire ne montre pas comment les électrons interagissent. Le modèle de photosynthèse ne montre pas l'ATP, le cycle de Calvin ou les chaînes de transport d'électrons. Pourquoi ces modèles simplifiés sont-ils encore utiles et suffisamment exacts, même s'ils sont incomplets ? Donne une raison qui s'applique aux deux modèles.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+    <div class="q-part">
+      <div class="q-part-label">(c) Quand un modèle simplifié devient-il un problème ? Décris une situation où l'utilisation d'un modèle trop simplifié pourrait mener à une prédiction incorrecte.</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- S6 -->
+  <div class="stretch-card">
+    <div class="question-header">
+      <span class="badge-stretch">S6 ★★</span>
+      <span class="unit-tag tag-matter">La matière</span>
+      <span class="unit-tag tag-living">Systèmes vivants</span>
+      <span class="unit-tag tag-forces">Les forces</span>
+      <span class="unit-tag tag-climate">Le climat</span>
+    </div>
+    <div class="context-scenario">L'Alberta connaît un changement climatique mesurable maintenant — pas dans le futur.</div>
+    <p>Pour chacune des trois unités les plus importantes de cette année, nomme <strong>un élément de connaissance scientifique de cette unité</strong> qui se relie directement à un changement observable se produisant dans l'environnement de l'Alberta.</p>
+    <p style="margin-top:6px; font-size:0.9rem; color:#475569; font-style:italic;">Pour chaque lien : nomme le concept de l'unité → nomme ou décris le changement observable → explique le lien en 2–3 phrases.</p>
+
+    <div class="q-part" style="margin-top:16px;">
+      <div class="q-part-label" style="color:#0891b2;">De La matière :</div>
+      <div style="margin-top:6px; font-size:0.93rem; font-weight:600;">Concept :</div>
+      <div class="blank-line"></div>
+      <div style="margin-top:8px; font-size:0.93rem; font-weight:600;">Changement observable en Alberta :</div>
+      <div class="blank-line"></div>
+      <div style="margin-top:8px; font-size:0.93rem; font-weight:600;">Lien :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+
+    <div class="q-part" style="margin-top:18px; padding-top:16px; border-top:1px solid #e2e8f0;">
+      <div class="q-part-label" style="color:#059669;">Des Systèmes vivants :</div>
+      <div style="margin-top:6px; font-size:0.93rem; font-weight:600;">Concept :</div>
+      <div class="blank-line"></div>
+      <div style="margin-top:8px; font-size:0.93rem; font-weight:600;">Changement observable en Alberta :</div>
+      <div class="blank-line"></div>
+      <div style="margin-top:8px; font-size:0.93rem; font-weight:600;">Lien :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+
+    <div class="q-part" style="margin-top:18px; padding-top:16px; border-top:1px solid #e2e8f0;">
+      <div class="q-part-label" style="color:#7c3aed;">Des Forces :</div>
+      <div style="margin-top:6px; font-size:0.93rem; font-weight:600;">Concept :</div>
+      <div class="blank-line"></div>
+      <div style="margin-top:8px; font-size:0.93rem; font-weight:600;">Changement observable en Alberta :</div>
+      <div class="blank-line"></div>
+      <div style="margin-top:8px; font-size:0.93rem; font-weight:600;">Lien :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Réflexion -->
+  <div class="reflection-block section-break">
+    <div class="section-heading" style="margin-top:0; border-bottom-color:#a7f3d0; color:#064e3b;">Réflexion</div>
+    <div class="instruct-block" style="color:#059669;">Complète cette section après avoir terminé toutes les questions.</div>
+
+    <div class="num-prompt" style="margin-top:14px;">
+      <div class="num-label">1. Quelle question était la plus difficile dans l'ensemble ? Écris le numéro : <span class="blank-short" style="width:70px;"></span></div>
+      <div style="margin-top:6px; font-size:0.93rem; color:#374151;">C'était difficile parce que tu ne connaissais pas le concept, ou parce que la question te le demandait d'une façon inhabituelle ?</div>
+      <div class="blank-line"></div>
+    </div>
+
+    <div class="num-prompt">
+      <div class="num-label">2. À propos de quelle unité te sens-tu le <strong>moins confiant(e)</strong> après avoir travaillé dans ce cahier ?</div>
+      <div class="blank-line"></div>
+    </div>
+
+    <div class="num-prompt">
+      <div class="num-label">3. Quelle est <strong>une chose que tu ferais différemment</strong> pour te préparer à un test sur cette matière ?</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+
+    <div class="num-prompt">
+      <div class="num-label">4. Évalue ta compréhension générale des Sciences de la 6e année :</div>
+      <div class="rating-scale" style="margin-top:10px;">
+        <div class="rating-box"><span class="rating-num">1</span>Perdu(e) sur la plupart des sujets</div>
+        <div class="rating-box"><span class="rating-num">2</span>Incertain(e) sur plusieurs</div>
+        <div class="rating-box"><span class="rating-num">3</span>Solide sur la plupart</div>
+        <div class="rating-box"><span class="rating-num">4</span>Je pourrais l'enseigner</div>
+      </div>
+      <div style="margin-top:10px; font-size:0.93rem;">Ma cote : <span class="blank-short" style="width:60px;"></span> &nbsp;&nbsp; Une preuve pour cette cote :</div>
+      <div class="blank-line"></div>
+      <div class="blank-line"></div>
+    </div>
+  </div>
+
+  <!-- Bilan d'autoévaluation -->
+  <div class="section-heading section-break">Bilan d'autoévaluation</div>
+  <div class="instruct-block" style="margin-bottom:12px;">Complète après avoir terminé le cahier. Pour chaque domaine, coche la case qui correspond à ta confiance.</div>
+
+  <table class="rubric-table">
+    <thead>
+      <tr>
+        <th>Sujet</th>
+        <th class="check-cell">Je peux l'expliquer sans mes notes</th>
+        <th class="check-cell">En cours</th>
+        <th class="check-cell">Pas encore</th>
+        <th class="question-cell">Une question que j'ai encore</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Modèle particulaire et états de la matière</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Changements d'état et dilatation/contraction</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Thermomètres et température</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Parties biotiques/abiotiques des écosystèmes</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Photosynthèse (intrants, extrants, processus)</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Interdépendance plantes-animaux</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Forces internes (tension, compression, cisaillement, torsion)</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Forces externes et troisième loi de Newton</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Plasticité et élasticité</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Météo vs. climat / causes du changement climatique</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Effets et preuves du changement climatique</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Sélection et transformation des ressources énergétiques</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Composantes du système solaire et échelle</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Satellites, technologies d'exploration, science autocorrectrice</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+      <tr>
+        <td>Expériences contrôlées et méthodes scientifiques</td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="check-cell"><span class="checkbox-sq"></span></td>
+        <td class="question-cell"><div class="blank-line" style="margin-top:0;"></div></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:16px; font-size:0.88rem; font-family:system-ui, sans-serif; color:#334155;">
+    sci6-year-review-workbook-fr-v1 &nbsp;·&nbsp; Sciences 6e année &nbsp;·&nbsp; Programme d'études de l'Alberta 2023 &nbsp;·&nbsp; Immersion française
+  </div>
+
+</div><!-- fin page-wrap -->
+</body>
+</html>

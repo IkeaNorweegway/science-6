@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sciences 6 — Le climat : Cahier d'exercices</title>
+<style>
+  :root {
+    --unit:        #d97706;
+    --unit-mid:    #f59e0b;
+    --unit-light:  #fef3c7;
+    --unit-border: #fcd34d;
+    --unit-dark:   #92400e;
+    --ext-bg:      #fdf4ff;
+    --ext-color:   #7e22ce;
+    --ext-border:  #d8b4fe;
+    --line-color:  #9CA3AF;
+    --border:      #E5E7EB;
+    --text:        #111827;
+    --muted:       #6B7280;
+    --page-bg:     #F9F7F4;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 15px; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--text);
+    background: var(--page-bg);
+    line-height: 1.65;
+    padding-bottom: 4rem;
+  }
+
+  .page { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
+
+  .cover {
+    background: var(--unit);
+    color: white;
+    padding: 2rem 2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .cover-grid { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; }
+  .cover h1 { font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.8; margin-bottom: 0.2rem; }
+  .cover h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .cover .sub { font-family: system-ui, sans-serif; font-size: 0.82rem; opacity: 0.75; font-style: italic; }
+  .cover-fields { display: flex; flex-direction: column; gap: 0.6rem; min-width: 14rem; }
+  .cover-field { display: flex; flex-direction: column; }
+  .cover-field label { font-family: system-ui, sans-serif; font-size: 0.7rem; opacity: 0.75; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.15rem; }
+  .cover-field .field-line { border-bottom: 1px solid rgba(255,255,255,0.5); height: 1.5rem; min-width: 10rem; }
+
+  .instr-box {
+    background: var(--unit-light);
+    border: 1px solid var(--unit-border);
+    border-radius: 6px;
+    padding: 1rem 1.4rem;
+    margin-bottom: 1.75rem;
+    font-size: 0.88rem;
+  }
+  .instr-box h3 { font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--unit); margin-bottom: 0.5rem; }
+  .instr-box p { margin-bottom: 0.45rem; }
+  .instr-box p:last-child { margin-bottom: 0; }
+
+  .badge { display: inline-block; font-family: system-ui, sans-serif; font-weight: 800; font-size: 0.72rem; letter-spacing: 0.04em; padding: 0.15em 0.5em; border-radius: 3px; text-transform: uppercase; }
+  .badge-core { background: var(--unit-light); color: var(--unit-dark); }
+  .badge-ext  { background: var(--ext-bg); color: var(--ext-color); }
+
+  h3.section-label {
+    font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+    border-top: 1px solid var(--border); padding-top: 1rem; margin: 2rem 0 1rem;
+  }
+
+  .meta-block {
+    background: #f0fdf4; border-left: 4px solid #6ee7b7;
+    border-radius: 0 6px 6px 0; padding: 1rem 1.25rem; margin: 1.5rem 0;
+  }
+  .meta-block .m-label {
+    font-family: system-ui, sans-serif; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: #065f46; margin-bottom: 0.6rem;
+  }
+
+  .q-card {
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 1.1rem 1.25rem; margin-bottom: 1rem; background: #fff;
+  }
+  .q-header {
+    font-family: system-ui, sans-serif; font-size: 0.82rem; font-weight: 700;
+    display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.65rem; flex-wrap: wrap;
+  }
+  .q-num { font-size: 0.9rem; font-weight: 800; color: var(--unit-dark); }
+  .t-note { font-family: system-ui, sans-serif; font-size: 0.72rem; color: #94a3b8; font-style: italic; margin-left: auto; }
+
+  .q-body { font-size: 0.91rem; }
+  .q-body p { margin-bottom: 0.5rem; }
+  .q-body ul, .q-body ol { padding-left: 1.3rem; margin-bottom: 0.5rem; }
+  .q-body li { margin-bottom: 0.25rem; }
+
+  .q-card.stretch { border-color: var(--ext-border); background: var(--ext-bg); }
+  .s-num { color: var(--ext-color); font-size: 0.9rem; font-weight: 800; }
+
+  .al { display: block; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; margin: 0.35rem 0; width: 100%; }
+  .al-sm { width: 30%; display: inline-block; border-bottom: 1.5px solid #94a3b8; height: 1.4rem; vertical-align: bottom; }
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 3.5rem; }
+  .b-md { width: 6.5rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.87rem; margin: 0.6rem 0; }
+  th {
+    font-family: system-ui, sans-serif; font-size: 0.73rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    background: var(--unit-light); color: var(--unit-dark);
+    padding: 0.45rem 0.65rem; border: 1px solid var(--unit-border); text-align: left;
+  }
+  td { padding: 0.5rem 0.65rem; border: 1px solid #e2e8f0; vertical-align: top; min-height: 2rem; }
+  tr:nth-child(even) td { background: #fffbeb; }
+  td:first-child { font-weight: 500; }
+  .rubric th { background: #1e293b; color: white; }
+  .rubric td:first-child { font-weight: 400; }
+
+  pre {
+    font-family: 'Courier New', Courier, monospace; font-size: 0.8rem;
+    background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 0.35rem;
+    padding: 0.75rem 0.9rem; overflow-x: auto; white-space: pre; margin: 0.5rem 0;
+  }
+
+  .hint {
+    border-left: 3px solid var(--unit-mid); background: var(--unit-light);
+    padding: 0.5rem 0.75rem; margin: 0.6rem 0; border-radius: 0 5px 5px 0;
+    font-size: 0.85rem; color: var(--unit-dark); font-style: italic;
+  }
+
+  blockquote {
+    border-left: 3px solid #e2e8f0; padding: 6px 12px; margin: 8px 0;
+    color: #475569; font-style: italic; font-size: 0.88rem;
+  }
+
+  .section-break { border: none; border-top: 2px dashed #e2e8f0; margin: 1.75rem 0; }
+
+  .forethought {
+    background: #f0fdf4; border: 1px solid #bbf7d0;
+    border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem;
+  }
+  .forethought .label {
+    font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em; color: #16a34a; margin-bottom: 0.5rem;
+  }
+
+  .mid-check {
+    background: #f8fafc; border: 2px solid #e2e8f0;
+    border-radius: 10px; padding: 1.1rem 1.35rem; margin: 1.5rem 0;
+  }
+  .mid-check .label {
+    font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.07em; color: #64748b; margin-bottom: 0.75rem;
+  }
+
+  .reflection {
+    background: #fff7ed; border: 1px solid var(--unit-border);
+    border-radius: 10px; padding: 1rem 1.25rem; margin: 1.5rem 0;
+  }
+  .reflection .label {
+    font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em; color: var(--unit-dark); margin-bottom: 0.6rem;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { padding: 16px 20px 32px; max-width: 100%; }
+    .q-card { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="cover">
+  <div class="cover-grid">
+    <div>
+      <h1>Sciences 6e année — Le climat</h1>
+      <h2>Cahier d'exercices</h2>
+      <div class="sub">Programme d'études de l'Alberta 2023 &nbsp;·&nbsp; Immersion française</div>
+    </div>
+    <div class="cover-fields">
+      <div class="cover-field"><label>Nom</label><div class="field-line"></div></div>
+      <div class="cover-field"><label>Date de début</label><div class="field-line"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="instr-box">
+  <h3>Comment utiliser ce cahier</h3>
+  <p><strong>Ce cahier est ton outil de pratique entrelacée.</strong> Les questions viennent de différentes leçons et concepts, mélangées intentionnellement. Identifier ce que chaque question demande fait partie de l'apprentissage. Ne saute pas cette étape.</p>
+  <p><span class="badge badge-core">★ De base</span> — accessible à tous les élèves. Des amorces et des indices sont fournis quand c'est utile.</p>
+  <p><span class="badge badge-ext">★★ Approfondie</span> — même concept, demande plus élevée. Explique, justifie ou applique à une nouvelle situation.</p>
+  <p>Commence par les questions De base. Passe aux questions Approfondies quand tu es prêt(e). Les deux comptent.</p>
+</div>
+
+<div class="forethought">
+  <div class="label">Avant de commencer — Réflexion préalable</div>
+  <p><em>Regarde les questions disponibles aujourd'hui. Laquelle penses-tu sera la plus difficile ? Écris le numéro et explique pourquoi tu penses que ce sera difficile.</em></p>
+  <p style="margin-top:0.6rem;">Numéro de question : <span class="b b-sm">&nbsp;</span> &nbsp;&nbsp; Pourquoi je pense que ce sera difficile :</p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<h3 class="section-label">Questions</h3>
+
+<!-- Q1 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q1</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 1 · météo vs. climat</span>
+  </div>
+  <div class="q-body">
+    <p>Classe chaque observation dans la bonne colonne. Utilise chacune une seule fois.</p>
+    <p><strong>Observations :</strong> Il a neigé à Edmonton le 3 mai. · La température hivernale moyenne en Alberta a augmenté de 2 °C sur 50 ans. · Il y a eu un orage à Calgary mardi dernier. · Juillet 2023 a été le mois le plus chaud jamais enregistré à l'échelle mondiale. · La rivière Bow a inondé en juin 2013.</p>
+    <table>
+      <thead><tr><th>Indique la <strong>météo</strong> (événement à court terme)</th><th>Indique le <strong>climat</strong> (tendance à long terme)</th></tr></thead>
+      <tbody>
+        <tr><td><div class="al"></div></td><td><div class="al"></div></td></tr>
+        <tr><td><div class="al"></div></td><td><div class="al"></div></td></tr>
+        <tr><td><div class="al"></div></td><td><div class="al"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="hint">Indice : La météo se produit sur des heures ou des jours. Le climat représente un modèle sur au moins 30 ans.</div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q2</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 2 · effet de serre · schéma à légender</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Utilise la banque de mots pour légender chaque flèche numérotée du schéma de l'effet de serre.</p>
+    <p><strong>Banque de mots :</strong> lumière solaire (entrante) · chaleur infrarouge (montant de la surface) · chaleur renvoyée vers la Terre · chaleur s'échappant dans l'espace</p>
+    <pre>           ☀ SOLEIL ☀
+
+     ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  Flèche 1 : _________________________________
+
+  ┌────────────────────────────────┐
+  │  ATMOSPHÈRE                    │
+  │  (gaz à effet de serre)        │
+  │                       ↑↑ ↓↓   │  Flèche 3 : _________________________________
+  └────────────────────────────────┘
+                          ↑↑       Flèche 2 : _________________________________
+
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          SURFACE DE LA TERRE
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</pre>
+    <p>Que se passerait-il si la Terre n'avait aucun gaz à effet de serre ? Encercle ta réponse :</p>
+    <p><strong>A.</strong> La température resterait la même. &nbsp;&nbsp; <strong>B.</strong> Elle deviendrait beaucoup plus froide. &nbsp;&nbsp; <strong>C.</strong> Elle deviendrait beaucoup plus chaude.</p>
+    <p>Explique ton choix :</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q3</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 1 · qualité des preuves · échelle de temps</span>
+  </div>
+  <div class="q-body">
+    <p>Un ami dit : <em>« Il faisait glacial en mars dernier. Ça prouve que le changement climatique n'a pas lieu. »</em></p>
+    <p>Est-ce une bonne preuve pour une affirmation sur le climat ? Encercle : &nbsp; <strong>Oui</strong> &nbsp;/&nbsp; <strong>Non</strong></p>
+    <p>Explique pourquoi. Utilise les mots <em>échelle de temps</em> et <em>tendance</em> dans ta réponse.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="hint">Indice : Quel type de preuve faut-il pour soutenir une affirmation sur un modèle de 30 ans ?</div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q4</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 3 · causes humaines · combustibles fossiles</span>
+  </div>
+  <div class="q-body">
+    <p>Complète les blancs. Utilise la banque de mots. Tous les mots ne seront pas utilisés.</p>
+    <p><strong>Banque de mots :</strong> CO₂ · méthane · plus vite · plus lentement · millions · décennies · stocké · libéré · combustion</p>
+    <p>Le charbon et le pétrole se sont formés sur des <span class="b b-md">&nbsp;</span> d'années sous la Terre. Le carbone qu'ils contiennent était <span class="b b-md">&nbsp;</span> loin de l'atmosphère pendant tout ce temps. Quand nous brûlons ces combustibles, ce carbone est <span class="b b-md">&nbsp;</span> sous forme de <span class="b b-sm">&nbsp;</span> très rapidement — en quelques <span class="b b-md">&nbsp;</span>. C'est <span class="b b-md">&nbsp;</span> que n'importe quel processus naturel ne peut l'éliminer.</p>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q5</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 2 · facteurs géographiques · latitude · schéma</span>
+  </div>
+  <div class="q-body">
+    <p>Observe les deux schémas de rayonnement solaire ci-dessous.</p>
+    <pre>  A) Équateur            B) Région polaire
+
+      ↓↓↓↓                  ↘ ↘ ↘ ↘
+  [──────────]           [──────────────────]
+  (petite surface)       (même énergie, répartie sur une plus grande surface)</pre>
+    <p>Dans le schéma A, la même quantité de lumière solaire frappe une <span class="b b-sm">&nbsp;</span> surface. L'énergie est donc plus <span class="b b-md">&nbsp;</span>.</p>
+    <p>Dans le schéma B, la même quantité frappe une <span class="b b-sm">&nbsp;</span> surface. L'énergie est donc plus <span class="b b-md">&nbsp;</span>.</p>
+    <p>Quelle région est la plus chaude ? <span class="b b-sm">&nbsp;</span> &nbsp; Pourquoi ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q6</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 1 · qualité des preuves · idée fausse : météo = climat</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Analyse d'erreur.</strong> Un(e) élève a écrit ceci dans ses notes :</p>
+    <blockquote>« Les scientifiques disent que 2023 a été l'année la plus chaude jamais enregistrée. Cela confirme que le changement climatique est réel — nous avons notre preuve. »</blockquote>
+    <p>La conclusion de l'élève est peut-être juste, mais son raisonnement a un problème. Identifie le problème et explique quelles preuves confirmeraient réellement une tendance climatique.</p>
+    <p>Le problème dans le raisonnement :</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p>Quelles preuves confirmeraient une tendance climatique :</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q7</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 4 · effets en Alberta · glaciers et rivières</span>
+  </div>
+  <div class="q-body">
+    <p>Les glaciers de montagne de l'Alberta alimentent des rivières comme la Bow, l'Athabasca et la North Saskatchewan. Complète la chaîne de cause à effet ci-dessous.</p>
+    <p>Les glaciers fondent plus vite →</p>
+    <p>À court terme, les rivières auront <span class="b b-sm">&nbsp;</span> d'eau au début de l'été.</p>
+    <p>À long terme, à mesure que les glaciers rétrécissent, les rivières auront <span class="b b-sm">&nbsp;</span> d'eau à la mi-été et en fin d'été.</p>
+    <p>Les communautés et les fermes qui utilisent l'eau des rivières pour l'irrigation feront face à <span class="b b-xl">&nbsp;</span>.</p>
+    <p>Pourquoi les glaciers sont-ils importants pour le débit des rivières pendant les mois d'été secs, quand il y a peu de pluie ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q8</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 2 · gaz à effet de serre</span>
+  </div>
+  <div class="q-body">
+    <p>Relie chaque gaz à effet de serre à sa source naturelle. Puis réponds aux questions ci-dessous.</p>
+    <table>
+      <thead><tr><th>Gaz à effet de serre</th><th>Source naturelle</th></tr></thead>
+      <tbody>
+        <tr><td>Vapeur d'eau (H₂O)</td><td>Zones humides et décomposition</td></tr>
+        <tr><td>Dioxyde de carbone (CO₂)</td><td>Éruptions volcaniques et respiration</td></tr>
+        <tr><td>Méthane (CH₄)</td><td>Évaporation des océans et des lacs</td></tr>
+      </tbody>
+    </table>
+    <p>Une activité humaine qui ajoute du CO₂ supplémentaire à l'atmosphère : <span class="al-sm">&nbsp;</span></p>
+    <p>Pourquoi l'ajout de CO₂ cause-t-il plus de réchauffement ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q9</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 3 · causes naturelles vs humaines · idée fausse : variation naturelle</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Deux explications — une seule est juste.</strong> Lis les deux et décide.</p>
+    <p><strong>Explication A :</strong> <em>« Le climat de la Terre a toujours changé. Les ères glaciaires se produisent naturellement. Donc le réchauffement actuel n'est qu'un autre cycle naturel — il n'a rien à voir avec l'activité humaine. »</em></p>
+    <p><strong>Explication B :</strong> <em>« Les changements climatiques naturels sont réels. Mais le taux de réchauffement actuel dépasse largement les cycles naturels. Les données des carottes de glace montrent que les niveaux de CO₂ sont maintenant plus élevés qu'à n'importe quel moment des 800 000 dernières années. Le moment et le rythme correspondent à l'augmentation de l'utilisation des combustibles fossiles, et non à un cycle naturel. »</em></p>
+    <p>Quelle explication est scientifiquement exacte ? <span class="b b-sm">&nbsp;</span></p>
+    <p>Explique comment tu le sais. Donne au moins une preuve spécifique de tes notes.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q10</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 5 · SET comme preuve valide · PPCA</span>
+  </div>
+  <div class="q-body">
+    <p>Une Aînée d'une communauté le long de la rivière Bow décrit comment la débâcle de la glace au printemps a changé au cours de sa vie. Elle dit que la rivière se libère maintenant environ deux semaines plus tôt qu'à son enfance.</p>
+    <p>Cette observation est-elle une source de données scientifiques valide ? Encercle : &nbsp; <strong>Oui</strong> &nbsp;/&nbsp; <strong>Non</strong></p>
+    <p>Donne <strong>deux raisons</strong> pour appuyer ta réponse.</p>
+    <p>Raison 1 :</p><div class="al"></div><div class="al"></div>
+    <p>Raison 2 :</p><div class="al"></div><div class="al"></div>
+    <div class="hint">Indice : Réfléchis à la durée de l'enregistrement et à la manière dont il a été recueilli.</div>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q11</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 2 · albédo · compléter le cycle</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Complète la boucle de rétroaction glace-albédo ci-dessous. Remplis chaque case vide.</p>
+    <pre>  La glace fond
+       ↓
+  [_________________________________] ← une surface plus sombre est exposée
+       ↓
+  La surface sombre absorbe [_________] de chaleur que la glace
+       ↓
+  Plus de chaleur entraîne [_______________]
+       ↓
+  (le cycle continue) ─────────────────→</pre>
+    <p>Que signifie le mot <em>albédo</em> ?</p>
+    <div class="al"></div>
+    <p>Quelle surface a un albédo plus élevé — la neige fraîche ou l'eau libre de l'océan ? <span class="al-sm">&nbsp;</span></p>
+    <p>Pourquoi est-ce important à mesure que la glace arctique continue de fondre ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q12</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 4 · effets en Alberta · incendies de forêt</span>
+  </div>
+  <div class="q-body">
+    <p>La saison des feux de forêt en Alberta s'est allongée. Complète l'explication ci-dessous. Choisis dans la banque de mots.</p>
+    <p><strong>Banque de mots :</strong> plus sèches · plus longue · plus courte · enneigement · plus tôt · plus tard · davantage</p>
+    <p>Les étés plus chauds rendent les forêts <span class="b b-md">&nbsp;</span> plus tôt dans la saison. Un <span class="b b-md">&nbsp;</span> moins important dans les montagnes fait entrer les forêts en saison des feux avec moins d'humidité. Les températures plus élevées assèchent la végétation <span class="b b-md">&nbsp;</span> rapidement. En conséquence, la saison des feux commence <span class="b b-md">&nbsp;</span> au printemps et se termine <span class="b b-md">&nbsp;</span> en automne — la rendant <span class="b b-md">&nbsp;</span> chaque année.</p>
+    <p>Nomme un incendie de forêt en Alberta de tes notes qui illustre cette tendance : <span class="al-sm">&nbsp;</span></p>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q13</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 2 · idée fausse : effet de serre = trou d'ozone</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Analyse d'erreur.</strong> Un(e) élève a écrit :</p>
+    <blockquote>« L'effet de serre et le trou d'ozone sont fondamentalement le même problème. Les deux sont causés par la pollution et rendent la planète plus chaude. Si on règle l'un, on règle l'autre. »</blockquote>
+    <p>Identifie <strong>deux erreurs précises</strong> dans cet énoncé. Pour chacune, donne la bonne information.</p>
+    <p>Erreur 1 : <div class="al"></div></p>
+    <p>Correction : <div class="al"></div><div class="al"></div></p>
+    <p>Erreur 2 : <div class="al"></div></p>
+    <p>Correction : <div class="al"></div><div class="al"></div></p>
+    <div class="hint">Indice : Regarde quels gaz sont impliqués dans chacun — et quelle couche de l'atmosphère.</div>
+  </div>
+</div>
+
+<!-- Q14 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q14</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 5 · carottes de glace · données indirectes</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Le schéma ci-dessous montre une coupe transversale d'une carotte de glace.</p>
+    <pre>  Surface (la plus récente)  ─────── [Couche : 2026]
+                                      [Couche : 2000]
+                                      [Couche : 1950]
+                                      [Couche : 1850]
+                                           ⋮
+  Profond (le plus ancien)  ──────── [Couche : 200 000+ ans]</pre>
+    <p>Que piège chaque couche d'une carotte de glace au moment où elle s'est formée ?</p>
+    <div class="al"></div>
+    <p>Que peuvent mesurer les scientifiques dans les bulles d'air emprisonnées ?</p>
+    <div class="al"></div>
+    <p>Pourquoi une carotte de glace est-elle appelée <em>données indirectes</em> plutôt qu'une mesure directe ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q15 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q15</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 4 · PPCA · routes de glace</span>
+  </div>
+  <div class="q-body">
+    <p>De nombreuses communautés des Premières Nations dans le nord de l'Alberta dépendent des routes de glace en hiver.</p>
+    <p>Qu'est-ce qu'une route de glace, et pourquoi les communautés en dépendent-elles ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p>Comment le changement climatique affecte-t-il les routes de glace ? Donne <strong>deux</strong> effets précis.</p>
+    <p>Effet 1 : <div class="al"></div></p>
+    <p>Effet 2 : <div class="al"></div></p>
+    <p>Pourquoi la perte d'accès à une route de glace est-elle plus grave qu'un simple inconvénient ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- BILAN INTERMÉDIAIRE -->
+<div class="mid-check">
+  <div class="label">Bilan intermédiaire — Non noté</div>
+  <p><em>Lu par l'enseignant(e) lors du prochain cours pour voir où les élèves sont bloqués.</em></p>
+  <p style="margin-top:0.6rem;">Quelle question était la plus difficile jusqu'ici ? Écris le numéro : <span class="b b-sm">&nbsp;</span></p>
+  <p style="margin-top:0.6rem;">C'était difficile parce que :</p>
+  <p>☐ Je ne connaissais pas le concept &nbsp;&nbsp; ☐ Je savais en partie mais je me suis bloqué(e) &nbsp;&nbsp; ☐ La question posait la chose d'une façon inhabituelle</p>
+  <p style="margin-top:0.6rem;">Qu'as-tu fait quand tu t'es bloqué(e) ?</p>
+  <div class="al"></div>
+  <p style="margin-top:0.6rem;">Évalue ta confiance avec l'effet de serre maintenant (encercle) : &nbsp; <strong>1 — 2 — 3 — 4</strong></p>
+  <p style="font-size:0.85rem; color:#64748b;">(1 = perdu(e) · 2 = partiel · 3 = compris · 4 = je pourrais l'expliquer à quelqu'un)</p>
+  <p style="margin-top:0.5rem;">Une preuve pour mon évaluation :</p>
+  <div class="al"></div>
+</div>
+
+<!-- Q16 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q16</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 1 · météo vs. climat · tableau de données</span>
+  </div>
+  <div class="q-body">
+    <p>Un(e) élève a recueilli les données suivantes pour une ville en Alberta :</p>
+    <table>
+      <thead><tr><th>Année</th><th>Température moyenne de juillet (°C)</th></tr></thead>
+      <tbody>
+        <tr><td>2014</td><td>19,2</td></tr>
+        <tr><td>2015</td><td>21,8</td></tr>
+        <tr><td>2016</td><td>18,5</td></tr>
+        <tr><td>2017</td><td>20,1</td></tr>
+        <tr><td>2018</td><td>22,4</td></tr>
+        <tr><td>2019</td><td>19,9</td></tr>
+        <tr><td>2020</td><td>21,3</td></tr>
+        <tr><td>2021</td><td>23,1</td></tr>
+        <tr><td>2022</td><td>20,7</td></tr>
+        <tr><td>2023</td><td>23,6</td></tr>
+      </tbody>
+    </table>
+    <p><strong>(a)</strong> Quelles années ont les températures les plus basses et les plus élevées dans ce tableau ?</p>
+    <p>La plus basse : <span class="b b-sm">&nbsp;</span> (<span class="b b-sm">&nbsp;</span> °C) &nbsp;&nbsp; La plus élevée : <span class="b b-sm">&nbsp;</span> (<span class="b b-sm">&nbsp;</span> °C)</p>
+    <p><strong>(b)</strong> Ces données suffisent-elles à prouver une tendance climatique ? Encercle : &nbsp; <strong>Oui</strong> &nbsp;/&nbsp; <strong>Non</strong></p>
+    <p>Explique ton raisonnement :</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(c)</strong> Que suggère le modèle général de ce tableau, même si ce n'est pas encore une preuve d'une tendance climatique ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q17 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q17</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 3 · causes humaines · déforestation</span>
+  </div>
+  <div class="q-body">
+    <p>Une forêt est coupée et brûlée pour laisser place à une ferme. Complète le tableau pour montrer ce qui arrive au carbone.</p>
+    <table>
+      <thead><tr><th>Événement</th><th>Ce qui arrive au carbone</th><th>Effet sur l'atmosphère</th></tr></thead>
+      <tbody>
+        <tr><td>Les arbres sont coupés et brûlés</td><td>Le CO₂ stocké dans les arbres est <span class="b b-sm">&nbsp;</span></td><td>Le CO₂ atmosphérique <span class="b b-sm">&nbsp;</span></td></tr>
+        <tr><td>Plus d'arbres présents</td><td>Le CO₂ futur ne peut pas être <span class="b b-sm">&nbsp;</span> par la photosynthèse</td><td>Le CO₂ atmosphérique reste <span class="b b-sm">&nbsp;</span></td></tr>
+      </tbody>
+    </table>
+    <p>Un(e) élève demande : « Pourquoi la déforestation est-elle un double problème pour le changement climatique ? » Réponds dans tes propres mots.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q18 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q18</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 5 · modèles climatiques · lien informatique</span>
+  </div>
+  <div class="q-body">
+    <p>Un modèle climatique est un programme informatique qui simule le système climatique de la Terre.</p>
+    <p>Qu'est-ce qu'une <em>abstraction</em> en informatique ?</p>
+    <div class="al"></div>
+    <p>Un modèle climatique est appelé une abstraction parce qu'il conserve <span class="b b-xl">&nbsp;</span> variables (comme les niveaux de CO₂, la température de l'océan et la couverture de glace) tout en laissant de côté <span class="b b-xl">&nbsp;</span> détails (comme les arbres individuels ou les vagues).</p>
+    <p>En quoi un modèle climatique est-il semblable à un diagramme de forces de l'unité sur les forces ? (Réfléchis à ce que les deux conservent et laissent de côté.)</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p>Pourquoi les scientifiques font-ils fonctionner des modèles climatiques dans différents scénarios — par exemple, « que se passe-t-il si les émissions restent élevées ? » et « que se passe-t-il si elles diminuent d'ici 2030 ? »</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q19 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q19</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 4 · effets en Alberta · idée fausse : le changement climatique est futur</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Analyse d'erreur.</strong> Un(e) élève affirme :</p>
+    <blockquote>« Le changement climatique est quelque chose que les scientifiques prédisent pour dans 50 ans. Il n'a pas encore vraiment affecté l'Alberta. »</blockquote>
+    <p>Liste <strong>trois effets précis et mesurables</strong> qui se sont déjà produits en Alberta. Pour chacun, indique ce qui a changé et quand le changement a été documenté ou observé pour la première fois.</p>
+    <p>Effet 1 : <div class="al"></div><div class="al"></div></p>
+    <p>Effet 2 : <div class="al"></div><div class="al"></div></p>
+    <p>Effet 3 : <div class="al"></div><div class="al"></div></p>
+    <p>En une phrase, explique pourquoi l'affirmation de l'élève est fausse :</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q20 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q20</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 2 · facteurs géographiques · eau</span>
+  </div>
+  <div class="q-body">
+    <p>Edmonton et une ville côtière en Colombie-Britannique sont à peu près à la même latitude. Edmonton a des hivers beaucoup plus froids et des étés beaucoup plus chauds que la ville côtière.</p>
+    <p>Quel est le facteur géographique qui cause cette différence ? <span class="al-sm">&nbsp;</span></p>
+    <p>Explique comment ce facteur fonctionne :</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p>L'Alberta est décrite comme un climat <span class="b b-md">&nbsp;</span> parce qu'elle est éloignée de l'océan. Cela signifie qu'elle a une plage de températures <span class="b b-md">&nbsp;</span> — hivers très froids et étés chauds.</p>
+  </div>
+</div>
+
+<!-- Q21 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q21</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 5 · SET et preuves scientifiques · PPCA</span>
+  </div>
+  <div class="q-body">
+    <p>Un(e) chercheur(-euse) qui étudie les populations végétales dans le nord de l'Alberta dispose de deux sources de données :</p>
+    <ul>
+      <li><strong>Source A :</strong> Images satellitaires montrant la végétation dans la région au cours des 25 dernières années.</li>
+      <li><strong>Source B :</strong> Récits oraux de Gardiens du savoir autochtone documentant les espèces végétales trouvées dans la même région sur environ 80 ans — plusieurs générations d'observation attentive.</li>
+    </ul>
+    <p><strong>(a)</strong> Quelle source couvre une plus longue période de temps ? <span class="b b-sm">&nbsp;</span> &nbsp; De combien d'années ? <span class="b b-sm">&nbsp;</span></p>
+    <p><strong>(b)</strong> Quelle source peut saisir les détails fins sur <em>les espèces végétales précises et leur emplacement</em> ? Explique pourquoi.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(c)</strong> Un(e) scientifique dit : « Je ne fais confiance qu'aux données instrumentales — les récits des Aîné(e)s ne sont que des histoires. » Identifie l'erreur scientifique précise dans cette position.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(d)</strong> Explique pourquoi utiliser les deux sources ensemble produit une conclusion scientifique plus solide qu'en utiliser une seule.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q22 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q22</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 3 · causes naturelles · tri</span>
+  </div>
+  <div class="q-body">
+    <p>Classe chaque élément dans la bonne colonne. Utilise chacun une seule fois.</p>
+    <p><strong>Éléments :</strong> Brûler du charbon dans les centrales électriques · Changements dans l'orbite de la Terre sur des milliers d'années · Conduire des voitures à essence · Grande éruption volcanique bloquant le soleil · Couper et brûler des forêts · Variation de l'activité solaire sur un cycle de 11 ans · Bovins produisant du méthane pendant la digestion · Impact météoritique envoyant de la poussière dans l'atmosphère</p>
+    <table>
+      <thead><tr><th><strong>Cause naturelle</strong> des changements climatiques passés</th><th><strong>Cause humaine</strong> du changement climatique actuel</th></tr></thead>
+      <tbody>
+        <tr><td><div class="al"></div></td><td><div class="al"></div></td></tr>
+        <tr><td><div class="al"></div></td><td><div class="al"></div></td></tr>
+        <tr><td><div class="al"></div></td><td><div class="al"></div></td></tr>
+        <tr><td><div class="al"></div></td><td><div class="al"></div></td></tr>
+      </tbody>
+    </table>
+    <p>Quelle colonne correspond à la période actuelle de réchauffement rapide ? Explique pourquoi.</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q23 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q23</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 5 · signal vs. bruit · lecture d'un graphique de tendance</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Le graphique ci-dessous montre les mesures de température pour un endroit sur 20 ans. Chaque point représente une année de données.</p>
+    <pre>Température (°C)
+  │
+  │              *
+  │       *            *         *
+  │  *         *            *         *
+  │                   *          *
+  │       *
+  │  *
+  │
+  └──────────────────────────────────── Années
+     Année 1                         Année 20</pre>
+    <p>Chaque point individuel mesure-t-il la <em>météo</em> ou le <em>climat</em> ? <span class="al-sm">&nbsp;</span></p>
+    <p>Trace une droite de tendance à travers les données sur le graphique ci-dessus.</p>
+    <p>La droite de tendance monte-t-elle, reste-t-elle stable ou descend-elle ? <span class="al-sm">&nbsp;</span></p>
+    <p>Que nous dit cette droite, même si certaines années individuelles sont plus basses que d'autres ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="hint">Indice : C'est la différence entre le signal et le bruit.</div>
+  </div>
+</div>
+
+<!-- Q24 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q24</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 4 · PPCA · chasse et pratiques traditionnelles</span>
+  </div>
+  <div class="q-body">
+    <p>Une Aînée du nord de l'Alberta explique que sa communauté a toujours chassé l'orignal en octobre. Les orignaux se trouvaient de manière fiable dans certaines vallées à ce moment, selon des modèles observés par sa communauté depuis des générations. Ces dernières années, les orignaux arrivent à des moments différents et dans des endroits différents.</p>
+    <p><strong>(a)</strong> Qu'est-ce qui cause ce changement dans le comportement des orignaux ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(b)</strong> Pourquoi est-ce plus qu'un simple inconvénient pour la communauté ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(c)</strong> Un(e) scientifique étudie la migration des orignaux dans cette région depuis trois ans et n'a pas encore remarqué de changement. Explique pourquoi l'observation de l'Aîné(e) est plus précieuse dans cette situation précise.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q25 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q25</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 2 · rétroaction de l'albédo</span>
+  </div>
+  <div class="q-body">
+    <p>Un(e) élève est confus(-e) sur pourquoi la fonte de la glace arctique accélère le réchauffement — et ne le fait pas simplement continuer au même rythme. Utilise le concept d'albédo pour compléter cette explication.</p>
+    <p>Avant la fonte des glaces : La surface de l'Arctique est surtout couverte de <span class="b b-sm">&nbsp;</span> glace. La glace a un albédo <span class="b b-md">&nbsp;</span> — elle réfléchit environ 80 % de la lumière solaire.</p>
+    <p>Après la fonte des glaces : La surface devient de l'eau <span class="b b-sm">&nbsp;</span> libre. L'eau de mer a un albédo <span class="b b-md">&nbsp;</span> — elle absorbe environ 94 % de la lumière solaire.</p>
+    <p>Donc quand la glace fond, <span class="b b-md">&nbsp;</span> d'énergie est absorbée par la surface. Cela provoque plus de réchauffement, ce qui fait fondre <span class="b b-md">&nbsp;</span> de glace. Le cycle s'autoalimente.</p>
+    <p>Comment s'appelle ce cycle autorenforcé ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q26 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q26</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 3 · cycle du carbone · lien entre unités : Systèmes vivants</span>
+  </div>
+  <div class="q-body">
+    <p><strong>(a)</strong> D'où vient le carbone dans le charbon et le pétrole à l'origine ? Retrace-le en utilisant la photosynthèse.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(b)</strong> Le carbone était stocké sous terre pendant des millions d'années. Nous le libérons en quelques décennies. Pourquoi le <em>taux</em> de libération est-il important — pas seulement la quantité totale ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(c)</strong> La déforestation réduit la capacité de la Terre à réabsorber le CO₂. Explique cela en utilisant ce que tu sais sur la photosynthèse.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q27 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q27</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 5 · cernes des arbres · données indirectes</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> La section transversale d'un tronc d'arbre ci-dessous montre 10 ans de cernes. Les cernes larges se sont formés lors d'années chaudes et humides. Les cernes étroits se sont formés lors d'années froides ou sèches.</p>
+    <pre>  Coupe transversale d'arbre :
+
+  ┌──────────────────────────────────────┐
+  │  cerne externe (an 10) : ══════════  │  ← large
+  │  An 9 :                 ════════     │
+  │  An 8 :                 ══           │  ← étroit
+  │  An 7 :                 ════════     │
+  │  An 6 :                 ══════════   │  ← large
+  │  An 5 :                 ══           │  ← étroit
+  │  An 4 :                 ════════     │
+  │  An 3 :                 ══════════   │  ← large
+  │  An 2 :                 ════         │
+  │  cerne interne (an 1) : ══════════   │  ← large
+  └──────────────────────────────────────┘</pre>
+    <p>Quelles années étaient probablement les plus chaudes et les plus humides ? <span class="al-sm">&nbsp;</span></p>
+    <p>Quelles années étaient probablement les plus froides ou les plus sèches ? <span class="al-sm">&nbsp;</span></p>
+    <p>Pourquoi les cernes des arbres sont-ils appelés <em>données indirectes</em> ?</p>
+    <div class="al"></div>
+    <p>Jusqu'à quand dans le temps les enregistrements des cernes d'arbres peuvent-ils remonter ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q28 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q28</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 4 · effets en Alberta · agriculture</span>
+  </div>
+  <div class="q-body">
+    <p>Un(e) élève affirme : <em>« Le changement climatique pourrait en fait être bénéfique pour les agriculteurs albertains. Des saisons de croissance plus longues signifient plus de nourriture. »</em></p>
+    <p><strong>Partie A :</strong> Qu'est-ce qui est partiellement vrai dans cet énoncé ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>Partie B :</strong> Identifie <strong>deux éléments</strong> que l'énoncé omet et qui changeraient la conclusion.</p>
+    <p>Élément omis 1 : <div class="al"></div><div class="al"></div></p>
+    <p>Élément omis 2 : <div class="al"></div><div class="al"></div></p>
+    <p><strong>Partie C :</strong> D'après ton analyse complète, cet argument est-il complet ou incomplet ? Explique en une phrase.</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q29 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q29</span>
+    <span class="badge badge-core">★ De base</span>
+    <span class="t-note">Après la leçon 5 · SET · rivière Bow · PPCA</span>
+  </div>
+  <div class="q-body">
+    <p>Des Aîné(e)s de communautés le long de la rivière Bow ont enregistré le moment de la débâcle printanière sur plusieurs générations. Des scientifiques avec des instruments ont des données remontant à environ 40 ans. Quand les enregistrements sont comparés, les deux montrent que la débâcle se produit maintenant environ <strong>deux semaines plus tôt</strong> qu'il y a 40 ans.</p>
+    <p>Pourquoi est-il important que les récits oraux des Aîné(e)s remontent <em>plus loin</em> dans le temps que les données instrumentales ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p>Les deux sources s'accordent sur la même conclusion. Que signifie-t-il pour une conclusion scientifique quand deux sources indépendantes de preuve concordent ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p>L'observation des Aîné(e)s est-elle une donnée <em>qualitative</em> ou <em>quantitative</em>, ou les deux ? Explique.</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q30 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q30</span>
+    <span class="badge badge-ext">★★ Approfondie</span>
+    <span class="t-note">Après la leçon 3 · causes humaines · méthane</span>
+  </div>
+  <div class="q-body">
+    <p>Le méthane (CH₄) est un gaz à effet de serre qui piège environ 80 fois plus de chaleur par molécule que le CO₂ sur une période de 20 ans.</p>
+    <p><strong>(a)</strong> Nomme deux activités humaines qui produisent du méthane.</p>
+    <ol>
+      <li><div class="al"></div></li>
+      <li><div class="al"></div></li>
+    </ol>
+    <p><strong>(b)</strong> Un(e) élève dit : « Le CO₂ est le principal gaz à effet de serre dont tout le monde parle. Le méthane n'a pas beaucoup d'importance. » Évalue cette affirmation. L'élève a-t-il(-elle) raison, partiellement raison, ou tort ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(c)</strong> Si le méthane piège la chaleur beaucoup plus puissamment que le CO₂, pourquoi les scientifiques se concentrent-ils autant sur le CO₂ ? (Indice : pense à quelle quantité de chaque gaz est produite.)</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- BLOC DE RÉFLEXION -->
+<div class="reflection">
+  <div class="label">Bloc de réflexion — Non noté</div>
+  <ol>
+    <li style="margin-bottom:0.6rem;">Quelles questions étaient les plus difficiles aujourd'hui ? Écris les numéros : <span class="al-sm">&nbsp;</span></li>
+    <li style="margin-bottom:0.6rem;">C'était difficile parce que tu ne connaissais pas le concept, ou parce que la question posait les choses d'une façon inhabituelle ?<div class="al"></div></li>
+    <li style="margin-bottom:0.6rem;">Quelle est une chose que tu ferais différemment avant la prochaine session de cahier ?<div class="al"></div></li>
+    <li>Évalue ta compréhension du concept le plus difficile d'aujourd'hui :
+      <p><strong>1</strong> (perdu(e)) — <strong>2</strong> (partiel) — <strong>3</strong> (compris) — <strong>4</strong> (je pourrais l'enseigner)</p>
+      <p>Concept le plus difficile : <span class="al-sm">&nbsp;</span> &nbsp; Ma cote : <span class="b b-sm">&nbsp;</span></p>
+      <p>Une preuve pour ma cote :</p>
+      <div class="al"></div>
+    </li>
+  </ol>
+</div>
+
+<hr class="section-break">
+
+<!-- ZONE DÉFI -->
+<h3 class="section-label">Zone défi</h3>
+<p style="font-size:0.88rem; color:#64748b; margin-bottom:1rem;"><em>Tente ces questions après avoir terminé toutes les précédentes. Zone de défi — pas d'aide.</em></p>
+
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">D1</span>
+    <span class="badge badge-ext">★★</span>
+    <span class="t-note">météo vs. climat · qualité des preuves · signal vs. bruit</span>
+  </div>
+  <div class="q-body">
+    <p>Un(e) politicien(ne) dit : « Nous avons eu un froid record en janvier trois années de suite dans notre province. Cela prouve que le réchauffement climatique s'est arrêté. »</p>
+    <p>Écris une réponse scientifique complète à cette affirmation. Ta réponse doit : identifier l'erreur principale dans le raisonnement (quel type de données est mal utilisé) · expliquer ce que signifie le mot <em>tendance</em> et comment on l'identifie · donner un exemple précis de comment une tendance au réchauffement à long terme peut quand même contenir des années froides · décrire quelles preuves seraient réellement nécessaires pour déterminer si le réchauffement s'est arrêté.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">D2</span>
+    <span class="badge badge-ext">★★</span>
+    <span class="t-note">albédo · effet de serre · boucles de rétroaction</span>
+  </div>
+  <div class="q-body">
+    <p>Un(e) scientifique décrit ce qui se passe à mesure que l'Arctique se réchauffe : <em>« Nous n'observons pas un simple changement. Nous observons un système de changements qui se renforcent mutuellement — chacun aggravant le suivant. »</em></p>
+    <p>Explique ce que cela signifie en décrivant <strong>deux boucles de rétroaction spécifiques</strong> déclenchées par le réchauffement arctique. L'une doit impliquer l'albédo. L'autre doit impliquer un mécanisme différent.</p>
+    <p><strong>Boucle de rétroaction 1 (albédo) :</strong></p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>Boucle de rétroaction 2 (ton choix) :</strong></p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p>Pourquoi les boucles de rétroaction préoccupent-elles les scientifiques qui essaient de prédire le rythme du réchauffement futur ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">D3</span>
+    <span class="badge badge-ext">★★</span>
+    <span class="t-note">SET · méthodes scientifiques · qualité des preuves</span>
+  </div>
+  <div class="q-body">
+    <p>Un(e) Gardien(ne) du savoir autochtone et un(e) climatologue collaborent sur une étude d'un lac du nord de l'Alberta. Le/la scientifique apporte des données satellitaires et des instruments de température de l'eau. L'Aîné(e) apporte 70 ans d'observations détaillées de ce lac par sa famille — épaisseur de la glace, moment du frai des poissons, et quelles espèces végétales ont changé ou disparu.</p>
+    <p><strong>(a)</strong> Conçois une question de recherche à laquelle seule cette collaboration pourrait répondre — une question qui nécessite à la fois des données instrumentales et des savoirs écologiques traditionnels.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(b)</strong> Explique pourquoi les données du/de la scientifique seules ne suffiraient pas à y répondre.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(c)</strong> Explique pourquoi les données de l'Aîné(e) seules ne suffiraient pas.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(d)</strong> Qu'apporte l'utilisation de plusieurs sources de preuves — données instrumentales et SET — à la solidité de la conclusion scientifique ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">D4</span>
+    <span class="badge badge-ext">★★</span>
+    <span class="t-note">modèle climatique informatique · effet de serre · causes</span>
+  </div>
+  <div class="q-body">
+    <p>Un modèle climatique est un artéfact informatique — un programme conçu pour simuler le système climatique de la Terre.</p>
+    <p><strong>(a)</strong> Un(e) élève dit : « Les modèles climatiques ne sont que des suppositions. L'ordinateur ne sait pas vraiment ce qui va se passer. » Identifie ce que l'élève comprend mal sur ce qu'est un modèle et comment les scientifiques l'utilisent.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(b)</strong> La prédiction d'un modèle climatique correspond presque exactement au relevé de température des 150 dernières années quand les émissions de gaz à effet de serre d'origine humaine sont incluses — mais ne correspond pas quand seules les causes naturelles sont incluses. Qu'est-ce que cela nous dit sur la cause du réchauffement actuel ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p><strong>(c)</strong> Les scientifiques font fonctionner le même modèle dans différents scénarios d'émissions. Quel principe scientifique cela reflète-t-il — et pourquoi est-ce plus utile que de faire fonctionner le modèle une seule fois avec une hypothèse unique ?</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">D5</span>
+    <span class="badge badge-ext">★★</span>
+    <span class="t-note">synthèse — tous les concepts</span>
+  </div>
+  <div class="q-body">
+    <p>Un(e) élève écrit dans son journal de sciences : <em>« Le changement climatique concerne simplement la hausse de la température. Une fois qu'on aura compris les températures, on aura le tableau complet. »</em></p>
+    <p>Écris une réponse à cet(te) élève. Ta réponse doit : expliquer pourquoi le changement de température n'est qu'une partie du tableau · utiliser au moins <strong>quatre exemples spécifiques</strong> de cette unité · terminer par une phrase qui exprime ce que la science du climat étudie vraiment.</p>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <div class="al"></div>
+    <p>Ma phrase de conclusion sur « ce qu'étudie vraiment la science du climat » :</p>
+    <div class="al"></div>
+    <div class="al"></div>
+  </div>
+</div>
+
+<hr class="section-break">
+
+<!-- BILAN D'AUTOÉVALUATION -->
+<h3 class="section-label">Bilan d'autoévaluation</h3>
+<p style="font-size:0.88rem; color:#64748b; margin-bottom:0.75rem;"><em>Complète à la fin de l'unité, avant le test. Notes autorisées.</em></p>
+
+<div class="rubric">
+  <table>
+    <thead><tr><th>Groupe de connaissances</th><th>Je peux l'expliquer sans notes</th><th>Une question que j'ai encore</th></tr></thead>
+    <tbody>
+      <tr><td>Météo vs. climat — échelles de temps et types de preuves</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Effet de serre — fonctionnement, principaux gaz, naturel vs. amplifié</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Facteurs géographiques — latitude, eau, élévation, vents dominants, albédo</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Causes naturelles des changements climatiques passés</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Causes humaines du changement climatique actuel — combustibles fossiles, déforestation, méthane</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Effets en Alberta — météo, feux, glaciers, agriculture</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Impacts sur les communautés PPCA — routes de glace, saisons de chasse, plantes sacrées</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Mesurer le climat — stations, satellites, carottes de glace, cernes, bouées</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>SET comme preuve scientifique valide</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Modèles climatiques comme artéfacts informatiques et abstractions</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+      <tr><td>Signal vs. bruit — ce qui constitue une preuve de tendance</td><td>Oui / En progrès / Pas encore</td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top:0.75rem;"><strong>Avant le projet d'enquête, je dois revoir :</strong></p>
+<div class="al"></div>
+
+<p style="margin-top:1rem; font-size:9pt; color:#94a3b8; text-align:right;">sci6-climate-workbook-fr-v1 | Sciences 6e année | Programme d'études de l'Alberta 2023</p>
+
+</div><!-- end page -->
+</body>
+</html>

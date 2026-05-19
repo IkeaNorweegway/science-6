@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sciences 6 — La matière : Cahier d'exercices</title>
+<style>
+  :root {
+    --unit: #0891b2;
+    --unit-dark: #0e7490;
+    --unit-light: #ecfeff;
+    --unit-border: #a5f3fc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2 {
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.5rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h2.stretch { background: #6d28d9; }
+  h2.reflect { background: #475569; }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--unit-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 1.25rem 0 0.35rem;
+  }
+  p { margin-bottom: 0.6rem; }
+  strong { color: #0f172a; }
+
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.2rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif; font-size: 0.85rem; color: #64748b;
+    margin-top: 0.85rem; display: flex; gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  .instructions {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.88rem;
+    color: #475569;
+  }
+  .instructions strong { color: #0f172a; }
+
+  .q-card {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1.1rem;
+  }
+  .q-card:hover { border-color: var(--unit-border); }
+
+  .q-header {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+  .q-num { font-size: 0.9rem; font-weight: 800; color: #0f172a; }
+  .badge-core {
+    background: #dbeafe; color: #1d4ed8;
+    font-size: 0.68rem; font-weight: 700;
+    padding: 0.15rem 0.5rem; border-radius: 999px; letter-spacing: 0.05em;
+  }
+  .badge-ext {
+    background: #ede9fe; color: #6d28d9;
+    font-size: 0.68rem; font-weight: 700;
+    padding: 0.15rem 0.5rem; border-radius: 999px; letter-spacing: 0.05em;
+  }
+  .t-note {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem; color: #94a3b8; font-style: italic; margin-left: auto;
+  }
+
+  .q-body { font-size: 0.92rem; }
+  .q-body p { margin-bottom: 0.5rem; }
+  .q-body ul, .q-body ol { padding-left: 1.3rem; margin-bottom: 0.5rem; }
+  .q-body li { margin-bottom: 0.25rem; }
+
+  .q-card.stretch { border-color: #ddd6fe; background: #faf5ff; }
+  .s-num { color: #6d28d9; font-size: 0.9rem; font-weight: 800; }
+
+  .al { display: block; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; margin: 0.35rem 0; width: 100%; }
+  .al-short { width: 55%; }
+  .al-sm { width: 30%; display: inline-block; border-bottom: 1.5px solid #94a3b8; height: 1.4rem; vertical-align: bottom; }
+  .al-pair { display: flex; gap: 2rem; margin: 0.35rem 0; }
+  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 3.5rem; }
+  .b-md { width: 6.5rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.87rem; margin: 0.6rem 0; }
+  th {
+    font-family: system-ui, sans-serif; font-size: 0.73rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    background: var(--unit-light); color: var(--unit-dark);
+    padding: 0.45rem 0.65rem; border: 1px solid var(--unit-border); text-align: left;
+  }
+  td { padding: 0.5rem 0.65rem; border: 1px solid #e2e8f0; vertical-align: top; min-height: 2rem; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  td:first-child { font-weight: 500; }
+  .rubric th { background: #1e293b; color: white; }
+  .rubric td:first-child { font-weight: 400; }
+
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.35rem;
+    padding: 0.75rem 0.9rem;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0.6rem 0;
+    line-height: 1.45;
+  }
+
+  .hint {
+    font-family: system-ui, sans-serif;
+    font-size: 0.78rem; color: #c2410c; font-style: italic; margin-top: 0.3rem;
+  }
+
+  blockquote {
+    border-left: 4px solid #e2e8f0;
+    padding: 0.5rem 0.85rem;
+    margin: 0.5rem 0;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #475569;
+    background: #f8fafc;
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+
+  .word-bank {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem; font-weight: 600;
+    background: #fefce8; border: 1px solid #fde68a;
+    border-radius: 0.35rem; padding: 0.4rem 0.75rem;
+    display: inline-block; margin: 0.35rem 0;
+  }
+
+  .check-box {
+    background: #f0fdf4; border: 1.5px solid #bbf7d0;
+    border-radius: 0.5rem; padding: 1.1rem 1.25rem; margin: 1.5rem 0;
+  }
+  .check-box h3 { color: #166534; margin-top: 0; }
+  .reflect-box {
+    background: #f8fafc; border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem; padding: 1.1rem 1.25rem; margin: 1.5rem 0;
+  }
+  .reflect-box h3 { color: #475569; margin-top: 0; }
+
+  .cb-row {
+    font-family: system-ui, sans-serif; font-size: 0.85rem;
+    display: flex; gap: 1.25rem; margin: 0.35rem 0; flex-wrap: wrap;
+  }
+  .cb-item { display: flex; align-items: center; gap: 0.3rem; }
+  .cb-item input[type="checkbox"] { width: 1rem; height: 1rem; }
+
+  .rating-row {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem; font-weight: 700;
+    display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin: 0.5rem 0;
+  }
+  .rating-item {
+    width: 2rem; height: 2rem; border: 2px solid #e2e8f0;
+    border-radius: 0.35rem; display: flex; align-items: center;
+    justify-content: center; font-size: 1rem; font-weight: 800;
+  }
+
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 1.75rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  .forethought {
+    border: 2px dashed #94a3b8; border-radius: 0.5rem;
+    padding: 1rem 1.25rem; margin-bottom: 1.5rem;
+    background: #f8fafc; font-size: 0.9rem;
+  }
+  .forethought .label {
+    font-family: system-ui, sans-serif; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 0.4rem;
+  }
+
+  @media print {
+    body { font-size: 10.5pt; padding: 1.5cm; max-width: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .q-card { break-inside: avoid; }
+    h2 { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>La matière — Cahier d'exercices</h1>
+  <p>Sciences 6 &nbsp;·&nbsp; Programme d'études de l'Alberta 2023</p>
+  <div class="name-line">
+    <span>Nom : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date de début : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<div class="instructions">
+  <p>Ce cahier est ta pratique entrelacée. Les questions sont mélangées exprès — de différentes leçons et concepts, dans un désordre délibéré. Comprendre ce que chaque question demande fait partie de l'apprentissage.</p>
+  <p><strong>★ De base</strong> — accessible à tous les élèves. Un soutien est fourni quand c'est utile.<br>
+  <strong>★★ Approfondi</strong> — même concept, niveau plus élevé. Explique, justifie ou applique à une nouvelle situation.</p>
+  <p>Commence par le De base. Passe à l'Approfondi quand tu es prêt. Les deux comptent.</p>
+</div>
+
+<div class="forethought">
+  <div class="label">Avant de commencer — Question de réflexion initiale</div>
+  <p><em>Regarde les questions disponibles aujourd'hui. Laquelle penses-tu sera la plus difficile ? Écris le numéro de la question et pourquoi tu penses qu'elle sera difficile.</em></p>
+  <p>Numéro de la question : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp;&nbsp; Pourquoi je pense qu'elle sera difficile :</p>
+  <div class="al"></div><div class="al"></div>
+</div>
+
+<h2>Questions</h2>
+
+<!-- Q1 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q1</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 1 · modèle particulaire — quatre idées clés</span>
+  </div>
+  <div class="q-body">
+    <p>Remplis les blancs pour compléter les quatre idées clés du modèle particulaire.</p>
+    <table>
+      <thead><tr><th>Idée clé</th><th>Mot manquant</th></tr></thead>
+      <tbody>
+        <tr><td>Toute la matière est faite de petites <span class="b b-lg">&nbsp;</span>.</td><td>&nbsp;</td></tr>
+        <tr><td>Il y a des <span class="b b-lg">&nbsp;</span> entre les particules — pas zéro espace.</td><td>&nbsp;</td></tr>
+        <tr><td>Les particules sont toujours en <span class="b b-lg">&nbsp;</span>. Elles ne s'arrêtent jamais complètement.</td><td>&nbsp;</td></tr>
+        <tr><td>La <span class="b b-lg">&nbsp;</span> du mouvement des particules change avec la température.</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+    <p class="hint">Indice : Pense à ce que le modèle particulaire dit qui est toujours vrai, quelle que soit la température.</p>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q2</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 2 · états de la matière — arrangement des particules</span>
+  </div>
+  <div class="q-body">
+    <p>Trace des lignes pour relier chaque état de la matière à sa description. Puis relie chaque description à un exemple.</p>
+    <table>
+      <thead><tr><th>État de la matière</th><th>Description</th><th>Exemple du monde réel</th></tr></thead>
+      <tbody>
+        <tr><td>Solide</td><td>Particules très éloignées, se déplacent vite, remplissent le contenant</td><td>Cube de glace</td></tr>
+        <tr><td>Liquide</td><td>Particules proches mais qui glissent les unes sur les autres</td><td>Vapeur d'une bouilloire</td></tr>
+        <tr><td>Gaz</td><td>Particules très serrées, vibrant sur place</td><td>Jus d'orange dans un verre</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q3</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 3 · thermomètre — comment il fonctionne</span>
+  </div>
+  <div class="q-body">
+    <p>Un élève place un thermomètre dans un bécher d'eau chaude. Le liquide rouge à l'intérieur monte dans le tube.</p>
+    <p>Utilise le modèle particulaire pour expliquer pourquoi le liquide monte. Remplis la phrase ci-dessous.</p>
+    <p>Quand le thermomètre se réchauffe, les particules du liquide se déplacent <span class="b b-lg">&nbsp;</span> et s'écartent <span class="b b-lg">&nbsp;</span>. Le liquide prend plus de <span class="b b-md">&nbsp;</span>, alors il <span class="b b-md">&nbsp;</span> dans le tube.</p>
+    <p>Que se passerait-il au niveau du liquide si tu mettais le thermomètre dans un bol d'eau glacée ? Explique.</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q4</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 1 · modèle particulaire · idée fausse : particules = matériau</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Analyse d'erreur.</strong> Un élève a écrit ceci dans ses notes :</p>
+    <blockquote>« Une particule de fer est juste un petit morceau de fer — comme une très petite limaille de fer. Si tu en avais assez, tu pourrais les voir. »</blockquote>
+    <p>Identifie ce qui est faux dans cette affirmation. Puis écris l'explication correcte.</p>
+    <p>Ce qui est faux :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>L'explication correcte :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Quelle est la chose la plus importante à propos de l'<strong>espace entre</strong> les particules ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q5</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 4 · dilatation et contraction — règle générale</span>
+  </div>
+  <div class="q-body">
+    <p>Complète les phrases avec la banque de mots. Utilise chaque terme une fois.</p>
+    <div class="word-bank">Banque de mots : se dilater · se contracter · rapprochées · plus vite · écartées · plus lentement</div>
+    <p style="margin-top:0.5rem;">Quand une tige de métal est chauffée, les particules se déplacent <span class="b b-lg">&nbsp;</span> et s'écartent <span class="b b-lg">&nbsp;</span>. La tige <span class="b b-md">&nbsp;</span>.</p>
+    <p>Quand la même tige est refroidie, les particules se déplacent <span class="b b-lg">&nbsp;</span> et se rapprochent <span class="b b-lg">&nbsp;</span>. La tige <span class="b b-md">&nbsp;</span>.</p>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q6</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 2 · changements d'état — noms et directions · visuel</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Nomme les six changements d'état sur le diagramme. Utilise la banque de mots.</p>
+    <div class="word-bank">Banque de mots : fusion · congélation · évaporation · condensation · sublimation · déposition</div>
+    <pre>                    _________________
+           ┌────────────────────────────────┐
+           ↑                                ↓  _________________
+           |                                |
+       SOLIDE ──────────────────────▶ LIQUIDE ──────────────────▶ GAZ
+              ◀────────────────────          ◀──────────────────
+     _________________ (ce sens)      _________________ (ce sens)</pre>
+    <p>Encercle les changements d'état qui ont besoin de <strong>CHALEUR</strong>. Encadre ceux qui ont besoin de <strong>FROID</strong>.</p>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q7</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 4 · joints de dilatation · ponts et routes</span>
+  </div>
+  <div class="q-body">
+    <p>En Alberta, les ponts sont construits avec des joints de dilatation — de petits espaces entre les sections du tablier du pont.</p>
+    <p>Explique pourquoi ces espaces sont nécessaires. Utilise les mots « particules », « se dilater » et « force » dans ta réponse.</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Un élève dit : <em>« Les ponts en Alberta ont besoin de plus grands joints de dilatation que les ponts construits dans un pays tropical avec des températures chaudes et stables toute l'année. »</em></p>
+    <p>L'élève a-t-il raison ? Explique en utilisant le modèle particulaire.</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q8</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 2 · conservation de la masse lors d'un changement d'état</span>
+  </div>
+  <div class="q-body">
+    <p>Un élève chauffe 75 g de glace jusqu'à ce qu'elle fonde complètement en eau liquide.</p>
+    <p>Quelle est la masse de l'eau liquide ? <span class="al-sm">&nbsp;</span> g</p>
+    <p>Encercle la bonne réponse : la masse a <strong>augmenté / est restée la même / a diminué</strong> pendant la fusion.</p>
+    <p>Explique pourquoi — en utilisant le modèle particulaire :</p>
+    <div class="al"></div><div class="al"></div>
+    <p class="hint">Indice : Un changement d'état change l'arrangement des particules — pas leur nombre.</p>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q9</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 1 · température et vitesse des particules</span>
+  </div>
+  <div class="q-body">
+    <p>Encercle la bonne réponse pour chaque rangée. Puis explique la raison dans la dernière colonne.</p>
+    <table>
+      <thead><tr><th>Situation</th><th>Vitesse des particules</th><th>Raison</th></tr></thead>
+      <tbody>
+        <tr><td>Matière chauffée de 20°C à 80°C</td><td>Plus rapide / Plus lente</td><td>&nbsp;</td></tr>
+        <tr><td>Matière refroidie de 20°C à −10°C</td><td>Plus rapide / Plus lente</td><td>&nbsp;</td></tr>
+        <tr><td>Matière chauffée de −5°C à 0°C (juste avant la fusion)</td><td>Plus rapide / Plus lente</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q10</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 4 · anomalie de l'eau — la glace flotte · visuel</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Deux béchers sont montrés ci-dessous. Complète les diagrammes de particules dans chaque bécher.</p>
+    <pre>Bécher A — Eau liquide               Bécher B — Glace flottant sur l'eau
+
+┌─────────────────┐                  ┌─────────────────────────┐
+│                 │                  │  ┌───────────────────┐  │
+│                 │                  │  │   GLACE (solide)  │  │
+│  (dessine       │                  │  │  (dessine les     │  │
+│   l'arrangement │                  │  │   particules —    │  │
+│   des particules│                  │  │   plus ou moins   │  │
+│   liquides ici) │                  │  │   espacées que    │  │
+│                 │                  │  │   le liquide en   │  │
+│                 │                  │  │   dessous ?)      │  │
+└─────────────────┘                  │  └───────────────────┘  │
+                                     │  (dessine les particules │
+                                     │   d'eau liquide ici)    │
+                                     └─────────────────────────┘</pre>
+    <p>Dans le bécher B, lequel a plus d'espace entre les particules — la glace ou l'eau liquide ? <span class="al-sm">&nbsp;</span></p>
+    <p>Pourquoi la glace flotte-t-elle ? Utilise le mot « densité » dans ta réponse.</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q11</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 3 · échelle Celsius — points de référence</span>
+  </div>
+  <div class="q-body">
+    <p>Relie chaque température à ce qu'elle décrit. Trace une ligne.</p>
+    <table>
+      <thead><tr><th>Température</th><th>Ce qu'elle décrit</th></tr></thead>
+      <tbody>
+        <tr><td>0°C</td><td>L'eau bout (liquide → gaz)</td></tr>
+        <tr><td>37°C</td><td>Une froide journée d'hiver en Alberta</td></tr>
+        <tr><td>100°C</td><td>Température corporelle normale</td></tr>
+        <tr><td>−20°C</td><td>L'eau gèle (liquide → solide)</td></tr>
+      </tbody>
+    </table>
+    <p>L'échelle Celsius a été calibrée avec l'eau. Que veut dire « calibrée » ?</p>
+    <div class="al"></div>
+    <p>Pourquoi l'utilisation de l'eau est-elle utile à la fois dans les laboratoires scientifiques et dans la vie quotidienne ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q12</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 2 · conservation de la masse · idée fausse ciblée</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Analyse d'erreur.</strong> Un élève a rempli un pot avec 500 g d'eau et l'a fait bouillir pendant 30 minutes. À la fin, il y avait moins d'eau dans le pot. L'élève a écrit :</p>
+    <blockquote>« Une partie de la masse a disparu quand elle s'est évaporée. Il y a moins de matière maintenant. »</blockquote>
+    <p>Identifie deux erreurs dans la pensée de l'élève.</p>
+    <p>Erreur 1 :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Erreur 2 :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Décris comment tu pourrais mettre en place une expérience pour prouver que l'élève a tort. Que mesurerais-tu ?</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q13</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 1 · modèle particulaire — lien avec l'abstraction informatique</span>
+  </div>
+  <div class="q-body">
+    <p>En classe, on a dit que le modèle particulaire est une <strong>abstraction</strong>. Une carte d'Edmonton est une abstraction — elle garde les rues et les distances, mais laisse de côté les textures des bâtiments, le bruit et les odeurs.</p>
+    <p><strong>Partie A :</strong> Qu'est-ce que le modèle particulaire garde ? Qu'est-ce qu'il laisse de côté ?</p>
+    <p>Garde : <div class="al"></div></p>
+    <p>Laisse de côté : <div class="al"></div></p>
+    <p><strong>Partie B :</strong> Un programmeur qui crée une application météo ne modélise pas chaque molécule d'air. Il utilise plutôt la température, la pression et l'humidité comme valeurs substituts. En quoi est-ce semblable à ce que fait le modèle particulaire ?</p>
+    <div class="al"></div><div class="al"></div>
+    <p class="hint">Indice : Que veut dire « abstraction » à la fois en science et en informatique — qu'ont-ils en commun ?</p>
+  </div>
+</div>
+
+<!-- Q14 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q14</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 2 · états de la matière · visuel : esquisse de mémoire</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Dessine l'arrangement des particules pour chaque état de la matière dans les boîtes ci-dessous. Ne regarde pas tes notes.</p>
+    <pre>SOLIDE                    LIQUIDE                   GAZ
+┌──────────────────┐      ┌──────────────────┐      ┌──────────────────┐
+│                  │      │                  │      │                  │
+│                  │      │                  │      │                  │
+│  (dessine ici)   │      │  (dessine ici)   │      │  (dessine ici)   │
+│                  │      │                  │      │                  │
+└──────────────────┘      └──────────────────┘      └──────────────────┘
+Forme fixe ? O / N         Forme fixe ? O / N         Forme fixe ? O / N
+Volume fixe ? O / N        Volume fixe ? O / N        Volume fixe ? O / N</pre>
+  </div>
+</div>
+
+<!-- Q15 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q15</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 4 · anomalie de l'eau · idée fausse ciblée : la glace est plus dense</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Deux explications — une est correcte.</strong> Lis les deux et décide.</p>
+    <blockquote><strong>Explication A :</strong> « La glace est plus dense que l'eau liquide parce que c'est un solide et les solides sont toujours plus serrés que les liquides. C'est pourquoi un cube de glace dans l'eau finira par couler en fondant. »</blockquote>
+    <blockquote><strong>Explication B :</strong> « La glace est moins dense que l'eau liquide. Quand l'eau gèle, ses particules se verrouillent dans une structure cristalline qui les pousse plus loin — créant plus d'espace, pas moins. C'est pourquoi la glace flotte à la surface. »</blockquote>
+    <p>Quelle explication est correcte ? <span class="al-sm">&nbsp;</span></p>
+    <p>Comment le sais-tu ? Utilise les mots « structure cristalline » et « densité » dans ta réponse.</p>
+    <div class="al"></div><div class="al"></div><div class="al"></div>
+    <p>Quelle preuve du monde réel montre quelle explication est correcte ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Point de mi-parcours -->
+<div class="check-box">
+  <h3>Point de mi-parcours</h3>
+  <p style="font-family:system-ui,sans-serif; font-size:0.8rem; color:#475569;"><em>Non noté. Lu par l'enseignant lors du prochain cours pour voir où les élèves sont bloqués.</em></p>
+  <p>Quelle question a été la plus difficile jusqu'ici ? Écris le numéro : <span class="al-sm">&nbsp;</span></p>
+  <p>C'était difficile parce que :</p>
+  <div class="cb-row">
+    <label class="cb-item"><input type="checkbox"> Je ne connaissais pas le concept</label>
+    <label class="cb-item"><input type="checkbox"> Je connaissais une partie mais je me suis bloqué(e) à mi-chemin</label>
+    <label class="cb-item"><input type="checkbox"> La question posait les choses d'une façon peu familière</label>
+  </div>
+  <p>Qu'as-tu fait quand tu t'es bloqué(e) ?</p>
+  <div class="al"></div>
+  <p>Évalue ta confiance avec le modèle particulaire en ce moment :</p>
+  <div class="rating-row">
+    <div class="rating-item">1</div><div class="rating-item">2</div><div class="rating-item">3</div><div class="rating-item">4</div>
+    <span style="font-family:system-ui,sans-serif; font-size:0.78rem; color:#64748b;">&nbsp;(1 = perdu(e) · 2 = partiel · 3 = je comprends · 4 = je pourrais l'enseigner)</span>
+  </div>
+  <p>Une preuve pour ton évaluation :</p>
+  <div class="al"></div>
+</div>
+
+<!-- Q16 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q16</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 3 · thermomètre — sécurité et lecture</span>
+  </div>
+  <div class="q-body">
+    <p>Un élève en laboratoire fait trois erreurs. Pour chacune, explique ce qui pourrait aller mal et comment le faire correctement.</p>
+    <table>
+      <thead><tr><th style="width:35%">Erreur</th><th style="width:35%">Ce qui pourrait aller mal</th><th style="width:30%">Pratique correcte</th></tr></thead>
+      <tbody>
+        <tr><td>Elle lit le thermomètre de dessus le niveau du liquide, en regardant vers le bas.</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>Elle utilise le thermomètre pour remuer le liquide dans le bécher.</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>Elle note la température immédiatement après avoir placé le thermomètre dans le liquide.</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Q17 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q17</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 4 · autochtone — observation saisonnière de la glace</span>
+  </div>
+  <div class="q-body">
+    <p>Les communautés cries, dénées et métisses du nord de l'Alberta observent les rivières et les lacs à travers les cycles gel-dégel depuis des générations. Elles suivent quand la glace est sûre pour voyager, comment la glace change près des courants de rivière, et ce que la glace précoce ou tardive signale pour la saison à venir.</p>
+    <p><strong>Partie A :</strong> Nomme une observation spécifique sur la glace que les membres de la communauté suivaient, d'après ce que tu as lu dans tes notes.</p>
+    <div class="al"></div>
+    <p><strong>Partie B :</strong> Un scientifique mesure l'épaisseur de la glace sur la même rivière avec des capteurs depuis trois ans. Un gardien du savoir observe la même rivière depuis quarante ans. Pourquoi le savoir du gardien du savoir est-il précieux d'une façon que les données des capteurs ne peuvent pas encore égaler ?</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- Q18 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q18</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 1 · modèle particulaire — température et mouvement</span>
+  </div>
+  <div class="q-body">
+    <p>Deux contenants contiennent chacun le même matériau. Le contenant A est à 15°C. Le contenant B est à 75°C.</p>
+    <p>Dans quel contenant les particules se déplacent-elles plus vite ? <span class="al-sm">&nbsp;</span></p>
+    <p>Dans quel contenant y a-t-il plus d'espace entre les particules ? <span class="al-sm">&nbsp;</span></p>
+    <p>Prévision : si tu refroidis le contenant B de 75°C à 15°C, que se passera-t-il au volume du matériau ?</p>
+    <div class="al"></div><div class="al"></div>
+    <p class="hint">Indice : Pense à ce que le refroidissement fait à l'espacement des particules.</p>
+  </div>
+</div>
+
+<!-- Q19 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q19</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 2 · changements d'état · idée fausse : la masse change en gelant</span>
+  </div>
+  <div class="q-body">
+    <p>Un élève dit : <em>« Quand tu gèles de l'eau, sa masse augmente parce que la glace est plus grande que l'eau dont elle vient. »</em></p>
+    <p>L'élève mélange-t-il deux idées différentes ? Identifie les deux idées et démêle-les clairement.</p>
+    <p>Idée 1 — ce qui change vraiment quand l'eau gèle :</p>
+    <div class="al"></div>
+    <p>Idée 2 — ce qui reste pareil quand l'eau gèle :</p>
+    <div class="al"></div>
+    <p>Écris maintenant une phrase qui corrige l'affirmation complète de l'élève :</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- Q20 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q20</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 4 · dilatation — lignes électriques et rails</span>
+  </div>
+  <div class="q-body">
+    <p>Regarde les deux exemples ci-dessous. Pour chacun, explique pourquoi les ingénieurs ont dû tenir compte de la dilatation et de la contraction.</p>
+    <p><strong>Lignes électriques :</strong><br>En été, les lignes électriques pendent plus bas. En hiver, elles sont tendues.</p>
+    <p>Pourquoi ? Utilise « dilatation » et « contraction » dans ta réponse :</p>
+    <div class="al"></div><div class="al"></div>
+    <p><strong>Rails de chemin de fer :</strong><br>Les anciens rails ont de petits espaces entre les sections.</p>
+    <p>Pourquoi les espaces sont-ils nécessaires ?</p>
+    <div class="al"></div>
+    <p>Que se passerait-il s'il n'y avait pas d'espaces par une très chaude journée ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q21 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q21</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 1 · modèle particulaire — preuves et limites</span>
+  </div>
+  <div class="q-body">
+    <p>Un camarade dit : <em>« Le modèle particulaire ne peut pas être correct. On ne peut pas voir les particules, donc il n'y a pas de preuve qu'elles existent. »</em></p>
+    <p>Choisis <strong>deux</strong> preuves ou raisonnements qui appuient le modèle particulaire. Pour chacun, explique comment il fournit une preuve.</p>
+    <p>Preuve 1 :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Preuve 2 :</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Puis explique une limite du modèle particulaire — quelque chose qu'il ne nous dit PAS :</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q22 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q22</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 3 · échelle Celsius · visuel : étiqueter un diagramme</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Le thermomètre ci-dessous a quelques températures clés marquées. Écris le bon libellé à côté de chaque marque.</p>
+    <pre>THERMOMÈTRE :
+|──────|  ← 100°C   libellé : _______________________
+|      |
+|      |
+|──────|  ← 37°C    libellé : _______________________
+|      |
+|──────|  ← 20°C    libellé : _______________________
+|      |
+|      |
+|──────|  ← 0°C     libellé : _______________________
+|      |
+|──────|  ← −20°C   libellé : _______________________
+|______|</pre>
+    <p>Quelles deux températures sont utilisées comme points de référence pour l'échelle Celsius ? Encercle-les ci-dessus.</p>
+    <p>Pourquoi ces deux points de référence ont-ils été choisis ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q23 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q23</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 3 · thermomètre — explication avec le modèle particulaire</span>
+  </div>
+  <div class="q-body">
+    <p>Un thermomètre numérique n'utilise pas de liquide. Il utilise un petit capteur électrique. La lecture à l'écran est toujours en Celsius.</p>
+    <p><strong>Partie A :</strong> Un élève dit : <em>« Puisqu'il n'y a pas de liquide, le modèle particulaire n'explique pas comment un thermomètre numérique fonctionne. »</em></p>
+    <p>Que dirais-tu pour corriger cet élève ?</p>
+    <div class="al"></div><div class="al"></div>
+    <p class="hint">Indice : Pense à ce sur quoi l'échelle Celsius elle-même est basée.</p>
+    <p><strong>Partie B :</strong> Qu'est-ce qui reste pareil entre un thermomètre à liquide et un thermomètre numérique ? Qu'est-ce qui est différent ?</p>
+    <table>
+      <thead><tr><th>&nbsp;</th><th>Thermomètre à liquide</th><th>Thermomètre numérique</th></tr></thead>
+      <tbody>
+        <tr><td>Ce qui reste pareil</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>Ce qui est différent</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Q24 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q24</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 2 · états de la matière — comparaison</span>
+  </div>
+  <div class="q-body">
+    <p>Complète le tableau. Utilise ta connaissance de l'arrangement et du mouvement des particules.</p>
+    <table>
+      <thead><tr><th>Propriété</th><th>Solide</th><th>Liquide</th><th>Gaz</th></tr></thead>
+      <tbody>
+        <tr><td>Espacement des particules</td><td>Très serrées</td><td><span class="b b-lg">&nbsp;</span></td><td>Très espacées</td></tr>
+        <tr><td>Mouvement des particules</td><td>Vibrent sur place</td><td>Glissent les unes sur les autres</td><td><span class="b b-xl">&nbsp;</span></td></tr>
+        <tr><td>Forme fixe ?</td><td>Oui</td><td><span class="b b-sm">&nbsp;</span></td><td>Non</td></tr>
+        <tr><td>Volume fixe ?</td><td>Oui</td><td>Oui</td><td><span class="b b-sm">&nbsp;</span></td></tr>
+        <tr><td>Peut-il être comprimé ?</td><td>À peine</td><td>À peine</td><td><span class="b b-lg">&nbsp;</span></td></tr>
+      </tbody>
+    </table>
+    <p>Nomme un exemple de chaque état de la matière que tu as vu dans ta vie quotidienne :</p>
+    <p>Solide : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Liquide : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Gaz : <span class="al-sm">&nbsp;</span></p>
+  </div>
+</div>
+
+<!-- Q25 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q25</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 4 · anomalie de l'eau — vie aquatique</span>
+  </div>
+  <div class="q-body">
+    <p>En hiver, un lac dans le nord de l'Alberta gèle à la surface. Les poissons et d'autres animaux survivent dans l'eau sous la glace.</p>
+    <p>Pourquoi la glace se forme-t-elle au <strong>sommet</strong> du lac au lieu de couler au fond ?</p>
+    <div class="al"></div><div class="al"></div>
+    <p>Quelle est la température approximative de l'eau liquide sous la glace ? <span class="al-sm">&nbsp;</span></p>
+    <p>Pourquoi est-ce important pour les poissons ?</p>
+    <div class="al"></div><div class="al"></div>
+    <p class="hint">Indice : Pense à ce qui se passerait pour les poissons si le lac gelait complètement de bas en haut.</p>
+  </div>
+</div>
+
+<!-- Q26 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q26</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 2 · changements d'état — conception d'expérience</span>
+  </div>
+  <div class="q-body">
+    <p>Un élève veut trouver le point de fusion d'une bougie de cire. Elle va chauffer la cire lentement et mesurer la température à laquelle elle passe de solide à liquide.</p>
+    <p>Quelle est la seule variable qu'elle changera ?</p>
+    <div class="al"></div>
+    <p>Liste <strong>deux</strong> variables qu'elle doit garder pareilles (variables contrôles) :</p>
+    <p>1. <div class="al"></div></p>
+    <p>2. <div class="al"></div></p>
+    <p>Que mesurera-t-elle pour savoir quand le changement d'état se produit ?</p>
+    <div class="al"></div>
+    <p>Écris une prédiction : Si la cire est une substance pure, alors <span class="b b-xl">&nbsp;</span> parce que <span class="b b-xl">&nbsp;</span>.</p>
+  </div>
+</div>
+
+<!-- Q27 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q27</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 1 · modèle particulaire — définition et étendue de la matière</span>
+  </div>
+  <div class="q-body">
+    <p>Encercle OUI ou NON pour chaque élément. Puis explique ton choix pour les deux plus difficiles.</p>
+    <table>
+      <thead><tr><th>Élément</th><th>Est-ce de la matière ?</th><th>Pourquoi ou pourquoi pas</th></tr></thead>
+      <tbody>
+        <tr><td>Une chaise en bois</td><td>OUI / NON</td><td>A une masse et prend de l'espace</td></tr>
+        <tr><td>L'odeur d'une bougie</td><td>OUI / NON</td><td>&nbsp;</td></tr>
+        <tr><td>Un rayon de lumière</td><td>OUI / NON</td><td>&nbsp;</td></tr>
+        <tr><td>Vapeur qui monte de la soupe</td><td>OUI / NON</td><td>&nbsp;</td></tr>
+        <tr><td>La chaleur d'un radiateur</td><td>OUI / NON</td><td>&nbsp;</td></tr>
+        <tr><td>L'air dans un ballon</td><td>OUI / NON</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+    <p>Choisis les deux rangées que tu as trouvées les plus difficiles. Explique ton raisonnement :</p>
+    <p>La plus difficile 1 : <span class="al-sm">&nbsp;</span> — parce que <div class="al"></div></p>
+    <p>La plus difficile 2 : <span class="al-sm">&nbsp;</span> — parce que <div class="al"></div></p>
+  </div>
+</div>
+
+<!-- Q28 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q28</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 4 · anomalie de l'eau + gel-dégel · infrastructure</span>
+  </div>
+  <div class="q-body">
+    <p>L'eau s'infiltre dans une petite fissure dans une roche. En hiver, l'eau gèle.</p>
+    <p><strong>Partie A :</strong> En utilisant le modèle particulaire, explique pourquoi la fissure s'agrandit quand l'eau gèle.</p>
+    <div class="al"></div><div class="al"></div>
+    <p><strong>Partie B :</strong> Un élève dit : <em>« Si l'eau était normale — si la glace était plus dense que l'eau liquide — la même chose se passerait. La fissure s'agrandirait quand même. »</em></p>
+    <p>Cet élève a-t-il raison ? Explique ce qui se passerait différemment si la glace était plus dense.</p>
+    <div class="al"></div><div class="al"></div>
+    <p><strong>Partie C :</strong> Les ingénieurs qui construisent des routes en Alberta conçoivent des systèmes de drainage pour éloigner l'eau des fissures de la route. Pourquoi est-ce important en hiver ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q29 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q29</span><span class="badge-core">★ De base</span>
+    <span class="t-note">après la leçon 3 · thermomètre — erreur de parallaxe · visuel</span>
+  </div>
+  <div class="q-body">
+    <p><strong>Question visuelle.</strong> Deux élèves lisent le même thermomètre. Le thermomètre indique 34°C quand on le regarde à hauteur des yeux.</p>
+    <pre>Élève A — à hauteur des yeux :      Élève B — regardant vers le bas :
+
+     ────                               ────
+    │ 36 │                             │ 36 │
+    │    │  ← niveau du liquide        │    │  ← niveau du liquide
+    │ 34 │                             │ 34 │
+    │    │                             │    │
+    │ 32 │                             │ 32 │
+     ────                               ────
+
+L'élève A voit le niveau du liquide  L'élève B regarde vers le bas en angle.
+directement à hauteur des yeux.      Le liquide semble s'aligner avec
+                                      la marque de 36°C.</pre>
+    <p>Quelle est la lecture de température correcte ? <span class="al-sm">&nbsp;</span></p>
+    <p>L'élève B note 36°C. Comment s'appelle ce type d'erreur ?</p>
+    <div class="al"></div>
+    <p>Comment les élèves peuvent-ils éviter cette erreur ?</p>
+    <div class="al"></div>
+  </div>
+</div>
+
+<!-- Q30 -->
+<div class="q-card">
+  <div class="q-header">
+    <span class="q-num">Q30</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">après la leçon 4 · anomalie de l'eau + savoir autochtone</span>
+  </div>
+  <div class="q-body">
+    <p>Une gardienne du savoir dans le nord de l'Alberta remarque que la rivière près de sa communauté gèle plus tard en automne et dégèle plus tôt au printemps. Elle a observé ce changement sur vingt ans.</p>
+    <p><strong>Partie A :</strong> Que suggère ce changement dans le moment du gel-dégel sur la température de la région ? Utilise le langage du « modèle particulaire » dans ta réponse.</p>
+    <div class="al"></div><div class="al"></div>
+    <p><strong>Partie B :</strong> Des scientifiques confirment la même tendance avec des données satellitaires collectées sur onze ans. Un élève dit : <em>« On devrait juste utiliser les données satellitaires — c'est plus scientifique. »</em></p>
+    <p>Écris deux raisons pourquoi le point de vue de cet élève est incomplet.</p>
+    <p>Raison 1 :</p>
+    <div class="al"></div>
+    <p>Raison 2 :</p>
+    <div class="al"></div>
+    <p><strong>Partie C :</strong> L'anomalie de l'eau veut dire que la glace flotte. Si l'anomalie n'existait pas — si la glace coulait — comment cela pourrait-il changer les effets écologiques d'une saison de glace plus courte ?</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- Bloc de réflexion -->
+<div class="reflect-box">
+  <h3>Bloc de réflexion</h3>
+  <p style="font-family:system-ui,sans-serif; font-size:0.8rem; color:#64748b;"><em>À la fin de chaque séance de cahier. Non noté.</em></p>
+  <p>1. Quelles questions ont été les plus difficiles aujourd'hui ? Écris les numéros de question : <span class="al-sm">&nbsp;</span></p>
+  <p>2. C'était difficile parce que tu ne connaissais pas le concept, ou parce que la question posait les choses d'une façon peu familière ?</p>
+  <div class="al"></div>
+  <p>3. Quelle est une chose que tu ferais différemment avant la prochaine séance de cahier ?</p>
+  <div class="al"></div>
+  <p>4. Évalue ta compréhension du concept le plus difficile d'aujourd'hui :</p>
+  <div class="rating-row">
+    <div class="rating-item">1</div><div class="rating-item">2</div><div class="rating-item">3</div><div class="rating-item">4</div>
+    <span style="font-family:system-ui,sans-serif; font-size:0.78rem; color:#64748b;">&nbsp;(1 = perdu(e) · 2 = partiel · 3 = je comprends · 4 = je pourrais l'enseigner)</span>
+  </div>
+  <p>Concept le plus difficile : <span class="al-sm">&nbsp;</span> &nbsp;&nbsp; Mon évaluation : <span class="al-sm">&nbsp;</span></p>
+  <p>Une preuve pour mon évaluation :</p>
+  <div class="al"></div>
+</div>
+
+<hr class="section-break">
+
+<h2 class="stretch">Zone de dépassement</h2>
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#6d28d9; margin-bottom:1rem;"><em>Essaie après avoir complété toutes les questions précédentes. Zone de défi — sans soutien.</em></p>
+
+<!-- S1 -->
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">S1</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">multi-concept : modèle particulaire + changements d'état + conservation de la masse</span>
+  </div>
+  <div class="q-body">
+    <p>Un élève place 200 g de glace dans une boîte en métal scellée, la chauffe jusqu'à ce que toute la glace fonde, puis jusqu'à ce que ça bout. Elle éteint la chaleur et laisse refroidir. L'eau se condense en liquide. La boîte était scellée tout au long.</p>
+    <p><strong>(a)</strong> Nomme les trois états et les changements d'état qui se sont produits entre eux.</p>
+    <p>État 1 → changement d'état → État 2 → changement d'état → État 3 :</p>
+    <div class="al"></div><div class="al"></div>
+    <p><strong>(b)</strong> Quelle était la masse de l'eau dans la boîte au début ? Quelle serait la masse à la fin ? Explique pourquoi.</p>
+    <div class="al"></div><div class="al"></div>
+    <p><strong>(c)</strong> En utilisant le modèle particulaire, décris ce qui se passait aux particules d'eau à chaque étape — solide, liquide et gaz.</p>
+    <div class="al"></div><div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- S2 -->
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">S2</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">multi-concept : conception d'expérience + thermomètre + dilatation</span>
+  </div>
+  <div class="q-body">
+    <p>Un élève formule l'hypothèse : <em>« Les liquides de différentes couleurs se dilatent de différentes quantités quand ils sont chauffés. »</em></p>
+    <p>Conçois une expérience contrôlée pour tester cela.</p>
+    <p><strong>Hypothèse :</strong> (Si la couleur d'un liquide affecte la dilatation, alors <span class="b b-xl">&nbsp;</span> parce que <span class="b b-xl">&nbsp;</span>)</p>
+    <p><strong>Ce que je contrôlerais</strong> (garder pareil) :</p>
+    <div class="al"></div>
+    <p><strong>Ce que je changerais</strong> (variable indépendante) :</p>
+    <div class="al"></div>
+    <p><strong>Ce que je mesurerais</strong> (variable dépendante) :</p>
+    <div class="al"></div>
+    <p><strong>Quel résultat appuierait l'hypothèse :</strong></p>
+    <div class="al"></div>
+    <p><strong>Quel résultat me dirait que l'hypothèse est fausse :</strong></p>
+    <div class="al"></div>
+    <p><strong>Prévois le résultat réel :</strong> Penses-tu que la couleur du liquide affecte le taux de dilatation ? Explique en utilisant le modèle particulaire.</p>
+    <div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- S3 -->
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">S3</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">multi-concept : savoir autochtone + anomalie de l'eau + méthodes scientifiques</span>
+  </div>
+  <div class="q-body">
+    <p>Depuis des générations, les communautés cries du nord de l'Alberta ont observé que certaines rivières sont sûres à traverser sur la glace avant d'autres, même quand les températures de l'air sont similaires.</p>
+    <p><strong>(a)</strong> Un scientifique soutient que ce savoir communautaire est « anecdotique » — pas aussi fiable que les expériences contrôlées. Écris une réponse qui conteste ce point de vue.</p>
+    <div class="al"></div><div class="al"></div><div class="al"></div>
+    <p><strong>(b)</strong> Si la glace était plus dense que l'eau, à quoi ressembleraient les rivières et les lacs en hiver, et qu'est-ce que cela signifierait pour les voyages sur glace ?</p>
+    <div class="al"></div><div class="al"></div>
+    <p><strong>(c)</strong> Propose une question sur les patterns gel-dégel qui pourrait être mieux répondue en combinant le savoir écologique autochtone et les données de capteurs scientifiques. Explique comment chaque source contribue quelque chose que l'autre ne peut pas.</p>
+    <div class="al"></div><div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- S4 -->
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">S4</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">multi-concept : abstraction informatique + modèle particulaire + changements d'état</span>
+  </div>
+  <div class="q-body">
+    <p>Le modèle particulaire est une abstraction scientifique. Imagine que tu conçois une simple simulation informatique du gel de l'eau.</p>
+    <p><strong>(a)</strong> Liste <strong>trois</strong> choses du modèle particulaire que ta simulation doit inclure pour fonctionner correctement.</p>
+    <p>1. <div class="al"></div></p>
+    <p>2. <div class="al"></div></p>
+    <p>3. <div class="al"></div></p>
+    <p><strong>(b)</strong> Liste <strong>deux</strong> choses du monde réel que ta simulation laisserait de côté (trop complexes à modéliser simplement).</p>
+    <p>1. <div class="al"></div></p>
+    <p>2. <div class="al"></div></p>
+    <p><strong>(c)</strong> Ta simulation montre que quand la température tombe en dessous de 0°C, les particules d'eau s'écartent davantage en gelant. Un élève dit : <em>« C'est faux — les solides sont toujours plus serrés. »</em> Comment expliques-tu l'anomalie de l'eau à cet élève ?</p>
+    <div class="al"></div><div class="al"></div><div class="al"></div>
+  </div>
+</div>
+
+<!-- S5 -->
+<div class="q-card stretch">
+  <div class="q-header">
+    <span class="s-num">S5</span><span class="badge-ext">★★ Approfondi</span>
+    <span class="t-note">synthèse — les quatre concepts</span>
+  </div>
+  <div class="q-body">
+    <p>Un élève écrit dans son journal de sciences :</p>
+    <blockquote>« La matière est juste des choses. Elle peut être solide, liquide ou gazeuse, mais en réalité c'est tout pareil. La température change juste à quoi ça ressemble à l'extérieur. »</blockquote>
+    <p>Écris une réponse. Ta réponse doit :</p>
+    <ul>
+      <li>Identifier ce qui est fondamentalement incomplet dans l'affirmation</li>
+      <li>Utiliser au moins <strong>trois idées spécifiques</strong> de cette unité</li>
+      <li>Se terminer par une phrase qui explique ce que la température change vraiment</li>
+    </ul>
+    <p>Réponse :</p>
+    <div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div><div class="al"></div>
+    <p>Ma phrase : <div class="al"></div></p>
+  </div>
+</div>
+
+<hr class="section-break">
+
+<h2 class="reflect">Grille d'auto-évaluation</h2>
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; color:#475569; margin-bottom:0.85rem;"><em>À compléter à la fin de l'unité, avant le test. Notes ouvertes.</em></p>
+
+<table class="rubric">
+  <thead><tr><th style="width:50%">Groupe de connaissances</th><th style="width:25%">Je peux expliquer cela sans mes notes</th><th style="width:25%">Une question que j'ai encore</th></tr></thead>
+  <tbody>
+    <tr><td>Modèle particulaire : les particules ont de l'espace, bougent toujours, la vitesse change avec la température</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Trois états de la matière : arrangement et mouvement des particules dans le solide, le liquide, le gaz</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Changements d'état : noms, directions, conservation de la masse</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Thermomètres : comment ils fonctionnent, échelle Celsius, points de référence, sécurité</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Dilatation et contraction : règle générale, applications du monde réel</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Anomalie de l'eau : la glace est moins dense, flotte, pourquoi c'est important pour la vie aquatique</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Autochtone : observation saisonnière de la glace et savoir écologique à long terme</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+    <tr><td>Informatique : modèle particulaire comme abstraction</td><td style="font-family:system-ui,sans-serif; font-size:0.82rem;">Oui / En progrès / Pas encore</td><td>&nbsp;</td></tr>
+  </tbody>
+</table>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.85rem; margin-top:0.75rem;">Avant le projet d'enquête, je dois revoir : <div class="al"></div></p>
+
+<p style="font-family:system-ui,sans-serif; font-size:0.75rem; color:#94a3b8; margin-top:2rem; text-align:center;">sci6-matter-workbook-fr-v1 &nbsp;·&nbsp; Sciences 6 &nbsp;·&nbsp; Programme d'études de l'Alberta 2023</p>
+
+</body>
+</html>
