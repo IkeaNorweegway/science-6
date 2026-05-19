@@ -43,7 +43,7 @@ const currentPath = Astro.url.pathname;
         ))}
       </div>
 
-      <!-- Right side: Materials + Teacher toggle -->
+      <!-- Right side: Materials + Français + Teacher toggle -->
       <div class="flex items-center gap-2">
         <a
           href={`${base}materials`}
@@ -57,10 +57,10 @@ const currentPath = Astro.url.pathname;
         </a>
         <a
           href={`${base}materials/fr`}
-          class={`text-xs px-3 py-1.5 rounded-md font-medium transition-colors
+          class={`text-xs px-3 py-1.5 rounded-md font-medium border transition-colors ml-1
             ${currentPath.includes('materials/fr')
-              ? (teacherMode ? 'bg-teacher-600 text-white' : 'bg-blue-600 text-white')
-              : (teacherMode ? 'text-slate-300 hover:bg-slate-700 hover:text-white' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900')
+              ? 'border-blue-500 bg-blue-600 text-white'
+              : (teacherMode ? 'border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white' : 'border-blue-300 text-blue-600 hover:bg-blue-50 hover:border-blue-400')
             }`}
         >
           Français
