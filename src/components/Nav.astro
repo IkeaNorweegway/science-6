@@ -48,12 +48,22 @@ const currentPath = Astro.url.pathname;
         <a
           href={`${base}materials`}
           class={`text-xs px-3 py-1.5 rounded-md font-medium transition-colors
-            ${currentPath.includes('materials')
+            ${currentPath.includes('materials') && !currentPath.includes('materials/fr')
               ? (teacherMode ? 'bg-teacher-600 text-white' : 'bg-science-600 text-white')
               : (teacherMode ? 'text-slate-300 hover:bg-slate-700 hover:text-white' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900')
             }`}
         >
           Materials
+        </a>
+        <a
+          href={`${base}materials/fr`}
+          class={`text-xs px-3 py-1.5 rounded-md font-medium transition-colors
+            ${currentPath.includes('materials/fr')
+              ? (teacherMode ? 'bg-teacher-600 text-white' : 'bg-blue-600 text-white')
+              : (teacherMode ? 'text-slate-300 hover:bg-slate-700 hover:text-white' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900')
+            }`}
+        >
+          Français
         </a>
         <a
           href={teacherMode ? base : `${base}teacher`}
@@ -85,12 +95,22 @@ const currentPath = Astro.url.pathname;
       <a
         href={`${base}materials`}
         class={`text-xs px-2.5 py-1 rounded-md font-medium whitespace-nowrap transition-colors
-          ${currentPath.includes('materials')
+          ${currentPath.includes('materials') && !currentPath.includes('materials/fr')
             ? 'bg-science-600 text-white'
             : 'text-slate-600 hover:bg-slate-100'
           }`}
       >
         Materials
+      </a>
+      <a
+        href={`${base}materials/fr`}
+        class={`text-xs px-2.5 py-1 rounded-md font-medium whitespace-nowrap transition-colors
+          ${currentPath.includes('materials/fr')
+            ? 'bg-blue-600 text-white'
+            : 'text-slate-600 hover:bg-slate-100'
+          }`}
+      >
+        Français
       </a>
     </div>
   </div>

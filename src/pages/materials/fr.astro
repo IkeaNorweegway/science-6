@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const unitColors: Record<string, { bg: string; text: string; border: string }> = {
+  matter:             { bg: 'bg-cyan-50',    text: 'text-cyan-800',    border: 'border-cyan-400' },
+  forces:             { bg: 'bg-violet-50',  text: 'text-violet-800',  border: 'border-violet-400' },
+  'living-systems':   { bg: 'bg-emerald-50', text: 'text-emerald-800', border: 'border-emerald-400' },
+  climate:            { bg: 'bg-amber-50',   text: 'text-amber-800',   border: 'border-amber-400' },
+  'energy-resources': { bg: 'bg-orange-50',  text: 'text-orange-800',  border: 'border-orange-400' },
+  space:              { bg: 'bg-indigo-50',  text: 'text-indigo-800',  border: 'border-indigo-400' },
+  'all-units':        { bg: 'bg-blue-50',    text: 'text-blue-800',    border: 'border-blue-400' },
+};
+
+const notesFR = [
+  {
+    title: 'Notes annuelles — toutes les unités',
+    description: 'Notes guidées couvrant les six unités, en français. Mise en page deux colonnes avec vocabulaire et encadrés de correction des idées fausses.',
+    unit: 'all-units',
+    unitLabel: 'Toutes les unités',
+    href: `${base}materials/sci6-year-notes-fr-v1.html`,
+  },
+  {
+    title: 'La matière — Notes guidées',
+    description: 'Modèle particulaire, états, changements d\'état, thermomètres, dilatation/contraction et l\'anomalie de l\'eau.',
+    unit: 'matter',
+    unitLabel: 'La matière',
+    href: `${base}materials/sci6-matter-notes-fr-v1.html`,
+  },
+  {
+    title: 'Les forces — Notes guidées',
+    description: 'Forces externes, forces internes (tension, compression, cisaillement, torsion), plasticité/élasticité et troisième loi de Newton.',
+    unit: 'forces',
+    unitLabel: 'Les forces',
+    href: `${base}materials/sci6-forces-notes-fr-v1.html`,
+  },
+  {
+    title: 'Systèmes vivants — Notes guidées',
+    description: 'Biotique/abiotique, photosynthèse, réseaux trophiques, cascades trophiques, SET (savoir écologique traditionnel) et logique conditionnelle en informatique.',
+    unit: 'living-systems',
+    unitLabel: 'Systèmes vivants',
+    href: `${base}materials/sci6-living-systems-notes-fr-v1.html`,
+  },
+  {
+    title: 'Le climat — Notes guidées',
+    description: 'Météo vs. climat, effet de serre, facteurs géographiques, albédo, causes naturelles et humaines, effets en Alberta et savoir écologique traditionnel.',
+    unit: 'climate',
+    unitLabel: 'Le climat',
+    href: `${base}materials/sci6-climate-notes-fr-v1.html`,
+  },
+  {
+    title: 'Ressources énergétiques — Notes guidées',
+    description: 'Renouvelable vs. non renouvelable, avant/après transformation, cinq critères de sélection et gérance PPCA.',
+    unit: 'energy-resources',
+    unitLabel: 'Ressources énergétiques',
+    href: `${base}materials/sci6-energy-resources-notes-fr-v1.html`,
+  },
+  {
+    title: 'L\'espace — Notes guidées',
+    description: 'Objets du système solaire, émettre vs. réfléchir, modèles à l\'échelle, technologies d\'exploration, Ex-Alta 1, satellites, mécanique orbitale, SSI, reclassification de Pluton et savoir autochtone du ciel.',
+    unit: 'space',
+    unitLabel: 'L\'espace',
+    href: `${base}materials/sci6-space-notes-fr-v1.html`,
+  },
+];
+
+const workbooksFR = [
+  {
+    title: 'Cahier de révision annuelle',
+    description: 'Révision de fin d\'année couvrant les six unités. Questions intercalées, tâches de synthèse et autoévaluation. Contextes albertains : rivière Bow, Fort McMurray, High River, Ex-Alta 1.',
+    unit: 'all-units',
+    unitLabel: 'Toutes les unités',
+    href: `${base}materials/sci6-year-review-workbook-fr-v1.html`,
+  },
+  {
+    title: 'La matière — Cahier d\'exercices',
+    description: '30 questions De base et Approfondies couvrant les quatre groupes de connaissances, plus une zone défi et une autoévaluation.',
+    unit: 'matter',
+    unitLabel: 'La matière',
+    href: `${base}materials/sci6-matter-workbook-fr-v1.html`,
+  },
+  {
+    title: 'Les forces — Cahier d\'exercices',
+    description: 'Questions De base et Approfondies couvrant tous les concepts des forces, zone défi et autoévaluation.',
+    unit: 'forces',
+    unitLabel: 'Les forces',
+    href: `${base}materials/sci6-forces-workbook-fr-v1.html`,
+  },
+  {
+    title: 'Systèmes vivants — Cahier d\'exercices',
+    description: '30 questions couvrant biotique/abiotique, photosynthèse, réseaux alimentaires, cascades trophiques, SET et logique conditionnelle.',
+    unit: 'living-systems',
+    unitLabel: 'Systèmes vivants',
+    href: `${base}materials/sci6-living-systems-workbook-fr-v1.html`,
+  },
+  {
+    title: 'Le climat — Cahier d\'exercices',
+    description: '30 questions couvrant météo vs. climat, effet de serre, facteurs géographiques, albédo, causes naturelles/humaines, effets en Alberta et SET.',
+    unit: 'climate',
+    unitLabel: 'Le climat',
+    href: `${base}materials/sci6-climate-workbook-fr-v1.html`,
+  },
+  {
+    title: 'Ressources énergétiques — Cahier d\'exercices',
+    description: '24 questions couvrant renouvelable vs. non renouvelable, avant/après transformation, les cinq critères de sélection et gérance PPCA.',
+    unit: 'energy-resources',
+    unitLabel: 'Ressources énergétiques',
+    href: `${base}materials/sci6-energy-resources-workbook-fr-v1.html`,
+  },
+  {
+    title: 'L\'espace — Cahier d\'exercices',
+    description: '24 questions couvrant les objets du système solaire, émettre vs. réfléchir, l\'échelle, les technologies d\'exploration, Ex-Alta 1, les satellites, la mécanique orbitale, la SSI, la reclassification de Pluton et le savoir autochtone du ciel.',
+    unit: 'space',
+    unitLabel: 'L\'espace',
+    href: `${base}materials/sci6-space-workbook-fr-v1.html`,
+  },
+];
+---
+
+<BaseLayout title="Matériaux — Immersion française">
+  <div class="mb-10">
+    <p class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">Sciences 6e année · Immersion française</p>
+    <h1 class="text-4xl font-bold text-slate-900 mb-3">Matériaux en français</h1>
+    <p class="text-slate-500 text-lg max-w-xl">
+      Matériaux prêts à imprimer en immersion française. Niveau H–I (équivalent F&P P–Q) — français de niveau scolaire, vocabulaire scientifique standard.
+    </p>
+  </div>
+
+  <!-- Notes -->
+  <section class="mb-12">
+    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Notes guidées</h2>
+    <div class="space-y-3">
+      {notesFR.map(m => {
+        const c = unitColors[m.unit] ?? unitColors['all-units'];
+        return (
+          <div class={`bg-white rounded-xl border border-slate-200 border-l-4 ${c.border} p-5 flex items-start justify-between gap-4`}>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1">
+                <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${c.bg} ${c.text}`}>
+                  {m.unitLabel}
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mb-1">{m.title}</h3>
+              <p class="text-sm text-slate-500">{m.description}</p>
+            </div>
+            <a
+              href={m.href}
+              target="_blank"
+              rel="noopener"
+              class="flex-shrink-0 text-sm font-semibold text-blue-700 hover:text-blue-900 border border-blue-300 hover:border-blue-500 px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Ouvrir ↗
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Cahiers d'exercices -->
+  <section class="mb-12">
+    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-1">Cahiers d'exercices</h2>
+    <p class="text-xs text-slate-400 mb-4">Pratique intercalée · Questions De base (★) et Approfondies (★★) · Zone défi · Autoévaluation</p>
+    <div class="space-y-3">
+      {workbooksFR.map(m => {
+        const c = unitColors[m.unit] ?? unitColors['all-units'];
+        return (
+          <div class={`bg-white rounded-xl border border-slate-200 border-l-4 ${c.border} p-5 flex items-start justify-between gap-4`}>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1">
+                <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${c.bg} ${c.text}`}>
+                  {m.unitLabel}
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mb-1">{m.title}</h3>
+              <p class="text-sm text-slate-500">{m.description}</p>
+            </div>
+            <a
+              href={m.href}
+              target="_blank"
+              rel="noopener"
+              class="flex-shrink-0 text-sm font-semibold text-blue-700 hover:text-blue-900 border border-blue-300 hover:border-blue-500 px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Ouvrir ↗
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
