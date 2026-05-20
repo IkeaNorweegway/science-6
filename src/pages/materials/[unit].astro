@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+export function getStaticPaths() {
+  return [
+    { params: { unit: 'matter' } },
+    { params: { unit: 'forces' } },
+    { params: { unit: 'living-systems' } },
+    { params: { unit: 'climate' } },
+    { params: { unit: 'energy-resources' } },
+    { params: { unit: 'space' } },
+    { params: { unit: 'year-review' } },
+  ];
+}
+
+const { unit } = Astro.params;
+
+type MaterialFile = { label: string; badge?: string; badgeStyle?: string; href: string };
+type Section = { heading: string; items: MaterialFile[] };
+
+interface UnitData {
+  label: string;
+  tagline: string;
+  border: string;
+  text: string;
+  bg: string;
+  accentText: string;
+  sections: Section[];
+  answerKeys: MaterialFile[];
+}
+
+const b = base;
+
+const units: Record<string, UnitData> = {
+  matter: {
+    label: 'Matter',
+    tagline: 'Particle model, states of matter, phase changes, thermometers, expansion, and the water anomaly.',
+    border: 'border-cyan-400', text: 'text-cyan-800', bg: 'bg-cyan-50', accentText: 'text-cyan-700',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', href: `${b}materials/sci6-matter-notes-v1.html` },
+          { label: 'Easy Read Notes', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-matter-notes-ef-v1.html` },
+          { label: 'Notes guidées (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-matter-notes-fr-v1.html` },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', href: `${b}materials/sci6-matter-workbook-v1.html` },
+          { label: 'Easy Read Workbook', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-matter-workbook-ef-v1.html` },
+          { label: 'Cahier d\'exercices (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-matter-workbook-fr-v1.html` },
+        ],
+      },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', href: `${b}materials/sci6-matter-notes-answers-v1.html` },
+      { label: 'Workbook Answer Key', href: `${b}materials/sci6-matter-workbook-answers-v1.html` },
+      { label: 'Easy Read Workbook Answer Key', href: `${b}materials/sci6-matter-workbook-ef-answers-v1.html` },
+    ],
+  },
+  forces: {
+    label: 'Forces',
+    tagline: 'Pushes and pulls, external and internal forces, elasticity, plasticity, and Newton\'s Third Law.',
+    border: 'border-violet-400', text: 'text-violet-800', bg: 'bg-violet-50', accentText: 'text-violet-700',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', href: `${b}materials/sci6-forces-notes-v1.html` },
+          { label: 'Easy Read Notes', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-forces-notes-ef-v1.html` },
+          { label: 'Notes guidées (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-forces-notes-fr-v1.html` },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', href: `${b}materials/sci6-forces-workbook-v1.html` },
+          { label: 'Easy Read Workbook', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-forces-workbook-ef-v1.html` },
+          { label: 'Cahier d\'exercices (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-forces-workbook-fr-v1.html` },
+        ],
+      },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', href: `${b}materials/sci6-forces-notes-answers-v1.html` },
+      { label: 'Workbook Answer Key', href: `${b}materials/sci6-forces-workbook-answers-v1.html` },
+      { label: 'Easy Read Workbook Answer Key', href: `${b}materials/sci6-forces-workbook-ef-answers-v1.html` },
+    ],
+  },
+  'living-systems': {
+    label: 'Living Systems',
+    tagline: 'Biotic and abiotic factors, photosynthesis, food webs, trophic cascades, and Indigenous ecological knowledge.',
+    border: 'border-emerald-400', text: 'text-emerald-800', bg: 'bg-emerald-50', accentText: 'text-emerald-700',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', href: `${b}materials/sci6-living-systems-notes-gr6-v1.html` },
+          { label: 'Easy Read Notes', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-living-systems-notes-ef-gr6-v1.html` },
+          { label: 'Notes guidées (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-living-systems-notes-fr-v1.html` },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', href: `${b}materials/sci6-living-systems-workbook-gr6-v1.html` },
+          { label: 'Easy Read Workbook', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-living-systems-workbook-ef-v1.html` },
+          { label: 'Cahier d\'exercices (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-living-systems-workbook-fr-v1.html` },
+        ],
+      },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', href: `${b}materials/sci6-living-systems-notes-answers-v1.html` },
+      { label: 'Workbook Answer Key', href: `${b}materials/sci6-living-systems-workbook-answers-v1.html` },
+      { label: 'Easy Read Workbook Answer Key', href: `${b}materials/sci6-living-systems-workbook-ef-answers-v1.html` },
+    ],
+  },
+  climate: {
+    label: 'Climate',
+    tagline: 'Weather vs. climate, greenhouse effect, causes of climate change, and Alberta-specific impacts.',
+    border: 'border-amber-400', text: 'text-amber-800', bg: 'bg-amber-50', accentText: 'text-amber-700',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', href: `${b}materials/sci6-climate-notes-v1.html` },
+          { label: 'Easy Read Notes', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-climate-notes-ef-v1.html` },
+          { label: 'Notes guidées (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-climate-notes-fr-v1.html` },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', href: `${b}materials/sci6-climate-workbook-v1.html` },
+          { label: 'Easy Read Workbook', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-climate-workbook-ef-v1.html` },
+          { label: 'Cahier d\'exercices (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-climate-workbook-fr-v1.html` },
+        ],
+      },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', href: `${b}materials/sci6-climate-notes-answers-v1.html` },
+      { label: 'Workbook Answer Key', href: `${b}materials/sci6-climate-workbook-answers-v1.html` },
+      { label: 'Easy Read Workbook Answer Key', href: `${b}materials/sci6-climate-workbook-ef-answers-v1.html` },
+    ],
+  },
+  'energy-resources': {
+    label: 'Energy Resources',
+    tagline: 'Renewable vs. non-renewable energy, before and after processing, and the five selection factors.',
+    border: 'border-orange-400', text: 'text-orange-800', bg: 'bg-orange-50', accentText: 'text-orange-700',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', href: `${b}materials/sci6-energy-resources-notes-v1.html` },
+          { label: 'Easy Read Notes', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-energy-resources-notes-ef-v1.html` },
+          { label: 'Notes guidées (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-energy-resources-notes-fr-v1.html` },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', href: `${b}materials/sci6-energy-resources-workbook-v1.html` },
+          { label: 'Easy Read Workbook', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-energy-resources-workbook-ef-v1.html` },
+          { label: 'Cahier d\'exercices (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-energy-resources-workbook-fr-v1.html` },
+        ],
+      },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', href: `${b}materials/sci6-energy-resources-notes-answers-v1.html` },
+      { label: 'Workbook Answer Key', href: `${b}materials/sci6-energy-resources-workbook-answers-v1.html` },
+      { label: 'Easy Read Workbook Answer Key', href: `${b}materials/sci6-energy-resources-workbook-ef-answers-v1.html` },
+    ],
+  },
+  space: {
+    label: 'Space',
+    tagline: 'Solar system objects, exploration technologies, satellites, orbital mechanics, and the ISS.',
+    border: 'border-indigo-400', text: 'text-indigo-800', bg: 'bg-indigo-50', accentText: 'text-indigo-700',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', href: `${b}materials/sci6-space-notes-v1.html` },
+          { label: 'Easy Read Notes', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-space-notes-ef-v1.html` },
+          { label: 'Notes guidées (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-space-notes-fr-v1.html` },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', href: `${b}materials/sci6-space-workbook-v1.html` },
+          { label: 'Easy Read Workbook', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-space-workbook-ef-v1.html` },
+          { label: 'Cahier d\'exercices (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-space-workbook-fr-v1.html` },
+        ],
+      },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', href: `${b}materials/sci6-space-notes-answers-v1.html` },
+      { label: 'Workbook Answer Key', href: `${b}materials/sci6-space-workbook-answers-v1.html` },
+      { label: 'Easy Read Workbook Answer Key', href: `${b}materials/sci6-space-workbook-ef-answers-v1.html` },
+    ],
+  },
+  'year-review': {
+    label: 'Year Review',
+    tagline: 'End-of-year review covering all six units — notes package and mixed-topic practice workbook.',
+    border: 'border-science-400', text: 'text-science-800', bg: 'bg-science-50', accentText: 'text-science-700',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Year Notes', href: `${b}materials/sci6-year-notes-v1.html` },
+          { label: 'Easy Read Year Notes', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-year-notes-ef-v1.html` },
+          { label: 'Notes annuelles (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-year-notes-fr-v1.html` },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Year Review Workbook', href: `${b}materials/sci6-year-review-workbook-gr6-v1.html` },
+          { label: 'Easy Read Year Review Workbook', badge: 'Easy Read', badgeStyle: 'bg-sky-100 text-sky-800', href: `${b}materials/sci6-year-review-workbook-ef-v1.html` },
+          { label: 'Cahier de révision annuelle (français)', badge: 'Français', badgeStyle: 'bg-blue-100 text-blue-800', href: `${b}materials/sci6-year-review-workbook-fr-v1.html` },
+        ],
+      },
+    ],
+    answerKeys: [
+      { label: 'Year Review Workbook Answer Key', href: `${b}materials/sci6-year-review-workbook-answers-v1.html` },
+      { label: 'Easy Read Workbook Answer Key', href: `${b}materials/sci6-year-review-workbook-ef-answers-v1.html` },
+    ],
+  },
+};
+
+const data = units[unit];
+---
+
+<BaseLayout title={`${data.label} — Materials`}>
+
+  <!-- Back link -->
+  <a href={`${base}materials`} class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 mb-8 transition-colors">
+    ← All materials
+  </a>
+
+  <!-- Header -->
+  <div class="mb-10">
+    <p class={`text-xs font-bold uppercase tracking-widest ${data.accentText} mb-2`}>Grade 6 Science</p>
+    <h1 class="text-4xl font-bold text-slate-900 mb-3">{data.label}</h1>
+    <p class="text-slate-500 text-lg max-w-xl">{data.tagline}</p>
+  </div>
+
+  <!-- Material sections -->
+  {data.sections.map(section => (
+    <section class="mb-10">
+      <h2 class={`text-xs font-bold uppercase tracking-widest ${data.text} mb-3`}>{section.heading}</h2>
+      <div class="space-y-2">
+        {section.items.map(item => (
+          <div class={`bg-white rounded-xl border border-slate-200 border-l-4 ${data.border} px-5 py-4 flex items-center justify-between gap-4`}>
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="text-sm font-medium text-slate-800">{item.label}</span>
+              {item.badge && (
+                <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${item.badgeStyle}`}>{item.badge}</span>
+              )}
+            </div>
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener"
+              class="flex-shrink-0 text-sm font-semibold text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-400 px-4 py-1.5 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Open ↗
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <!-- Answer keys — hidden by default -->
+  <details class="group mt-2">
+    <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-slate-600 transition-colors select-none mb-3">
+      <span class="inline-block transition-transform group-open:rotate-90">▶</span>
+      Show answer keys
+    </summary>
+    <div class="space-y-2 mt-1">
+      {data.answerKeys.map(item => (
+        <div class="bg-slate-50 rounded-xl border border-slate-200 px-5 py-4 flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="text-sm font-medium text-slate-600">{item.label}</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-slate-200 text-slate-600 tracking-wide">Answer Key</span>
+          </div>
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener"
+            class="flex-shrink-0 text-sm font-semibold text-slate-500 hover:text-slate-800 border border-slate-200 hover:border-slate-400 px-4 py-1.5 rounded-lg transition-colors whitespace-nowrap"
+          >
+            Open ↗
+          </a>
+        </div>
+      ))}
+    </div>
+  </details>
+
+</BaseLayout>
