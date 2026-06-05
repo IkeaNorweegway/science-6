@@ -1,0 +1,65 @@
+---
+import Math9Layout from '../../../layouts/Math9Layout.astro';
+const base = import.meta.env.BASE_URL;
+
+const strands = [
+  {
+    slug: 'number',
+    label: 'Number',
+    topics: ['Rational Numbers', 'Square Roots', 'Powers & Exponents'],
+    description: 'Operations with rational numbers, square roots, Pythagorean theorem, and exponent laws.',
+    border: 'border-blue-400', text: 'text-blue-800', hover: 'hover:bg-blue-50', link: 'text-blue-700',
+  },
+  {
+    slug: 'algebra',
+    label: 'Algebra',
+    topics: ['Linear Relations', 'Linear Equations & Inequalities', 'Polynomials'],
+    description: 'Slope, linear equations, inequalities, and polynomial operations.',
+    border: 'border-violet-400', text: 'text-violet-800', hover: 'hover:bg-violet-50', link: 'text-violet-700',
+  },
+  {
+    slug: 'measurement-geometry',
+    label: 'Measurement & Geometry',
+    topics: ['Circle Geometry', 'Surface Area & Volume', 'Similarity & Scale'],
+    description: 'Circle properties, composite 3D objects, similar triangles, and scale diagrams.',
+    border: 'border-green-400', text: 'text-green-800', hover: 'hover:bg-green-50', link: 'text-green-700',
+  },
+  {
+    slug: 'statistics-probability',
+    label: 'Statistics & Probability',
+    topics: ['Statistics & Scatter Plots', 'Probability'],
+    description: 'Correlation, lines of best fit, and probability of independent and dependent events.',
+    border: 'border-teal-400', text: 'text-teal-800', hover: 'hover:bg-teal-50', link: 'text-teal-700',
+  },
+];
+---
+
+<Math9Layout title="Materials — Math 9">
+
+  <a href={`${base}math9`} class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 mb-8 transition-colors">
+    ← Math 9
+  </a>
+
+  <div class="mb-10">
+    <p class="text-xs font-bold uppercase tracking-widest text-math9-600 mb-2">Grade 9 Mathematics</p>
+    <h1 class="text-4xl font-bold text-slate-900 mb-3">Materials</h1>
+    <p class="text-slate-500 text-lg max-w-xl">Pick a strand to see all notes, worksheets, and exit tickets for that strand.</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {strands.map(s => (
+      <a
+        href={`${base}math9/materials/${s.slug}`}
+        class={`group block bg-white rounded-xl border border-slate-200 border-l-4 ${s.border} p-5 transition-colors ${s.hover}`}
+      >
+        <p class={`text-xs font-bold uppercase tracking-widest ${s.text} mb-2`}>{s.label}</p>
+        <ul class="text-xs text-slate-400 mb-3 space-y-0.5">
+          {s.topics.map(t => <li>{t}</li>)}
+        </ul>
+        <p class="text-sm text-slate-500 mb-4 leading-relaxed">{s.description}</p>
+        <span class={`text-sm font-semibold ${s.link} group-hover:underline`}>View materials →</span>
+      </a>
+    ))}
+  </div>
+
+</Math9Layout>

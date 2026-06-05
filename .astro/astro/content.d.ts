@@ -178,9 +178,44 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "teacher-units": {
+"climate.md": {
+	id: "climate.md";
+  slug: "climate";
+  body: string;
+  collection: "teacher-units";
+  data: InferEntrySchema<"teacher-units">
+} & { render(): Render[".md"] };
+"energy-resources.md": {
+	id: "energy-resources.md";
+  slug: "energy-resources";
+  body: string;
+  collection: "teacher-units";
+  data: InferEntrySchema<"teacher-units">
+} & { render(): Render[".md"] };
+"forces.md": {
+	id: "forces.md";
+  slug: "forces";
+  body: string;
+  collection: "teacher-units";
+  data: InferEntrySchema<"teacher-units">
+} & { render(): Render[".md"] };
+"living-systems.md": {
+	id: "living-systems.md";
+  slug: "living-systems";
+  body: string;
+  collection: "teacher-units";
+  data: InferEntrySchema<"teacher-units">
+} & { render(): Render[".md"] };
 "matter.md": {
 	id: "matter.md";
   slug: "matter";
+  body: string;
+  collection: "teacher-units";
+  data: InferEntrySchema<"teacher-units">
+} & { render(): Render[".md"] };
+"space.md": {
+	id: "space.md";
+  slug: "space";
   body: string;
   collection: "teacher-units";
   data: InferEntrySchema<"teacher-units">

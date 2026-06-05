@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statistics and Data Analysis — Guided Notes | Grade 9 Mathematics</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 11pt; line-height: 1.6; color: #1e293b;
+      background: #fff; max-width: 780px; margin: 0 auto; padding: 28px 32px 48px;
+    }
+    :root { --accent: #0d9488; --accent-light: #f0fdfa; --accent-mid: #14b8a6; }
+    h1 { font-size: 22pt; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+    h2 { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 0 0 10px; border-bottom: 2px solid var(--accent-light); padding-bottom: 4px; }
+    h3 { font-size: 11pt; font-weight: 700; color: #334155; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+    h4 { font-size: 11pt; font-weight: 700; color: #334155; margin: 14px 0 4px; }
+    p { margin-bottom: 8px; }
+    ul, ol { margin: 6px 0 10px 20px; }
+    li { margin-bottom: 4px; }
+    strong { font-weight: 700; }
+    em { font-style: italic; color: #475569; }
+    .b { display: inline-block; border-bottom: 1.5px solid #334155; vertical-align: bottom; }
+    .b-sm { width: 60px; } .b-md { width: 110px; } .b-lg { width: 170px; } .b-xl { width: 240px; }
+    .al { display: block; border-bottom: 1px solid #94a3b8; height: 1.8rem; margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
+    th { background: var(--accent-light); color: #1e293b; font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid var(--accent-mid); }
+    td { padding: 8px 10px; border: 1px solid #e2e8f0; vertical-align: top; }
+    pre { font-family: 'Courier New', monospace; font-size: 10pt; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 10px 14px; margin: 10px 0; white-space: pre-wrap; }
+    code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1px 5px; }
+    .misconception { border-left: 4px solid #dc2626; background: #fef2f2; padding: 10px 14px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+    .misconception .label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #dc2626; margin-bottom: 4px; }
+    .connection { border-left: 4px solid #f97316; background: #fff7ed; padding: 10px 14px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+    .connection .label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #ea580c; margin-bottom: 4px; }
+    .worked-example { border-left: 4px solid var(--accent-mid); background: var(--accent-light); padding: 10px 14px; margin: 10px 0; border-radius: 0 6px 6px 0; font-size: 10.5pt; }
+    .retrieval { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+    .retrieval-header { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: #1d4ed8; margin-bottom: 10px; }
+    .retrieval ol { margin-left: 18px; }
+    .retrieval li { margin-bottom: 14px; }
+    .self-check { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 10.5pt; }
+    .self-check .label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #16a34a; margin-bottom: 6px; }
+    .learning-target { font-size: 10pt; font-style: italic; color: #475569; margin-bottom: 12px; padding: 6px 12px; border-left: 3px solid var(--accent-mid); background: var(--accent-light); }
+    .pre-knowledge { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .pre-knowledge .label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #64748b; margin-bottom: 10px; }
+    .synthesis { background: #fafafa; border: 2px solid var(--accent-light); border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .header-strip { border-left: 5px solid var(--accent); padding: 10px 16px; margin-bottom: 24px; background: var(--accent-light); border-radius: 0 8px 8px 0; }
+    .header-strip .course-label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 4px; }
+    .name-row { display: flex; gap: 24px; margin: 16px 0 24px; font-size: 10.5pt; align-items: baseline; }
+    .name-row span { color: #64748b; white-space: nowrap; }
+    .name-row .b { flex: 1; }
+    .answer-key-header { background: #1e293b; color: #fff; padding: 8px 14px; border-radius: 6px; margin: 20px 0 16px; font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .answer { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 10px 14px; margin: 8px 0; font-size: 10.5pt; }
+    @media print {
+      body { padding: 16px 20px; font-size: 10.5pt; }
+      h1 { font-size: 18pt; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .section { break-before: page; }
+      .question, .retrieval, .misconception, .connection,
+      .self-check, .worked-example, .learning-target,
+      .name-row, table, figure { break-inside: avoid; }
+      h2, h3, h4 { break-after: avoid; }
+      p { orphans: 3; widows: 3; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-strip">
+    <div class="course-label">Grade 9 Mathematics · Alberta Curriculum · Statistics &amp; Probability</div>
+    <h1>Statistics and Data Analysis</h1>
+    <p style="font-size:10pt;color:#475569;margin-top:4px;">Guided Notes Package</p>
+  </div>
+
+  <div class="name-row">
+    <span>Name:</span><span class="b" style="min-width:200px;"></span>
+    <span>Date started:</span><span class="b b-md"></span>
+  </div>
+
+  <!-- Pre-Knowledge Check -->
+  <div class="section">
+    <h2>Pre-Knowledge Check</h2>
+    <div class="pre-knowledge">
+      <div class="label">Before We Begin — No Marks. No Correction. Be Honest.</div>
+      <p><em>Write exactly what you think right now. You will come back to this page at the end of the unit. Do not erase your answers.</em></p>
+
+      <p><strong>What is the difference between a bar graph and a scatter plot?</strong></p>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <p><strong>If someone says "countries with more hospitals have more doctors," does that mean hospitals CAUSE there to be more doctors? Explain your thinking.</strong></p>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <p><strong>What does it mean to make a prediction from a graph? Have you done this before?</strong></p>
+      <span class="al"></span>
+    </div>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section">
+    <h2>Section 1 — Types of Data and Graphs</h2>
+    <div class="learning-target"><strong>Learning target:</strong> I can identify when to use a scatter plot versus other graph types, and explain what types of questions scatter plots can answer that other graphs cannot.</div>
+
+    <h3>Vocabulary</h3>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Univariate data</td><td></td><td></td></tr>
+        <tr><td>Bivariate data</td><td></td><td></td></tr>
+        <tr><td>Scatter plot</td><td></td><td></td></tr>
+        <tr><td>Variable</td><td></td><td></td></tr>
+        <tr><td>Data point</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Guided Notes</h3>
+
+    <p><strong>Univariate data:</strong> data about <span class="b b-md"></span> variable. Describes one trait of each subject.</p>
+    <p>Examples: heights of students, scores on a test, monthly temperatures.</p>
+
+    <p><strong>Best graph types for univariate data:</strong></p>
+    <ul>
+      <li>Bar graph: categories or groups</li>
+      <li>Line graph: <span class="b b-md"></span> over time</li>
+      <li>Histogram: continuous numerical data, grouped into intervals</li>
+    </ul>
+
+    <p><strong>Bivariate data:</strong> data about <span class="b b-md"></span> variables measured on the same subject.</p>
+    <p>Examples: height AND shoe size, study time AND test score, temperature AND ice cream sales.</p>
+
+    <p><strong>Best graph for bivariate data:</strong> <span class="b b-lg"></span></p>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Why scatter plots?</strong></p>
+    <p>A scatter plot lets you see if there is a <span class="b b-lg"></span> between two variables — whether they tend to change together.</p>
+    <p>A line graph only works for one variable changing over time.<br>
+    A scatter plot works when you want to know: does knowing one variable help you <span class="b b-md"></span> the other?</p>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Reading scatter plot axes:</strong></p>
+<pre>     y-axis (dependent variable)
+     │
+   ↑ │  •    •
+     │    •
+     │  •    •   •
+     │         •
+     │
+     └──────────────────→
+                          x-axis (independent variable)</pre>
+
+    <p>Each dot = <span class="b b-md"></span> data point (one subject's measurements on both variables).</p>
+
+    <p><strong>Conventions:</strong></p>
+    <ul>
+      <li>Independent variable on <span class="b b-sm"></span> axis</li>
+      <li>Dependent variable on <span class="b b-sm"></span> axis</li>
+    </ul>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Table of values and scatter plot:</strong></p>
+    <p>The table below shows daily high temperature (°C) and number of visitors to a Calgary splash pad:</p>
+
+    <table>
+      <thead>
+        <tr><th>Temperature (°C)</th><th>20</th><th>23</th><th>25</th><th>27</th><th>28</th><th>30</th><th>32</th><th>34</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Visitors</td><td>85</td><td>105</td><td>130</td><td>145</td><td>155</td><td>190</td><td>210</td><td>240</td></tr>
+      </tbody>
+    </table>
+
+    <p>Plot these points on the axes below:</p>
+<pre>Visitors
+240 │
+210 │
+180 │
+150 │
+120 │
+ 90 │
+ 60 │
+ 30 │
+    └────────────────────────
+       20  23  25  27  30  33
+                       Temperature (°C)</pre>
+
+    <p><strong>Describe the pattern you see in the scatter plot:</strong></p>
+    <span class="al"></span>
+
+    <div class="retrieval">
+      <div class="retrieval-header">Retrieval Check — Section 1 — Close Your Notes</div>
+      <ol>
+        <li>What is the difference between univariate and bivariate data? Give an example of each.</li>
+        <li>When is a scatter plot the right choice of graph?</li>
+        <li>On a scatter plot, what does each individual point represent?</li>
+        <li>Why does the independent variable go on the x-axis?</li>
+        <li><em>(Stretch)</em> A researcher collects data on student absences and their final marks. Which variable would you put on each axis? Why?</li>
+      </ol>
+    </div>
+
+    <div class="self-check">
+      <div class="label">Self-Check</div>
+      <p>☐ I could teach it &nbsp;&nbsp; ☐ Getting there &nbsp;&nbsp; ☐ Not yet</p>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <h2>Section 2 — Correlation and Scatter Plots</h2>
+    <div class="learning-target"><strong>Learning target:</strong> I can identify and describe the type and strength of correlation in a scatter plot.</div>
+
+    <h3>Vocabulary</h3>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Correlation</td><td></td><td></td></tr>
+        <tr><td>Positive correlation</td><td></td><td></td></tr>
+        <tr><td>Negative correlation</td><td></td><td></td></tr>
+        <tr><td>No correlation</td><td></td><td></td></tr>
+        <tr><td>Strong correlation</td><td></td><td></td></tr>
+        <tr><td>Weak correlation</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Guided Notes</h3>
+
+    <p><strong>Correlation</strong> describes whether two variables tend to change <span class="b b-md"></span>.</p>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Types of correlation:</strong></p>
+    <table>
+      <thead>
+        <tr><th>Type</th><th>What it looks like</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Positive</strong></td><td>Both increase together — points rise left to right</td><td>Height and weight</td></tr>
+        <tr><td><strong>Negative</strong></td><td>One increases as the other decreases — points fall left to right</td><td>Hours of TV and test scores</td></tr>
+        <tr><td><strong>None</strong></td><td>No pattern — points are scattered randomly</td><td>Shoe size and test scores</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Strength of correlation:</strong></p>
+    <table>
+      <thead>
+        <tr><th>Strength</th><th>What it looks like</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Strong</td><td>Points close to a straight line</td><td>Clear, consistent relationship</td></tr>
+        <tr><td>Moderate</td><td>Points loosely follow a trend</td><td>General pattern with more scatter</td></tr>
+        <tr><td>Weak</td><td>Points vaguely suggest a direction</td><td>Difficult to predict from one variable</td></tr>
+      </tbody>
+    </table>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Sketch each type:</strong></p>
+
+    <p><strong>Strong positive:</strong></p>
+<pre>     │          •
+     │       •
+     │     •
+     │  •
+     │•
+     └──────────</pre>
+
+    <p><strong>Strong negative:</strong></p>
+<pre>     │•
+     │  •
+     │     •
+     │       •
+     │          •
+     └──────────</pre>
+
+    <p><strong>No correlation:</strong></p>
+<pre>     │  • •   •
+     │     •
+     │•  •    •
+     │   •
+     └──────────</pre>
+
+    <p><strong>Weak positive:</strong></p>
+<pre>     │       •  •
+     │    •  •
+     │  •      •
+     │•    •
+     └──────────</pre>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Describing correlation — use precise language:</strong></p>
+    <p>A good description includes: <strong>direction</strong> (positive/negative/none) + <strong>strength</strong> (strong/moderate/weak/none).</p>
+    <p>"The scatter plot shows a <span class="b b-md"></span> positive correlation between temperature and splash pad visitors."</p>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Outlier on a scatter plot:</strong></p>
+    <p>An <strong>outlier</strong> is a point that falls <span class="b b-md"></span> away from the general pattern.</p>
+    <p>Outliers:</p>
+    <ul>
+      <li>May indicate a measurement error</li>
+      <li>May indicate a genuinely unusual case</li>
+      <li>Should be noted but NOT automatically removed</li>
+    </ul>
+    <p><strong>How does an outlier affect the correlation description?</strong> <span class="b b-xl"></span></p>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <div class="misconception">
+      <div class="label">Misconception</div>
+      <p><strong>MISCONCEPTION: Correlation means causation</strong></p>
+      <p>Wrong idea: "If two variables have a strong positive correlation, one must be causing the other."</p>
+      <p>Why it fails: Two things can change together because a third factor drives both, or because the relationship is coincidental. Ice cream sales and drowning rates both increase in summer — but ice cream does not cause drowning. Both are caused by the third variable: hot weather.</p>
+      <p>Before claiming cause, you must be able to explain a direct mechanism, rule out third variables (confounders), and ideally run a controlled experiment.</p>
+      <p>Strong correlation is <em>necessary</em> but not <em>sufficient</em> for causation.</p>
+    </div>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Practice — describe each:</strong></p>
+    <p>Look at the scatter plot you made in Section 1 (temperature vs. visitors).</p>
+    <p>Direction: <span class="b b-md"></span> &nbsp;&nbsp; Strength: <span class="b b-md"></span></p>
+    <p>Full description: <span class="b b-xl"></span></p>
+
+    <div class="retrieval">
+      <div class="retrieval-header">Retrieval Check — Section 2 — Close Your Notes</div>
+      <ol>
+        <li>Describe the difference between positive and negative correlation in your own words.</li>
+        <li>A scatter plot of "hours of sleep" vs. "reaction time" shows: as sleep increases, reaction time decreases. What type of correlation is this?</li>
+        <li>Strong correlation vs. weak correlation — how would you describe the difference in terms of the scatter plot's appearance?</li>
+        <li>Why does correlation NOT prove causation? Give one example of two correlated variables that are not causally related.</li>
+        <li><em>(Stretch)</em> You notice that cities with more fire stations have more house fires. Does this mean fire stations cause fires? Explain what is actually going on.</li>
+      </ol>
+    </div>
+
+    <div class="self-check">
+      <div class="label">Self-Check</div>
+      <p>☐ I could teach it &nbsp;&nbsp; ☐ Getting there &nbsp;&nbsp; ☐ Not yet</p>
+    </div>
+
+    <div class="connection">
+      <div class="label">Connection Prompt</div>
+      <p>You have seen linear relations graphed as lines. How is a scatter plot different from a line graph of a linear relation? What is the same about how you read a trend in both?</p>
+      <span class="al"></span>
+      <span class="al"></span>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <h2>Section 3 — Line of Best Fit</h2>
+    <div class="learning-target"><strong>Learning target:</strong> I can draw a line of best fit by inspection, write its equation, and use it to make predictions.</div>
+
+    <h3>Vocabulary</h3>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Line of best fit</td><td></td><td></td></tr>
+        <tr><td>By inspection</td><td></td><td></td></tr>
+        <tr><td>Trend line</td><td></td><td></td></tr>
+        <tr><td>Equation of the line of best fit</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Guided Notes</h3>
+
+    <p><strong>The line of best fit (trend line)</strong> is a straight line drawn to best represent the <span class="b b-lg"></span> of points in a scatter plot.</p>
+    <p>It is used when there is a <span class="b b-md"></span> or <span class="b b-md"></span> correlation (not for no correlation).</p>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Rules for drawing a line of best fit by inspection:</strong></p>
+    <ol>
+      <li>The line passes <span class="b b-md"></span> the middle of the data (not necessarily through any specific point)</li>
+      <li>Approximately equal numbers of points above and <span class="b b-md"></span> the line</li>
+      <li>The line should follow the general <span class="b b-md"></span> of the data</li>
+      <li>The line does NOT need to pass through the <span class="b b-md"></span> or any particular point</li>
+    </ol>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Worked Example — Drawing and finding the equation:</strong></p>
+    <p>Using the temperature vs. visitors data from Section 1:</p>
+
+    <div class="worked-example">
+      <p>Step 1: Draw the line of best fit through the middle of the data.</p>
+      <p>Step 2: Choose two points ON the line (not necessarily data points):<br>
+      Point 1: (20, <span class="b b-sm"></span>) &nbsp;&nbsp; Point 2: (34, <span class="b b-sm"></span>)</p>
+      <p>Step 3: Calculate the slope:<br>
+      m = (y₂ − y₁)/(x₂ − x₁) = (<span class="b b-sm"></span> − <span class="b b-sm"></span>) / (34 − 20) = <span class="b b-sm"></span>/<span class="b b-sm"></span> ≈ <span class="b b-sm"></span></p>
+      <p>Step 4: Find the y-intercept using y = mx + b:<br>
+      <span class="b b-sm"></span> = <span class="b b-sm"></span>(20) + b<br>
+      b = <span class="b b-sm"></span></p>
+      <p>Step 5: Write the equation:<br>
+      v = <span class="b b-sm"></span>t + <span class="b b-sm"></span> &nbsp; (v = visitors, t = temperature)</p>
+    </div>
+
+    <p><strong>Explain Step 2:</strong> Why do we choose points ON the line rather than actual data points to find the equation?</p>
+    <span class="al"></span>
+    <span class="al"></span>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <div class="misconception">
+      <div class="label">Misconception</div>
+      <p><strong>MISCONCEPTION: The line of best fit must pass through the most points</strong></p>
+      <p>Wrong idea: "A good line of best fit connects as many dots as possible."</p>
+      <p>Why it fails: The line of best fit is a model of the <em>trend</em>, not a connect-the-dots. It minimizes the total distance from all points to the line — this means most points will NOT be exactly on it. A line that passes through many points but ignores the overall direction is a worse fit than a line that misses all points but captures the trend.</p>
+      <p>The goal: equal numbers of points above and below, following the general direction.</p>
+    </div>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>The line of best fit in other representations (Rule of Four):</strong></p>
+    <table>
+      <thead>
+        <tr><th>Form</th><th>What it shows</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Graph</strong></td><td>The visual trend line through scattered data</td></tr>
+        <tr><td><strong>Equation</strong></td><td>y = mx + b, where m is the rate of change and b is the starting value</td></tr>
+        <tr><td><strong>Table</strong></td><td>Points that lie exactly on the line (not data points — predicted values)</td></tr>
+        <tr><td><strong>Verbal</strong></td><td>"For each degree increase in temperature, approximately <span class="b b-sm"></span> more visitors are expected"</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Complete the verbal description for your line:</strong> <span class="b b-xl"></span></p>
+
+    <div class="retrieval">
+      <div class="retrieval-header">Retrieval Check — Section 3 — Close Your Notes</div>
+      <ol>
+        <li>List the four rules for drawing a line of best fit by inspection.</li>
+        <li>On a scatter plot, two students draw different lines of best fit. Student A passes through the origin; Student B's line has approximately equal numbers of points above and below. Whose line is more likely correct? Why?</li>
+        <li>From your line of best fit equation: if temperature = 29°C, how many visitors would you predict?</li>
+        <li>What does the slope of the line of best fit represent in the temperature/visitors context?</li>
+        <li><em>(Stretch)</em> A line of best fit has equation y = −3x + 95. What correlation does the scatter plot likely show? What does the slope mean in context?</li>
+      </ol>
+    </div>
+
+    <div class="self-check">
+      <div class="label">Self-Check</div>
+      <p>☐ I could teach it &nbsp;&nbsp; ☐ Getting there &nbsp;&nbsp; ☐ Not yet</p>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section">
+    <h2>Section 4 — Interpolation and Extrapolation</h2>
+    <div class="learning-target"><strong>Learning target:</strong> I can use a line of best fit to interpolate and extrapolate values, and explain why extrapolation is less reliable.</div>
+
+    <h3>Vocabulary</h3>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Interpolation</td><td></td><td></td></tr>
+        <tr><td>Extrapolation</td><td></td><td></td></tr>
+        <tr><td>Reliability</td><td></td><td></td></tr>
+        <tr><td>Domain of the data</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Guided Notes</h3>
+
+    <p><strong>Interpolation</strong> means predicting a y-value for an x-value <span class="b b-md"></span> the range of the data.</p>
+    <p><strong>Extrapolation</strong> means predicting a y-value for an x-value <span class="b b-md"></span> the range of the data.</p>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Example — using the temperature/visitors line:</strong></p>
+    <p>Data range: temperatures 20°C to 34°C.</p>
+
+    <table>
+      <thead>
+        <tr><th>Prediction</th><th>x-value</th><th>Inside or outside data range?</th><th>Interpolation or Extrapolation?</th><th>Reliability</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Visitors at 26°C</td><td>26</td><td></td><td></td><td></td></tr>
+        <tr><td>Visitors at 22°C</td><td>22</td><td></td><td></td><td></td></tr>
+        <tr><td>Visitors at 40°C</td><td>40</td><td></td><td></td><td></td></tr>
+        <tr><td>Visitors at 18°C</td><td>18</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Worked Example — Interpolation:</strong></p>
+    <div class="worked-example">
+      <p>Using the equation v = 10t + (your b-value), predict visitors at 26°C.</p>
+      <p>v = 10(26) + <span class="b b-sm"></span> = <span class="b b-sm"></span> visitors</p>
+      <p>This is interpolation because 26 is <span class="b b-md"></span> the data range (20 to 34).</p>
+    </div>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Worked Example — Extrapolation:</strong></p>
+    <div class="worked-example">
+      <p>Predict visitors at 40°C.</p>
+      <p>v = 10(40) + <span class="b b-sm"></span> = <span class="b b-sm"></span> visitors</p>
+      <p>This is extrapolation because 40 is <span class="b b-md"></span> the data range.</p>
+    </div>
+
+    <p><strong>Why extrapolation is less reliable:</strong></p>
+    <p>The trend seen within the data might not continue outside it. At very high temperatures (45°C), the real relationship might change — perhaps fewer people go out because it's dangerously hot, or the park closes. The line of best fit is a model of what was observed, not a law of nature.</p>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <div class="misconception">
+      <div class="label">Misconception</div>
+      <p><strong>MISCONCEPTION: Extrapolation is as reliable as interpolation</strong></p>
+      <p>Wrong idea: "The equation works for data we measured, so it works just as well beyond those boundaries."</p>
+      <p>Why it fails: The relationship may only hold within the observed range. Beyond the range, additional factors come into play that we did not observe and cannot model from our data. A linear model predicting visitors at −10°C (using our splash pad equation) would give a nonsensical negative number — the linear trend clearly does not extend to freezing temperatures.</p>
+      <p>Rule of thumb: interpolation is valid as long as the line of best fit fits the data well. Extrapolation should always be noted as "less certain" and the further from the data range, the less reliable.</p>
+    </div>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
+
+    <p><strong>Evaluating a prediction:</strong></p>
+    <p>When you make a prediction, always state:</p>
+    <ol>
+      <li>Whether it is interpolation or extrapolation</li>
+      <li>How confident you are and why</li>
+      <li>Any conditions that might make the prediction unreliable</li>
+    </ol>
+
+    <p><strong>Alberta context — Canola yield:</strong></p>
+    <p>A farmer collects data on fertilizer applied (kg/hectare) and canola yield (tonnes/hectare). The data ranges from 0–200 kg/hectare. The line of best fit is: yield = 0.015 × fertilizer + 1.2.</p>
+
+    <p>a) Predict yield for 150 kg/hectare: <span class="b b-md"></span> &nbsp;&nbsp; Is this interpolation or extrapolation? <span class="b b-md"></span></p>
+    <p>b) Predict yield for 400 kg/hectare: <span class="b b-md"></span> &nbsp;&nbsp; Is this interpolation or extrapolation? <span class="b b-md"></span></p>
+    <p>c) Why might the extrapolation be unreliable? (Hint: think about what happens if you apply too much fertilizer.)</p>
+    <span class="al"></span>
+    <span class="al"></span>
+
+    <div class="retrieval">
+      <div class="retrieval-header">Retrieval Check — Section 4 — Close Your Notes</div>
+      <ol>
+        <li>Define interpolation and extrapolation in your own words.</li>
+        <li>Data range: x from 5 to 30. For which values of x are predictions interpolations? For which are they extrapolations?</li>
+        <li>Predict a y-value for x = 20 using y = 4x − 10. Is this interpolation or extrapolation (given data range 5 to 30)?</li>
+        <li>Give one reason why extrapolation can produce unreliable predictions.</li>
+        <li><em>(Stretch)</em> A line of best fit predicts that the number of species in a lake decreases by 2 per year. The data covers 1990–2005. Using the equation, predict the number of species in 2100. Why might this prediction be meaningless?</li>
+      </ol>
+    </div>
+
+    <div class="self-check">
+      <div class="label">Self-Check</div>
+      <p>☐ I could teach it &nbsp;&nbsp; ☐ Getting there &nbsp;&nbsp; ☐ Not yet</p>
+    </div>
+  </div>
+
+  <!-- Unit Synthesis -->
+  <div class="section">
+    <h2>Unit Synthesis</h2>
+    <div class="synthesis">
+      <p><em>Fill this in from memory. Notes closed.</em></p>
+
+      <h3>Part A — Key Ideas</h3>
+
+      <p><strong>1. What is the difference between univariate and bivariate data?</strong></p>
+      <span class="al"></span>
+
+      <p><strong>2. Name three types of correlation and sketch the scatter plot pattern for each.</strong></p>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <p><strong>3. What is the most important rule to remember when drawing a line of best fit?</strong></p>
+      <span class="al"></span>
+
+      <p><strong>4. What is the difference between interpolation and extrapolation? Which is more reliable?</strong></p>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <p><strong>5. Can a strong correlation prove causation? Give an example to support your answer.</strong></p>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <h3>Part B — Practise from Memory</h3>
+      <p>The table shows study time (h) and test score (%):</p>
+      <table>
+        <thead>
+          <tr><th>Study time (h)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Score (%)</td><td>52</td><td>61</td><td>70</td><td>74</td><td>82</td><td>90</td></tr>
+        </tbody>
+      </table>
+
+      <p>a) Describe the correlation you would expect.</p>
+      <p>b) Draw a scatter plot (sketch it).</p>
+      <p>c) Estimate a line of best fit and write its approximate equation.</p>
+      <p>d) Use your equation to predict the score for 4.5 hours (interpolation).</p>
+      <p>e) Use your equation to predict the score for 10 hours (extrapolation). Comment on reliability.</p>
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <h3>Part C — Go Back to Your Pre-Knowledge Check</h3>
+
+      <p><strong>1. What is the difference between a bar graph and a scatter plot? How would you answer that more precisely now?</strong></p>
+      <span class="al"></span>
+
+      <p><strong>2. Does correlation mean causation? How has your answer changed?</strong></p>
+      <span class="al"></span>
+      <span class="al"></span>
+    </div>
+  </div>
+
+  <p style="text-align:center;color:#94a3b8;font-size:9pt;margin-top:32px;"><em>End of Statistics and Data Analysis Notes Package.</em></p>
+
+</body>
+</html>

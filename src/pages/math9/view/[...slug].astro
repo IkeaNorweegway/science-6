@@ -1,0 +1,187 @@
+---
+import Math9Nav from '../../../components/Math9Nav.astro';
+const base = import.meta.env.BASE_URL;
+
+export async function getStaticPaths() {
+  // Enumerate all Math 9 HTML files so Astro can pre-render them.
+  // Paths are relative to public/materials/math-9/ without the .html extension.
+  const notes = [
+    'notes/rational-numbers/math9-rational-numbers-notes-v1',
+    'notes/rational-numbers/math9-rational-numbers-notes-answers-v1',
+    'notes/square-roots/math9-square-roots-notes-v1',
+    'notes/square-roots/math9-square-roots-notes-answers-v1',
+    'notes/powers-exponents/math9-powers-notes-v1',
+    'notes/powers-exponents/math9-powers-notes-answers-v1',
+    'notes/linear-relations/math9-linear-relations-notes-v1',
+    'notes/linear-relations/math9-linear-relations-notes-answers-v1',
+    'notes/linear-equations/math9-linear-equations-notes-v1',
+    'notes/linear-equations/math9-linear-equations-notes-answers-v1',
+    'notes/polynomials/math9-polynomials-notes-v1',
+    'notes/polynomials/math9-polynomials-notes-answers-v1',
+    'notes/circle-geometry/math9-circle-geometry-notes-v1',
+    'notes/circle-geometry/math9-circle-geometry-notes-answers-v1',
+    'notes/measurement/math9-measurement-notes-v1',
+    'notes/measurement/math9-measurement-notes-answers-v1',
+    'notes/similarity/math9-similarity-notes-v1',
+    'notes/similarity/math9-similarity-notes-answers-v1',
+    'notes/statistics/math9-statistics-notes-v1',
+    'notes/statistics/math9-statistics-notes-answers-v1',
+    'notes/probability/math9-probability-notes-v1',
+    'notes/probability/math9-probability-notes-answers-v1',
+  ];
+
+  const worksheets = [
+    // Number
+    'worksheets/number/math9-number-workbook-v1',
+    'worksheets/number/math9-number-workbook-answers-v1',
+    'worksheets/number/rational-numbers/math9-rational-numbers-concepts-v1',
+    'worksheets/number/rational-numbers/math9-rational-numbers-worksheet-core-v1',
+    'worksheets/number/rational-numbers/math9-rational-numbers-worksheet-core-answers-v1',
+    'worksheets/number/rational-numbers/math9-rational-numbers-worksheet-challenge-v1',
+    'worksheets/number/rational-numbers/math9-rational-numbers-worksheet-challenge-answers-v1',
+    'worksheets/number/square-roots/math9-square-roots-concepts-v1',
+    'worksheets/number/square-roots/math9-square-roots-worksheet-core-v1',
+    'worksheets/number/square-roots/math9-square-roots-worksheet-core-answers-v1',
+    'worksheets/number/square-roots/math9-square-roots-worksheet-challenge-v1',
+    'worksheets/number/square-roots/math9-square-roots-worksheet-challenge-answers-v1',
+    'worksheets/number/powers-exponents/math9-powers-concepts-v1',
+    'worksheets/number/powers-exponents/math9-powers-worksheet-core-v1',
+    'worksheets/number/powers-exponents/math9-powers-worksheet-core-answers-v1',
+    'worksheets/number/powers-exponents/math9-powers-worksheet-challenge-v1',
+    'worksheets/number/powers-exponents/math9-powers-worksheet-challenge-answers-v1',
+    'worksheets/number/powers-exponents/math9-powers-repeated-mult-lesson-v1',
+    // Algebra
+    'worksheets/algebra/math9-algebra-workbook-v1',
+    'worksheets/algebra/math9-algebra-workbook-answers-v1',
+    'worksheets/algebra/linear-relations/math9-linear-relations-concepts-v1',
+    'worksheets/algebra/linear-relations/math9-linear-relations-worksheet-core-v1',
+    'worksheets/algebra/linear-relations/math9-linear-relations-worksheet-core-answers-v1',
+    'worksheets/algebra/linear-relations/math9-linear-relations-worksheet-challenge-v1',
+    'worksheets/algebra/linear-relations/math9-linear-relations-worksheet-challenge-answers-v1',
+    'worksheets/algebra/linear-equations/math9-linear-equations-concepts-v1',
+    'worksheets/algebra/linear-equations/math9-linear-equations-worksheet-core-v1',
+    'worksheets/algebra/linear-equations/math9-linear-equations-worksheet-core-answers-v1',
+    'worksheets/algebra/linear-equations/math9-linear-equations-worksheet-challenge-v1',
+    'worksheets/algebra/linear-equations/math9-linear-equations-worksheet-challenge-answers-v1',
+    'worksheets/algebra/polynomials/math9-polynomials-concepts-v1',
+    'worksheets/algebra/polynomials/math9-polynomials-worksheet-core-v1',
+    'worksheets/algebra/polynomials/math9-polynomials-worksheet-core-answers-v1',
+    'worksheets/algebra/polynomials/math9-polynomials-worksheet-challenge-v1',
+    'worksheets/algebra/polynomials/math9-polynomials-worksheet-challenge-answers-v1',
+    // Measurement & Geometry
+    'worksheets/measurement-geometry/math9-measurement-geometry-workbook-v1',
+    'worksheets/measurement-geometry/math9-measurement-geometry-workbook-answers-v1',
+    'worksheets/measurement-geometry/circle-geometry/math9-circle-geometry-concepts-v1',
+    'worksheets/measurement-geometry/circle-geometry/math9-circle-geometry-worksheet-core-v1',
+    'worksheets/measurement-geometry/circle-geometry/math9-circle-geometry-worksheet-core-answers-v1',
+    'worksheets/measurement-geometry/circle-geometry/math9-circle-geometry-worksheet-challenge-v1',
+    'worksheets/measurement-geometry/circle-geometry/math9-circle-geometry-worksheet-challenge-answers-v1',
+    'worksheets/measurement-geometry/measurement/math9-measurement-concepts-v1',
+    'worksheets/measurement-geometry/measurement/math9-measurement-worksheet-core-v1',
+    'worksheets/measurement-geometry/measurement/math9-measurement-worksheet-core-answers-v1',
+    'worksheets/measurement-geometry/measurement/math9-measurement-worksheet-challenge-v1',
+    'worksheets/measurement-geometry/measurement/math9-measurement-worksheet-challenge-answers-v1',
+    'worksheets/measurement-geometry/similarity/math9-similarity-concepts-v1',
+    'worksheets/measurement-geometry/similarity/math9-similarity-worksheet-core-v1',
+    'worksheets/measurement-geometry/similarity/math9-similarity-worksheet-core-answers-v1',
+    'worksheets/measurement-geometry/similarity/math9-similarity-worksheet-challenge-v1',
+    'worksheets/measurement-geometry/similarity/math9-similarity-worksheet-challenge-answers-v1',
+    // Statistics & Probability
+    'worksheets/statistics-probability/math9-statistics-probability-workbook-v1',
+    'worksheets/statistics-probability/math9-statistics-probability-workbook-answers-v1',
+    'worksheets/statistics-probability/statistics/math9-statistics-concepts-v1',
+    'worksheets/statistics-probability/statistics/math9-statistics-worksheet-core-v1',
+    'worksheets/statistics-probability/statistics/math9-statistics-worksheet-core-answers-v1',
+    'worksheets/statistics-probability/statistics/math9-statistics-worksheet-challenge-v1',
+    'worksheets/statistics-probability/statistics/math9-statistics-worksheet-challenge-answers-v1',
+    'worksheets/statistics-probability/probability/math9-probability-concepts-v1',
+    'worksheets/statistics-probability/probability/math9-probability-worksheet-core-v1',
+    'worksheets/statistics-probability/probability/math9-probability-worksheet-core-answers-v1',
+    'worksheets/statistics-probability/probability/math9-probability-worksheet-challenge-v1',
+    'worksheets/statistics-probability/probability/math9-probability-worksheet-challenge-answers-v1',
+  ];
+
+  const exits = [
+    'exits/rational-numbers/math9-rational-numbers-exits-v1',
+    'exits/square-roots/math9-square-roots-exits-v1',
+    'exits/powers-exponents/math9-powers-exits-v1',
+    'exits/linear-relations/math9-linear-relations-exits-v1',
+    'exits/linear-equations/math9-linear-equations-exits-v1',
+    'exits/polynomials/math9-polynomials-exits-v1',
+    'exits/circle-geometry/math9-circle-geometry-exits-v1',
+    'exits/measurement/math9-measurement-exits-v1',
+    'exits/similarity/math9-similarity-exits-v1',
+    'exits/statistics/math9-statistics-exits-v1',
+    'exits/probability/math9-probability-exits-v1',
+  ];
+
+  return [...notes, ...worksheets, ...exits].map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const fileUrl = `${base}materials/math-9/${slug}.html`;
+
+// Derive a back link from the slug
+function backHref(slug: string): string {
+  if (slug.startsWith('notes/')) {
+    const topic = slug.split('/')[1];
+    const strandMap: Record<string, string> = {
+      'rational-numbers': 'number', 'square-roots': 'number', 'powers-exponents': 'number',
+      'linear-relations': 'algebra', 'linear-equations': 'algebra', 'polynomials': 'algebra',
+      'circle-geometry': 'measurement-geometry', 'measurement': 'measurement-geometry', 'similarity': 'measurement-geometry',
+      'statistics': 'statistics-probability', 'probability': 'statistics-probability',
+    };
+    const strand = strandMap[topic] ?? 'number';
+    return `${base}math9/materials/${strand}`;
+  }
+  if (slug.startsWith('worksheets/')) {
+    const strand = slug.split('/')[1];
+    return `${base}math9/materials/${strand}`;
+  }
+  if (slug.startsWith('exits/')) {
+    const topic = slug.split('/')[1];
+    const strandMap: Record<string, string> = {
+      'rational-numbers': 'number', 'square-roots': 'number', 'powers-exponents': 'number',
+      'linear-relations': 'algebra', 'linear-equations': 'algebra', 'polynomials': 'algebra',
+      'circle-geometry': 'measurement-geometry', 'measurement': 'measurement-geometry', 'similarity': 'measurement-geometry',
+      'statistics': 'statistics-probability', 'probability': 'statistics-probability',
+    };
+    const strand = strandMap[topic] ?? 'number';
+    return `${base}math9/materials/${strand}`;
+  }
+  return `${base}math9/materials`;
+}
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math 9 — {slug}</title>
+  <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+    .viewer-shell { display: flex; flex-direction: column; height: 100vh; }
+    .back-bar { background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 0.4rem 1.25rem; flex-shrink: 0; }
+    .back-bar a { font-family: system-ui, -apple-system, sans-serif; font-size: 0.8rem; color: #64748b; text-decoration: none; }
+    .back-bar a:hover { color: #0f172a; }
+    .doc-frame { flex: 1; border: none; width: 100%; display: block; }
+    @media print {
+      .viewer-nav, .back-bar { display: none !important; }
+      .doc-frame { height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="viewer-shell">
+    <div class="viewer-nav">
+      <Math9Nav />
+    </div>
+    <div class="back-bar">
+      <a href={backHref(slug)}>← Back</a>
+    </div>
+    <iframe src={fileUrl} class="doc-frame" title={slug} />
+  </div>
+</body>
+</html>

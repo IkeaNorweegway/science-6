@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Geometry — Guided Notes | Grade 9 Mathematics</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 11pt; line-height: 1.6; color: #1e293b;
+      background: #fff; max-width: 780px; margin: 0 auto; padding: 28px 32px 48px;
+    }
+    :root { --accent: #16a34a; --accent-light: #f0fdf4; --accent-mid: #22c55e; }
+    h1 { font-size: 22pt; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+    h2 { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 0 0 10px; border-bottom: 2px solid var(--accent-light); padding-bottom: 4px; }
+    h3 { font-size: 11pt; font-weight: 700; color: #334155; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+    h4 { font-size: 11pt; font-weight: 700; color: #334155; margin: 14px 0 4px; }
+    p { margin-bottom: 8px; }
+    ul, ol { margin: 6px 0 10px 20px; }
+    li { margin-bottom: 4px; }
+    strong { font-weight: 700; }
+    em { font-style: italic; color: #475569; }
+    .b { display: inline-block; border-bottom: 1.5px solid #334155; vertical-align: bottom; }
+    .b-sm { width: 60px; } .b-md { width: 110px; } .b-lg { width: 170px; } .b-xl { width: 240px; }
+    .al { display: block; border-bottom: 1px solid #94a3b8; height: 1.8rem; margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
+    th { background: var(--accent-light); color: #1e293b; font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid var(--accent-mid); }
+    td { padding: 8px 10px; border: 1px solid #e2e8f0; vertical-align: top; }
+    pre { font-family: 'Courier New', monospace; font-size: 10pt; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 10px 14px; margin: 10px 0; white-space: pre-wrap; }
+    code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1px 5px; }
+    .misconception { border-left: 4px solid #dc2626; background: #fef2f2; padding: 10px 14px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+    .misconception .label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #dc2626; margin-bottom: 4px; }
+    .connection { border-left: 4px solid #f97316; background: #fff7ed; padding: 10px 14px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+    .connection .label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #ea580c; margin-bottom: 4px; }
+    .worked-example { border-left: 4px solid var(--accent-mid); background: var(--accent-light); padding: 10px 14px; margin: 10px 0; border-radius: 0 6px 6px 0; font-size: 10.5pt; }
+    .retrieval { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+    .retrieval-header { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: #1d4ed8; margin-bottom: 10px; }
+    .retrieval ol { margin-left: 18px; }
+    .retrieval li { margin-bottom: 14px; }
+    .self-check { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 10.5pt; }
+    .self-check .label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #16a34a; margin-bottom: 6px; }
+    .learning-target { font-size: 10pt; font-style: italic; color: #475569; margin-bottom: 12px; padding: 6px 12px; border-left: 3px solid var(--accent-mid); background: var(--accent-light); }
+    .pre-knowledge { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .pre-knowledge .label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #64748b; margin-bottom: 10px; }
+    .synthesis { background: #fafafa; border: 2px solid var(--accent-light); border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .header-strip { border-left: 5px solid var(--accent); padding: 10px 16px; margin-bottom: 24px; background: var(--accent-light); border-radius: 0 8px 8px 0; }
+    .header-strip .course-label { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 4px; }
+    .name-row { display: flex; gap: 24px; margin: 16px 0 24px; font-size: 10.5pt; align-items: baseline; }
+    .name-row span { color: #64748b; white-space: nowrap; }
+    .name-row .b { flex: 1; }
+    .answer-key-header { background: #1e293b; color: #fff; padding: 8px 14px; border-radius: 6px; margin: 20px 0 16px; font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .answer { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 10px 14px; margin: 8px 0; font-size: 10.5pt; }
+    @media print {
+      body { padding: 16px 20px; font-size: 10.5pt; }
+      h1 { font-size: 18pt; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .section { break-before: page; }
+      .question, .retrieval, .misconception, .connection,
+      .self-check, .worked-example, .learning-target,
+      .name-row, table, figure { break-inside: avoid; }
+      h2, h3, h4 { break-after: avoid; }
+      p { orphans: 3; widows: 3; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-strip">
+    <div class="course-label">Grade 9 Mathematics · Alberta Curriculum · Measurement &amp; Geometry</div>
+    <h1>Circle Geometry</h1>
+    <p style="font-size:10pt;color:#475569;margin-top:4px;">Guided Notes Package</p>
+  </div>
+
+  <div class="name-row">
+    <span>Name:</span><span class="b" style="min-width:200px;"></span>
+    <span>Date started:</span><span class="b b-md"></span>
+  </div>
+
+  <div class="section">
+    <div class="pre-knowledge">
+      <div class="label">Pre-Knowledge Check</div>
+      <p><em>No marks. No correction. Be honest — write exactly what you think right now.</em></p>
+      <p>Label any parts of a circle that you already know on this diagram:</p>
+      <pre>        *   *
+     *         *
+    *             *
+   *               *
+   *       ·       *
+   *               *
+    *             *
+     *         *
+        *   *</pre>
+      <p>What do you think an "inscribed angle" is? Make your best guess.</p>
+      <span class="al"></span>
+      <p>What angle do you think is formed when a radius meets the edge of a circle?</p>
+      <span class="al"></span>
+      <p><em>You will come back to this page at the end of the unit. Do not erase your answers.</em></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section 1 — Circle Vocabulary</h2>
+    <div class="learning-target"><strong>Learning target:</strong> I can identify and name all major parts of a circle and use precise geometric language when describing circle relationships.</div>
+
+    <h3>Vocabulary</h3>
+    <table>
+      <thead><tr><th>Term</th><th>Definition in your own words</th><th>One example / drawing</th></tr></thead>
+      <tbody>
+        <tr><td>Centre</td><td></td><td></td></tr>
+        <tr><td>Radius</td><td></td><td></td></tr>
+        <tr><td>Diameter</td><td></td><td></td></tr>
+        <tr><td>Chord</td><td></td><td></td></tr>
+        <tr><td>Arc</td><td></td><td></td></tr>
+        <tr><td>Central angle</td><td></td><td></td></tr>
+        <tr><td>Inscribed angle</td><td></td><td></td></tr>
+        <tr><td>Tangent</td><td></td><td></td></tr>
+        <tr><td>Point of tangency</td><td></td><td></td></tr>
+        <tr><td>Semicircle</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Guided Notes</h3>
+    <p><strong>Label each part on the diagram below:</strong></p>
+    <pre>            P
+          *   *
+       *    ↑    *
+     *    arc    *
+    *             *
+Q──*──────·──────*──R   ← this line is a ___________
+    *      O      *
+     *           *
+       *       *
+         * T *
+          *
+          |
+          |    ← this line is a ___________</pre>
+    <p>Fill in the labels: P, Q, O, R, T, and the two unlabelled lines.</p>
+
+    <p><strong>Fill in the blanks:</strong></p>
+    <p>The <strong>centre</strong> of a circle is the point <span class="b b-lg"></span> from all points on the circle.</p>
+    <p>The <strong>radius</strong> (r) goes from the <span class="b b-lg"></span> to any point on the circle.</p>
+    <p>The <strong>diameter</strong> (d) is the <span class="b b-lg"></span> chord — it passes through the <span class="b b-lg"></span>.</p>
+    <p>d = <span class="b b-sm"></span> × r &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r = d / <span class="b b-sm"></span></p>
+    <p>A <strong>chord</strong> is a line segment with both endpoints on the <span class="b b-lg"></span>. <em>(The diameter is a special chord.)</em></p>
+    <p>An <strong>arc</strong> is <span class="b b-lg"></span> of the circle between two points.</p>
+
+    <div class="misconception">
+      <div class="label">Misconception</div>
+      <p><strong>A chord is the same as a diameter</strong></p>
+      <p>Wrong idea: "Any chord that goes through the circle is a diameter."</p>
+      <p>Why it fails: A diameter is a chord that passes specifically through the <em>centre</em>. Most chords do not pass through the centre and are shorter than the diameter. Every diameter is a chord, but not every chord is a diameter.</p>
+      <p>In the diagram above, QR passes through the centre O, so QR is a <span class="b b-lg"></span>. A chord that does not pass through O would be <span class="b b-lg"></span> the diameter.</p>
+    </div>
+
+    <p><strong>Central angle vs. inscribed angle:</strong></p>
+    <p>A <strong>central angle</strong> has its vertex at the <span class="b b-lg"></span> of the circle.</p>
+    <p>An <strong>inscribed angle</strong> has its vertex on the <span class="b b-lg"></span> of the circle, with both sides being chords.</p>
+    <p>Draw an example of each inside this circle:</p>
+    <pre>    Circle A (central angle)    Circle B (inscribed angle)
+       *   *                        *   *
+    *         *                  *         *
+   *     ·     *                *     ·     *
+   *           *                *           *
+    *         *                  *         *
+       *   *                        *   *</pre>
+    <p>The <strong>arc intercepted by an angle</strong> is the arc that lies <span class="b b-lg"></span> the angle.</p>
+
+    <p><strong>Tangent:</strong></p>
+    <p>A <strong>tangent</strong> is a line that touches the circle at exactly <span class="b b-md"></span> point (the point of tangency).</p>
+    <p>At the point of tangency, the tangent is <span class="b b-lg"></span> to the radius. (We will prove this in Section 4.)</p>
+    <p><strong>Is a tangent the same as a chord?</strong> <span class="b b-sm"></span> Explain: <span class="b b-xl"></span></p>
+
+    <p><strong>Naming arcs:</strong></p>
+    <p>A <strong>minor arc</strong> is the <span class="b b-lg"></span> arc between two points (less than a semicircle).</p>
+    <p>A <strong>major arc</strong> is the <span class="b b-lg"></span> arc (more than a semicircle).</p>
+    <p>A <strong>semicircle</strong> is exactly <span class="b b-lg"></span> of the circle — it is the arc cut by a <span class="b b-lg"></span>.</p>
+
+    <div class="retrieval">
+      <div class="retrieval-header">Retrieval Check — Close Your Notes</div>
+      <ol>
+        <li>What is the difference between a chord and a diameter?</li>
+        <li>What is the difference between a central angle and an inscribed angle?</li>
+        <li>In a circle with diameter 14 cm, what is the radius?</li>
+        <li>A tangent line touches a circle at one point. What property does it have relative to the radius at that point?</li>
+        <li><em>(Stretch)</em> Can two different chords in the same circle be equal in length? What would this tell you about their distances from the centre?</li>
+      </ol>
+    </div>
+
+    <div class="self-check">
+      <div class="label">Self-Check</div>
+      <p>☐ I could teach it &nbsp;&nbsp; ☐ Getting there &nbsp;&nbsp; ☐ Not yet</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section 2 — Chord Properties</h2>
+    <div class="learning-target"><strong>Learning target:</strong> I can apply the two chord properties — the perpendicular bisector property and the equal chords/equal distance property — to solve problems.</div>
+
+    <h3>Vocabulary</h3>
+    <table>
+      <thead><tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr></thead>
+      <tbody>
+        <tr><td>Perpendicular bisector</td><td></td><td></td></tr>
+        <tr><td>Bisect</td><td></td><td></td></tr>
+        <tr><td>Equidistant</td><td></td><td></td></tr>
+        <tr><td>Distance from centre to chord</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Guided Notes</h3>
+    <p><strong>Property 1: The Perpendicular from the Centre Bisects the Chord</strong></p>
+    <p>If a line from the <span class="b b-lg"></span> of a circle is perpendicular to a chord, then it <span class="b b-lg"></span> that chord (cuts it into two equal halves).</p>
+    <pre>            centre O
+               |
+               | (perpendicular)
+    ───────────┼───────────
+       half        half
+           chord AB</pre>
+    <p>In symbols: If OM ⊥ AB, then AM = <span class="b b-md"></span></p>
+    <p><strong>The converse is also true:</strong> If a line from the centre bisects a chord, then it is <span class="b b-lg"></span> to the chord.</p>
+
+    <div class="worked-example">
+      <p><strong>Worked Example 1:</strong></p>
+      <p>A chord AB is 16 cm long. The perpendicular from centre O meets AB at M. Find AM.</p>
+      <p>Since OM ⊥ AB and passes through the centre, it bisects AB.</p>
+      <p>AM = <span class="b b-sm"></span>/2 = <span class="b b-sm"></span> cm</p>
+      <p><strong>Now extend — use Pythagorean theorem:</strong></p>
+      <p>If the radius is 10 cm, find OM.</p>
+      <p>Right triangle OMA: OA = <span class="b b-sm"></span> (radius), AM = <span class="b b-sm"></span>, OM = ?</p>
+      <p>OA<sup>2</sup> = OM<sup>2</sup> + AM<sup>2</sup></p>
+      <p>10<sup>2</sup> = OM<sup>2</sup> + 8<sup>2</sup></p>
+      <p>OM<sup>2</sup> = <span class="b b-sm"></span> − <span class="b b-sm"></span> = <span class="b b-sm"></span></p>
+      <p>OM = <span class="b b-sm"></span> cm</p>
+    </div>
+
+    <p><strong>Explain:</strong> Which side is the hypotenuse in triangle OMA? How do you know?</p>
+    <span class="al"></span>
+
+    <p><strong>Property 2: Equal Chords Are Equidistant from the Centre</strong></p>
+    <p>In the same circle:</p>
+    <ul>
+      <li>If two chords are <span class="b b-lg"></span> in length, then they are <span class="b b-lg"></span> from the centre.</li>
+      <li>Conversely: if two chords are the same distance from the centre, they are <span class="b b-lg"></span>.</li>
+    </ul>
+    <pre>   O (centre)
+   |          |
+   |d          |d
+   |          |
+  chord AB   chord CD</pre>
+    <p>If AB = CD, then d₁ = <span class="b b-md"></span></p>
+
+    <div class="misconception">
+      <div class="label">Misconception</div>
+      <p><strong>A longer chord is farther from the centre</strong></p>
+      <p>Wrong idea: "The longest chord should be farthest from the centre — bigger chords must extend farther."</p>
+      <p>Why it fails: It's the opposite. The chord closest to the centre is the <em>longest</em>. The diameter — the longest chord of all — passes through the centre, at distance 0. As a chord moves farther from the centre, it gets shorter.</p>
+      <p>Think of it: as you move a horizontal chord up toward the top of a circle, it gets shorter and shorter until it disappears at the edge. The closer to the middle, the longer.</p>
+    </div>
+
+    <div class="worked-example">
+      <p><strong>Worked Example 2:</strong></p>
+      <p>Two chords PQ and RS are each 24 cm long in a circle with radius 13 cm.</p>
+      <p>Since PQ = RS, they are equidistant from the centre.</p>
+      <p>Let M be the midpoint of PQ. PM = <span class="b b-sm"></span>/2 = <span class="b b-sm"></span></p>
+      <p>Right triangle OMP: OP = 13 (radius), PM = 12, OM = ?</p>
+      <p>13<sup>2</sup> = OM<sup>2</sup> + 12<sup>2</sup></p>
+      <p>OM = <span class="b b-md"></span></p>
+      <p>Therefore both chords are <span class="b b-sm"></span> cm from the centre.</p>
+    </div>
+
+    <div class="retrieval">
+      <div class="retrieval-header">Retrieval Check — Close Your Notes</div>
+      <ol>
+        <li>State the perpendicular bisector chord property in your own words.</li>
+        <li>A chord is 18 cm long. The perpendicular from the centre has length 12 cm. Find the radius. (Draw a diagram first.)</li>
+        <li>Two chords in the same circle are both 10 cm long. What can you conclude about their distances from the centre?</li>
+        <li>In a circle with radius 5 cm, a chord is 3 cm from the centre. How long is the chord?</li>
+        <li><em>(Stretch)</em> A chord is 8 cm from the centre of a circle with radius 17 cm. Another chord in the same circle is 15 cm from the centre. Which chord is longer? By how much?</li>
+      </ol>
+    </div>
+
+    <div class="self-check">
+      <div class="label">Self-Check</div>
+      <p>☐ I could teach it &nbsp;&nbsp; ☐ Getting there &nbsp;&nbsp; ☐ Not yet</p>
+    </div>
+
+    <div class="connection">
+      <div class="label">Connection Prompt</div>
+      <p>The perpendicular bisector of a chord passes through the centre. You can use this to find the centre of any circle if you don't know where it is. How would you do that if given only the circle drawn on paper? Describe the steps.</p>
+      <span class="al"></span>
+      <span class="al"></span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section 3 — Central Angle and Inscribed Angle Theorem</h2>
+    <div class="learning-target"><strong>Learning target:</strong> I can apply the inscribed angle theorem to find unknown angles, and explain why inscribed angles subtending the same arc are equal.</div>
+
+    <h3>Vocabulary</h3>
+    <table>
+      <thead><tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr></thead>
+      <tbody>
+        <tr><td>Inscribed angle theorem</td><td></td><td></td></tr>
+        <tr><td>Subtend</td><td></td><td></td></tr>
+        <tr><td>Same arc</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Guided Notes</h3>
+    <p><strong>The Inscribed Angle Theorem:</strong></p>
+    <p>The inscribed angle is <span class="b b-lg"></span> the central angle that subtends the same arc.</p>
+    <p>Inscribed angle = (1/2) × Central angle<br>OR: Central angle = <span class="b b-sm"></span> × Inscribed angle</p>
+    <pre>         P
+        /|\
+       / | \
+      /  |  \
+     /   O   \
+    A────────B</pre>
+    <p>Angle AOB (central) = <span class="b b-sm"></span>°<br>Angle APB (inscribed, same arc AB) = <span class="b b-sm"></span>°</p>
+
+    <div class="worked-example">
+      <p><strong>Worked Example 1:</strong></p>
+      <p>A central angle AOB = 80°. Find the inscribed angle APB subtending the same arc.</p>
+      <p>Inscribed angle = Central angle / <span class="b b-sm"></span></p>
+      <p>APB = 80° / 2 = <span class="b b-sm"></span>°</p>
+    </div>
+
+    <div class="worked-example">
+      <p><strong>Worked Example 2:</strong></p>
+      <p>An inscribed angle APB = 35°. Find the central angle AOB subtending the same arc.</p>
+      <p>Central angle = 2 × Inscribed angle</p>
+      <p>AOB = 2 × 35° = <span class="b b-sm"></span>°</p>
+    </div>
+
+    <p><strong>Explain:</strong> An inscribed angle is at the circumference, while a central angle is at the centre. Why does being at the centre make it "see" the arc at twice the angle? (Think about how far each vertex is from the arc.)</p>
+    <span class="al"></span>
+    <span class="al"></span>
+
+    <p><strong>Corollary: Inscribed angles subtending the same arc are equal.</strong></p>
+    <p>If angles APB and AQB are both inscribed in the same circle and subtend the same arc AB, then:</p>
+    <p>APB = AQB = (1/2) × AOB</p>
+    <p>No matter where P and Q are on the major arc, the inscribed angle is always the <span class="b b-lg"></span> size.</p>
+    <pre>         P    Q
+          \  /
+     A────────B</pre>
+    <p>APB = AQB = <span class="b b-md"></span></p>
+
+    <div class="misconception">
+      <div class="label">Misconception</div>
+      <p><strong>All inscribed angles in a circle equal 90°</strong></p>
+      <p>Wrong idea: "Any angle drawn inside a circle is 90°."</p>
+      <p>Why it fails: Only inscribed angles that subtend a <em>diameter</em> (semicircle) equal 90°. That is a special case. An inscribed angle subtending an arc of 60° (central angle 60°) gives an inscribed angle of 30°. The angle depends on the arc.</p>
+      <p>The special case: when AB is a diameter, the central angle AOB = 180°. So the inscribed angle = 180°/2 = <span class="b b-sm"></span>°. This is why angles in a semicircle are 90°.</p>
+    </div>
+
+    <p><strong>Angles in a semicircle:</strong></p>
+    <p>If AB is a diameter, then any inscribed angle APB = <span class="b b-sm"></span>°.</p>
+    <p>This is because the central angle for a diameter is always <span class="b b-sm"></span> (a straight line), so the inscribed angle is half: <span class="b b-sm"></span>.</p>
+    <p><strong>Test this:</strong> In a circle, chord AB is a diameter. Point P is on the circle. What is angle APB? <span class="b b-md"></span></p>
+
+    <p><strong>Finding unknown angles:</strong></p>
+    <p>In a circle, central angle AOB = 110°. Find:</p>
+    <p>a) Inscribed angle APB (same arc) = <span class="b b-sm"></span>°</p>
+    <p>b) Inscribed angle AQB where AQB subtends the MAJOR arc AB.<br>
+    <em>(Hint: the major arc central angle = 360° − 110° = <span class="b b-sm"></span>°)</em><br>
+    AQB = <span class="b b-sm"></span>°/2 = <span class="b b-sm"></span>°</p>
+
+    <div class="retrieval">
+      <div class="retrieval-header">Retrieval Check — Close Your Notes</div>
+      <ol>
+        <li>State the inscribed angle theorem in your own words.</li>
+        <li>A central angle is 144°. What is the inscribed angle subtending the same arc?</li>
+        <li>An inscribed angle is 23°. What is the central angle subtending the same arc?</li>
+        <li>Why do all inscribed angles subtending the same arc equal each other?</li>
+        <li><em>(Stretch)</em> Two inscribed angles APB and CPD are in the same circle but subtend different arcs. Angle APB = 40° and arc AB has central angle 80°. Arc CD has central angle 130°. Find angle CPD.</li>
+      </ol>
+    </div>
+
+    <div class="self-check">
+      <div class="label">Self-Check</div>
+      <p>☐ I could teach it &nbsp;&nbsp; ☐ Getting there &nbsp;&nbsp; ☐ Not yet</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section 4 — Tangent-Radius Property</h2>
+    <div class="learning-target"><strong>Learning target:</strong> I can apply the tangent-radius perpendicularity property and use it with the Pythagorean theorem to solve problems.</div>
+
+    <h3>Vocabulary</h3>
+    <table>
+      <thead><tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr></thead>
+      <tbody>
+        <tr><td>Tangent</td><td></td><td></td></tr>
+        <tr><td>Point of tangency</td><td></td><td></td></tr>
+        <tr><td>Perpendicular</td><td></td><td></td></tr>
+        <tr><td>Tangent from external point</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Guided Notes</h3>
+    <p><strong>Tangent-Radius Property:</strong></p>
+    <p>A tangent to a circle is <span class="b b-lg"></span> to the radius at the point of tangency.</p>
+    <pre>              T (point of tangency)
+         ────┼──────────────── (tangent line)
+              |
+              | (radius)
+              |
+              O (centre)</pre>
+    <p>Angle OTP = <span class="b b-md"></span>°</p>
+    <p>This means: if you know a line is tangent to a circle, you automatically know the angle at the point of tangency is <span class="b b-lg"></span>.</p>
+
+    <p><strong>Applying the Pythagorean theorem:</strong></p>
+    <p>Since the radius and tangent are perpendicular, they form a <span class="b b-lg"></span> triangle with any line from the external point to the centre.</p>
+
+    <div class="worked-example">
+      <p><strong>Worked Example:</strong></p>
+      <p>A tangent PT touches a circle with centre O and radius 5 cm. The external point P is 13 cm from the centre. Find the length of the tangent PT.</p>
+      <pre>    P ─────────── T
+     \           |
+      \          |
+    13 \         | 5
+        \        |
+         O</pre>
+      <p>Right angle is at <span class="b b-sm"></span> (tangent ⊥ radius)</p>
+      <p>Hypotenuse = PO = <span class="b b-sm"></span></p>
+      <p>PT<sup>2</sup> = PO<sup>2</sup> − OT<sup>2</sup></p>
+      <p>PT<sup>2</sup> = 13<sup>2</sup> − 5<sup>2</sup></p>
+      <p>PT<sup>2</sup> = <span class="b b-sm"></span> − <span class="b b-sm"></span> = <span class="b b-sm"></span></p>
+      <p>PT = <span class="b b-sm"></span> cm</p>
+    </div>
+
+    <p><strong>Explain:</strong> Why is PO the hypotenuse and not PT or OT?</p>
+    <span class="al"></span>
+
+    <p><strong>Equal tangents from an external point:</strong></p>
+    <p>From any external point P, two tangents can be drawn to a circle. The two tangent segments (from P to each point of tangency) are <span class="b b-lg"></span> in length.</p>
+    <pre>         T₁
+        /
+       /
+      P
+       \
+        \
+         T₂</pre>
+    <p>PT₁ = <span class="b b-md"></span></p>
+
+    <p><strong>Alberta context:</strong><br>
+    A circular fountain in a Calgary park has radius 3 m. A path runs tangent to the fountain, and the nearest point on the path is 5 m from the fountain's centre. How long is the section of path from where it first touches the tangent line to where it last could touch?</p>
+    <p><em>(Hint: find the tangent length from the "nearest point" to the point of tangency, then consider symmetry.)</em></p>
+    <span class="al"></span>
+
+    <div class="retrieval">
+      <div class="retrieval-header">Retrieval Check — Close Your Notes</div>
+      <ol>
+        <li>State the tangent-radius property.</li>
+        <li>A tangent is drawn to a circle of radius 6 cm. The external point is 10 cm from the centre. Find the tangent length.</li>
+        <li>From an external point P, two tangents are drawn to a circle. One tangent segment is 8 cm. What is the length of the other?</li>
+        <li>Why does the tangent-radius property create a right triangle? How is this useful for problem solving?</li>
+        <li><em>(Stretch)</em> A circle has centre O and radius 7 cm. A tangent at point T meets an external line at P where OP = 25 cm. Find PT. Then find the angle OPT to the nearest degree (use trigonometry if you know it, or describe what you'd need to find it).</li>
+      </ol>
+    </div>
+
+    <div class="self-check">
+      <div class="label">Self-Check</div>
+      <p>☐ I could teach it &nbsp;&nbsp; ☐ Getting there &nbsp;&nbsp; ☐ Not yet</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="synthesis">
+      <h2>Unit Synthesis</h2>
+      <p><em>Fill this in from memory. Notes closed.</em></p>
+
+      <h4>Part A — Key ideas</h4>
+      <p>1. State the two chord properties from Section 2.</p>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <p>2. State the inscribed angle theorem. What is the special case when the chord is a diameter?</p>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <p>3. State the tangent-radius property. How does it allow you to use the Pythagorean theorem?</p>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <h4>Part B — Practise from memory</h4>
+      <p>In a circle with centre O and radius 10 cm:</p>
+      <ul>
+        <li>Chord AB = 16 cm</li>
+        <li>Inscribed angle APB = 38°</li>
+      </ul>
+      <p>Find:</p>
+      <p>a) The distance from O to chord AB.</p>
+      <p>b) The central angle AOB.</p>
+      <p>Show working:</p>
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+
+      <h4>Part C — Go back to your Pre-Knowledge Check</h4>
+      <p>Read what you wrote before this unit started.</p>
+      <p>1. How many circle parts did you label correctly? Which ones did you not know?</p>
+      <span class="al"></span>
+      <p>2. What is an inscribed angle? How does it compare to your guess?</p>
+      <span class="al"></span>
+      <span class="al"></span>
+    </div>
+  </div>
+
+  <p style="margin-top:24px;font-size:9pt;color:#94a3b8;text-align:center;"><em>End of Circle Geometry Notes Package.</em></p>
+
+</body>
+</html>
