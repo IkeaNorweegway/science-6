@@ -11,7 +11,7 @@
       font-size: 11pt; line-height: 1.6; color: #1e293b;
       background: #fff; max-width: 780px; margin: 0 auto; padding: 28px 32px 48px;
     }
-    :root { --accent: #16a34a; --accent-light: #f0fdf4; --accent-mid: #22c55e; }
+    :root { --accent: #1d4ed8; --accent-light: #eff6ff; --accent-mid: #3b82f6; }
     h1 { font-size: 22pt; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
     h2 { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 0 0 10px; border-bottom: 2px solid var(--accent-light); padding-bottom: 4px; }
     h3 { font-size: 11pt; font-weight: 700; color: #334155; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
@@ -62,6 +62,32 @@
       h2, h3, h4 { break-after: avoid; }
       p { orphans: 3; widows: 3; }
     }
+    /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
+    :root {
+      --dg-stroke:    #334155;
+      --dg-fill:      #f8fafc;
+      --dg-accent:    var(--accent, #1d4ed8);
+      --dg-secondary: #64748b;
+      --dg-muted:     #94a3b8;
+      --dg-sw:        1.5px;
+      --dg-sw-bold:   2.5px;
+      --dg-sw-thin:   1.0px;
+    }
+    svg .dg-boundary, svg .dg-line, svg .dg-accent,
+    svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
+      vector-effect: non-scaling-stroke;
+    }
+    svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
+    svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
+    svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
+    svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
+    svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
+    svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
+    svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
+    svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
+    svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
+    svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
+    svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -83,27 +109,43 @@
       <p><em>No marks. No correction. Be honest — write exactly what you think right now.</em></p>
       <p>Label any parts of a circle that you already know on this diagram:</p>
       <figure style="margin:12px 0;overflow-x:auto;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="260" height="260" role="img" aria-label="Labeled circle showing center O, radius, diameter, chord, arc and tangent">
-<circle cx="130" cy="130" r="78" stroke="#334155" stroke-width="1.5" fill="#f8fafc"/>
-<circle cx="130" cy="130" r="2.5" fill="#334155"/>
-<text x="134" y="125" font-family="system-ui" font-size="11" fill="#334155">O</text>
-<line x1="52" y1="130" x2="208" y2="130" stroke="#1d4ed8" stroke-width="1.5"/>
-<text x="130" y="121" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1d4ed8">diameter (d)</text>
-<line x1="130" y1="130" x2="185.2" y2="74.8" stroke="#334155" stroke-width="1.5"/>
-<text x="168" y="100" font-family="system-ui" font-size="10" fill="#334155">radius (r)</text>
-<line x1="74.8" y1="185.2" x2="185.2" y2="185.2" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,2"/>
-<text x="130" y="199" text-anchor="middle" font-family="system-ui" font-size="10" fill="#334155">chord</text>
-<path d="M 74.8,185.2 A 78,78 0 0,1 185.2,185.2" stroke="#334155" stroke-width="2.5" fill="none"/>
-<text x="130" y="224" text-anchor="middle" font-family="system-ui" font-size="10" fill="#334155">arc</text>
-<line x1="80.0" y1="208.0" x2="180.0" y2="208.0" stroke="#334155" stroke-width="1.5"/>
-<circle cx="130.0" cy="208.0" r="2.5" fill="#334155"/>
-<text x="140.0" y="222.0" font-family="system-ui" font-size="10" fill="#334155">tangent</text>
-<text x="40" y="134" font-family="system-ui" font-size="11" fill="#334155">Q</text>
-<text x="212" y="134" font-family="system-ui" font-size="11" fill="#334155">R</text>
-<text x="189.2" y="74.8" font-family="system-ui" font-size="11" fill="#334155">A</text>
-<text x="60.8" y="189.2" font-family="system-ui" font-size="11" fill="#334155">P</text>
-<text x="189.2" y="189.2" font-family="system-ui" font-size="11" fill="#334155">S</text>
-<text x="134.0" y="203.0" font-family="system-ui" font-size="11" fill="#334155">T</text>
+    <!-- tikz: circle-vocab | r=2.5 | points=O,T,Q,R,A,P,S | features=diameter,radius,chord,arc,tangent -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 350" width="360" height="350" role="img" aria-label="Circle diagram showing centre O, radius OA, diameter QR, chord PS, arc PS, and tangent at T">
+  <circle cx="175" cy="180" r="115" class="dg-boundary"/>
+  <!-- Tangent line at T — top of circle, horizontal -->
+  <line x1="80" y1="65" x2="270" y2="65" class="dg-line"/>
+  <!-- Right-angle mark: radius ⊥ tangent at T -->
+  <polyline points="183,65 183,73 175,73" class="dg-right-angle"/>
+  <!-- Diameter Q–R -->
+  <line x1="60" y1="180" x2="290" y2="180" class="dg-accent"/>
+  <!-- Radius O–A -->
+  <line x1="175" y1="180" x2="256" y2="99" class="dg-line"/>
+  <!-- Chord P–S (dashed) -->
+  <line x1="94" y1="261" x2="256" y2="261" class="dg-dashed"/>
+  <!-- Minor arc P→S through bottom of circle (sweep=0) -->
+  <path d="M 94 261 A 115 115 0 0 0 256 261" class="dg-accent"/>
+  <!-- Point markers -->
+  <circle cx="175" cy="180" r="2.5" class="dg-point"/>
+  <circle cx="175" cy="65"  r="2.5" class="dg-point"/>
+  <circle cx="60"  cy="180" r="2.5" class="dg-point"/>
+  <circle cx="290" cy="180" r="2.5" class="dg-point"/>
+  <circle cx="256" cy="99"  r="2.5" class="dg-point"/>
+  <circle cx="94"  cy="261" r="2.5" class="dg-point"/>
+  <circle cx="256" cy="261" r="2.5" class="dg-point"/>
+  <!-- Point labels -->
+  <text x="181" y="176" class="dg-label">O</text>
+  <text x="43"  y="184" class="dg-label">Q</text>
+  <text x="295" y="184" class="dg-label">R</text>
+  <text x="261" y="95"  class="dg-label">A</text>
+  <text x="76"  y="270" class="dg-label">P</text>
+  <text x="261" y="270" class="dg-label">S</text>
+  <text x="165" y="59"  class="dg-label">T</text>
+  <!-- Feature labels -->
+  <text x="175" y="170" text-anchor="middle" class="dg-label-accent">diameter (d)</text>
+  <text x="232" y="133" class="dg-label-sm">radius (r)</text>
+  <text x="175" y="274" text-anchor="middle" class="dg-label-sm">chord</text>
+  <text x="175" y="314" text-anchor="middle" class="dg-label-accent">arc</text>
+  <text x="275" y="63"  class="dg-label-sm">tangent</text>
 </svg>
     <figcaption style="font-size:9pt;color:#64748b;margin-top:4px;">Label any circle parts you already know</figcaption>
 </figure>
@@ -139,27 +181,43 @@
     <h3>Guided Notes</h3>
     <p><strong>Label each part on the diagram below:</strong></p>
     <figure style="margin:12px 0;overflow-x:auto;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="260" height="260" role="img" aria-label="Labeled circle showing center O, radius, diameter, chord, arc and tangent">
-<circle cx="130" cy="130" r="78" stroke="#334155" stroke-width="1.5" fill="#f8fafc"/>
-<circle cx="130" cy="130" r="2.5" fill="#334155"/>
-<text x="134" y="125" font-family="system-ui" font-size="11" fill="#334155">O</text>
-<line x1="52" y1="130" x2="208" y2="130" stroke="#1d4ed8" stroke-width="1.5"/>
-<text x="130" y="121" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1d4ed8">diameter (d)</text>
-<line x1="130" y1="130" x2="185.2" y2="74.8" stroke="#334155" stroke-width="1.5"/>
-<text x="168" y="100" font-family="system-ui" font-size="10" fill="#334155">radius (r)</text>
-<line x1="74.8" y1="185.2" x2="185.2" y2="185.2" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,2"/>
-<text x="130" y="199" text-anchor="middle" font-family="system-ui" font-size="10" fill="#334155">chord</text>
-<path d="M 74.8,185.2 A 78,78 0 0,1 185.2,185.2" stroke="#334155" stroke-width="2.5" fill="none"/>
-<text x="130" y="224" text-anchor="middle" font-family="system-ui" font-size="10" fill="#334155">arc</text>
-<line x1="80.0" y1="208.0" x2="180.0" y2="208.0" stroke="#334155" stroke-width="1.5"/>
-<circle cx="130.0" cy="208.0" r="2.5" fill="#334155"/>
-<text x="140.0" y="222.0" font-family="system-ui" font-size="10" fill="#334155">tangent</text>
-<text x="40" y="134" font-family="system-ui" font-size="11" fill="#334155">Q</text>
-<text x="212" y="134" font-family="system-ui" font-size="11" fill="#334155">R</text>
-<text x="189.2" y="74.8" font-family="system-ui" font-size="11" fill="#334155">A</text>
-<text x="60.8" y="189.2" font-family="system-ui" font-size="11" fill="#334155">P</text>
-<text x="189.2" y="189.2" font-family="system-ui" font-size="11" fill="#334155">S</text>
-<text x="134.0" y="203.0" font-family="system-ui" font-size="11" fill="#334155">T</text>
+    <!-- tikz: circle-vocab | r=2.5 | points=O,T,Q,R,A,P,S | features=diameter,radius,chord,arc,tangent -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 350" width="360" height="350" role="img" aria-label="Circle diagram showing centre O, radius OA, diameter QR, chord PS, arc PS, and tangent at T">
+  <circle cx="175" cy="180" r="115" class="dg-boundary"/>
+  <!-- Tangent line at T — top of circle, horizontal -->
+  <line x1="80" y1="65" x2="270" y2="65" class="dg-line"/>
+  <!-- Right-angle mark: radius ⊥ tangent at T -->
+  <polyline points="183,65 183,73 175,73" class="dg-right-angle"/>
+  <!-- Diameter Q–R -->
+  <line x1="60" y1="180" x2="290" y2="180" class="dg-accent"/>
+  <!-- Radius O–A -->
+  <line x1="175" y1="180" x2="256" y2="99" class="dg-line"/>
+  <!-- Chord P–S (dashed) -->
+  <line x1="94" y1="261" x2="256" y2="261" class="dg-dashed"/>
+  <!-- Minor arc P→S through bottom of circle (sweep=0) -->
+  <path d="M 94 261 A 115 115 0 0 0 256 261" class="dg-accent"/>
+  <!-- Point markers -->
+  <circle cx="175" cy="180" r="2.5" class="dg-point"/>
+  <circle cx="175" cy="65"  r="2.5" class="dg-point"/>
+  <circle cx="60"  cy="180" r="2.5" class="dg-point"/>
+  <circle cx="290" cy="180" r="2.5" class="dg-point"/>
+  <circle cx="256" cy="99"  r="2.5" class="dg-point"/>
+  <circle cx="94"  cy="261" r="2.5" class="dg-point"/>
+  <circle cx="256" cy="261" r="2.5" class="dg-point"/>
+  <!-- Point labels -->
+  <text x="181" y="176" class="dg-label">O</text>
+  <text x="43"  y="184" class="dg-label">Q</text>
+  <text x="295" y="184" class="dg-label">R</text>
+  <text x="261" y="95"  class="dg-label">A</text>
+  <text x="76"  y="270" class="dg-label">P</text>
+  <text x="261" y="270" class="dg-label">S</text>
+  <text x="165" y="59"  class="dg-label">T</text>
+  <!-- Feature labels -->
+  <text x="175" y="170" text-anchor="middle" class="dg-label-accent">diameter (d)</text>
+  <text x="232" y="133" class="dg-label-sm">radius (r)</text>
+  <text x="175" y="274" text-anchor="middle" class="dg-label-sm">chord</text>
+  <text x="175" y="314" text-anchor="middle" class="dg-label-accent">arc</text>
+  <text x="275" y="63"  class="dg-label-sm">tangent</text>
 </svg>
 </figure>
     <p>Fill in the labels: P, Q, O, R, T, and the two unlabelled lines.</p>
@@ -185,27 +243,28 @@
     <p>An <strong>inscribed angle</strong> has its vertex on the <span class="b b-lg"></span> of the circle, with both sides being chords.</p>
     <p>Draw an example of each inside this circle:</p>
     <figure style="margin:12px 0;overflow-x:auto;">
+    <!-- tikz: central-inscribed-angle | r=2.2 | A=210 | B=330 | P=90 -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 195" width="380" height="195" role="img" aria-label="Central angle versus inscribed angle">
-<circle cx="95" cy="95" r="68" stroke="#334155" stroke-width="1.5" fill="#f8fafc"/>
-<circle cx="95" cy="95" r="2.5" fill="#334155"/>
-<text x="99" y="91" font-family="system-ui" font-size="11" fill="#334155">O</text>
-<line x1="95" y1="95" x2="39.3" y2="56.0" stroke="#1d4ed8" stroke-width="1.5"/>
-<line x1="95" y1="95" x2="150.7" y2="56.0" stroke="#1d4ed8" stroke-width="1.5"/>
-<path d="M 39.3,56.0 A 68,68 0 0,1 150.7,56.0" stroke="#1d4ed8" stroke-width="2" fill="none"/>
-<text x="95" y="179" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1d4ed8">central angle</text>
-<text x="95" y="191" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="700" fill="#334155">Circle A</text>
-<text x="31.299999999999997" y="56.0" font-family="system-ui" font-size="11" fill="#334155">A</text>
-<text x="153.7" y="56.0" font-family="system-ui" font-size="11" fill="#334155">B</text>
-<circle cx="285" cy="95" r="68" stroke="#334155" stroke-width="1.5" fill="#f8fafc"/>
-<circle cx="287.4" cy="163.0" r="2.5" fill="#334155"/>
-<line x1="287.4" y1="163.0" x2="229.3" y2="56.0" stroke="#1d4ed8" stroke-width="1.5"/>
-<line x1="287.4" y1="163.0" x2="340.7" y2="56.0" stroke="#1d4ed8" stroke-width="1.5"/>
-<path d="M 229.3,56.0 A 68,68 0 0,1 340.7,56.0" stroke="#1d4ed8" stroke-width="2" fill="none"/>
-<text x="285" y="179" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1d4ed8">inscribed angle</text>
-<text x="285" y="191" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="700" fill="#334155">Circle B</text>
-<text x="221.3" y="56.0" font-family="system-ui" font-size="11" fill="#334155">A</text>
-<text x="343.7" y="56.0" font-family="system-ui" font-size="11" fill="#334155">B</text>
-<text x="287.4" y="177.0" text-anchor="middle" font-family="system-ui" font-size="11" fill="#334155">C</text>
+<circle cx="95" cy="95" r="68" class="dg-boundary"/>
+<circle cx="95" cy="95" r="2.5" class="dg-point"/>
+<text x="99" y="91" class="dg-label">O</text>
+<line x1="95" y1="95" x2="39.3" y2="56.0" class="dg-accent"/>
+<line x1="95" y1="95" x2="150.7" y2="56.0" class="dg-accent"/>
+<path d="M 39.3,56.0 A 68,68 0 0,1 150.7,56.0" class="dg-accent"/>
+<text x="95" y="179" text-anchor="middle" class="dg-label-accent">central angle</text>
+<text x="95" y="191" text-anchor="middle" font-weight="700" class="dg-label-sm">Circle A</text>
+<text x="31.299999999999997" y="56.0" class="dg-label">A</text>
+<text x="153.7" y="56.0" class="dg-label">B</text>
+<circle cx="285" cy="95" r="68" class="dg-boundary"/>
+<circle cx="287.4" cy="163.0" r="2.5" class="dg-point"/>
+<line x1="287.4" y1="163.0" x2="229.3" y2="56.0" class="dg-accent"/>
+<line x1="287.4" y1="163.0" x2="340.7" y2="56.0" class="dg-accent"/>
+<path d="M 229.3,56.0 A 68,68 0 0,1 340.7,56.0" class="dg-accent"/>
+<text x="285" y="179" text-anchor="middle" class="dg-label-accent">inscribed angle</text>
+<text x="285" y="191" text-anchor="middle" font-weight="700" class="dg-label-sm">Circle B</text>
+<text x="221.3" y="56.0" class="dg-label">A</text>
+<text x="343.7" y="56.0" class="dg-label">B</text>
+<text x="287.4" y="177.0" text-anchor="middle" class="dg-label">C</text>
 </svg>
 </figure>
     <p>The <strong>arc intercepted by an angle</strong> is the arc that lies <span class="b b-lg"></span> the angle.</p>
@@ -256,19 +315,20 @@
     <p><strong>Property 1: The Perpendicular from the Centre Bisects the Chord</strong></p>
     <p>If a line from the <span class="b b-lg"></span> of a circle is perpendicular to a chord, then it <span class="b b-lg"></span> that chord (cuts it into two equal halves).</p>
     <figure style="margin:12px 0;overflow-x:auto;">
+    <!-- tikz: chord-bisector | r=2.2 | chord-depth=1.0 -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 210" width="220" height="210" role="img" aria-label="Chord perpendicular bisector theorem">
-<circle cx="110" cy="105" r="80" stroke="#334155" stroke-width="1.5" fill="#f8fafc"/>
-<line x1="110" y1="105" x2="47.0" y2="154.3" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-<line x1="110" y1="105" x2="173.0" y2="154.3" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-<line x1="47.0" y1="154.3" x2="173.0" y2="154.3" stroke="#334155" stroke-width="2"/>
-<line x1="110" y1="105" x2="110.0" y2="154.3" stroke="#1d4ed8" stroke-width="1.5"/>
-<polyline points="103.0,154.3 103.0,161.3 110.0,161.3" stroke="#334155" stroke-width="1" fill="none"/>
-<circle cx="110" cy="105" r="2.5" fill="#334155"/>
-<circle cx="110.0" cy="154.3" r="2.5" fill="#334155"/>
-<text x="35.0" y="158.3" font-family="system-ui" font-size="11" fill="#334155">A</text>
-<text x="177.0" y="158.3" font-family="system-ui" font-size="11" fill="#334155">B</text>
-<text x="106.0" y="170.3" text-anchor="middle" font-family="system-ui" font-size="11" fill="#334155">M</text>
-<text x="115" y="100" font-family="system-ui" font-size="11" fill="#334155">O</text>
+<circle cx="110" cy="105" r="80" class="dg-boundary"/>
+<line x1="110" y1="105" x2="47.0" y2="154.3" class="dg-construction"/>
+<line x1="110" y1="105" x2="173.0" y2="154.3" class="dg-construction"/>
+<line x1="47.0" y1="154.3" x2="173.0" y2="154.3" class="dg-line"/>
+<line x1="110" y1="105" x2="110.0" y2="154.3" class="dg-accent"/>
+<polyline points="103.0,154.3 103.0,161.3 110.0,161.3" class="dg-right-angle"/>
+<circle cx="110" cy="105" r="2.5" class="dg-point"/>
+<circle cx="110.0" cy="154.3" r="2.5" class="dg-point"/>
+<text x="35.0" y="158.3" class="dg-label">A</text>
+<text x="177.0" y="158.3" class="dg-label">B</text>
+<text x="106.0" y="170.3" text-anchor="middle" class="dg-label">M</text>
+<text x="115" y="100" class="dg-label">O</text>
 </svg>
 </figure>
     <p>In symbols: If OM ⊥ AB, then AM = <span class="b b-md"></span></p>
@@ -456,20 +516,21 @@
     <p><strong>Tangent-Radius Property:</strong></p>
     <p>A tangent to a circle is <span class="b b-lg"></span> to the radius at the point of tangency.</p>
     <figure style="margin:12px 0;overflow-x:auto;">
+    <!-- tikz: tangent-radius | r=2.0 | points=O,T,P | show-hypotenuse=true -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 185" width="240" height="185" role="img" aria-label="Tangent-radius perpendicularity at point of tangency">
-<circle cx="115" cy="85" r="65" stroke="#334155" stroke-width="1.5" fill="#f8fafc"/>
-<line x1="115" y1="85" x2="115" y2="150" stroke="#1d4ed8" stroke-width="1.5"/>
-<line x1="50" y1="150" x2="205" y2="150" stroke="#334155" stroke-width="1.5"/>
-<polyline points="115,143 122,143 122,150" stroke="#334155" stroke-width="1" fill="none"/>
-<line x1="115" y1="85" x2="195" y2="150" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
-<circle cx="115" cy="85" r="2.5" fill="#334155"/>
-<circle cx="115" cy="150" r="2.5" fill="#334155"/>
-<circle cx="195" cy="150" r="2.5" fill="#334155"/>
-<text x="120" y="80" font-family="system-ui" font-size="11" fill="#334155">O</text>
-<text x="111" y="164" font-family="system-ui" font-size="11" fill="#334155">T</text>
-<text x="199" y="154" font-family="system-ui" font-size="11" fill="#334155">P</text>
-<text x="121" y="118" font-family="system-ui" font-size="10" fill="#1d4ed8">r</text>
-<text x="155" y="142" text-anchor="middle" font-family="system-ui" font-size="10" fill="#334155">PT</text>
+<circle cx="115" cy="85" r="65" class="dg-boundary"/>
+<line x1="115" y1="85" x2="115" y2="150" class="dg-accent"/>
+<line x1="50" y1="150" x2="205" y2="150" class="dg-line"/>
+<polyline points="115,143 122,143 122,150" class="dg-right-angle"/>
+<line x1="115" y1="85" x2="195" y2="150" class="dg-construction"/>
+<circle cx="115" cy="85" r="2.5" class="dg-point"/>
+<circle cx="115" cy="150" r="2.5" class="dg-point"/>
+<circle cx="195" cy="150" r="2.5" class="dg-point"/>
+<text x="120" y="80" class="dg-label">O</text>
+<text x="111" y="164" class="dg-label">T</text>
+<text x="199" y="154" class="dg-label">P</text>
+<text x="121" y="118" class="dg-label-accent">r</text>
+<text x="155" y="142" text-anchor="middle" class="dg-label-sm">PT</text>
 </svg>
 </figure>
     <p>Angle OTP = <span class="b b-md"></span>°</p>
@@ -482,20 +543,21 @@
       <p><strong>Worked Example:</strong></p>
       <p>A tangent PT touches a circle with centre O and radius 5 cm. The external point P is 13 cm from the centre. Find the length of the tangent PT.</p>
       <figure style="margin:12px 0;overflow-x:auto;">
+    <!-- tikz: tangent-radius | r=2.0 | points=O,T,P | show-hypotenuse=true -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 185" width="240" height="185" role="img" aria-label="Tangent-radius perpendicularity at point of tangency">
-<circle cx="115" cy="85" r="65" stroke="#334155" stroke-width="1.5" fill="#f8fafc"/>
-<line x1="115" y1="85" x2="115" y2="150" stroke="#1d4ed8" stroke-width="1.5"/>
-<line x1="50" y1="150" x2="205" y2="150" stroke="#334155" stroke-width="1.5"/>
-<polyline points="115,143 122,143 122,150" stroke="#334155" stroke-width="1" fill="none"/>
-<line x1="115" y1="85" x2="195" y2="150" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
-<circle cx="115" cy="85" r="2.5" fill="#334155"/>
-<circle cx="115" cy="150" r="2.5" fill="#334155"/>
-<circle cx="195" cy="150" r="2.5" fill="#334155"/>
-<text x="120" y="80" font-family="system-ui" font-size="11" fill="#334155">O</text>
-<text x="111" y="164" font-family="system-ui" font-size="11" fill="#334155">T</text>
-<text x="199" y="154" font-family="system-ui" font-size="11" fill="#334155">P</text>
-<text x="121" y="118" font-family="system-ui" font-size="10" fill="#1d4ed8">r</text>
-<text x="155" y="142" text-anchor="middle" font-family="system-ui" font-size="10" fill="#334155">PT</text>
+<circle cx="115" cy="85" r="65" class="dg-boundary"/>
+<line x1="115" y1="85" x2="115" y2="150" class="dg-accent"/>
+<line x1="50" y1="150" x2="205" y2="150" class="dg-line"/>
+<polyline points="115,143 122,143 122,150" class="dg-right-angle"/>
+<line x1="115" y1="85" x2="195" y2="150" class="dg-construction"/>
+<circle cx="115" cy="85" r="2.5" class="dg-point"/>
+<circle cx="115" cy="150" r="2.5" class="dg-point"/>
+<circle cx="195" cy="150" r="2.5" class="dg-point"/>
+<text x="120" y="80" class="dg-label">O</text>
+<text x="111" y="164" class="dg-label">T</text>
+<text x="199" y="154" class="dg-label">P</text>
+<text x="121" y="118" class="dg-label-accent">r</text>
+<text x="155" y="142" text-anchor="middle" class="dg-label-sm">PT</text>
 </svg>
 </figure>
       <p>Right angle is at <span class="b b-sm"></span> (tangent ⊥ radius)</p>
