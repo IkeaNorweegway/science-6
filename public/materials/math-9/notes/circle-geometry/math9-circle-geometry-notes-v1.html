@@ -649,42 +649,38 @@
     <figure style="margin:10px 0;overflow-x:auto;">
     <!-- tikz: equal-tangents | r=2.0 | points=O,T1,T2,P | show-right-angles=true -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" width="260" height="200" role="img" aria-label="Two equal tangent segments PT1 and PT2 drawn from external point P to circle with centre O.">
-        <!-- Circle centred at (90, 100) r=55 -->
+        <!-- Circle centred at (90,100) r=55. External point P at (220,100).
+             OP = 130. Tangent length = sqrt(130²−55²) ≈ 117.8.
+             Angle at O = arctan(117.8/55) ≈ 65°.
+             T1 (below): (90+55·cos65°, 100+55·sin65°) = (113.2, 149.8)
+             T2 (above): (90+55·cos65°, 100−55·sin65°) = (113.2, 50.2) -->
         <circle cx="90" cy="100" r="55" class="dg-boundary"/>
         <circle cx="90" cy="100" r="2.5" class="dg-point"/>
-        <text x="94" y="97" class="dg-label">O</text>
-        <!-- External point P at (220, 100) -->
+        <text x="72" y="104" class="dg-label">O</text>
+        <!-- External point P -->
         <circle cx="220" cy="100" r="2.5" class="dg-point"/>
         <text x="225" y="104" class="dg-label">P</text>
-        <!-- T1 at approx top of circle tangent from P -->
-        <!-- For circle (90,100) r=55 and external (220,100):
-             distance OP = 130, tangent length = sqrt(130²-55²) = sqrt(16900-3025) = sqrt(13875) ≈ 117.8
-             angle α = arcsin(55/130) ≈ 25.0°
-             T1 above: (90+55*cos(180°-25°), 100-55*sin(25°)) — use angle from centre toward P
-             Direction O→P is 0° (east). T1 angle from O: 180°-25° = 155° from east
-             T1 = (90+55*cos(155°), 100+55*sin(155°)) = (90-49.8, 100+23.2) = (40.2, 123.2)
-             T2 = (90+55*cos(205°), 100+55*sin(205°)) = (90-49.8, 100-23.2) = (40.2, 76.8) -->
-        <!-- Tangent lines P to T1 and P to T2 -->
-        <line x1="220" y1="100" x2="40.2" y2="123.2" class="dg-accent"/>
-        <line x1="220" y1="100" x2="40.2" y2="76.8" class="dg-accent"/>
+        <!-- Tangent lines: P to T1 (below) and P to T2 (above) -->
+        <line x1="220" y1="100" x2="113.2" y2="149.8" class="dg-accent"/>
+        <line x1="220" y1="100" x2="113.2" y2="50.2" class="dg-accent"/>
         <!-- Radii O to T1 and O to T2 -->
-        <line x1="90" y1="100" x2="40.2" y2="123.2" class="dg-line"/>
-        <line x1="90" y1="100" x2="40.2" y2="76.8" class="dg-line"/>
-        <!-- Right angle marks at T1 and T2 -->
-        <!-- T1 tangent dir ≈ from P(220,100) to T1(40.2,123.2): dx=-179.8 dy=23.2 → unit: (-0.992,0.128)
-             radius dir from T1 to O: (90-40.2,100-123.2) = (49.8,-23.2) → unit: (0.906,-0.422)
-             small box: 7px -->
-        <polyline points="46.5,119.8 43.6,125.7 37.7,122.9" class="dg-right-angle"/>
-        <polyline points="46.5,80.2 43.6,74.3 37.7,77.1" class="dg-right-angle"/>
-        <!-- Points T1, T2 -->
-        <circle cx="40.2" cy="123.2" r="2.5" class="dg-point"/>
-        <circle cx="40.2" cy="76.8" r="2.5" class="dg-point"/>
+        <line x1="90" y1="100" x2="113.2" y2="149.8" class="dg-line"/>
+        <line x1="90" y1="100" x2="113.2" y2="50.2" class="dg-line"/>
+        <!-- Right angle marks at T1(113.2,149.8):
+             unit toward P = (0.907,−0.423), unit toward O = (−0.422,−0.906) -->
+        <polyline points="110.3,143.5 116.6,140.5 119.5,146.8" class="dg-right-angle"/>
+        <!-- Right angle mark at T2(113.2,50.2):
+             unit toward P = (0.907,0.423), unit toward O = (−0.422,0.906) -->
+        <polyline points="110.3,56.5 116.6,59.5 119.5,53.2" class="dg-right-angle"/>
+        <!-- Tangent point dots -->
+        <circle cx="113.2" cy="149.8" r="2.5" class="dg-point"/>
+        <circle cx="113.2" cy="50.2" r="2.5" class="dg-point"/>
         <!-- Labels -->
-        <text x="28" y="130" class="dg-label">T&#8321;</text>
-        <text x="28" y="74" class="dg-label">T&#8322;</text>
-        <!-- Equal length marks -->
-        <text x="145" y="108" text-anchor="middle" class="dg-label-accent">PT&#8321;</text>
-        <text x="145" y="88" text-anchor="middle" class="dg-label-accent">PT&#8322;</text>
+        <text x="118" y="158" class="dg-label">T&#8321;</text>
+        <text x="118" y="46" class="dg-label">T&#8322;</text>
+        <!-- Midpoint labels on tangent segments -->
+        <text x="170" y="133" text-anchor="middle" class="dg-label-accent">PT&#8321;</text>
+        <text x="170" y="66" text-anchor="middle" class="dg-label-accent">PT&#8322;</text>
       </svg>
     </figure>
     <p>PT₁ = <span class="b b-md"></span></p>
