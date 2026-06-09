@@ -352,7 +352,22 @@
 </div>
 
 <h4>Worked example — reading a force diagram</h4>
-<pre>        20 N →   [BOX]   ← 8 N</pre>
+<!-- SVG: unbalanced force diagram — 20 N pushing right from left, 8 N pushing left from right, central box -->
+<svg viewBox="0 0 340 80" width="340" height="80" role="img" aria-label="Force diagram: 20 N arrow pointing right toward box from left; 8 N arrow pointing left toward box from right">
+  <!-- 20 N arrow: shaft left-to-box, arrowhead pointing right -->
+  <line x1="18" y1="40" x2="116" y2="40" class="dg-accent"/>
+  <polygon points="118,40 108,35 108,45" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <!-- 20 N label -->
+  <text x="10" y="32" class="dg-label-accent" text-anchor="start">20 N</text>
+  <!-- BOX -->
+  <rect x="120" y="26" width="100" height="28" rx="3" class="dg-boundary"/>
+  <text x="170" y="44" class="dg-label" text-anchor="middle" font-weight="600">BOX</text>
+  <!-- 8 N arrow: shaft right-to-box, arrowhead pointing left -->
+  <line x1="322" y1="40" x2="224" y2="40" class="dg-line"/>
+  <polygon points="222,40 232,35 232,45" class="dg-line" style="fill:var(--dg-stroke); stroke:none;"/>
+  <!-- 8 N label -->
+  <text x="330" y="32" class="dg-label" text-anchor="end">8 N</text>
+</svg>
 <p>Two forces act on the box. The 20 N force pushes <span class="b b-sm">&nbsp;</span> and the 8 N force pushes <span class="b b-sm">&nbsp;</span>. Since the forces are in opposite directions, the overall (net) effect is a push of <span class="b b-sm">&nbsp;</span> N to the right.</p>
 
 <div class="retrieval">
@@ -445,11 +460,31 @@
 <p><strong>Key relationship:</strong> External forces acting on an object cause forces to develop <span class="b b-md">&nbsp;</span> the material — called internal forces. (We'll explore this in Section 3.)</p>
 
 <h4>Force diagram — three forces on a box</h4>
-<pre>          ↑ Normal force (floor pushing up)
-          |
-Friction ←  [BOX]  → Applied force
-          |
-          ↓ Gravity (weight pulling down)</pre>
+<!-- SVG: four-direction force diagram — Normal up, Gravity down, Friction left, Applied force right -->
+<svg viewBox="0 0 340 200" width="340" height="200" role="img" aria-label="Force diagram showing four forces on a box: Normal force upward, Gravity downward, Friction to the left, Applied force to the right">
+  <!-- BOX at centre -->
+  <rect x="130" y="80" width="80" height="40" rx="3" class="dg-boundary"/>
+  <text x="170" y="105" class="dg-label" text-anchor="middle" font-weight="600">BOX</text>
+  <!-- Normal force — upward arrow from top of box -->
+  <line x1="170" y1="78" x2="170" y2="22" class="dg-accent"/>
+  <polygon points="170,18 164,30 176,30" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <text x="178" y="20" class="dg-label-accent" text-anchor="start">Normal force</text>
+  <text x="178" y="33" class="dg-label-sm" text-anchor="start">(floor pushing up)</text>
+  <!-- Gravity — downward arrow from bottom of box -->
+  <line x1="170" y1="122" x2="170" y2="178" class="dg-line"/>
+  <polygon points="170,182 164,170 176,170" class="dg-line" style="fill:var(--dg-stroke); stroke:none;"/>
+  <text x="178" y="162" class="dg-label" text-anchor="start">Gravity</text>
+  <text x="178" y="175" class="dg-label-sm" text-anchor="start">(weight pulling down)</text>
+  <!-- Friction — leftward arrow from left of box -->
+  <line x1="128" y1="100" x2="58" y2="100" class="dg-line"/>
+  <polygon points="54,100 66,94 66,106" class="dg-line" style="fill:var(--dg-stroke); stroke:none;"/>
+  <text x="48" y="96" class="dg-label" text-anchor="end">Friction</text>
+  <!-- Applied force — rightward arrow from right of box -->
+  <line x1="212" y1="100" x2="278" y2="100" class="dg-accent"/>
+  <polygon points="282,100 270,94 270,106" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <text x="288" y="96" class="dg-label-accent" text-anchor="start">Applied</text>
+  <text x="288" y="109" class="dg-label-sm" text-anchor="start">force</text>
+</svg>
 
 <div class="connection">
   <div class="label">Connection prompt</div>
@@ -523,20 +558,57 @@ Friction ←  [BOX]  → Applied force
 
 <h4>Tension — a <span class="b b-sm">&nbsp;</span> or <span class="b b-sm">&nbsp;</span> internal force</h4>
 <p>The particles are being pulled <span class="b b-sm">&nbsp;</span>.</p>
-<pre>  ←—————[   MATERIAL   ]—————→
-  Pull                       Pull</pre>
+<!-- SVG: tension diagram — arrows pulling outward from both ends of material block -->
+<svg viewBox="0 0 340 70" width="340" height="70" role="img" aria-label="Tension diagram: two arrows pulling outward from both ends of a material block labeled MATERIAL">
+  <!-- Left pull arrow: pointing left, away from material -->
+  <line x1="118" y1="35" x2="28" y2="35" class="dg-accent"/>
+  <polygon points="24,35 36,29 36,41" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <text x="18" y="58" class="dg-label-sm" text-anchor="middle">Pull</text>
+  <!-- Material block -->
+  <rect x="120" y="18" width="100" height="34" rx="3" class="dg-boundary"/>
+  <text x="170" y="39" class="dg-label" text-anchor="middle" font-weight="600">MATERIAL</text>
+  <!-- Right pull arrow: pointing right, away from material -->
+  <line x1="222" y1="35" x2="312" y2="35" class="dg-accent"/>
+  <polygon points="316,35 304,29 304,41" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <text x="322" y="58" class="dg-label-sm" text-anchor="middle">Pull</text>
+</svg>
 <p><em>Examples: a rope in a tug of war; a suspension bridge cable; a rubber band being stretched</em></p>
 
 <h4>Compression — a <span class="b b-sm">&nbsp;</span> or <span class="b b-sm">&nbsp;</span> internal force</h4>
 <p>The particles are being pushed <span class="b b-sm">&nbsp;</span>.</p>
-<pre>  →—————[   MATERIAL   ]←—————
-  Push                       Push</pre>
+<!-- SVG: compression diagram — arrows pushing inward toward both ends of material block -->
+<svg viewBox="0 0 340 70" width="340" height="70" role="img" aria-label="Compression diagram: two arrows pushing inward toward both ends of a material block labeled MATERIAL">
+  <!-- Left push arrow: pointing right, toward material -->
+  <line x1="28" y1="35" x2="118" y2="35" class="dg-line"/>
+  <polygon points="120,35 108,29 108,41" class="dg-line" style="fill:var(--dg-stroke); stroke:none;"/>
+  <text x="18" y="58" class="dg-label-sm" text-anchor="middle">Push</text>
+  <!-- Material block -->
+  <rect x="120" y="18" width="100" height="34" rx="3" class="dg-boundary"/>
+  <text x="170" y="39" class="dg-label" text-anchor="middle" font-weight="600">MATERIAL</text>
+  <!-- Right push arrow: pointing left, toward material -->
+  <line x1="312" y1="35" x2="222" y2="35" class="dg-line"/>
+  <polygon points="220,35 232,29 232,41" class="dg-line" style="fill:var(--dg-stroke); stroke:none;"/>
+  <text x="322" y="58" class="dg-label-sm" text-anchor="middle">Push</text>
+</svg>
 <p><em>Examples: the legs of a chair when you sit; a spring being squeezed; a concrete pillar holding up a floor</em></p>
 
 <h4>Shear — a <span class="b b-sm">&nbsp;</span> internal force</h4>
 <p>Layers of particles slide past each other in <span class="b b-md">&nbsp;</span> directions.</p>
-<pre>  ———→  [TOP LAYER      ]
-        [BOTTOM LAYER   ]  ←———</pre>
+<!-- SVG: shear diagram — top layer pushed right, bottom layer pushed left -->
+<svg viewBox="0 0 340 96" width="340" height="96" role="img" aria-label="Shear diagram: top layer with arrow pointing right; bottom layer with arrow pointing left">
+  <!-- Top layer arrow — pointing right, to left of top block -->
+  <line x1="18" y1="30" x2="90" y2="30" class="dg-accent"/>
+  <polygon points="94,30 82,24 82,36" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <!-- Top layer block -->
+  <rect x="96" y="14" width="150" height="32" rx="3" class="dg-boundary"/>
+  <text x="171" y="34" class="dg-label" text-anchor="middle" font-weight="600">TOP LAYER</text>
+  <!-- Bottom layer block -->
+  <rect x="96" y="50" width="150" height="32" rx="3" class="dg-boundary"/>
+  <text x="171" y="70" class="dg-label" text-anchor="middle" font-weight="600">BOTTOM LAYER</text>
+  <!-- Bottom layer arrow — pointing left, to right of bottom block -->
+  <line x1="322" y1="66" x2="250" y2="66" class="dg-line"/>
+  <polygon points="246,66 258,60 258,72" class="dg-line" style="fill:var(--dg-stroke); stroke:none;"/>
+</svg>
 <p><em>Examples: scissors cutting paper; a geological fault line shifting; slicing cheese</em></p>
 
 <h4>Torsion — a <span class="b b-sm">&nbsp;</span> internal force</h4>
@@ -629,15 +701,67 @@ Friction ←  [BOX]  → Applied force
 <p>A paper clip bent slightly → springs back (below elastic limit).<br>A paper clip bent sharply → stays bent (<span class="b b-md">&nbsp;</span> the elastic limit).</p>
 
 <h4>Before / during / after — elastic vs. plastic</h4>
-<pre>ELASTIC:
-Before force:  [— — — —]
-During force:  [— — — — — —]   ← stretched
-After force:   [— — — —]       ← returns to original
+<!-- SVG: elastic vs plastic deformation comparison — two columns, three rows -->
+<svg viewBox="0 0 500 240" width="500" height="240" role="img" aria-label="Comparison of elastic and plastic deformation. Elastic: before force the material is short; during force it stretches longer; after force it returns to original length. Plastic: before force the material is short; during force it stretches longer; after force it stays at the longer length — permanent change.">
+  <!-- Column headings -->
+  <text x="120" y="18" class="dg-label-accent" text-anchor="middle" font-weight="700">ELASTIC</text>
+  <text x="380" y="18" class="dg-label-accent" text-anchor="middle" font-weight="700">PLASTIC</text>
+  <!-- Dividing vertical line -->
+  <line x1="250" y1="24" x2="250" y2="236" class="dg-dashed"/>
 
-PLASTIC:
-Before force:  [— — — —]
-During force:  [— — — — — —]   ← stretched
-After force:   [— — — — —]     ← stays longer: permanent change</pre>
+  <!-- Row labels -->
+  <text x="4" y="65" class="dg-label-sm" text-anchor="start">Before</text>
+  <text x="4" y="78" class="dg-label-sm" text-anchor="start">force:</text>
+  <text x="4" y="133" class="dg-label-sm" text-anchor="start">During</text>
+  <text x="4" y="146" class="dg-label-sm" text-anchor="start">force:</text>
+  <text x="4" y="201" class="dg-label-sm" text-anchor="start">After</text>
+  <text x="4" y="214" class="dg-label-sm" text-anchor="start">force:</text>
+
+  <!-- ── ELASTIC column (left, x centre ≈ 120) ── -->
+
+  <!-- Before: short bar -->
+  <rect x="74" y="50" width="92" height="26" rx="3" class="dg-boundary"/>
+  <line x1="90" y1="63" x2="150" y2="63" class="dg-dashed"/>
+
+  <!-- During: longer bar with outward arrows -->
+  <rect x="52" y="118" width="136" height="26" rx="3" class="dg-boundary"/>
+  <line x1="68" y1="131" x2="172" y2="131" class="dg-dashed"/>
+  <!-- left stretch arrow -->
+  <line x1="50" y1="131" x2="30" y2="131" class="dg-accent"/>
+  <polygon points="26,131 38,125 38,137" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <!-- right stretch arrow -->
+  <line x1="190" y1="131" x2="210" y2="131" class="dg-accent"/>
+  <polygon points="214,131 202,125 202,137" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <text x="120" y="155" class="dg-label-sm" text-anchor="middle">stretched</text>
+
+  <!-- After: same width as before (returns) -->
+  <rect x="74" y="186" width="92" height="26" rx="3" class="dg-boundary"/>
+  <line x1="90" y1="199" x2="150" y2="199" class="dg-dashed"/>
+  <text x="120" y="224" class="dg-label-sm" text-anchor="middle">returns to original</text>
+
+  <!-- ── PLASTIC column (right, x centre ≈ 380) ── -->
+
+  <!-- Before: short bar -->
+  <rect x="334" y="50" width="92" height="26" rx="3" class="dg-boundary"/>
+  <line x1="350" y1="63" x2="410" y2="63" class="dg-dashed"/>
+
+  <!-- During: longer bar with outward arrows -->
+  <rect x="312" y="118" width="136" height="26" rx="3" class="dg-boundary"/>
+  <line x1="328" y1="131" x2="432" y2="131" class="dg-dashed"/>
+  <!-- left stretch arrow -->
+  <line x1="310" y1="131" x2="290" y2="131" class="dg-accent"/>
+  <polygon points="286,131 298,125 298,137" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <!-- right stretch arrow -->
+  <line x1="450" y1="131" x2="470" y2="131" class="dg-accent"/>
+  <polygon points="474,131 462,125 462,137" class="dg-accent" style="fill:var(--dg-accent); stroke:none;"/>
+  <text x="380" y="155" class="dg-label-sm" text-anchor="middle">stretched</text>
+
+  <!-- After: medium bar (stays longer than before, shorter than during) -->
+  <rect x="322" y="186" width="116" height="26" rx="3" class="dg-boundary"/>
+  <line x1="338" y1="199" x2="422" y2="199" class="dg-dashed"/>
+  <text x="380" y="218" class="dg-label-sm" text-anchor="middle">stays longer:</text>
+  <text x="380" y="230" class="dg-label-sm" text-anchor="middle">permanent change</text>
+</svg>
 
 <h4>Why this matters in engineering</h4>
 <ul>

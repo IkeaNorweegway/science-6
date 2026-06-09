@@ -424,11 +424,32 @@
 
     <p><strong>Indirect measurement — shadow method:</strong></p>
     <p>Similar triangles let you measure tall objects by comparing shadows.</p>
-    <pre>    Object (height h)    Measuring stick (height 1.5 m)
-         |                         |
-         |                         |
-    ─────────────────────────────────
-         shadow (s₁)              shadow (s₂)</pre>
+    <!-- tikz: shadow-method | two-objects | ground-line | viewBox=420x130 -->
+    <figure style="margin:12px 0;overflow-x:auto;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 130" width="420" height="130" role="img" aria-label="Shadow method diagram: tall object and measuring stick casting shadows on the ground">
+  <!-- ground line -->
+  <line class="dg-line" x1="20" y1="100" x2="400" y2="100"/>
+  <!-- object (left) vertical -->
+  <line class="dg-accent" x1="80" y1="100" x2="80" y2="20"/>
+  <!-- measuring stick (right) vertical -->
+  <line class="dg-accent" x1="300" y1="100" x2="300" y2="55"/>
+  <!-- sun rays (dashed) from upper-left to tips then to shadow ends -->
+  <line class="dg-dashed" x1="80" y1="20" x2="160" y2="100"/>
+  <line class="dg-dashed" x1="300" y1="55" x2="340" y2="100"/>
+  <!-- shadow brackets on ground -->
+  <line class="dg-line" x1="80" y1="108" x2="160" y2="108"/>
+  <line class="dg-line" x1="80" y1="104" x2="80" y2="112"/>
+  <line class="dg-line" x1="160" y1="104" x2="160" y2="112"/>
+  <line class="dg-line" x1="300" y1="108" x2="340" y2="108"/>
+  <line class="dg-line" x1="300" y1="104" x2="300" y2="112"/>
+  <line class="dg-line" x1="340" y1="104" x2="340" y2="112"/>
+  <!-- labels -->
+  <text class="dg-label" x="80" y="16" text-anchor="middle">Object (height&#160;h)</text>
+  <text class="dg-label" x="300" y="51" text-anchor="middle">Stick (1.5&#160;m)</text>
+  <text class="dg-label-sm" x="120" y="127" text-anchor="middle">shadow&#160;(s&#8321;)</text>
+  <text class="dg-label-sm" x="320" y="127" text-anchor="middle">shadow&#160;(s&#8322;)</text>
+</svg>
+    </figure>
     <p>At the same time of day, the sun angle is the same → both triangles are similar (AA).</p>
     <p>h/s₁ = 1.5/s₂</p>
 
@@ -446,13 +467,43 @@
 
     <p><strong>Mirror method:</strong></p>
     <p>A mirror placed flat on the ground reflects an object's top to an observer's eye. Both triangles (object-to-mirror, observer-to-mirror) are similar because of equal angles of incidence and reflection.</p>
-    <pre>Object (tall)              Observer (eyes at h)
-    |                             |
-    |                    eye ─────|
-    |                             |
-─────────────────────────────────────── (ground)
-    ←── d₁ ──→      ←── d₂ ──→
-               mirror</pre>
+    <!-- tikz: mirror-method | object-observer-mirror | viewBox=420x150 -->
+    <figure style="margin:12px 0;overflow-x:auto;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 150" width="420" height="150" role="img" aria-label="Mirror method diagram: tall object on the left, observer on the right, mirror on the ground between them">
+  <!-- ground line -->
+  <line class="dg-line" x1="20" y1="105" x2="400" y2="105"/>
+  <!-- tall object (left) -->
+  <line class="dg-accent" x1="60" y1="105" x2="60" y2="20"/>
+  <!-- observer (right) -->
+  <line class="dg-accent" x1="330" y1="105" x2="330" y2="60"/>
+  <!-- eye dot on observer -->
+  <circle class="dg-point" cx="330" cy="60" r="3"/>
+  <!-- eye line (horizontal dashed to mirror) -->
+  <line class="dg-dashed" x1="60" y1="20" x2="215" y2="105"/>
+  <line class="dg-dashed" x1="330" y1="60" x2="215" y2="105"/>
+  <!-- mirror marker on ground -->
+  <rect class="dg-boundary" x="208" y="100" width="14" height="10" rx="1"/>
+  <!-- d1 bracket -->
+  <line class="dg-line" x1="60" y1="116" x2="215" y2="116"/>
+  <line class="dg-line" x1="60" y1="111" x2="60" y2="121"/>
+  <line class="dg-line" x1="215" y1="111" x2="215" y2="121"/>
+  <!-- d2 bracket -->
+  <line class="dg-line" x1="215" y1="116" x2="330" y2="116"/>
+  <line class="dg-line" x1="330" y1="111" x2="330" y2="121"/>
+  <!-- arrowheads for d1 -->
+  <polygon class="dg-line" points="65,113 60,116 65,119" style="fill:var(--dg-stroke);stroke:none;"/>
+  <polygon class="dg-line" points="210,113 215,116 210,119" style="fill:var(--dg-stroke);stroke:none;"/>
+  <!-- arrowheads for d2 -->
+  <polygon class="dg-line" points="220,113 215,116 220,119" style="fill:var(--dg-stroke);stroke:none;"/>
+  <polygon class="dg-line" points="325,113 330,116 325,119" style="fill:var(--dg-stroke);stroke:none;"/>
+  <!-- labels -->
+  <text class="dg-label" x="60" y="15" text-anchor="middle">Object (tall)</text>
+  <text class="dg-label" x="330" y="55" text-anchor="middle">Observer (eye height&#160;h)</text>
+  <text class="dg-label-accent" x="137" y="133" text-anchor="middle">d&#8321;</text>
+  <text class="dg-label-accent" x="272" y="133" text-anchor="middle">d&#8322;</text>
+  <text class="dg-label-sm" x="215" y="148" text-anchor="middle">mirror</text>
+</svg>
+    </figure>
     <p>h_object / d₁ = h_observer / d₂</p>
 
     <div class="worked-example">

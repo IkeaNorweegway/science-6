@@ -170,11 +170,26 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     </div>
 
     <p><strong>Structure of a radical expression:</strong></p>
-    <pre>    ________
-   √  36
-   ↑   ↑
-radical  radicand
-symbol</pre>
+    <!-- tikz: radical-structure | labels=radical-symbol,radicand | viewBox=240x90 -->
+    <figure style="margin:12px 0;overflow-x:auto;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 105" width="240" height="105" role="img" aria-label="Structure of a radical expression showing the radical symbol and radicand of square root of 36">
+  <!-- radical symbol: tick stroke then horizontal bar over radicand -->
+  <polyline class="dg-accent" points="30,55 40,65 55,20 155,20"/>
+  <!-- radicand "36" text -->
+  <text x="100" y="52" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b" stroke="none" font-family="system-ui,sans-serif">36</text>
+  <!-- pointer line to radical symbol base -->
+  <line class="dg-line" x1="40" y1="80" x2="40" y2="70"/>
+  <polygon style="fill:var(--dg-stroke);stroke:none;" points="37,70 40,65 43,70"/>
+  <!-- pointer line to radicand -->
+  <line class="dg-line" x1="105" y1="80" x2="105" y2="60"/>
+  <polygon style="fill:var(--dg-stroke);stroke:none;" points="102,60 105,55 108,60"/>
+  <!-- labels row 1 -->
+  <text class="dg-label-accent" x="10" y="92" text-anchor="start">radical</text>
+  <text class="dg-label-accent" x="80" y="92" text-anchor="start">radicand</text>
+  <!-- labels row 2 -->
+  <text class="dg-label-sm" x="10" y="104" text-anchor="start">symbol</text>
+</svg>
+    </figure>
 
     <p>The radicand of √36 is <span class="b b-sm"></span>. The principal square root of 36 is <span class="b b-sm"></span>.</p>
 

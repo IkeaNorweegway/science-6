@@ -133,7 +133,7 @@
   <circle cx="94"  cy="261" r="2.5" class="dg-point"/>
   <circle cx="256" cy="261" r="2.5" class="dg-point"/>
   <!-- Point labels -->
-  <text x="181" y="176" class="dg-label">O</text>
+  <text x="187" y="185" class="dg-label">O</text>
   <text x="43"  y="184" class="dg-label">Q</text>
   <text x="295" y="184" class="dg-label">R</text>
   <text x="261" y="95"  class="dg-label">A</text>
@@ -205,7 +205,7 @@
   <circle cx="94"  cy="261" r="2.5" class="dg-point"/>
   <circle cx="256" cy="261" r="2.5" class="dg-point"/>
   <!-- Point labels -->
-  <text x="181" y="176" class="dg-label">O</text>
+  <text x="187" y="185" class="dg-label">O</text>
   <text x="43"  y="184" class="dg-label">Q</text>
   <text x="295" y="184" class="dg-label">R</text>
   <text x="261" y="95"  class="dg-label">A</text>
@@ -264,7 +264,7 @@
 <text x="285" y="191" text-anchor="middle" font-weight="700" class="dg-label-sm">Circle B</text>
 <text x="221.3" y="56.0" class="dg-label">A</text>
 <text x="343.7" y="56.0" class="dg-label">B</text>
-<text x="287.4" y="177.0" text-anchor="middle" class="dg-label">C</text>
+<text x="296" y="162" class="dg-label">C</text>
 </svg>
 </figure>
     <p>The <strong>arc intercepted by an angle</strong> is the arc that lies <span class="b b-lg"></span> the angle.</p>
@@ -444,12 +444,40 @@
     <p><strong>The Inscribed Angle Theorem:</strong></p>
     <p>The inscribed angle is <span class="b b-lg"></span> the central angle that subtends the same arc.</p>
     <p>Inscribed angle = (1/2) × Central angle<br>OR: Central angle = <span class="b b-sm"></span> × Inscribed angle</p>
-    <pre>         P
-        /|\
-       / | \
-      /  |  \
-     /   O   \
-    A────────B</pre>
+    <figure style="margin:10px 0;overflow-x:auto;">
+    <!-- tikz: inscribed-central-angle | r=2.5 | points=P,O,A,B | chord=AB | inscribed=P | central=O -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 210" width="240" height="210" role="img" aria-label="Inscribed angle APB with vertex P on the circle, and central angle AOB at centre O, both subtending arc AB.">
+        <!-- Circle -->
+        <circle cx="120" cy="115" r="80" class="dg-boundary"/>
+        <!-- Points: A at left on circle, B at right on circle, P at top, O at centre -->
+        <!-- A at 210°: (120 + 80*cos(210°), 115 + 80*sin(210°)) = (120-69.3, 115+40) = (50.7, 155) -->
+        <!-- B at 330°: (120 + 80*cos(330°), 115 + 80*sin(330°)) = (120+69.3, 115-40) = (189.3, 75) -->
+        <!-- Wait — let's place A bottom-left and B bottom-right so arc AB is at bottom -->
+        <!-- A at 220°: (120+80*cos(220°), 115+80*sin(220°)) = (120-61.3, 115+51.4) = (58.7, 166.4) -->
+        <!-- B at 320°: (120+80*cos(320°), 115+80*sin(320°)) = (120+61.3, 115+51.4) = (181.3, 166.4) -->
+        <!-- P at 90° (top): (120, 115-80) = (120, 35) -->
+        <!-- Inscribed angle: P to A and P to B -->
+        <line x1="120" y1="35" x2="58.7" y2="166.4" class="dg-accent"/>
+        <line x1="120" y1="35" x2="181.3" y2="166.4" class="dg-accent"/>
+        <!-- Central angle: O to A and O to B -->
+        <line x1="120" y1="115" x2="58.7" y2="166.4" class="dg-line"/>
+        <line x1="120" y1="115" x2="181.3" y2="166.4" class="dg-line"/>
+        <!-- Arc AB (minor arc at bottom, sweep-flag=0) -->
+        <path d="M 58.7 166.4 A 80 80 0 0 1 181.3 166.4" class="dg-dashed"/>
+        <!-- Points -->
+        <circle cx="120" cy="35" r="2.5" class="dg-point"/>
+        <circle cx="120" cy="115" r="2.5" class="dg-point"/>
+        <circle cx="58.7" cy="166.4" r="2.5" class="dg-point"/>
+        <circle cx="181.3" cy="166.4" r="2.5" class="dg-point"/>
+        <!-- Labels -->
+        <text x="113" y="28" class="dg-label">P</text>
+        <text x="125" y="112" class="dg-label">O</text>
+        <text x="42" y="172" class="dg-label">A</text>
+        <text x="185" y="172" class="dg-label">B</text>
+        <!-- Angle labels -->
+        <text x="120" y="200" text-anchor="middle" class="dg-label-sm">central angle AOB = 2 &#215; inscribed angle APB</text>
+      </svg>
+    </figure>
     <p>Angle AOB (central) = <span class="b b-sm"></span>°<br>Angle APB (inscribed, same arc AB) = <span class="b b-sm"></span>°</p>
 
     <div class="worked-example">
@@ -474,9 +502,35 @@
     <p>If angles APB and AQB are both inscribed in the same circle and subtend the same arc AB, then:</p>
     <p>APB = AQB = (1/2) × AOB</p>
     <p>No matter where P and Q are on the major arc, the inscribed angle is always the <span class="b b-lg"></span> size.</p>
-    <pre>         P    Q
-          \  /
-     A────────B</pre>
+    <figure style="margin:10px 0;overflow-x:auto;">
+    <!-- tikz: equal-inscribed-angles | r=2.5 | points=P,Q,A,B | chord=AB | inscribed=P,Q -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 210" width="240" height="210" role="img" aria-label="Two inscribed angles APB and AQB both subtending arc AB from points P and Q on the major arc. Both angles are equal.">
+        <!-- Circle -->
+        <circle cx="120" cy="115" r="80" class="dg-boundary"/>
+        <!-- A at 220°, B at 320° (same as above) -->
+        <!-- P at 100°: (120+80*cos(100°), 115+80*sin(100°)) = (120-13.9, 115-78.8) = (106.1, 36.2) -->
+        <!-- Q at 70°: (120+80*cos(70°), 115+80*sin(70°)) = (120+27.4, 115-75.2) = (147.4, 39.8) -->
+        <!-- Inscribed angle from P -->
+        <line x1="106.1" y1="36.2" x2="58.7" y2="166.4" class="dg-accent"/>
+        <line x1="106.1" y1="36.2" x2="181.3" y2="166.4" class="dg-accent"/>
+        <!-- Inscribed angle from Q -->
+        <line x1="147.4" y1="39.8" x2="58.7" y2="166.4" class="dg-line"/>
+        <line x1="147.4" y1="39.8" x2="181.3" y2="166.4" class="dg-line"/>
+        <!-- Arc AB (minor arc at bottom) -->
+        <path d="M 58.7 166.4 A 80 80 0 0 1 181.3 166.4" class="dg-dashed"/>
+        <!-- Points -->
+        <circle cx="106.1" cy="36.2" r="2.5" class="dg-point"/>
+        <circle cx="147.4" cy="39.8" r="2.5" class="dg-point"/>
+        <circle cx="58.7" cy="166.4" r="2.5" class="dg-point"/>
+        <circle cx="181.3" cy="166.4" r="2.5" class="dg-point"/>
+        <!-- Labels -->
+        <text x="98" y="30" class="dg-label">P</text>
+        <text x="151" y="34" class="dg-label">Q</text>
+        <text x="42" y="172" class="dg-label">A</text>
+        <text x="185" y="172" class="dg-label">B</text>
+        <text x="120" y="200" text-anchor="middle" class="dg-label-sm">&#8220;APB = &#8220;AQB (same arc AB)</text>
+      </svg>
+    </figure>
     <p>APB = AQB = <span class="b b-md"></span></p>
 
     <div class="misconception">
@@ -592,13 +646,47 @@
 
     <p><strong>Equal tangents from an external point:</strong></p>
     <p>From any external point P, two tangents can be drawn to a circle. The two tangent segments (from P to each point of tangency) are <span class="b b-lg"></span> in length.</p>
-    <pre>         T₁
-        /
-       /
-      P
-       \
-        \
-         T₂</pre>
+    <figure style="margin:10px 0;overflow-x:auto;">
+    <!-- tikz: equal-tangents | r=2.0 | points=O,T1,T2,P | show-right-angles=true -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" width="260" height="200" role="img" aria-label="Two equal tangent segments PT1 and PT2 drawn from external point P to circle with centre O.">
+        <!-- Circle centred at (90, 100) r=55 -->
+        <circle cx="90" cy="100" r="55" class="dg-boundary"/>
+        <circle cx="90" cy="100" r="2.5" class="dg-point"/>
+        <text x="94" y="97" class="dg-label">O</text>
+        <!-- External point P at (220, 100) -->
+        <circle cx="220" cy="100" r="2.5" class="dg-point"/>
+        <text x="225" y="104" class="dg-label">P</text>
+        <!-- T1 at approx top of circle tangent from P -->
+        <!-- For circle (90,100) r=55 and external (220,100):
+             distance OP = 130, tangent length = sqrt(130²-55²) = sqrt(16900-3025) = sqrt(13875) ≈ 117.8
+             angle α = arcsin(55/130) ≈ 25.0°
+             T1 above: (90+55*cos(180°-25°), 100-55*sin(25°)) — use angle from centre toward P
+             Direction O→P is 0° (east). T1 angle from O: 180°-25° = 155° from east
+             T1 = (90+55*cos(155°), 100+55*sin(155°)) = (90-49.8, 100+23.2) = (40.2, 123.2)
+             T2 = (90+55*cos(205°), 100+55*sin(205°)) = (90-49.8, 100-23.2) = (40.2, 76.8) -->
+        <!-- Tangent lines P to T1 and P to T2 -->
+        <line x1="220" y1="100" x2="40.2" y2="123.2" class="dg-accent"/>
+        <line x1="220" y1="100" x2="40.2" y2="76.8" class="dg-accent"/>
+        <!-- Radii O to T1 and O to T2 -->
+        <line x1="90" y1="100" x2="40.2" y2="123.2" class="dg-line"/>
+        <line x1="90" y1="100" x2="40.2" y2="76.8" class="dg-line"/>
+        <!-- Right angle marks at T1 and T2 -->
+        <!-- T1 tangent dir ≈ from P(220,100) to T1(40.2,123.2): dx=-179.8 dy=23.2 → unit: (-0.992,0.128)
+             radius dir from T1 to O: (90-40.2,100-123.2) = (49.8,-23.2) → unit: (0.906,-0.422)
+             small box: 7px -->
+        <polyline points="46.5,119.8 43.6,125.7 37.7,122.9" class="dg-right-angle"/>
+        <polyline points="46.5,80.2 43.6,74.3 37.7,77.1" class="dg-right-angle"/>
+        <!-- Points T1, T2 -->
+        <circle cx="40.2" cy="123.2" r="2.5" class="dg-point"/>
+        <circle cx="40.2" cy="76.8" r="2.5" class="dg-point"/>
+        <!-- Labels -->
+        <text x="28" y="130" class="dg-label">T&#8321;</text>
+        <text x="28" y="74" class="dg-label">T&#8322;</text>
+        <!-- Equal length marks -->
+        <text x="145" y="108" text-anchor="middle" class="dg-label-accent">PT&#8321;</text>
+        <text x="145" y="88" text-anchor="middle" class="dg-label-accent">PT&#8322;</text>
+      </svg>
+    </figure>
     <p>PT₁ = <span class="b b-md"></span></p>
 
     <p><strong>Alberta context:</strong><br>

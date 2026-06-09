@@ -384,24 +384,92 @@
 <p>When matter gets <span class="b b-md">&nbsp;</span> (temperature decreases), particles move slower and pull closer together.</p>
 
 <h4>Particle diagrams — what particles look like at different temperatures</h4>
-<pre>COLD (low temperature)            HOT (high temperature)
-
-  o   o  o                          o       o
-    o   o                       o       o
-  o  o    o                         o      o
-    o  o                        o       o
-  o   o  o                          o      o
-
-Particles: slow, closer together    Particles: fast, further apart</pre>
+<svg viewBox="0 0 420 160" width="420" height="160" role="img" aria-label="Cold vs hot particle arrangement: cold particles are slow and close together; hot particles are fast and spread apart">
+  <!-- COLD side background -->
+  <rect x="5" y="5" width="195" height="150" class="dg-boundary" rx="4"/>
+  <!-- HOT side background -->
+  <rect x="220" y="5" width="195" height="150" class="dg-boundary" rx="4"/>
+  <!-- COLD label -->
+  <text x="102" y="25" class="dg-label" text-anchor="middle" font-weight="700">COLD</text>
+  <text x="102" y="40" class="dg-label-sm" text-anchor="middle">(low temperature)</text>
+  <!-- COLD particles — close, regular -->
+  <circle cx="55"  cy="65"  r="5" class="dg-point"/>
+  <circle cx="80"  cy="60"  r="5" class="dg-point"/>
+  <circle cx="105" cy="65"  r="5" class="dg-point"/>
+  <circle cx="130" cy="60"  r="5" class="dg-point"/>
+  <circle cx="155" cy="65"  r="5" class="dg-point"/>
+  <circle cx="60"  cy="88"  r="5" class="dg-point"/>
+  <circle cx="88"  cy="83"  r="5" class="dg-point"/>
+  <circle cx="115" cy="88"  r="5" class="dg-point"/>
+  <circle cx="143" cy="83"  r="5" class="dg-point"/>
+  <circle cx="55"  cy="110" r="5" class="dg-point"/>
+  <circle cx="80"  cy="106" r="5" class="dg-point"/>
+  <circle cx="108" cy="110" r="5" class="dg-point"/>
+  <circle cx="133" cy="106" r="5" class="dg-point"/>
+  <circle cx="158" cy="110" r="5" class="dg-point"/>
+  <!-- COLD caption -->
+  <text x="102" y="138" class="dg-label-sm" text-anchor="middle">slow · closer together</text>
+  <!-- HOT label -->
+  <text x="317" y="25" class="dg-label" text-anchor="middle" font-weight="700" style="fill:var(--unit)">HOT</text>
+  <text x="317" y="40" class="dg-label-sm" text-anchor="middle">(high temperature)</text>
+  <!-- HOT particles — spread, random -->
+  <circle cx="248" cy="62"  r="5" class="dg-point"/>
+  <circle cx="285" cy="56"  r="5" class="dg-point"/>
+  <circle cx="330" cy="65"  r="5" class="dg-point"/>
+  <circle cx="378" cy="58"  r="5" class="dg-point"/>
+  <circle cx="260" cy="92"  r="5" class="dg-point"/>
+  <circle cx="310" cy="86"  r="5" class="dg-point"/>
+  <circle cx="358" cy="93"  r="5" class="dg-point"/>
+  <circle cx="242" cy="118" r="5" class="dg-point"/>
+  <circle cx="290" cy="114" r="5" class="dg-point"/>
+  <circle cx="340" cy="120" r="5" class="dg-point"/>
+  <circle cx="388" cy="112" r="5" class="dg-point"/>
+  <!-- HOT caption -->
+  <text x="317" y="138" class="dg-label-sm" text-anchor="middle" style="fill:var(--unit)">fast · further apart</text>
+</svg>
 
 <p>Label the boxes below: write "hot" or "cold" and "faster" or "slower" under each.</p>
-<pre>Diagram A:                          Diagram B:
-o o o                                o          o
- o o o                                    o
-o o o o                              o        o
-
-Temperature: ___________            Temperature: ___________
-Particles moving: _________         Particles moving: _________</pre>
+<svg viewBox="0 0 420 150" width="420" height="150" role="img" aria-label="Two blank student fill-in diagrams: Diagram A shows closely packed particles (cold, slower); Diagram B shows spread-out particles (hot, faster). Students label each.">
+  <!-- Diagram A box -->
+  <rect x="5" y="5" width="195" height="140" class="dg-boundary" rx="4"/>
+  <text x="10" y="22" class="dg-label" font-weight="700">Diagram A:</text>
+  <!-- Diagram A particles — closely packed (cold) -->
+  <circle cx="55"  cy="52" r="5" class="dg-point"/>
+  <circle cx="78"  cy="48" r="5" class="dg-point"/>
+  <circle cx="101" cy="52" r="5" class="dg-point"/>
+  <circle cx="124" cy="48" r="5" class="dg-point"/>
+  <circle cx="63"  cy="72" r="5" class="dg-point"/>
+  <circle cx="88"  cy="68" r="5" class="dg-point"/>
+  <circle cx="113" cy="72" r="5" class="dg-point"/>
+  <circle cx="138" cy="68" r="5" class="dg-point"/>
+  <circle cx="55"  cy="92" r="5" class="dg-point"/>
+  <circle cx="80"  cy="88" r="5" class="dg-point"/>
+  <circle cx="105" cy="92" r="5" class="dg-point"/>
+  <circle cx="130" cy="88" r="5" class="dg-point"/>
+  <!-- Diagram A blanks -->
+  <text x="10" y="116" class="dg-label-sm">Temperature:</text>
+  <line x1="95" y1="114" x2="190" y2="114" class="dg-line"/>
+  <text x="10" y="135" class="dg-label-sm">Particles moving:</text>
+  <line x1="105" y1="133" x2="190" y2="133" class="dg-line"/>
+  <!-- Diagram B box -->
+  <rect x="220" y="5" width="195" height="140" class="dg-boundary" rx="4"/>
+  <text x="225" y="22" class="dg-label" font-weight="700">Diagram B:</text>
+  <!-- Diagram B particles — spread out (hot) -->
+  <circle cx="245" cy="50" r="5" class="dg-point"/>
+  <circle cx="295" cy="44" r="5" class="dg-point"/>
+  <circle cx="355" cy="52" r="5" class="dg-point"/>
+  <circle cx="270" cy="78" r="5" class="dg-point"/>
+  <circle cx="325" cy="72" r="5" class="dg-point"/>
+  <circle cx="400" cy="66" r="5" class="dg-point"/>
+  <circle cx="240" cy="100" r="5" class="dg-point"/>
+  <circle cx="300" cy="96" r="5" class="dg-point"/>
+  <circle cx="368" cy="98" r="5" class="dg-point"/>
+  <!-- Diagram B blanks -->
+  <text x="225" y="116" class="dg-label-sm">Temperature:</text>
+  <line x1="310" y1="114" x2="408" y2="114" class="dg-line"/>
+  <text x="225" y="135" class="dg-label-sm">Particles moving:</text>
+  <line x1="320" y1="133" x2="408" y2="133" class="dg-line"/>
+</svg>
 
 <div class="misconception">
   <div class="m-label">Misconception</div>
@@ -488,11 +556,27 @@ Particles moving: _________         Particles moving: _________</pre>
   <li>The shape is <span class="b b-md">&nbsp;</span> — solids hold their shape without a container</li>
   <li>The volume is <span class="b b-md">&nbsp;</span></li>
 </ul>
-<pre>SOLID particle arrangement:
-| o | o | o |
-| o | o | o |
-| o | o | o |
-(regular, tightly packed, particles vibrate in place)</pre>
+<svg viewBox="0 0 240 160" width="240" height="160" role="img" aria-label="Solid particle arrangement: particles in a regular tight grid, vibrating in place">
+  <rect x="5" y="5" width="230" height="150" class="dg-boundary" rx="4"/>
+  <text x="120" y="26" class="dg-label" text-anchor="middle" font-weight="700">SOLID</text>
+  <!-- 4×4 tight regular grid -->
+  <circle cx="55"  cy="52" r="5" class="dg-point"/>
+  <circle cx="88"  cy="52" r="5" class="dg-point"/>
+  <circle cx="121" cy="52" r="5" class="dg-point"/>
+  <circle cx="154" cy="52" r="5" class="dg-point"/>
+  <circle cx="188" cy="52" r="5" class="dg-point"/>
+  <circle cx="55"  cy="78" r="5" class="dg-point"/>
+  <circle cx="88"  cy="78" r="5" class="dg-point"/>
+  <circle cx="121" cy="78" r="5" class="dg-point"/>
+  <circle cx="154" cy="78" r="5" class="dg-point"/>
+  <circle cx="188" cy="78" r="5" class="dg-point"/>
+  <circle cx="55"  cy="104" r="5" class="dg-point"/>
+  <circle cx="88"  cy="104" r="5" class="dg-point"/>
+  <circle cx="121" cy="104" r="5" class="dg-point"/>
+  <circle cx="154" cy="104" r="5" class="dg-point"/>
+  <circle cx="188" cy="104" r="5" class="dg-point"/>
+  <text x="120" y="138" class="dg-label-sm" text-anchor="middle">regular · tightly packed · vibrate in place</text>
+</svg>
 
 <h4>Liquid</h4>
 <ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
@@ -501,12 +585,29 @@ Particles moving: _________         Particles moving: _________</pre>
   <li>The shape is <span class="b b-md">&nbsp;</span> — liquids take the shape of their container</li>
   <li>The volume is <span class="b b-md">&nbsp;</span> (a liquid doesn't compress easily)</li>
 </ul>
-<pre>LIQUID particle arrangement:
-    o  o
-  o    o  o
-    o o
-  o  o   o
-(close together, but randomly arranged — particles flow past each other)</pre>
+<svg viewBox="0 0 240 160" width="240" height="160" role="img" aria-label="Liquid particle arrangement: particles close together but randomly arranged, flowing past each other">
+  <rect x="5" y="5" width="230" height="150" class="dg-boundary" rx="4"/>
+  <text x="120" y="26" class="dg-label" text-anchor="middle" font-weight="700">LIQUID</text>
+  <!-- Irregular close-packed arrangement -->
+  <circle cx="58"  cy="50" r="5" class="dg-point"/>
+  <circle cx="86"  cy="46" r="5" class="dg-point"/>
+  <circle cx="114" cy="53" r="5" class="dg-point"/>
+  <circle cx="144" cy="47" r="5" class="dg-point"/>
+  <circle cx="175" cy="54" r="5" class="dg-point"/>
+  <circle cx="44"  cy="74" r="5" class="dg-point"/>
+  <circle cx="72"  cy="70" r="5" class="dg-point"/>
+  <circle cx="100" cy="76" r="5" class="dg-point"/>
+  <circle cx="130" cy="71" r="5" class="dg-point"/>
+  <circle cx="162" cy="77" r="5" class="dg-point"/>
+  <circle cx="192" cy="72" r="5" class="dg-point"/>
+  <circle cx="56"  cy="97" r="5" class="dg-point"/>
+  <circle cx="88"  cy="94" r="5" class="dg-point"/>
+  <circle cx="118" cy="99" r="5" class="dg-point"/>
+  <circle cx="152" cy="95" r="5" class="dg-point"/>
+  <circle cx="180" cy="100" r="5" class="dg-point"/>
+  <text x="120" y="130" class="dg-label-sm" text-anchor="middle">close together · randomly arranged</text>
+  <text x="120" y="146" class="dg-label-sm" text-anchor="middle">particles flow past each other</text>
+</svg>
 
 <h4>Gas</h4>
 <ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
@@ -515,12 +616,21 @@ Particles moving: _________         Particles moving: _________</pre>
   <li>The shape is <span class="b b-md">&nbsp;</span> — gases fill their container completely</li>
   <li>The volume is <span class="b b-md">&nbsp;</span> — gases can be compressed</li>
 </ul>
-<pre>GAS particle arrangement:
-o               o
-      o
-            o
-     o             o
-(widely spaced, fast-moving, random)</pre>
+<svg viewBox="0 0 240 160" width="240" height="160" role="img" aria-label="Gas particle arrangement: particles widely and randomly spaced, fast-moving">
+  <rect x="5" y="5" width="230" height="150" class="dg-boundary" rx="4"/>
+  <text x="120" y="26" class="dg-label" text-anchor="middle" font-weight="700">GAS</text>
+  <!-- Sparse random arrangement -->
+  <circle cx="32"  cy="45"  r="5" class="dg-point"/>
+  <circle cx="200" cy="38"  r="5" class="dg-point"/>
+  <circle cx="85"  cy="58"  r="5" class="dg-point"/>
+  <circle cx="160" cy="72"  r="5" class="dg-point"/>
+  <circle cx="40"  cy="90"  r="5" class="dg-point"/>
+  <circle cx="120" cy="82"  r="5" class="dg-point"/>
+  <circle cx="210" cy="100" r="5" class="dg-point"/>
+  <circle cx="70"  cy="115" r="5" class="dg-point"/>
+  <circle cx="180" cy="125" r="5" class="dg-point"/>
+  <text x="120" y="148" class="dg-label-sm" text-anchor="middle">widely spaced · fast-moving · random</text>
+</svg>
 
 <h4>Comparison table — fill in the blanks</h4>
 <div class="vocab-wrap">
@@ -554,12 +664,47 @@ o               o
 </div>
 
 <h4>Phase change diagram — label the arrows</h4>
-<pre>                    SUBLIMATION
-            ________________________
-           ↑                        ↓ DEPOSITION
-           |                        |
-        SOLID  →  melting  →  LIQUID  →  evaporation  →  GAS
-               ←  freezing ←          ←  condensation ←</pre>
+<svg viewBox="0 0 560 180" width="560" height="180" role="img" aria-label="Phase change diagram: SOLID, LIQUID, and GAS connected by arrows showing melting, freezing, evaporation, condensation, sublimation, and deposition">
+  <!-- State labels -->
+  <text x="52"  y="122" class="dg-label" text-anchor="middle" font-weight="700">SOLID</text>
+  <text x="272" y="122" class="dg-label" text-anchor="middle" font-weight="700">LIQUID</text>
+  <text x="502" y="122" class="dg-label" text-anchor="middle" font-weight="700">GAS</text>
+  <!-- Sublimation arc: SOLID → GAS (top, left to right) -->
+  <path d="M 70 100 C 70 20, 490 20, 490 100" class="dg-dashed" fill="none" marker-end="url(#arrow-gray)"/>
+  <text x="280" y="18" class="dg-label-accent" text-anchor="middle">SUBLIMATION →</text>
+  <!-- Deposition arc: GAS → SOLID (return, slightly offset) -->
+  <path d="M 490 108 C 490 38, 70 38, 70 108" class="dg-construction" fill="none" marker-end="url(#arrow-muted)"/>
+  <text x="280" y="52" class="dg-label-sm" text-anchor="middle">← DEPOSITION</text>
+  <!-- Melting arrow: SOLID → LIQUID -->
+  <line x1="95" y1="112" x2="232" y2="112" class="dg-accent" marker-end="url(#arrow-accent)"/>
+  <text x="163" y="105" class="dg-label-accent" text-anchor="middle">melting →</text>
+  <!-- Freezing arrow: LIQUID → SOLID -->
+  <line x1="232" y1="126" x2="95" y2="126" class="dg-line" marker-end="url(#arrow-dark)"/>
+  <text x="163" y="142" class="dg-label-sm" text-anchor="middle">← freezing</text>
+  <!-- Evaporation arrow: LIQUID → GAS -->
+  <line x1="312" y1="112" x2="462" y2="112" class="dg-accent" marker-end="url(#arrow-accent)"/>
+  <text x="387" y="105" class="dg-label-accent" text-anchor="middle">evaporation →</text>
+  <!-- Condensation arrow: GAS → LIQUID -->
+  <line x1="462" y1="126" x2="312" y2="126" class="dg-line" marker-end="url(#arrow-dark)"/>
+  <text x="387" y="142" class="dg-label-sm" text-anchor="middle">← condensation</text>
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-accent" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" style="fill:var(--dg-accent)"/>
+    </marker>
+    <marker id="arrow-dark" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" style="fill:var(--dg-stroke)"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" style="fill:var(--dg-secondary)"/>
+    </marker>
+    <marker id="arrow-muted" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" style="fill:var(--dg-muted)"/>
+    </marker>
+  </defs>
+  <!-- Instruction note -->
+  <text x="280" y="170" class="dg-label-sm" text-anchor="middle">Circle HEATING changes · Box COOLING changes</text>
+</svg>
 <p><em>On the diagram above, circle the phase changes that involve <strong>HEATING</strong>. Put a box around the phase changes that involve <strong>COOLING</strong>.</em></p>
 
 <h4>The experimental logic of phase changes</h4>
@@ -667,19 +812,37 @@ o               o
 <p>The thermometer works because the <span class="b b-lg">&nbsp;</span> of the liquid changes predictably with temperature.</p>
 
 <h4>Particle diagram — thermometer liquid at two temperatures</h4>
-<pre>COLD thermometer:           HOT thermometer:
-|   |                       |   |
-|   |                       |   |
-| ■ |  ← liquid level       |   |
-| ■ |                       | ■ |  ← liquid level rises
-| ■ |                       | ■ |
-| ■ |                       | ■ |
-|___|                       | ■ |
-                            | ■ |
-                            |___|
+<svg viewBox="0 0 380 230" width="380" height="230" role="img" aria-label="Two thermometers side by side: cold thermometer has a low liquid level; hot thermometer has a high liquid level showing thermal expansion">
+  <!-- COLD thermometer label -->
+  <text x="75" y="18" class="dg-label" text-anchor="middle" font-weight="700">COLD thermometer</text>
+  <!-- COLD tube outline -->
+  <rect x="58" y="24" width="34" height="140" class="dg-boundary" rx="6"/>
+  <!-- COLD liquid fill (low level) — bottom third -->
+  <rect x="60" y="116" width="30" height="46" fill="var(--unit)" opacity="0.7" rx="3"/>
+  <!-- COLD liquid level arrow -->
+  <line x1="97" y1="119" x2="138" y2="115" class="dg-line"/>
+  <text x="140" y="119" class="dg-label-sm">← liquid level</text>
+  <!-- COLD bulb -->
+  <circle cx="75" cy="168" r="12" fill="var(--unit)" opacity="0.7" stroke="#334155" stroke-width="1.5"/>
+  <!-- COLD captions -->
+  <text x="75" y="196" class="dg-label-sm" text-anchor="middle">Particles: slower, closer</text>
+  <text x="75" y="211" class="dg-label-sm" text-anchor="middle">Volume: smaller</text>
 
-Particles: slower, closer    Particles: faster, further apart
-Volume: smaller              Volume: larger</pre>
+  <!-- HOT thermometer label -->
+  <text x="295" y="18" class="dg-label" text-anchor="middle" font-weight="700" style="fill:var(--unit)">HOT thermometer</text>
+  <!-- HOT tube outline -->
+  <rect x="278" y="24" width="34" height="140" class="dg-boundary" rx="6"/>
+  <!-- HOT liquid fill (high level) — most of tube -->
+  <rect x="280" y="34" width="30" height="128" fill="var(--unit)" opacity="0.7" rx="3"/>
+  <!-- HOT liquid level arrow -->
+  <line x1="278" y1="37" x2="240" y2="50" class="dg-line"/>
+  <text x="170" y="54" class="dg-label-sm" style="fill:var(--unit)">← liquid level rises</text>
+  <!-- HOT bulb -->
+  <circle cx="295" cy="168" r="12" fill="var(--unit)" opacity="0.9" stroke="#334155" stroke-width="1.5"/>
+  <!-- HOT captions -->
+  <text x="295" y="196" class="dg-label-sm" text-anchor="middle" style="fill:var(--unit)">Particles: faster, spread</text>
+  <text x="295" y="211" class="dg-label-sm" text-anchor="middle" style="fill:var(--unit)">Volume: larger</text>
+</svg>
 
 <h4>Safety practices — thermometers in the lab</h4>
 <ul style="padding-left:1.4rem; margin-bottom:0.75rem;">
@@ -759,14 +922,35 @@ Volume: smaller              Volume: larger</pre>
 <h4>Real-world applications — expansion joints in bridges and roads</h4>
 <p>Long bridges and highway sections are not one continuous piece of material. Engineers leave small <span class="b b-lg">&nbsp;</span> between sections — these are called expansion joints. Materials that are fixed rigidly and cannot expand will <span class="b b-lg">&nbsp;</span>, crack, or buckle.</p>
 
-<pre>BRIDGE DECK — cross-section view:
-
-[  Section A  ]____gap____[  Section B  ]____gap____[  Section C  ]
-               ↑                        ↑
-        Expansion joint           Expansion joint
-
-In summer (hot): sections expand → gap gets ___________
-In winter (cold): sections contract → gap gets ___________</pre>
+<svg viewBox="0 0 560 160" width="560" height="160" role="img" aria-label="Bridge deck cross-section showing three sections with expansion joints (gaps) between them. Students fill in whether gaps get smaller or larger in summer vs winter.">
+  <text x="280" y="16" class="dg-label" text-anchor="middle" font-weight="700">BRIDGE DECK — cross-section view</text>
+  <!-- Section A -->
+  <rect x="10"  y="28" width="148" height="40" class="dg-boundary" rx="3"/>
+  <text x="84"  y="53" class="dg-label" text-anchor="middle">Section A</text>
+  <!-- Gap A -->
+  <rect x="162" y="28" width="24" height="40" fill="#fef9c3" stroke="#d97706" stroke-width="1.5" rx="2"/>
+  <!-- Section B -->
+  <rect x="190" y="28" width="178" height="40" class="dg-boundary" rx="3"/>
+  <text x="279" y="53" class="dg-label" text-anchor="middle">Section B</text>
+  <!-- Gap B -->
+  <rect x="372" y="28" width="24" height="40" fill="#fef9c3" stroke="#d97706" stroke-width="1.5" rx="2"/>
+  <!-- Section C -->
+  <rect x="400" y="28" width="150" height="40" class="dg-boundary" rx="3"/>
+  <text x="475" y="53" class="dg-label" text-anchor="middle">Section C</text>
+  <!-- Gap A label arrow -->
+  <line x1="174" y1="72" x2="174" y2="90" class="dg-line"/>
+  <text x="174" y="102" class="dg-label-sm" text-anchor="middle">Expansion</text>
+  <text x="174" y="115" class="dg-label-sm" text-anchor="middle">joint</text>
+  <!-- Gap B label arrow -->
+  <line x1="384" y1="72" x2="384" y2="90" class="dg-line"/>
+  <text x="384" y="102" class="dg-label-sm" text-anchor="middle">Expansion</text>
+  <text x="384" y="115" class="dg-label-sm" text-anchor="middle">joint</text>
+  <!-- Fill-in lines -->
+  <text x="10" y="140" class="dg-label-sm">Summer (hot): sections expand → gap gets</text>
+  <line x1="255" y1="138" x2="360" y2="138" class="dg-line"/>
+  <text x="10" y="155" class="dg-label-sm">Winter (cold): sections contract → gap gets</text>
+  <line x1="260" y1="153" x2="360" y2="153" class="dg-line"/>
+</svg>
 
 <p>Traditional rail tracks also leave small gaps between rail sections for the same reason. Electrical power lines hang lower in <span class="b b-md">&nbsp;</span> (summer heat causes expansion and sagging) and are pulled tighter in <span class="b b-md">&nbsp;</span> (winter cold causes contraction).</p>
 
@@ -788,16 +972,58 @@ In winter (cold): sections contract → gap gets ___________</pre>
 <h4>Why water is different — the particle model explanation</h4>
 <p>In liquid water, particles are packed closely and moving freely. When water freezes, the particles slow down and lock into a crystal structure. This crystal structure has a <span class="b b-md">&nbsp;</span> arrangement that actually pushes particles further apart — creating more space, not less.</p>
 
-<pre>LIQUID WATER particles:        ICE (solid water) particles:
-    o  o  o                        o       o
-  o  o    o                     o     o     o
-     o  o                          o       o
-  o    o  o                     o     o     o
-                                   o       o
+<svg viewBox="0 0 460 210" width="460" height="210" role="img" aria-label="Liquid water particles are close together and randomly arranged (higher density). Ice particles are locked in a hexagonal crystal structure with more space between them (lower density — ice floats).">
+  <!-- Liquid water box -->
+  <rect x="5" y="5" width="210" height="200" class="dg-boundary" rx="4"/>
+  <text x="110" y="24" class="dg-label" text-anchor="middle" font-weight="700">LIQUID WATER</text>
+  <!-- Liquid particles — close, random -->
+  <circle cx="42"  cy="50"  r="5" class="dg-point"/>
+  <circle cx="72"  cy="45"  r="5" class="dg-point"/>
+  <circle cx="100" cy="52"  r="5" class="dg-point"/>
+  <circle cx="130" cy="47"  r="5" class="dg-point"/>
+  <circle cx="165" cy="54"  r="5" class="dg-point"/>
+  <circle cx="55"  cy="74"  r="5" class="dg-point"/>
+  <circle cx="87"  cy="70"  r="5" class="dg-point"/>
+  <circle cx="118" cy="76"  r="5" class="dg-point"/>
+  <circle cx="150" cy="72"  r="5" class="dg-point"/>
+  <circle cx="183" cy="78"  r="5" class="dg-point"/>
+  <circle cx="40"  cy="96"  r="5" class="dg-point"/>
+  <circle cx="72"  cy="93"  r="5" class="dg-point"/>
+  <circle cx="105" cy="99"  r="5" class="dg-point"/>
+  <circle cx="140" cy="95"  r="5" class="dg-point"/>
+  <circle cx="170" cy="100" r="5" class="dg-point"/>
+  <circle cx="56"  cy="118" r="5" class="dg-point"/>
+  <circle cx="90"  cy="114" r="5" class="dg-point"/>
+  <circle cx="122" cy="120" r="5" class="dg-point"/>
+  <circle cx="158" cy="116" r="5" class="dg-point"/>
+  <!-- Liquid captions -->
+  <text x="110" y="150" class="dg-label-sm" text-anchor="middle">close together · random flow</text>
+  <text x="110" y="166" class="dg-label" text-anchor="middle" font-weight="700">Density: HIGHER</text>
 
-Close together, random flow    Locked in hexagonal structure
-                               — MORE space between particles
-Density: HIGHER                Density: LOWER (ice floats)</pre>
+  <!-- ICE box -->
+  <rect x="245" y="5" width="210" height="200" class="dg-boundary" rx="4"/>
+  <text x="350" y="24" class="dg-label" text-anchor="middle" font-weight="700" style="fill:var(--unit)">ICE (solid water)</text>
+  <!-- Ice particles — hexagonal crystal structure (more space) -->
+  <!-- Row 1 -->
+  <circle cx="305" cy="46"  r="5" class="dg-point"/>
+  <circle cx="370" cy="46"  r="5" class="dg-point"/>
+  <circle cx="435" cy="46"  r="5" class="dg-point"/>
+  <!-- Row 2 offset -->
+  <circle cx="272" cy="80"  r="5" class="dg-point"/>
+  <circle cx="337" cy="80"  r="5" class="dg-point"/>
+  <circle cx="402" cy="80"  r="5" class="dg-point"/>
+  <!-- Row 3 -->
+  <circle cx="305" cy="114" r="5" class="dg-point"/>
+  <circle cx="370" cy="114" r="5" class="dg-point"/>
+  <circle cx="435" cy="114" r="5" class="dg-point"/>
+  <!-- Row 4 offset -->
+  <circle cx="272" cy="148" r="5" class="dg-point"/>
+  <circle cx="337" cy="148" r="5" class="dg-point"/>
+  <circle cx="402" cy="148" r="5" class="dg-point"/>
+  <!-- ICE captions -->
+  <text x="350" y="172" class="dg-label-sm" text-anchor="middle" style="fill:var(--unit)">hexagonal structure · MORE space</text>
+  <text x="350" y="188" class="dg-label" text-anchor="middle" font-weight="700" style="fill:var(--unit)">Density: LOWER (ice floats)</text>
+</svg>
 
 <div class="misconception">
   <div class="m-label">Misconception</div>

@@ -171,15 +171,30 @@
     <hr style="margin:16px 0;border:none;border-top:1px solid #e2e8f0;">
 
     <p><strong>Reading scatter plot axes:</strong></p>
-<pre>     y-axis (dependent variable)
-     │
-   ↑ │  •    •
-     │    •
-     │  •    •   •
-     │         •
-     │
-     └──────────────────→
-                          x-axis (independent variable)</pre>
+<figure style="margin:8px 0;overflow-x:auto;">
+<!-- dg: scatter-plot-axes | conceptual scatter diagram showing axes and data dots -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 175" width="300" height="175" role="img" aria-label="Scatter plot axes: y-axis labelled dependent variable points up, x-axis labelled independent variable points right, with six scattered data dots">
+  <defs>
+    <marker id="sp-ax-arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon class="dg-point" points="0,0 0,8 8,4"/>
+    </marker>
+  </defs>
+  <!-- x-axis -->
+  <line class="dg-line" x1="44" y1="138" x2="272" y2="138" marker-end="url(#sp-ax-arr)"/>
+  <!-- y-axis -->
+  <line class="dg-line" x1="44" y1="138" x2="44" y2="14" marker-end="url(#sp-ax-arr)"/>
+  <!-- axis labels -->
+  <text class="dg-label" x="156" y="162" text-anchor="middle">x-axis (independent variable)</text>
+  <text class="dg-label" x="12" y="80" text-anchor="middle" transform="rotate(-90 12 80)">y-axis (dependent variable)</text>
+  <!-- scattered data dots -->
+  <circle class="dg-point-accent" cx="72"  cy="110" r="3.5"/>
+  <circle class="dg-point-accent" cx="110" cy="88"  r="3.5"/>
+  <circle class="dg-point-accent" cx="140" cy="58"  r="3.5"/>
+  <circle class="dg-point-accent" cx="168" cy="100" r="3.5"/>
+  <circle class="dg-point-accent" cx="204" cy="72"  r="3.5"/>
+  <circle class="dg-point-accent" cx="246" cy="42"  r="3.5"/>
+</svg>
+</figure>
 
     <p>Each dot = <span class="b b-md"></span> data point (one subject's measurements on both variables).</p>
 
@@ -204,18 +219,52 @@
     </table>
 
     <p>Plot these points on the axes below:</p>
-<pre>Visitors
-240 │
-210 │
-180 │
-150 │
-120 │
- 90 │
- 60 │
- 30 │
-    └────────────────────────
-       20  23  25  27  30  33
-                       Temperature (°C)</pre>
+<figure style="margin:8px 0;overflow-x:auto;">
+<!-- dg: scatter-plot-grid | blank student plotting grid — visitors vs temperature -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 240" width="340" height="240" role="img" aria-label="Blank scatter plot grid for students to plot visitors versus temperature. Y-axis shows Visitors from 0 to 240, x-axis shows Temperature in degrees Celsius from 18 to 36.">
+  <defs>
+    <marker id="pg-arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon class="dg-point" points="0,0 0,8 8,4"/>
+    </marker>
+  </defs>
+  <!-- grid lines (muted) -->
+  <!-- horizontal grid at y-ticks -->
+  <line class="dg-grid" x1="56" y1="192" x2="318" y2="192"/>
+  <line class="dg-grid" x1="56" y1="168" x2="318" y2="168"/>
+  <line class="dg-grid" x1="56" y1="144" x2="318" y2="144"/>
+  <line class="dg-grid" x1="56" y1="120" x2="318" y2="120"/>
+  <line class="dg-grid" x1="56" y1="96"  x2="318" y2="96"/>
+  <line class="dg-grid" x1="56" y1="72"  x2="318" y2="72"/>
+  <line class="dg-grid" x1="56" y1="48"  x2="318" y2="48"/>
+  <line class="dg-grid" x1="56" y1="24"  x2="318" y2="24"/>
+  <!-- y-axis -->
+  <line class="dg-line" x1="56" y1="208" x2="56" y2="14" marker-end="url(#pg-arr)"/>
+  <!-- x-axis -->
+  <line class="dg-line" x1="56" y1="208" x2="328" y2="208" marker-end="url(#pg-arr)"/>
+  <!-- y-axis tick marks and labels — values 30,60,90,120,150,180,210,240 -->
+  <!-- y-scale: origin=208, each 30 visitors = 24px, so 240 visitors = 192px up -->
+  <line class="dg-line" x1="51" y1="192" x2="56" y2="192"/> <text class="dg-label-sm" x="48" y="196" text-anchor="end"> 30</text>
+  <line class="dg-line" x1="51" y1="168" x2="56" y2="168"/> <text class="dg-label-sm" x="48" y="172" text-anchor="end"> 60</text>
+  <line class="dg-line" x1="51" y1="144" x2="56" y2="144"/> <text class="dg-label-sm" x="48" y="148" text-anchor="end"> 90</text>
+  <line class="dg-line" x1="51" y1="120" x2="56" y2="120"/> <text class="dg-label-sm" x="48" y="124" text-anchor="end">120</text>
+  <line class="dg-line" x1="51" y1="96"  x2="56" y2="96"/>  <text class="dg-label-sm" x="48" y="100"  text-anchor="end">150</text>
+  <line class="dg-line" x1="51" y1="72"  x2="56" y2="72"/>  <text class="dg-label-sm" x="48" y="76"   text-anchor="end">180</text>
+  <line class="dg-line" x1="51" y1="48"  x2="56" y2="48"/>  <text class="dg-label-sm" x="48" y="52"   text-anchor="end">210</text>
+  <line class="dg-line" x1="51" y1="24"  x2="56" y2="24"/>  <text class="dg-label-sm" x="48" y="28"   text-anchor="end">240</text>
+  <!-- x-axis tick marks and labels — values 20,23,25,27,30,33 -->
+  <!-- x-scale: origin=56, range 18–36 maps to 56–318 (262px), 1°C = ~14.6px -->
+  <!-- positions: 20=(56+(2*14.6))=85, 23=~85+44=129, 25=~129+29=158, 27=~158+29=187, 30=~187+44=231, 33=~231+44=275 -->
+  <line class="dg-line" x1="85"  y1="208" x2="85"  y2="213"/> <text class="dg-label-sm" x="85"  y="224" text-anchor="middle">20</text>
+  <line class="dg-line" x1="129" y1="208" x2="129" y2="213"/> <text class="dg-label-sm" x="129" y="224" text-anchor="middle">23</text>
+  <line class="dg-line" x1="158" y1="208" x2="158" y2="213"/> <text class="dg-label-sm" x="158" y="224" text-anchor="middle">25</text>
+  <line class="dg-line" x1="187" y1="208" x2="187" y2="213"/> <text class="dg-label-sm" x="187" y="224" text-anchor="middle">27</text>
+  <line class="dg-line" x1="231" y1="208" x2="231" y2="213"/> <text class="dg-label-sm" x="231" y="224" text-anchor="middle">30</text>
+  <line class="dg-line" x1="275" y1="208" x2="275" y2="213"/> <text class="dg-label-sm" x="275" y="224" text-anchor="middle">33</text>
+  <!-- axis labels -->
+  <text class="dg-label" x="192" y="238" text-anchor="middle">Temperature (°C)</text>
+  <text class="dg-label" x="14" y="120" text-anchor="middle" transform="rotate(-90 14 120)">Visitors</text>
+</svg>
+</figure>
 
     <p><strong>Describe the pattern you see in the scatter plot:</strong></p>
     <span class="al"></span>

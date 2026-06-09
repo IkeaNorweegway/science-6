@@ -45,10 +45,11 @@
       body { padding: 16px 20px; font-size: 10.5pt; }
       * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .section { break-before: page; }
-      .question, .misconception, .worked-example, .self-check, .name-row, table { break-inside: avoid; }
+      .question, .misconception, .worked-example, .self-check, .name-row, .draw-box, table { break-inside: avoid; }
       h2, h3, h4 { break-after: avoid; }
       p { orphans: 3; widows: 3; }
     }
+    .draw-box { border: 1px dashed #94a3b8; min-height: 80px; border-radius: 4px; margin: 8px 0; background: #f8fafc; }
   </style>
 </head>
 <body>
@@ -88,14 +89,38 @@
       <h3>Q1 ★ — Circle vocabulary · Labelling · Visual</h3>
       <p>Label each part of the circle diagram. Use all of the terms in the word bank.</p>
       <p><strong>Word bank:</strong> centre · radius · diameter · chord · arc · central angle · inscribed angle · tangent · point of tangency</p>
-      <pre>            P
-           /|\
-          / | \
-         /  |  \
-        /   O   \
-       A─────────B
-
-       T•──────── (line L)</pre>
+      <svg class="dg-diagram" viewBox="0 0 340 240" width="340" height="240" role="img" aria-label="Circle with centre O, diameter AB, point P on circumference, and tangent line L at point T below">
+        <!-- Circle -->
+        <circle cx="170" cy="110" r="80" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+        <!-- Diameter AB (horizontal) -->
+        <line x1="90" y1="110" x2="250" y2="110" stroke="#1d4ed8" stroke-width="1.5"/>
+        <!-- Radius OP (vertical to top) -->
+        <line x1="170" y1="110" x2="170" y2="30" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <!-- Lines PA and PB (inscribed angle) -->
+        <line x1="170" y1="30" x2="90" y2="110" stroke="#1d4ed8" stroke-width="1.5"/>
+        <line x1="170" y1="30" x2="250" y2="110" stroke="#1d4ed8" stroke-width="1.5"/>
+        <!-- Points -->
+        <circle cx="170" cy="30" r="3.5" fill="#1d4ed8"/>
+        <circle cx="170" cy="110" r="3.5" fill="#1d4ed8"/>
+        <circle cx="90" cy="110" r="3.5" fill="#1d4ed8"/>
+        <circle cx="250" cy="110" r="3.5" fill="#1d4ed8"/>
+        <!-- Labels -->
+        <text x="174" y="26" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">P</text>
+        <text x="174" y="107" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">O</text>
+        <text x="73" y="108" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">A</text>
+        <text x="254" y="108" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">B</text>
+        <!-- Arc label -->
+        <text x="210" y="58" font-family="'Segoe UI',sans-serif" font-size="10" fill="#475569" font-style="italic">arc PB</text>
+        <!-- Tangent diagram below -->
+        <circle cx="130" cy="195" r="3.5" fill="#1d4ed8"/>
+        <line x1="130" y1="195" x2="290" y2="195" stroke="#1d4ed8" stroke-width="2"/>
+        <!-- Right-angle mark at T -->
+        <rect x="130" y="185" width="8" height="8" fill="none" stroke="#1d4ed8" stroke-width="1.2"/>
+        <!-- Labels -->
+        <text x="115" y="193" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">T</text>
+        <text x="280" y="190" font-family="'Segoe UI',sans-serif" font-size="11" fill="#475569" font-style="italic">line L</text>
+        <text x="148" y="218" font-family="'Segoe UI',sans-serif" font-size="10" fill="#64748b">(tangent at T)</text>
+      </svg>
       <p><strong>Labels for the top diagram:</strong></p>
       <ul>
         <li>OP = <span class="b b-lg"></span></li>
@@ -116,7 +141,7 @@
       <h3>Q2 ★ — Surface area · Rectangular prism</h3>
       <p>A rectangular prism has dimensions 8 cm × 5 cm × 3 cm.</p>
       <p>(a) Draw the net. Label all six faces with their dimensions.</p>
-      <pre>[Net drawing space]</pre>
+      <div class="draw-box" style="min-height:120px;"></div>
       <p>(b) Calculate the surface area.</p>
       <p>Two 8 × 5 faces: 2 × <span class="b b-sm"></span> = <span class="b b-sm"></span><br>
       Two 8 × 3 faces: 2 × <span class="b b-sm"></span> = <span class="b b-sm"></span><br>
@@ -144,7 +169,7 @@
       <p>PM = <span class="b b-sm"></span> cm</p>
       <p>(b) If the radius of the circle is 13 cm, find OM using the Pythagorean theorem.</p>
       <p>Draw right triangle OMP:</p>
-      <pre>[draw here]</pre>
+      <div class="draw-box"></div>
       <p>OM = √(<span class="b b-sm"></span><sup>2</sup> − <span class="b b-sm"></span><sup>2</sup>) = √(<span class="b b-sm"></span> − <span class="b b-sm"></span>) = √<span class="b b-sm"></span> = <span class="b b-sm"></span> cm</p>
     </div>
 
@@ -198,11 +223,32 @@
     <div class="question">
       <h3>Q9 ★ — Similar triangles · AA criterion</h3>
       <p>In the diagram, DE is parallel to BC. AD = 3, DB = 5, DE = 4.</p>
-      <pre>      A
-     / \
-    D───E    ← DE ∥ BC
-   /     \
-  B───────C</pre>
+      <svg class="dg-diagram" viewBox="0 0 240 180" width="240" height="180" role="img" aria-label="Triangle ABC with DE parallel to BC, where D is on AB and E is on AC. AD=3, DB=5, DE=4.">
+        <!-- Triangle ABC -->
+        <line x1="120" y1="20" x2="30" y2="160" stroke="#1d4ed8" stroke-width="2"/>
+        <line x1="120" y1="20" x2="210" y2="160" stroke="#1d4ed8" stroke-width="2"/>
+        <line x1="30" y1="160" x2="210" y2="160" stroke="#1d4ed8" stroke-width="2"/>
+        <!-- Line DE (parallel to BC, at ~3/8 height from A) -->
+        <line x1="64" y1="110" x2="176" y2="110" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <!-- Points -->
+        <circle cx="120" cy="20" r="3" fill="#1d4ed8"/>
+        <circle cx="30" cy="160" r="3" fill="#1d4ed8"/>
+        <circle cx="210" cy="160" r="3" fill="#1d4ed8"/>
+        <circle cx="64" cy="110" r="3" fill="#1d4ed8"/>
+        <circle cx="176" cy="110" r="3" fill="#1d4ed8"/>
+        <!-- Labels -->
+        <text x="115" y="14" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">A</text>
+        <text x="17" y="170" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">B</text>
+        <text x="214" y="170" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">C</text>
+        <text x="50" y="107" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">D</text>
+        <text x="180" y="107" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e293b">E</text>
+        <!-- Dimension labels -->
+        <text x="34" y="72" font-family="'Segoe UI',sans-serif" font-size="10" fill="#475569">3</text>
+        <text x="20" y="138" font-family="'Segoe UI',sans-serif" font-size="10" fill="#475569">5</text>
+        <text x="112" y="105" font-family="'Segoe UI',sans-serif" font-size="10" fill="#475569">4</text>
+        <!-- Parallel mark label -->
+        <text x="148" y="128" font-family="'Segoe UI',sans-serif" font-size="9" fill="#64748b" font-style="italic">DE &#8741; BC</text>
+      </svg>
       <p>(a) Why is triangle ADE similar to triangle ABC? State which criterion (AA, SSS, or SAS) and why it applies.</p>
       <span class="al"></span>
       <span class="al"></span>
@@ -226,7 +272,7 @@
       <h3>Q11 ★ — Tangent-radius property</h3>
       <p>A tangent to a circle at point T has length TP = 24 cm from external point P. The radius at T is OT = 7 cm.</p>
       <p>(a) Draw the right triangle and label all sides.</p>
-      <pre>[draw here]</pre>
+      <div class="draw-box"></div>
       <p>(b) Find the distance from P to the centre O.</p>
       <p><em>Hint: The tangent is perpendicular to the radius at T, forming a right angle at <span class="b b-sm"></span>.</em></p>
       <p>PO = √(PT<sup>2</sup> + OT<sup>2</sup>) = √(<span class="b b-sm"></span> + <span class="b b-sm"></span>) = √<span class="b b-sm"></span> = <span class="b b-sm"></span> cm</p>
@@ -236,7 +282,7 @@
       <h3>Q12 ★★ — Indirect measurement · Shadow method · Alberta context</h3>
       <p>At 10 AM in Calgary, a measuring stick 1.5 m tall casts a shadow 0.9 m long. A grain elevator casts a shadow 22.5 m long at the same time.</p>
       <p>(a) Draw the two similar triangles. Label all known measurements.</p>
-      <pre>[draw here]</pre>
+      <div class="draw-box"></div>
       <p>(b) Set up a proportion and solve for the elevator's height.</p>
       <p>h/22.5 = <span class="b b-sm"></span>/<span class="b b-sm"></span></p>
       <p>h = <span class="b b-md"></span></p>

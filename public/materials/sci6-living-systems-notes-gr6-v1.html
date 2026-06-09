@@ -530,7 +530,39 @@ _______ + _______ ──────────────────→ ____
 <h4>Food Chains and Food Webs</h4>
 <p>A <strong>food chain</strong> shows a single pathway of energy transfer from producer to consumer.</p>
 <p><strong>Example food chain — Alberta grassland:</strong></p>
-<pre>Grass → Grasshopper → Meadowlark → Hawk</pre>
+<svg viewBox="0 0 560 52" width="560" height="52" role="img" aria-label="Food chain: Grass to Grasshopper to Meadowlark to Hawk, with arrows showing energy flow">
+  <!-- Grass box -->
+  <rect x="0" y="10" width="82" height="32" rx="5" class="dg-boundary"/>
+  <text x="41" y="30" class="dg-label" text-anchor="middle" font-weight="600">Grass</text>
+
+  <!-- Arrow 1 -->
+  <line x1="82" y1="26" x2="112" y2="26" class="dg-accent"/>
+  <polygon points="116,26 106,21 106,31" fill="var(--dg-accent)" stroke="none"/>
+
+  <!-- Grasshopper box -->
+  <rect x="116" y="10" width="108" height="32" rx="5" class="dg-boundary"/>
+  <text x="170" y="30" class="dg-label" text-anchor="middle" font-weight="600">Grasshopper</text>
+
+  <!-- Arrow 2 -->
+  <line x1="224" y1="26" x2="254" y2="26" class="dg-accent"/>
+  <polygon points="258,26 248,21 248,31" fill="var(--dg-accent)" stroke="none"/>
+
+  <!-- Meadowlark box -->
+  <rect x="258" y="10" width="106" height="32" rx="5" class="dg-boundary"/>
+  <text x="311" y="30" class="dg-label" text-anchor="middle" font-weight="600">Meadowlark</text>
+
+  <!-- Arrow 3 -->
+  <line x1="364" y1="26" x2="394" y2="26" class="dg-accent"/>
+  <polygon points="398,26 388,21 388,31" fill="var(--dg-accent)" stroke="none"/>
+
+  <!-- Hawk box -->
+  <rect x="398" y="10" width="72" height="32" rx="5" class="dg-boundary"/>
+  <text x="434" y="30" class="dg-label" text-anchor="middle" font-weight="600">Hawk</text>
+
+  <!-- Label showing arrow = energy -->
+  <text x="478" y="20" class="dg-label-sm" fill="#64748b">&#8592; arrows show</text>
+  <text x="478" y="34" class="dg-label-sm" fill="#64748b">energy flow</text>
+</svg>
 <p>Each arrow means: "<span class="b b-xl">&nbsp;</span>"</p>
 <div class="note-box">The arrow direction matters. It always points toward the consumer — in the direction that energy is flowing.</div>
 
@@ -538,15 +570,59 @@ _______ + _______ ──────────────────→ ____
 <p>Real ecosystems are not simple chains. Most organisms eat more than one thing and are eaten by more than one thing. A <strong>food web</strong> shows the full network of feeding relationships.</p>
 
 <p><strong>Label this food web — add the missing organisms in the blanks:</strong></p>
-<pre>      [Sun]
-        ↓
-    [Grass / Shrubs]
-      ↙        ↘
-[Deer]        [Grasshopper]
-   ↘               ↓
-  [Wolf]       [__________]
-                    ↓
-              [__________]</pre>
+<svg viewBox="0 0 440 280" width="440" height="280" role="img" aria-label="Alberta grassland food web: Sun feeds Grass/Shrubs, which feeds Deer and Grasshopper. Deer is eaten by Wolf. Grasshopper is eaten by a blank consumer, which is eaten by another blank consumer. Students fill in the missing organisms.">
+  <!-- Sun -->
+  <rect x="170" y="4" width="100" height="30" rx="5" class="dg-boundary" fill="#fef9c3"/>
+  <text x="220" y="24" class="dg-label" text-anchor="middle" font-weight="700" fill="#a16207">Sun</text>
+
+  <!-- Arrow Sun → Grass -->
+  <line x1="220" y1="34" x2="220" y2="58" class="dg-accent"/>
+  <polygon points="220,62 215,52 225,52" fill="var(--dg-accent)" stroke="none"/>
+
+  <!-- Grass / Shrubs -->
+  <rect x="140" y="62" width="160" height="30" rx="5" class="dg-boundary"/>
+  <text x="220" y="82" class="dg-label" text-anchor="middle" font-weight="600">Grass / Shrubs</text>
+
+  <!-- Arrow Grass → Deer (left) -->
+  <line x1="175" y1="92" x2="120" y2="136" class="dg-accent"/>
+  <polygon points="117,139 120,128 129,134" fill="var(--dg-accent)" stroke="none"/>
+
+  <!-- Arrow Grass → Grasshopper (right) -->
+  <line x1="265" y1="92" x2="310" y2="136" class="dg-accent"/>
+  <polygon points="313,139 304,130 313,127" fill="var(--dg-accent)" stroke="none"/>
+
+  <!-- Deer -->
+  <rect x="60" y="140" width="90" height="30" rx="5" class="dg-boundary"/>
+  <text x="105" y="160" class="dg-label" text-anchor="middle" font-weight="600">Deer</text>
+
+  <!-- Grasshopper -->
+  <rect x="275" y="140" width="110" height="30" rx="5" class="dg-boundary"/>
+  <text x="330" y="160" class="dg-label" text-anchor="middle" font-weight="600">Grasshopper</text>
+
+  <!-- Arrow Deer → Wolf -->
+  <line x1="105" y1="170" x2="105" y2="194" class="dg-accent"/>
+  <polygon points="105,198 100,188 110,188" fill="var(--dg-accent)" stroke="none"/>
+
+  <!-- Arrow Grasshopper → blank 1 -->
+  <line x1="330" y1="170" x2="330" y2="194" class="dg-accent"/>
+  <polygon points="330,198 325,188 335,188" fill="var(--dg-accent)" stroke="none"/>
+
+  <!-- Wolf -->
+  <rect x="60" y="198" width="90" height="30" rx="5" class="dg-boundary"/>
+  <text x="105" y="218" class="dg-label" text-anchor="middle" font-weight="600">Wolf</text>
+
+  <!-- Blank 1 (student fills in) -->
+  <rect x="275" y="198" width="110" height="30" rx="5" class="dg-boundary" stroke-dasharray="5 3"/>
+  <text x="330" y="218" class="dg-label-sm" text-anchor="middle" fill="#94a3b8">__________</text>
+
+  <!-- Arrow Blank 1 → Blank 2 -->
+  <line x1="330" y1="228" x2="330" y2="250" class="dg-dashed"/>
+  <polygon points="330,254 325,244 335,244" fill="#64748b" stroke="none"/>
+
+  <!-- Blank 2 (student fills in) -->
+  <rect x="275" y="254" width="110" height="22" rx="5" class="dg-boundary" stroke-dasharray="5 3"/>
+  <text x="330" y="269" class="dg-label-sm" text-anchor="middle" fill="#94a3b8">__________</text>
+</svg>
 
 <h4>What Happens When You Remove a Part?</h4>
 <p>Ecosystems are <strong>systems</strong> — connected webs, not independent lists. Removing one organism can cascade through the whole system.</p>
