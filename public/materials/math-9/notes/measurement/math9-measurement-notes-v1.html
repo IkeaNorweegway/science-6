@@ -568,19 +568,31 @@
       <p>A cylinder (r = 4 cm, h = 10 cm) sits on top of a rectangular prism (20 cm × 20 cm × 5 cm).</p>
       <figure style="margin:10px 0;overflow-x:auto;">
       <!-- tikz: composite-solid | shapes=cylinder,rectangular-prism | arrangement=stacked -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 160" width="280" height="160" role="img" aria-label="Composite object: a cylinder sitting on top of a rectangular prism.">
-          <!-- Rectangular prism box -->
-          <rect x="40" y="100" width="200" height="45" class="dg-boundary"/>
-          <!-- Cylinder top ellipse (top) -->
-          <ellipse cx="140" cy="65" rx="35" ry="12" class="dg-boundary"/>
-          <!-- Cylinder top ellipse (bottom, where it meets prism) -->
-          <ellipse cx="140" cy="100" rx="35" ry="12" class="dg-boundary"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180" width="300" height="180" role="img" aria-label="Composite object: a cylinder sitting on top of a rectangular prism shown in 3D oblique view.">
+          <!-- Oblique projection: front face (40,110)→(220,150); depth offset dx=+25 dy=−15 → back at (65,95)→(245,135) -->
+          <!-- Top face fill -->
+          <polygon points="40,110 220,110 245,95 65,95" style="fill:#eef1f5;"/>
+          <!-- Right face fill -->
+          <polygon points="220,110 220,150 245,135 245,95" style="fill:#d8dfe8;"/>
+          <!-- Front face -->
+          <rect x="40" y="110" width="180" height="40" class="dg-boundary" style="fill:white;"/>
+          <!-- Top face edges -->
+          <polyline points="40,110 65,95 245,95 220,110" class="dg-line"/>
+          <!-- Right face edges -->
+          <polyline points="245,95 245,135 220,150" class="dg-line"/>
+          <!-- Hidden back edges (dashed) -->
+          <line x1="65" y1="95" x2="65" y2="135" class="dg-line" style="stroke-dasharray:4,3;"/>
+          <line x1="65" y1="135" x2="245" y2="135" class="dg-line" style="stroke-dasharray:4,3;"/>
+          <!-- Cylinder bottom ellipse sits on prism top, centered on front face -->
+          <ellipse cx="130" cy="110" rx="35" ry="12" class="dg-boundary" style="fill:white;"/>
           <!-- Cylinder sides -->
-          <line x1="105" y1="65" x2="105" y2="100" class="dg-line"/>
-          <line x1="175" y1="65" x2="175" y2="100" class="dg-line"/>
+          <line x1="95" y1="65" x2="95" y2="110" class="dg-line"/>
+          <line x1="165" y1="65" x2="165" y2="110" class="dg-line"/>
+          <!-- Cylinder top ellipse -->
+          <ellipse cx="130" cy="65" rx="35" ry="12" class="dg-boundary" style="fill:white;"/>
           <!-- Labels -->
-          <text x="140" y="40" text-anchor="middle" class="dg-label-accent">cylinder</text>
-          <text x="140" y="128" text-anchor="middle" class="dg-label">rectangular prism</text>
+          <text x="130" y="42" text-anchor="middle" class="dg-label-accent">cylinder</text>
+          <text x="130" y="140" text-anchor="middle" class="dg-label">rectangular prism</text>
         </svg>
       </figure>
       <p><strong>Volume:</strong></p>
