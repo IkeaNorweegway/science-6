@@ -22,10 +22,19 @@ const currentPath = Astro.url.pathname;
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <div class="flex items-center justify-between h-14">
 
-      <!-- Logo -->
-      <a href={base} class={`font-bold text-base tracking-tight ${teacherMode ? 'text-white' : 'text-science-700'}`}>
-        Gr. 6 Science
-      </a>
+      <!-- Home + Logo -->
+      <div class="flex items-center gap-3">
+        <a
+          href={base}
+          class={`text-xs font-medium transition-colors ${teacherMode ? 'text-slate-400 hover:text-slate-200' : 'text-slate-400 hover:text-slate-600'}`}
+        >
+          ← Home
+        </a>
+        <span class={`text-slate-300 text-sm ${teacherMode ? 'text-slate-600' : ''}`}>|</span>
+        <a href={`${base}materials`} class={`font-bold text-base tracking-tight ${teacherMode ? 'text-white' : 'text-science-700'}`}>
+          Gr. 6 Science
+        </a>
+      </div>
 
       <!-- Unit nav (hidden on small screens) -->
       <div class="hidden md:flex items-center gap-1">
