@@ -69,7 +69,7 @@ const hoverBase = teacherMode ? 'hover:bg-slate-700 hover:text-white' : 'hover:b
 
       <!-- Right: Teacher toggle -->
       <a
-        href={teacherMode ? base : `${base}teacher`}
+        href={teacherMode ? (course === 'math9' ? `${base}math9` : `${base}materials`) : (course === 'math9' ? `${base}math9/teacher` : `${base}teacher`)}
         class={`text-xs px-3 py-1.5 rounded-md font-medium border transition-colors
           ${teacherMode
             ? 'border-teacher-500 text-teacher-400 hover:bg-teacher-700 hover:text-white'

@@ -113,14 +113,7 @@ const topics: { label: string; slug: string; noteSlug: string; wsSlug: string; e
           </div>
           <a href={viewHref(`exits/${t.slug}/${t.exitSlug}`)} class="flex-shrink-0 text-sm font-semibold text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-400 px-4 py-1.5 rounded-lg transition-colors">Open</a>
         </div>
-        <!-- Teaching guide -->
-        <div class={`bg-white rounded-xl border border-slate-200 border-l-4 ${border} px-5 py-4 flex items-center justify-between gap-4`}>
-          <div class="flex items-center gap-2">
-            <span class="text-sm font-medium text-slate-800">Teaching Guide</span>
-            <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-slate-800 text-white">Teacher</span>
-          </div>
-          <a href={viewHref(`notes/${t.slug}/${t.wsSlug}-teachernotes-v1`)} class="flex-shrink-0 text-sm font-semibold text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-400 px-4 py-1.5 rounded-lg transition-colors">Open</a>
-        </div>
+
       </div>
 
       <!-- Answer keys collapsible -->
