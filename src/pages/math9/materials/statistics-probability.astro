@@ -65,6 +65,7 @@ const topics = [
           { label: 'Core Practice',     badge: '★',         badgeStyle: 'bg-teal-100 text-teal-800', href: viewHref(`worksheets/statistics-probability/${t.slug}/${t.wsSlug}-worksheet-core-v1`) },
           { label: 'Challenge',         badge: '★★',        badgeStyle: 'bg-teal-100 text-teal-800', href: viewHref(`worksheets/statistics-probability/${t.slug}/${t.wsSlug}-worksheet-challenge-v1`) },
           { label: 'Exit Tickets',      badge: 'Formative', badgeStyle: 'bg-slate-100 text-slate-700', href: viewHref(`exits/${t.slug}/${t.exitSlug}`) },
+          { label: 'Teaching Guide',    badge: 'Teacher',   badgeStyle: 'bg-slate-800 text-white',      href: viewHref(`notes/${t.slug}/${t.wsSlug}-teachernotes-v1`) },
         ].map(item => (
           <div class={`bg-white rounded-xl border border-slate-200 border-l-4 ${border} px-5 py-4 flex items-center justify-between gap-4`}>
             <div class="flex items-center gap-2">
