@@ -1,5 +1,5 @@
 ---
-import Math9Layout from '../../../layouts/Math9Layout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 const b = base;
 const border = 'border-green-400';
@@ -14,7 +14,7 @@ const topics = [
 ];
 ---
 
-<Math9Layout title="Measurement & Geometry — Math 9 Materials">
+<BaseLayout course="math9" title="Measurement & Geometry — Math 9 Materials">
   <a href={`${b}math9/materials`} class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 mb-8 transition-colors">← All strands</a>
 
   <div class="border-l-4 border-green-400 pl-5 mb-6">
@@ -98,4 +98,4 @@ const topics = [
       </details>
     </section>
   ))}
-</Math9Layout>
+</BaseLayout>

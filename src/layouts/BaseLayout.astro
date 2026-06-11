@@ -4,10 +4,14 @@ import Nav from '../components/Nav.astro';
 interface Props {
   title: string;
   description?: string;
+  course?: 'science' | 'math9';
   teacherMode?: boolean;
 }
 
-const { title, description = 'Grade 6 Science — Alberta Curriculum', teacherMode = false } = Astro.props;
+const { title, description = 'Alberta curriculum classroom materials', course, teacherMode = false } = Astro.props;
+
+const titleSuffix = course === 'science' ? 'Gr. 6 Science' : course === 'math9' ? 'Math 9' : 'Mr. Bremness';
+const footerCourse = course === 'science' ? 'Grade 6 Science' : course === 'math9' ? 'Grade 9 Mathematics' : 'Classroom Materials';
 ---
 
 <!doctype html>
@@ -16,34 +20,32 @@ const { title, description = 'Grade 6 Science — Alberta Curriculum', teacherMo
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <title>{title} | Grade 6 Science</title>
+    <title>{title} · Mr. Bremness</title>
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
   </head>
-  <body class={`min-h-screen bg-slate-50 text-slate-900 ${teacherMode ? 'teacher-mode' : ''}`}>
+  <body class={`min-h-screen bg-slate-50 text-slate-900 ${teacherMode ? 'teacher-mode' : ''}`} data-course={course}>
     {teacherMode && (
       <div class="bg-teacher-600 text-white text-sm text-center py-1.5 font-medium tracking-wide">
         TEACHER VIEW — answer keys and delivery notes
       </div>
     )}
-    <Nav teacherMode={teacherMode} />
+    <Nav course={course} teacherMode={teacherMode} />
     <main class="max-w-4xl mx-auto px-4 py-10 sm:px-6">
       <slot />
     </main>
     <footer class="border-t border-slate-200 mt-20 py-8 text-center text-sm text-slate-400">
-      Grade 6 Science · Alberta Curriculum 2023 · Built for learning
+      {footerCourse} · Alberta Curriculum 2023 · Built for learning
     </footer>
   </body>
 </html>
 
 <style is:global>
-  /* Print styles */
   @media print {
     nav, footer, .no-print { display: none !important; }
     body { background: white; }
     .print-break { page-break-before: always; }
   }
 
-  /* Prose content styling */
   .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #0f172a; }
   .prose h3 { font-size: 1.125rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1e293b; }
   .prose p { margin-bottom: 1rem; line-height: 1.75; }

@@ -1,5 +1,5 @@
 ---
-import Math9Layout from '../../layouts/Math9Layout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 
 const strands = [
@@ -38,7 +38,7 @@ const strands = [
 ];
 ---
 
-<Math9Layout title="Grade 9 Mathematics">
+<BaseLayout course="math9" title="Grade 9 Mathematics">
 
   <div class="mb-10">
     <p class="text-xs font-bold uppercase tracking-widest text-math9-600 mb-2">Alberta Curriculum</p>
@@ -84,4 +84,4 @@ const strands = [
     ))}
   </div>
 
-</Math9Layout>
+</BaseLayout>

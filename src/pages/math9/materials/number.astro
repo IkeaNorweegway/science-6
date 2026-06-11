@@ -1,5 +1,5 @@
 ---
-import Math9Layout from '../../../layouts/Math9Layout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 const b = base;
 
@@ -21,7 +21,7 @@ const topics: { label: string; slug: string; noteSlug: string; wsSlug: string; e
 ];
 ---
 
-<Math9Layout title="Number — Math 9 Materials">
+<BaseLayout course="math9" title="Number — Math 9 Materials">
 
   <a href={`${b}math9/materials`} class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 mb-8 transition-colors">
     ← All strands
@@ -139,4 +139,4 @@ const topics: { label: string; slug: string; noteSlug: string; wsSlug: string; e
     </section>
   ))}
 
-</Math9Layout>
+</BaseLayout>

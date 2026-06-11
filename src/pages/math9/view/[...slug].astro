@@ -1,5 +1,5 @@
 ---
-import Math9Nav from '../../../components/Math9Nav.astro';
+import Nav from '../../../components/Nav.astro';
 const base = import.meta.env.BASE_URL;
 
 export async function getStaticPaths() {
@@ -176,7 +176,7 @@ function backHref(slug: string): string {
 <body>
   <div class="viewer-shell">
     <div class="viewer-nav">
-      <Math9Nav />
+      <Nav course="math9" />
     </div>
     <div class="back-bar">
       <a href={backHref(slug)}>← Back</a>
