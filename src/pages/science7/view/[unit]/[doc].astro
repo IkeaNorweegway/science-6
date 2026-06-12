@@ -1,0 +1,142 @@
+---
+import Nav from '../../../../components/Nav.astro';
+const base = import.meta.env.BASE_URL;
+
+export function getStaticPaths() {
+  const unitFiles: Record<string, string[]> = {
+    'interactions-ecosystems': [
+      'sci7-interactions-ecosystems-notes-v1',
+      'sci7-interactions-ecosystems-workbook-v1',
+      'sci7-interactions-ecosystems-exits-v1',
+      'sci7-interactions-ecosystems-quiz-v1',
+      'sci7-interactions-ecosystems-test-v1',
+      'sci7-interactions-ecosystems-notes-answers-v1',
+      'sci7-interactions-ecosystems-workbook-answers-v1',
+      'sci7-interactions-ecosystems-assessment-answers-v1',
+    ],
+    'plants-food-fibre': [
+      'sci7-plants-food-fibre-notes-v1',
+      'sci7-plants-food-fibre-workbook-v1',
+      'sci7-plants-food-fibre-exits-v1',
+      'sci7-plants-food-fibre-quiz-v1',
+      'sci7-plants-food-fibre-test-v1',
+      'sci7-plants-food-fibre-notes-answers-v1',
+      'sci7-plants-food-fibre-workbook-answers-v1',
+      'sci7-plants-food-fibre-assessment-answers-v1',
+    ],
+    'heat-temperature': [
+      'sci7-heat-temperature-notes-v1',
+      'sci7-heat-temperature-workbook-v1',
+      'sci7-heat-temperature-exits-v1',
+      'sci7-heat-temperature-quiz-v1',
+      'sci7-heat-temperature-test-v1',
+      'sci7-heat-temperature-notes-answers-v1',
+      'sci7-heat-temperature-workbook-answers-v1',
+      'sci7-heat-temperature-assessment-answers-v1',
+    ],
+    'structures-forces': [
+      'sci7-structures-forces-notes-v1',
+      'sci7-structures-forces-workbook-v1',
+      'sci7-structures-forces-exits-v1',
+      'sci7-structures-forces-quiz-v1',
+      'sci7-structures-forces-test-v1',
+      'sci7-structures-forces-notes-answers-v1',
+      'sci7-structures-forces-workbook-answers-v1',
+      'sci7-structures-forces-assessment-answers-v1',
+    ],
+    'planet-earth': [
+      'sci7-planet-earth-notes-v1',
+      'sci7-planet-earth-workbook-v1',
+      'sci7-planet-earth-exits-v1',
+      'sci7-planet-earth-quiz-v1',
+      'sci7-planet-earth-test-v1',
+      'sci7-planet-earth-notes-answers-v1',
+      'sci7-planet-earth-workbook-answers-v1',
+      'sci7-planet-earth-assessment-answers-v1',
+    ],
+  };
+
+  const paths: { params: { unit: string; doc: string } }[] = [];
+  for (const [unit, files] of Object.entries(unitFiles)) {
+    for (const doc of files) {
+      paths.push({ params: { unit, doc } });
+    }
+  }
+  return paths;
+}
+
+const { unit, doc } = Astro.params;
+
+const unitLabels: Record<string, string> = {
+  'interactions-ecosystems': 'Interactions and Ecosystems',
+  'plants-food-fibre': 'Plants for Food and Fibre',
+  'heat-temperature': 'Heat and Temperature',
+  'structures-forces': 'Structures and Forces',
+  'planet-earth': 'Planet Earth',
+};
+
+const backHref = `${base}science7/materials/${unit}`;
+const backLabel = `← ${unitLabels[unit] ?? 'Science 7'}`;
+const fileUrl = `${base}materials/${doc}.html`;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{unitLabels[unit] ?? unit} — {doc} | Grade 7 Science</title>
+  <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    .viewer-shell {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .back-bar {
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0.4rem 1.25rem;
+      flex-shrink: 0;
+    }
+    .back-bar a {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.8rem;
+      color: #64748b;
+      text-decoration: none;
+    }
+    .back-bar a:hover { color: #0f172a; }
+    .doc-frame {
+      flex: 1;
+      border: none;
+      width: 100%;
+      display: block;
+    }
+    @media print {
+      .viewer-nav, .back-bar { display: none !important; }
+      .doc-frame { height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="viewer-shell">
+    <div class="viewer-nav">
+      <Nav course="science7" />
+    </div>
+    <div class="back-bar">
+      <a href={backHref}>{backLabel}</a>
+    </div>
+    <iframe
+      src={fileUrl}
+      class="doc-frame"
+      title={doc}
+    />
+  </div>
+</body>
+</html>

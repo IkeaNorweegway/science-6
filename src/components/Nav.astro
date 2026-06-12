@@ -1,6 +1,6 @@
 ---
 interface Props {
-  course?: 'science' | 'math9';
+  course?: 'science' | 'math9' | 'science7';
   teacherMode?: boolean;
 }
 const { course, teacherMode = false } = Astro.props;
@@ -22,6 +22,14 @@ const math9Strands = [
   { slug: 'algebra',                label: 'Algebra' },
   { slug: 'measurement-geometry',   label: 'M&G' },
   { slug: 'statistics-probability', label: 'Stats & Prob' },
+];
+
+const science7Units = [
+  { slug: 'interactions-ecosystems', label: 'Ecosystems' },
+  { slug: 'plants-food-fibre',       label: 'Plants' },
+  { slug: 'heat-temperature',        label: 'Heat' },
+  { slug: 'structures-forces',       label: 'Structures' },
+  { slug: 'planet-earth',            label: 'Planet Earth' },
 ];
 
 const navBg   = teacherMode ? 'bg-slate-900 border-slate-700' : 'bg-white border-slate-200';
@@ -64,6 +72,17 @@ const hoverBase = teacherMode ? 'hover:bg-slate-700 hover:text-white' : 'hover:b
             }`}
         >
           Math 9
+        </a>
+        <a
+          href={`${base}science7`}
+          class={`text-xs px-3 py-1.5 rounded-md font-medium transition-colors
+            ${course === 'science7'
+              ? 'text-white'
+              : `${textBase} ${hoverBase}`
+            }`}
+          style={course === 'science7' ? 'background-color: #059669;' : ''}
+        >
+          Gr. 7 Science
         </a>
       </div>
 
@@ -141,6 +160,35 @@ const hoverBase = teacherMode ? 'hover:bg-slate-700 hover:text-white' : 'hover:b
             }`}
         >
           All Materials
+        </a>
+      </div>
+    )}
+
+    {course === 'science7' && (
+      <div class="flex gap-1 pb-2 overflow-x-auto">
+        {science7Units.map(u => (
+          <a
+            href={`${base}science7/materials/${u.slug}`}
+            class={`text-xs px-2.5 py-1 rounded-md font-medium whitespace-nowrap transition-colors
+              ${currentPath.includes(u.slug)
+                ? 'text-white'
+                : 'text-slate-600 hover:bg-slate-100'
+              }`}
+            style={currentPath.includes(u.slug) ? 'background-color: #059669;' : ''}
+          >
+            {u.label}
+          </a>
+        ))}
+        <a
+          href={`${base}science7`}
+          class={`text-xs px-2.5 py-1 rounded-md font-medium whitespace-nowrap transition-colors
+            ${currentPath.endsWith('/science7') || currentPath.endsWith('/science7/')
+              ? 'text-white'
+              : 'text-slate-600 hover:bg-slate-100'
+            }`}
+          style={currentPath.endsWith('/science7') || currentPath.endsWith('/science7/') ? 'background-color: #059669;' : ''}
+        >
+          All Units
         </a>
       </div>
     )}

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 7 Science — Heat and Temperature: Mid-Unit Quiz</title>
+<style>
+  :root {
+    --unit: #ea580c;
+    --unit-dark: #c2410c;
+    --unit-light: #ffedd5;
+    --unit-border: #fdba74;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  /* ── Typography ── */
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--unit-dark);
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  /* ── Cover block ── */
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  /* ── Pre-knowledge box ── */
+  .pre-knowledge {
+    border: 2px dashed #94a3b8;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Vocab table ── */
+  .vocab-wrap {
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table th {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--unit-light);
+    color: var(--unit-dark);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--unit-border);
+    text-align: left;
+  }
+  table td {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    min-height: 2.2rem;
+  }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 600; color: #0f172a; }
+
+  /* ── Fill-in blanks ── */
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  /* ── Answer lines ── */
+  .al {
+    display: block;
+    border-bottom: 1.5px solid #94a3b8;
+    height: 1.8rem;
+    margin: 0.4rem 0;
+    width: 100%;
+  }
+  .al-short { width: 60%; }
+  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
+  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
+
+  /* ── Code / diagram blocks ── */
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.35rem;
+    padding: 0.85rem 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  /* ── Misconception callout ── */
+  .misconception {
+    border-left: 5px solid #dc2626;
+    background: #fef2f2;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #dc2626;
+    margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  /* ── Connection prompt ── */
+  .connection {
+    border-left: 5px solid #f97316;
+    background: #fff7ed;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2410c;
+    margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  /* ── Retrieval check ── */
+  .retrieval {
+    background: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6d28d9;
+    margin-right: 0.3rem;
+  }
+
+  /* ── Self-check ── */
+  .self-check {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem;
+    padding: 0.6rem 1.1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #166534;
+  }
+  .self-check strong { color: #14532d; }
+
+  /* ── Go-to-workbook prompt ── */
+  .workbook-prompt {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #475569;
+    background: #f1f5f9;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.25rem;
+    border-left: 4px solid #94a3b8;
+  }
+
+  /* ── Dividers ── */
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  /* ── Summary / synthesis boxes ── */
+  .synthesis-box {
+    border: 2px solid var(--unit);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--unit-light);
+  }
+  .synthesis-box h3 { margin-top: 0; }
+
+  /* ── Answer key styling ── */
+  .answer {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    padding: 0.35rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    font-style: italic;
+    color: #166534;
+    font-size: 0.9rem;
+  }
+
+  /* ── Question cards (workbook) ── */
+  .q-card {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    background: #fff;
+  }
+  .q-header {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+  .q-num {
+    color: var(--unit-dark);
+    font-weight: 700;
+  }
+  .marks {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 400;
+  }
+
+  /* ── Rubric table ── */
+  .rubric th { background: #1e293b; color: white; }
+
+  /* ── Print ── */
+  @media print {
+    body {
+      font-size: 11pt;
+      padding: 1.5cm;
+      max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+
+  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
+  :root {
+    --dg-stroke:    #334155;
+    --dg-fill:      #f8fafc;
+    --dg-accent:    var(--accent, #1d4ed8);
+    --dg-secondary: #64748b;
+    --dg-muted:     #94a3b8;
+    --dg-sw:        1.5px;
+    --dg-sw-bold:   2.5px;
+    --dg-sw-thin:   1.0px;
+  }
+  svg .dg-boundary, svg .dg-line, svg .dg-accent,
+  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
+    vector-effect: non-scaling-stroke;
+  }
+  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
+  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
+  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
+  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
+  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
+  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
+  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
+  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
+  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
+  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
+  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <h1>Heat and Temperature</h1>
+  <p>Grade 7 Science &nbsp;·&nbsp; Mid-Unit Quiz &nbsp;·&nbsp; Alberta Curriculum 2007</p>
+  <div class="name-line">
+    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<p><strong>Total:</strong> /30 marks     <strong>Time:</strong> 25–30 minutes</p>
+<p><em>Covers: Sections 1–3 (temperature scales, heat vs. temperature, particle model)</em></p>
+<hr class="section-break">
+<h2 class="section-title">Outcome Map (teacher-facing)</h2>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Question</th>
+<th>LO assessed</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Q1–3</td>
+<td>LO 7-3-01 (temperature, scales, conversion)</td>
+</tr>
+<tr>
+<td>Q4–6</td>
+<td>LO 7-3-01 (heat vs. temperature distinction)</td>
+</tr>
+<tr>
+<td>Q7–10</td>
+<td>LO 7-3-02 (particle model, expansion, changes of state)</td>
+</tr>
+</tbody></table></div>
+<hr class="section-break">
+<h2 class="section-title">Part A: Selected Response (10 marks)</h2>
+<p>Circle the best answer.</p>
+<p><strong>1.</strong> Temperature measures:</p>
+<p>a) the total amount of heat in an object   b) the average kinetic energy of particles</p>
+<p>c) how quickly heat moves through an object   d) the rate of energy transfer</p>
+<p><strong>2.</strong> 25°C = <span class="b b-md">&nbsp;</span> K</p>
+<p>a) 25 K   b) 248 K   c) 298 K   d) 373 K</p>
+<p><strong>3.</strong> Absolute zero is:</p>
+<p>a) 0°C   b) the temperature at which water freezes   c) −273°C   d) the boiling point of liquid nitrogen</p>
+<p><strong>4.</strong> A cup of soup at 75°C and a large pot of soup at 75°C are compared. The pot:</p>
+<p>a) has the same heat energy as the cup   b) has less heat energy because it is cooled by the larger container</p>
+<p>c) has more heat energy because it contains more particles   d) has a higher temperature than the cup</p>
+<p><strong>5.</strong> Heat always flows:</p>
+<p>a) from less dense to more dense materials   b) from cool objects to warm objects</p>
+<p>c) from warm objects to cool objects   d) in both directions equally</p>
+<p><strong>6.</strong> "The cold is coming in through the window." This statement is:</p>
+<p>a) correct — cold is a real substance that flows in   b) incorrect — heat is flowing out through the window</p>
+<p>c) correct in winter but not in summer   d) incorrect — only radiation moves through windows</p>
+<p><strong>7.</strong> When a material is heated, its particles:</p>
+<p>a) become heavier   b) move faster and spread farther apart   c) merge into larger particles   d) stop moving</p>
+<p><strong>8.</strong> A railroad track is left without an expansion gap. In summer, the most likely result is:</p>
+<p>a) the track cracks from brittleness   b) the track buckles because it cannot expand</p>
+<p>c) the track contracts and gaps appear   d) no effect</p>
+<p><strong>9.</strong> When a substance is melting, its temperature:</p>
+<p>a) rises steadily   b) drops   c) stays constant while the change of state occurs   d) fluctuates randomly</p>
+<p><strong>10.</strong> Why does the liquid rise in a thermometer when placed in hot water?</p>
+<p>a) the liquid becomes heavier   b) the liquid expands as particles speed up and spread apart</p>
+<p>c) heat pushes the liquid upward   d) air pressure pushes the liquid up</p>
+<hr class="section-break">
+<h2 class="section-title">Part B: Short Answer (20 marks)</h2>
+<p><strong>11.</strong> Convert all four temperatures. Show your work. (4 marks)</p>
+<p>a) 100°C = <span class="b b-md">&nbsp;</span> K         b) −40°C = <span class="b b-md">&nbsp;</span> K</p>
+<p>c) 310 K = <span class="b b-md">&nbsp;</span> °C        d) 0 K = <span class="b b-md">&nbsp;</span> °C</p>
+<p><strong>12.</strong> Explain the difference between heat and temperature using the "cup vs. bathtub" example. Your answer must use the word "particles." (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>13.</strong> Draw a particle diagram for the same substance as a cold solid and as a warm gas. Label both diagrams and explain the difference. (4 marks)</p>
+<pre>Cold solid:                     Warm gas:
++──────────────────+            +──────────────────+
+|                  |            |                  |
+|                  |            |                  |
+|                  |            |                  |
++──────────────────+            +──────────────────+</pre>
+<p>Explanation: <span class="b b-md">&nbsp;</span></p>
+<div class="al"></div>
+<p><strong>14.</strong> Power lines in Alberta are installed with more slack (sag) than power lines in warmer regions. Explain why, using the particle model. (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>15.</strong> When you heat ice at −10°C, it warms up to 0°C and then the temperature stops rising for a while, even though you keep adding heat. Then it starts rising again once all the ice has melted. Explain this plateau using what you know about particles and changes of state. (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+
+</body>
+</html>

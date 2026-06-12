@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 7 Science — Structures and Forces: Workbook Answer Key</title>
+<style>
+  :root {
+    --unit: #7c3aed;
+    --unit-dark: #6d28d9;
+    --unit-light: #ede9fe;
+    --unit-border: #c4b5fd;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  /* ── Typography ── */
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--unit-dark);
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  /* ── Cover block ── */
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  /* ── Pre-knowledge box ── */
+  .pre-knowledge {
+    border: 2px dashed #94a3b8;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Vocab table ── */
+  .vocab-wrap {
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table th {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--unit-light);
+    color: var(--unit-dark);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--unit-border);
+    text-align: left;
+  }
+  table td {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    min-height: 2.2rem;
+  }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 600; color: #0f172a; }
+
+  /* ── Fill-in blanks ── */
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  /* ── Answer lines ── */
+  .al {
+    display: block;
+    border-bottom: 1.5px solid #94a3b8;
+    height: 1.8rem;
+    margin: 0.4rem 0;
+    width: 100%;
+  }
+  .al-short { width: 60%; }
+  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
+  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
+
+  /* ── Code / diagram blocks ── */
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.35rem;
+    padding: 0.85rem 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  /* ── Misconception callout ── */
+  .misconception {
+    border-left: 5px solid #dc2626;
+    background: #fef2f2;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #dc2626;
+    margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  /* ── Connection prompt ── */
+  .connection {
+    border-left: 5px solid #f97316;
+    background: #fff7ed;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2410c;
+    margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  /* ── Retrieval check ── */
+  .retrieval {
+    background: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6d28d9;
+    margin-right: 0.3rem;
+  }
+
+  /* ── Self-check ── */
+  .self-check {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem;
+    padding: 0.6rem 1.1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #166534;
+  }
+  .self-check strong { color: #14532d; }
+
+  /* ── Go-to-workbook prompt ── */
+  .workbook-prompt {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #475569;
+    background: #f1f5f9;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.25rem;
+    border-left: 4px solid #94a3b8;
+  }
+
+  /* ── Dividers ── */
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  /* ── Summary / synthesis boxes ── */
+  .synthesis-box {
+    border: 2px solid var(--unit);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--unit-light);
+  }
+  .synthesis-box h3 { margin-top: 0; }
+
+  /* ── Answer key styling ── */
+  .answer {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    padding: 0.35rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    font-style: italic;
+    color: #166534;
+    font-size: 0.9rem;
+  }
+
+  /* ── Question cards (workbook) ── */
+  .q-card {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    background: #fff;
+  }
+  .q-header {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+  .q-num {
+    color: var(--unit-dark);
+    font-weight: 700;
+  }
+  .marks {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 400;
+  }
+
+  /* ── Rubric table ── */
+  .rubric th { background: #1e293b; color: white; }
+
+  /* ── Print ── */
+  @media print {
+    body {
+      font-size: 11pt;
+      padding: 1.5cm;
+      max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+
+  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
+  :root {
+    --dg-stroke:    #334155;
+    --dg-fill:      #f8fafc;
+    --dg-accent:    var(--accent, #1d4ed8);
+    --dg-secondary: #64748b;
+    --dg-muted:     #94a3b8;
+    --dg-sw:        1.5px;
+    --dg-sw-bold:   2.5px;
+    --dg-sw-thin:   1.0px;
+  }
+  svg .dg-boundary, svg .dg-line, svg .dg-accent,
+  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
+    vector-effect: non-scaling-stroke;
+  }
+  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
+  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
+  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
+  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
+  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
+  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
+  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
+  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
+  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
+  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
+  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <h1>Structures and Forces</h1>
+  <p>Grade 7 Science &nbsp;·&nbsp; Workbook Answer Key &nbsp;·&nbsp; Alberta Curriculum 2007</p>
+  <div class="name-line">
+    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<p><em>Faded key design: full solutions early (Parts A–C), partial mid (Parts D–E), answer-only final (Part G).</em></p>
+<hr class="section-break">
+<h2 class="section-title">Part A: Types of Structures (16 marks)</h2>
+<p><strong>Q1 — Classify structures:</strong> (6 marks)</p>
+<p>a. Bicycle = F (frame)</p>
+<p>b. Egg = Sh (shell)</p>
+<p>c. Lethbridge Viaduct = F (frame — steel lattice)</p>
+<p>d. Brick = S (solid)</p>
+<p>e. Car body = Sh (shell — thin outer skin carries load)</p>
+<p>f. House = C (combination — frame interior + shell exterior cladding + solid foundation)</p>
+<p><strong>Q2 — Why combination structures:</strong> (4 marks)</p>
+<p>Different parts of a structure experience different loads and forces. A single structure type cannot efficiently handle all loading conditions: frame members are excellent for distributing lateral and compressive loads through an internal skeleton, but leave the exterior unprotected; shell surfaces provide weather resistance and distribute surface loads but have no internal framework for supporting occupants; solid elements provide foundations that resist settlement but would be wasteful (heavy, expensive) if used throughout. Alberta example: the Glenbow Museum in Calgary — concrete frame (vertical columns handle compression loads) with glass and stone exterior shell panels, and solid concrete foundation pads.</p>
+<p><strong>Q3 — Cardboard tube principle:</strong> (3 marks)</p>
+<p>Shape matters as much as material for structural strength. A flat sheet buckles under compression because the force is concentrated at one point and the sheet can easily deflect sideways. A tube distributes compressive force around the circumference — any tendency to buckle in one direction is resisted by the curved surface in all other directions. This is why columns, pipes, tree trunks, and bones are circular/hollow cylinders rather than flat slabs.</p>
+<p><strong>Q4 — Structure type identification:</strong> (3 marks)</p>
+<p>a. Igloo = shell; thin curved ice dome; the arch/dome shape distributes load along the curve, so the ice skin itself carries the load without needing internal framing</p>
+<p>b. Eiffel Tower = frame; open steel lattice skeleton; the structure is mostly open space, with rigid triangulated members forming the skeleton</p>
+<p>c. Poured concrete dam = solid; continuous material throughout; no internal cavities; mass and material integrity resist the water pressure</p>
+<hr class="section-break">
+<h2 class="section-title">Part B: Loads (16 marks)</h2>
+<p><strong>Q5 — Load types table:</strong> (9 marks — 3 per row)</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Load type</th>
+<th>Definition</th>
+<th>Alberta example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Dead load</td>
+<td>Constant weight of the structure's own materials</td>
+<td>Weight of bridge steel on the Groat Bridge, Edmonton</td>
+</tr>
+<tr>
+<td>Live load</td>
+<td>Variable weight the structure is designed to carry; gravity, predictable</td>
+<td>Cars and trucks on an Alberta highway bridge; accumulated snow on a Calgary arena roof</td>
+</tr>
+<tr>
+<td>Dynamic load</td>
+<td>Moving, changing, or impact forces; often unpredictable in direction/magnitude</td>
+<td>Chinook wind gusts on Calgary buildings; seismic activity in the Rockies foothills; traffic vibration</td>
+</tr>
+</tbody></table></div>
+<p><strong>Q6 — February bridge collapse:</strong> (4 marks)</p>
+<p>Most likely dead load failure (or accumulated dead load from ice/snow that increased the permanent load beyond design specifications). No traffic (no live load) and calm weather (no dynamic wind/seismic load) eliminates those causes. In a cold Alberta February, ice can build up on bridge elements, adding significant mass to what the structure treats as permanent dead weight; over time, sub-standard materials or metal fatigue can cause a dead-load failure even with no traffic. Alternatively: a material defect or corrosion weakened a member that finally failed under existing dead load.</p>
+<p><strong>Q7 — Why dynamic loads are more dangerous:</strong> (3 marks)</p>
+<p>Dynamic loads can change direction and magnitude rapidly; structures are typically designed for loads from specific directions (gravity = downward) but dynamic loads (earthquakes, wind gusts) may apply lateral or oscillating forces. Oscillating forces can cause resonance — matching the structure's natural vibration frequency, causing amplitude to grow with each cycle until failure. Static loads of the same magnitude are predictable and the structure can be engineered precisely for them; dynamic loads are variable and create fatigue stress on materials over time.</p>
+<hr class="section-break">
+<h2 class="section-title">Part C: Internal Forces (20 marks)</h2>
+<p><strong>Q8 — Internal forces table:</strong> (8 marks — 2 per row)</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Force</th>
+<th>What it does</th>
+<th>Real-world example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Compression</td>
+<td>Pushes material together; squeezes</td>
+<td>Column in a building; top surface of a beam under load; arch</td>
+</tr>
+<tr>
+<td>Tension</td>
+<td>Pulls material apart; stretches</td>
+<td>Cable in a suspension bridge; bottom surface of a beam; elastic band</td>
+</tr>
+<tr>
+<td>Shear</td>
+<td>Two parallel forces acting in opposite directions on adjacent planes</td>
+<td>Bolt holding two plates being pulled apart; scissors cutting; nailing two boards</td>
+</tr>
+<tr>
+<td>Torsion</td>
+<td>Twisting force along the long axis of a member</td>
+<td>Drive shaft of a vehicle; bridge deck twisting in wind; wringing a wet cloth</td>
+</tr>
+</tbody></table></div>
+<p><strong>Q9 — Beam under load:</strong> (6 marks)</p>
+<p>a. Compression: top surface (load pushes top fibers together, shortening them)</p>
+<p>b. Tension: bottom surface (load pulls bottom fibers apart, lengthening them)</p>
+<p>c. Concrete is strong in compression but very weak in tension — it has little resistance to being pulled apart; the bottom surface (in tension) would crack and the beam would fail</p>
+<p>d. Reinforced concrete: steel rebar embedded in bottom portion of beam; rebar has very high tensile strength; concrete handles top compression, rebar handles bottom tension → beam resists both forces</p>
+<p><strong>Q10 — Suspension bridge cables:</strong> (3 marks)</p>
+<p>Cables must be made of steel, not concrete. The cables run from the deck up to the towers and anchors; their job is to support the deck's weight by being pulled taut — they are entirely under tension. Concrete is very weak in tension (it cracks and crumbles when pulled apart). Steel has extremely high tensile strength — it can withstand enormous pulling forces without breaking. Internal force: tension.</p>
+<p><strong>Q11 — Bolt with opposing plates:</strong> (3 marks)</p>
+<p>Shear. The two plates are being pulled horizontally in opposite directions on either side of the bolt; the bolt must resist two parallel forces applied on adjacent planes across its cross-section. This is the definition of shear — forces parallel to the cross-section, opposing each other.</p>
+<hr class="section-break">
+<h2 class="section-title">Part D: Stability (16 marks)</h2>
+<p><strong>Q12 — Stability rule:</strong> (4 marks)</p>
+<p>A structure is stable as long as its centre of gravity (CoG) remains directly above its base of support. If the CoG moves outside the footprint of the base, the structure topples. Two design factors that increase stability: (1) widen the base of support (larger footprint → CoG must move farther before tipping); (2) lower the centre of gravity (move heavy mass toward the base → CoG is less likely to shift outside the footprint when the structure is tilted).</p>
+<p><strong>Q13 — Heavy bottom is not always more stable:</strong> (4 marks)</p>
+<p>Not always true. What matters is the position of the overall centre of gravity relative to the base of support — not where the heavy parts are by themselves. If a structure is extremely tall and has its heavy portion at moderate height, the CoG may still be high relative to a narrow base. A very heavy base on a narrow, tall structure can still topple if the CoG is above the midpoint and the base is narrow. Stability requires the CoG to remain within the base when tilted, regardless of where the mass is concentrated.</p>
+<p><strong>Q14 — Triangle vs. square:</strong> (4 marks)</p>
+<p>A triangle is the only polygon that cannot change shape without changing the length of at least one side. If you push a triangulated frame laterally, the geometry forces the load into compression or tension along the rigid members — they cannot rotate at the joints. A square (or rectangle) can become a parallelogram under a lateral force without changing any side length — it deforms (racking) by rotating at the joints. This is why triangulation is used in roof trusses, bridge trusses, and lattice towers: adding diagonal bracing to a rectangular panel converts it into non-deformable triangles.</p>
+<p><strong>Q15 — Construction crane:</strong> (4 marks)</p>
+<p>The crane risks toppling when the load at the end of the arm shifts the combined centre of gravity (crane + load) outside the footprint of the crane's base. The farther the load is from the base and the heavier the load, the more the CoG shifts toward the load side. Prevention: crane designs use a large, wide base (spreads footprint so CoG must travel farther before crossing the edge); counterweights on the opposite side of the arm (move CoG back toward centre); outrigger legs that extend outward to dramatically widen the effective base.</p>
+<hr class="section-break">
+<h2 class="section-title">Part E: Simple Machines (20 marks)</h2>
+<p><strong>Q16 — Identify simple machine:</strong></p>
+<p>a. Wheelbarrow = lever (2nd class — load between fulcrum and effort)</p>
+<p>b. Flagpole rope = pulley (fixed — changes direction of force)</p>
+<p>c. Jar lid = wheel and axle (or screw, depending on the lid type; jar lid rim = wheel, jar threads = screw)</p>
+<p>d. Door wedge = wedge</p>
+<p>e. Screwdriver prying = lever (1st class — fulcrum at paint can rim)</p>
+<p>f. Stairs = inclined plane (distribute rise over horizontal distance to reduce effort per step)</p>
+<p><strong>Q17 — Calculate MA:</strong></p>
+<p>a. MA = load / effort = 300 N / 60 N = <strong>5</strong></p>
+<p>b. MA = slope length / height = 4 m / 1 m = <strong>4</strong></p>
+<p>c. MA = number of rope segments supporting load = <strong>4</strong></p>
+<p><strong>Q18 — One-fifth the work?</strong> (4 marks)</p>
+<p>Incorrect. A simple machine with MA 5 allows you to apply 1/5 the force — but over 5 times the distance. Work = force × distance. The total work done on the load equals the total work you put in (ignoring friction): 1/5 force × 5× distance = same total work. Machines do not reduce work — they redistribute it into a more convenient form (less force, more distance). The conservation of energy means no machine can reduce the total energy required to move an object.</p>
+<p><strong>Q19 — Lever classes:</strong></p>
+<p>1st class: seesaw / crowbar — fulcrum between effort and load; can multiply force or change direction. <em>F — fulcrum — L</em></p>
+<p>2nd class: wheelbarrow — load between fulcrum and effort; always has MA &gt; 1 (multiplies force). <em>F — L — E</em></p>
+<p>3rd class: tweezers / fishing rod — effort between fulcrum and load; MA &lt; 1 (trades force for speed/range of motion). <em>F — E — L</em></p>
+<hr class="section-break">
+<h2 class="section-title">Part F: Materials and Design Synthesis (12 marks)</h2>
+<p><strong>Q20 — Match role to material:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Structural role</th>
+<th>Best material</th>
+<th>Reason</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Column under compression</td>
+<td>Concrete (or stone)</td>
+<td>Very strong in compression; low cost; durable; absorbs compressive load without deforming</td>
+</tr>
+<tr>
+<td>Suspension bridge cable</td>
+<td>High-strength steel cable</td>
+<td>Exceptional tensile strength; flexible (can carry tension in curve); does not fracture under repeated load cycles</td>
+</tr>
+<tr>
+<td>Building frame in earthquake zone</td>
+<td>Structural steel (or reinforced concrete)</td>
+<td>Steel is ductile — bends before fracturing; absorbs and dissipates seismic energy; concrete alone is brittle → catastrophic failure under lateral load</td>
+</tr>
+</tbody></table></div>
+<p><strong>Q21 — Banff pedestrian bridge:</strong></p>
+<p>a. Bridge's own weight = dead load; tourists walking = live load; mountain wind gusts = dynamic load; snow accumulation = live load (heavy snowfall could become dynamic during snowstorm)</p>
+<p>b. Railing/handrail system and lateral bracing should be triangulated; wind creates lateral (horizontal) forces that push the bridge sideways — rectangular members would deform (racking); triangulated bracing is non-deformable and redirects lateral load into axial forces in rigid members</p>
+<p>c. Steel advantage: higher strength per weight for the main span; longer life in wet mountain conditions; better resistance to fatigue under repeated pedestrian loads. Wood advantage: lower visual impact in Banff National Park setting; renewable/sustainable; locally available; lighter (easier to install in remote location without heavy equipment)</p>
+<hr class="section-break">
+<h2 class="section-title">Part G: Challenge (★) — answer-only</h2>
+<p><strong>Q22 — Quebec Bridge failure:</strong></p>
+<p>a. Frame structure (truss bridge — triangulated lattice frame)</p>
+<p>b. Compression (lower chord of a truss under mid-span loading is in compression — opposite of a simple beam's bottom chord, because the truss geometry is above the deck and the lower chord resists inward compression)</p>
+<p>c. Dead load (weight of the additional construction materials added to the partially built structure)</p>
+<p>d. Compressive strength (resistance to buckling under axial compressive force); also: buckling resistance / slenderness ratio</p>
+<p>e. Any of: increase cross-sectional area of lower chord (increases resistance to buckling); use a stockier, less slender member profile; add lateral bracing to reduce effective buckling length; independent full review of the design calculations before continuing construction; staged loading analysis to check capacity at each construction phase</p>
+
+</body>
+</html>

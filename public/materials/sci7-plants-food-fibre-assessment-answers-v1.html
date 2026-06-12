@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 7 Science — Plants for Food and Fibre: Assessment Answer Key</title>
+<style>
+  :root {
+    --unit: #16a34a;
+    --unit-dark: #15803d;
+    --unit-light: #dcfce7;
+    --unit-border: #86efac;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  /* ── Typography ── */
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--unit-dark);
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  /* ── Cover block ── */
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  /* ── Pre-knowledge box ── */
+  .pre-knowledge {
+    border: 2px dashed #94a3b8;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Vocab table ── */
+  .vocab-wrap {
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table th {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--unit-light);
+    color: var(--unit-dark);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--unit-border);
+    text-align: left;
+  }
+  table td {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    min-height: 2.2rem;
+  }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 600; color: #0f172a; }
+
+  /* ── Fill-in blanks ── */
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  /* ── Answer lines ── */
+  .al {
+    display: block;
+    border-bottom: 1.5px solid #94a3b8;
+    height: 1.8rem;
+    margin: 0.4rem 0;
+    width: 100%;
+  }
+  .al-short { width: 60%; }
+  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
+  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
+
+  /* ── Code / diagram blocks ── */
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.35rem;
+    padding: 0.85rem 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  /* ── Misconception callout ── */
+  .misconception {
+    border-left: 5px solid #dc2626;
+    background: #fef2f2;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #dc2626;
+    margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  /* ── Connection prompt ── */
+  .connection {
+    border-left: 5px solid #f97316;
+    background: #fff7ed;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2410c;
+    margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  /* ── Retrieval check ── */
+  .retrieval {
+    background: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6d28d9;
+    margin-right: 0.3rem;
+  }
+
+  /* ── Self-check ── */
+  .self-check {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem;
+    padding: 0.6rem 1.1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #166534;
+  }
+  .self-check strong { color: #14532d; }
+
+  /* ── Go-to-workbook prompt ── */
+  .workbook-prompt {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #475569;
+    background: #f1f5f9;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.25rem;
+    border-left: 4px solid #94a3b8;
+  }
+
+  /* ── Dividers ── */
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  /* ── Summary / synthesis boxes ── */
+  .synthesis-box {
+    border: 2px solid var(--unit);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--unit-light);
+  }
+  .synthesis-box h3 { margin-top: 0; }
+
+  /* ── Answer key styling ── */
+  .answer {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    padding: 0.35rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    font-style: italic;
+    color: #166534;
+    font-size: 0.9rem;
+  }
+
+  /* ── Question cards (workbook) ── */
+  .q-card {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    background: #fff;
+  }
+  .q-header {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+  .q-num {
+    color: var(--unit-dark);
+    font-weight: 700;
+  }
+  .marks {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 400;
+  }
+
+  /* ── Rubric table ── */
+  .rubric th { background: #1e293b; color: white; }
+
+  /* ── Print ── */
+  @media print {
+    body {
+      font-size: 11pt;
+      padding: 1.5cm;
+      max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+
+  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
+  :root {
+    --dg-stroke:    #334155;
+    --dg-fill:      #f8fafc;
+    --dg-accent:    var(--accent, #1d4ed8);
+    --dg-secondary: #64748b;
+    --dg-muted:     #94a3b8;
+    --dg-sw:        1.5px;
+    --dg-sw-bold:   2.5px;
+    --dg-sw-thin:   1.0px;
+  }
+  svg .dg-boundary, svg .dg-line, svg .dg-accent,
+  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
+    vector-effect: non-scaling-stroke;
+  }
+  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
+  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
+  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
+  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
+  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
+  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
+  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
+  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
+  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
+  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
+  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <h1>Plants for Food and Fibre</h1>
+  <p>Grade 7 Science &nbsp;·&nbsp; Assessment Answer Key &nbsp;·&nbsp; Alberta Curriculum 2007</p>
+  <div class="name-line">
+    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<hr class="section-break">
+<h2 class="section-title">Exit Ticket Answer Keys</h2>
+<h3>ET1: 1. (1) All living things made of cells (2) Cells are basic unit of life (3) All cells from pre-existing cells   2. Cell wall, central vacuole, chloroplasts   3. Site of photosynthesis (converts light energy to glucose)</h3>
+<h3>ET2: 1. Xylem: water and minerals, upward from roots to leaves   2. Phloem: sugars (glucose), downward from leaves to rest of plant   3. Vascular tissue acts like pipes carrying water up; non-vascular plants must stay small and near water because they have no transport system</h3>
+<h3>ET3: 1. CO₂ + water + light energy → glucose + oxygen   2. Chloroplasts (in green cells/leaves)   3. Plants make their own food via photosynthesis using light, CO₂, and water; van Helmont's experiment showed soil mass barely decreased while plant gained 74 kg</h3>
+<h3>ET4: 1. Flower = reproductive structure; attracts pollinators to transfer pollen   2. Any 2: runners, bulbs, tubers, cuttings   3. Sexual advantage: genetic variation; Asexual advantage: fast, no pollinator needed</h3>
+<h3>ET5: 1. Food: wheat and canola; Fibre: flax (or hemp)   2. Monoculture = one crop species over large area; risk: single disease/pest can destroy entire crop   3. Bees pollinate flowering crops; without bees, crops cannot set seed/fruit = crop failure</h3>
+<h3>ET6: 1. Selective breeding: choosing desired-trait plants and breeding only those, over generations; used ~10,000 years   2. Selective breeding: many generations, less precise; GMO: lab technique, specific genes, much faster   3. Benefit: e.g., herbicide resistance reduces spraying; Concern: e.g., unintended ecological effects, reduced biodiversity</h3>
+<hr class="section-break">
+<h2 class="section-title">Quiz Answer Key (/30)</h2>
+<h3>Part A: Selected Response</h3>
+<ol>
+  <li>c   2. c   3. b   4. c   5. b   6. b   7. b   8. c   9. b   10. b</li>
+</ol>
+<h3>Part B: Short Answer</h3>
+<p><strong>Q11 (6 marks — 2 per tenet):</strong></p>
+<ol>
+  <li>All living things are made of cells — important: explains unity of all life; basis of medicine</li>
+  <li>Cells are the basic unit of life — important: all vital processes occur in cells</li>
+  <li>All cells come from pre-existing cells — important: explains reproduction, refutes spontaneous generation</li>
+</ol>
+<p><strong>Q12 (4 marks — 1 per correctly labelled structure with function):</strong></p>
+<ul>
+  <li>Thick rigid outer layer: cell wall — structural support and shape</li>
+  <li>Thin inner layer: cell membrane — controls what enters/exits</li>
+  <li>Dark round body: nucleus — contains DNA; controls cell</li>
+  <li>Green ovals: chloroplasts — site of photosynthesis</li>
+  <li>Large central area: vacuole — stores water, maintains pressure</li>
+</ul>
+<p><strong>Q13 (3 marks):</strong></p>
+<p>Xylem — it transports water (and anything dissolved in water, including dye) from roots upward to leaves</p>
+<p><strong>Q14 (4 marks):</strong></p>
+<p>CO₂ + water + light energy → glucose + oxygen</p>
+<p>CO₂ from: air through stomata; Water from: soil via roots; Light from: sun</p>
+<p>Glucose goes to: plant cells for energy/growth; stored as starch; Oxygen goes to: atmosphere</p>
+<p><strong>Q15 (3 marks):</strong></p>
+<p>Plants make their own food via photosynthesis using CO₂ from air and water from soil; soil provides only minerals (water and dissolved minerals); van Helmont's experiment showed the plant gained 74 kg while soil lost only 57 grams — the mass came from air and water, not soil</p>
+<hr class="section-break">
+<h2 class="section-title">Unit Test Answer Key (/60)</h2>
+<h3>Part A: Selected Response (15 marks)</h3>
+<ol>
+  <li>c   2. c   3. b   4. b   5. d   6. c   7. b   8. c   9. b   10. c   11. b   12. b   13. b   14. c   15. b</li>
+</ol>
+<h3>Part B: Short Answer (20 marks)</h3>
+<p><strong>Q16 (8 marks):</strong> Plant cell with 5 structures: cell wall (support), cell membrane (selective permeability), central vacuole (water storage/turgor), chloroplast (photosynthesis), nucleus (DNA/control) — 2 marks per structure: 1 label + 1 function</p>
+<p><strong>Q17 (4 marks):</strong></p>
+<p>CO₂ + water + light energy → glucose + oxygen</p>
+<p>Importance: photosynthesis converts solar energy into chemical energy (glucose) that ALL consumers depend on; it is the energy input for virtually every food chain on Earth; without it, no producers, no consumers</p>
+<p><strong>Q18 (4 marks):</strong></p>
+<p>a) Sugars (glucose) made by photosynthesis</p>
+<p>b) Roots harmed first — roots have no chloroplasts; cannot photosynthesize; rely entirely on sugars delivered by phloem; without sugar delivery, roots starve</p>
+<p><strong>Q19 (4 marks):</strong></p>
+<ul>
+  <li>Sexual advantage: genetic variation; offspring can adapt to changing conditions; disease resistant individuals survive</li>
+  <li>Asexual advantage: rapid colonization; no pollinator needed; all offspring vigorous (clone of successful parent)</li>
+  <li>Asexual reproduction would be better for rapidly colonizing bare soil after fire: fast establishment, no need to wait for pollinator visits, rapid spread via runners/rhizomes (e.g., fireweed)</li>
+</ul>
+<h3>Part C: Application (15 marks)</h3>
+<p><strong>Q20 — van Helmont (7 marks):</strong></p>
+<p>a) Plants do not get their mass from soil; most mass comes from CO₂ in air and water</p>
+<p>b) Soil provided dissolved minerals (tiny amounts) and water</p>
+<p>c) Carbon from CO₂ in air; hydrogen and oxygen from water (H₂O)</p>
+<p>d) The belief that plants eat soil is disproven; plants build their mass from light, air, and water; soil is the anchor and mineral source, not the food source</p>
+<p><strong>Q21 — Biotechnology comparison (8 marks):</strong></p>
+<p>a) Option A advantages: faster (traits achieved in years, not decades); more precise (specific gene changed, not whole genome)</p>
+<p>b) Option B advantages: proven safe over long history; no regulatory hurdles; public acceptance; maintains genetic diversity within species</p>
+<p>c) Option A concern: gene may spread to related wild plants (gene flow); unintended effects on non-pest insects; Option B concern: very slow — 10–15 years while pest destroys crops; may reduce genetic diversity if only drought-tolerant lines kept</p>
+<p>d) Option A recommended for 3-year timeline; selective breeding cannot deliver in 3 years; GMO precision allows targeted solution; regulatory approval may be possible if fast-tracked; justify by urgency of crop loss</p>
+<h3>Part D: Extended Response (10 marks)</h3>
+<p><strong>Rubric — Pollinator decline essay:</strong></p>
+<ul>
+  <li>States how declining bees affect food crops (with Alberta crop examples): 3 marks</li>
+  <li>Connects pollinator decline to monoculture: 2 marks</li>
+  <li>Proposes one solution from unit knowledge: 2 marks</li>
+  <li>Uses correct scientific vocabulary: 1 mark</li>
+  <li>Clear, logically organized response: 2 marks</li>
+</ul>
+<p><strong>Sample answer:</strong> Alberta's canola (pollinated by bees) and pulse crops (peas, lentils — partially bee-dependent) would experience significant yield loss without bee pollinators; bees transfer pollen from stamen to pistil, enabling fertilization and seed/fruit production; without this, canola cannot produce oil-bearing seeds. Monoculture farming contributes to pollinator decline: large fields of one crop bloom for a short window then offer nothing; bees need diverse flowering plants throughout the season; monocultures eliminate the wildflower diversity bees need between crop blooms. One solution: using selective breeding to develop crops that attract a wider range of wild pollinators (not just honeybees), combined with leaving wildflower strips along field edges to maintain pollinator populations between crop flowering periods.</p>
+
+</body>
+</html>

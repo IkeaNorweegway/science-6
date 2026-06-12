@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 7 Science — Plants for Food and Fibre: Guided Notes Package</title>
+<style>
+  :root {
+    --unit: #16a34a;
+    --unit-dark: #15803d;
+    --unit-light: #dcfce7;
+    --unit-border: #86efac;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  /* ── Typography ── */
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--unit-dark);
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  /* ── Cover block ── */
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  /* ── Pre-knowledge box ── */
+  .pre-knowledge {
+    border: 2px dashed #94a3b8;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Vocab table ── */
+  .vocab-wrap {
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table th {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--unit-light);
+    color: var(--unit-dark);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--unit-border);
+    text-align: left;
+  }
+  table td {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    min-height: 2.2rem;
+  }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 600; color: #0f172a; }
+
+  /* ── Fill-in blanks ── */
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  /* ── Answer lines ── */
+  .al {
+    display: block;
+    border-bottom: 1.5px solid #94a3b8;
+    height: 1.8rem;
+    margin: 0.4rem 0;
+    width: 100%;
+  }
+  .al-short { width: 60%; }
+  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
+  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
+
+  /* ── Code / diagram blocks ── */
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.35rem;
+    padding: 0.85rem 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  /* ── Misconception callout ── */
+  .misconception {
+    border-left: 5px solid #dc2626;
+    background: #fef2f2;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #dc2626;
+    margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  /* ── Connection prompt ── */
+  .connection {
+    border-left: 5px solid #f97316;
+    background: #fff7ed;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2410c;
+    margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  /* ── Retrieval check ── */
+  .retrieval {
+    background: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6d28d9;
+    margin-right: 0.3rem;
+  }
+
+  /* ── Self-check ── */
+  .self-check {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem;
+    padding: 0.6rem 1.1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #166534;
+  }
+  .self-check strong { color: #14532d; }
+
+  /* ── Go-to-workbook prompt ── */
+  .workbook-prompt {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #475569;
+    background: #f1f5f9;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.25rem;
+    border-left: 4px solid #94a3b8;
+  }
+
+  /* ── Dividers ── */
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  /* ── Summary / synthesis boxes ── */
+  .synthesis-box {
+    border: 2px solid var(--unit);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--unit-light);
+  }
+  .synthesis-box h3 { margin-top: 0; }
+
+  /* ── Answer key styling ── */
+  .answer {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    padding: 0.35rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    font-style: italic;
+    color: #166534;
+    font-size: 0.9rem;
+  }
+
+  /* ── Question cards (workbook) ── */
+  .q-card {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    background: #fff;
+  }
+  .q-header {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+  .q-num {
+    color: var(--unit-dark);
+    font-weight: 700;
+  }
+  .marks {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 400;
+  }
+
+  /* ── Rubric table ── */
+  .rubric th { background: #1e293b; color: white; }
+
+  /* ── Print ── */
+  @media print {
+    body {
+      font-size: 11pt;
+      padding: 1.5cm;
+      max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+
+  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
+  :root {
+    --dg-stroke:    #334155;
+    --dg-fill:      #f8fafc;
+    --dg-accent:    var(--accent, #1d4ed8);
+    --dg-secondary: #64748b;
+    --dg-muted:     #94a3b8;
+    --dg-sw:        1.5px;
+    --dg-sw-bold:   2.5px;
+    --dg-sw-thin:   1.0px;
+  }
+  svg .dg-boundary, svg .dg-line, svg .dg-accent,
+  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
+    vector-effect: non-scaling-stroke;
+  }
+  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
+  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
+  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
+  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
+  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
+  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
+  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
+  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
+  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
+  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
+  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <h1>Plants for Food and Fibre</h1>
+  <p>Grade 7 Science &nbsp;·&nbsp; Guided Notes Package &nbsp;·&nbsp; Alberta Curriculum 2007</p>
+  <div class="name-line">
+    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<hr class="section-break">
+<h2 class="section-title">Pre-Knowledge Check</h2>
+<p><em>Before you start this unit — no notes, no right or wrong answers. Write what you honestly think right now.</em></p>
+<ol>
+  <li>Where do plants get their food? Be as specific as you can.</li>
+</ol>
+<div class="al"></div>
+<ol>
+  <li>What happens inside a leaf? What does a plant do with sunlight?</li>
+</ol>
+<div class="al"></div>
+<ol>
+  <li>Name three ways plants reproduce. (Guess if you're not sure.)</li>
+</ol>
+<div class="al"></div>
+<ol>
+  <li>What do you think the difference is between a food crop and a fibre crop?</li>
+</ol>
+<div class="al"></div>
+<p><em>Keep this page. At the end of the unit, you will come back and read what you wrote here.</em></p>
+<hr class="section-break">
+<h2 class="section-title">Section 1: Cell Theory and Plant Cells</h2>
+<p><strong>Learning target:</strong> I can state the three tenets of cell theory and identify plant cell structures visible under a light microscope.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Cell theory</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Cell wall</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Cell membrane</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Vacuole</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Chloroplast</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Nucleus</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>Cell Theory</strong> — three core ideas that all biology is built on:</p>
+<ol>
+  <li>All living things are made of <span class="b b-md">&nbsp;</span>.</li>
+  <li>Cells are the basic <span class="b b-md">&nbsp;</span> of life.</li>
+  <li>All cells come from <span class="b b-md">&nbsp;</span> cells.</li>
+</ol>
+<div class="connection">
+  <div class="c-label">Why cell theory matters:</div>
+  <p>Before 1839, most biologists thought complex organisms were built from a mix of specialized tissues and simple materials. Schleiden (plants) and Schwann (animals) unified all of biology under one principle: everything living is cellular.</p>
+</div>
+<p><strong>Plant cells under a microscope — key structures:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Structure</th>
+<th>What it looks like</th>
+<th>What it does</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Cell wall</td>
+<td><span class="b b-md">&nbsp;</span> border; rigid</td>
+<td>Provides <span class="b b-md">&nbsp;</span> and shape; made of cellulose</td>
+</tr>
+<tr>
+<td>Cell membrane</td>
+<td>Inside the cell wall</td>
+<td>Controls what <span class="b b-md">&nbsp;</span> in and out of the cell</td>
+</tr>
+<tr>
+<td>Central vacuole</td>
+<td>Large central space (takes up ~90% of plant cell)</td>
+<td>Stores <span class="b b-md">&nbsp;</span>, maintains cell pressure (turgor), stores waste</td>
+</tr>
+<tr>
+<td>Chloroplasts</td>
+<td>Green, oval bodies</td>
+<td>Site of <span class="b b-md">&nbsp;</span>; contain chlorophyll</td>
+</tr>
+<tr>
+<td>Nucleus</td>
+<td>Dark, round body</td>
+<td>Controls cell activities; contains <span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>Plant cell vs. animal cell:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Feature</th>
+<th>Plant cell</th>
+<th>Animal cell</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Cell wall</td>
+<td>✓ present</td>
+<td>✗ absent</td>
+</tr>
+<tr>
+<td>Large central vacuole</td>
+<td>✓</td>
+<td>✗ (small vacuoles only)</td>
+</tr>
+<tr>
+<td>Chloroplasts</td>
+<td>✓ (in green cells)</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Cell membrane</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Nucleus</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody></table></div>
+<p><strong>Microscopy note:</strong> At light microscopy, you can see cell wall, cell membrane outline, central vacuole, nucleus, and chloroplasts (in green tissues). You cannot see individual molecules or most organelle structures.</p>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>State the three tenets of cell theory.<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+  <li>Name the structure that: (a) controls what enters the cell <span class="b b-md">&nbsp;</span> (b) contains the cell's DNA <span class="b b-md">&nbsp;</span> (c) is only found in plant cells and is bright green <span class="b b-md">&nbsp;</span><div class="al"></div></li>
+  <li>What does the central vacuole do? (Two functions)<div class="al"></div></li>
+<div class="al"></div>
+  <li>A student observes a cell under a microscope. It has a rigid outer wall, a large central space, and green oval bodies. Is this a plant cell or an animal cell? How do you know?<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> Why do you think animal cells don't have a cell wall? Consider what animal cells need to do that plant cells typically don't.<div class="al"></div></li>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 2: Plant Systems and Vascular Tissue</h2>
+<p><strong>Learning target:</strong> I can describe the functions of the root and shoot systems and explain how vascular tissue moves materials through a plant.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Root system</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Shoot system</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Vascular tissue</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Xylem</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Phloem</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>Two systems, one plant:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>System</th>
+<th>What it includes</th>
+<th>Main functions</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Root system</td>
+<td>roots, root hairs</td>
+<td><span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Shoot system</td>
+<td>stem, leaves, flowers, fruit</td>
+<td><span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>Root system details:</strong></p>
+<ul>
+  <li>Root hairs: tiny extensions that massively increase <span class="b b-md">&nbsp;</span> for water absorption</li>
+  <li>Taproot vs. fibrous roots: taproots (carrot, dandelion) go deep; fibrous roots (grasses) spread wide</li>
+  <li>Roots also store food: <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span> (name two crops where we eat the root)</li>
+</ul>
+<p><strong>Shoot system details:</strong></p>
+<ul>
+  <li>Stems: provide <span class="b b-md">&nbsp;</span>; transport materials; some store food (potato stem tubers)</li>
+  <li>Leaves: primary site of <span class="b b-md">&nbsp;</span>; blade captures light; petiole connects blade to stem</li>
+  <li>Flowers: <span class="b b-md">&nbsp;</span> structures (covered in Section 4)</li>
+</ul>
+<p><strong>Vascular tissue — the plant's transport system:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Tissue</th>
+<th>Carries</th>
+<th>Direction</th>
+<th>Think of it as</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Xylem</td>
+<td>water and dissolved <span class="b b-md">&nbsp;</span></td>
+<td>from <span class="b b-md">&nbsp;</span> to <span class="b b-md">&nbsp;</span></td>
+<td>supply pipes going up</td>
+</tr>
+<tr>
+<td>Phloem</td>
+<td><span class="b b-md">&nbsp;</span> (sugars) made by photosynthesis</td>
+<td>from <span class="b b-md">&nbsp;</span> to <span class="b b-md">&nbsp;</span></td>
+<td>distribution pipes going down</td>
+</tr>
+</tbody></table></div>
+<div class="connection">
+  <div class="c-label">Connection:</div>
+  <p>Xylem and phloem together form the vascular system. "Vascular" comes from the Latin for vessel — the same root word used in cardiovascular (heart and blood vessels). A plant's vascular system is analogous to the circulatory system in animals, but it uses passive forces (capillary action, osmosis, pressure) rather than a pump.</p>
+</div>
+<p><strong>Why vascular tissue is important in plant evolution:</strong> Early plants (mosses, liverworts) have no vascular tissue — they must remain <span class="b b-md">&nbsp;</span> to ground water. Vascular plants can grow <span class="b b-md">&nbsp;</span> because they can transport water up from the ground regardless of how far above the soil they are.</p>
+<p><strong>Diagram: label the parts below</strong></p>
+<pre>           [flower]
+              |
+         [leaf]---[leaf]
+              |
+           [stem]
+              |
+         ___________
+        |  [roots]  |
+        |___________|</pre>
+<p>On the diagram: mark where xylem travels upward (↑) and where phloem travels downward (↓).</p>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>Name two functions of the root system and two functions of the shoot system.<div class="al"></div></li>
+<div class="al"></div>
+  <li>Complete the table: Xylem carries <span class="b b-md">&nbsp;</span> from <span class="b b-md">&nbsp;</span> to <span class="b b-md">&nbsp;</span>. Phloem carries <span class="b b-md">&nbsp;</span> from <span class="b b-md">&nbsp;</span> to <span class="b b-md">&nbsp;</span>.<div class="al"></div></li>
+  <li>A plant is placed in water dyed with blue food colouring. After 24 hours, the stem is cut and the inside shows blue dye. Which tissue carried the dye — xylem or phloem? Why?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Why can vascular plants grow taller than non-vascular plants like mosses?<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> A fungus attacks the phloem of a tree. Predict what will happen to (a) the leaves and (b) the roots over the following weeks. Explain why.<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 3: Photosynthesis</h2>
+<p><strong>Learning target:</strong> I can describe the process of photosynthesis including inputs, outputs, and its importance to ecosystems.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Photosynthesis</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Chlorophyll</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Glucose</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Carbon dioxide (CO₂)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<div class="connection">
+  <div class="c-label">MISCONCEPTION — BEFORE WE START</div>
+  <p><em>"Plants get their food from the soil through their roots."</em>  <strong>Why this fails:</strong> In 1648, Jan Baptist van Helmont planted a willow seedling in 90 kg of dry soil. After 5 years, the willow gained 74 kg of mass. The soil lost only 57 grams. Where did the 74 kg come from? Not the soil — mostly from <span class="b b-md">&nbsp;</span> and <span class="b b-md">&nbsp;</span> in the air. This experiment showed that plants build their mass from air, not soil. Soil provides minerals dissolved in water, but the <em>food</em> (energy) a plant runs on comes from photosynthesis.</p>
+</div>
+<p><strong>The photosynthesis equation:</strong></p>
+<pre>               light energy
+                    ↓
+  carbon dioxide + water ──────→ glucose + oxygen
+     (CO₂)       (H₂O)           (C₆H₁₂O₆)  (O₂)
+     (from ____) (from ____)                 (released into ____)</pre>
+<p>Fill in the blanks:</p>
+<ul>
+  <li>CO₂ comes from: <span class="b b-md">&nbsp;</span> via tiny pores in leaves</li>
+  <li>Water comes from: <span class="b b-md">&nbsp;</span> via roots and xylem</li>
+  <li>Light energy is captured by: <span class="b b-md">&nbsp;</span>, the green pigment in <span class="b b-md">&nbsp;</span></li>
+  <li>Glucose is: the <span class="b b-md">&nbsp;</span> the plant uses for energy and growth; stored as <span class="b b-md">&nbsp;</span></li>
+  <li>Oxygen is: a <span class="b b-md">&nbsp;</span> released into the atmosphere — vital for all aerobic life</li>
+</ul>
+<p><strong>Where does photosynthesis happen?</strong> In the <span class="b b-md">&nbsp;</span> of the <span class="b b-md">&nbsp;</span> parts of plants — primarily in <span class="b b-md">&nbsp;</span>.</p>
+<p><strong>Why photosynthesis matters to ecosystems:</strong></p>
+<p>Photosynthesis is the entry point of <span class="b b-md">&nbsp;</span> into almost every food chain on Earth. Producers convert <span class="b b-md">&nbsp;</span> energy into <span class="b b-md">&nbsp;</span> energy that all consumers depend on. Without photosynthesis, almost no life on Earth could survive.</p>
+<p><strong>A simple diagram — fill in the missing labels:</strong></p>
+<pre>        Sunlight
+           ↓
+    [Chloroplast]
+    CO₂ ──→ [     ] ──→ glucose (food for the plant)
+    H₂O ──→               ↓
+                          O₂ released into air</pre>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>Complete: Photosynthesis uses <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span>, and <span class="b b-md">&nbsp;</span> to produce <span class="b b-md">&nbsp;</span> and <span class="b b-md">&nbsp;</span>.<div class="al"></div></li>
+  <li>Where exactly in the cell does photosynthesis take place? <span class="b b-md">&nbsp;</span><div class="al"></div></li>
+  <li>Why do plants appear green? <span class="b b-md">&nbsp;</span><div class="al"></div></li>
+  <li>A student says "photosynthesis makes plants breathe." Correct this misunderstanding precisely — what does photosynthesis actually do?<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> A plant is placed in a sealed container. Over time, CO₂ levels drop and O₂ levels rise. The plant is healthy. Then the plant is kept in total darkness for two weeks. Predict what happens to CO₂ and O₂ levels. Explain using what you know about photosynthesis.<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 4: Plant Reproduction</h2>
+<p><strong>Learning target:</strong> I can describe sexual and asexual reproduction in plants and explain the advantages of each strategy.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Sexual reproduction</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Asexual reproduction</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Pollination</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Fertilization</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Germination</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Vegetative reproduction</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>Two strategies:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Strategy</th>
+<th>How it works</th>
+<th>Offspring are...</th>
+<th>Advantage</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Sexual reproduction</td>
+<td>Two parents combine <span class="b b-md">&nbsp;</span></td>
+<td>Genetically <span class="b b-md">&nbsp;</span> from parents</td>
+<td><span class="b b-md">&nbsp;</span> variation; adaptation to change</td>
+</tr>
+<tr>
+<td>Asexual reproduction</td>
+<td>One parent, no sex cells</td>
+<td>Genetically <span class="b b-md">&nbsp;</span> to parent</td>
+<td><span class="b b-md">&nbsp;</span>; rapid colonization of space</td>
+</tr>
+</tbody></table></div>
+<p><strong>Sexual reproduction — the flower's job:</strong></p>
+<p>Flowers are <span class="b b-md">&nbsp;</span> structures, not decoration. Their appearance, colour, and scent evolved to attract <span class="b b-md">&nbsp;</span>.</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Flower part</th>
+<th>Function</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Stamen (anther + filament)</td>
+<td>Produces <span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Pistil (stigma + style + ovary)</td>
+<td>Receives pollen; contains <span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Petals</td>
+<td><span class="b b-md">&nbsp;</span> pollinators</td>
+</tr>
+<tr>
+<td>Sepals</td>
+<td>Protect <span class="b b-md">&nbsp;</span> flower bud</td>
+</tr>
+</tbody></table></div>
+<p><strong>Pollination</strong> = transfer of pollen from <span class="b b-md">&nbsp;</span> to <span class="b b-md">&nbsp;</span> of the same species. Agents: wind, bees, butterflies, birds, bats.</p>
+<p><strong>Fertilization</strong> = pollen reaches the egg → <span class="b b-md">&nbsp;</span> forms → develops into a seed inside the <span class="b b-md">&nbsp;</span>, which becomes fruit.</p>
+<p><strong>Seed dispersal strategies:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Method</th>
+<th>Adaptation</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Wind</td>
+<td>lightweight, wings or fluff</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Animal (eaten)</td>
+<td>nutritious fruit; seeds survive digestion</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Animal (hitchhike)</td>
+<td>hooks or burrs</td>
+<td>burdock</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>buoyant</td>
+<td>coconut</td>
+</tr>
+<tr>
+<td>Mechanical</td>
+<td>pod explodes</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>Asexual (vegetative) reproduction — no flowers needed:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Method</th>
+<th>How it works</th>
+<th>Plant example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Runners (stolons)</td>
+<td>horizontal stems send out new plants</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Bulbs</td>
+<td>underground modified stem with stored food</td>
+<td>tulip, garlic</td>
+</tr>
+<tr>
+<td>Tubers</td>
+<td>underground stem that stores starch</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Cuttings</td>
+<td>stem piece roots when placed in soil</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<div class="connection">
+  <div class="c-label">MISCONCEPTION</div>
+  <p><em>"Cloning and asexual reproduction are unnatural — only done in a lab."</em>  <strong>Why this is wrong:</strong> Vegetative reproduction is a completely natural strategy used by hundreds of plant species. Strawberry runners, aspen groves (which are often one connected organism), and potato tubers all reproduce asexually in the wild. Lab cloning of plants is an extension of a strategy plants evolved millions of years ago.</p>
+</div>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>What is the function of the stamen? The pistil?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Name two asexual reproduction strategies and give a plant example of each.<div class="al"></div></li>
+<div class="al"></div>
+  <li>A plant produces seeds with hooks that stick to animal fur. What dispersal strategy is this? Why is it advantageous?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Why is genetic variation (produced by sexual reproduction) beneficial to a species over time?<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> An aspen grove in Alberta covers 20 hectares. All the trees are genetically identical and connected underground by one root system. Is this one organism or many? What are the advantages and risks of this strategy?<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 5: Plants for Food and Fibre — Alberta Agriculture</h2>
+<p><strong>Learning target:</strong> I can identify crops grown for food and fibre in Alberta and describe their uses before and after processing.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Food crop</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Fibre crop</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Processing</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Monoculture</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>Alberta is a major agricultural province:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Crop</th>
+<th>Category</th>
+<th>Before processing use</th>
+<th>After processing use</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Wheat</td>
+<td>Food — grain</td>
+<td><span class="b b-md">&nbsp;</span></td>
+<td>flour → bread, pasta</td>
+</tr>
+<tr>
+<td>Canola</td>
+<td>Food — oilseed</td>
+<td><span class="b b-md">&nbsp;</span></td>
+<td>canola oil, biodiesel</td>
+</tr>
+<tr>
+<td>Barley</td>
+<td>Food — grain</td>
+<td>animal feed</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Peas/lentils</td>
+<td>Food — pulse</td>
+<td><span class="b b-md">&nbsp;</span></td>
+<td>protein powder, food</td>
+</tr>
+<tr>
+<td>Flax</td>
+<td>Food + fibre</td>
+<td><span class="b b-md">&nbsp;</span></td>
+<td>linseed oil; linen fabric</td>
+</tr>
+<tr>
+<td>Hemp</td>
+<td>Food + fibre</td>
+<td>seeds (edible)</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>Alberta statistics:</strong></p>
+<ul>
+  <li>Alberta produces ~20% of Canada's <span class="b b-md">&nbsp;</span></li>
+  <li>~40% of Canada's <span class="b b-md">&nbsp;</span> comes from Alberta</li>
+  <li>Alberta's agricultural industry generates over <span class="b b-md">&nbsp;</span> billion dollars per year</li>
+</ul>
+<p><strong>Monoculture</strong> = growing a single crop species over large areas. Advantages: <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span>. Disadvantages: <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span>.</p>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>Name two Alberta crops grown for food and two grown for fibre.<div class="al"></div></li>
+<div class="al"></div>
+  <li>What is the difference between a food crop and a fibre crop?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Name one advantage and one disadvantage of monoculture farming.<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> Explain why the health of bee populations is directly connected to Alberta's food security.<div class="al"></div></li>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 6: Plant Biotechnology</h2>
+<p><strong>Learning target:</strong> I can explain selective breeding and genetic modification and evaluate their effects on agriculture and biodiversity.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Selective breeding</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Genetically modified organism (GMO)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Biotechnology</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>Selective breeding:</strong> Humans choose plants with <span class="b b-md">&nbsp;</span> traits and breed only those plants. Repeat over many generations. Results in dramatic changes over thousands of years. Example: wild mustard → cabbage, broccoli, kale, cauliflower, Brussels sprouts (all the same species, selectively bred for different traits).</p>
+<p><strong>Genetic modification (GMOs):</strong> Scientists directly <span class="b b-md">&nbsp;</span> specific genes — inserting, removing, or altering sequences in the DNA. Faster and more precise than selective breeding, but requires laboratory techniques.</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Technology</th>
+<th>Timeline</th>
+<th>Example</th>
+<th>Alberta relevance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Selective breeding</td>
+<td>Thousands of years</td>
+<td>High-yield wheat varieties</td>
+<td>All Alberta crop varieties have been selectively bred</td>
+</tr>
+<tr>
+<td>GMOs</td>
+<td>Since ~1990</td>
+<td>Canola with herbicide resistance</td>
+<td>~95% of Alberta canola is GMO</td>
+</tr>
+</tbody></table></div>
+<p><strong>Common GMO modifications in Alberta crops:</strong></p>
+<ul>
+  <li>Herbicide tolerance: crop survives herbicide that kills weeds → fewer herbicide applications needed</li>
+  <li>Pest resistance: built-in insect repellent → less pesticide needed</li>
+  <li>Drought tolerance: survive with less water</li>
+</ul>
+<p><strong>Evaluating biotechnology — multiple perspectives:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Perspective</th>
+<th>Concern or support</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Agronomist (crop specialist)</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Ecologist</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Consumer</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Indigenous farmer</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<div class="connection">
+  <div class="c-label">Note:</div>
+  <p>This is a contested topic. Scientists, farmers, consumers, and Indigenous communities have genuinely different values that lead to different conclusions — even when they agree on the facts. Recognising this is part of scientific literacy.</p>
+</div>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>What is selective breeding? How long has it been used?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Name two goals of genetic modification in Alberta crop plants.<div class="al"></div></li>
+<div class="al"></div>
+  <li>What is the difference between selective breeding and genetic modification? (Method, speed, precision)<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> A friend says "GMOs are definitely dangerous." Another says "GMOs are completely safe." Explain why both claims are oversimplified, and what questions would need to be answered to evaluate any specific GMO.<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Unit Synthesis</h2>
+<p><em>Complete this page from memory — notes closed. Then open your notes and check.</em></p>
+<p><strong>1.</strong> Draw and label a plant cell. Include at least 5 structures and write the function of each.</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p><strong>2.</strong> Write the photosynthesis equation in words (not symbols). For each input and output, identify where it comes from or where it goes.</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>3.</strong> Fill in this table from memory:</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Concept</th>
+<th>My explanation</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Three tenets of cell theory</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Xylem vs. phloem</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Why plants aren't getting food from soil</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Sexual vs. asexual reproduction</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Selective breeding vs. GMOs</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<p><strong>4.</strong> A farmer in Alberta wants to grow a crop that requires less water as the climate gets drier. Recommend a biotechnology approach (selective breeding or GMO), explain how it would work, and identify one potential risk.</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>5.</strong> Go back and read your Pre-Knowledge Check on the first page.</p>
+<ul>
+  <li>Question 1 asked where plants get their food. Was your answer correct? What did you miss?</li>
+</ul>
+<div class="al"></div>
+<ul>
+  <li>Question 2 asked what happens in a leaf. What can you add now?</li>
+</ul>
+<div class="al"></div>
+
+</body>
+</html>

@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 7 Science — Planet Earth: Guided Notes Package</title>
+<style>
+  :root {
+    --unit: #d97706;
+    --unit-dark: #b45309;
+    --unit-light: #fef3c7;
+    --unit-border: #fcd34d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  /* ── Typography ── */
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--unit-dark);
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  /* ── Cover block ── */
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  /* ── Pre-knowledge box ── */
+  .pre-knowledge {
+    border: 2px dashed #94a3b8;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Vocab table ── */
+  .vocab-wrap {
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table th {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--unit-light);
+    color: var(--unit-dark);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--unit-border);
+    text-align: left;
+  }
+  table td {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    min-height: 2.2rem;
+  }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 600; color: #0f172a; }
+
+  /* ── Fill-in blanks ── */
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  /* ── Answer lines ── */
+  .al {
+    display: block;
+    border-bottom: 1.5px solid #94a3b8;
+    height: 1.8rem;
+    margin: 0.4rem 0;
+    width: 100%;
+  }
+  .al-short { width: 60%; }
+  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
+  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
+
+  /* ── Code / diagram blocks ── */
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.35rem;
+    padding: 0.85rem 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  /* ── Misconception callout ── */
+  .misconception {
+    border-left: 5px solid #dc2626;
+    background: #fef2f2;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #dc2626;
+    margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  /* ── Connection prompt ── */
+  .connection {
+    border-left: 5px solid #f97316;
+    background: #fff7ed;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2410c;
+    margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  /* ── Retrieval check ── */
+  .retrieval {
+    background: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6d28d9;
+    margin-right: 0.3rem;
+  }
+
+  /* ── Self-check ── */
+  .self-check {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem;
+    padding: 0.6rem 1.1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #166534;
+  }
+  .self-check strong { color: #14532d; }
+
+  /* ── Go-to-workbook prompt ── */
+  .workbook-prompt {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #475569;
+    background: #f1f5f9;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.25rem;
+    border-left: 4px solid #94a3b8;
+  }
+
+  /* ── Dividers ── */
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  /* ── Summary / synthesis boxes ── */
+  .synthesis-box {
+    border: 2px solid var(--unit);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--unit-light);
+  }
+  .synthesis-box h3 { margin-top: 0; }
+
+  /* ── Answer key styling ── */
+  .answer {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    padding: 0.35rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    font-style: italic;
+    color: #166534;
+    font-size: 0.9rem;
+  }
+
+  /* ── Question cards (workbook) ── */
+  .q-card {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    background: #fff;
+  }
+  .q-header {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+  .q-num {
+    color: var(--unit-dark);
+    font-weight: 700;
+  }
+  .marks {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 400;
+  }
+
+  /* ── Rubric table ── */
+  .rubric th { background: #1e293b; color: white; }
+
+  /* ── Print ── */
+  @media print {
+    body {
+      font-size: 11pt;
+      padding: 1.5cm;
+      max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+
+  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
+  :root {
+    --dg-stroke:    #334155;
+    --dg-fill:      #f8fafc;
+    --dg-accent:    var(--accent, #1d4ed8);
+    --dg-secondary: #64748b;
+    --dg-muted:     #94a3b8;
+    --dg-sw:        1.5px;
+    --dg-sw-bold:   2.5px;
+    --dg-sw-thin:   1.0px;
+  }
+  svg .dg-boundary, svg .dg-line, svg .dg-accent,
+  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
+    vector-effect: non-scaling-stroke;
+  }
+  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
+  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
+  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
+  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
+  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
+  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
+  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
+  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
+  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
+  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
+  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <h1>Planet Earth</h1>
+  <p>Grade 7 Science &nbsp;·&nbsp; Guided Notes Package &nbsp;·&nbsp; Alberta Curriculum 2007</p>
+  <div class="name-line">
+    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<hr class="section-break">
+<h2 class="section-title">Pre-Knowledge Check</h2>
+<p><em>Before you start this unit — no notes, no right or wrong answers. Write what you honestly think right now.</em></p>
+<ol>
+  <li>What do you think the inside of the Earth looks like? Describe it or draw a quick sketch.</li>
+</ol>
+<div class="al"></div>
+<ol>
+  <li>Why do earthquakes happen? Where do most volcanoes occur?</li>
+</ol>
+<div class="al"></div>
+<ol>
+  <li>How do you think mountains form? How long do you think it takes?</li>
+</ol>
+<div class="al"></div>
+<ol>
+  <li>What do fossils tell us? How do scientists use them?</li>
+</ol>
+<div class="al"></div>
+<p><em>Keep this page. At the end of the unit, you will come back and read what you wrote here.</em></p>
+<hr class="section-break">
+<h2 class="section-title">Section 1: Earth's Interior</h2>
+<p><strong>Learning target:</strong> I can describe the four layers of Earth's interior and explain how we know what is inside.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Crust</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Mantle</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Outer core</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Inner core</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Seismic waves</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>We have never drilled to the mantle.</strong> The deepest drill hole ever (Kola Superdeep, Russia) reached only <span class="b b-md">&nbsp;</span> km — and the crust is up to 70 km thick in some places. Everything we know about Earth's interior comes from <span class="b b-md">&nbsp;</span>: waves produced by earthquakes that travel through the Earth and are recorded at stations worldwide.</p>
+<p><strong>Earth's four layers:</strong></p>
+<p><strong>1. Crust</strong> — the outermost layer</p>
+<ul>
+  <li>Oceanic crust: <span class="b b-md">&nbsp;</span> (5–10 km), dense (basalt); found under oceans</li>
+  <li>Continental crust: <span class="b b-md">&nbsp;</span> (up to 70 km), less dense (granite); the land we live on</li>
+  <li>The crust + upper mantle together = the <span class="b b-md">&nbsp;</span> (the rigid outer shell, broken into tectonic plates)</li>
+</ul>
+<p><strong>2. Mantle</strong> — the largest layer (~2,900 km thick)</p>
+<ul>
+  <li>Made of: <span class="b b-md">&nbsp;</span> rock</li>
+  <li>Behaviour: solid, but under extreme heat and pressure it <span class="b b-md">&nbsp;</span> extremely slowly (like very thick putty over millions of years)</li>
+  <li>Contains <span class="b b-md">&nbsp;</span> currents — slow circular movements of hot mantle rock rising and cool rock sinking; these drive <span class="b b-md">&nbsp;</span> plate motion</li>
+</ul>
+<p><strong>3. Outer core</strong> — liquid layer of <span class="b b-md">&nbsp;</span> and <span class="b b-md">&nbsp;</span></p>
+<ul>
+  <li>Temperature: ~4,000–6,000°C — hot enough to be liquid despite being deep</li>
+  <li>The moving liquid metal generates Earth's <span class="b b-md">&nbsp;</span> field (protects life from solar radiation)</li>
+</ul>
+<p><strong>4. Inner core</strong> — solid ball of <span class="b b-md">&nbsp;</span> and <span class="b b-md">&nbsp;</span></p>
+<ul>
+  <li>Temperature: ~5,000–6,000°C — hotter than outer core, but solid because <span class="b b-md">&nbsp;</span> is so extreme that it keeps it solid</li>
+</ul>
+<p><strong>Diagram — label the four layers:</strong></p>
+<pre>     ___________
+    /   [  1  ] \
+   / [ [  2  ] ] \
+  | [ [ [3/4] ] ] |
+   \ [ [  2  ] ] /
+    \   [  1  ] /
+     -----------</pre>
+<p><em>Label each layer with its name. Add arrows showing where convection currents flow in the mantle.</em></p>
+<p><strong>How do we know?</strong> Seismic waves travel at different speeds through different materials and <span class="b b-md">&nbsp;</span> or <span class="b b-md">&nbsp;</span> at layer boundaries. By analysing the paths and timings of these waves recorded at many stations, scientists mapped Earth's interior without ever seeing it.</p>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>Name Earth's four layers from outermost to innermost.<div class="al"></div></li>
+<div class="al"></div>
+  <li>Why is the inner core solid even though it's hotter than the outer core?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Why is the outer core important to life on Earth?<div class="al"></div></li>
+<div class="al"></div>
+  <li>How do scientists know what the inside of Earth looks like if we've never drilled there?<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> Oceanic crust is thinner and denser than continental crust. When an oceanic plate and a continental plate collide, which one goes under? Use density to explain why this matters for the rock cycle.<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 2: The Rock Cycle</h2>
+<p><strong>Learning target:</strong> I can classify rocks as igneous, sedimentary, or metamorphic and explain the conditions that form each type.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Igneous rock</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Sedimentary rock</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Metamorphic rock</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Magma</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Sediment</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Rock cycle</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p>Rock is not permanent — it changes continuously through the <span class="b b-md">&nbsp;</span>, driven by plate tectonics and solar energy.</p>
+<p><strong>Three rock families:</strong></p>
+<hr class="section-break">
+<p><strong>IGNEOUS ROCK</strong> — formed when <span class="b b-md">&nbsp;</span> (underground) or <span class="b b-md">&nbsp;</span> (surface) cools and solidifies</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Type</th>
+<th>Cooling rate</th>
+<th>Crystal size</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Intrusive (plutonic)</td>
+<td><span class="b b-md">&nbsp;</span> (underground)</td>
+<td><span class="b b-md">&nbsp;</span></td>
+<td>granite, gabbro</td>
+</tr>
+<tr>
+<td>Extrusive (volcanic)</td>
+<td><span class="b b-md">&nbsp;</span> (at surface)</td>
+<td><span class="b b-md">&nbsp;</span> (or glassy)</td>
+<td>basalt, obsidian, pumice</td>
+</tr>
+</tbody></table></div>
+<p><em>Why crystal size differs:</em> Slow cooling gives crystals <span class="b b-md">&nbsp;</span> to grow. Fast cooling freezes atoms before they can arrange into large crystals.</p>
+<hr class="section-break">
+<p><strong>SEDIMENTARY ROCK</strong> — formed from <span class="b b-md">&nbsp;</span> of weathered rock and organic material, compressed and cemented over time</p>
+<p>Three types of sedimentary rock:</p>
+<ol>
+  <li><span class="b b-md">&nbsp;</span> sedimentary: formed from rock fragments (sandstone, shale, conglomerate)</li>
+  <li><span class="b b-md">&nbsp;</span> sedimentary: formed from mineral precipitation from water (rock salt, gypsum)</li>
+  <li><span class="b b-md">&nbsp;</span> sedimentary: formed from organic remains (coal, chalk, some limestone)</li>
+</ol>
+<p><strong>Why sedimentary rock is scientifically important:</strong></p>
+<ul>
+  <li>Contains <span class="b b-md">&nbsp;</span> — preserved remains of ancient life</li>
+  <li>Rock layers (strata) record Earth's history: <span class="b b-md">&nbsp;</span> (younger layers on top)</li>
+  <li>Widespread in <span class="b b-md">&nbsp;</span> — oil sands, fossils, Alberta Badlands are all sedimentary</li>
+</ul>
+<hr class="section-break">
+<p><strong>METAMORPHIC ROCK</strong> — existing rock transformed by <span class="b b-md">&nbsp;</span> and/or <span class="b b-md">&nbsp;</span> (but not melted — if it melted, it would become igneous)</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Parent rock</th>
+<th>Becomes</th>
+<th>Change</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Limestone</td>
+<td><span class="b b-md">&nbsp;</span></td>
+<td>heat + pressure</td>
+</tr>
+<tr>
+<td>Shale</td>
+<td><span class="b b-md">&nbsp;</span></td>
+<td>heat + pressure</td>
+</tr>
+<tr>
+<td>Granite</td>
+<td><span class="b b-md">&nbsp;</span></td>
+<td>extreme pressure</td>
+</tr>
+</tbody></table></div>
+<p>Foliated metamorphic rocks: have visible layers or bands (<span class="b b-md">&nbsp;</span>, schist)</p>
+<p>Non-foliated: no distinct layers (<span class="b b-md">&nbsp;</span>, quartzite)</p>
+<hr class="section-break">
+<p><strong>The Rock Cycle:</strong></p>
+<p>All rock types can be converted to any other through the appropriate processes:</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Process</th>
+<th>What happens</th>
+<th>Produces</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Melting + cooling</td>
+<td>rock melts to magma, then solidifies</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Weathering + erosion + deposition + compaction</td>
+<td>rock breaks down, transported, deposited, buried</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Heat + pressure (no melting)</td>
+<td>rock transformed</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<p><em>Draw the rock cycle as a triangle with arrows between all three corners. Label each arrow with the process.</em></p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>What is the difference between intrusive and extrusive igneous rock? Why do they have different crystal sizes?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Why do sedimentary rocks have layers? What do these layers tell geologists?<div class="al"></div></li>
+<div class="al"></div>
+  <li>What conditions create metamorphic rock? What conditions DON'T occur during metamorphism?<div class="al"></div></li>
+<div class="al"></div>
+  <li>In which rock type would you most likely find a fossil? Why?<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> A marble statue (metamorphic) is eroding in an acidic urban environment. Trace the marble through the rock cycle: where did the original rock come from, and where might the eroded marble end up in 10 million years?<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 3: Plate Tectonics</h2>
+<p><strong>Learning target:</strong> I can explain plate tectonics and describe what happens at the three types of plate boundaries.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Tectonic plate</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Plate boundary</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Divergent boundary</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Convergent boundary</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Transform boundary</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Subduction</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>The theory of plate tectonics:</strong> Earth's outer shell (lithosphere) is broken into approximately <span class="b b-md">&nbsp;</span> major plates and several smaller ones. These plates <span class="b b-md">&nbsp;</span> at a rate of 1–10 cm per year (roughly the rate your fingernails grow). The driving force is <span class="b b-md">&nbsp;</span> currents in the mantle below.</p>
+<div class="connection">
+  <div class="c-label">MISCONCEPTION</div>
+  <p><em>"Tectonic plates are the same as continents."</em>  <strong>Why this is wrong:</strong> Plates include both continental crust and oceanic crust. Many plate boundaries are <span class="b b-md">&nbsp;</span> (in the middle of oceans). The North American Plate, for example, includes most of North America AND the western half of the Atlantic Ocean. Some plates are almost entirely oceanic (Pacific Plate). Continents ride on plates; they are not the same thing as plates.</p>
+</div>
+<p><strong>Evidence for plate tectonics (how we know):</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Evidence type</th>
+<th>What it shows</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Continental fit</td>
+<td>Coastlines of Africa and South America <span class="b b-md">&nbsp;</span> like puzzle pieces</td>
+</tr>
+<tr>
+<td>Matching fossils</td>
+<td>Same species fossils found on <span class="b b-md">&nbsp;</span> continents now separated by thousands of km of ocean</td>
+</tr>
+<tr>
+<td>Paleomagnetic striping</td>
+<td>Magnetic reversal patterns are <span class="b b-md">&nbsp;</span> on both sides of mid-ocean ridges — like a tape recording of spreading</td>
+</tr>
+<tr>
+<td>Earthquake/volcano distribution</td>
+<td>Most earthquakes and volcanoes occur <span class="b b-md">&nbsp;</span> — along plate boundaries</td>
+</tr>
+<tr>
+<td>GPS measurements</td>
+<td>Modern technology directly measures plate <span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>Three boundary types:</strong></p>
+<p><strong>DIVERGENT BOUNDARY</strong> — plates <span class="b b-md">&nbsp;</span> apart</p>
+<p>Features: new seafloor created; mid-ocean ridges; volcanic activity (gentle, fluid lava); rift valleys on land</p>
+<p>Example: <span class="b b-md">&nbsp;</span> Ridge (North America + Europe separating) — Iceland sits on this ridge</p>
+<p>Alberta connection: <span class="b b-md">&nbsp;</span> (there are no divergent boundaries near Alberta)</p>
+<hr class="section-break">
+<p><strong>CONVERGENT BOUNDARY</strong> — plates <span class="b b-md">&nbsp;</span> together</p>
+<p>Three subtypes:</p>
+<ol>
+  <li><strong>Ocean + continent:</strong> denser oceanic plate <span class="b b-md">&nbsp;</span> (subducts) under continental plate → trench + volcanic arc on continent</li>
+</ol>
+<p>Example: <span class="b b-md">&nbsp;</span> + North American plate → Cascade volcanoes</p>
+<ol>
+  <li><strong>Ocean + ocean:</strong> older, denser plate subducts → deep trench + volcanic island arc</li>
+</ol>
+<p>Example: <span class="b b-md">&nbsp;</span> + Eurasian plate → Japan, Marianas Trench</p>
+<ol>
+  <li><strong>Continent + continent:</strong> neither subducts; both crumple upward → major mountain chain</li>
+</ol>
+<p>Example: India + Eurasia → <span class="b b-md">&nbsp;</span> Mountains</p>
+<p><strong>Alberta connection:</strong> The Rocky Mountains formed ~100 million years ago when oceanic plates pushed under North America, and later continental collision crumpled up the layers. Alberta itself was pushed and folded. Alberta is safe from active tectonics today, but its rocks still record that ancient collision.</p>
+<hr class="section-break">
+<p><strong>TRANSFORM BOUNDARY</strong> — plates <span class="b b-md">&nbsp;</span> sideways past each other</p>
+<p>Features: earthquakes; no new crust, no subduction; the two plates grind and lock</p>
+<p>Example: <span class="b b-md">&nbsp;</span> Fault, California — North American plate grinding past Pacific plate</p>
+<hr class="section-break">
+<p><strong>Diagram — draw and label the three boundary types (one simple sketch each):</strong></p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>What drives the movement of tectonic plates?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Name the three boundary types and identify ONE feature produced at each.<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+  <li>Why do mountains form at continent-continent convergent boundaries?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Most earthquakes and volcanoes occur in predictable locations. What does this tell us about where plate boundaries are?<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> Iceland has active volcanoes and is slowly splitting apart. Scientists predict it will eventually divide into two islands. Explain what type of boundary runs through Iceland and what geological process is occurring.<div class="al"></div></li>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 4: Earthquakes and Volcanoes</h2>
+<p><strong>Learning target:</strong> I can explain how earthquakes occur and describe two types of volcanoes in terms of their eruption style.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Fault</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Focus (hypocenter)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Epicenter</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Richter scale</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Mercalli scale</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Shield volcano</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Composite (stratovolcano)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>Earthquakes:</strong></p>
+<p>Plates are locked together at their boundaries by <span class="b b-md">&nbsp;</span>. As plates try to move, <span class="b b-md">&nbsp;</span> builds. When the stress exceeds the strength of the rock, the rock <span class="b b-md">&nbsp;</span> — seismic waves radiate outward in all directions.</p>
+<ul>
+  <li><strong>Focus (hypocenter):</strong> the <span class="b b-md">&nbsp;</span> where the rock breaks (underground)</li>
+  <li><strong>Epicenter:</strong> the point on the <span class="b b-md">&nbsp;</span> directly above the focus; where shaking is usually strongest</li>
+</ul>
+<p><strong>Measuring earthquakes:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Scale</th>
+<th>What it measures</th>
+<th>Type of measurement</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Richter</td>
+<td>Energy <span class="b b-md">&nbsp;</span> at the earthquake's focus</td>
+<td>Instrument-based; logarithmic (magnitude 6 = 10× more energy than magnitude 5)</td>
+</tr>
+<tr>
+<td>Mercalli</td>
+<td><span class="b b-md">&nbsp;</span> effects — what people experience and see</td>
+<td>Observational; I (not felt) to XII (total destruction)</td>
+</tr>
+</tbody></table></div>
+<p>An earthquake of magnitude 7.0 on the Richter scale releases <span class="b b-md">&nbsp;</span>× more energy than one of magnitude 6.0.</p>
+<p><strong>Volcanoes:</strong></p>
+<p>All volcanoes form where <span class="b b-md">&nbsp;</span> reaches the surface. Location: mostly along <span class="b b-md">&nbsp;</span> boundaries and <span class="b b-md">&nbsp;</span> spots (plumes of hot mantle material below the crust).</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Type</th>
+<th>Lava viscosity</th>
+<th>Eruption style</th>
+<th>Shape</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Shield volcano</td>
+<td><span class="b b-md">&nbsp;</span> (fluid)</td>
+<td>gentle, flows</td>
+<td>broad, low-sloping dome</td>
+<td><span class="b b-md">&nbsp;</span>, Mauna Loa</td>
+</tr>
+<tr>
+<td>Composite (stratovolcano)</td>
+<td><span class="b b-md">&nbsp;</span> (thick)</td>
+<td>explosive, violent</td>
+<td>steep, cone-shaped</td>
+<td>Mt. Pinatubo, <span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<p><em>Why does lava viscosity affect eruption style?</em> Fluid lava lets gas escape gradually → gentle flow. Thick lava traps <span class="b b-md">&nbsp;</span> → pressure builds until an explosive release.</p>
+<p><strong>Alberta and geological hazards:</strong></p>
+<ul>
+  <li>Alberta is geologically stable — far from active plate boundaries</li>
+  <li>Occasional small earthquakes in Alberta from <span class="b b-md">&nbsp;</span> and <span class="b b-md">&nbsp;</span> (human-caused: fracking, waste water injection)</li>
+  <li>No volcanoes in Alberta; however, Alberta residents experience smoke from BC/Washington volcanic region</li>
+</ul>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>What causes an earthquake at the particle level? (What is actually happening in the rock?)<div class="al"></div></li>
+<div class="al"></div>
+  <li>What is the difference between the focus and epicenter of an earthquake?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Compare the Richter scale and Mercalli scale — what does each measure?<div class="al"></div></li>
+<div class="al"></div>
+  <li>A volcano in Hawaii has gentle lava flows that tourists can watch from nearby. What type is it and why is its lava so fluid?<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> The 1980 eruption of Mt. St. Helens was highly explosive and killed 57 people. The 1984 eruption of Mauna Loa in Hawaii lasted several weeks and caused almost no casualties despite being a larger eruption in terms of lava volume. Explain this difference using lava viscosity.<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 5: Weathering, Erosion, and Alberta Landforms</h2>
+<p><strong>Learning target:</strong> I can describe mechanical and chemical weathering, explain erosion and deposition, and identify Alberta landforms they have produced.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Weathering</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Mechanical weathering</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Chemical weathering</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Erosion</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Deposition</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Glacial till</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>Weathering</strong> = the <span class="b b-md">&nbsp;</span> of rock at or near the surface. Important: weathering does NOT move material — it only <span class="b b-md">&nbsp;</span> it.</p>
+<p><strong>Two types:</strong></p>
+<p><strong>MECHANICAL WEATHERING</strong> — rock is broken into smaller pieces but <span class="b b-md">&nbsp;</span> does not change</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Process</th>
+<th>How it works</th>
+<th>Alberta example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Freeze-thaw</td>
+<td>Water enters cracks, freezes, expands, widens crack</td>
+<td>Rocky Mountain trails crumble every spring</td>
+</tr>
+<tr>
+<td>Root growth</td>
+<td>Plant roots grow into cracks, pry rock apart</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Abrasion</td>
+<td>Particles carried by wind/water/ice scratch rock</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>CHEMICAL WEATHERING</strong> — <span class="b b-md">&nbsp;</span> of rock changes; minerals react with water, oxygen, or acids</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Process</th>
+<th>How it works</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Acid rain</td>
+<td>CO₂ + water → carbonic acid dissolves limestone</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Oxidation</td>
+<td>Oxygen reacts with iron in rocks → rust</td>
+<td>red/orange rocks in Alberta Badlands</td>
+</tr>
+<tr>
+<td>Dissolution</td>
+<td>Some minerals dissolve directly in water</td>
+<td><span class="b b-md">&nbsp;</span></td>
+</tr>
+</tbody></table></div>
+<p><strong>Erosion</strong> = transport of weathered material by <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span>, or <span class="b b-md">&nbsp;</span>. The agent determines what size of material is moved and where it goes.</p>
+<p><strong>Deposition</strong> = material <span class="b b-md">&nbsp;</span> when the agent slows down. Larger/heavier particles settle first; finer particles travel farther.</p>
+<p><strong>Alberta landforms — what made them:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Landform</th>
+<th>Location</th>
+<th>How it formed</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Rocky Mountains</td>
+<td>SW Alberta</td>
+<td><span class="b b-md">&nbsp;</span> (plate tectonics) + glacial erosion</td>
+</tr>
+<tr>
+<td>Hoodoos</td>
+<td>Drumheller / Badlands</td>
+<td><span class="b b-md">&nbsp;</span> erosion of soft and hard rock layers</td>
+</tr>
+<tr>
+<td>Prairies</td>
+<td>central/southern Alberta</td>
+<td><span class="b b-md">&nbsp;</span> deposition of glacial till after the last ice age</td>
+</tr>
+<tr>
+<td>River valleys (Bow, Red Deer)</td>
+<td>throughout Alberta</td>
+<td><span class="b b-md">&nbsp;</span> erosion cutting downward over thousands of years</td>
+</tr>
+<tr>
+<td>Athabasca Sand Dunes</td>
+<td>NE Alberta</td>
+<td><span class="b b-md">&nbsp;</span> erosion of exposed sandstone + wind transport</td>
+</tr>
+<tr>
+<td>Glacial erratics</td>
+<td>throughout prairies</td>
+<td>boulders transported hundreds of km by <span class="b b-md">&nbsp;</span> during last ice age; dropped when glacier melted</td>
+</tr>
+</tbody></table></div>
+<div class="connection">
+  <div class="c-label">MISCONCEPTION</div>
+  <p><em>"Geological change is always dramatic and fast — like earthquakes and eruptions."</em>  <strong>Why this is wrong:</strong> Most geological change is <span class="b b-md">&nbsp;</span>. The Rocky Mountains grew at the rate of centimetres per year over millions of years. River valleys cut downward millimetre by millimetre per year. The prairies were shaped by glaciers that moved at the speed of <span class="b b-md">&nbsp;</span>. Dramatic events like floods and earthquakes exist but represent a tiny fraction of Earth's geological history.</p>
+</div>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>What is the difference between weathering and erosion?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Give one example of mechanical weathering and one of chemical weathering. Explain the difference.<div class="al"></div></li>
+<div class="al"></div>
+  <li>Explain what hoodoos are and how they form in the Alberta Badlands.<div class="al"></div></li>
+<div class="al"></div>
+  <li>What left the large boulders (glacial erratics) scattered across the Alberta prairies, far from any mountains?<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> A student says Alberta's flat prairies look that way because "nothing has ever happened there geologically." Using what you know about glaciation, deposition, and time, explain why this is wrong.<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Section 6: Fossils and Geological Time</h2>
+<p><strong>Learning target:</strong> I can explain how fossils form, use relative dating to interpret rock layers, and describe Alberta's fossil significance.</p>
+<h3>Vocabulary</h3>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition in your own words</th>
+<th>One example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Fossil</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Index fossil</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Relative dating</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Law of superposition</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Geological time scale</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<h3>Guided Notes</h3>
+<p><strong>What is a fossil?</strong> Any <span class="b b-md">&nbsp;</span> of past life preserved in rock or sediment. Not just bones.</p>
+<p><strong>Types of fossils:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Type</th>
+<th>How it forms</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Replacement</td>
+<td>minerals replace original material atom by atom</td>
+<td>petrified wood, many dinosaur bones</td>
+</tr>
+<tr>
+<td>Mould</td>
+<td>organism dissolves, leaving a <span class="b b-md">&nbsp;</span> in rock</td>
+<td>shell impression</td>
+</tr>
+<tr>
+<td>Cast</td>
+<td>mould fills with minerals, creating a 3D <span class="b b-md">&nbsp;</span></td>
+<td>cast of a shell</td>
+</tr>
+<tr>
+<td>Compression</td>
+<td>organism flattened under sediment pressure</td>
+<td>leaf fossils, fern imprints</td>
+</tr>
+<tr>
+<td>Amber preservation</td>
+<td>organism trapped in tree resin, now hardened</td>
+<td>insects in amber</td>
+</tr>
+<tr>
+<td>Trace fossil</td>
+<td>preserved <span class="b b-md">&nbsp;</span> of an organism, not the organism itself</td>
+<td>footprints, burrows, coprolites (fossil dung)</td>
+</tr>
+</tbody></table></div>
+<div class="connection">
+  <div class="c-label">MISCONCEPTION</div>
+  <p><em>"Fossils are mostly large dinosaur bones."</em>  <strong>Why this is wrong:</strong> Most fossils are <span class="b b-md">&nbsp;</span> — microscopic algae, pollen, bacteria. Large bones are rare because they require very specific conditions to preserve (rapid burial, mineral-rich water, no scavengers). The vast majority of the fossil record consists of shells, marine invertebrates, plant fragments, and microfossils. Alberta's Badlands fossil sites are remarkable precisely because large dinosaur fossils ARE found there — they are the exception.</p>
+</div>
+<p><strong>How fossils form (conditions needed):</strong></p>
+<ol>
+  <li>Organism must be <span class="b b-md">&nbsp;</span> quickly (before decomposition or scavenging)</li>
+  <li>Burial must occur in <span class="b b-md">&nbsp;</span> — the only environment where sedimentary rock forms</li>
+  <li>Mineral-rich groundwater slowly replaces or fills the hard parts over <span class="b b-md">&nbsp;</span> of years</li>
+</ol>
+<p><strong>Dating rock layers:</strong></p>
+<p><strong>Law of superposition:</strong> In undisturbed rock layers, <span class="b b-md">&nbsp;</span> layers are older and <span class="b b-md">&nbsp;</span> layers are younger. This allows relative dating — we can say layer A is older than layer B without knowing the actual age in years.</p>
+<p><strong>Index fossils:</strong> fossils of organisms that were <span class="b b-md">&nbsp;</span> (found in many locations), <span class="b b-md">&nbsp;</span> (spread across different rock types), and existed for a <span class="b b-md">&nbsp;</span> time period. If you find the same index fossil in rocks in two different places, those rocks are the same <span class="b b-md">&nbsp;</span>.</p>
+<p><strong>Relative vs. absolute dating:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Method</th>
+<th>What it tells you</th>
+<th>Examples</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Relative dating</td>
+<td>Which layers are <span class="b b-md">&nbsp;</span> or <span class="b b-md">&nbsp;</span> than others</td>
+<td>Law of superposition, index fossils</td>
+</tr>
+<tr>
+<td>Absolute dating</td>
+<td>Actual <span class="b b-md">&nbsp;</span> of the rock or fossil</td>
+<td>Radioactive decay (not required at Grade 7 level)</td>
+</tr>
+</tbody></table></div>
+<p><strong>Geological time scale — broad eras:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Era</th>
+<th>Approximate time range</th>
+<th>Life present</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Precambrian</td>
+<td>4.6 billion – 540 million years ago</td>
+<td>simple single-celled life; late period: first multicellular life</td>
+</tr>
+<tr>
+<td>Paleozoic</td>
+<td>540 – 252 million years ago</td>
+<td>marine invertebrates, fish, first land plants, first reptiles</td>
+</tr>
+<tr>
+<td>Mesozoic</td>
+<td>252 – 66 million years ago</td>
+<td><span class="b b-md">&nbsp;</span> era; mammals appear; Alberta's oil sands deposit</td>
+</tr>
+<tr>
+<td>Cenozoic</td>
+<td>66 million years ago – present</td>
+<td>mammals diversify; humans appear in last 300,000 years</td>
+</tr>
+</tbody></table></div>
+<p><strong>Alberta's fossil record:</strong></p>
+<p>Alberta is one of the world's most significant fossil locations because:</p>
+<ol>
+  <li>The <span class="b b-md">&nbsp;</span> era rock layers are exposed at the surface in the Badlands (erosion removed overlying rock)</li>
+  <li>The Cretaceous interior seaway covered Alberta ~75 million years ago → preserved marine fossils AND nearby dinosaur fossils</li>
+  <li><strong>Royal Tyrrell Museum (Drumheller):</strong> world's largest collection of <span class="b b-md">&nbsp;</span> fossils; one of Alberta's major scientific assets</li>
+  <li><strong>Burgess Shale</strong> (BC border, UNESCO World Heritage Site): Cambrian marine life (~505 million years ago) — some of the oldest animal fossils ever found</li>
+</ol>
+<div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
+<p><em>Cover your notes. Answer from memory.</em></p>
+  <li>What conditions are needed for fossilization? Why are fossils rare compared to the number of organisms that ever lived?<div class="al"></div></li>
+<div class="al"></div>
+  <li>What is the law of superposition? How does it allow relative dating?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Why is Alberta such a significant location for Cretaceous fossils specifically?<div class="al"></div></li>
+<div class="al"></div>
+  <li>Name two types of fossils other than bones. Explain how each forms.<div class="al"></div></li>
+<div class="al"></div>
+  <li><strong>Stretch:</strong> You find two rock outcrops 200 km apart. Both contain the same index fossil. What can you conclude about these rocks? What else would you need to know to determine the actual age of the rocks in years?<div class="al"></div></li>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>Self-check:</strong> How well do I know this section?   ☐ I could teach it   ☐ Getting there   ☐ Not yet</p>
+</ol></div>
+<hr class="section-break">
+<h2 class="section-title">Unit Synthesis</h2>
+<p><em>Complete this page from memory — notes closed. Then open your notes and check.</em></p>
+<p><strong>1.</strong> Draw and label a cross-section of the Earth. Include all four layers with their key property.</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p><strong>2.</strong> Draw the rock cycle. Include all three rock types and the processes connecting them (at least 5 arrows and labels).</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p><strong>3.</strong> Complete this table from memory:</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Concept</th>
+<th>My explanation</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Law of superposition</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Why oceanic crust subducts</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Three plate boundary types</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Why crystal size differs in igneous rocks</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>How Alberta's mountains formed</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>What Alberta's oil sands are made of</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<p><strong>4.</strong> A geologist finds a rock layer in the Alberta Badlands containing large dinosaur bones, small marine shells, and a thin layer of dark material that might be from an impact event. Using relative dating, what can she conclude about the sequence of events? What would she need to determine the actual date in years?</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>5.</strong> Go back and read your Pre-Knowledge Check on the first page.</p>
+<ul>
+  <li>Question 1: How accurate was your sketch of Earth's interior? What was missing?</li>
+</ul>
+<div class="al"></div>
+<ul>
+  <li>Question 3: How does your mountain-formation answer compare to what you know now about plate tectonics?</li>
+</ul>
+<div class="al"></div>
+
+</body>
+</html>

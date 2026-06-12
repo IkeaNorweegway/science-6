@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 7 Science — Interactions and Ecosystems: Workbook Answer Key</title>
+<style>
+  :root {
+    --unit: #059669;
+    --unit-dark: #047857;
+    --unit-light: #d1fae5;
+    --unit-border: #6ee7b7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  /* ── Typography ── */
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--unit-dark);
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  /* ── Cover block ── */
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  /* ── Pre-knowledge box ── */
+  .pre-knowledge {
+    border: 2px dashed #94a3b8;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Vocab table ── */
+  .vocab-wrap {
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table th {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--unit-light);
+    color: var(--unit-dark);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--unit-border);
+    text-align: left;
+  }
+  table td {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    min-height: 2.2rem;
+  }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 600; color: #0f172a; }
+
+  /* ── Fill-in blanks ── */
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  /* ── Answer lines ── */
+  .al {
+    display: block;
+    border-bottom: 1.5px solid #94a3b8;
+    height: 1.8rem;
+    margin: 0.4rem 0;
+    width: 100%;
+  }
+  .al-short { width: 60%; }
+  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
+  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
+
+  /* ── Code / diagram blocks ── */
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.35rem;
+    padding: 0.85rem 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  /* ── Misconception callout ── */
+  .misconception {
+    border-left: 5px solid #dc2626;
+    background: #fef2f2;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #dc2626;
+    margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  /* ── Connection prompt ── */
+  .connection {
+    border-left: 5px solid #f97316;
+    background: #fff7ed;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2410c;
+    margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  /* ── Retrieval check ── */
+  .retrieval {
+    background: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6d28d9;
+    margin-right: 0.3rem;
+  }
+
+  /* ── Self-check ── */
+  .self-check {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem;
+    padding: 0.6rem 1.1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #166534;
+  }
+  .self-check strong { color: #14532d; }
+
+  /* ── Go-to-workbook prompt ── */
+  .workbook-prompt {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #475569;
+    background: #f1f5f9;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.25rem;
+    border-left: 4px solid #94a3b8;
+  }
+
+  /* ── Dividers ── */
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  /* ── Summary / synthesis boxes ── */
+  .synthesis-box {
+    border: 2px solid var(--unit);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--unit-light);
+  }
+  .synthesis-box h3 { margin-top: 0; }
+
+  /* ── Answer key styling ── */
+  .answer {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    padding: 0.35rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    font-style: italic;
+    color: #166534;
+    font-size: 0.9rem;
+  }
+
+  /* ── Question cards (workbook) ── */
+  .q-card {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    background: #fff;
+  }
+  .q-header {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+  .q-num {
+    color: var(--unit-dark);
+    font-weight: 700;
+  }
+  .marks {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 400;
+  }
+
+  /* ── Rubric table ── */
+  .rubric th { background: #1e293b; color: white; }
+
+  /* ── Print ── */
+  @media print {
+    body {
+      font-size: 11pt;
+      padding: 1.5cm;
+      max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+
+  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
+  :root {
+    --dg-stroke:    #334155;
+    --dg-fill:      #f8fafc;
+    --dg-accent:    var(--accent, #1d4ed8);
+    --dg-secondary: #64748b;
+    --dg-muted:     #94a3b8;
+    --dg-sw:        1.5px;
+    --dg-sw-bold:   2.5px;
+    --dg-sw-thin:   1.0px;
+  }
+  svg .dg-boundary, svg .dg-line, svg .dg-accent,
+  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
+    vector-effect: non-scaling-stroke;
+  }
+  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
+  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
+  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
+  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
+  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
+  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
+  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
+  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
+  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
+  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
+  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <h1>Interactions and Ecosystems</h1>
+  <p>Grade 7 Science &nbsp;·&nbsp; Workbook Answer Key &nbsp;·&nbsp; Alberta Curriculum 2007</p>
+  <div class="name-line">
+    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<p><em>Format follows faded answer key design: full solutions early, partial/setup later, final answer only toward end.</em></p>
+<hr class="section-break">
+<h2 class="section-title">Part A: Vocabulary (20 marks)</h2>
+<p><strong>Q1 Matching:</strong> a→5 (biotic = living); b→4 (decomposer = breaks down dead); c→6 (keystone = disproportionate effect); d→2 (abiotic = non-living); e→1 (biodiversity = variety); f→3 (producer = makes own food)</p>
+<p><strong>Q2 Definitions:</strong> Accept student wording if conceptually accurate.</p>
+<ul>
+  <li>Trophic level: position in food chain based on energy source</li>
+  <li>Ecological niche: the complete role of a species in its ecosystem (what it eats, when active, how it reproduces)</li>
+  <li>Invasive species: organism introduced outside its native ecosystem; typically lacks natural predators</li>
+  <li>Ecosystem services: benefits ecosystems provide to humans for free (water filtration, carbon storage, pollination, etc.)</li>
+</ul>
+<p><strong>Q3 Examples:</strong> Any correct Alberta examples. Key: keystone needs justification; invasive needs "established or threat" distinction; at-risk needs threat reason.</p>
+<hr class="section-break">
+<h2 class="section-title">Part B: Food Webs and Energy Flow (24 marks)</h2>
+<p><strong>Q4 — Food web questions:</strong></p>
+<p>a) Grass, willow, or aspen (any producer from the web)</p>
+<p>b) Secondary or tertiary (lynx eats snowshoe hare which eats willow/grass; 3rd trophic level = tertiary consumer)</p>
+<p>c) Snowshoe hare or moose</p>
+<p>d) Lynx (eats hare), wolf (eats moose), great horned owl (eats hare)</p>
+<p>e) Snowshoe hare: declines (loses food source); Lynx: declines (less prey); Wolf: may partly compensate by eating more moose if moose population unaffected, but overall predator population under pressure</p>
+<p>f) Producers (willow) = 10,000 → hare (primary) = 1,000 → wolf (secondary/tertiary): wolf eating hare = 100 units; wolf eating moose (which ate willow) = 1,000 → wolf = 100</p>
+<p><strong>Q5 (4 marks):</strong> 10% rule means only 10% of energy passes to next level; top predators (3–4 levels up) receive ~0.01–0.1% of original producer energy; must range over enormous area to find sufficient prey energy</p>
+<p><strong>Q6 (4 marks):</strong> Any two: (1) most organisms eat multiple food sources, not just one; (2) most organisms are eaten by multiple predators; (3) omnivores eat at multiple trophic levels; (4) decomposers connect all trophic levels</p>
+<p><strong>Q7 (4 marks):</strong> Decomposers break down dead material → return nutrients (nitrogen, phosphorus, carbon) to soil → producers need these minerals to grow → without decomposers, dead material piles up and nutrients become unavailable → producers decline → all trophic levels decline</p>
+<hr class="section-break">
+<h2 class="section-title">Part C: Ecosystems and Biodiversity (20 marks)</h2>
+<p><strong>Q8:</strong> Biotic: living (wolves, trees, fungi); Abiotic: non-living (temperature, soil moisture, sunlight); Interaction: abiotic factors set limits; biotic community adapts to abiotic conditions; biotic organisms change abiotic environment (beavers change water flow)</p>
+<p><strong>Q9:</strong> Any biotic/abiotic differences:</p>
+<ul>
+  <li>Grassland biotic: grasses, pronghorn, burrowing owls; Wetland biotic: cattails, great blue herons, beavers</li>
+  <li>Grassland abiotic: lower annual precipitation, higher summer temperatures; Wetland abiotic: standing water present, higher humidity</li>
+</ul>
+<p><strong>Q10:</strong> Biodiversity = variety of species in an ecosystem; matters because more species = more resilience; example: monoculture crop destroyed by one disease vs. polyculture or wild ecosystem where only some species affected</p>
+<p><strong>Q11 (6 marks — full solution):</strong> Bears = keystone species (regulate ground squirrel populations); removal → squirrels unchecked → overgraze native prairie grass → grass declines → shifts food web (fewer other grass-dependent species); food web connections are non-linear — removing one species affects unexpected organisms several steps away; reintroduction restored balance at multiple trophic levels</p>
+<hr class="section-break">
+<h2 class="section-title">Part D: Environmental Change (20 marks)</h2>
+<p><strong>Q12:</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th></th>
+<th>Natural</th>
+<th>Human-caused</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Example</td>
+<td>boreal forest fire</td>
+<td>oil sands habitat clearing</td>
+</tr>
+<tr>
+<td>Rate</td>
+<td>varies (fire = fast; succession = slow)</td>
+<td>often rapid and sustained</td>
+</tr>
+<tr>
+<td>Recovery</td>
+<td>likely; succession occurs</td>
+<td>uncertain; depends on severity</td>
+</tr>
+<tr>
+<td>Human control</td>
+<td>low</td>
+<td>high (the cause)</td>
+</tr>
+</tbody></table></div>
+<p><strong>Q13 (4 marks):</strong> Tipping point: threshold beyond which ecosystem does not return to prior state; example: repeated coral bleaching (each bleaching event weakens coral; after enough stress, structural community collapses permanently); "recovered" ecosystem may have different species composition, lost keystone species, or reduced biodiversity — surface appearance ≠ functional recovery</p>
+<p><strong>Q14 (4 marks):</strong> Zebra mussels filter feed continuously → outcompete native bivalves and zooplankton; disrupt base of food chain; no natural predators in Alberta → rapid population growth; clog water intake pipes for municipalities → significant economic infrastructure costs; spread via boat hulls and live bait → difficult to prevent</p>
+<p><strong>Q15 (4 marks):</strong> Any 3 effects with food web connections:</p>
+<ul>
+  <li>Habitat fragmentation: woodland caribou lose continuous old-growth → population isolation, wolf access via roads</li>
+  <li>Water disruption: road runoff changes stream chemistry → affects aquatic invertebrates → affects fish → affects bears/osprey</li>
+  <li>Loss of old-growth trees: cavity-nesting birds lose nesting sites</li>
+  <li>Light/temperature change at clear-cut edges: different plant species establish → different herbivore community</li>
+</ul>
+<hr class="section-break">
+<h2 class="section-title">Part E: Sustainability and Stewardship (16 marks)</h2>
+<p><strong>Q16 (4 marks):</strong> TEK = knowledge built over generations through careful observation of specific ecosystems; example: Blackfoot prescribed burning (deliberately burned grassland for bison habitat) — modern fire management now incorporates this practice; or: Cree knowledge of boreal mushroom and berry cycles informing habitat monitoring</p>
+<p><strong>Q17 (6 marks — 1 per service + consequence):</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Service</th>
+<th>Without it...</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Water filtration</td>
+<td>Cost of water treatment plant: $50–200M+; not always possible in remote communities</td>
+</tr>
+<tr>
+<td>Carbon sequestration</td>
+<td>Additional carbon released → accelerates climate change; industrial capture costs $100s per tonne</td>
+</tr>
+<tr>
+<td>Wildlife habitat</td>
+<td>Loss of biodiversity; tourism industry collapses; hunting/fishing industries decline</td>
+</tr>
+</tbody></table></div>
+<p><strong>Q18 (6 marks):</strong> Any of the three options with specific evidence:</p>
+<ul>
+  <li>Farmers: pollinators (bees) service canola and pulse crops; soil organisms (decomposers) maintain soil fertility; both are ecosystem services</li>
+  <li>Indigenous communities: traditional food systems (moose, fish, berries) directly depend on healthy boreal/wetland ecosystems; land-based healing practices rely on ecosystem health</li>
+  <li>Urban development: impervious surfaces increase runoff → floods downstream; clearing riparian vegetation → stream bank erosion → sedimentation → fish habitat loss far beyond city limits</li>
+</ul>
+<hr class="section-break">
+<h2 class="section-title">Part F: Challenge (★)</h2>
+<p><strong>Q19 (8 marks) — Conservation plan rubric:</strong></p>
+<ul>
+  <li>Current threat identified with evidence: 2 marks</li>
+  <li>Trophic level effects of decline: 2 marks</li>
+  <li>Conservation action tied to ecosystem concept: 2 marks</li>
+  <li>Measurable indicator proposed: 2 marks</li>
+</ul>
+<p>Specific examples for woodland caribou:</p>
+<ul>
+  <li>Threat: habitat fragmentation from oil and gas roads; wolves use roads to access previously remote areas</li>
+  <li>Effects: decline of caribou (3rd/4th trophic level) → less prey for wolves in some areas; changes in lichen distribution (caribou food)</li>
+  <li>Action: road reclamation in critical habitat zones + "road-free" zones in designated caribou ranges → reconnects habitat, reduces wolf access</li>
+  <li>Measurable indicator: annual caribou calf survival rate (% calves surviving first winter); GPS-tracked population movements; wolf encounter rates in protected zones</li>
+</ul>
+
+</body>
+</html>

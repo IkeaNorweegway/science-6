@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const units = [
+  {
+    slug: 'interactions-ecosystems',
+    label: 'Interactions and Ecosystems',
+    description: 'Ecosystems, food webs, energy pyramids, biodiversity, and human impacts on Alberta ecosystems.',
+    color: '#059669',
+    colorDark: '#047857',
+    colorLight: '#d1fae5',
+  },
+  {
+    slug: 'plants-food-fibre',
+    label: 'Plants for Food and Fibre',
+    description: 'Cell theory, plant systems, photosynthesis, reproduction, Alberta agriculture, and biotechnology.',
+    color: '#16a34a',
+    colorDark: '#15803d',
+    colorLight: '#dcfce7',
+  },
+  {
+    slug: 'heat-temperature',
+    label: 'Heat and Temperature',
+    description: 'Temperature scales, heat vs. temperature, the particle model, modes of heat transfer, and specific heat.',
+    color: '#ea580c',
+    colorDark: '#c2410c',
+    colorLight: '#ffedd5',
+  },
+  {
+    slug: 'structures-forces',
+    label: 'Structures and Forces',
+    description: 'Structure types, loads, internal forces, stability, simple machines, and materials.',
+    color: '#7c3aed',
+    colorDark: '#6d28d9',
+    colorLight: '#ede9fe',
+  },
+  {
+    slug: 'planet-earth',
+    label: 'Planet Earth',
+    description: "Earth's interior, the rock cycle, plate tectonics, earthquakes, landforms, and geological time.",
+    color: '#d97706',
+    colorDark: '#b45309',
+    colorLight: '#fef3c7',
+  },
+];
+---
+
+<BaseLayout course="science7" title="Grade 7 Science">
+
+  <div class="mb-10">
+    <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #059669;">Alberta Curriculum</p>
+    <h1 class="text-4xl font-bold text-slate-900 mb-3">Grade 7 Science</h1>
+    <p class="text-slate-500 text-lg max-w-xl">
+      Five units. Notes, workbooks, quizzes, tests, and answer keys. Alberta 2007 curriculum.
+    </p>
+  </div>
+
+  <!-- Quick stats -->
+  <div class="grid grid-cols-4 gap-3 mb-10">
+    {[
+      { n: '5', label: 'Units' },
+      { n: '~26 weeks', label: 'Duration' },
+      { n: '40', label: 'Materials' },
+      { n: '30', label: 'Exit tickets' },
+    ].map(s => (
+      <div class="bg-white rounded-xl border border-slate-200 p-4 text-center">
+        <p class="text-2xl font-bold" style="color: #047857;">{s.n}</p>
+        <p class="text-xs text-slate-400 mt-1 uppercase tracking-wide">{s.label}</p>
+      </div>
+    ))}
+  </div>
+
+  <!-- Unit cards -->
+  <div class="space-y-3">
+    {units.map(u => (
+      <a
+        href={`${base}science7/materials/${u.slug}`}
+        class="group block bg-white rounded-xl border border-slate-200 border-l-4 p-5 transition-colors hover:opacity-90"
+        style={`border-left-color: ${u.color};`}
+      >
+        <div class="flex items-start justify-between gap-4">
+          <div class="min-w-0">
+            <p class="text-xs font-bold uppercase tracking-widest mb-1" style={`color: ${u.colorDark};`}>{u.label}</p>
+            <p class="text-sm text-slate-500 leading-relaxed">{u.description}</p>
+          </div>
+          <span class="flex-shrink-0 text-sm font-semibold group-hover:underline whitespace-nowrap" style={`color: ${u.colorDark};`}>
+            View →
+          </span>
+        </div>
+      </a>
+    ))}
+  </div>
+
+</BaseLayout>

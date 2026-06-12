@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+export function getStaticPaths() {
+  return [
+    { params: { unit: 'interactions-ecosystems' } },
+    { params: { unit: 'plants-food-fibre' } },
+    { params: { unit: 'heat-temperature' } },
+    { params: { unit: 'structures-forces' } },
+    { params: { unit: 'planet-earth' } },
+  ];
+}
+
+const { unit } = Astro.params;
+
+type MaterialFile = { label: string; badge?: string; badgeStyle?: string; doc: string };
+type Section = { heading: string; items: MaterialFile[] };
+
+interface UnitData {
+  label: string;
+  tagline: string;
+  color: string;
+  colorDark: string;
+  colorLight: string;
+  colorBorder: string;
+  sections: Section[];
+  assessments: MaterialFile[];
+  answerKeys: MaterialFile[];
+}
+
+const b = base;
+
+const units: Record<string, UnitData> = {
+  'interactions-ecosystems': {
+    label: 'Interactions and Ecosystems',
+    tagline: 'Ecosystems, food webs, energy pyramids, biodiversity, and human impacts on Alberta ecosystems.',
+    color: '#059669', colorDark: '#047857', colorLight: '#d1fae5', colorBorder: '#6ee7b7',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', doc: 'sci7-interactions-ecosystems-notes-v1' },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', doc: 'sci7-interactions-ecosystems-workbook-v1' },
+        ],
+      },
+      {
+        heading: 'Exit Tickets',
+        items: [
+          { label: 'Exit Tickets', badge: 'Formative', badgeStyle: 'bg-emerald-100 text-emerald-800', doc: 'sci7-interactions-ecosystems-exits-v1' },
+        ],
+      },
+    ],
+    assessments: [
+      { label: 'Mid-Unit Quiz', doc: 'sci7-interactions-ecosystems-quiz-v1' },
+      { label: 'Unit Test', doc: 'sci7-interactions-ecosystems-test-v1' },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', doc: 'sci7-interactions-ecosystems-notes-answers-v1' },
+      { label: 'Workbook Answer Key', doc: 'sci7-interactions-ecosystems-workbook-answers-v1' },
+      { label: 'Assessment Answer Key', doc: 'sci7-interactions-ecosystems-assessment-answers-v1' },
+    ],
+  },
+  'plants-food-fibre': {
+    label: 'Plants for Food and Fibre',
+    tagline: 'Cell theory, plant systems, photosynthesis, reproduction, Alberta agriculture, and biotechnology.',
+    color: '#16a34a', colorDark: '#15803d', colorLight: '#dcfce7', colorBorder: '#86efac',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', doc: 'sci7-plants-food-fibre-notes-v1' },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', doc: 'sci7-plants-food-fibre-workbook-v1' },
+        ],
+      },
+      {
+        heading: 'Exit Tickets',
+        items: [
+          { label: 'Exit Tickets', badge: 'Formative', badgeStyle: 'bg-emerald-100 text-emerald-800', doc: 'sci7-plants-food-fibre-exits-v1' },
+        ],
+      },
+    ],
+    assessments: [
+      { label: 'Mid-Unit Quiz', doc: 'sci7-plants-food-fibre-quiz-v1' },
+      { label: 'Unit Test', doc: 'sci7-plants-food-fibre-test-v1' },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', doc: 'sci7-plants-food-fibre-notes-answers-v1' },
+      { label: 'Workbook Answer Key', doc: 'sci7-plants-food-fibre-workbook-answers-v1' },
+      { label: 'Assessment Answer Key', doc: 'sci7-plants-food-fibre-assessment-answers-v1' },
+    ],
+  },
+  'heat-temperature': {
+    label: 'Heat and Temperature',
+    tagline: 'Temperature scales, heat vs. temperature, the particle model, modes of heat transfer, and specific heat.',
+    color: '#ea580c', colorDark: '#c2410c', colorLight: '#ffedd5', colorBorder: '#fdba74',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', doc: 'sci7-heat-temperature-notes-v1' },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', doc: 'sci7-heat-temperature-workbook-v1' },
+        ],
+      },
+      {
+        heading: 'Exit Tickets',
+        items: [
+          { label: 'Exit Tickets', badge: 'Formative', badgeStyle: 'bg-orange-100 text-orange-800', doc: 'sci7-heat-temperature-exits-v1' },
+        ],
+      },
+    ],
+    assessments: [
+      { label: 'Mid-Unit Quiz', doc: 'sci7-heat-temperature-quiz-v1' },
+      { label: 'Unit Test', doc: 'sci7-heat-temperature-test-v1' },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', doc: 'sci7-heat-temperature-notes-answers-v1' },
+      { label: 'Workbook Answer Key', doc: 'sci7-heat-temperature-workbook-answers-v1' },
+      { label: 'Assessment Answer Key', doc: 'sci7-heat-temperature-assessment-answers-v1' },
+    ],
+  },
+  'structures-forces': {
+    label: 'Structures and Forces',
+    tagline: 'Structure types, loads, internal forces, stability, simple machines, and materials.',
+    color: '#7c3aed', colorDark: '#6d28d9', colorLight: '#ede9fe', colorBorder: '#c4b5fd',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', doc: 'sci7-structures-forces-notes-v1' },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', doc: 'sci7-structures-forces-workbook-v1' },
+        ],
+      },
+      {
+        heading: 'Exit Tickets',
+        items: [
+          { label: 'Exit Tickets', badge: 'Formative', badgeStyle: 'bg-violet-100 text-violet-800', doc: 'sci7-structures-forces-exits-v1' },
+        ],
+      },
+    ],
+    assessments: [
+      { label: 'Mid-Unit Quiz', doc: 'sci7-structures-forces-quiz-v1' },
+      { label: 'Unit Test', doc: 'sci7-structures-forces-test-v1' },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', doc: 'sci7-structures-forces-notes-answers-v1' },
+      { label: 'Workbook Answer Key', doc: 'sci7-structures-forces-workbook-answers-v1' },
+      { label: 'Assessment Answer Key', doc: 'sci7-structures-forces-assessment-answers-v1' },
+    ],
+  },
+  'planet-earth': {
+    label: 'Planet Earth',
+    tagline: "Earth's interior, the rock cycle, plate tectonics, earthquakes, landforms, and geological time.",
+    color: '#d97706', colorDark: '#b45309', colorLight: '#fef3c7', colorBorder: '#fcd34d',
+    sections: [
+      {
+        heading: 'Notes',
+        items: [
+          { label: 'Guided Notes', doc: 'sci7-planet-earth-notes-v1' },
+        ],
+      },
+      {
+        heading: 'Practice Workbook',
+        items: [
+          { label: 'Workbook', doc: 'sci7-planet-earth-workbook-v1' },
+        ],
+      },
+      {
+        heading: 'Exit Tickets',
+        items: [
+          { label: 'Exit Tickets', badge: 'Formative', badgeStyle: 'bg-amber-100 text-amber-800', doc: 'sci7-planet-earth-exits-v1' },
+        ],
+      },
+    ],
+    assessments: [
+      { label: 'Mid-Unit Quiz', doc: 'sci7-planet-earth-quiz-v1' },
+      { label: 'Unit Test', doc: 'sci7-planet-earth-test-v1' },
+    ],
+    answerKeys: [
+      { label: 'Notes Answer Key', doc: 'sci7-planet-earth-notes-answers-v1' },
+      { label: 'Workbook Answer Key', doc: 'sci7-planet-earth-workbook-answers-v1' },
+      { label: 'Assessment Answer Key', doc: 'sci7-planet-earth-assessment-answers-v1' },
+    ],
+  },
+};
+
+const data = units[unit];
+const borderStyle = `border-left-color: ${data.color};`;
+---
+
+<BaseLayout title={`${data.label} — Materials`} course="science7">
+
+  <!-- Back link -->
+  <a href={`${base}science7`} class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 mb-8 transition-colors">
+    ← Grade 7 Science
+  </a>
+
+  <!-- Header -->
+  <div class="mb-10">
+    <p class="text-xs font-bold uppercase tracking-widest mb-2" style={`color: ${data.colorDark};`}>Grade 7 Science</p>
+    <h1 class="text-4xl font-bold text-slate-900 mb-3">{data.label}</h1>
+    <p class="text-slate-500 text-lg max-w-xl">{data.tagline}</p>
+  </div>
+
+  <!-- Material sections -->
+  {data.sections.map(section => (
+    <section class="mb-10">
+      <h2 class="text-xs font-bold uppercase tracking-widest mb-3" style={`color: ${data.colorDark};`}>{section.heading}</h2>
+      <div class="space-y-2">
+        {section.items.map(item => (
+          <div class="bg-white rounded-xl border border-slate-200 border-l-4 px-5 py-4 flex items-center justify-between gap-4" style={borderStyle}>
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="text-sm font-medium text-slate-800">{item.label}</span>
+              {item.badge && (
+                <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${item.badgeStyle}`}>{item.badge}</span>
+              )}
+            </div>
+            <a
+              href={`${base}science7/view/${unit}/${item.doc}`}
+              class="flex-shrink-0 text-sm font-semibold text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-400 px-4 py-1.5 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Open
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <!-- Assessments section -->
+  <section class="mb-10">
+    <h2 class="text-xs font-bold uppercase tracking-widest mb-3" style={`color: ${data.colorDark};`}>Assessments</h2>
+    <div class="space-y-2">
+      {data.assessments.map(item => (
+        <div class="bg-white rounded-xl border border-slate-200 border-l-4 px-5 py-4 flex items-center justify-between gap-4" style={borderStyle}>
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="text-sm font-medium text-slate-800">{item.label}</span>
+          </div>
+          <a
+            href={`${base}science7/view/${unit}/${item.doc}`}
+            class="flex-shrink-0 text-sm font-semibold text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-400 px-4 py-1.5 rounded-lg transition-colors whitespace-nowrap"
+          >
+            Open
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Answer keys — hidden by default -->
+  <details class="group mt-2">
+    <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-slate-600 transition-colors select-none mb-3">
+      <span class="inline-block transition-transform group-open:rotate-90">▶</span>
+      Show answer keys
+    </summary>
+    <div class="space-y-2 mt-1">
+      {data.answerKeys.map(item => (
+        <div class="bg-slate-50 rounded-xl border border-slate-200 px-5 py-4 flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="text-sm font-medium text-slate-600">{item.label}</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-slate-200 text-slate-600 tracking-wide">Answer Key</span>
+          </div>
+          <a
+            href={`${base}science7/view/${unit}/${item.doc}`}
+            class="flex-shrink-0 text-sm font-semibold text-slate-500 hover:text-slate-800 border border-slate-200 hover:border-slate-400 px-4 py-1.5 rounded-lg transition-colors whitespace-nowrap"
+          >
+            Open
+          </a>
+        </div>
+      ))}
+    </div>
+  </details>
+
+</BaseLayout>

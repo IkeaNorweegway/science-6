@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Alberta curriculum classroom materials — Grade 6 Science and Math 9" />
+    <meta name="description" content="Alberta curriculum classroom materials — Grade 6 Science, Grade 7 Science, and Math 9" />
     <title>Classroom Tools | Alberta Curriculum</title>
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
   </head>
@@ -30,7 +30,7 @@ const base = import.meta.env.BASE_URL;
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
         <!-- Grade 6 Science -->
         <a
@@ -66,6 +66,25 @@ const base = import.meta.env.BASE_URL;
             <span class="text-xs bg-math9-100 text-math9-800 font-semibold px-2.5 py-1 rounded-full">98 materials</span>
           </div>
           <span class="text-sm font-semibold text-math9-700 group-hover:underline">View materials →</span>
+        </a>
+
+        <!-- Grade 7 Science -->
+        <a
+          href={`${base}science7`}
+          class="group block bg-white rounded-2xl border border-slate-200 border-l-4 p-7 transition-colors hover:opacity-90"
+          style="border-left-color: #059669;"
+        >
+          <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #059669;">Grade 7</p>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3">Science</h2>
+          <p class="text-sm text-slate-500 leading-relaxed mb-6">
+            Five units. Notes, workbooks, quizzes, tests, and answer keys. Alberta 2007 curriculum.
+          </p>
+          <div class="flex gap-3 mb-6 flex-wrap">
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background-color: #d1fae5; color: #047857;">5 units</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background-color: #d1fae5; color: #047857;">~26 weeks</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background-color: #d1fae5; color: #047857;">40 materials</span>
+          </div>
+          <span class="text-sm font-semibold group-hover:underline" style="color: #047857;">View materials →</span>
         </a>
 
       </div>

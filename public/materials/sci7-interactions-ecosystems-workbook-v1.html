@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 7 Science — Interactions and Ecosystems: Practice Workbook</title>
+<style>
+  :root {
+    --unit: #059669;
+    --unit-dark: #047857;
+    --unit-light: #d1fae5;
+    --unit-border: #6ee7b7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  /* ── Typography ── */
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--unit-dark);
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  /* ── Cover block ── */
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  /* ── Pre-knowledge box ── */
+  .pre-knowledge {
+    border: 2px dashed #94a3b8;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Vocab table ── */
+  .vocab-wrap {
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table th {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--unit-light);
+    color: var(--unit-dark);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--unit-border);
+    text-align: left;
+  }
+  table td {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    min-height: 2.2rem;
+  }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 600; color: #0f172a; }
+
+  /* ── Fill-in blanks ── */
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  /* ── Answer lines ── */
+  .al {
+    display: block;
+    border-bottom: 1.5px solid #94a3b8;
+    height: 1.8rem;
+    margin: 0.4rem 0;
+    width: 100%;
+  }
+  .al-short { width: 60%; }
+  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
+  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
+
+  /* ── Code / diagram blocks ── */
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.35rem;
+    padding: 0.85rem 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  /* ── Misconception callout ── */
+  .misconception {
+    border-left: 5px solid #dc2626;
+    background: #fef2f2;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #dc2626;
+    margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  /* ── Connection prompt ── */
+  .connection {
+    border-left: 5px solid #f97316;
+    background: #fff7ed;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2410c;
+    margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  /* ── Retrieval check ── */
+  .retrieval {
+    background: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6d28d9;
+    margin-right: 0.3rem;
+  }
+
+  /* ── Self-check ── */
+  .self-check {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem;
+    padding: 0.6rem 1.1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #166534;
+  }
+  .self-check strong { color: #14532d; }
+
+  /* ── Go-to-workbook prompt ── */
+  .workbook-prompt {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #475569;
+    background: #f1f5f9;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.25rem;
+    border-left: 4px solid #94a3b8;
+  }
+
+  /* ── Dividers ── */
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  /* ── Summary / synthesis boxes ── */
+  .synthesis-box {
+    border: 2px solid var(--unit);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--unit-light);
+  }
+  .synthesis-box h3 { margin-top: 0; }
+
+  /* ── Answer key styling ── */
+  .answer {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    padding: 0.35rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    font-style: italic;
+    color: #166534;
+    font-size: 0.9rem;
+  }
+
+  /* ── Question cards (workbook) ── */
+  .q-card {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    background: #fff;
+  }
+  .q-header {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+  .q-num {
+    color: var(--unit-dark);
+    font-weight: 700;
+  }
+  .marks {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 400;
+  }
+
+  /* ── Rubric table ── */
+  .rubric th { background: #1e293b; color: white; }
+
+  /* ── Print ── */
+  @media print {
+    body {
+      font-size: 11pt;
+      padding: 1.5cm;
+      max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+
+  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
+  :root {
+    --dg-stroke:    #334155;
+    --dg-fill:      #f8fafc;
+    --dg-accent:    var(--accent, #1d4ed8);
+    --dg-secondary: #64748b;
+    --dg-muted:     #94a3b8;
+    --dg-sw:        1.5px;
+    --dg-sw-bold:   2.5px;
+    --dg-sw-thin:   1.0px;
+  }
+  svg .dg-boundary, svg .dg-line, svg .dg-accent,
+  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
+    vector-effect: non-scaling-stroke;
+  }
+  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
+  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
+  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
+  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
+  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
+  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
+  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
+  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
+  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
+  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
+  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <h1>Interactions and Ecosystems</h1>
+  <p>Grade 7 Science &nbsp;·&nbsp; Practice Workbook &nbsp;·&nbsp; Alberta Curriculum 2007</p>
+  <div class="name-line">
+    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<p><em>This workbook mixes questions from all sections of the unit. Questions are not in the order you learned them — this is intentional. Use it to practise retrieving and connecting ideas.</em></p>
+<hr class="section-break">
+<h2 class="section-title">Part A: Vocabulary and Definitions (20 marks)</h2>
+<p><strong>1.</strong> Match each term to the correct definition. (6 marks)</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>a. Biotic factor</td>
+<td><span class="b b-md">&nbsp;</span> The variety of living species in an ecosystem</td>
+</tr>
+<tr>
+<td>b. Decomposer</td>
+<td><span class="b b-md">&nbsp;</span> A non-living component of an ecosystem</td>
+</tr>
+<tr>
+<td>c. Keystone species</td>
+<td><span class="b b-md">&nbsp;</span> An organism that makes its own food using light energy</td>
+</tr>
+<tr>
+<td>d. Abiotic factor</td>
+<td><span class="b b-md">&nbsp;</span> An organism that breaks down dead material and recycles nutrients</td>
+</tr>
+<tr>
+<td>e. Biodiversity</td>
+<td><span class="b b-md">&nbsp;</span> A living component of an ecosystem</td>
+</tr>
+<tr>
+<td>f. Producer</td>
+<td><span class="b b-md">&nbsp;</span> A species with disproportionately large effect on its ecosystem</td>
+</tr>
+</tbody></table></div>
+<p><strong>2.</strong> Define each term in your own words. (8 marks)</p>
+<p>a. Trophic level: <span class="b b-md">&nbsp;</span></p>
+<p>b. Ecological niche: <span class="b b-md">&nbsp;</span></p>
+<p>c. Invasive species: <span class="b b-md">&nbsp;</span></p>
+<p>d. Ecosystem services: <span class="b b-md">&nbsp;</span></p>
+<p><strong>3.</strong> Give one Alberta-specific example for each: (6 marks)</p>
+<p>a. A keystone species: <span class="b b-md">&nbsp;</span>   Why it qualifies: <span class="b b-md">&nbsp;</span></p>
+<p>b. An invasive species (current threat or established): <span class="b b-md">&nbsp;</span></p>
+<p>c. A species at risk: <span class="b b-md">&nbsp;</span>   Reason it is at risk: <span class="b b-md">&nbsp;</span></p>
+<hr class="section-break">
+<h2 class="section-title">Part B: Food Webs and Energy Flow (24 marks)</h2>
+<p><strong>4.</strong> Study this Alberta boreal forest food web. Answer the questions below. (12 marks)</p>
+<pre>                    ← Great Horned Owl
+                   /
+     Snowshoe Hare ← Lynx ← Wolf
+          ↑                   ↑
+Grass → Willow           Moose
+          ↑
+        Aspen
+          ↑
+    Decomposers ← (all dead organisms)</pre>
+<p><em>(Arrows point from food source to consumer)</em></p>
+<p>a. Name one producer in this food web: <span class="b b-md">&nbsp;</span></p>
+<p>b. At what trophic level is the lynx? <span class="b b-md">&nbsp;</span></p>
+<p>c. Name one primary consumer: <span class="b b-md">&nbsp;</span></p>
+<p>d. Name the organisms that are secondary consumers: <span class="b b-md">&nbsp;</span></p>
+<p>e. If willow was removed from this food web by a disease, predict ONE effect on each:</p>
+<ul>
+  <li>Snowshoe hare population: <span class="b b-md">&nbsp;</span></li>
+  <li>Lynx population: <span class="b b-md">&nbsp;</span></li>
+  <li>Wolf population: <span class="b b-md">&nbsp;</span></li>
+</ul>
+<p>f. The wolf eats the moose, which ate willow. The willow contained 10,000 units of energy.</p>
+<p>How much energy is available to the wolf? Show your reasoning.</p>
+<div class="al"></div>
+<p><strong>5.</strong> Explain why top predators like wolves need large territories. Use the 10% rule in your answer. (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>6.</strong> A student draws a food web showing that a fox eats rabbits and rabbits eat grass. She says the food web is complete. Give TWO reasons why food webs in nature are more complex than this. (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>7.</strong> Explain the role of decomposers using a concrete example. What would happen if all decomposers disappeared from Alberta's boreal forest? (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<hr class="section-break">
+<h2 class="section-title">Part C: Ecosystems and Biodiversity (20 marks)</h2>
+<p><strong>8.</strong> Compare biotic and abiotic factors using the table below. (6 marks)</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th></th>
+<th>Biotic factor</th>
+<th>Abiotic factor</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Definition</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Two examples (boreal forest)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>How they interact</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<p><strong>9.</strong> Describe TWO differences between an Alberta grassland ecosystem and an Alberta wetland ecosystem. Include one biotic and one abiotic difference for each. (4 marks)</p>
+<p>Grassland biotic: <span class="b b-md">&nbsp;</span> Grassland abiotic: <span class="b b-md">&nbsp;</span></p>
+<p>Wetland biotic: <span class="b b-md">&nbsp;</span> Wetland abiotic: <span class="b b-md">&nbsp;</span></p>
+<p><strong>10.</strong> What is biodiversity and why does it matter? Give a specific example of what can go wrong when biodiversity is low. (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>11.</strong> An ecologist studying a mountain ecosystem notices that when grizzly bears were removed from the area, ground squirrel populations tripled, and native prairie grass was overgrazed. Explain this observation using the concepts of keystone species and food web dynamics. (6 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<hr class="section-break">
+<h2 class="section-title">Part D: Environmental Change (20 marks)</h2>
+<p><strong>12.</strong> Compare natural disturbance to human-caused disturbance. Fill in the table. (8 marks)</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th></th>
+<th>Natural disturbance</th>
+<th>Human-caused disturbance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>One Alberta example</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Rate of change (fast/slow)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Recovery likelihood</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Human control over it</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<p><strong>13.</strong> Explain the concept of a tipping point using one real ecosystem example. Why might an ecosystem that looks recovered on the surface still be ecologically damaged? (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>14.</strong> Describe what makes zebra mussels such a serious invasive species threat to Alberta. (Include: why they spread easily, what native species they would outcompete, and one economic impact.) (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>15.</strong> A patch of boreal forest in northern Alberta is cleared for an oil sands access road. List three types of ecological harm that could result, beyond just removing trees. For each, identify which part of the food web is most affected. (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<hr class="section-break">
+<h2 class="section-title">Part E: Sustainability and Stewardship (16 marks)</h2>
+<p><strong>16.</strong> What is Traditional Ecological Knowledge (TEK)? Give one specific example of TEK being used alongside Western science for ecosystem management in Alberta. (4 marks)</p>
+<div class="al"></div>
+<div class="al"></div>
+<p><strong>17.</strong> List three ecosystem services provided by Alberta's boreal forest. For each, estimate what it would cost (or describe how it would be replaced) if the forest was removed. (6 marks)</p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Ecosystem service</th>
+<th>If lost/replaced, the cost or consequence would be...</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table></div>
+<p><strong>18.</strong> "Humans are part of the ecosystem, not separate from it." Choose ONE of the following to support this claim with a specific example: (6 marks)</p>
+<ul>
+  <li>Alberta farmers depend on ecosystem services</li>
+  <li>Indigenous communities' health is tied to the health of local ecosystems</li>
+  <li>Urban development in Alberta changes water flow and biodiversity beyond city limits</li>
+</ul>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<hr class="section-break">
+<h2 class="section-title">Part F: Synthesis and Application (★ Optional challenge)</h2>
+<p><strong>19.</strong> Design a conservation plan for one Alberta species at risk. Your plan must address:</p>
+<ul>
+  <li>The current threat to the species (with evidence)</li>
+  <li>Which trophic level(s) are affected if the species declines further</li>
+  <li>One practical conservation action tied to an ecosystem concept from this unit</li>
+  <li>How you would know if the conservation was working (what would you measure?)</li>
+</ul>
+<p>Use a full paragraph (6–8 sentences) or point-form notes that you would be willing to explain aloud.</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+
+</body>
+</html>

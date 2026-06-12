@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 7 Science — Heat and Temperature: Assessment Answer Key</title>
+<style>
+  :root {
+    --unit: #ea580c;
+    --unit-dark: #c2410c;
+    --unit-light: #ffedd5;
+    --unit-border: #fdba74;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1e293b;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+  }
+
+  /* ── Typography ── */
+  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  h2.section-title {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    background: var(--unit);
+    padding: 0.55rem 1rem;
+    border-radius: 0.35rem;
+    margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--unit-dark);
+  }
+  h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.25rem 0 0.25rem;
+  }
+  p { margin-bottom: 0.75rem; }
+  strong { color: #0f172a; }
+
+  /* ── Cover block ── */
+  .cover {
+    border-left: 6px solid var(--unit);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--unit-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
+  .name-line {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+
+  /* ── Pre-knowledge box ── */
+  .pre-knowledge {
+    border: 2px dashed #94a3b8;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #f8fafc;
+  }
+  .pre-knowledge .label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Vocab table ── */
+  .vocab-wrap {
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table th {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--unit-light);
+    color: var(--unit-dark);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--unit-border);
+    text-align: left;
+  }
+  table td {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    min-height: 2.2rem;
+  }
+  table tr:nth-child(even) td { background: #f8fafc; }
+  table td:first-child { font-weight: 600; color: #0f172a; }
+
+  /* ── Fill-in blanks ── */
+  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
+  .b-sm { width: 4rem; }
+  .b-md { width: 7rem; }
+  .b-lg { width: 11rem; }
+  .b-xl { width: 16rem; }
+
+  /* ── Answer lines ── */
+  .al {
+    display: block;
+    border-bottom: 1.5px solid #94a3b8;
+    height: 1.8rem;
+    margin: 0.4rem 0;
+    width: 100%;
+  }
+  .al-short { width: 60%; }
+  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
+  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
+
+  /* ── Code / diagram blocks ── */
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.35rem;
+    padding: 0.85rem 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  /* ── Misconception callout ── */
+  .misconception {
+    border-left: 5px solid #dc2626;
+    background: #fef2f2;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .misconception .m-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #dc2626;
+    margin-bottom: 0.4rem;
+  }
+  .misconception .m-wrong {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+  /* ── Connection prompt ── */
+  .connection {
+    border-left: 5px solid #f97316;
+    background: #fff7ed;
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .connection .c-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2410c;
+    margin-bottom: 0.4rem;
+  }
+  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+  /* ── Retrieval check ── */
+  .retrieval {
+    background: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .retrieval .r-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+  }
+  .retrieval ol { padding-left: 1.25rem; }
+  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
+  .retrieval .stretch-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6d28d9;
+    margin-right: 0.3rem;
+  }
+
+  /* ── Self-check ── */
+  .self-check {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 0.35rem;
+    padding: 0.6rem 1.1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #166534;
+  }
+  .self-check strong { color: #14532d; }
+
+  /* ── Go-to-workbook prompt ── */
+  .workbook-prompt {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #475569;
+    background: #f1f5f9;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.25rem;
+    border-left: 4px solid #94a3b8;
+  }
+
+  /* ── Dividers ── */
+  hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
+  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
+
+  /* ── Summary / synthesis boxes ── */
+  .synthesis-box {
+    border: 2px solid var(--unit);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--unit-light);
+  }
+  .synthesis-box h3 { margin-top: 0; }
+
+  /* ── Answer key styling ── */
+  .answer {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    padding: 0.35rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    font-style: italic;
+    color: #166534;
+    font-size: 0.9rem;
+  }
+
+  /* ── Question cards (workbook) ── */
+  .q-card {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    background: #fff;
+  }
+  .q-header {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+  .q-num {
+    color: var(--unit-dark);
+    font-weight: 700;
+  }
+  .marks {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 400;
+  }
+
+  /* ── Rubric table ── */
+  .rubric th { background: #1e293b; color: white; }
+
+  /* ── Print ── */
+  @media print {
+    body {
+      font-size: 11pt;
+      padding: 1.5cm;
+      max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-break { page-break-before: always; }
+    h2.section-title { page-break-after: avoid; }
+  }
+
+  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
+  :root {
+    --dg-stroke:    #334155;
+    --dg-fill:      #f8fafc;
+    --dg-accent:    var(--accent, #1d4ed8);
+    --dg-secondary: #64748b;
+    --dg-muted:     #94a3b8;
+    --dg-sw:        1.5px;
+    --dg-sw-bold:   2.5px;
+    --dg-sw-thin:   1.0px;
+  }
+  svg .dg-boundary, svg .dg-line, svg .dg-accent,
+  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
+    vector-effect: non-scaling-stroke;
+  }
+  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
+  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
+  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
+  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
+  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
+  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
+  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
+  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
+  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
+  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
+  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <h1>Heat and Temperature</h1>
+  <p>Grade 7 Science &nbsp;·&nbsp; Assessment Answer Key &nbsp;·&nbsp; Alberta Curriculum 2007</p>
+  <div class="name-line">
+    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<hr class="section-break">
+<h2 class="section-title">Exit Ticket Answer Keys</h2>
+<h3>ET1: 1. 25°C = 298 K; −10°C = 263 K; 0 K = −273°C   2. Temperature where particles have minimum kinetic energy; can't go lower because particles can't "stop more than stopped"   3. Average kinetic energy of particles</h3>
+<h3>ET2: 1. Heat: total energy transferred between objects; Temperature: average kinetic energy of particles   2. Bathtub — has trillions more particles at same speed; total kinetic energy far greater   3. Correct statement: "The heat is escaping through the door" / "We're letting heat out, not cold in"</h3>
+<h3>ET3: 1. Particles absorb energy → move faster → spread farther apart → material occupies more space (expands)   2. Steel track expands in summer; without gap, track has nowhere to expand and buckles (compression failure)   3. Heat energy is being used to break bonds between water molecules (change of state); no energy available to speed particles up; temperature stays constant</h3>
+<h3>ET4: 1. (a) conduction (b) radiation (c) convection   2. Radiation is electromagnetic energy; does not need matter to travel; this is how Sun heats Earth through vacuum of space   3. Both at same room temperature; metal conducts heat away from your hand much faster than wood; you lose heat faster when touching metal → brain interprets as "cold"</h3>
+<h3>ET5: 1. Amount of energy needed to raise 1g of substance by 1°C; water has higher specific heat (requires ~4× more energy per gram than most metals)   2. Water can absorb large amounts of heat with small temperature change → effectively removes heat from engine without overheating   3. Pacific Ocean stores huge amounts of solar energy in summer; releases it slowly in winter → moderate coastal climate; Calgary far from ocean → no thermal reservoir → extreme swings</h3>
+<h3>ET6: 1. Slows heat transfer in both directions; no, insulation does NOT generate warmth   2. Vacuum blocks conduction and convection because there is no medium for particles to transmit energy or for fluid to circulate   3. Industrial/power plant warm water discharged into rivers raises river temperature; warm water holds less dissolved oxygen; reduced O₂ harms fish, invertebrates, disrupts aquatic food chains</h3>
+<hr class="section-break">
+<h2 class="section-title">Quiz Answer Key (/30)</h2>
+<h3>Part A: Selected Response</h3>
+<ol>
+  <li>b   2. c   3. c   4. c   5. c   6. c   7. b   8. b   9. c   10. b</li>
+</ol>
+<h3>Part B: Short Answer</h3>
+<p><strong>Q11 (4 marks):</strong></p>
+<p>100°C = 373 K | −40°C = 233 K | 310 K = 37°C | 0 K = −273°C</p>
+<p><strong>Q12 (4 marks):</strong></p>
+<p>Temperature = average kinetic energy of particles; same temperature means particles in both move at the same average speed; heat = total kinetic energy transferred; the lake has trillions more particles at the same speed → vastly more total heat energy; cup at 90°C and lake at 90°C have same temperature but radically different heat content</p>
+<p><strong>Q13 (4 marks):</strong></p>
+<p>Cold solid: particles close together, small or no movement arrows; Warm gas: particles far apart, fast-moving arrows in random directions; explanation: heating adds kinetic energy → particles move faster and spread apart; in gas, particles have completely escaped the surface</p>
+<p><strong>Q14 (4 marks):</strong></p>
+<p>Power lines expand in summer heat (particles spread apart → material longer); contract in winter cold; if installed tightly in summer, winter contraction would put them under extreme tension and they could snap; slack allows for winter contraction</p>
+<p><strong>Q15 (4 marks):</strong></p>
+<p>During melting: heat energy is used to break the bonds (attractive forces) between water molecules in ice; this is structural work, not kinetic speedup; particles don't move faster during the transition → temperature stays at 0°C; once all ice has melted → no more bonds to break → heat goes back into speeding particles → temperature rises again</p>
+<hr class="section-break">
+<h2 class="section-title">Unit Test Answer Key (/60)</h2>
+<h3>Part A: Selected Response (15 marks)</h3>
+<ol>
+  <li>b   2. b   3. c   4. a   5. b   6. c   7. c   8. c   9. b   10. c   11. b   12. b   13. c   14. c   15. d</li>
+</ol>
+<h3>Part B: Short Answer (20 marks)</h3>
+<p><strong>Q16 (4 marks):</strong> 0°C = 273 K | −40°C = 233 K | 310 K = 37°C | 0 K = −273°C</p>
+<p><strong>Q17 (4 marks):</strong> Cup at 80°C and lake at 80°C have the same temperature (particles moving at same average speed). However, the lake has an enormously greater number of particles. Heat energy = total kinetic energy = number of particles × their speed. Same temperature, far more particles = far more heat energy. If you spilled the cup it's a burn; falling into a lake at the same temperature would take days to cool down because of the vast heat stored.</p>
+<p><strong>Q18 (6 marks):</strong></p>
+<p>a) Coldest: metal; Warmest: plastic/wood</p>
+<p>b) No — all at 22°C (same room temperature for hours); verified with thermometer</p>
+<p>c) Metal is an excellent conductor — it transfers heat away from your hand rapidly; your hand (warm) loses energy fast to the metal (cool) → you feel the heat leaving → brain interprets as "cold"</p>
+<p>d) Insulator</p>
+<p><strong>Q19 (6 marks):</strong></p>
+<p>Rising candle flame: convection — hot air less dense, rises; creates circulation</p>
+<p>Metal pan on stove: conduction — stove burner particles → pan particles via direct contact</p>
+<p>Sun warmth on skin: radiation — electromagnetic waves from Sun travel through space/air; absorbed by skin as heat</p>
+<h3>Part C: Application (15 marks)</h3>
+<p><strong>Q20 — Insulation design (8 marks):</strong></p>
+<div class="vocab-wrap"><table>
+<thead><tr>
+<th>Problem</th>
+<th>Mode</th>
+<th>Improvement</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Single-pane windows</td>
+<td>Conduction + radiation</td>
+<td>Double-pane (glass sandwich with air layer)</td>
+</tr>
+<tr>
+<td>Uninsulated walls</td>
+<td>Conduction</td>
+<td>Fibreglass batt or spray foam insulation</td>
+</tr>
+<tr>
+<td>Door gaps</td>
+<td>Convection</td>
+<td>Weatherstripping seals air movement</td>
+</tr>
+<tr>
+<td>Dark roof</td>
+<td>Radiation</td>
+<td>Light-coloured/reflective roofing material</td>
+</tr>
+</tbody></table></div>
+<p>(a) Insulation in walls — walls have largest surface area; greatest potential heat loss; highest impact per dollar</p>
+<p>(b) Dark roof absorbs radiation in summer → building hotter; in winter, absorbs solar radiation → slight heating benefit; trade-off; most Alberta houses prioritize winter performance</p>
+<p><strong>Q21 — Specific heat (7 marks):</strong></p>
+<p>a) Pacific Ocean stores summer heat and releases slowly in winter (high specific heat capacity); Vancouver's ocean moderates temperatures; Calgary has no large water body → air and soil heat/cool rapidly → extreme swings</p>
+<p>b) Reservoir water likely warmer — smaller water body, surrounded by land that radiates heat at night; ocean retains cold from deeper water mixing</p>
+<p>c) Cold snowmelt water enters rivers in spring (low specific heat of ice/snow → melts quickly when temps rise, but water remains cold); summer: long sunny days gradually warm water; late summer peak is the lagged response of high-specific-heat water slowly accumulating heat energy over months</p>
+<h3>Part D: Extended Response (10 marks)</h3>
+<p><strong>Rubric:</strong> 3 concepts correctly identified + applied (1 each) = 3 marks; connects to specific Alberta scenario = 2 marks; uses unit vocabulary correctly (≥3 terms) = 2 marks; clear logical organization = 1 mark; addresses question completely = 2 marks</p>
+<p><strong>Option A — Vaccine cold chain:</strong> Outer insulation layer prevents conduction through walls (thick foam or fibreglass); vacuum seal if available blocks all conduction and convection; inner shiny liner reflects radiation back; thermal mass (cool packs with high specific heat) buffers against heat entering; seal prevents convection currents of warm air entering when opened; double walls with air gap block conduction; in −35°C Alberta winter, container prevents heat from leaving cold packs while also insulating against very cold outside temps entering and affecting the above-zero target range</p>
+<p><strong>Option B — Thermal pollution:</strong> Industrial process transfers heat (thermal energy) to cooling water via conduction; hot water returned to river = heat transfer to river water via convection and mixing; river temperature increases; warm water holds less dissolved oxygen (specific heat/solubility relationship); fish and invertebrates require minimum dissolved O₂; below threshold, organisms die or flee; solution: cooling towers allow water to cool before discharge (radiation/convection to air); or pass water through cooling ponds first</p>
+<p><strong>Option C — Alberta vs. Vancouver:</strong> Pacific Ocean has extremely high specific heat capacity; stores summer heat → releases slowly in winter → moderates Vancouver temperatures; Ocean is a thermal reservoir; Alberta far from any large water body → no thermal buffer; air over prairies has low specific heat → heats rapidly in summer, cools rapidly in winter; Rocky Mountains block Pacific air masses from moderating Alberta's climate; result: 70°C annual temperature range in Alberta vs. 30°C in Vancouver</p>
+
+</body>
+</html>
