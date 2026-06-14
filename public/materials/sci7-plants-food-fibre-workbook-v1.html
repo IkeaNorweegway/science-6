@@ -3,566 +3,560 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grade 7 Science — Plants for Food and Fibre: Practice Workbook</title>
+<title>Grade 7 Science — Plants for Food and Fibre — Practice Workbook</title>
 <style>
   :root {
-    --unit: #16a34a;
-    --unit-dark: #15803d;
-    --unit-light: #dcfce7;
+    --unit:        #16a34a;
+    --unit-mid:    #22c55e;
+    --unit-dark:   #15803d;
+    --unit-light:  #dcfce7;
     --unit-border: #86efac;
+    --line:   #e2e8f0;
+    --muted:  #64748b;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 15px;
-    line-height: 1.75;
-    color: #1e293b;
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
-    background: #fff;
-  }
-
-  /* ── Typography ── */
-  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
-  h2.section-title {
-    font-family: system-ui, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: white;
-    background: var(--unit);
-    padding: 0.55rem 1rem;
-    border-radius: 0.35rem;
-    margin: 2.5rem 0 1rem;
-  }
-  h3 {
-    font-family: system-ui, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin: 1.5rem 0 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--unit-dark);
-  }
-  h4 {
-    font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin: 1.25rem 0 0.25rem;
-  }
-  p { margin-bottom: 0.75rem; }
+  body { font-family: Georgia,'Times New Roman',serif; font-size: 15px; line-height: 1.75;
+          color: #1e293b; max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem; background: #fff; }
+  h1 { font-family: system-ui,sans-serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem; }
+  h2 { font-family: system-ui,sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 1.5rem 0 0.5rem; }
+  h3 { font-family: system-ui,sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--unit-dark);
+        text-transform: uppercase; letter-spacing: 0.06em; margin: 1.25rem 0 0.35rem; }
+  p { margin-bottom: 0.6rem; }
   strong { color: #0f172a; }
+  ol,ul { padding-left: 1.4rem; margin-bottom: 0.75rem; }
+  li { margin-bottom: 0.35rem; }
+  sup { font-size: 0.75em; }
 
-  /* ── Cover block ── */
-  .cover {
-    border-left: 6px solid var(--unit);
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 2rem;
-    background: var(--unit-light);
-    border-radius: 0 0.5rem 0.5rem 0;
+  .about-callout {
+    border: 1.5px solid var(--unit-border); border-radius: 0.5rem;
+    padding: 1rem 1.25rem; margin-bottom: 2rem; background: var(--unit-light);
+    font-family: system-ui,sans-serif; font-size: 0.88rem;
   }
-  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
-  .name-line {
-    font-family: system-ui, sans-serif;
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-top: 1rem;
-    display: flex;
-    gap: 2rem;
-  }
-  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+  .about-callout p { margin-bottom: 0.4rem; }
+  .about-callout p:last-child { margin-bottom: 0; }
 
-  /* ── Pre-knowledge box ── */
-  .pre-knowledge {
-    border: 2px dashed #94a3b8;
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-    background: #f8fafc;
+  .badge {
+    display: inline-flex; align-items: center;
+    font-family: system-ui,sans-serif; font-size: 0.72rem; font-weight: 700;
+    border-radius: 99px; padding: 0.2rem 0.6rem; letter-spacing: 0.03em;
   }
-  .pre-knowledge .label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #64748b;
-    margin-bottom: 0.5rem;
+  .badge-core   { background: #e0f2fe; color: #0369a1; }
+  .badge-ext    { background: #ede9fe; color: #5b21b6; }
+  .badge-num    { background: var(--unit); color: white; }
+  .badge-vis    { background: #fef3c7; color: #92400e; }
+  .badge-err    { background: #fce7f3; color: #9d174d; }
+  .badge-stretch{ background: #0f172a; color: white; }
+
+  .section-heading {
+    font-family: system-ui,sans-serif; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--unit-dark);
+    border-bottom: 2px solid var(--unit-border); padding-bottom: 0.35rem; margin: 2rem 0 1.25rem;
   }
 
-  /* ── Vocab table ── */
-  .vocab-wrap {
-    margin: 1rem 0 1.5rem;
-    overflow-x: auto;
+  .question-card {
+    border: 1px solid var(--line); border-radius: 0.6rem;
+    padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; background: #fff;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
+  .question-card.extended { border-left: 4px solid #7c3aed; }
+  .q-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+  .q-context {
+    background: #f8fafc; border-left: 3px solid var(--unit-border);
+    padding: 0.6rem 0.9rem; border-radius: 0 0.35rem 0.35rem 0;
+    font-size: 0.93rem; margin-bottom: 0.75rem; font-style: italic; color: #334155;
   }
-  table th {
-    font-family: system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    background: var(--unit-light);
-    color: var(--unit-dark);
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--unit-border);
-    text-align: left;
-  }
-  table td {
-    padding: 0.55rem 0.75rem;
-    border: 1px solid #e2e8f0;
-    vertical-align: top;
-    min-height: 2.2rem;
-  }
-  table tr:nth-child(even) td { background: #f8fafc; }
-  table td:first-child { font-weight: 600; color: #0f172a; }
 
-  /* ── Fill-in blanks ── */
-  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
-  .b-sm { width: 4rem; }
-  .b-md { width: 7rem; }
-  .b-lg { width: 11rem; }
-  .b-xl { width: 16rem; }
-
-  /* ── Answer lines ── */
-  .al {
-    display: block;
-    border-bottom: 1.5px solid #94a3b8;
-    height: 1.8rem;
-    margin: 0.4rem 0;
-    width: 100%;
-  }
+  .al { border-bottom: 1px solid #cbd5e1; min-height: 1.8rem; margin: 0.4rem 0; }
   .al-short { width: 60%; }
-  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
-  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
-
-  /* ── Code / diagram blocks ── */
-  pre {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.82rem;
-    background: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.35rem;
-    padding: 0.85rem 1rem;
-    overflow-x: auto;
-    white-space: pre;
-    margin: 0.75rem 0;
-    line-height: 1.5;
+  .work-box {
+    border: 1px solid #e2e8f0; border-radius: 0.35rem; min-height: 80px;
+    margin: 0.5rem 0; background: #fafafa; padding: 0.5rem;
+    font-size: 0.85rem; color: #94a3b8; font-family: system-ui,sans-serif;
   }
 
-  /* ── Misconception callout ── */
+  .word-bank {
+    background: #f1f5f9; border: 1px solid var(--line); border-radius: 0.35rem;
+    padding: 0.5rem 0.75rem; margin: 0.5rem 0 0.75rem; font-family: system-ui,sans-serif; font-size: 0.85rem;
+  }
+  .word-bank .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+                       letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.25rem; }
+  .word-bank .terms { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .word-bank .term { background: white; border: 1px solid #cbd5e1; border-radius: 0.25rem;
+                      padding: 0.15rem 0.5rem; font-size: 0.85rem; }
+
+  .hint {
+    border: 1px dashed var(--unit-border); border-radius: 0.35rem;
+    padding: 0.45rem 0.75rem; margin: 0.5rem 0;
+    font-family: system-ui,sans-serif; font-size: 0.83rem; color: var(--unit-dark); background: var(--unit-light);
+  }
+  .hint-label { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 0.4rem; }
+
+  .starter {
+    font-style: italic; color: var(--unit-dark);
+    border-left: 3px solid var(--unit-mid); padding: 0.35rem 0.75rem; margin: 0.4rem 0;
+    font-size: 0.92rem; background: var(--unit-light); border-radius: 0 0.25rem 0.25rem 0;
+  }
+
   .misconception {
-    border-left: 5px solid #dc2626;
-    background: #fef2f2;
-    padding: 0.85rem 1.1rem;
-    margin: 1.25rem 0;
-    border-radius: 0 0.35rem 0.35rem 0;
+    background: #fff1f2; border: 1px solid #fecdd3; border-left: 4px solid #f43f5e;
+    border-radius: 0 0.4rem 0.4rem 0; padding: 0.75rem 1rem; margin-bottom: 0.75rem;
+    font-family: system-ui,sans-serif; font-size: 0.9rem;
   }
-  .misconception .m-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #dc2626;
-    margin-bottom: 0.4rem;
-  }
-  .misconception .m-wrong {
-    font-style: italic;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-  }
-  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+  .student-claim { font-style: italic; font-size: 0.95rem; color: #881337; margin-bottom: 0.25rem; }
+  .err-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+                letter-spacing: 0.06em; color: #9f1239; margin-bottom: 0.35rem; }
 
-  /* ── Connection prompt ── */
-  .connection {
-    border-left: 5px solid #f97316;
-    background: #fff7ed;
-    padding: 0.85rem 1.1rem;
-    margin: 1.25rem 0;
-    border-radius: 0 0.35rem 0.35rem 0;
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.75rem 0 1rem; }
+  table th {
+    font-family: system-ui,sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em; background: var(--unit-light);
+    color: var(--unit-dark); padding: 0.5rem 0.75rem; border: 1px solid var(--unit-border); text-align: left;
   }
-  .connection .c-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #c2410c;
-    margin-bottom: 0.4rem;
-  }
-  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  table td { padding: 0.55rem 0.75rem; border: 1px solid #e2e8f0; vertical-align: top; }
+  table tr:nth-child(even) td { background: #f8fafc; }
 
-  /* ── Retrieval check ── */
-  .retrieval {
-    background: #eff6ff;
-    border: 1.5px solid #bfdbfe;
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-  }
-  .retrieval .r-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #1d4ed8;
-    margin-bottom: 1rem;
-  }
-  .retrieval ol { padding-left: 1.25rem; }
-  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
-  .retrieval .stretch-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #6d28d9;
-    margin-right: 0.3rem;
-  }
+  .forethought-block { background: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: 0.6rem;
+                        padding: 1.1rem 1.25rem; margin: 2rem 0; font-family: system-ui,sans-serif; font-size: 0.9rem; }
+  .midpoint-block    { background: #fefce8; border: 1.5px solid #fde047; border-radius: 0.6rem;
+                        padding: 1.1rem 1.25rem; margin: 2rem 0; font-family: system-ui,sans-serif; font-size: 0.9rem; }
+  .reflection-block  { background: #fdf4ff; border: 1.5px solid #e9d5ff; border-radius: 0.6rem;
+                        padding: 1.1rem 1.25rem; margin: 2rem 0; font-family: system-ui,sans-serif; font-size: 0.9rem; }
+  .meta-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.6rem; }
+  .forethought-block .meta-title { color: #0369a1; }
+  .midpoint-block    .meta-title { color: #854d0e; }
+  .reflection-block  .meta-title { color: #6b21a8; }
 
-  /* ── Self-check ── */
-  .self-check {
-    background: #f0fdf4;
-    border: 1.5px solid #bbf7d0;
-    border-radius: 0.35rem;
-    padding: 0.6rem 1.1rem;
-    margin: 1rem 0;
-    font-family: system-ui, sans-serif;
-    font-size: 0.85rem;
-    color: #166534;
+  .stretch-header {
+    background: #0f172a; color: white; border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0.75rem 1.25rem; font-family: system-ui,sans-serif; margin-top: 2.5rem;
   }
-  .self-check strong { color: #14532d; }
-
-  /* ── Go-to-workbook prompt ── */
-  .workbook-prompt {
-    font-family: system-ui, sans-serif;
-    font-size: 0.82rem;
-    color: #475569;
-    background: #f1f5f9;
-    border-radius: 0.35rem;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0 0.25rem;
-    border-left: 4px solid #94a3b8;
+  .stretch-header h2 { color: white; font-size: 1rem; margin: 0; }
+  .stretch-header p { font-size: 0.83rem; color: #94a3b8; margin-top: 0.25rem; margin-bottom: 0; }
+  .stretch-card {
+    border: 1px solid #0f172a; border-top: none; padding: 1.1rem 1.25rem; background: #fff;
   }
+  .stretch-card + .stretch-card { border-top: 1px solid #e2e8f0; }
+  .stretch-card:last-of-type { border-radius: 0 0 0.5rem 0.5rem; margin-bottom: 1.25rem; }
 
-  /* ── Dividers ── */
+  .self-assess { margin-top: 2.5rem; border: 1.5px solid var(--unit-border); border-radius: 0.5rem;
+                  overflow: hidden; font-family: system-ui,sans-serif; font-size: 0.88rem; }
+  .self-assess-header { background: var(--unit); color: white; padding: 0.7rem 1.1rem;
+                         font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .self-assess-body { padding: 1rem 1.1rem; }
+  .sa-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0.5rem;
+             align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--line); font-size: 0.85rem; }
+  .sa-row:last-of-type { border-bottom: none; }
+  .sa-header { font-weight: 700; font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .sa-check { border: 1px solid #cbd5e1; border-radius: 0.25rem; padding: 0.2rem 0.5rem;
+               text-align: center; color: var(--muted); font-size: 0.78rem; }
+
   hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
-  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
 
-  /* ── Summary / synthesis boxes ── */
-  .synthesis-box {
-    border: 2px solid var(--unit);
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-    background: var(--unit-light);
-  }
-  .synthesis-box h3 { margin-top: 0; }
-
-  /* ── Answer key styling ── */
-  .answer {
-    background: #f0fdf4;
-    border-left: 3px solid #22c55e;
-    padding: 0.35rem 0.75rem;
-    margin: 0.25rem 0;
-    border-radius: 0 0.25rem 0.25rem 0;
-    font-style: italic;
-    color: #166534;
-    font-size: 0.9rem;
-  }
-
-  /* ── Question cards (workbook) ── */
-  .q-card {
-    border: 1.5px solid #e2e8f0;
-    border-radius: 0.5rem;
-    padding: 1rem 1.25rem;
-    margin: 1rem 0;
-    background: #fff;
-  }
-  .q-header {
-    font-family: system-ui, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
-  }
-  .q-num {
-    color: var(--unit-dark);
-    font-weight: 700;
-  }
-  .marks {
-    font-size: 0.78rem;
-    color: #64748b;
-    font-weight: 400;
-  }
-
-  /* ── Rubric table ── */
-  .rubric th { background: #1e293b; color: white; }
-
-  /* ── Print ── */
   @media print {
-    body {
-      font-size: 11pt;
-      padding: 1.5cm;
-      max-width: 100%;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-    .section-break { page-break-before: always; }
-    h2.section-title { page-break-after: avoid; }
+    body { font-size: 11pt; padding: 1.5cm; max-width: 100%;
+            -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .question-card { break-inside: avoid; }
+    .stretch-card { break-inside: avoid; }
   }
-
-  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
-  :root {
-    --dg-stroke:    #334155;
-    --dg-fill:      #f8fafc;
-    --dg-accent:    var(--accent, #1d4ed8);
-    --dg-secondary: #64748b;
-    --dg-muted:     #94a3b8;
-    --dg-sw:        1.5px;
-    --dg-sw-bold:   2.5px;
-    --dg-sw-thin:   1.0px;
-  }
-  svg .dg-boundary, svg .dg-line, svg .dg-accent,
-  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
-    vector-effect: non-scaling-stroke;
-  }
-  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
-  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
-  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
-  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
-  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
-  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
-  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
-  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
-  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
-  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
-  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
-
 </style>
 </head>
 <body>
+<div class="about-callout"><h1>Plants for Food and Fibre — Practice Workbook</h1><p style="font-family:system-ui;font-size:0.82rem;color:#475569;margin:0.2rem 0 0.5rem;">Cell Theory · Photosynthesis · Reproduction · Alberta Agriculture · Biotechnology</p><p>Grade 7 Science · Alberta Curriculum · Interleaved practice</p><p><strong>About this workbook:</strong> Questions are scrambled across all topics in this unit — figuring out which concept each question tests is part of the work.</p><p>★ Core — attempt all. Hints, word banks, or sentence starters are provided.</p><p>★★ Extended — same concepts, higher demand. Explain, justify, find errors, or apply to a new context.</p><p>Show all working. A correct answer with no working earns half marks.</p></div>
 
-<!-- Cover -->
-<div class="cover">
-  <h1>Plants for Food and Fibre</h1>
-  <p>Grade 7 Science &nbsp;·&nbsp; Practice Workbook &nbsp;·&nbsp; Alberta Curriculum 2007</p>
-  <div class="name-line">
-    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  </div>
+<div class="forethought-block"><div class="meta-title">Before You Begin — Forethought</div><p>Which question do you think will be hardest? Write the number and one reason.</p>
+<p>I think Question <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> will be hardest because:</p>
+<div class="al"></div>
+<p>Which topic from this unit feels least solid going in?</p>
+<div class="al"></div>
+<hr style="margin:1rem 0;"><hr style="margin:1rem 0;"></div>
+
+<div class="section-heading">Questions — interleaved</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q1</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Photosynthesis</p>
+  <p>Complete the photosynthesis equation by filling in the blanks. Then answer the question below.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">carbon dioxide</span><span class="term">water</span><span class="term">glucose</span><span class="term">oxygen</span><span class="term">light energy</span><span class="term">chloroplasts</span><span class="term">air</span><span class="term">roots</span><span class="term">atmosphere</span></div></div>
+<p>```</p>
+<p><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> (energy source)</p>
+<p>↓</p>
+<p><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> + <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> ──────→ <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> + <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>(from the <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>)  (from the <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>)              (released into the <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>)</p>
+<p>```</p>
+<p>Where exactly in the plant cell does photosynthesis take place? <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
 </div>
 
-<p><em>Questions are scrambled by design — practise retrieving from all parts of the unit.</em></p>
-<hr class="section-break">
-<h2 class="section-title">Part A: Cell Theory and Plant Cells (20 marks)</h2>
-<p><strong>1.</strong> State the three tenets of cell theory. (3 marks)</p>
-<ol>
-  <li><span class="b b-md">&nbsp;</span></li>
-  <li><span class="b b-md">&nbsp;</span></li>
-  <li><span class="b b-md">&nbsp;</span></li>
-</ol>
-<p><strong>2.</strong> Label the plant cell diagram below. Use these terms: cell wall, cell membrane, central vacuole, chloroplast, nucleus. (5 marks)</p>
-<pre>  ┌─────────────────────────────────────┐
-  │ thick outer boundary ───────────── [a]
-  │   ┌──────────────────────────────┐
-  │   │ thin inner boundary ─────── [b]
-  │   │
-  │   │    [c] dark oval in centre
-  │   │
-  │   │   ○ ○ ○  green ovals ─────── [d]
-  │   │
-  │   │  ╔══════════════════╗
-  │   │  ║ large clear area ║ ─────── [e]
-  │   │  ╚══════════════════╝
-  │   │
-  │   └──────────────────────────────┘
-  └─────────────────────────────────────┘</pre>
-<p>a. <span class="b b-md">&nbsp;</span> b. <span class="b b-md">&nbsp;</span> c. <span class="b b-md">&nbsp;</span> d. <span class="b b-md">&nbsp;</span> e. <span class="b b-md">&nbsp;</span></p>
-<p><strong>3.</strong> Give TWO differences between a plant cell and an animal cell. (4 marks)</p>
-<ol>
-  <li><span class="b b-md">&nbsp;</span></li>
-  <li><span class="b b-md">&nbsp;</span></li>
-</ol>
-<p><strong>4.</strong> A student observes a cell under a microscope. It has no visible cell wall, no chloroplasts, and a small, irregular vacuole. Is this a plant cell or an animal cell? Explain your reasoning. (3 marks)</p>
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q2</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Alberta agriculture</p>
+  <p>Alberta produces approximately 20% of Canada's beef and a major share of its grain crops. Most Alberta crop varieties and cattle breeds have been shaped by selective breeding over generations.</p>
+<p>a) In your own words, explain what selective breeding is and how it differs from genetic modification (GMOs) in terms of method, speed, and precision.</p>
 <div class="al"></div>
 <div class="al"></div>
-<p><strong>5.</strong> Why is cell theory important? What problem would it cause for biology if the third tenet (cells only come from pre-existing cells) turned out to be false? (5 marks)</p>
+<p>b) Approximately 95% of Alberta's canola is genetically modified to resist a specific herbicide. A farmer argues: "This GMO is completely safe — we've been using it for 30 years." A second farmer argues: "Any GMO is dangerous." Explain why both statements are oversimplified, and identify one specific question that would need to be answered to evaluate this GMO fairly.</p>
 <div class="al"></div>
 <div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part B: Plant Systems and Vascular Tissue (20 marks)</h2>
-<p><strong>6.</strong> Complete the vascular tissue table. (6 marks)</p>
-<div class="vocab-wrap"><table>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q3</span><span class="badge badge-core">★ Core</span><span class="badge badge-vis">Visual</span></div>
+  <p class="q-context">Plant systems and vascular tissue</p>
+  <p>Complete the table to show how xylem and phloem differ.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">roots</span><span class="term">leaves</span><span class="term">water</span><span class="term">minerals</span><span class="term">sugars (glucose)</span><span class="term">up</span><span class="term">down</span></div></div>
+<table>
 <thead><tr>
 <th>Tissue</th>
-<th>What it carries</th>
-<th>Direction of flow</th>
-<th>Which system it runs through</th>
-</tr></thead>
-<tbody>
+<th>Carries</th>
+<th>Direction of transport</th>
+<th>Think of it as</th>
+</tr></thead><tbody>
 <tr>
 <td>Xylem</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and dissolved <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td>from <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> to <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> (goes <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>)</td>
+<td>supply pipes</td>
 </tr>
 <tr>
 <td>Phloem</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> made by photosynthesis</td>
+<td>from <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> to <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> (goes <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>)</td>
+<td>distribution pipes</td>
 </tr>
-</tbody></table></div>
-<p><strong>7.</strong> A plant's stem is cut and the cross-section shows rings of stained blue dye after being placed in blue water. Was it xylem or phloem that carried the dye? How do you know? (3 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>8.</strong> Name THREE functions of roots. (3 marks)</p>
-<ol>
-  <li><span class="b b-md">&nbsp;</span> 2. <span class="b b-md">&nbsp;</span> 3. <span class="b b-md">&nbsp;</span></li>
-</ol>
-<p><strong>9.</strong> Mosses (non-vascular plants) are small and must stay close to the ground and near water. Ferns and trees (vascular plants) can grow much taller. Explain why vascular tissue made tall plants possible. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>10.</strong> A fungal disease attacks only the phloem of a large tree. The tree still has healthy leaves, roots, and intact xylem. Predict what will happen over the next growing season and explain why. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part C: Photosynthesis (20 marks)</h2>
-<p><strong>11.</strong> Write the photosynthesis equation in words, labelling each input and output. (6 marks)</p>
-<div class="al"></div>
-<p>For each: (a) where does CO₂ come from? <span class="b b-md">&nbsp;</span></p>
-<p>(b) where does water come from? <span class="b b-md">&nbsp;</span></p>
-<p>(c) where does glucose go? <span class="b b-md">&nbsp;</span></p>
-<p>(d) where is oxygen released? <span class="b b-md">&nbsp;</span></p>
-<p><strong>12.</strong> Why do plant leaves appear green? (2 marks)</p>
-<div class="al"></div>
-<p><strong>13.</strong> Explain why photosynthesis is important to ecosystems far beyond just plants — include at least two other trophic levels in your answer. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>14.</strong> A student claims: "Plants eat soil and drink water — that's how they grow." Write a 3-sentence refutation of this claim using evidence from photosynthesis. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>15.</strong> A plant is grown in a sealed clear container for two weeks. It has plenty of soil and water. Predict whether the O₂ level inside the container rises or falls over those two weeks. Explain your answer. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part D: Reproduction (20 marks)</h2>
-<p><strong>16.</strong> Compare sexual and asexual reproduction in plants. (8 marks)</p>
-<div class="vocab-wrap"><table>
-<thead><tr>
-<th></th>
-<th>Sexual reproduction</th>
-<th>Asexual reproduction</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>How many parents</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Genetic variation in offspring</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>One Alberta example</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Key advantage</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody></table></div>
-<p><strong>17.</strong> Label the flower parts and give the function of each. (6 marks)</p>
-<pre>      ╔═══╗
-      ║   ║  ← petal: __________________________________________________
-      ║   ║
-   ───┼───┼───
-   (a)│   │(b)    a. __________________________ function: __________________
-      │   │       b. __________________________ function: __________________
-      └───┘
-        │
-      (c)│        c. __________________________ function: __________________
-         ●
-       (d)         d. __________________________ function: __________________</pre>
-<p><strong>18.</strong> A strawberry plant sends out a runner that takes root 20 cm away and grows into a new plant. Is this sexual or asexual reproduction? What is the genetic relationship between the original plant and the new one? (2 marks)</p>
-<div class="al"></div>
-<p><strong>19.</strong> Why is seed dispersal important? Give two strategies a plant might use and explain the advantage of each. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part E: Alberta Agriculture and Biotechnology (20 marks)</h2>
-<p><strong>20.</strong> Classify each crop as food crop, fibre crop, or both. (5 marks)</p>
-<div class="vocab-wrap"><table>
-<thead><tr>
-<th>Crop</th>
-<th>Category</th>
-<th>One Alberta farming fact</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Canola</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Hemp</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Wheat</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Flax</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Cotton (not Alberta)</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody></table></div>
-<p><strong>21.</strong> What is selective breeding? How is it different from genetic modification? (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>22.</strong> About 95% of Alberta canola is genetically modified for herbicide resistance. This allows farmers to spray an herbicide that kills weeds but not the canola. Name ONE benefit and ONE concern of this modification. (4 marks)</p>
-<p>Benefit: <span class="b b-md">&nbsp;</span></p>
-<p>Concern: <span class="b b-md">&nbsp;</span></p>
-<p><strong>23.</strong> A scientist wants to develop a drought-tolerant wheat variety for Alberta's increasingly dry south. Compare the two approaches: (a) selective breeding and (b) genetic modification. Which would produce results faster? Which allows more precise changes? What risk does each approach carry? (7 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part F: Synthesis (★ Optional challenge)</h2>
-<p><strong>24.</strong> You are designing an Alberta greenhouse that will grow plants for food year-round. Using your knowledge of photosynthesis, plant systems, and reproduction, answer each: (8 marks)</p>
-<p>a. What environmental conditions must you control to maximize photosynthesis?</p>
-<div class="al"></div>
-<p>b. Which plant structures are most critical to maintain for the plant to survive? What would you monitor?</p>
-<div class="al"></div>
-<p>c. Would you reproduce your crop plants sexually or asexually? Explain your reasoning.</p>
-<div class="al"></div>
-<p>d. What agricultural technology (GMO, selective breeding, organic methods) would you use and why?</p>
-<div class="al"></div>
+</tbody></table>
+<div class="hint"><span class="hint-label">Hint</span>Xylem carries what the roots collect. Phloem distributes what the leaves make.</div>
+</div>
 
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q4</span><span class="badge badge-ext">★★ Extended</span><span class="badge badge-err">Error analysis</span></div>
+  <p class="q-context">Cell theory and plant cells</p>
+  <p>Read this student's response to a lab question about cells under a microscope:</p>
+<div class="misconception"><div class="err-label">Student claim</div><p class="student-claim">&#8220;<em>"The cell I observed had a large dark blob in the middle (the nucleus), a rigid outer border, and a big empty-looking space in the centre. I think it is an animal cell because animals are more complex than plants. The rigid outer border is the cell membrane, which controls what enters the cell."</em>&#8221;</p></div>
+<p>Identify three errors. For each, write a correction.</p>
+<p>Error 1: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Correction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Error 2: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Correction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Error 3: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Correction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q5</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Plant reproduction</p>
+  <p>For each reproduction scenario below, identify whether it is sexual or asexual, and name the specific method if it is asexual.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">sexual</span><span class="term">asexual</span><span class="term">runner (stolon)</span><span class="term">bulb</span><span class="term">tuber</span><span class="term">cutting</span><span class="term">seed dispersal</span></div></div>
+<table>
+<thead><tr>
+<th>Scenario</th>
+<th>Sexual or asexual?</th>
+<th>Specific method (if asexual)</th>
+</tr></thead><tbody>
+<tr>
+<td>A strawberry plant sends out a horizontal stem that produces a new plant nearby</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A bee carries pollen from one canola flower to another</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A farmer plants garlic cloves from last year's harvest</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A dandelion seed floats away on a puff of fluff</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A potato plant grows new potatoes underground from its stem</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q6</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Photosynthesis</p>
+  <p>In 1648, Jan Baptist van Helmont planted a willow seedling in 90 kg of dry soil. After 5 years, the willow had gained 74 kg of mass. The soil had lost only 57 grams.</p>
+<p>a) A student looking at this data concludes: "The mass must have come from the water he watered it with." Is this student correct? What does the data actually suggest, and how does photosynthesis explain where most of the plant's mass came from?</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>b) Van Helmont did not know about photosynthesis. If you were advising him, what follow-up experiment could he do to test whether air is involved in plant growth? Describe it briefly.</p>
+<div class="al"></div>
+<div class="al"></div>
+</div>
+
+<div class="midpoint-block">
+<div class="meta-title">Midpoint Check</div>
+<p>Which question has been hardest so far? Circle its number above.</p>
+<div class="al"></div>
+<p>Was it hard because you did not know the idea, or because the question asked in an unfamiliar way?</p>
+<div class="al"></div>
+<p>What did you do when you got stuck?</p>
+<div class="al"></div>
+<hr style="margin:1rem 0;">
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q7</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Cell theory and plant cells</p>
+  <p>Complete the comparison table between plant and animal cells.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">present</span><span class="term">absent</span><span class="term">large</span><span class="term">small</span><span class="term">cell membrane</span><span class="term">nucleus</span></div></div>
+<table>
+<thead><tr>
+<th>Feature</th>
+<th>Plant cell</th>
+<th>Animal cell</th>
+</tr></thead><tbody>
+<tr>
+<td>Cell wall</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Central vacuole</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> (takes up ~90% of cell)</td>
+<td>Only <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> vacuoles</td>
+</tr>
+<tr>
+<td>Chloroplasts (in green cells)</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+</tr>
+<tr>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td>Present</td>
+<td>Present</td>
+</tr>
+<tr>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td>Present</td>
+<td>Present</td>
+</tr>
+</tbody></table>
+<p>State the three tenets of cell theory:</p>
+<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q8</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Plant systems and vascular tissue</p>
+  <p>A fungal disease attacks and destroys all the phloem tissue in a mature oak tree.</p>
+<p>Predict what will happen to:</p>
+<p>a) The leaves over the first few weeks. Explain using your knowledge of what phloem carries and where it carries it from.</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>b) The roots over the following months. Explain the connection between phloem, photosynthesis, and root survival.</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>c) Would the tree's xylem still function? Explain.</p>
+<div class="al"></div>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q9</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Alberta agriculture</p>
+  <p>Complete these sentences about Alberta crops and monoculture.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">monoculture</span><span class="term">fibre</span><span class="term">food</span><span class="term">biodiversity</span><span class="term">pest</span><span class="term">pollinators</span><span class="term">wheat</span><span class="term">canola</span><span class="term">hemp</span><span class="term">flax</span></div></div>
+<p>Alberta grows many crops for both <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> uses. For example, <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> is ground into flour for bread and pasta (food crop), while <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> produces linen fabric (fibre crop). <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> is another dual-use crop: its seeds are edible and its stalks provide strong fibres.</p>
+<p>Growing a single crop species over large areas is called <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>. One major risk is that a single <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> or disease can wipe out the entire crop because every plant is genetically identical — the opposite of <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>.</p>
+<div class="hint"><span class="hint-label">Hint</span>Think about what makes a wild meadow more resilient than a single-crop farm.</div>
+<p>Alberta crop yields also depend on <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>, particularly bees, which transfer pollen between flowers.</p>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q10</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Plant reproduction</p>
+  <p>An aspen grove in Alberta covers 20 hectares. All the trees are genetically identical and connected underground by one root system — botanically, it is one organism.</p>
+<p>a) Is this grove reproduced sexually or asexually? Name the specific type of vegetative reproduction occurring.</p>
+<div class="al"></div>
+<p>b) A classmate says: "Cloning plants is unnatural — it's something scientists invented." Using the aspen grove as evidence, explain why this claim is wrong.</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>c) The entire grove is genetically identical. Identify one specific risk this creates if a new bark beetle species arrives in Alberta, and explain how genetic variation from sexual reproduction would reduce that risk.</p>
+<div class="al"></div>
+<div class="al"></div>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q11</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Biotechnology</p>
+  <p>Complete this comparison table between selective breeding and genetic modification.</p>
+<div class="hint"><span class="hint-label">Hint</span>Think about how many generations each takes, who is doing the work, and how precise the changes are.</div>
+<table>
+<thead><tr>
+<th>Feature</th>
+<th>Selective breeding</th>
+<th>Genetic modification (GMO)</th>
+</tr></thead><tbody>
+<tr>
+<td>Who controls the change</td>
+<td>Farmers and breeders choosing which plants to reproduce</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+</tr>
+<tr>
+<td>How long it takes</td>
+<td>Thousands of years</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+</tr>
+<tr>
+<td>How precise</td>
+<td>Changes many genes at once; hard to control exactly</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Example in Alberta</td>
+<td>All Alberta crop varieties have been selectively bred</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+</tr>
+<tr>
+<td>One concern</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td>Risk of genes moving to wild relatives</td>
+</tr>
+</tbody></table>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q12</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Cell theory and plant cells</p>
+  <p>Before 1839, most scientists believed complex organisms were built from a mix of specialized tissues and simple materials — not all from cells. Then Schleiden (studying plants) and Schwann (studying animals) proposed cell theory.</p>
+<p>a) State the three tenets of cell theory.</p>
+<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+<p>b) Why was it significant that Schleiden and Schwann worked on different organism types (plants and animals) and reached the same conclusion?</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>c) A student sees an onion cell under a microscope and describes "a rigid outer border, a large empty central space, and a dark round body near one edge." Identify each structure and its function.</p>
+<table>
+<thead><tr>
+<th>Description</th>
+<th>Structure name</th>
+<th>Function</th>
+</tr></thead><tbody>
+<tr>
+<td>Rigid outer border</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Large empty central space</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Dark round body</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</div>
+
+<div class="reflection-block">
+<div class="meta-title">Reflection</div>
+<ol>
+<li>Which questions were hardest? Write the numbers.</li>
+</ol>
+<div class="al"></div>
+<ol>
+<li>Was it hard because you did not know the concept, or because the question asked in an unfamiliar way?</li>
+</ol>
+<div class="al"></div>
+<ol>
+<li>What is one thing you would do differently before the next session?</li>
+</ol>
+<div class="al"></div>
+<ol>
+<li>Rate your understanding of your toughest concept: 1 — Lost &nbsp; 2 — Partial &nbsp; 3 — Got it &nbsp; 4 — Could teach it</li>
+</ol>
+<p>One piece of evidence for your rating:</p>
+<div class="al"></div>
+<hr style="margin:1rem 0;">
+</div>
+
+<div class="stretch-header"><h2>Stretch — Challenge Questions</h2><p>★★ All stretch questions. Attempt after completing all previous questions.</p></div>
+
+<div class="stretch-card">
+  <div class="q-header"><span class="badge badge-num">S1</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Photosynthesis + Plant systems</p>
+  <p>A plant is placed in a sealed transparent container with a CO₂ meter and an O₂ meter. The lights are on for 12 hours, then turned off.</p>
+<p>a) During the 12 hours of light: describe what happens to CO₂ and O₂ levels and explain why.</p>
+<div class="al"></div>
+<p>b) During the following 12 hours of darkness: what happens and why? (Plants continue to respire in the dark, consuming O₂ and releasing CO₂.)</p>
+<div class="al"></div>
+<p>c) Which tissue is responsible for delivering the water needed for photosynthesis? Which tissue distributes the glucose produced?</p>
+<div class="al"></div>
+</div>
+
+<div class="stretch-card">
+  <div class="q-header"><span class="badge badge-num">S2</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Alberta agriculture + Biotechnology</p>
+  <p>A farmer in southern Alberta wants to adapt her wheat crop to survive drier summers as the climate changes. She is considering two options: (a) a 15-year selective breeding program, or (b) inserting a drought-tolerance gene from a desert grass species using GMO techniques.</p>
+<p>Compare the two approaches. For each, identify one advantage and one concern. Then recommend which approach would better serve Alberta food security, and justify your recommendation.</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+</div>
+
+<div class="stretch-card">
+  <div class="q-header"><span class="badge badge-num">S3</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Cell theory + Photosynthesis + Plant systems</p>
+  <p>Trace the journey of a single carbon atom from the atmosphere to a slice of bread on your table in Alberta. Your answer must mention: CO₂, stomata, chloroplast, glucose, xylem or phloem, wheat grain, and processing.</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+</div>
+
+<div class="self-assess">
+<div class="self-assess-header">Self-Assessment</div>
+<div class="self-assess-body">
+<div class="sa-row"><div class="sa-header">Skill</div><div class="sa-header">Got it ✓</div><div class="sa-header">Getting there</div><div class="sa-header">Not yet</div></div>
+<div class="sa-row">
+<div>I can state the three tenets of cell theory and identify plant cell structures</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can explain what xylem and phloem carry and the direction each travels</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can write the photosynthesis equation and explain van Helmont's experiment</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can compare sexual and asexual reproduction and give examples of each</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can name Alberta food and fibre crops and explain the risks of monoculture</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can explain the difference between selective breeding and GMOs and evaluate concerns about each</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+</div></div>
+<div style="margin-top:1.5rem;"><p>One question I still have about plants for food and fibre:</p>
+<div class="al"></div></div>
 </body>
 </html>

@@ -3,641 +3,573 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grade 7 Science — Planet Earth: Practice Workbook</title>
+<title>Grade 7 Science — Planet Earth — Practice Workbook</title>
 <style>
   :root {
-    --unit: #d97706;
-    --unit-dark: #b45309;
-    --unit-light: #fef3c7;
+    --unit:        #d97706;
+    --unit-mid:    #f59e0b;
+    --unit-dark:   #b45309;
+    --unit-light:  #fef3c7;
     --unit-border: #fcd34d;
+    --line:   #e2e8f0;
+    --muted:  #64748b;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 15px;
-    line-height: 1.75;
-    color: #1e293b;
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
-    background: #fff;
-  }
-
-  /* ── Typography ── */
-  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
-  h2.section-title {
-    font-family: system-ui, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: white;
-    background: var(--unit);
-    padding: 0.55rem 1rem;
-    border-radius: 0.35rem;
-    margin: 2.5rem 0 1rem;
-  }
-  h3 {
-    font-family: system-ui, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin: 1.5rem 0 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--unit-dark);
-  }
-  h4 {
-    font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin: 1.25rem 0 0.25rem;
-  }
-  p { margin-bottom: 0.75rem; }
+  body { font-family: Georgia,'Times New Roman',serif; font-size: 15px; line-height: 1.75;
+          color: #1e293b; max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem; background: #fff; }
+  h1 { font-family: system-ui,sans-serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem; }
+  h2 { font-family: system-ui,sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 1.5rem 0 0.5rem; }
+  h3 { font-family: system-ui,sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--unit-dark);
+        text-transform: uppercase; letter-spacing: 0.06em; margin: 1.25rem 0 0.35rem; }
+  p { margin-bottom: 0.6rem; }
   strong { color: #0f172a; }
+  ol,ul { padding-left: 1.4rem; margin-bottom: 0.75rem; }
+  li { margin-bottom: 0.35rem; }
+  sup { font-size: 0.75em; }
 
-  /* ── Cover block ── */
-  .cover {
-    border-left: 6px solid var(--unit);
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 2rem;
-    background: var(--unit-light);
-    border-radius: 0 0.5rem 0.5rem 0;
+  .about-callout {
+    border: 1.5px solid var(--unit-border); border-radius: 0.5rem;
+    padding: 1rem 1.25rem; margin-bottom: 2rem; background: var(--unit-light);
+    font-family: system-ui,sans-serif; font-size: 0.88rem;
   }
-  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
-  .name-line {
-    font-family: system-ui, sans-serif;
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-top: 1rem;
-    display: flex;
-    gap: 2rem;
-  }
-  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+  .about-callout p { margin-bottom: 0.4rem; }
+  .about-callout p:last-child { margin-bottom: 0; }
 
-  /* ── Pre-knowledge box ── */
-  .pre-knowledge {
-    border: 2px dashed #94a3b8;
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-    background: #f8fafc;
+  .badge {
+    display: inline-flex; align-items: center;
+    font-family: system-ui,sans-serif; font-size: 0.72rem; font-weight: 700;
+    border-radius: 99px; padding: 0.2rem 0.6rem; letter-spacing: 0.03em;
   }
-  .pre-knowledge .label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #64748b;
-    margin-bottom: 0.5rem;
+  .badge-core   { background: #e0f2fe; color: #0369a1; }
+  .badge-ext    { background: #ede9fe; color: #5b21b6; }
+  .badge-num    { background: var(--unit); color: white; }
+  .badge-vis    { background: #fef3c7; color: #92400e; }
+  .badge-err    { background: #fce7f3; color: #9d174d; }
+  .badge-stretch{ background: #0f172a; color: white; }
+
+  .section-heading {
+    font-family: system-ui,sans-serif; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--unit-dark);
+    border-bottom: 2px solid var(--unit-border); padding-bottom: 0.35rem; margin: 2rem 0 1.25rem;
   }
 
-  /* ── Vocab table ── */
-  .vocab-wrap {
-    margin: 1rem 0 1.5rem;
-    overflow-x: auto;
+  .question-card {
+    border: 1px solid var(--line); border-radius: 0.6rem;
+    padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; background: #fff;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
+  .question-card.extended { border-left: 4px solid #7c3aed; }
+  .q-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+  .q-context {
+    background: #f8fafc; border-left: 3px solid var(--unit-border);
+    padding: 0.6rem 0.9rem; border-radius: 0 0.35rem 0.35rem 0;
+    font-size: 0.93rem; margin-bottom: 0.75rem; font-style: italic; color: #334155;
   }
-  table th {
-    font-family: system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    background: var(--unit-light);
-    color: var(--unit-dark);
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--unit-border);
-    text-align: left;
-  }
-  table td {
-    padding: 0.55rem 0.75rem;
-    border: 1px solid #e2e8f0;
-    vertical-align: top;
-    min-height: 2.2rem;
-  }
-  table tr:nth-child(even) td { background: #f8fafc; }
-  table td:first-child { font-weight: 600; color: #0f172a; }
 
-  /* ── Fill-in blanks ── */
-  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
-  .b-sm { width: 4rem; }
-  .b-md { width: 7rem; }
-  .b-lg { width: 11rem; }
-  .b-xl { width: 16rem; }
-
-  /* ── Answer lines ── */
-  .al {
-    display: block;
-    border-bottom: 1.5px solid #94a3b8;
-    height: 1.8rem;
-    margin: 0.4rem 0;
-    width: 100%;
-  }
+  .al { border-bottom: 1px solid #cbd5e1; min-height: 1.8rem; margin: 0.4rem 0; }
   .al-short { width: 60%; }
-  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
-  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
-
-  /* ── Code / diagram blocks ── */
-  pre {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.82rem;
-    background: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.35rem;
-    padding: 0.85rem 1rem;
-    overflow-x: auto;
-    white-space: pre;
-    margin: 0.75rem 0;
-    line-height: 1.5;
+  .work-box {
+    border: 1px solid #e2e8f0; border-radius: 0.35rem; min-height: 80px;
+    margin: 0.5rem 0; background: #fafafa; padding: 0.5rem;
+    font-size: 0.85rem; color: #94a3b8; font-family: system-ui,sans-serif;
   }
 
-  /* ── Misconception callout ── */
+  .word-bank {
+    background: #f1f5f9; border: 1px solid var(--line); border-radius: 0.35rem;
+    padding: 0.5rem 0.75rem; margin: 0.5rem 0 0.75rem; font-family: system-ui,sans-serif; font-size: 0.85rem;
+  }
+  .word-bank .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+                       letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.25rem; }
+  .word-bank .terms { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .word-bank .term { background: white; border: 1px solid #cbd5e1; border-radius: 0.25rem;
+                      padding: 0.15rem 0.5rem; font-size: 0.85rem; }
+
+  .hint {
+    border: 1px dashed var(--unit-border); border-radius: 0.35rem;
+    padding: 0.45rem 0.75rem; margin: 0.5rem 0;
+    font-family: system-ui,sans-serif; font-size: 0.83rem; color: var(--unit-dark); background: var(--unit-light);
+  }
+  .hint-label { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 0.4rem; }
+
+  .starter {
+    font-style: italic; color: var(--unit-dark);
+    border-left: 3px solid var(--unit-mid); padding: 0.35rem 0.75rem; margin: 0.4rem 0;
+    font-size: 0.92rem; background: var(--unit-light); border-radius: 0 0.25rem 0.25rem 0;
+  }
+
   .misconception {
-    border-left: 5px solid #dc2626;
-    background: #fef2f2;
-    padding: 0.85rem 1.1rem;
-    margin: 1.25rem 0;
-    border-radius: 0 0.35rem 0.35rem 0;
+    background: #fff1f2; border: 1px solid #fecdd3; border-left: 4px solid #f43f5e;
+    border-radius: 0 0.4rem 0.4rem 0; padding: 0.75rem 1rem; margin-bottom: 0.75rem;
+    font-family: system-ui,sans-serif; font-size: 0.9rem;
   }
-  .misconception .m-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #dc2626;
-    margin-bottom: 0.4rem;
-  }
-  .misconception .m-wrong {
-    font-style: italic;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-  }
-  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+  .student-claim { font-style: italic; font-size: 0.95rem; color: #881337; margin-bottom: 0.25rem; }
+  .err-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+                letter-spacing: 0.06em; color: #9f1239; margin-bottom: 0.35rem; }
 
-  /* ── Connection prompt ── */
-  .connection {
-    border-left: 5px solid #f97316;
-    background: #fff7ed;
-    padding: 0.85rem 1.1rem;
-    margin: 1.25rem 0;
-    border-radius: 0 0.35rem 0.35rem 0;
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.75rem 0 1rem; }
+  table th {
+    font-family: system-ui,sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em; background: var(--unit-light);
+    color: var(--unit-dark); padding: 0.5rem 0.75rem; border: 1px solid var(--unit-border); text-align: left;
   }
-  .connection .c-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #c2410c;
-    margin-bottom: 0.4rem;
-  }
-  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  table td { padding: 0.55rem 0.75rem; border: 1px solid #e2e8f0; vertical-align: top; }
+  table tr:nth-child(even) td { background: #f8fafc; }
 
-  /* ── Retrieval check ── */
-  .retrieval {
-    background: #eff6ff;
-    border: 1.5px solid #bfdbfe;
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-  }
-  .retrieval .r-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #1d4ed8;
-    margin-bottom: 1rem;
-  }
-  .retrieval ol { padding-left: 1.25rem; }
-  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
-  .retrieval .stretch-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #6d28d9;
-    margin-right: 0.3rem;
-  }
+  .forethought-block { background: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: 0.6rem;
+                        padding: 1.1rem 1.25rem; margin: 2rem 0; font-family: system-ui,sans-serif; font-size: 0.9rem; }
+  .midpoint-block    { background: #fefce8; border: 1.5px solid #fde047; border-radius: 0.6rem;
+                        padding: 1.1rem 1.25rem; margin: 2rem 0; font-family: system-ui,sans-serif; font-size: 0.9rem; }
+  .reflection-block  { background: #fdf4ff; border: 1.5px solid #e9d5ff; border-radius: 0.6rem;
+                        padding: 1.1rem 1.25rem; margin: 2rem 0; font-family: system-ui,sans-serif; font-size: 0.9rem; }
+  .meta-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.6rem; }
+  .forethought-block .meta-title { color: #0369a1; }
+  .midpoint-block    .meta-title { color: #854d0e; }
+  .reflection-block  .meta-title { color: #6b21a8; }
 
-  /* ── Self-check ── */
-  .self-check {
-    background: #f0fdf4;
-    border: 1.5px solid #bbf7d0;
-    border-radius: 0.35rem;
-    padding: 0.6rem 1.1rem;
-    margin: 1rem 0;
-    font-family: system-ui, sans-serif;
-    font-size: 0.85rem;
-    color: #166534;
+  .stretch-header {
+    background: #0f172a; color: white; border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0.75rem 1.25rem; font-family: system-ui,sans-serif; margin-top: 2.5rem;
   }
-  .self-check strong { color: #14532d; }
-
-  /* ── Go-to-workbook prompt ── */
-  .workbook-prompt {
-    font-family: system-ui, sans-serif;
-    font-size: 0.82rem;
-    color: #475569;
-    background: #f1f5f9;
-    border-radius: 0.35rem;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0 0.25rem;
-    border-left: 4px solid #94a3b8;
+  .stretch-header h2 { color: white; font-size: 1rem; margin: 0; }
+  .stretch-header p { font-size: 0.83rem; color: #94a3b8; margin-top: 0.25rem; margin-bottom: 0; }
+  .stretch-card {
+    border: 1px solid #0f172a; border-top: none; padding: 1.1rem 1.25rem; background: #fff;
   }
+  .stretch-card + .stretch-card { border-top: 1px solid #e2e8f0; }
+  .stretch-card:last-of-type { border-radius: 0 0 0.5rem 0.5rem; margin-bottom: 1.25rem; }
 
-  /* ── Dividers ── */
+  .self-assess { margin-top: 2.5rem; border: 1.5px solid var(--unit-border); border-radius: 0.5rem;
+                  overflow: hidden; font-family: system-ui,sans-serif; font-size: 0.88rem; }
+  .self-assess-header { background: var(--unit); color: white; padding: 0.7rem 1.1rem;
+                         font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .self-assess-body { padding: 1rem 1.1rem; }
+  .sa-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0.5rem;
+             align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--line); font-size: 0.85rem; }
+  .sa-row:last-of-type { border-bottom: none; }
+  .sa-header { font-weight: 700; font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .sa-check { border: 1px solid #cbd5e1; border-radius: 0.25rem; padding: 0.2rem 0.5rem;
+               text-align: center; color: var(--muted); font-size: 0.78rem; }
+
   hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
-  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
 
-  /* ── Summary / synthesis boxes ── */
-  .synthesis-box {
-    border: 2px solid var(--unit);
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-    background: var(--unit-light);
-  }
-  .synthesis-box h3 { margin-top: 0; }
-
-  /* ── Answer key styling ── */
-  .answer {
-    background: #f0fdf4;
-    border-left: 3px solid #22c55e;
-    padding: 0.35rem 0.75rem;
-    margin: 0.25rem 0;
-    border-radius: 0 0.25rem 0.25rem 0;
-    font-style: italic;
-    color: #166534;
-    font-size: 0.9rem;
-  }
-
-  /* ── Question cards (workbook) ── */
-  .q-card {
-    border: 1.5px solid #e2e8f0;
-    border-radius: 0.5rem;
-    padding: 1rem 1.25rem;
-    margin: 1rem 0;
-    background: #fff;
-  }
-  .q-header {
-    font-family: system-ui, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
-  }
-  .q-num {
-    color: var(--unit-dark);
-    font-weight: 700;
-  }
-  .marks {
-    font-size: 0.78rem;
-    color: #64748b;
-    font-weight: 400;
-  }
-
-  /* ── Rubric table ── */
-  .rubric th { background: #1e293b; color: white; }
-
-  /* ── Print ── */
   @media print {
-    body {
-      font-size: 11pt;
-      padding: 1.5cm;
-      max-width: 100%;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-    .section-break { page-break-before: always; }
-    h2.section-title { page-break-after: avoid; }
+    body { font-size: 11pt; padding: 1.5cm; max-width: 100%;
+            -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .question-card { break-inside: avoid; }
+    .stretch-card { break-inside: avoid; }
   }
-
-  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
-  :root {
-    --dg-stroke:    #334155;
-    --dg-fill:      #f8fafc;
-    --dg-accent:    var(--accent, #1d4ed8);
-    --dg-secondary: #64748b;
-    --dg-muted:     #94a3b8;
-    --dg-sw:        1.5px;
-    --dg-sw-bold:   2.5px;
-    --dg-sw-thin:   1.0px;
-  }
-  svg .dg-boundary, svg .dg-line, svg .dg-accent,
-  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
-    vector-effect: non-scaling-stroke;
-  }
-  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
-  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
-  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
-  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
-  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
-  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
-  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
-  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
-  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
-  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
-  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
-
 </style>
 </head>
 <body>
+<div class="about-callout"><h1>Planet Earth — Practice Workbook</h1><p style="font-family:system-ui;font-size:0.82rem;color:#475569;margin:0.2rem 0 0.5rem;">Earth's Interior · Rock Cycle · Plate Tectonics · Earthquakes · Alberta Landforms · Geological Time</p><p>Grade 7 Science · Alberta Curriculum · Interleaved practice</p><p><strong>About this workbook:</strong> Questions are scrambled across all topics in this unit — figuring out which concept each question tests is part of the work.</p><p>★ Core — attempt all. Hints, word banks, or sentence starters are provided.</p><p>★★ Extended — same concepts, higher demand. Explain, justify, find errors, or apply to a new context.</p><p>Show all working. A correct answer with no working earns half marks.</p></div>
 
-<!-- Cover -->
-<div class="cover">
-  <h1>Planet Earth</h1>
-  <p>Grade 7 Science &nbsp;·&nbsp; Practice Workbook &nbsp;·&nbsp; Alberta Curriculum 2007</p>
-  <div class="name-line">
-    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  </div>
+<div class="forethought-block"><div class="meta-title">Before You Begin — Forethought</div><p>Which question do you think will be hardest? Write the number and one reason.</p>
+<p>I think Question <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> will be hardest because:</p>
+<div class="al"></div>
+<p>Which topic from this unit feels least solid going in?</p>
+<div class="al"></div>
+<hr style="margin:1rem 0;"><hr style="margin:1rem 0;"></div>
+
+<div class="section-heading">Questions — interleaved</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q1</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Fossils and geological time</p>
+  <p>A geologist finds four rock layers in the Alberta Badlands (numbered from bottom to top).</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">older</span><span class="term">younger</span><span class="term">superposition</span><span class="term">undisturbed</span><span class="term">bottom</span><span class="term">top</span></div></div>
+<p>In undisturbed rock layers, the law of <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> states that layers at the <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> are <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and layers at the <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> are <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>. This is possible because sediment is deposited <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> over time.</p>
+<p>Use this principle to answer: Layer 2 (second from bottom) contains a dinosaur fossil. Layer 4 (top layer) contains a small mammal fossil. Which animal lived earlier? Explain.</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="hint"><span class="hint-label">Hint</span>No radiometric dating needed — just use the position of the layers.</div>
 </div>
 
-<p><em>Questions are scrambled by design — practise retrieving from all parts of the unit.</em></p>
-<hr class="section-break">
-<h2 class="section-title">Part A: Earth's Interior (16 marks)</h2>
-<p><strong>1.</strong> Label the diagram of Earth's interior and give one property of each layer. (8 marks)</p>
-<pre>        ──────────────
-       /     [a]      \
-      / ┌────────────┐ \
-     /  │    [b]     │  \
-    |   │  ┌──────┐  │   |
-    |   │  │  [c] │  │   |
-    |   │  │ [d]  │  │   |
-    |   │  └──────┘  │   |
-     \  │    [b]     │  /
-      \ └────────────┘ /
-       \     [a]      /
-        ──────────────</pre>
-<div class="vocab-wrap"><table>
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q2</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Plate tectonics</p>
+  <p>The notes describe five different types of evidence for plate tectonics.</p>
+<p>a) Choose two types of evidence and for each, explain specifically what it shows about plate movement.</p>
+<p>Evidence 1: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> shows <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Evidence 2: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> shows <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>b) The Rocky Mountains in Alberta formed approximately 100 million years ago. Which type of plate boundary caused this mountain building, and what specifically happened at that boundary?</p>
+<p>Boundary type: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>What happened: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>c) Iceland sits on the Mid-Atlantic Ridge. Scientists predict it will eventually split into two islands. What type of boundary is this, and what features would you expect to find in Iceland right now?</p>
+<div class="al"></div>
+<div class="al"></div>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q3</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Earth's interior</p>
+  <p>Label each layer of Earth's interior. Then fill in the missing information in the table.</p>
+<p>```</p>
+<div class="al"></div>
+<p>/   [  A  ] \</p>
+<p>/ [ [  B  ] ] \</p>
+<table>
 <thead><tr>
-<th>Label</th>
-<th>Layer name</th>
-<th>One key property</th>
-</tr></thead>
-<tbody>
+<th>[ [ [ C ] ] ]</th>
+</tr></thead><tbody>
 <tr>
-<td>a</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>[ [ [ D ] ] ]</td>
+</tr>
+</tbody></table>
+<p>\ [ [  B  ] ] /</p>
+<p>\   [  A  ] /</p>
+<p>-----------</p>
+<p>```</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">crust</span><span class="term">mantle</span><span class="term">outer core</span><span class="term">inner core</span><span class="term">solid</span><span class="term">liquid</span><span class="term">iron</span><span class="term">nickel</span><span class="term">silicate</span><span class="term">convection</span><span class="term">lithosphere</span><span class="term">magnetic field</span></div></div>
+<table>
+<thead><tr>
+<th>Layer</th>
+<th>Letter</th>
+<th>State</th>
+<th>Main composition</th>
+<th>Key feature</th>
+</tr></thead><tbody>
+<tr>
+<td>Crust</td>
+<td>A</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td>granite (continental) or basalt (oceanic)</td>
+<td>Forms the <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> with upper mantle</td>
 </tr>
 <tr>
-<td>b</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Mantle</td>
+<td>B</td>
+<td>Solid but flows slowly</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> rock</td>
+<td>Contains <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> currents that drive plate motion</td>
 </tr>
 <tr>
-<td>c</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Outer core</td>
+<td>C</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td>Generates Earth's <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
 </tr>
 <tr>
-<td>d</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Inner core</td>
+<td>D</td>
+<td>Solid (despite extreme heat)</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td>Held solid by extreme <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
 </tr>
-</tbody></table></div>
-<p><strong>2.</strong> How do scientists know what Earth's interior looks like if no one has drilled there? (4 marks)</p>
+</tbody></table>
+<p>How do scientists know what is inside Earth if we have never drilled to the mantle?</p>
+<div class="al"></div>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q4</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Weathering, erosion, and Alberta landforms</p>
+  <p>The hoodoos near Drumheller are some of Alberta's most iconic landforms. They form when soft rock erodes more quickly than a harder cap rock sitting above it.</p>
+<p>a) What is the difference between weathering and erosion? (A key distinction: weathering does NOT move material.)</p>
+<div class="al"></div>
+<p>b) Two processes are at work forming hoodoos: differential erosion (soft rock eroding faster than hard cap rock) and freeze-thaw mechanical weathering. Explain the freeze-thaw process at the particle level.</p>
 <div class="al"></div>
 <div class="al"></div>
-<p><strong>3.</strong> The inner core is solid even though it is hotter than the outer core. Explain why. (2 marks)</p>
+<p>c) Glacial erratics — large boulders sitting on the Alberta prairies, sometimes hundreds of kilometres from the nearest mountain range — are a different kind of evidence. What transported them, and what does their presence tell us about Alberta's past?</p>
 <div class="al"></div>
-<p><strong>4.</strong> Why is the liquid outer core important to life on Earth? (2 marks)</p>
 <div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part B: The Rock Cycle (20 marks)</h2>
-<p><strong>5.</strong> Classify each rock and identify the conditions that formed it. (6 marks)</p>
-<div class="vocab-wrap"><table>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q5</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Rock cycle</p>
+  <p>Classify each rock as igneous, sedimentary, or metamorphic. Then explain the conditions that formed it.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">igneous</span><span class="term">sedimentary</span><span class="term">metamorphic</span><span class="term">slow cooling</span><span class="term">fast cooling</span><span class="term">heat and pressure</span><span class="term">compression and cementation</span><span class="term">lava</span><span class="term">magma</span></div></div>
+<table>
 <thead><tr>
 <th>Rock</th>
-<th>Type (I, S, or M)</th>
-<th>Conditions that formed it</th>
-</tr></thead>
-<tbody>
+<th>Type</th>
+<th>How it formed</th>
+</tr></thead><tbody>
 <tr>
-<td>Granite</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Basalt (found in lava flows; fine-grained)</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>Sandstone</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Granite (found in mountain cores; coarse-grained)</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>Marble</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Sandstone (found in Alberta Badlands; contains fossils)</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>Obsidian</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Marble (limestone transformed deep in the crust)</td>
+<td></td>
+<td></td>
 </tr>
-<tr>
-<td>Coal</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Quartzite</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody></table></div>
-<p><strong>6.</strong> A volcanic eruption produces basalt lava that cools quickly at the surface. Another magma body intrudes underground and cools slowly over millions of years, forming granite.</p>
-<p>a. Why do basalt and granite have different crystal sizes? (3 marks)</p>
-<div class="al"></div>
-<p>b. Which rock type are both basalt and granite? <span class="b b-md">&nbsp;</span></p>
-<p><strong>7.</strong> Draw and label the rock cycle as a triangle diagram. Show all three rock types and at least five processes connecting them. (6 marks)</p>
-<p>&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
-<p><strong>8.</strong> Why are fossils almost never found in igneous or metamorphic rock? In which rock type are fossils most commonly found, and why? (5 marks)</p>
+</tbody></table>
+<p>Why does granite have large crystals but basalt has tiny crystals, even though both are igneous?</p>
+<div class="hint"><span class="hint-label">Hint</span>Think about where each one cooled and how long it took.</div>
 <div class="al"></div>
 <div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part C: Plate Tectonics (20 marks)</h2>
-<p><strong>9.</strong> Define each boundary type and name one geological feature produced at each. (9 marks)</p>
-<div class="vocab-wrap"><table>
-<thead><tr>
-<th>Boundary type</th>
-<th>Definition</th>
-<th>Feature produced</th>
-<th>Real-world example</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Divergent</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Convergent</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Transform</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody></table></div>
-<p><strong>10.</strong> List THREE pieces of evidence that support the theory of plate tectonics. For each, explain what it demonstrates. (6 marks)</p>
-<ol>
-  <li><span class="b b-md">&nbsp;</span></li>
-</ol>
-<ol>
-  <li><span class="b b-md">&nbsp;</span></li>
-</ol>
-<ol>
-  <li><span class="b b-md">&nbsp;</span></li>
-</ol>
-<p><strong>11.</strong> Why did the Rocky Mountains form? What type of plate boundary was involved? (3 marks)</p>
-<div class="al"></div>
-<p><strong>12.</strong> Alberta is far from any active plate boundaries today, but it has significant geological history. Name TWO geological features of Alberta that show its tectonic past. (2 marks)</p>
-<div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part D: Earthquakes and Volcanoes (16 marks)</h2>
-<p><strong>13.</strong> Explain what causes an earthquake. Include focus, epicenter, and the role of faults. (6 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>14.</strong> Compare the Richter scale and the Mercalli scale. (4 marks)</p>
-<div class="vocab-wrap"><table>
-<thead><tr>
-<th></th>
-<th>Richter</th>
-<th>Mercalli</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>What it measures</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>How it is measured</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody></table></div>
-<p><strong>15.</strong> Compare shield and composite volcanoes. (6 marks)</p>
-<div class="vocab-wrap"><table>
-<thead><tr>
-<th></th>
-<th>Shield volcano</th>
-<th>Composite (stratovolcano)</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Lava viscosity</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Eruption style</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Shape</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Example</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Why viscosity determines eruption style</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody></table></div>
-<hr class="section-break">
-<h2 class="section-title">Part E: Weathering, Erosion, and Alberta Landforms (16 marks)</h2>
-<p><strong>16.</strong> What is the difference between weathering and erosion? (3 marks)</p>
-<div class="al"></div>
-<p><strong>17.</strong> Give one example each of mechanical weathering and chemical weathering. For each, name the specific process and explain how it breaks down rock. (6 marks)</p>
-<p>Mechanical: <span class="b b-md">&nbsp;</span></p>
-<p>Chemical: <span class="b b-md">&nbsp;</span></p>
-<p><strong>18.</strong> Match each Alberta landform to the process that created it. (4 marks)</p>
-<div class="vocab-wrap"><table>
-<thead><tr>
-<th>Landform</th>
-<th>Process</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Drumheller Hoodoos</td>
-<td>a. glacial deposition</td>
-</tr>
-<tr>
-<td>Glacial erratics (scattered boulders)</td>
-<td>b. tectonic uplift + glacial erosion</td>
-</tr>
-<tr>
-<td>Rocky Mountains</td>
-<td>c. fluvial (river) erosion exposing different rock layers</td>
-</tr>
-<tr>
-<td>Flat prairie surface</td>
-<td>d. glacial till deposition</td>
-</tr>
-</tbody></table></div>
-<p><strong>19.</strong> Explain why geological change is mostly slow, not dramatic. Give a calculation estimate to support your point: if a river valley erodes 2 mm per year, how deep could it be after 1 million years? (3 marks)</p>
-<div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part F: Fossils and Geological Time (12 marks)</h2>
-<p><strong>20.</strong> Explain the law of superposition and how it is used to relatively date rock layers. (3 marks)</p>
-<div class="al"></div>
-<p><strong>21.</strong> Describe TWO types of fossils other than bone replacement. For each, explain how it forms. (4 marks)</p>
-<ol>
-  <li><span class="b b-md">&nbsp;</span></li>
-</ol>
-<ol>
-  <li><span class="b b-md">&nbsp;</span></li>
-</ol>
-<p><strong>22.</strong> Why is Alberta such an important fossil location? Reference the geological time scale in your answer. (3 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>23.</strong> A geologist finds rock layer A beneath rock layer B. Layer A contains marine invertebrate fossils. Layer B contains dinosaur fossils. What can she conclude about the relative ages of these layers? (2 marks)</p>
-<div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part G: ★ Challenge</h2>
-<p><strong>24.</strong> You are a geologist visiting an outcrop in the Alberta Badlands. You find: (8 marks)</p>
-<ul>
-  <li>The bottom layer (Layer 1) is limestone containing marine invertebrate shells</li>
-  <li>Above it (Layer 2) is a thick layer of sandstone with no fossils</li>
-  <li>Above that (Layer 3) is shale containing large dinosaur bones and teeth</li>
-  <li>At the very top (Layer 4) is a thin clay-rich layer with unusually high concentrations of the element iridium (rare on Earth, but common in meteorites)</li>
-</ul>
-<p>a. Using the law of superposition, list the layers from oldest to youngest.</p>
-<div class="al"></div>
-<p>b. What type of environment does the limestone (Layer 1) suggest was here in the past?</p>
-<div class="al"></div>
-<p>c. Layer 3 contains Cretaceous dinosaur fossils. What does this tell you about what Alberta looked like during that era?</p>
-<div class="al"></div>
-<p>d. Layer 4's iridium is found in rock layers worldwide at the same geological moment. What event does scientists believe this represents, and what happened to the organisms in Layer 3 shortly after?</p>
-<div class="al"></div>
-<p>e. All four rock layers are sedimentary. What does this tell you about Alberta's geological environment over this time period?</p>
-<div class="al"></div>
+</div>
 
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q6</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Earthquakes and volcanoes</p>
+  <p>The 1980 eruption of Mt. St. Helens (Washington State) killed 57 people and was highly explosive. The 1984 eruption of Mauna Loa (Hawaii) lasted several weeks, produced far more lava by volume, and caused almost no casualties.</p>
+<p>a) What type of volcano is Mt. St. Helens? What type is Mauna Loa? Name both types.</p>
+<p>Mt. St. Helens: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> Mauna Loa: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>b) Explain the difference in eruption style using lava viscosity. Why does thick lava cause explosive eruptions while fluid lava causes gentle flows?</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>c) The Richter scale and Mercalli scale both measure earthquakes but in different ways. Complete the table.</p>
+<table>
+<thead><tr>
+<th>Scale</th>
+<th>What it measures</th>
+<th>How it is measured</th>
+</tr></thead><tbody>
+<tr>
+<td>Richter</td>
+<td></td>
+<td>Instrument-based; logarithmic</td>
+</tr>
+<tr>
+<td>Mercalli</td>
+<td>Observed effects — what people feel and see</td>
+<td></td>
+</tr>
+</tbody></table>
+</div>
+
+<div class="midpoint-block">
+<div class="meta-title">Midpoint Check</div>
+<p>Which question has been hardest so far? Circle its number above.</p>
+<div class="al"></div>
+<p>Was it hard because you did not know the idea, or because the question asked in an unfamiliar way?</p>
+<div class="al"></div>
+<p>What did you do when you got stuck?</p>
+<div class="al"></div>
+<hr style="margin:1rem 0;">
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q7</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Earth's interior</p>
+  <p>Scientists have never drilled to the mantle, yet they know the outer core is liquid and the inner core is solid.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">seismic waves</span><span class="term">refract</span><span class="term">reflect</span><span class="term">speed</span><span class="term">boundaries</span><span class="term">liquid</span><span class="term">solid</span><span class="term">earthquake</span><span class="term">magnetic field</span></div></div>
+<p>When an <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> occurs, <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> travel through the Earth and are recorded at stations worldwide. These waves change <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> or <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> when they cross <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> between layers of different density.</p>
+<div class="starter">Sentence starter: We know the outer core is liquid because <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></div>
+<div class="al"></div>
+<p>The outer core is also important to life at the surface. What does it generate, and why does this matter?</p>
+<div class="al"></div>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q8</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Rock cycle</p>
+  <p>A marble statue (metamorphic rock) is slowly dissolving in the acidic rain of an industrial city.</p>
+<p>a) Trace the marble back through the rock cycle: what was the parent rock before it became marble, and what conditions transformed it?</p>
+<div class="al"></div>
+<p>b) The dissolved marble is being carried as sediment toward a river. Over millions of years, where might this sediment end up, and what rock type would it form?</p>
+<div class="al"></div>
+<p>c) If the sedimentary rock formed in (b) were eventually subducted at a plate boundary, what would happen to it next in the rock cycle?</p>
+<div class="al"></div>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q9</span><span class="badge badge-core">★ Core</span><span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span></div>
+  <p class="q-context">Fossils and geological time</p>
+  <p>Alberta is one of the world's most significant locations for Cretaceous fossils. Complete the explanation below.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">Cretaceous</span><span class="term">sedimentary</span><span class="term">Badlands</span><span class="term">Royal Tyrrell</span><span class="term">erosion</span><span class="term">seaway</span><span class="term">Mesozoic</span><span class="term">superposition</span></div></div>
+<p>Alberta's Badlands near Drumheller are famous for dinosaur fossils because <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> era rock layers are exposed at the surface — <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> removed the overlying rock, revealing ancient layers.</p>
+<p>During the Cretaceous period (approximately 75 million years ago), an interior <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> covered Alberta, preserving both marine fossils and dinosaur fossils in <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> rock layers.</p>
+<p>The <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> Museum in Drumheller holds one of the world's largest collections of dinosaur fossils. Using the law of <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>, a geologist can determine the relative ages of different fossil-bearing layers without any laboratory dating.</p>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q10</span><span class="badge badge-ext">★★ Extended</span><span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span></div>
+  <p class="q-context">Plate tectonics</p>
+  <p>Alberta is geologically stable today — far from active plate boundaries. Yet the Rocky Mountains exist, Alberta has oil sands, and small earthquakes occasionally occur.</p>
+<p>a) Explain how the Rocky Mountains formed. Your answer must include: the type of plate boundary involved, what the two plates were, and approximately when this happened.</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>b) Alberta's oil sands are ancient organic material buried under sedimentary rock. Which geological era deposited the organic material that became Alberta's oil sands? What does this tell us about what Alberta looked like millions of years ago?</p>
+<div class="al"></div>
+<p>c) Occasional small earthquakes occur in Alberta today. The notes identify two human activities that cause these. Name both activities and explain the mechanism.</p>
+<p>Activity 1: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Activity 2: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q11</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Weathering, erosion, and Alberta landforms</p>
+  <p>Complete the table comparing mechanical and chemical weathering. Then classify each Alberta example.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">mechanical</span><span class="term">chemical</span><span class="term">composition</span><span class="term">freeze-thaw</span><span class="term">oxidation</span><span class="term">acid rain</span><span class="term">abrasion</span><span class="term">root growth</span><span class="term">dissolution</span></div></div>
+<table>
+<thead><tr>
+<th>Type of weathering</th>
+<th>What changes</th>
+<th>What stays the same</th>
+</tr></thead><tbody>
+<tr>
+<td>Mechanical</td>
+<td>Rock breaks into smaller pieces</td>
+<td>Rock <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+</tr>
+<tr>
+<td>Chemical</td>
+<td>Rock <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> changes; minerals react</td>
+<td>(nothing stays the same — the material is altered)</td>
+</tr>
+</tbody></table>
+<p>Classify each Alberta weathering example:</p>
+<table>
+<thead><tr>
+<th>Example</th>
+<th>Mechanical or chemical?</th>
+<th>Process name</th>
+</tr></thead><tbody>
+<tr>
+<td>Rocky Mountain trail rocks crumbling every spring as ice expands in cracks</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Red/orange colour of rocks in the Alberta Badlands from iron reacting with oxygen</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Wind-carried sand particles scratching and wearing down rock surfaces</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CO₂ dissolving in rainwater and reacting with limestone</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q12</span><span class="badge badge-ext">★★ Extended</span><span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span></div>
+  <p class="q-context">Earthquakes and volcanoes</p>
+  <p>a) What is the difference between the focus (hypocenter) and the epicenter of an earthquake?</p>
+<div class="al"></div>
+<p>b) In the space below, draw a simple cross-section of the Earth's crust. Mark the focus (underground) and the epicenter (on the surface). Draw seismic wave paths radiating outward from the focus.</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+<p>c) Alberta is far from active tectonic plate boundaries, yet residents sometimes feel small earthquakes. The notes identify fracking (hydraulic fracturing) and wastewater injection as causes. Explain the mechanism: why do these activities trigger earthquakes?</p>
+<div class="starter">Sentence starter: These activities can trigger earthquakes because injecting fluid underground <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></div>
+<div class="al"></div>
+</div>
+
+<div class="reflection-block">
+<div class="meta-title">Reflection</div>
+<ol>
+<li>Which questions were hardest? Write the numbers.</li>
+</ol>
+<div class="al"></div>
+<ol>
+<li>Was it hard because you did not know the concept, or because the question asked in an unfamiliar way?</li>
+</ol>
+<div class="al"></div>
+<ol>
+<li>What is one thing you would do differently before the next session?</li>
+</ol>
+<div class="al"></div>
+<ol>
+<li>Rate your understanding of your toughest concept: 1 — Lost &nbsp; 2 — Partial &nbsp; 3 — Got it &nbsp; 4 — Could teach it</li>
+</ol>
+<p>One piece of evidence for your rating:</p>
+<div class="al"></div>
+<hr style="margin:1rem 0;">
+</div>
+
+<div class="stretch-header"><h2>Stretch — Challenge Questions</h2><p>★★ All stretch questions. Attempt after completing all previous questions.</p></div>
+
+<div class="stretch-card">
+  <div class="q-header"><span class="badge badge-num">S1</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Rock cycle + Plate tectonics</p>
+  <p>The rock cycle and plate tectonics are connected. Use both to answer:</p>
+<p>a) Where on Earth is new igneous rock being created right now? What type of plate boundary is responsible?</p>
+<div class="al"></div>
+<p>b) Where is existing rock being recycled back into the mantle? What boundary type causes this, and what happens to the rock?</p>
+<div class="al"></div>
+<p>c) Which type of rock is most likely to contain fossils — and why does this mean fossils are rarely found at convergent boundaries?</p>
+<div class="al"></div>
+</div>
+
+<div class="stretch-card">
+  <div class="q-header"><span class="badge badge-num">S2</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Fossils + Geological time + Weathering</p>
+  <p>You find two rock outcrops 200 km apart in the Alberta Badlands. Both contain the same index fossil species.</p>
+<p>a) What can you conclude about the relative age of these two rock layers?</p>
+<div class="al"></div>
+<p>b) What additional information would you need to determine the actual age (in years) of the rocks?</p>
+<div class="al"></div>
+<p>c) The outcrops are exposed because wind and water have eroded the overlying rock layers. Name the weathering and erosion processes most responsible for exposing Badlands rock, and explain how each works in Alberta's climate.</p>
+<div class="al"></div>
+<div class="al"></div>
+</div>
+
+<div class="stretch-card">
+  <div class="q-header"><span class="badge badge-num">S3</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Earth's interior + Plate tectonics + Earthquakes</p>
+  <p>A geologist is trying to determine whether a newly discovered planet (orbiting another star) has active plate tectonics.</p>
+<p>a) List three pieces of evidence she could look for remotely (from a telescope or orbiter) that would suggest the planet has active tectonics.</p>
+<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+<p>b) On Earth, the driving force for plate motion is convection currents in the mantle. What conditions inside the Earth allow these currents to form? Why might an older, cooler planet lack plate tectonics?</p>
+<div class="al"></div>
+<div class="al"></div>
+</div>
+
+<div class="self-assess">
+<div class="self-assess-header">Self-Assessment</div>
+<div class="self-assess-body">
+<div class="sa-row"><div class="sa-header">Skill</div><div class="sa-header">Got it ✓</div><div class="sa-header">Getting there</div><div class="sa-header">Not yet</div></div>
+<div class="sa-row">
+<div>I can name Earth's four layers and explain how seismic waves give us evidence about the interior</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can classify rocks as igneous, sedimentary, or metamorphic and explain what conditions form each</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can describe the three plate boundary types and connect them to Alberta's geological history</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can distinguish focus from epicenter and compare the Richter and Mercalli scales</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can explain freeze-thaw weathering and identify Alberta landforms produced by weathering and erosion</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can apply the law of superposition and explain why Alberta's Badlands are significant for fossils</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+</div></div>
+<div style="margin-top:1.5rem;"><p>One question I still have about planet Earth:</p>
+<div class="al"></div></div>
 </body>
 </html>

@@ -3,553 +3,511 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grade 7 Science — Heat and Temperature: Practice Workbook</title>
+<title>Grade 7 Science — Heat and Temperature — Practice Workbook</title>
 <style>
   :root {
-    --unit: #ea580c;
-    --unit-dark: #c2410c;
-    --unit-light: #ffedd5;
+    --unit:        #ea580c;
+    --unit-mid:    #f97316;
+    --unit-dark:   #c2410c;
+    --unit-light:  #ffedd5;
     --unit-border: #fdba74;
+    --line:   #e2e8f0;
+    --muted:  #64748b;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 15px;
-    line-height: 1.75;
-    color: #1e293b;
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
-    background: #fff;
-  }
-
-  /* ── Typography ── */
-  h1 { font-family: system-ui, sans-serif; font-size: 1.6rem; font-weight: 700; color: #0f172a; }
-  h2.section-title {
-    font-family: system-ui, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: white;
-    background: var(--unit);
-    padding: 0.55rem 1rem;
-    border-radius: 0.35rem;
-    margin: 2.5rem 0 1rem;
-  }
-  h3 {
-    font-family: system-ui, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin: 1.5rem 0 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--unit-dark);
-  }
-  h4 {
-    font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin: 1.25rem 0 0.25rem;
-  }
-  p { margin-bottom: 0.75rem; }
+  body { font-family: Georgia,'Times New Roman',serif; font-size: 15px; line-height: 1.75;
+          color: #1e293b; max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem; background: #fff; }
+  h1 { font-family: system-ui,sans-serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem; }
+  h2 { font-family: system-ui,sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 1.5rem 0 0.5rem; }
+  h3 { font-family: system-ui,sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--unit-dark);
+        text-transform: uppercase; letter-spacing: 0.06em; margin: 1.25rem 0 0.35rem; }
+  p { margin-bottom: 0.6rem; }
   strong { color: #0f172a; }
+  ol,ul { padding-left: 1.4rem; margin-bottom: 0.75rem; }
+  li { margin-bottom: 0.35rem; }
+  sup { font-size: 0.75em; }
 
-  /* ── Cover block ── */
-  .cover {
-    border-left: 6px solid var(--unit);
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 2rem;
-    background: var(--unit-light);
-    border-radius: 0 0.5rem 0.5rem 0;
+  .about-callout {
+    border: 1.5px solid var(--unit-border); border-radius: 0.5rem;
+    padding: 1rem 1.25rem; margin-bottom: 2rem; background: var(--unit-light);
+    font-family: system-ui,sans-serif; font-size: 0.88rem;
   }
-  .cover p { font-family: system-ui, sans-serif; font-size: 0.82rem; color: #475569; margin: 0.25rem 0 0; }
-  .name-line {
-    font-family: system-ui, sans-serif;
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-top: 1rem;
-    display: flex;
-    gap: 2rem;
-  }
-  .name-line span { border-bottom: 1.5px solid #94a3b8; padding-bottom: 2px; flex: 1; max-width: 22rem; }
+  .about-callout p { margin-bottom: 0.4rem; }
+  .about-callout p:last-child { margin-bottom: 0; }
 
-  /* ── Pre-knowledge box ── */
-  .pre-knowledge {
-    border: 2px dashed #94a3b8;
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-    background: #f8fafc;
+  .badge {
+    display: inline-flex; align-items: center;
+    font-family: system-ui,sans-serif; font-size: 0.72rem; font-weight: 700;
+    border-radius: 99px; padding: 0.2rem 0.6rem; letter-spacing: 0.03em;
   }
-  .pre-knowledge .label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #64748b;
-    margin-bottom: 0.5rem;
+  .badge-core   { background: #e0f2fe; color: #0369a1; }
+  .badge-ext    { background: #ede9fe; color: #5b21b6; }
+  .badge-num    { background: var(--unit); color: white; }
+  .badge-vis    { background: #fef3c7; color: #92400e; }
+  .badge-err    { background: #fce7f3; color: #9d174d; }
+  .badge-stretch{ background: #0f172a; color: white; }
+
+  .section-heading {
+    font-family: system-ui,sans-serif; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--unit-dark);
+    border-bottom: 2px solid var(--unit-border); padding-bottom: 0.35rem; margin: 2rem 0 1.25rem;
   }
 
-  /* ── Vocab table ── */
-  .vocab-wrap {
-    margin: 1rem 0 1.5rem;
-    overflow-x: auto;
+  .question-card {
+    border: 1px solid var(--line); border-radius: 0.6rem;
+    padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; background: #fff;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
+  .question-card.extended { border-left: 4px solid #7c3aed; }
+  .q-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+  .q-context {
+    background: #f8fafc; border-left: 3px solid var(--unit-border);
+    padding: 0.6rem 0.9rem; border-radius: 0 0.35rem 0.35rem 0;
+    font-size: 0.93rem; margin-bottom: 0.75rem; font-style: italic; color: #334155;
   }
-  table th {
-    font-family: system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    background: var(--unit-light);
-    color: var(--unit-dark);
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--unit-border);
-    text-align: left;
-  }
-  table td {
-    padding: 0.55rem 0.75rem;
-    border: 1px solid #e2e8f0;
-    vertical-align: top;
-    min-height: 2.2rem;
-  }
-  table tr:nth-child(even) td { background: #f8fafc; }
-  table td:first-child { font-weight: 600; color: #0f172a; }
 
-  /* ── Fill-in blanks ── */
-  .b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; }
-  .b-sm { width: 4rem; }
-  .b-md { width: 7rem; }
-  .b-lg { width: 11rem; }
-  .b-xl { width: 16rem; }
-
-  /* ── Answer lines ── */
-  .al {
-    display: block;
-    border-bottom: 1.5px solid #94a3b8;
-    height: 1.8rem;
-    margin: 0.4rem 0;
-    width: 100%;
-  }
+  .al { border-bottom: 1px solid #cbd5e1; min-height: 1.8rem; margin: 0.4rem 0; }
   .al-short { width: 60%; }
-  .al-pair { display: flex; gap: 2rem; margin: 0.4rem 0; }
-  .al-pair > div { flex: 1; border-bottom: 1.5px solid #94a3b8; height: 1.8rem; }
-
-  /* ── Code / diagram blocks ── */
-  pre {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.82rem;
-    background: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.35rem;
-    padding: 0.85rem 1rem;
-    overflow-x: auto;
-    white-space: pre;
-    margin: 0.75rem 0;
-    line-height: 1.5;
+  .work-box {
+    border: 1px solid #e2e8f0; border-radius: 0.35rem; min-height: 80px;
+    margin: 0.5rem 0; background: #fafafa; padding: 0.5rem;
+    font-size: 0.85rem; color: #94a3b8; font-family: system-ui,sans-serif;
   }
 
-  /* ── Misconception callout ── */
+  .word-bank {
+    background: #f1f5f9; border: 1px solid var(--line); border-radius: 0.35rem;
+    padding: 0.5rem 0.75rem; margin: 0.5rem 0 0.75rem; font-family: system-ui,sans-serif; font-size: 0.85rem;
+  }
+  .word-bank .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+                       letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.25rem; }
+  .word-bank .terms { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .word-bank .term { background: white; border: 1px solid #cbd5e1; border-radius: 0.25rem;
+                      padding: 0.15rem 0.5rem; font-size: 0.85rem; }
+
+  .hint {
+    border: 1px dashed var(--unit-border); border-radius: 0.35rem;
+    padding: 0.45rem 0.75rem; margin: 0.5rem 0;
+    font-family: system-ui,sans-serif; font-size: 0.83rem; color: var(--unit-dark); background: var(--unit-light);
+  }
+  .hint-label { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 0.4rem; }
+
+  .starter {
+    font-style: italic; color: var(--unit-dark);
+    border-left: 3px solid var(--unit-mid); padding: 0.35rem 0.75rem; margin: 0.4rem 0;
+    font-size: 0.92rem; background: var(--unit-light); border-radius: 0 0.25rem 0.25rem 0;
+  }
+
   .misconception {
-    border-left: 5px solid #dc2626;
-    background: #fef2f2;
-    padding: 0.85rem 1.1rem;
-    margin: 1.25rem 0;
-    border-radius: 0 0.35rem 0.35rem 0;
+    background: #fff1f2; border: 1px solid #fecdd3; border-left: 4px solid #f43f5e;
+    border-radius: 0 0.4rem 0.4rem 0; padding: 0.75rem 1rem; margin-bottom: 0.75rem;
+    font-family: system-ui,sans-serif; font-size: 0.9rem;
   }
-  .misconception .m-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #dc2626;
-    margin-bottom: 0.4rem;
-  }
-  .misconception .m-wrong {
-    font-style: italic;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-  }
-  .misconception p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+  .student-claim { font-style: italic; font-size: 0.95rem; color: #881337; margin-bottom: 0.25rem; }
+  .err-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+                letter-spacing: 0.06em; color: #9f1239; margin-bottom: 0.35rem; }
 
-  /* ── Connection prompt ── */
-  .connection {
-    border-left: 5px solid #f97316;
-    background: #fff7ed;
-    padding: 0.85rem 1.1rem;
-    margin: 1.25rem 0;
-    border-radius: 0 0.35rem 0.35rem 0;
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.75rem 0 1rem; }
+  table th {
+    font-family: system-ui,sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em; background: var(--unit-light);
+    color: var(--unit-dark); padding: 0.5rem 0.75rem; border: 1px solid var(--unit-border); text-align: left;
   }
-  .connection .c-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #c2410c;
-    margin-bottom: 0.4rem;
-  }
-  .connection p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  table td { padding: 0.55rem 0.75rem; border: 1px solid #e2e8f0; vertical-align: top; }
+  table tr:nth-child(even) td { background: #f8fafc; }
 
-  /* ── Retrieval check ── */
-  .retrieval {
-    background: #eff6ff;
-    border: 1.5px solid #bfdbfe;
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-  }
-  .retrieval .r-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #1d4ed8;
-    margin-bottom: 1rem;
-  }
-  .retrieval ol { padding-left: 1.25rem; }
-  .retrieval li { margin-bottom: 1.1rem; font-size: 0.9rem; }
-  .retrieval .stretch-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #6d28d9;
-    margin-right: 0.3rem;
-  }
+  .forethought-block { background: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: 0.6rem;
+                        padding: 1.1rem 1.25rem; margin: 2rem 0; font-family: system-ui,sans-serif; font-size: 0.9rem; }
+  .midpoint-block    { background: #fefce8; border: 1.5px solid #fde047; border-radius: 0.6rem;
+                        padding: 1.1rem 1.25rem; margin: 2rem 0; font-family: system-ui,sans-serif; font-size: 0.9rem; }
+  .reflection-block  { background: #fdf4ff; border: 1.5px solid #e9d5ff; border-radius: 0.6rem;
+                        padding: 1.1rem 1.25rem; margin: 2rem 0; font-family: system-ui,sans-serif; font-size: 0.9rem; }
+  .meta-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.6rem; }
+  .forethought-block .meta-title { color: #0369a1; }
+  .midpoint-block    .meta-title { color: #854d0e; }
+  .reflection-block  .meta-title { color: #6b21a8; }
 
-  /* ── Self-check ── */
-  .self-check {
-    background: #f0fdf4;
-    border: 1.5px solid #bbf7d0;
-    border-radius: 0.35rem;
-    padding: 0.6rem 1.1rem;
-    margin: 1rem 0;
-    font-family: system-ui, sans-serif;
-    font-size: 0.85rem;
-    color: #166534;
+  .stretch-header {
+    background: #0f172a; color: white; border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0.75rem 1.25rem; font-family: system-ui,sans-serif; margin-top: 2.5rem;
   }
-  .self-check strong { color: #14532d; }
-
-  /* ── Go-to-workbook prompt ── */
-  .workbook-prompt {
-    font-family: system-ui, sans-serif;
-    font-size: 0.82rem;
-    color: #475569;
-    background: #f1f5f9;
-    border-radius: 0.35rem;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0 0.25rem;
-    border-left: 4px solid #94a3b8;
+  .stretch-header h2 { color: white; font-size: 1rem; margin: 0; }
+  .stretch-header p { font-size: 0.83rem; color: #94a3b8; margin-top: 0.25rem; margin-bottom: 0; }
+  .stretch-card {
+    border: 1px solid #0f172a; border-top: none; padding: 1.1rem 1.25rem; background: #fff;
   }
+  .stretch-card + .stretch-card { border-top: 1px solid #e2e8f0; }
+  .stretch-card:last-of-type { border-radius: 0 0 0.5rem 0.5rem; margin-bottom: 1.25rem; }
 
-  /* ── Dividers ── */
+  .self-assess { margin-top: 2.5rem; border: 1.5px solid var(--unit-border); border-radius: 0.5rem;
+                  overflow: hidden; font-family: system-ui,sans-serif; font-size: 0.88rem; }
+  .self-assess-header { background: var(--unit); color: white; padding: 0.7rem 1.1rem;
+                         font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .self-assess-body { padding: 1rem 1.1rem; }
+  .sa-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0.5rem;
+             align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--line); font-size: 0.85rem; }
+  .sa-row:last-of-type { border-bottom: none; }
+  .sa-header { font-weight: 700; font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .sa-check { border: 1px solid #cbd5e1; border-radius: 0.25rem; padding: 0.2rem 0.5rem;
+               text-align: center; color: var(--muted); font-size: 0.78rem; }
+
   hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
-  .section-break { border: none; border-top: 3px solid var(--unit); margin: 2.5rem 0; }
 
-  /* ── Summary / synthesis boxes ── */
-  .synthesis-box {
-    border: 2px solid var(--unit);
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-    background: var(--unit-light);
-  }
-  .synthesis-box h3 { margin-top: 0; }
-
-  /* ── Answer key styling ── */
-  .answer {
-    background: #f0fdf4;
-    border-left: 3px solid #22c55e;
-    padding: 0.35rem 0.75rem;
-    margin: 0.25rem 0;
-    border-radius: 0 0.25rem 0.25rem 0;
-    font-style: italic;
-    color: #166534;
-    font-size: 0.9rem;
-  }
-
-  /* ── Question cards (workbook) ── */
-  .q-card {
-    border: 1.5px solid #e2e8f0;
-    border-radius: 0.5rem;
-    padding: 1rem 1.25rem;
-    margin: 1rem 0;
-    background: #fff;
-  }
-  .q-header {
-    font-family: system-ui, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
-  }
-  .q-num {
-    color: var(--unit-dark);
-    font-weight: 700;
-  }
-  .marks {
-    font-size: 0.78rem;
-    color: #64748b;
-    font-weight: 400;
-  }
-
-  /* ── Rubric table ── */
-  .rubric th { background: #1e293b; color: white; }
-
-  /* ── Print ── */
   @media print {
-    body {
-      font-size: 11pt;
-      padding: 1.5cm;
-      max-width: 100%;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-    .section-break { page-break-before: always; }
-    h2.section-title { page-break-after: avoid; }
+    body { font-size: 11pt; padding: 1.5cm; max-width: 100%;
+            -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .question-card { break-inside: avoid; }
+    .stretch-card { break-inside: avoid; }
   }
-
-  /* ─── SVG Diagram Design System (dg-* classes) ─────────── */
-  :root {
-    --dg-stroke:    #334155;
-    --dg-fill:      #f8fafc;
-    --dg-accent:    var(--accent, #1d4ed8);
-    --dg-secondary: #64748b;
-    --dg-muted:     #94a3b8;
-    --dg-sw:        1.5px;
-    --dg-sw-bold:   2.5px;
-    --dg-sw-thin:   1.0px;
-  }
-  svg .dg-boundary, svg .dg-line, svg .dg-accent,
-  svg .dg-dashed, svg .dg-right-angle, svg .dg-construction {
-    vector-effect: non-scaling-stroke;
-  }
-  svg .dg-boundary    { stroke: var(--dg-stroke);    fill: var(--dg-fill);  stroke-width: var(--dg-sw); }
-  svg .dg-line        { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw); }
-  svg .dg-accent      { stroke: var(--dg-accent);    fill: none;            stroke-width: var(--dg-sw-bold); }
-  svg .dg-dashed      { stroke: var(--dg-secondary); fill: none;            stroke-width: var(--dg-sw); stroke-dasharray: 5 3; }
-  svg .dg-right-angle { stroke: var(--dg-stroke);    fill: none;            stroke-width: var(--dg-sw-thin); }
-  svg .dg-construction{ stroke: var(--dg-muted);     fill: none;            stroke-width: var(--dg-sw-thin); stroke-dasharray: 2 3; }
-  svg .dg-point       { fill: var(--dg-stroke);      stroke: none; }
-  svg .dg-point-accent{ fill: var(--dg-accent);      stroke: none; }
-  svg .dg-label       { font: 12px/1.3 system-ui, sans-serif; fill: var(--dg-stroke);    stroke: none; }
-  svg .dg-label-sm    { font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-secondary); stroke: none; }
-  svg .dg-label-accent{ font: 11px/1.3 system-ui, sans-serif; fill: var(--dg-accent);    stroke: none; font-weight: 600; }
-
 </style>
 </head>
 <body>
+<div class="about-callout"><h1>Heat and Temperature — Practice Workbook</h1><p style="font-family:system-ui;font-size:0.82rem;color:#475569;margin:0.2rem 0 0.5rem;">Temperature Scales · Particle Model · Heat Transfer · Specific Heat · Insulation</p><p>Grade 7 Science · Alberta Curriculum · Interleaved practice</p><p><strong>About this workbook:</strong> Questions are scrambled across all topics in this unit — figuring out which concept each question tests is part of the work.</p><p>★ Core — attempt all. Hints, word banks, or sentence starters are provided.</p><p>★★ Extended — same concepts, higher demand. Explain, justify, find errors, or apply to a new context.</p><p>Show all working. A correct answer with no working earns half marks.</p></div>
 
-<!-- Cover -->
-<div class="cover">
-  <h1>Heat and Temperature</h1>
-  <p>Grade 7 Science &nbsp;·&nbsp; Practice Workbook &nbsp;·&nbsp; Alberta Curriculum 2007</p>
-  <div class="name-line">
-    <span>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span>Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span>Block: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  </div>
-</div>
+<div class="forethought-block"><div class="meta-title">Before You Begin — Forethought</div><p>Which question do you think will be hardest? Write the number and one reason.</p>
+<p>I think Question <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> will be hardest because:</p>
+<div class="al"></div>
+<p>Which topic from this unit feels least solid going in?</p>
+<div class="al"></div>
+<hr style="margin:1rem 0;"><hr style="margin:1rem 0;"></div>
 
-<p><em>Questions are scrambled by design — practise retrieving from all parts of the unit.</em></p>
-<hr class="section-break">
-<h2 class="section-title">Part A: Temperature and Scales (16 marks)</h2>
-<p><strong>1.</strong> Convert the following temperatures. Show your work. (8 marks)</p>
-<div class="vocab-wrap"><table>
+<div class="section-heading">Questions — interleaved</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q1</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Temperature scales</p>
+  <p>Complete the conversion table. Show working for each calculation using the formula K = °C + 273.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">Kelvin</span><span class="term">Celsius</span><span class="term">absolute zero</span><span class="term">273</span></div></div>
+<table>
 <thead><tr>
 <th>Celsius</th>
 <th>Kelvin</th>
-<th>Working</th>
-</tr></thead>
-<tbody>
+<th>Show your working</th>
+</tr></thead><tbody>
 <tr>
-<td>0°C</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>0 °C</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> K</td>
+<td></td>
 </tr>
 <tr>
-<td>100°C</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>100 °C</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> K</td>
+<td></td>
 </tr>
 <tr>
-<td>−40°C</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>−40 °C</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> K</td>
+<td></td>
 </tr>
 <tr>
-<td>37°C</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>20 °C</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> K</td>
+<td></td>
 </tr>
 <tr>
-<td>&nbsp;</td>
-<td>273 K</td>
-<td>&nbsp;</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> °C</td>
+<td>310 K (body temperature)</td>
+<td></td>
 </tr>
-<tr>
-<td>&nbsp;</td>
-<td>373 K</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>0 K</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>310 K</td>
-<td>&nbsp;</td>
-</tr>
-</tbody></table></div>
-<p><strong>2.</strong> What does temperature measure at the particle level? (2 marks)</p>
-<div class="al"></div>
-<p><strong>3.</strong> Why does the Kelvin scale not have negative numbers? (2 marks)</p>
-<div class="al"></div>
-<p><strong>4.</strong> A student says "water is boiling at 100°." Another student is confused — she thought water boiled at 373. Who is right? Explain. (4 marks)</p>
+</tbody></table>
+<p>What is absolute zero in Celsius? <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> °C</p>
+<p>Why is there no negative temperature on the Kelvin scale?</p>
+<div class="starter">Sentence starter: There are no negative Kelvin temperatures because 0 K represents <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></div>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q2</span><span class="badge badge-ext">★★ Extended</span><span class="badge badge-err">Error analysis</span></div>
+  <p class="q-context">Heat vs. temperature</p>
+  <p>A student says: <em>"I spilled a cup of boiling water (100°C) on myself. My friend fell into a swimming pool at 30°C. Obviously the cup was more dangerous because it was hotter."</em></p>
+<p>a) The student has partially confused heat and temperature. Using the cup-vs-bathtub analogy from your notes, explain the difference between heat and temperature.</p>
 <div class="al"></div>
 <div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part B: Heat vs. Temperature (20 marks)</h2>
-<p><strong>5.</strong> Explain the difference between heat and temperature using the cup-and-bathtub analogy. (4 marks)</p>
+<p>b) Which scenario actually transfers more total heat energy to a person — the cup of boiling water or the swimming pool — and why? (Consider the amount of water in each.)</p>
 <div class="al"></div>
 <div class="al"></div>
-<p><strong>6.</strong> A cup of coffee and a swimming pool are both at 40°C. Which has more heat energy? Explain. (3 marks)</p>
+<p>c) In which direction does heat always flow? What happens when two objects in contact reach the same temperature?</p>
 <div class="al"></div>
-<p><strong>7.</strong> In which direction does heat always flow? What happens when two objects reach the same temperature? (3 marks)</p>
-<div class="al"></div>
-<p><strong>8.</strong> "The cold is coming in through the window." Rewrite this statement so it is scientifically correct. Explain the correction. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>9.</strong> You touch a metal chair and a plastic chair in the same classroom. The metal feels colder. A thermometer shows both are at exactly 22°C. Explain this experience using what you know about heat transfer. (6 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part C: The Particle Model and Heat (20 marks)</h2>
-<p><strong>10.</strong> A steel railroad track is installed on a cold winter day (−30°C). The track is exactly 25 m long. In summer the temperature rises to +35°C. Describe what happens to the track and explain why, using the particle model. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>11.</strong> Draw particle diagrams (simplified) for the same substance at three temperatures. Show how spacing and movement change. (6 marks)</p>
-<pre>Cold solid:              Warm liquid:              Hot gas:
-+--------+              +--------+                +--------+
-|        |              |        |                |        |
-|        |              |        |                |        |
-+--------+              +--------+                +--------+</pre>
-<p>In the boxes above, draw approximately 6–8 particles in each. Show relative spacing and use arrows to show movement.</p>
-<p><strong>12.</strong> When you are heating ice water and it reaches 0°C, the temperature stops rising for a while even though the stove is still on. Explain this plateau using the particle model. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>13.</strong> Power lines in Alberta are installed with more slack than in warmer provinces. Why? (3 marks)</p>
-<div class="al"></div>
-<p><strong>14.</strong> Complete the changes of state table. (3 marks)</p>
-<div class="vocab-wrap"><table>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q3</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Modes of heat transfer</p>
+  <p>Match each scenario to the correct mode of heat transfer. Then explain the mechanism in one sentence.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">conduction</span><span class="term">convection</span><span class="term">radiation</span></div></div>
+<table>
 <thead><tr>
-<th>Change</th>
-<th>Name</th>
-<th>Energy added or released?</th>
-</tr></thead>
-<tbody>
+<th>Scenario</th>
+<th>Mode</th>
+<th>Mechanism (one sentence)</th>
+</tr></thead><tbody>
 <tr>
-<td>Solid → liquid</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>You feel warmth from the sun on your face through a window</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>Liquid → gas</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>A metal spoon in hot soup becomes warm throughout</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>Gas → liquid</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Hot air rises from a baseboard heater and circulates around the room</td>
+<td></td>
+<td></td>
 </tr>
-</tbody></table></div>
-<hr class="section-break">
-<h2 class="section-title">Part D: Modes of Heat Transfer (24 marks)</h2>
-<p><strong>15.</strong> Identify the mode of heat transfer in each scenario. (6 marks)</p>
-<p>a. A metal spoon heats up when left in a bowl of hot soup: <span class="b b-md">&nbsp;</span></p>
-<p>b. You feel warmth from a campfire from 3 metres away: <span class="b b-md">&nbsp;</span></p>
-<p>c. Hot air rises from a baseboard heater and circulates the room: <span class="b b-md">&nbsp;</span></p>
-<p>d. The Sun warms the Earth across 150 million km of vacuum: <span class="b b-md">&nbsp;</span></p>
-<p>e. An oven mitt protects your hand from a hot tray: <span class="b b-md">&nbsp;</span></p>
-<p>f. A lava lamp — the coloured wax rises when hot, sinks when cool: <span class="b b-md">&nbsp;</span></p>
-<p><strong>16.</strong> Explain why convection cannot occur in a solid. What must be true about the medium for convection to work? (4 marks)</p>
+<tr>
+<td>The Earth is warmed from 150 million km away by the sun</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<div class="hint"><span class="hint-label">Hint</span>One of these mechanisms does not require any medium (no matter at all).</div>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q4</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Specific heat capacity</p>
+  <p>The notes describe a key difference between Alberta and coastal BC: Alberta has much more extreme temperature swings than Vancouver, even though both are at similar latitudes.</p>
+<p>a) What is specific heat capacity? Which has higher specific heat — water or sand/soil?</p>
+<div class="al"></div>
+<p>b) Use specific heat capacity and the idea of a "thermal reservoir" to explain why Vancouver has milder winters and cooler summers than Calgary.</p>
 <div class="al"></div>
 <div class="al"></div>
-<p><strong>17.</strong> Compare conductors and insulators. Give two examples of each and explain how their particle structure affects their behaviour. (6 marks)</p>
+<p>c) Why is water used as the coolant in car radiators and as the coolant in nuclear reactors? What specific property makes it better than alternatives like sand or air?</p>
 <div class="al"></div>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q5</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Particle model</p>
+  <p>Use the particle model to complete each explanation.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">faster</span><span class="term">further apart</span><span class="term">expands</span><span class="term">contracts</span><span class="term">closer together</span><span class="term">slows</span><span class="term">expansion gaps</span><span class="term">buckle</span></div></div>
+<p>When a solid is heated, its particles move <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and vibrate <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> from each other, causing the material to <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>. When a solid is cooled, its particles <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and move <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>, causing the material to <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>.</p>
+<p>Railroad tracks are built with <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> between sections. Without these gaps, the tracks would <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> in summer heat.</p>
+<p>In the space below, draw two particle diagrams side by side: (a) a cold solid and (b) a warm solid. Show the difference in particle spacing.</p>
+<p>Cold solid:                                 Warm solid:</p>
+<p>&amp;nbsp;</p>
+<p>&amp;nbsp;</p>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q6</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Insulation and applications</p>
+  <p>A thermos keeps hot soup hot AND can keep cold drinks cold. It has three features: a vacuum layer between the inner and outer walls, shiny inner walls, and a plastic cap.</p>
+<p>a) Explain how insulation works. (Does it generate heat? Create cold? What does it actually do?)</p>
 <div class="al"></div>
-<div class="al"></div>
-<p><strong>18.</strong> A thermos (vacuum flask) contains hot soup. Describe how its three design features prevent heat transfer — name the mode each feature blocks. (6 marks)</p>
-<div class="vocab-wrap"><table>
+<p>b) Complete the table matching each thermos feature to the heat transfer mode it blocks and the mechanism.</p>
+<table>
 <thead><tr>
 <th>Thermos feature</th>
-<th>Heat mode blocked</th>
+<th>Heat transfer mode blocked</th>
 <th>How it works</th>
-</tr></thead>
-<tbody>
+</tr></thead><tbody>
 <tr>
-<td>Vacuum layer between walls</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Vacuum layer</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td>No medium means no particle-to-particle transfer and no fluid circulation</td>
 </tr>
 <tr>
-<td>Shiny (silvered) inner walls</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Shiny inner walls</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td></td>
 </tr>
 <tr>
-<td>Tight-fitting cap</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>Plastic cap</td>
+<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
+<td>Plastic is a poor <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> compared to metal</td>
 </tr>
-</tbody></table></div>
-<p><strong>19.</strong> Explain why the Sun can warm the Earth even though outer space is a vacuum. Which mode of heat transfer is responsible? (2 marks)</p>
+</tbody></table>
+<p>c) A student says: "The thermos keeps my hot soup warm." Is this an accurate statement? Correct it using precise language from your notes.</p>
 <div class="al"></div>
-<hr class="section-break">
-<h2 class="section-title">Part E: Specific Heat and Insulation (20 marks)</h2>
-<p><strong>20.</strong> What is specific heat capacity? Which has a higher specific heat capacity — water or iron? What does this mean practically? (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>21.</strong> Alberta cities far from large bodies of water (like Calgary, Edmonton) have much more extreme temperature swings than Vancouver. Explain this using specific heat capacity and the behaviour of oceans. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>22.</strong> On an August afternoon, the sand on an Alberta beach is painfully hot (50°C), but the lake water is cool (20°C) — even though both have been in the same sunlight all day. Explain this using specific heat capacity. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>23.</strong> How does insulation work? Does a good insulator generate warmth? Explain. (4 marks)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p><strong>24.</strong> An Alberta homeowner wants to reduce their heating bills. Recommend two specific insulation improvements, identify which heat transfer mode each addresses, and explain how it will reduce heat loss. (4 marks)</p>
-<ol>
-  <li><span class="b b-md">&nbsp;</span></li>
-</ol>
-<ol>
-  <li><span class="b b-md">&nbsp;</span></li>
-</ol>
-<hr class="section-break">
-<h2 class="section-title">Part F: Synthesis (★ Optional challenge)</h2>
-<p><strong>25.</strong> You are designing an eco-home in Red Deer, Alberta that stays warm in winter (−30°C) and cool in summer (+35°C) using as little energy as possible. Write a design brief (5–7 sentences or bullet points) that applies at least three concepts from this unit. For each design choice, name the scientific principle you are applying.</p>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
+</div>
 
+<div class="midpoint-block">
+<div class="meta-title">Midpoint Check</div>
+<p>Which question has been hardest so far? Circle its number above.</p>
+<div class="al"></div>
+<p>Was it hard because you did not know the idea, or because the question asked in an unfamiliar way?</p>
+<div class="al"></div>
+<p>What did you do when you got stuck?</p>
+<div class="al"></div>
+<hr style="margin:1rem 0;">
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q7</span><span class="badge badge-core">★ Core</span><span class="badge badge-err">Error analysis</span></div>
+  <p class="q-context">Heat vs. temperature</p>
+  <p>Correct this common statement: <em>"Close the door — you're letting the cold in."</em></p>
+<div class="hint"><span class="hint-label">Hint</span>Think about what is actually moving in or out, and in which direction heat travels.</div>
+<p>a) What is actually happening when you open the door on a cold Alberta winter day?</p>
+<div class="starter">Sentence starter: Opening the door does not let cold in — instead, <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></div>
+<p>b) A student says "cold air blew in and froze my feet." Rewrite this sentence to accurately describe what happened using the language of heat transfer.</p>
+<div class="al"></div>
+<p>c) Which direction does heat always move — from hot to cold, or cold to hot? Give one everyday example.</p>
+<p>Direction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Example: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q8</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Modes of heat transfer</p>
+  <p>You sit on a metal chair and a wooden chair that have both been in the same classroom for hours. The metal chair feels much colder than the wooden one.</p>
+<p>a) Measure both chairs with a thermometer. What temperature would you expect them to show? Explain.</p>
+<div class="al"></div>
+<p>b) Why does the metal chair feel colder if they are actually the same temperature? Your answer must use the word "conduction" and explain what is happening at the particle level between your body and each chair.</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>c) Using this example, explain what property makes a material a good insulator versus a good conductor.</p>
+<div class="al"></div>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q9</span><span class="badge badge-core">★ Core</span></div>
+  <p class="q-context">Temperature scales</p>
+  <p>Fill in the blanks about the Kelvin scale and absolute zero.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">0</span><span class="term">−273</span><span class="term">kinetic</span><span class="term">scientific</span><span class="term">average</span><span class="term">no</span><span class="term">K = °C + 273</span></div></div>
+<p>The Kelvin scale is used in <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> contexts. Its zero point (0 K) is called absolute zero, which equals <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> °C. At absolute zero, particles theoretically have <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> kinetic energy — they are not moving.</p>
+<p>Temperature measures the <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> energy of particles in a substance. The conversion formula is: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>There is <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> negative temperature on the Kelvin scale because you cannot have less than zero particle movement.</p>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q10</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Particle model</p>
+  <p>An ice cube is placed on a hot plate. A temperature probe records the temperature every minute. The temperature rises steadily, then stays flat at 0°C for several minutes, then rises again.</p>
+<p>a) Using the particle model, explain why the temperature stays flat at 0°C even though the hot plate is still adding heat.</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>b) What is happening to the particles during the flat portion of the graph?</p>
+<div class="al"></div>
+<p>c) If you continued heating past 100°C, would you see another flat portion? What would be happening physically?</p>
+<div class="al"></div>
+</div>
+
+<div class="question-card">
+  <div class="q-header"><span class="badge badge-num">Q11</span><span class="badge badge-core">★ Core</span><span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span></div>
+  <p class="q-context">Specific heat capacity</p>
+  <p>The Athabasca Sand Dunes in northeastern Alberta can reach surface temperatures of 50°C+ on a summer day, while the surrounding air stays much cooler.</p>
+<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">specific heat capacity</span><span class="term">sand</span><span class="term">water</span><span class="term">heats</span><span class="term">cools</span><span class="term">low</span><span class="term">high</span></div></div>
+<p>This is because sand has a <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> compared to water. A material with low specific heat <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> up quickly (and <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> down quickly) when heat is added or removed. A material with <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> specific heat (like water) changes temperature much more slowly for the same amount of energy added.</p>
+<p>This is the same reason the sand at a beach gets scorching hot while the lake water stays relatively cool on a summer afternoon.</p>
+<p>On a separate line, explain in one sentence why Chestermere Lake moderates the temperature of the surrounding Calgary suburb on hot summer days.</p>
+<div class="al"></div>
+</div>
+
+<div class="question-card extended">
+  <div class="q-header"><span class="badge badge-num">Q12</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Insulation and applications</p>
+  <p>An industrial power plant uses river water from the North Saskatchewan River as a coolant. It draws in cold river water, uses it to cool equipment, and releases warm water back into the river.</p>
+<p>a) What is thermal pollution? Explain the physical mechanism — what property of the warmer water makes it harmful to fish?</p>
+<div class="al"></div>
+<div class="al"></div>
+<p>b) Warm water holds less dissolved oxygen than cold water. Using your knowledge of specific heat capacity, explain why a large river takes a long time to cool back down after warm water is discharged.</p>
+<div class="al"></div>
+<p>c) A student says: "Just build a bigger cooling tower to cool the water before releasing it." The cooling tower works by evaporation. Identify which mode of heat transfer is primarily involved in the evaporation cooling process and explain how it works.</p>
+<div class="al"></div>
+</div>
+
+<div class="reflection-block">
+<div class="meta-title">Reflection</div>
+<ol>
+<li>Which questions were hardest? Write the numbers.</li>
+</ol>
+<div class="al"></div>
+<ol>
+<li>Was it hard because you did not know the concept, or because the question asked in an unfamiliar way?</li>
+</ol>
+<div class="al"></div>
+<ol>
+<li>What is one thing you would do differently before the next session?</li>
+</ol>
+<div class="al"></div>
+<ol>
+<li>Rate your understanding of your toughest concept: 1 — Lost &nbsp; 2 — Partial &nbsp; 3 — Got it &nbsp; 4 — Could teach it</li>
+</ol>
+<p>One piece of evidence for your rating:</p>
+<div class="al"></div>
+<hr style="margin:1rem 0;">
+</div>
+
+<div class="stretch-header"><h2>Stretch — Challenge Questions</h2><p>★★ All stretch questions. Attempt after completing all previous questions.</p></div>
+
+<div class="stretch-card">
+  <div class="q-header"><span class="badge badge-num">S1</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Temperature scales + Particle model</p>
+  <p>Scientists use the Kelvin scale rather than Celsius for most physics calculations.</p>
+<p>a) A temperature doubles from 100°C to 200°C. In Kelvin, what are these temperatures? Has the particle kinetic energy actually doubled?</p>
+<div class="work-box">Show working…</div>
+<div class="al"></div>
+<p>b) If a student claims "200°C is twice as hot as 100°C so particles are moving twice as fast," evaluate this claim using your knowledge of Kelvin and absolute zero.</p>
+<div class="al"></div>
+<div class="al"></div>
+</div>
+
+<div class="stretch-card">
+  <div class="q-header"><span class="badge badge-num">S2</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Modes of heat transfer + Insulation</p>
+  <p>A mug of hot cocoa (90°C) sits on a wooden table in a room at 20°C.</p>
+<p>Explain ALL the ways heat is leaving the mug. For each, identify the mode of transfer and describe what is happening physically. Then recommend one design change to the mug that would slow each mode.</p>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+<div class="al"></div>
+</div>
+
+<div class="stretch-card">
+  <div class="q-header"><span class="badge badge-num">S3</span><span class="badge badge-ext">★★ Extended</span></div>
+  <p class="q-context">Specific heat capacity + Insulation + Alberta context</p>
+  <p>An Alberta family is redesigning their home near Edmonton for maximum energy efficiency. Edmonton has temperatures ranging from −40°C in January to +35°C in July.</p>
+<p>Give three specific design recommendations. For each: name the science principle involved (specific heat, insulation, or a heat transfer mode), and explain how it reduces heating or cooling costs.</p>
+<p>Recommendation 1: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Science principle: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Recommendation 2: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Science principle: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Recommendation 3: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+<p>Science principle: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+</div>
+
+<div class="self-assess">
+<div class="self-assess-header">Self-Assessment</div>
+<div class="self-assess-body">
+<div class="sa-row"><div class="sa-header">Skill</div><div class="sa-header">Got it ✓</div><div class="sa-header">Getting there</div><div class="sa-header">Not yet</div></div>
+<div class="sa-row">
+<div>I can convert between Celsius and Kelvin and explain what absolute zero means</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can explain the difference between heat and temperature using the cup-vs-bathtub analogy</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can use the particle model to explain thermal expansion, contraction, and the change-of-state plateau</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can identify and explain conduction, convection, and radiation with the metal-vs-wood example</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can explain specific heat capacity and connect it to Alberta vs. Vancouver climate differences</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+<div class="sa-row">
+<div>I can explain how a thermos works and what thermal pollution is</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+<div class="sa-check">☐</div>
+</div>
+</div></div>
+<div style="margin-top:1.5rem;"><p>One question I still have about heat and temperature:</p>
+<div class="al"></div></div>
 </body>
 </html>
