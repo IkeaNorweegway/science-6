@@ -151,6 +151,22 @@
 
   hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
 
+  /* SVG diagram system */
+  .dg-boundary { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 1.5; }
+  .dg-line     { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
+  .dg-accent   { fill: none; stroke: #059669; stroke-width: 2; }
+  .dg-dashed   { fill: none; stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 4,3; }
+  .dg-label    { font-family: system-ui,sans-serif; font-size: 12px; fill: #334155; }
+  .dg-label-accent { font-family: system-ui,sans-serif; font-size: 12px; fill: #059669; font-weight: 700; }
+  .dg-point    { fill: #94a3b8; }
+  .dg-point-accent { fill: #059669; }
+
+  .svg-caption {
+    font-family: system-ui,sans-serif; font-size: 0.8rem; color: var(--muted);
+    text-align: center; margin-top: 0.25rem; margin-bottom: 0.75rem;
+  }
+  .svg-wrap { margin: 0.75rem 0; overflow-x: auto; }
+
   @media print {
     body { font-size: 11pt; padding: 1.5cm; max-width: 100%;
             -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -160,348 +176,799 @@
 </style>
 </head>
 <body>
-<div class="about-callout"><h1>Interactions and Ecosystems — Practice Workbook</h1><p style="font-family:system-ui;font-size:0.82rem;color:#475569;margin:0.2rem 0 0.5rem;">Ecosystems · Food Webs · Energy Pyramids · Biodiversity · Alberta Ecosystems</p><p>Grade 7 Science · Alberta Curriculum · Interleaved practice</p><p><strong>About this workbook:</strong> Questions are scrambled across all topics in this unit — figuring out which concept each question tests is part of the work.</p><p>★ Core — attempt all. Hints, word banks, or sentence starters are provided.</p><p>★★ Extended — same concepts, higher demand. Explain, justify, find errors, or apply to a new context.</p><p>Show all working. A correct answer with no working earns half marks.</p></div>
 
-<div class="forethought-block"><div class="meta-title">Before You Begin — Forethought</div><p>Which question do you think will be hardest? Write the number and one reason.</p>
-<p>I think Question <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> will be hardest because:</p>
-<div class="al"></div>
-<p>Which topic from this unit feels least solid going in?</p>
-<div class="al"></div>
-<hr style="margin:1rem 0;"><hr style="margin:1rem 0;"></div>
+<!-- TITLE CALLOUT -->
+<div class="about-callout">
+  <h1>Interactions and Ecosystems — Practice Workbook</h1>
+  <p style="font-family:system-ui;font-size:0.82rem;color:#475569;margin:0.2rem 0 0.5rem;">Ecosystems &amp; Components &nbsp;·&nbsp; Energy Flow &nbsp;·&nbsp; Energy Pyramid &nbsp;·&nbsp; Biodiversity &nbsp;·&nbsp; Environmental Change &nbsp;·&nbsp; Sustainability</p>
+  <p>Grade 7 Science &nbsp;·&nbsp; Alberta Curriculum &nbsp;·&nbsp; Interleaved practice &nbsp;·&nbsp; v1</p>
+  <p><strong>About this workbook:</strong> Questions are scrambled across all six topics — figuring out which concept applies is part of the work. Every question is grounded in an Alberta ecosystem or scenario.</p>
+  <p>★ Core — attempt all. Hints are provided where indicated.</p>
+  <p>★★ Extended — same concepts, higher demand. Explain, justify, find the error, evaluate claims, predict and trace through food webs.</p>
+  <p><strong>Show your reasoning.</strong> A correct answer with no explanation earns partial credit. These questions ask you to think, not fill in blanks.</p>
+</div>
 
-<div class="section-heading">Questions — interleaved</div>
+<!-- FORETHOUGHT -->
+<div class="forethought-block">
+  <div class="meta-title">Before You Begin — Forethought</div>
+  <p>Skim all 12 questions before writing anything. Then answer these two questions.</p>
+  <p>I think Question <span style="display:inline-block;border-bottom:2px solid #334155;min-width:60px;">&nbsp;</span> will be hardest because:</p>
+  <div class="al"></div>
+  <p>Which cluster from this unit feels least solid going in? (circle one)</p>
+  <p style="font-family:system-ui;font-size:0.88rem;">Ecosystems &amp; Components &nbsp;·&nbsp; Energy Flow &amp; Food Webs &nbsp;·&nbsp; Energy Pyramid &nbsp;·&nbsp; Biodiversity &nbsp;·&nbsp; Environmental Change &nbsp;·&nbsp; Sustainability</p>
+</div>
 
+<div class="section-heading">Questions — interleaved across all clusters</div>
+
+<!-- Q1 — Cluster 1, Apply — biotic/abiotic sort + prediction -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q1</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Energy flow</p>
-  <p>The following organisms are all found in Alberta's boreal forest:</p>
-<p><strong>wolf · lynx · grass · snowshoe hare · great horned owl</strong></p>
-<p>Arrange them into a food chain that shows energy flow. Use arrows between each organism and write what the arrow means.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">producer</span><span class="term">primary consumer</span><span class="term">secondary consumer</span><span class="term">tertiary consumer</span><span class="term">eaten by</span></div></div>
-<p>Food chain: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> → <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> → <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> → <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> → <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Each arrow means: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+  <div class="q-header">
+    <span class="badge badge-num">Q1</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 1 — Ecosystems and their components · Apply (LO 7-1-01)</p>
+
+  <p>A researcher is studying a beaver pond near Jasper, Alberta. During a single afternoon she records eight observations:</p>
+  <ul>
+    <li>Water temperature: 14°C</li>
+    <li>Three beavers actively chewing aspen branches at the water's edge</li>
+    <li>A great blue heron standing motionless in the shallows</li>
+    <li>Dense aquatic vegetation along the eastern bank</li>
+    <li>Dissolved oxygen level: moderate</li>
+    <li>Muddy silt bottom</li>
+    <li>pH: 7.2</li>
+    <li>Several dragonfly larvae visible under rocks</li>
+  </ul>
+
+  <p><strong>(a)</strong> Sort each observation into the correct column of the table below.</p>
+
+  <div class="word-bank">
+    <div class="label">Items to sort</div>
+    <div class="terms">
+      <span class="term">water temperature</span>
+      <span class="term">dissolved oxygen</span>
+      <span class="term">beavers chewing aspen</span>
+      <span class="term">great blue heron</span>
+      <span class="term">aquatic vegetation</span>
+      <span class="term">muddy silt bottom</span>
+      <span class="term">pH 7.2</span>
+      <span class="term">dragonfly larvae</span>
+    </div>
+  </div>
+
+  <table>
+    <thead><tr>
+      <th>Biotic factors (living)</th>
+      <th>Abiotic factors (non-living)</th>
+    </tr></thead>
+    <tbody>
+    <tr>
+      <td style="height:90px;vertical-align:top;"><div class="al"></div><div class="al"></div><div class="al"></div></td>
+      <td style="height:90px;vertical-align:top;"><div class="al"></div><div class="al"></div><div class="al"></div></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong>(b)</strong> The researcher returns in January. Water temperature has dropped to 2°C and ice covers 80% of the pond surface. Predict how this abiotic change would affect at least two specific biotic factors. Name the organism and describe the expected change.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> A logging company proposes to clear the aspen forest surrounding this pond. Beyond removing trees, explain two ways this change would alter the <em>abiotic</em> conditions of the pond itself — not simply which animals would leave.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q2 — Cluster 2, Error analysis — decomposers -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q2</span><span class="badge badge-ext">★★ Extended</span><span class="badge badge-err">Error analysis</span></div>
-  <p class="q-context">Biodiversity</p>
-  <p>Read this student's explanation and find the error:</p>
-<div class="misconception"><div class="err-label">Student claim</div><p class="student-claim">&#8220;<em>"A biodiverse ecosystem is better because it has more species to look at. If one species disappears, it doesn't really matter — there are plenty of others. A monoculture farm works the same way as a wild meadow because both have plants growing."</em>&#8221;</p></div>
-<p>Identify two specific errors in this explanation and correct each one.</p>
-<p>Error 1: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Correction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Error 2: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Correction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+  <div class="q-header">
+    <span class="badge badge-num">Q2</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge badge-err">Error analysis</span>
+  </div>
+  <p class="q-context">Cluster 2 — Energy flow · decomposers · Analyze (LO 7-1-02)</p>
+
+  <div class="misconception">
+    <div class="err-label">Student claim to evaluate</div>
+    <p class="student-claim">"Decomposers like bacteria and fungi are not really part of the food web. They don't eat living things — they just break down dead stuff. You could remove them and the rest of the ecosystem would keep working fine."</p>
+  </div>
+
+  <p><strong>(a)</strong> Identify <em>two specific scientific errors</em> in this claim. For each, quote the incorrect phrase exactly, then explain what is actually true.</p>
+  <p style="font-family:system-ui;font-size:0.88rem;">Error 1:</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <p style="font-family:system-ui;font-size:0.88rem;">Error 2:</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> In a boreal forest in northern Alberta, imagine all decomposers disappeared overnight. Trace what would happen to the ecosystem over the next ten years. Your answer must address: what happens to dead matter, what happens to soil nutrients, and what happens to producers. Use at least three linked steps.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> Sketch a simple four-organism food chain (grass → snowshoe hare → lynx → decomposers). Explain why the arrow from lynx to decomposers runs in the direction it does, and what the arrow represents in terms of energy.</p>
+  <div class="work-box">Sketch your food chain here. Label each arrow to show the direction energy flows.</div>
+  <div class="al"></div>
 </div>
 
+<!-- Q3 — Cluster 3, Diagram/Analyze — Energy pyramid SVG -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q3</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Ecosystem components</p>
-  <p>Complete the table below. For each item listed, decide whether it is biotic or abiotic, and explain how it affects organisms in the ecosystem.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">biotic</span><span class="term">abiotic</span></div></div>
-<table>
-<thead><tr>
-<th>Item</th>
-<th>Biotic or abiotic?</th>
-<th>How it affects living things</th>
-</tr></thead><tbody>
-<tr>
-<td>Sunlight</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Snowshoe hare</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Soil moisture</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Decomposing fungi</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Wind speed</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
+  <div class="q-header">
+    <span class="badge badge-num">Q3</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge badge-vis">Diagram</span>
+  </div>
+  <p class="q-context">Cluster 3 — Energy pyramid · 10% rule · Apply / Analyze (LO 7-1-02)</p>
+
+  <p>The energy pyramid below represents a southern Alberta grassland ecosystem. Only the top two values are given. Use the 10% rule to calculate the missing values, then answer the questions.</p>
+
+  <!-- SVG 1 — Energy Pyramid -->
+  <div class="svg-wrap">
+    <svg viewBox="0 0 420 290" width="420" height="290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Energy pyramid with four trophic levels. Tertiary consumers (top) have 10 kJ and secondary consumers have 100 kJ. Primary consumer and producer values are blank for students to calculate.">
+
+      <!-- Tertiary consumers — top, narrowest -->
+      <polygon points="210,28 168,76 252,76" style="fill:#d1fae5;stroke:#059669;stroke-width:1.5;"/>
+      <text x="210" y="52" class="dg-label" text-anchor="middle" style="font-size:10px;font-weight:700;">Tertiary consumers</text>
+      <text x="210" y="65" class="dg-label" text-anchor="middle" style="font-size:9px;">(red-tailed hawk)</text>
+      <!-- Value -->
+      <text x="265" y="55" class="dg-label-accent" style="font-size:13px;font-weight:700;">10 kJ</text>
+      <line x1="252" y1="52" x2="262" y2="52" style="fill:none;stroke:#059669;stroke-width:1;"/>
+
+      <!-- Secondary consumers -->
+      <polygon points="168,81 112,136 308,136" style="fill:#a7f3d0;stroke:#059669;stroke-width:1.5;"/>
+      <text x="210" y="110" class="dg-label" text-anchor="middle" style="font-size:10px;font-weight:700;">Secondary consumers</text>
+      <text x="210" y="124" class="dg-label" text-anchor="middle" style="font-size:9px;">(coyote, meadowlark)</text>
+      <!-- Value -->
+      <text x="318" y="113" class="dg-label-accent" style="font-size:13px;font-weight:700;">100 kJ</text>
+      <line x1="308" y1="110" x2="315" y2="110" style="fill:none;stroke:#059669;stroke-width:1;"/>
+
+      <!-- Primary consumers -->
+      <polygon points="112,141 50,202 370,202" style="fill:#6ee7b7;stroke:#059669;stroke-width:1.5;"/>
+      <text x="210" y="170" class="dg-label" text-anchor="middle" style="font-size:10px;font-weight:700;">Primary consumers</text>
+      <text x="210" y="184" class="dg-label" text-anchor="middle" style="font-size:9px;">(rabbits, mice, grasshoppers)</text>
+      <!-- Blank -->
+      <text x="380" y="174" class="dg-label" style="font-size:14px;fill:#94a3b8;font-weight:700;">? kJ</text>
+      <line x1="370" y1="171" x2="377" y2="171" class="dg-dashed"/>
+
+      <!-- Producers — bottom, widest -->
+      <polygon points="50,207 18,262 402,262" style="fill:#34d399;stroke:#047857;stroke-width:1.5;"/>
+      <text x="210" y="232" class="dg-label" text-anchor="middle" style="font-size:10px;font-weight:700;">Producers</text>
+      <text x="210" y="246" class="dg-label" text-anchor="middle" style="font-size:9px;">(grass, clover, wildflowers)</text>
+      <!-- Blank -->
+      <text x="412" y="236" class="dg-label" style="font-size:14px;fill:#94a3b8;font-weight:700;">? kJ</text>
+      <line x1="402" y1="233" x2="409" y2="233" class="dg-dashed"/>
+
+      <!-- Left side arrow: "less energy" going up -->
+      <line x1="14" y1="260" x2="14" y2="30" style="fill:none;stroke:#94a3b8;stroke-width:1;" marker-end="url(#up-arrow)"/>
+      <defs>
+        <marker id="up-arrow" markerWidth="6" markerHeight="6" refX="3" refY="6" orient="auto">
+          <path d="M0,6 L3,0 L6,6" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+        </marker>
+      </defs>
+      <text x="8" y="148" class="dg-label" text-anchor="middle" transform="rotate(-90,8,148)" style="font-size:9px;fill:#64748b;">energy decreases</text>
+
+    </svg>
+    <p class="svg-caption">Fig. 1 — Energy pyramid for a southern Alberta grassland. Fill in the missing kJ values before answering the questions.</p>
+  </div>
+
+  <p><strong>(a)</strong> Using the 10% rule, calculate the energy stored at the primary consumer level and the producer level. Show your working.</p>
+  <div class="work-box">Working space — 10% rule: energy at lower level = energy at level above × 10&#13;&#10;&#13;&#10;Primary consumers: _____ × 10 = _____&#13;&#10;Producers: _____ × 10 = _____</div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Where does the other 90% of energy go at each trophic level? Be specific about the biological process responsible.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> The hawk at the top of this pyramid is rare — one hawk per many hundreds of grasshoppers. Explain why this ratio is necessary, not coincidental. Why can't there be as many hawks as grasshoppers?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <div class="hint"><span class="hint-label">Hint</span>If secondary consumers have 100 kJ, they received 10% of primary consumer energy. Work backwards: what must primary consumers have had?</div>
 </div>
 
+<!-- Q4 — Cluster 4, Analyze, SVG food web — coyote extirpation -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q4</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Energy pyramids</p>
-  <p>A grassland ecosystem has 50,000 energy units stored in its producers.</p>
-<p>a) Using the 10% rule, calculate the energy available at each trophic level. Show your working.</p>
-<div class="work-box">Show working…</div>
-<div class="al"></div>
-<div class="al"></div>
-<table>
-<thead><tr>
-<th>Trophic level</th>
-<th>Energy available</th>
-</tr></thead><tbody>
-<tr>
-<td>Producers (T1)</td>
-<td>50,000 units</td>
-</tr>
-<tr>
-<td>Primary consumers (T2)</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> units</td>
-</tr>
-<tr>
-<td>Secondary consumers (T3)</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> units</td>
-</tr>
-<tr>
-<td>Tertiary consumers (T4)</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> units</td>
-</tr>
-</tbody></table>
-<p>b) A wolf population lives at T4. Explain in 2–3 sentences why wolves need such large territories compared to hares.</p>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q4</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge badge-vis">Diagram</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 4 — Biodiversity · keystone species · food web analysis · Analyze (LO 7-1-03)</p>
+
+  <p>The food web below shows a Saskatchewan grassland ecosystem. Study it carefully. <strong>Two arrows are missing — you will add them in part (a).</strong></p>
+
+  <!-- SVG 2 — Alberta/Saskatchewan Grassland Food Web -->
+  <div class="svg-wrap">
+    <svg viewBox="0 0 500 360" width="500" height="360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grassland food web with 8 organisms. Two dashed arrows indicate missing connections students must identify and label.">
+
+      <defs>
+        <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#6b7280"/>
+        </marker>
+        <marker id="arrowhead-missing" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#f43f5e"/>
+        </marker>
+      </defs>
+
+      <!-- PRODUCER ROW (y=305) -->
+      <!-- Grass -->
+      <ellipse cx="100" cy="305" rx="44" ry="21" style="fill:#bbf7d0;stroke:#059669;stroke-width:1.5;"/>
+      <text x="100" y="309" class="dg-label" text-anchor="middle" style="font-size:11px;font-weight:700;">Grass</text>
+
+      <!-- Clover -->
+      <ellipse cx="265" cy="305" rx="44" ry="21" style="fill:#bbf7d0;stroke:#059669;stroke-width:1.5;"/>
+      <text x="265" y="309" class="dg-label" text-anchor="middle" style="font-size:11px;font-weight:700;">Clover</text>
+
+      <!-- PRIMARY CONSUMER ROW (y=225) -->
+      <!-- Mice -->
+      <ellipse cx="75" cy="225" rx="38" ry="20" style="fill:#a7f3d0;stroke:#059669;stroke-width:1.5;"/>
+      <text x="75" y="229" class="dg-label" text-anchor="middle" style="font-size:11px;">Mice</text>
+
+      <!-- Rabbits -->
+      <ellipse cx="200" cy="225" rx="42" ry="20" style="fill:#a7f3d0;stroke:#059669;stroke-width:1.5;"/>
+      <text x="200" y="229" class="dg-label" text-anchor="middle" style="font-size:11px;">Rabbits</text>
+
+      <!-- Grasshoppers -->
+      <ellipse cx="345" cy="225" rx="52" ry="20" style="fill:#a7f3d0;stroke:#059669;stroke-width:1.5;"/>
+      <text x="345" y="229" class="dg-label" text-anchor="middle" style="font-size:11px;">Grasshoppers</text>
+
+      <!-- SECONDARY CONSUMER ROW (y=145) -->
+      <!-- Meadowlarks -->
+      <ellipse cx="175" cy="145" rx="54" ry="21" style="fill:#6ee7b7;stroke:#059669;stroke-width:1.5;"/>
+      <text x="175" y="149" class="dg-label" text-anchor="middle" style="font-size:11px;">Meadowlarks</text>
+
+      <!-- Coyotes -->
+      <ellipse cx="385" cy="145" rx="46" ry="21" style="fill:#6ee7b7;stroke:#059669;stroke-width:1.5;"/>
+      <text x="385" y="149" class="dg-label" text-anchor="middle" style="font-size:11px;">Coyotes</text>
+
+      <!-- TERTIARY ROW (y=62) -->
+      <!-- Red-tailed hawk -->
+      <ellipse cx="280" cy="62" rx="68" ry="24" style="fill:#34d399;stroke:#047857;stroke-width:2;"/>
+      <text x="280" y="58" class="dg-label" text-anchor="middle" style="font-size:11px;font-weight:700;">Red-tailed</text>
+      <text x="280" y="72" class="dg-label" text-anchor="middle" style="font-size:11px;font-weight:700;">Hawk</text>
+
+      <!-- ARROWS — existing connections -->
+      <!-- Grass → Mice -->
+      <line x1="100" y1="284" x2="80" y2="247" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+      <!-- Grass → Rabbits -->
+      <line x1="118" y1="288" x2="186" y2="246" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+      <!-- Clover → Rabbits -->
+      <line x1="244" y1="287" x2="208" y2="246" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+      <!-- Clover → Grasshoppers -->
+      <line x1="285" y1="288" x2="334" y2="246" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+      <!-- Grass → Grasshoppers -->
+      <line x1="140" y1="295" x2="298" y2="238" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+
+      <!-- Mice → Meadowlarks -->
+      <line x1="97" y1="208" x2="142" y2="163" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+      <!-- Mice → Coyotes -->
+      <line x1="110" y1="214" x2="344" y2="160" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+      <!-- Grasshoppers → Meadowlarks -->
+      <line x1="302" y1="211" x2="224" y2="160" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+      <!-- Grasshoppers → Coyotes -->
+      <line x1="368" y1="206" x2="382" y2="168" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+
+      <!-- Meadowlarks → Hawk -->
+      <line x1="206" y1="128" x2="244" y2="84" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+      <!-- Coyotes → Hawk -->
+      <line x1="362" y1="127" x2="318" y2="84" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+
+      <!-- MISSING ARROWS — shown as dashed red -->
+      <!-- Missing 1: Rabbits → Coyotes -->
+      <line x1="235" y1="214" x2="346" y2="162" style="fill:none;stroke:#f43f5e;stroke-width:1.6;stroke-dasharray:5,3;" marker-end="url(#arrowhead-missing)"/>
+      <text x="300" y="183" class="dg-label" text-anchor="middle" style="font-size:10px;fill:#f43f5e;font-weight:700;">? add &amp; label</text>
+
+      <!-- Missing 2: Mice → Hawk -->
+      <line x1="90" y1="207" x2="224" y2="84" style="fill:none;stroke:#f43f5e;stroke-width:1.6;stroke-dasharray:5,3;" marker-end="url(#arrowhead-missing)"/>
+      <text x="148" y="138" class="dg-label" text-anchor="middle" style="font-size:10px;fill:#f43f5e;font-weight:700;">? add &amp; label</text>
+
+      <!-- LEGEND -->
+      <rect x="18" y="18" width="136" height="52" rx="4" style="fill:#f8fafc;stroke:#e2e8f0;stroke-width:1;"/>
+      <text x="28" y="32" class="dg-label" style="font-size:10px;font-weight:700;">Legend</text>
+      <line x1="28" y1="42" x2="56" y2="42" style="fill:none;stroke:#6b7280;stroke-width:1.4;" marker-end="url(#arrowhead)"/>
+      <text x="61" y="46" class="dg-label" style="font-size:10px;">energy flows to</text>
+      <line x1="28" y1="58" x2="56" y2="58" style="fill:none;stroke:#f43f5e;stroke-width:1.5;stroke-dasharray:5,3;" marker-end="url(#arrowhead-missing)"/>
+      <text x="61" y="62" class="dg-label" style="font-size:10px;fill:#f43f5e;">arrow to complete</text>
+
+    </svg>
+    <p class="svg-caption">Fig. 2 — Saskatchewan grassland food web. Complete the two dashed arrows before answering the questions. Arrows show direction of energy flow (prey to predator).</p>
+  </div>
+
+  <p><strong>(a)</strong> Identify and draw the two missing connections. For each: state the prey, state the predator, and write one sentence explaining how you know this connection belongs in this food web.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Coyotes were extirpated (locally wiped out) from this grassland in the early 1900s due to hunting. Using the food web, predict the effect on <em>three other species</em> over the next five years. For each: state whether the population increases or decreases and trace the mechanism through the web.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> A student responds: "Removing coyotes is fine — the hawk is still there at the top. It'll control populations instead." Evaluate this claim. What does this student misunderstand about food web structure and biodiversity?</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q5 — Cluster 5, Apply — Banff wolf removal trophic cascade -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q5</span><span class="badge badge-core">★ Core</span><span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span></div>
-  <p class="q-context">Environmental change</p>
-  <p>Purple loosestrife is an invasive plant species found in some Alberta wetlands. It creates dense mats of vegetation that crowd out native plants.</p>
-<div class="hint"><span class="hint-label">Hint</span>Think about what makes an invasive species more dangerous than a native species that becomes common.</div>
-<p>a) What is an invasive species? <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>b) Why can purple loosestrife grow so aggressively in Alberta wetlands when it would not do the same in its home range?</p>
-<div class="starter">Sentence starter: Purple loosestrife can spread unchecked because in Alberta it lacks <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></div>
-<p>c) Name one native Alberta species that would likely be harmed by purple loosestrife spreading. Explain why.</p>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q5</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 5 — Environmental change · trophic cascade · Apply (LO 7-1-04)</p>
+
+  <p>In the 1950s, wolves were removed from Banff National Park. The following changes were observed over the next 30 years:</p>
+  <ul>
+    <li>Elk populations tripled</li>
+    <li>Willows, aspens, and sedges along riverbanks were heavily grazed down</li>
+    <li>Stream banks eroded significantly</li>
+    <li>Beaver populations declined sharply</li>
+    <li>Songbird species in riparian zones declined</li>
+  </ul>
+
+  <p><strong>(a)</strong> Which trophic level was directly affected first by wolf removal? Name it and explain what specific interaction was disrupted.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Trace the cascade from wolf removal to beaver decline using at least four linked steps. Include both biotic and abiotic changes in your chain.</p>
+  <div class="starter">Wolf removal → elk populations _______________________ → riparian plants _______________________ → stream banks _______________________ → beavers _______________________</div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> This chain of effects — a top predator removal triggering changes through multiple trophic levels and into the physical environment — is called a trophic cascade. Does this evidence suggest ecosystems are <em>stable</em> or <em>fragile</em>? Take a position and defend it with specific evidence from the Banff example.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q6 — Cluster 6, Evaluate — FNMI stewardship, Blackfoot burning -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q6</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Sustainability and stewardship</p>
-  <p>The Blackfoot people of southern Alberta used intentional burning to maintain open grassland for bison herds — a practice that contemporary fire management has learned from.</p>
-<p>a) What is Traditional Ecological Knowledge (TEK)? In your own words:</p>
-<div class="al"></div>
-<p>b) A student says: "Old burning techniques are just guesswork. Modern science is more reliable." Evaluate this claim. What does TEK provide that Western science alone cannot?</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) The grasslands maintained by Blackfoot burning practices provided habitat for pronghorn, burrowing owls, and bison. Name two ecosystem services that these grasslands also provided to human communities.</p>
-<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
-<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+  <div class="q-header">
+    <span class="badge badge-num">Q6</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 6 — Sustainability and stewardship · Traditional Ecological Knowledge · Evaluate (LO 7-1-04, 7-1-05)</p>
+
+  <p>For thousands of years, Blackfoot (Niitsitapi) peoples of southern Alberta used controlled burning to manage grassland ecosystems — burning patches of prairie deliberately and in rotation. When European settlers arrived in the 1800s, they suppressed all fire, believing it was purely destructive.</p>
+
+  <p><strong>(a)</strong> Describe two specific ecological benefits that result from periodic grass fire in a prairie ecosystem. Use your knowledge of nutrient cycling and species diversity to explain each benefit.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> European settlers suppressed fires for over 100 years. Predict two long-term consequences for the grassland ecosystem — what would happen to species diversity and soil nutrients over time?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> A government ecologist claims: "Indigenous burning practices were just traditional customs — they weren't really ecological management." Evaluate this claim using evidence from parts (a) and (b). Is Traditional Ecological Knowledge (TEK) consistent with scientific understanding of ecosystem health? Explain your reasoning with specific evidence.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- MIDPOINT -->
 <div class="midpoint-block">
-<div class="meta-title">Midpoint Check</div>
-<p>Which question has been hardest so far? Circle its number above.</p>
-<div class="al"></div>
-<p>Was it hard because you did not know the idea, or because the question asked in an unfamiliar way?</p>
-<div class="al"></div>
-<p>What did you do when you got stuck?</p>
-<div class="al"></div>
-<hr style="margin:1rem 0;">
+  <div class="meta-title">Midpoint Check — after Q6</div>
+  <p>Which question has been hardest so far? Write its number: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:50px;">&nbsp;</span></p>
+  <p>Was it hard because you <em>didn't know the idea</em>, or because the question asked in an <em>unfamiliar way</em>?</p>
+  <div class="al"></div>
+  <p>What did you do when you got stuck?</p>
+  <div class="al"></div>
 </div>
 
+<!-- Q7 — Cluster 2, food web analysis using Fig. 2 again -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q7</span><span class="badge badge-core">★ Core</span><span class="badge badge-vis">Visual</span></div>
-  <p class="q-context">Energy pyramids</p>
-  <p>Label the energy pyramid below. Fill in the missing trophic level names and the approximate energy amounts if producers start with 10,000 units.</p>
-<p>```</p>
-<p>[            ]     ← <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> units</p>
-<p>[            ]       ← <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> units</p>
-<p>[            ]         ← <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> units</p>
-<p>[   Producers  ]         ← 10,000 units</p>
-<p>```</p>
-<div class="hint"><span class="hint-label">Hint</span>At each level, only about 10% of energy passes up.</div>
+  <div class="q-header">
+    <span class="badge badge-num">Q7</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge badge-vis">Diagram</span>
+  </div>
+  <p class="q-context">Cluster 2 — Energy flow · food web interpretation · Apply (LO 7-1-02)</p>
+
+  <p>Refer to the Saskatchewan grassland food web in Q4 (Fig. 2). Use it to answer the questions below.</p>
+
+  <p><strong>(a)</strong> List three different food chains that end with the red-tailed hawk as the final consumer. Write each chain from producer to hawk, using arrows to show direction of energy flow.</p>
+  <p style="font-family:system-ui;font-size:0.88rem;">Chain 1:</p>
+  <div class="al"></div>
+  <p style="font-family:system-ui;font-size:0.88rem;">Chain 2:</p>
+  <div class="al"></div>
+  <p style="font-family:system-ui;font-size:0.88rem;">Chain 3:</p>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Which single organism in the food web would cause the most disruption if removed? Count the arrows connected to each organism to support your answer, and explain what would happen to at least two other species.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> A student says: "A food web is just a bunch of food chains linked together — there's no real difference between them." What does a food web show that a single food chain cannot? Use a specific example from Fig. 2 to support your answer.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q8 — Cluster 1, Analyze — abiotic change, North Saskatchewan River -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q8</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Environmental change</p>
-  <p>Read this claim: <em>"Nature always recovers — Alberta's boreal forest is so resilient that industrial logging in one area won't cause lasting harm."</em></p>
-<p>a) Identify the assumption this claim makes about ecosystem resilience.</p>
-<div class="al"></div>
-<p>b) Using at least one specific Alberta species at risk, explain why ecosystems have tipping points — thresholds beyond which full recovery may not happen.</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) What is the difference between a natural disturbance (like a forest fire) and industrial habitat fragmentation in terms of recovery potential?</p>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q8</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 1 — Biotic-abiotic interactions · Analyze (LO 7-1-01, 7-1-04)</p>
+
+  <p>A pulp mill begins discharging warm water into the North Saskatchewan River near Edmonton, raising average water temperature by 3°C year-round. Scientists monitoring the river record these changes over five years:</p>
+  <ul>
+    <li>Dissolved oxygen drops by 25%</li>
+    <li>Bull trout (a cold-water species) populations decline sharply</li>
+    <li>Common carp (warm-water tolerant) begin appearing in large numbers</li>
+    <li>Aquatic insect diversity drops by 40%</li>
+    <li>Algae blooms increase dramatically each summer</li>
+  </ul>
+
+  <p><strong>(a)</strong> The mill is altering an abiotic factor. Trace the cause-and-effect chain from temperature increase to bull trout decline. Use at least three linked steps and be specific about which abiotic change harms the trout and why.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Carp are generalists that tolerate wide temperature ranges. Bull trout require cold, well-oxygenated water. What does the replacement of bull trout by carp tell us about what has happened to biodiversity in this section of the river?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> The mill manager states: "Fish populations are recovering — we can see lots of carp now." Evaluate this claim. Is species count alone a reliable measure of ecosystem health? What has actually happened to biodiversity, and what is the manager getting wrong?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q9 — Cluster 4, Apply — grizzly bear keystone species -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q9</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Biodiversity</p>
-  <p>Beavers in Alberta's wetland and boreal ecosystems are considered a keystone species.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">disproportionately</span><span class="term">habitat</span><span class="term">food web</span><span class="term">population size</span><span class="term">dams</span></div></div>
-<p>A keystone species has a <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> large effect on its ecosystem relative to its <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>. Beavers qualify because they build <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> that create wetland <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> for dozens of other species. If beavers were removed, the effects on the <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> would be far larger than you would expect from losing just one species.</p>
-<p>In one sentence, name one specific species that would be harmed if beavers disappeared from a wetland, and explain why.</p>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q9</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 4 — Biodiversity · keystone species · Apply (LO 7-1-03)</p>
+
+  <p>Grizzly bears in Alberta's mountain ecosystems are considered a <strong>keystone species</strong> — a species whose impact on the ecosystem is disproportionately large relative to its population size. Grizzlies eat berries, ground squirrels, carrion, and salmon (in BC). When they drag salmon carcasses inland, they deposit marine nutrients (nitrogen, phosphorus) in forest soil, fertilising trees up to 500 m from streams.</p>
+
+  <p><strong>(a)</strong> Explain what "keystone species" means in your own words. The term comes from architecture — a keystone is the central stone in an arch that holds all others in place. Explain how this analogy applies to a keystone species in an ecosystem.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Grizzly bears are listed as threatened in Alberta. Predict two specific ecosystem effects if grizzly bears were extirpated from their remaining Alberta mountain habitat. For each: name the effect, identify the organisms most affected, and explain the mechanism.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> A landowner says: "Grizzlies are dangerous and rare — only a few hundred left. Getting rid of the last ones wouldn't really affect the ecosystem." Using the definition of keystone species, explain precisely why this reasoning is flawed.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q10 — Cluster 3, Diagram/Evaluate — Predator-prey population graph SVG -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q10</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Ecosystem components</p>
-  <p>A scientist is studying a deep-ocean hydrothermal vent ecosystem. Instead of sunlight, bacteria use chemicals from the vent to produce energy. Fish, crabs, and tube worms feed on the bacteria.</p>
-<p>a) In a typical Alberta ecosystem, what provides energy for producers? What provides it in this deep-ocean ecosystem?</p>
-<div class="al"></div>
-<p>b) Identify the producer, a primary consumer, and a decomposer that would be needed in this vent ecosystem. Explain your choices.</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) The scientist notes that this ecosystem has very few species. Based on your knowledge of biodiversity, predict one risk this creates if the vent chemistry changes.</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q10</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge badge-vis">Diagram</span>
+  </div>
+  <p class="q-context">Cluster 3 — Energy flow · predator-prey dynamics · Evaluate (LO 7-1-02)</p>
+
+  <p>The graph below shows lynx and snowshoe hare populations in a northern Alberta boreal forest over 20 years.</p>
+
+  <!-- SVG 3 — Predator-Prey Population Graph -->
+  <div class="svg-wrap">
+    <svg viewBox="0 0 460 225" width="460" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Predator-prey cycle graph. Snowshoe hare (solid green line) peaks near 2000 individuals around years 4 and 10. Lynx (dashed amber line) peaks near 500 individuals around years 6 and 12, lagging hare by roughly 2 years.">
+
+      <!-- Axes -->
+      <line x1="58" y1="188" x2="435" y2="188" class="dg-line"/>
+      <line x1="58" y1="12"  x2="58"  y2="188" class="dg-line"/>
+
+      <!-- Axis arrows -->
+      <polygon points="431,184 439,188 431,192" class="dg-point"/>
+      <polygon points="54,16 58,8 62,16" class="dg-point"/>
+
+      <!-- Axis labels -->
+      <text x="245" y="210" class="dg-label" text-anchor="middle" style="font-size:11px;">Years</text>
+      <text x="13" y="100" class="dg-label" text-anchor="middle" transform="rotate(-90,13,100)" style="font-size:11px;">Population</text>
+
+      <!-- Y-axis ticks: 0=188, 500=148, 1000=108, 1500=68, 2000=28 (scale: 160px for 2000) -->
+      <line x1="58" y1="148" x2="53" y2="148" class="dg-line"/>
+      <line x1="58" y1="108" x2="53" y2="108" class="dg-line"/>
+      <line x1="58" y1="68"  x2="53" y2="68"  class="dg-line"/>
+      <line x1="58" y1="28"  x2="53" y2="28"  class="dg-line"/>
+      <text x="50" y="192" class="dg-label" text-anchor="end" style="font-size:10px;">0</text>
+      <text x="50" y="152" class="dg-label" text-anchor="end" style="font-size:10px;">500</text>
+      <text x="50" y="112" class="dg-label" text-anchor="end" style="font-size:10px;">1000</text>
+      <text x="50" y="72"  class="dg-label" text-anchor="end" style="font-size:10px;">1500</text>
+      <text x="50" y="32"  class="dg-label" text-anchor="end" style="font-size:10px;">2000</text>
+
+      <!-- X-axis ticks: 0–20 years; each year = 18.85px; x0=58 -->
+      <!-- Years: 0=58, 2=96, 4=134, 6=171, 8=209, 10=247, 12=284, 14=322, 16=359, 18=397, 20=435 -->
+      <line x1="96"  y1="188" x2="96"  y2="193" class="dg-line"/>
+      <line x1="134" y1="188" x2="134" y2="193" class="dg-line"/>
+      <line x1="171" y1="188" x2="171" y2="193" class="dg-line"/>
+      <line x1="209" y1="188" x2="209" y2="193" class="dg-line"/>
+      <line x1="247" y1="188" x2="247" y2="193" class="dg-line"/>
+      <line x1="284" y1="188" x2="284" y2="193" class="dg-line"/>
+      <line x1="322" y1="188" x2="322" y2="193" class="dg-line"/>
+      <line x1="359" y1="188" x2="359" y2="193" class="dg-line"/>
+      <line x1="397" y1="188" x2="397" y2="193" class="dg-line"/>
+      <line x1="435" y1="188" x2="435" y2="193" class="dg-line"/>
+      <text x="58"  y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">0</text>
+      <text x="96"  y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">2</text>
+      <text x="134" y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">4</text>
+      <text x="171" y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">6</text>
+      <text x="209" y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">8</text>
+      <text x="247" y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">10</text>
+      <text x="284" y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">12</text>
+      <text x="322" y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">14</text>
+      <text x="359" y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">16</text>
+      <text x="397" y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">18</text>
+      <text x="435" y="201" class="dg-label" text-anchor="middle" style="font-size:10px;">20</text>
+
+      <!-- Dashed gridlines -->
+      <line x1="58" y1="148" x2="435" y2="148" class="dg-dashed"/>
+      <line x1="58" y1="108" x2="435" y2="108" class="dg-dashed"/>
+      <line x1="58" y1="68"  x2="435" y2="68"  class="dg-dashed"/>
+      <line x1="58" y1="28"  x2="435" y2="28"  class="dg-dashed"/>
+
+      <!-- HARE curve (prey, solid green) -->
+      <!-- Year:pop → x,y: 0:200→58,172; 1:600→77,164; 2:1100→96,144; 3:1700→115,120; 4:2000→134,108
+           (oops: y= 188-(pop/2000)*160): 0:200→172; 2:1100→100; 4:2000→28; 5:1900→36; 6:1300→84; 7:500→148; 8:250→168; 9:700→132; 10:2000→28; 11:1800→44; 12:1200→92; 13:400→156; 14:300→164; 15:800→124; 16:2000→28; 17:1700→52; 18:1100→100; 19:500→148; 20:400→156 -->
+      <!-- x: year*18.85+58 -->
+      <polyline points="58,172 77,164 96,100 115,68 134,28 153,36 171,84 190,148 209,168 228,132 247,28 265,44 284,92 303,156 322,164 340,124 359,28 378,52 397,100 416,148 435,156" style="fill:none;stroke:#059669;stroke-width:2.5;"/>
+
+      <!-- LYNX curve (predator, dashed amber — lags hare by ~2 years) -->
+      <!-- y=188-(pop/2000)*160: 0:80→182; 2:100→180; 3:200→172; 4:300→164; 5:450→152; 6:500→148; 7:400→156; 8:200→172; 9:100→180; 10:120→182; 11:300→164; 12:500→148; 13:420→154; 14:250→168; 15:100→180; 16:120→182; 17:350→160; 18:500→148; 19:400→156; 20:200→172 -->
+      <polyline points="58,182 96,180 115,172 134,164 153,152 171,148 190,156 209,172 228,180 247,182 265,164 284,148 303,154 322,168 340,180 359,182 378,160 397,148 416,156 435,172" style="fill:none;stroke:#f59e0b;stroke-width:2;stroke-dasharray:6,3;"/>
+
+      <!-- Legend -->
+      <rect x="290" y="12" width="140" height="48" rx="4" style="fill:#f8fafc;stroke:#e2e8f0;stroke-width:1;"/>
+      <line x1="300" y1="28" x2="328" y2="28" style="fill:none;stroke:#059669;stroke-width:2.5;"/>
+      <text x="333" y="32" class="dg-label" style="font-size:10px;fill:#047857;">Snowshoe hare</text>
+      <line x1="300" y1="48" x2="328" y2="48" style="fill:none;stroke:#f59e0b;stroke-width:2;stroke-dasharray:6,3;"/>
+      <text x="333" y="52" class="dg-label" style="font-size:10px;fill:#b45309;">Lynx</text>
+
+    </svg>
+    <p class="svg-caption">Fig. 3 — Lynx and snowshoe hare populations in a northern Alberta boreal forest over 20 years. Solid green line = snowshoe hare. Dashed amber line = lynx.</p>
+  </div>
+
+  <p><strong>(a)</strong> Which population peaks first — the lynx or the hare? By approximately how many years does the predator population lag behind the prey? Read your answer from the graph.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Explain the mechanism that causes this lag. Why does the lynx population take time to respond when hare populations rise? Trace through at least three linked steps.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> In year 10, a disease kills 90% of the snowshoe hares almost overnight. Predict what the graph would look like from year 10 to year 20. Sketch your prediction in the work box, then explain: what happens to hares first, then to lynx, then to hares again?</p>
+  <div class="work-box">Sketch: extend the graph from year 10. Label your predicted hare (solid) and lynx (dashed) curves.</div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q11 — Cluster 6, Apply — invasive species / purple loosestrife -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q11</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Sustainability and stewardship</p>
-  <p>Complete the table below. For each ecosystem service, write what the ecosystem provides and what it would cost to replace it with technology.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">water filtration</span><span class="term">food production</span><span class="term">carbon storage</span><span class="term">climate regulation</span><span class="term">soil formation</span></div></div>
-<table>
-<thead><tr>
-<th>Ecosystem service</th>
-<th>What the ecosystem does</th>
-<th>What technology would need to do instead</th>
-</tr></thead><tbody>
-<tr>
-<td>Wetland water filtration</td>
-<td>Wetland plants and microbes filter pollutants from water</td>
-<td></td>
-</tr>
-<tr>
-<td>Boreal forest carbon storage</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Prairie pollination</td>
-<td>Bees and insects pollinate crops</td>
-<td></td>
-</tr>
-</tbody></table>
-<div class="hint"><span class="hint-label">Hint</span>Wetland water filtration is described in your notes — what does it cost to do this with a treatment plant?</div>
+  <div class="q-header">
+    <span class="badge badge-num">Q11</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 6 — Sustainability · invasive species · ecosystem services · Apply (LO 7-1-04)</p>
+
+  <p>Purple loosestrife is an invasive plant from Europe, first recorded in Alberta in the mid-1900s. It grows aggressively in wetlands and along riverbanks, forming dense mats that crowd out native plants like cattails, bulrushes, and sedges. By the early 2000s it had colonised thousands of hectares of Alberta wetland.</p>
+
+  <p><strong>(a)</strong> Invasive species are a major threat to biodiversity. Using purple loosestrife as your example, explain specifically how one invasive plant can reduce biodiversity — even if it doesn't directly kill any animals.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Wetlands provide ecosystem services — benefits ecosystems provide to humans and other species. Name two specific ecosystem services that Alberta wetlands provide. For each, explain how purple loosestrife invasion would reduce that service.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> Alberta uses a biocontrol program — releasing Galerucella beetles that eat loosestrife in its native European range — to manage the plant. What is one ecological risk of introducing a second non-native species to control the first? How would scientists evaluate whether this tradeoff is worth taking?</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q12 — Cluster 5, Evaluate — cumulative effects, boreal forest clearing -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q12</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Energy flow</p>
-  <p>In the food web: willow → beaver → wolf → decomposers</p>
-<p>a) What do the arrows in a food chain represent? (What travels in the direction of the arrow?)</p>
-<div class="al"></div>
-<p>b) Wolves were eliminated from Alberta's national parks during much of the 20th century. Elk populations grew dramatically. Willows and aspens along riverbanks were heavily grazed down. Beavers declined because their food source declined. Riverbanks eroded without willow roots.</p>
-<p>Trace this chain of effects. Explain why removing one species (wolves) caused changes three and four steps removed from it.</p>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) What does this sequence tell us about why decomposers are essential — and not just "optional cleanup crew" — in the nutrient cycle?</p>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q12</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 5 — Environmental change · cumulative effects · habitat fragmentation · Evaluate (LO 7-1-04)</p>
+
+  <p>In the Peace River region of northern Alberta, a 200 km<sup>2</sup> area of boreal forest is being converted to agriculture over 15 years. The forest contains woodland caribou, black bears, wolves, moose, snowshoe hares, and hundreds of bird and plant species. Each year, additional sections are cleared.</p>
+
+  <div class="misconception">
+    <div class="err-label">Developer claim to evaluate</div>
+    <p class="student-claim">"We're only clearing 5% of the forest this year — that's a small impact. The ecosystem will recover between clearing phases. Nature always bounces back."</p>
+  </div>
+
+  <p><strong>(a)</strong> The developer's claim ignores the concept of <em>cumulative effects</em>. Define cumulative effects and explain why clearing 5% per year for 15 years is ecologically different from a single 75% disturbance followed by full recovery time.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Woodland caribou require large, continuous areas of undisturbed old-growth forest. Clearing creates "edges" — boundaries between forest and open land — where wolves hunt more effectively because prey are more visible. Explain how forest fragmentation can harm caribou even if the total amount of forest cleared seems small.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> Is the claim that "nature always bounces back" scientifically defensible? Identify two conditions that determine whether an ecosystem can recover from disturbance, and explain whether those conditions are likely to be met in this particular scenario.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- REFLECTION -->
 <div class="reflection-block">
-<div class="meta-title">Reflection</div>
-<ol>
-<li>Which questions were hardest? Write the numbers.</li>
-</ol>
-<div class="al"></div>
-<ol>
-<li>Was it hard because you did not know the concept, or because the question asked in an unfamiliar way?</li>
-</ol>
-<div class="al"></div>
-<ol>
-<li>What is one thing you would do differently before the next session?</li>
-</ol>
-<div class="al"></div>
-<ol>
-<li>Rate your understanding of your toughest concept: 1 — Lost &nbsp; 2 — Partial &nbsp; 3 — Got it &nbsp; 4 — Could teach it</li>
-</ol>
-<p>One piece of evidence for your rating:</p>
-<div class="al"></div>
-<hr style="margin:1rem 0;">
+  <div class="meta-title">Reflection — before stretch questions</div>
+  <ol>
+    <li>Which questions were hardest? Write the numbers.</li>
+  </ol>
+  <div class="al"></div>
+  <ol start="2">
+    <li>For your hardest question: was it hard because you didn't know the concept, or because the question asked in an unfamiliar way?</li>
+  </ol>
+  <div class="al"></div>
+  <div class="al"></div>
+  <ol start="3">
+    <li>What is one specific thing you would study or practise before the next session?</li>
+  </ol>
+  <div class="al"></div>
+  <ol start="4">
+    <li>Rate your understanding of the toughest concept: &nbsp; 1 — Lost &nbsp; 2 — Partial &nbsp; 3 — Got it &nbsp; 4 — Could teach it</li>
+  </ol>
+  <p>One piece of evidence for your rating:</p>
+  <div class="al"></div>
 </div>
 
-<div class="stretch-header"><h2>Stretch — Challenge Questions</h2><p>★★ All stretch questions. Attempt after completing all previous questions.</p></div>
+<!-- STRETCH -->
+<div class="stretch-header">
+  <h2>Stretch — Challenge Questions</h2>
+  <p>Attempt after completing all 12 main questions. All three are Evaluate or Create level. Quality of reasoning matters more than the conclusion you reach.</p>
+</div>
 
+<!-- S1 — Clusters 3+4 — Design a self-sustaining ecosystem -->
 <div class="stretch-card">
-  <div class="q-header"><span class="badge badge-num">S1</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Energy pyramids + Environmental change</p>
-  <p>A disease kills 80% of the grasshoppers in an Alberta grassland that has 10,000 energy units in its producers. Meadowlarks eat grasshoppers; coyotes eat meadowlarks.</p>
-<p>a) Before the disease: calculate the energy available to meadowlarks and to coyotes.</p>
-<div class="work-box">Show working…</div>
-<div class="al"></div>
-<p>b) After the disease, predict what happens to the meadowlark and coyote populations. Would all coyotes be equally affected? (Consider that coyotes are omnivores.)</p>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">S1</span>
+    <span class="badge badge-stretch">Stretch</span>
+  </div>
+  <p class="q-context">Clusters 3 + 4 — Energy pyramid · Biodiversity · Create / Evaluate</p>
+
+  <p>You are asked to design a self-sustaining 1 km<sup>2</sup> nature reserve in central Alberta. You must choose organisms at each trophic level so the ecosystem functions independently for 20 years with no human intervention.</p>
+
+  <p><strong>(a)</strong> Using the 10% rule and energy pyramid, explain why you cannot stock equal numbers of producers and top predators. What ratio would you expect between trophic levels, and why does the math force this?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> You can choose one keystone species to include. Choose an Alberta species, explain its ecological role, and justify why including it is more valuable to reserve stability than simply adding more producers.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> You propose to include decomposers (bacteria, fungi, invertebrates). A planning committee member says: "That's a waste of space — decomposers don't add anything useful." Write a formal response explaining precisely what would happen to the reserve without decomposers, using nutrient cycling and energy flow as your evidence.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- S2 — Clusters 5+6 — Climate change and boreal forest boundary shift -->
 <div class="stretch-card">
-  <div class="q-header"><span class="badge badge-num">S2</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Biodiversity + Sustainability and stewardship</p>
-  <p>Design a 3-sentence policy recommendation for managing one Alberta ecosystem type of your choice. Your recommendation must reference: one ecosystem service, one biodiversity principle (keystone species, resilience, or tipping point), and one element of Indigenous stewardship or TEK.</p>
-<p>Policy recommendation for <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> ecosystem:</p>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">S2</span>
+    <span class="badge badge-stretch">Stretch</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Clusters 5 + 6 — Environmental change · Sustainability · Evaluate</p>
+
+  <p>Alberta's boreal forest is warming at roughly twice the global average rate. Scientists predict that by 2080, the southern boundary of boreal forest will shift 200–300 km northward — meaning areas that are currently boreal will become parkland or grassland.</p>
+
+  <p><strong>(a)</strong> Is this a natural disturbance or a human-caused disturbance? Justify your classification — trace the cause from its origin to the effect on Alberta's boreal forest.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Woodland caribou can only survive in old-growth boreal forest. If the forest boundary shifts 200 km northward over 80 years, what would caribou need in order to survive the shift? Consider both biological requirements and habitat requirements in your answer.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> Cree, Dene, and Métis communities of the boreal forest have observed changes in animal migration patterns, plant timing, and water levels for generations. A scientist says: "We need satellite data and peer-reviewed studies — Traditional Ecological Knowledge alone is not sufficient." Evaluate this position. What does TEK offer that satellite data cannot, and vice versa? How could both approaches work together more effectively?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- S3 — Clusters 1+2+4 — Multi-stressor wetland collapse -->
 <div class="stretch-card">
-  <div class="q-header"><span class="badge badge-num">S3</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Ecosystem components + Energy flow + Sustainability</p>
-  <p>"Humans are part of ecosystems, not separate from them."</p>
-<p>Construct an argument for this claim using: (a) one biotic/abiotic connection humans depend on, (b) one example of humans acting as consumers in a food web, and (c) one ecosystem service that no technology has fully replaced.</p>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">S3</span>
+    <span class="badge badge-stretch">Stretch</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Clusters 1 + 2 + 4 — Ecosystems · Energy flow · Biodiversity · Evaluate / Create</p>
+
+  <p>Three changes happen simultaneously to a southern Alberta wetland:</p>
+  <ol>
+    <li>A drought reduces water levels by 60% (abiotic change)</li>
+    <li>Purple loosestrife invades, displacing 70% of native aquatic plants (biotic change)</li>
+    <li>A nearby road is built, increasing road-salt runoff and raising salinity (abiotic change)</li>
+  </ol>
+
+  <p><strong>(a)</strong> For each of the three changes above, predict one specific consequence for food web structure — which organism is most immediately affected and through which pathway?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> These three stressors are simultaneous. Explain why three simultaneous moderate stressors can be more damaging than a single severe stressor of the same total magnitude. Use the concept of ecosystem resilience in your explanation.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> You are an ecosystem manager with resources to address only one of the three stressors. Which would you address first, and why? Your answer must draw on food web structure, the energy pyramid, and biodiversity concepts from this unit — not just common sense.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- SELF-ASSESSMENT -->
 <div class="self-assess">
-<div class="self-assess-header">Self-Assessment</div>
-<div class="self-assess-body">
-<div class="sa-row"><div class="sa-header">Skill</div><div class="sa-header">Got it ✓</div><div class="sa-header">Getting there</div><div class="sa-header">Not yet</div></div>
-<div class="sa-row">
-<div>I can identify biotic and abiotic factors and explain how each affects organisms</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
+  <div class="self-assess-header">Self-Assessment — one row per cluster</div>
+  <div class="self-assess-body">
+    <div class="sa-row">
+      <div class="sa-header">Skill / Cluster</div>
+      <div class="sa-header">Got it ✓</div>
+      <div class="sa-header">Getting there</div>
+      <div class="sa-header">Not yet</div>
+    </div>
+    <div class="sa-row">
+      <div>I can identify and sort biotic and abiotic factors in an Alberta ecosystem, and explain how a change in one type affects the other</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can construct and interpret a food web, trace energy flow through multiple pathways, and correctly place decomposers</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can apply the 10% rule to calculate energy at each trophic level and explain why fewer organisms exist at each higher level</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can define biodiversity and keystone species, and explain why removing a keystone species causes disproportionate ecosystem disruption</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can distinguish natural from human-caused environmental change, explain trophic cascades, and define cumulative effects</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can explain ecosystem services, evaluate stewardship strategies, and explain the value of Traditional Ecological Knowledge alongside scientific data</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+  </div>
 </div>
-<div class="sa-row">
-<div>I can construct a food chain and explain what the arrows represent</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can apply the 10% rule to calculate energy at each trophic level</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can explain what a keystone species is and give an Alberta example</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can explain why ecosystems have tipping points and what makes human impacts different from natural disturbances</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can describe two ecosystem services and explain what TEK contributes to stewardship</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-</div></div>
-<div style="margin-top:1.5rem;"><p>One question I still have about interactions and ecosystems:</p>
-<div class="al"></div></div>
+
 </body>
 </html>

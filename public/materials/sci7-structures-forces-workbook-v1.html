@@ -73,16 +73,6 @@
     font-size: 0.85rem; color: #94a3b8; font-family: system-ui,sans-serif;
   }
 
-  .word-bank {
-    background: #f1f5f9; border: 1px solid var(--line); border-radius: 0.35rem;
-    padding: 0.5rem 0.75rem; margin: 0.5rem 0 0.75rem; font-family: system-ui,sans-serif; font-size: 0.85rem;
-  }
-  .word-bank .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-                       letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.25rem; }
-  .word-bank .terms { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .word-bank .term { background: white; border: 1px solid #cbd5e1; border-radius: 0.25rem;
-                      padding: 0.15rem 0.5rem; font-size: 0.85rem; }
-
   .hint {
     border: 1px dashed var(--unit-border); border-radius: 0.35rem;
     padding: 0.45rem 0.75rem; margin: 0.5rem 0;
@@ -151,6 +141,22 @@
 
   hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
 
+  /* SVG diagram system */
+  .dg-boundary { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 1.5; }
+  .dg-line     { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
+  .dg-accent   { fill: none; stroke: #7c3aed; stroke-width: 2; }
+  .dg-dashed   { fill: none; stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 4,3; }
+  .dg-label    { font-family: system-ui,sans-serif; font-size: 12px; fill: #334155; }
+  .dg-label-accent { font-family: system-ui,sans-serif; font-size: 12px; fill: #7c3aed; font-weight: 700; }
+  .dg-point    { fill: #94a3b8; }
+  .dg-point-accent { fill: #7c3aed; }
+
+  .svg-caption {
+    font-family: system-ui,sans-serif; font-size: 0.8rem; color: var(--muted);
+    text-align: center; margin-top: 0.25rem; margin-bottom: 0.75rem;
+  }
+  .svg-wrap { margin: 0.75rem 0; }
+
   @media print {
     body { font-size: 11pt; padding: 1.5cm; max-width: 100%;
             -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -160,424 +166,645 @@
 </style>
 </head>
 <body>
-<div class="about-callout"><h1>Structures and Forces — Practice Workbook</h1><p style="font-family:system-ui;font-size:0.82rem;color:#475569;margin:0.2rem 0 0.5rem;">Structure Types · Loads · Internal Forces · Stability · Simple Machines · Materials</p><p>Grade 7 Science · Alberta Curriculum · Interleaved practice</p><p><strong>About this workbook:</strong> Questions are scrambled across all topics in this unit — figuring out which concept each question tests is part of the work.</p><p>★ Core — attempt all. Hints, word banks, or sentence starters are provided.</p><p>★★ Extended — same concepts, higher demand. Explain, justify, find errors, or apply to a new context.</p><p>Show all working. A correct answer with no working earns half marks.</p></div>
 
-<div class="forethought-block"><div class="meta-title">Before You Begin — Forethought</div><p>Which question do you think will be hardest? Write the number and one reason.</p>
-<p>I think Question <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> will be hardest because:</p>
-<div class="al"></div>
-<p>Which topic from this unit feels least solid going in?</p>
-<div class="al"></div>
-<hr style="margin:1rem 0;"><hr style="margin:1rem 0;"></div>
+<div class="about-callout">
+  <p><strong>Grade 7 Science — Structures and Forces — Practice Workbook</strong></p>
+  <p>12 interleaved questions across all six knowledge clusters, plus 3 Stretch challenges. Questions range from Apply to Create on Bloom's taxonomy. Metacognition prompts are built in — use them.</p>
+  <p>★ Core &nbsp;|&nbsp; ★★ Extended &nbsp;|&nbsp; <strong>Stretch</strong> = beyond the unit, no scaffolding</p>
+</div>
 
-<div class="section-heading">Questions — interleaved</div>
+<!-- ============================================================ FORETHOUGHT -->
+<div class="forethought-block">
+  <div class="meta-title">Before You Start — Forethought</div>
+  <p><strong>Step 1:</strong> Skim all 12 questions (just the headers — 2 minutes). Do not read in detail yet.</p>
+  <p><strong>Step 2:</strong> Predict which question will be hardest for you. Write the number here: <span style="display:inline-block;width:2.5rem;border-bottom:1.5px solid #93c5fd;">&nbsp;</span></p>
+  <p><strong>Step 3:</strong> Circle the cluster where your knowledge feels weakest:</p>
+  <p style="padding-left:1rem;">
+    <strong>A</strong> — Types of structures &nbsp;&nbsp;
+    <strong>B</strong> — Loads &nbsp;&nbsp;
+    <strong>C</strong> — Internal forces &nbsp;&nbsp;
+    <strong>D</strong> — Stability &nbsp;&nbsp;
+    <strong>E</strong> — Simple machines &nbsp;&nbsp;
+    <strong>F</strong> — Material properties
+  </p>
+  <p style="margin-top:0.5rem; margin-bottom:0;"><strong>Step 4:</strong> When you hit that cluster in the workbook, slow down and think before you write.</p>
+</div>
 
+<!-- ============================================================ SECTION 1 -->
+<div class="section-heading">Questions 1 – 6</div>
+
+<!-- Q1 ★ Cluster C — Internal Forces (Beam SVG) -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q1</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Structure types</p>
-  <p>Classify each structure as solid, frame, shell, or combination. For combination structures, name which two or three types are combined.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">solid</span><span class="term">frame</span><span class="term">shell</span><span class="term">combination</span></div></div>
-<table>
-<thead><tr>
-<th>Structure</th>
-<th>Type</th>
-<th>If combination, which types?</th>
-</tr></thead><tbody>
-<tr>
-<td>An egg</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>The Lethbridge Viaduct (one of the longest railway bridges in North America)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>A concrete dam</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>A house (wood frame inside, brick siding, concrete foundation)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>A bicycle</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>A hockey helmet</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<div class="hint"><span class="hint-label">Hint</span>Shell structures have a thin, curved surface. Frame structures have an open skeleton of connected members.</div>
+  <div class="q-header">
+    <span class="badge badge-num">Q1</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge badge-vis">Diagram</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Analyze — LO 7-4-02</span>
+  </div>
+
+  <p>The diagram below shows a horizontal beam supported at both ends with a load applied at the centre. The beam bows slightly downward under the load.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 440 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px;display:block;margin:0 auto;">
+      <defs>
+        <marker id="arrowPurple1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#7c3aed"/>
+        </marker>
+        <marker id="arrowGray1" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+          <path d="M0,0 L7,3.5 L0,7 Z" fill="#94a3b8"/>
+        </marker>
+      </defs>
+
+      <!-- Ground line -->
+      <line x1="20" y1="158" x2="420" y2="158" stroke="#94a3b8" stroke-width="1.5"/>
+
+      <!-- Triangle supports -->
+      <polygon points="30,158 60,158 45,132" fill="#94a3b8"/>
+      <polygon points="380,158 410,158 395,132" fill="#94a3b8"/>
+
+      <!-- Bowed beam — quadratic bezier sags in middle to show bending -->
+      <!-- Top surface of beam -->
+      <path d="M 45,120 Q 220,118 395,120" fill="none" stroke="#6d28d9" stroke-width="2"/>
+      <!-- Beam body fill -->
+      <path d="M 45,120 Q 220,118 395,120 Q 220,148 45,132 Z" fill="#c4b5fd" stroke="none" opacity="0.5"/>
+      <!-- Bottom surface of beam (bows down) -->
+      <path d="M 45,132 Q 220,148 395,132" fill="none" stroke="#6d28d9" stroke-width="2"/>
+
+      <!-- TOP surface label with ? -->
+      <text x="130" y="112" class="dg-label" text-anchor="middle" font-size="11" fill="#334155">TOP surface</text>
+      <text x="130" y="128" font-family="system-ui,sans-serif" font-size="15" fill="#7c3aed" font-weight="700" text-anchor="middle">?</text>
+
+      <!-- BOTTOM surface label with ? -->
+      <text x="310" y="165" class="dg-label" text-anchor="middle" font-size="11" fill="#334155">BOTTOM surface</text>
+      <text x="310" y="178" font-family="system-ui,sans-serif" font-size="15" fill="#7c3aed" font-weight="700" text-anchor="middle">?</text>
+
+      <!-- Load arrow (downward, accent) -->
+      <line x1="220" y1="62" x2="220" y2="114" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrowPurple1)"/>
+      <text x="237" y="95" font-family="system-ui,sans-serif" font-size="12" fill="#7c3aed" font-weight="700">Load (F)</text>
+
+      <!-- Support reaction arrows (upward) -->
+      <line x1="45" y1="168" x2="45" y2="138" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray1)"/>
+      <line x1="395" y1="168" x2="395" y2="138" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray1)"/>
+      <text x="45" y="188" class="dg-label" text-anchor="middle" font-size="10">Support</text>
+      <text x="395" y="188" class="dg-label" text-anchor="middle" font-size="10">Support</text>
+    </svg>
+    <div class="svg-caption">Fig. 1 — Beam under central load (bending exaggerated for clarity)</div>
+  </div>
+
+  <p><strong>(a)</strong> The two "?" labels mark the top surface and the bottom surface of the bent beam. Write the correct internal force for each — <em>compression</em> or <em>tension</em> — and explain in one or two sentences why each surface experiences that particular force when the beam bows downward.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(b)</strong> Engineers often use I-beams (shaped like the letter I in cross-section) instead of solid rectangular beams for the same span and load. Using your understanding of where internal forces are greatest in a bent beam, explain why an I-beam can match the strength of a solid beam while using significantly less material.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
-<div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q2</span><span class="badge badge-ext">★★ Extended</span><span class="badge badge-err">Error analysis</span></div>
-  <p class="q-context">Simple machines</p>
-  <p>A student is explaining a ramp to the class:</p>
-<div class="misconception"><div class="err-label">Student claim</div><p class="student-claim">&#8220;<em>"Using a ramp makes lifting easier — you get more mechanical advantage, so you're doing less work. That's why simple machines are useful: they save energy."</em>&#8221;</p></div>
-<p>a) Calculate the mechanical advantage of a ramp that is 4 m long and 1 m high.</p>
-<p>MA = length of ramp ÷ height of ramp = <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> ÷ <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> = <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>b) If the MA is 4, do you push 4× less hard? Do you do 4× less work? Explain the difference.</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) The student says machines "save energy." Correct this misconception using the principle of energy conservation.</p>
-<div class="al"></div>
-<div class="al"></div>
-</div>
-
+<!-- Q2 ★ Cluster A — Types of Structures (Structure Types SVG) -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q3</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Loads</p>
-  <p>Every structure must handle multiple types of loads. Classify each scenario as dead load, live load, or dynamic load.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">dead load</span><span class="term">live load</span><span class="term">dynamic load</span></div></div>
-<table>
-<thead><tr>
-<th>Load scenario</th>
-<th>Type</th>
-</tr></thead><tbody>
-<tr>
-<td>The weight of the steel beams and concrete in a bridge</td>
-<td></td>
-</tr>
-<tr>
-<td>Students sitting in a classroom</td>
-<td></td>
-</tr>
-<tr>
-<td>A chinook wind pushing against the side of a building in Calgary</td>
-<td></td>
-</tr>
-<tr>
-<td>Snow accumulating on a school roof in Edmonton through February</td>
-<td></td>
-</tr>
-<tr>
-<td>An earthquake shaking the foundations of a building</td>
-<td></td>
-</tr>
-<tr>
-<td>A truck crossing a bridge</td>
-<td></td>
-</tr>
-</tbody></table>
-<div class="hint"><span class="hint-label">Hint</span>Dead loads are always present and don't change. Dynamic loads change direction or vary suddenly.</div>
+  <div class="q-header">
+    <span class="badge badge-num">Q2</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge badge-vis">Diagram</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Analyze — LO 7-4-01</span>
+  </div>
+
+  <p>The four panels below each show a different type of structure. <strong>No labels are provided — that is your job.</strong></p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:0 auto;">
+
+      <!-- Panel dividers (dashed vertical lines) -->
+      <line x1="120" y1="15" x2="120" y2="180" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="250" y1="15" x2="250" y2="180" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="375" y1="15" x2="375" y2="180" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+
+      <!-- Panel 1: Solid block -->
+      <rect x="28" y="55" width="68" height="100" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+      <text x="62" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#334155" text-anchor="middle">Panel 1</text>
+
+      <!-- Panel 2: Frame — triangle truss outline -->
+      <line x1="138" y1="155" x2="238" y2="155" stroke="#94a3b8" stroke-width="2"/>
+      <line x1="138" y1="155" x2="188" y2="60" stroke="#94a3b8" stroke-width="2"/>
+      <line x1="238" y1="155" x2="188" y2="60" stroke="#94a3b8" stroke-width="2"/>
+      <!-- Internal truss members -->
+      <line x1="163" y1="155" x2="178" y2="107" stroke="#94a3b8" stroke-width="1.5"/>
+      <line x1="213" y1="155" x2="198" y2="107" stroke="#94a3b8" stroke-width="1.5"/>
+      <line x1="178" y1="107" x2="198" y2="107" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="188" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#334155" text-anchor="middle">Panel 2</text>
+
+      <!-- Panel 3: Shell — dome arch + floor line -->
+      <path d="M 265,155 Q 313,58 360,155" fill="none" stroke="#94a3b8" stroke-width="2"/>
+      <line x1="265" y1="155" x2="360" y2="155" stroke="#94a3b8" stroke-width="2"/>
+      <text x="313" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#334155" text-anchor="middle">Panel 3</text>
+
+      <!-- Panel 4: Combination — house outline (rectangle + triangle roof) -->
+      <rect x="388" y="115" width="76" height="50" fill="none" stroke="#94a3b8" stroke-width="2"/>
+      <polygon points="388,115 426,65 464,115" fill="none" stroke="#94a3b8" stroke-width="2"/>
+      <text x="426" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#334155" text-anchor="middle">Panel 4</text>
+
+    </svg>
+    <div class="svg-caption">Fig. 2 — Four structure forms (unlabelled)</div>
+  </div>
+
+  <p><strong>(a)</strong> Write the structure type for each panel in the table below. For each, give one real Alberta example and identify the dominant internal force it is designed to handle.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Panel</th>
+        <th>Structure Type</th>
+        <th>Alberta Example</th>
+        <th>Dominant Internal Force</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td style="min-width:7rem;">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>(b)</strong> Panel 2 (frame) and Panel 3 (shell) both manage loads efficiently despite using very little material. Choose one and explain <em>how</em> its shape distributes forces through the structure rather than simply resisting them at a single point.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q3 ★★ Cluster B — Loads (WEM Parking Scenario) -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q4</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Stability</p>
-  <p>A boom crane is lifting a heavy load at the end of its horizontal arm. As the operator adds more load, the crane eventually tips.</p>
-<p>a) What determines whether a structure topples? Write the stability rule in your own words.</p>
-<div class="al"></div>
-<p>b) In the space below, sketch the crane. Mark: (1) the base of support, (2) the position of the centre of gravity (CoG) with a light load, and (3) the position of the CoG with an excessive load that causes tipping.</p>
-<p>&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
-<p>c) Name two design changes an engineer could make to the crane to increase stability. Explain how each change works.</p>
-<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
-<ol><li><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></li></ol>
+  <div class="q-header">
+    <span class="badge badge-num">Q3</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Evaluate — LO 7-4-02</span>
+  </div>
+
+  <div class="q-context">
+    West Edmonton Mall has a multi-level parking structure. On a busy Saturday, a heavy delivery truck (mass approximately 8,000 kg) parks on the top level, directly above a ground-floor support column. Later that night, a severe windstorm moves through Edmonton.
+  </div>
+
+  <p><strong>(a)</strong> Identify the type of load the delivery truck represents. Explain why it is classified that way rather than as a dead load.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(b)</strong> The windstorm applies forces to the parking structure as well. Identify the load type wind represents, and explain what makes it more destructive than a live load of the same magnitude. Give one other example of this same load type that a parking structure in Edmonton might experience.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(c)</strong> In the concrete support column beneath the truck: where is compression highest? Would tension appear anywhere in the column under this purely vertical load? Name one design feature engineers add to concrete columns to address concrete's well-known weakness in tension, and explain how it works.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q4 ★ Cluster D — Stability (Grain Silo) -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q5</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Internal forces</p>
-  <p>Identify the type of internal force (compression, tension, shear, or torsion) acting in each situation.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">compression</span><span class="term">tension</span><span class="term">shear</span><span class="term">torsion</span></div></div>
-<table>
-<thead><tr>
-<th>Situation</th>
-<th>Internal force</th>
-</tr></thead><tbody>
-<tr>
-<td>The cables on a suspension bridge holding up the road deck</td>
-<td></td>
-</tr>
-<tr>
-<td>A column holding up a concrete floor above it</td>
-<td></td>
-</tr>
-<tr>
-<td>A bolt connecting two metal plates is being pulled in opposite directions along its face</td>
-<td></td>
-</tr>
-<tr>
-<td>A drill bit turning in rock</td>
-<td></td>
-</tr>
-<tr>
-<td>The top surface of a beam supporting a floor (being squashed)</td>
-<td></td>
-</tr>
-<tr>
-<td>The bottom surface of the same beam (being stretched by the weight pulling down)</td>
-<td></td>
-</tr>
-</tbody></table>
-<div class="hint"><span class="hint-label">Hint</span>A beam under load has BOTH compression and tension at the same time — check the last two rows carefully.</div>
+  <div class="q-header">
+    <span class="badge badge-num">Q4</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Apply / Analyze — LO 7-4-03</span>
+  </div>
+
+  <div class="q-context">
+    A cylindrical grain silo on a Peace River farm stores 50,000 kg of grain. The walls of the silo are noticeably thicker at the base than near the top.
+  </div>
+
+  <p><strong>(a)</strong> A full silo is more stable against toppling than an empty one, even though it is much heavier overall. Use the concept of centre of gravity to explain this apparent paradox.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(b)</strong> The stored grain pushes outward on the cylindrical walls (called lateral pressure — it acts similarly to a liquid). Identify which internal force this creates in the silo walls. Explain why this force is greatest at the base, and why the base walls must therefore be thickest.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(c)</strong> A strong wind applies a lateral (sideways) force to the silo. Would a full silo or an empty silo be more likely to topple? Justify your prediction using both centre of gravity and base of support.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q5 ★★ Cluster E — Simple Machines (Lever SVG + Calculate + Evaluate) -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q6</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Materials</p>
-  <p>Steel is used in earthquake-resistant building frames instead of concrete, even though concrete is cheaper and very strong under compression.</p>
-<p>a) What is the difference between compressive strength and tensile strength? Which does concrete lack?</p>
-<div class="al"></div>
-<p>b) What property of steel makes it better suited to earthquake loads? (Think about what an earthquake does to a structure — and use the word "ductility" or "flexibility" in your answer.)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) Reinforced concrete combines concrete and steel rebar. Explain what role each material plays and why the combination is stronger than either alone.</p>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q5</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge badge-vis">Diagram</span>
+    <span class="badge" style="background:#dbeafe;color:#1e40af;">Calculate</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Apply + Evaluate — LO 7-4-04</span>
+  </div>
+
+  <p>The diagram shows a Class 1 lever balanced on a fulcrum at the centre. An effort of 30 N is applied on the left side; the load hangs on the right.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:0 auto;">
+      <defs>
+        <marker id="arrowPurple5" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#7c3aed"/>
+        </marker>
+        <marker id="arrowGray5" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+          <path d="M0,0 L7,3.5 L0,7 Z" fill="#94a3b8"/>
+        </marker>
+      </defs>
+
+      <!-- Lever bar -->
+      <rect x="28" y="97" width="404" height="11" fill="#c4b5fd" stroke="#6d28d9" stroke-width="1.5" rx="2"/>
+
+      <!-- Fulcrum triangle at centre x=230 -->
+      <polygon points="214,108 246,108 230,136" fill="#94a3b8"/>
+      <!-- Fulcrum ground line -->
+      <line x1="204" y1="136" x2="256" y2="136" stroke="#94a3b8" stroke-width="2"/>
+      <text x="230" y="152" font-family="system-ui,sans-serif" font-size="11" fill="#334155" text-anchor="middle">Fulcrum</text>
+
+      <!-- Left: Effort arrow downward at x=68 -->
+      <line x1="68" y1="52" x2="68" y2="96" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrowPurple5)"/>
+      <text x="68" y="44" font-family="system-ui,sans-serif" font-size="12" fill="#7c3aed" font-weight="700" text-anchor="middle">Effort: 30 N</text>
+
+      <!-- Left arm dashed line + label -->
+      <line x1="68" y1="76" x2="230" y2="76" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="149" y="71" font-family="system-ui,sans-serif" font-size="11" fill="#334155" text-anchor="middle">arm = 2 m</text>
+
+      <!-- Right: Load arrow downward at x=360 -->
+      <line x1="360" y1="52" x2="360" y2="96" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrowGray5)"/>
+      <text x="360" y="44" font-family="system-ui,sans-serif" font-size="12" fill="#334155" text-anchor="middle">Load: ? N</text>
+
+      <!-- Right arm dashed line + label -->
+      <line x1="230" y1="76" x2="360" y2="76" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="295" y="71" font-family="system-ui,sans-serif" font-size="11" fill="#334155" text-anchor="middle">arm = 0.5 m</text>
+
+    </svg>
+    <div class="svg-caption">Fig. 3 — Class 1 lever: effort arm = 2 m, load arm = 0.5 m</div>
+  </div>
+
+  <p><strong>(a)</strong> Use the lever equation <em>Effort &times; effort arm = Load &times; load arm</em> to calculate the load force. Show all work.</p>
+  <div class="work-box" style="min-height:90px;">Work space</div>
+
+  <p style="margin-top:0.75rem;"><strong>(b)</strong> Calculate the mechanical advantage of this lever. Write a one-sentence explanation of what this number means in practical terms for the person using the lever.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(c)</strong> A classmate says: "This lever is great — you push with only 30 N to lift a 120 N load, so you save energy!" Evaluate this claim precisely. What <em>does</em> change when you use a lever with mechanical advantage greater than 1? What stays exactly the same? Use the concept of work in your answer.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q6 ★ Cluster F — Material Properties (Bridge Materials) -->
+<div class="question-card">
+  <div class="q-header">
+    <span class="badge badge-num">Q6</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Apply — LO 7-4-05</span>
+  </div>
+
+  <div class="q-context">
+    You are selecting materials for three distinct components of a suspension bridge over the North Saskatchewan River in Edmonton: (1) the main suspension cables, (2) the bridge deck (roadway), and (3) the anchor blocks that hold the cables at each shore.
+  </div>
+
+  <p><strong>(a)</strong> For each component, identify the dominant internal force it must resist, then name the single most critical material property for that role and give a brief reason.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Component</th>
+        <th>Dominant Internal Force</th>
+        <th>Most Critical Property</th>
+        <th>Reason (one sentence)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Main cables</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Bridge deck</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Anchor blocks</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>(b)</strong> The bridge deck is made of reinforced concrete rather than solid steel. Concrete is cheaper and considerably heavier. Explain why a heavier deck material might actually be a structural advantage for a suspension bridge — not simply a cost compromise.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<!-- ============================================================ MIDPOINT -->
 <div class="midpoint-block">
-<div class="meta-title">Midpoint Check</div>
-<p>Which question has been hardest so far? Circle its number above.</p>
-<div class="al"></div>
-<p>Was it hard because you did not know the idea, or because the question asked in an unfamiliar way?</p>
-<div class="al"></div>
-<p>What did you do when you got stuck?</p>
-<div class="al"></div>
-<hr style="margin:1rem 0;">
+  <div class="meta-title">Midpoint Check — After Q6</div>
+  <p><strong>1.</strong> Which of Q1–Q6 was hardest? Q <span style="display:inline-block;width:2rem;border-bottom:1.5px solid #ca8a04;">&nbsp;</span></p>
+  <p><strong>2.</strong> Why was it hard? Circle one, then add a note below:</p>
+  <p style="padding-left:1rem;">
+    <strong>A</strong> I didn't understand the concept &nbsp;&nbsp;
+    <strong>B</strong> I understood it but couldn't apply it &nbsp;&nbsp;
+    <strong>C</strong> I ran out of time to think it through
+  </p>
+  <div class="al" style="margin-top:0.4rem;"></div>
+  <p style="margin-top:0.5rem;"><strong>3.</strong> What is one thing you will do differently on Q7–Q12?</p>
+  <div class="al"></div>
 </div>
 
-<div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q7</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Simple machines</p>
-  <p>A lever is used to lift a heavy rock. The effort force applied is 80 N and the load force (the rock) is 400 N.</p>
-<p>a) Calculate the mechanical advantage.</p>
-<p>MA = load force ÷ effort force</p>
-<div class="work-box">Show working…</div>
-<div class="al"></div>
-<p>MA = <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>b) What class of lever always has a mechanical advantage greater than 1? Give one example.</p>
-<p>Class: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> Example: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>c) What class of lever always has a mechanical advantage less than 1? Give one example and explain why you would choose a lever with MA &lt; 1.</p>
-<p>Class: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> Example: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Reason: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-</div>
+<!-- ============================================================ SECTION 2 -->
+<div class="section-heading">Questions 7 – 12</div>
 
+<!-- Q7 ★★ Cluster A — Structure Types (Geodesic Dome Compare-Evaluate) -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q8</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Loads</p>
-  <p>The Tacoma Narrows Bridge in Washington State (1940) collapsed — not because wind speeds were extreme, but because the wind matched the bridge's natural frequency, causing the bridge to oscillate with increasing amplitude until it tore itself apart.</p>
-<p>a) What is resonance? Explain what was happening physically to the Tacoma Narrows Bridge.</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>b) A new bridge is being designed in Calgary, where chinook winds can be strong and gusty. Name two specific dynamic loads the engineers must account for, and for each, describe the direction of the force.</p>
-<p>Dynamic load 1: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> Direction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Dynamic load 2: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> Direction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>c) What makes dynamic loads more dangerous than static loads of the same magnitude?</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q7</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Evaluate — LO 7-4-01</span>
+  </div>
+
+  <div class="q-context">
+    The TELUS World of Science Edmonton features a geodesic dome — a near-sphere made entirely of triangulated frame panels. A nearby exhibition hall of the same floor area is a conventional rectangular box building.
+  </div>
+
+  <p><strong>(a)</strong> A geodesic dome is classified as a combination structure (frame + shell). Identify the frame element and the shell element in its design. Explain how they work together to distribute load to the foundation.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(b)</strong> The geodesic dome encloses the same volume as the box building but uses significantly less material. Evaluate this trade-off: name one structural advantage the dome has over the box, one practical disadvantage, and make a reasoned judgment about which design is better suited for a science centre — and why.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(c)</strong> Why is the triangle the strongest 2D shape for frame structures? Use the concept of geometric rigidity — compare what happens when a lateral force is applied to a triangular panel vs. a square panel of the same material.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
-<div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q9</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Stability</p>
-  <p>A square frame made of cardboard can be pushed into a rhombus shape without breaking. A triangular frame cannot change shape without the sides changing length.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">triangulation</span><span class="term">deform</span><span class="term">triangle</span><span class="term">polygon</span><span class="term">polygon</span><span class="term">rigidity</span><span class="term">bridges</span><span class="term">cranes</span></div></div>
-<p>The <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> is the only <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> that cannot <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> without changing the length of its sides. This makes it the fundamental unit of structural <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>.</p>
-<p>Engineers use <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> to stiffen structures. This technique is visible in <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>, <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>, and tower frames. A square frame without a diagonal will become a rhombus under load; add a diagonal (creating two triangles) and the frame cannot deform.</p>
-<p>In the space below, draw a square frame and a triangulated frame. Show with an arrow where you would push on each to demonstrate the difference.</p>
-<p>&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
-</div>
-
+<!-- Q8 ★★ Cluster D — Stability (Banff Bridge Design Challenge) -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q10</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Internal forces</p>
-  <p>A horizontal steel I-beam is supported at both ends with a weight hanging from its centre.</p>
-<p>a) Draw a simple diagram of this beam. Mark with a C where compression is greatest and a T where tension is greatest.</p>
-<p>&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
-<p>b) Explain why the top surface of the beam is under compression and the bottom surface is under tension. Use the direction of the weight force in your explanation.</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) Steel I-beams have large flat flanges (wide sections) at the top and bottom, connected by a thin web in the middle. Why is extra material needed at the top and bottom, but not in the middle?</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q8</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Create / Evaluate — LO 7-4-03, 7-4-05</span>
+  </div>
+
+  <div class="q-context">
+    Parks Canada wants to build a pedestrian footbridge over a fast-moving creek in Banff National Park. The bridge must span 8 m, support up to 20 hikers at once, withstand heavy snow loads in winter, handle spring flooding, and blend with the natural environment. All construction materials must be transported in by pack horse — nothing heavier than 80 kg per piece.
+  </div>
+
+  <p><strong>(a)</strong> Identify all the loads this bridge must be designed for. Classify each as dead, live, or dynamic. Explain what makes the dynamic loads especially challenging in a mountain environment.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(b)</strong> Which structure type (solid, frame, shell, or combination) would you choose for this bridge? Justify your choice using structural reasoning, material reasoning, <em>and</em> logistical reasoning. A single-factor answer is not sufficient.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(c)</strong> Identify the failure mode you are most concerned about for your chosen design. Name one specific design feature that would reduce that risk, and explain how it works mechanically.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q9 ★ Cluster B — Loads (Dynamic vs Live — Highway + Avalanche Shed) -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q11</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Structure types</p>
-  <p>A flat sheet of cardboard bends easily under a small weight. Roll the same cardboard into a tube — it can hold much more weight.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">shape</span><span class="term">solid</span><span class="term">shell</span><span class="term">curved</span><span class="term">distributes</span><span class="term">material</span></div></div>
-<p>This demonstrates that <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> determines strength, not just <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>. A <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> structure uses a <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> surface to <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> forces along the surface rather than concentrating them in one spot. The arch is another example: it redirects compression force <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and outward to the abutments.</p>
-<p>An egg is a shell structure. Explain in one sentence why it is hard to crush an egg end-to-end but easy to crack it from the side.</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q9</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Analyze — LO 7-4-02</span>
+  </div>
+
+  <div class="q-context">
+    A highway crew inspects two structures: (A) an overpass on the QEII highway south of Calgary, and (B) an avalanche shed on the Icefields Parkway, built to protect the road below a steep mountain slope.
+  </div>
+
+  <p><strong>(a)</strong> List two distinct loads for each structure and classify each as dead (D), live (L), or dynamic (Dy).</p>
+
+  <table>
+    <thead>
+      <tr><th>Structure</th><th>Load Description</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="2" style="vertical-align:middle;">A — Overpass</td><td style="min-height:2rem;">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td rowspan="2" style="vertical-align:middle;">B — Avalanche shed</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>(b)</strong> A student argues that the avalanche load is a "live load" because it is temporary. Identify the specific error in this reasoning. What makes the avalanche load dynamic rather than live, and why does the distinction matter to the engineer designing the shed?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q10 ★★ Cluster C — Internal Forces (Error Analysis: Simple Machines + Work) -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q12</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Materials</p>
-  <p>You are an engineer designing a new pedestrian bridge in Lethbridge, Alberta. Choose a material for each structural role listed below and justify each choice using material properties (tensile strength, compressive strength, ductility, elasticity, or brittleness).</p>
-<p>Alberta context: local materials available include timber, concrete, and steel. The bridge must handle chinook wind gusts (dynamic load) and Alberta winter temperatures (−40°C), which affect material brittleness.</p>
-<table>
-<thead><tr>
-<th>Structural role</th>
-<th>Material chosen</th>
-<th>Justification</th>
-</tr></thead><tbody>
-<tr>
-<td>Main bridge deck (carries walking loads in compression)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Suspension cables (carries tension)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Pedestrian railings (light, must flex slightly in wind without cracking)</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>For the deck, explain why you would NOT choose cast iron, even though it is strong.</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q10</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge badge-err">Error Analysis</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Evaluate — LO 7-4-04</span>
+  </div>
+
+  <div class="misconception">
+    <div class="err-label">Student Claim</div>
+    <div class="student-claim">"Simple machines reduce the amount of work you have to do — that's the whole point. If a lever has a mechanical advantage of 4, you do four times less work than without it."</div>
+  </div>
+
+  <p><strong>(a)</strong> Identify the specific scientific error in this claim. Write the formula for work and explain what mechanical advantage actually changes vs. what it cannot change.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(b)</strong> Use numbers to prove the claim wrong. A lever has a mechanical advantage of 4. You apply an effort of 25 N over a distance of 2 m. Calculate: (i) the load force lifted, (ii) the distance the load moves, (iii) the work done by you (effort side), (iv) the work done on the load. What do these four values confirm?</p>
+  <div class="work-box" style="min-height:100px;">Work space</div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(c)</strong> If simple machines cannot reduce work, why do we use them? Give two distinct reasons — they must be different from each other and specifically connected to what a simple machine actually does.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q11 ★ Cluster E — Simple Machines (Compound Pulley Scenario) -->
+<div class="question-card">
+  <div class="q-header">
+    <span class="badge badge-num">Q11</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge" style="background:#dbeafe;color:#1e40af;">Calculate</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Apply — LO 7-4-04</span>
+  </div>
+
+  <div class="q-context">
+    A rigger on an oil well service rig near Drayton Valley uses a compound pulley system to lift a 600 N load of pipe. The system has 4 rope segments supporting the movable pulley. The rigger pulls the rope over a distance of 8 m.
+  </div>
+
+  <p><strong>(a)</strong> Calculate the mechanical advantage of this pulley system and the effort force the rigger must apply. (Assume no friction.)</p>
+  <div class="work-box" style="min-height:80px;">Work space</div>
+
+  <p style="margin-top:0.75rem;"><strong>(b)</strong> How far does the load actually rise when the rigger pulls 8 m of rope? Explain your reasoning — do not just state a formula.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(c)</strong> In reality, the rigger must pull with slightly more force than your calculation predicts. Name one cause of this difference. Explain why this difference represents a loss of <em>efficiency</em> rather than a violation of energy conservation.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<!-- Q12 ★★ Cluster F — Material Properties (Bridge Handrail Evaluation) -->
+<div class="question-card extended">
+  <div class="q-header">
+    <span class="badge badge-num">Q12</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge" style="background:#f0fdf4;color:#166534;">Evaluate — LO 7-4-05</span>
+  </div>
+
+  <div class="q-context">
+    An engineer is choosing material for the handrail posts of the Banff footbridge from Q8. Three candidates are available: (A) untreated pine timber, (B) steel hollow tube, (C) solid cast iron bar. All three have the same cross-sectional area.
+  </div>
+
+  <p><strong>(a)</strong> Predict the relative performance of each material on the properties listed. Use High / Medium / Low.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Pine Timber</th>
+        <th>Steel Hollow Tube</th>
+        <th>Cast Iron Bar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Strength under compression</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Flexibility / ductility (bends before breaking)</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Mass (heaviness per unit volume)</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Suitability for wet outdoor conditions</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>(b)</strong> Cast iron is brittle — it fails suddenly and completely under tension without bending first. Why is brittleness especially dangerous in a dynamic load environment like a mountain footbridge? Compare this specifically to a ductile material such as steel.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>(c)</strong> Which material would you choose for the handrail posts? Your answer must cite at least three specific properties from part (a) <em>and</em> directly address the logistical constraint (80 kg maximum per piece, pack horse transport). A preference without engineering reasoning will not earn full marks.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<!-- ============================================================ REFLECTION -->
 <div class="reflection-block">
-<div class="meta-title">Reflection</div>
-<ol>
-<li>Which questions were hardest? Write the numbers.</li>
-</ol>
-<div class="al"></div>
-<ol>
-<li>Was it hard because you did not know the concept, or because the question asked in an unfamiliar way?</li>
-</ol>
-<div class="al"></div>
-<ol>
-<li>What is one thing you would do differently before the next session?</li>
-</ol>
-<div class="al"></div>
-<ol>
-<li>Rate your understanding of your toughest concept: 1 — Lost &nbsp; 2 — Partial &nbsp; 3 — Got it &nbsp; 4 — Could teach it</li>
-</ol>
-<p>One piece of evidence for your rating:</p>
-<div class="al"></div>
-<hr style="margin:1rem 0;">
+  <div class="meta-title">Reflection — Before Stretch</div>
+  <p><strong>1.</strong> Look back at your forethought prediction (the question number you expected to be hardest). Were you right? What does this tell you about your self-knowledge of this content?</p>
+  <div class="al" style="margin-top:0.3rem;"></div>
+  <div class="al"></div>
+  <p style="margin-top:0.6rem;"><strong>2.</strong> Which cluster do you now feel most confident about? What specifically made it click?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <p style="margin-top:0.6rem;"><strong>3.</strong> Identify one question where your first instinct was wrong. What did you change, and why?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <p style="margin-top:0.6rem;"><strong>4.</strong> Name one real structure in your community that you now look at differently after this workbook. What forces do you notice that you didn't before?</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
-<div class="stretch-header"><h2>Stretch — Challenge Questions</h2><p>★★ All stretch questions. Attempt after completing all previous questions.</p></div>
-
-<div class="stretch-card">
-  <div class="q-header"><span class="badge badge-num">S1</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Stability + Internal forces</p>
-  <p>A suspension bridge has: a concrete deck (road surface), vertical steel cables from the deck up to the main cables, main cables running from tower to tower, and concrete anchor blocks at each end.</p>
-<p>For each component: (a) identify the structural type (solid, frame, or shell), and (b) identify the primary internal force it experiences.</p>
-<table>
-<thead><tr>
-<th>Component</th>
-<th>Structure type</th>
-<th>Primary internal force</th>
-</tr></thead><tbody>
-<tr>
-<td>Concrete deck</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Vertical steel cables</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Main cables tower-to-tower</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Concrete anchor blocks</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>Explain why the main cables must be made of steel rather than concrete.</p>
-<div class="al"></div>
+<!-- ============================================================ STRETCH -->
+<div class="stretch-header">
+  <h2>Stretch — Three Challenges</h2>
+  <p>No scaffolding. No hints. These go beyond the unit — use everything you know and reason carefully. Only attempt these after finishing Q1–Q12.</p>
 </div>
 
 <div class="stretch-card">
-  <div class="q-header"><span class="badge badge-num">S2</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Simple machines + Energy conservation</p>
-  <p>You need to lift a 600 N engine block using only 150 N of effort.</p>
-<p>a) What mechanical advantage do you need?</p>
-<p>MA = <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> ÷ <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> = <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>b) Design a pulley system to achieve this. How many rope segments must support the load? Draw your system.</p>
-<p>Number of rope segments: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
-<p>c) If you pull the rope 4 m to lift the engine 1 m, have you saved any energy? Use the work formula (Work = Force × Distance) to prove your answer numerically.</p>
-<div class="work-box">Show working…</div>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header" style="margin-bottom:0.6rem;">
+    <span class="badge badge-stretch">S1</span>
+    <span class="badge" style="background:#334155;color:white;">Synthesis — Structures + Forces + Materials</span>
+  </div>
+  <p>The Lethbridge Viaduct (CPR High Level Bridge) is a steel trestle bridge — one of the longest railway bridges in Canada. It spans a wide valley 96 m above the Oldman River and carries fully loaded freight trains.</p>
+  <p style="margin-top:0.5rem;">Analyze the Lethbridge Viaduct across three dimensions: (a) classify its structure type and explain why a frame trestle was chosen over a solid or shell structure for this span and height; (b) identify and explain at least four distinct loads it experiences, including at least one dynamic load specific to its location and use; (c) identify two material properties critical for the steel members and explain why failure in tension would have different consequences than failure in compression for a railway bridge.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
 <div class="stretch-card">
-  <div class="q-header"><span class="badge badge-num">S3</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Structure types + Loads + Materials</p>
-  <p>A student proposes building a lightweight observation tower on a windy prairie site near Medicine Hat. The design uses only square frames with no diagonal bracing, made of cast iron.</p>
-<p>Identify three specific engineering problems with this design. For each problem, name the structural principle being violated and recommend a correction.</p>
-<p>Problem 1: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Principle violated: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Correction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Problem 2: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Principle violated: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Correction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Problem 3: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Principle violated: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Correction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+  <div class="q-header" style="margin-bottom:0.6rem;">
+    <span class="badge badge-stretch">S2</span>
+    <span class="badge" style="background:#334155;color:white;">Systems Thinking — Compound Machine + Energy</span>
+  </div>
+  <p>A compound machine combines a wheel and axle with a movable pulley system. The wheel has a radius of 0.4 m; the axle has a radius of 0.05 m. The axle is connected to a movable pulley system with 3 rope segments supporting the load.</p>
+  <p style="margin-top:0.5rem;">(a) Calculate the mechanical advantage of the wheel and axle alone. (b) Calculate the mechanical advantage of the pulley system alone. (c) Calculate the overall mechanical advantage of the combined system. (d) If an effort force of 20 N is applied at the wheel rim, what is the maximum load the system can theoretically lift (ignore friction)? (e) In practice the system lifts only 85% of the theoretical load. Where did the "missing" energy go? Confirm that the law of conservation of energy is still satisfied.</p>
+  <div class="work-box" style="min-height:110px;">Work space</div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<div class="stretch-card">
+  <div class="q-header" style="margin-bottom:0.6rem;">
+    <span class="badge badge-stretch">S3</span>
+    <span class="badge" style="background:#334155;color:white;">Design Critique — Cross-Unit Reasoning</span>
+  </div>
+  <p>An engineering student submits this claim: <em>"A concrete dome shell requires no internal support columns because the dome shape redirects all loads as compression to the foundation ring. Therefore, concrete is the ideal material for all dome structures."</em></p>
+  <p style="margin-top:0.5rem;">Evaluate this claim fully. Your response should: (a) identify what is correct and explain the compression-redirection mechanism accurately; (b) identify at least two errors or overstatements in the claim; (c) describe a realistic scenario where a concrete dome would fail despite the compression-redirection argument — think carefully about load type and scale; (d) propose one design modification that would address the most serious weakness you identified, and explain how it works.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+</div>
+
+<!-- ============================================================ SELF ASSESSMENT -->
 <div class="self-assess">
-<div class="self-assess-header">Self-Assessment</div>
-<div class="self-assess-body">
-<div class="sa-row"><div class="sa-header">Skill</div><div class="sa-header">Got it ✓</div><div class="sa-header">Getting there</div><div class="sa-header">Not yet</div></div>
-<div class="sa-row">
-<div>I can classify structures as solid, frame, shell, or combination and give Alberta examples</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
+  <div class="self-assess-header">Self-Assessment — One Row Per Cluster</div>
+  <div class="self-assess-body">
+    <div class="sa-row">
+      <div class="sa-header">Knowledge Cluster</div>
+      <div class="sa-check sa-header">Got it</div>
+      <div class="sa-check sa-header">Getting there</div>
+      <div class="sa-check sa-header">Need help</div>
+    </div>
+    <div class="sa-row">
+      <div>A — Types of structures (solid, frame, shell, combination)</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+    </div>
+    <div class="sa-row">
+      <div>B — Loads (dead, live, dynamic)</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+    </div>
+    <div class="sa-row">
+      <div>C — Internal forces (compression, tension, shear, torsion)</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+    </div>
+    <div class="sa-row">
+      <div>D — Stability (centre of gravity, base of support, failure modes)</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+    </div>
+    <div class="sa-row">
+      <div>E — Simple machines (MA, trade-off, energy conservation)</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+    </div>
+    <div class="sa-row">
+      <div>F — Material properties and structural design</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+      <div class="sa-check">&#9744;</div>
+    </div>
+  </div>
 </div>
-<div class="sa-row">
-<div>I can classify dead, live, and dynamic loads and explain why dynamic loads are most dangerous</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can identify compression, tension, shear, and torsion in a structure and give an example of each</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can explain how centre of gravity and base of support determine stability</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can calculate mechanical advantage and explain why simple machines do not reduce the total work done</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can compare compressive and tensile strength and recommend materials for specific structural roles</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-</div></div>
-<div style="margin-top:1.5rem;"><p>One question I still have about structures and forces:</p>
-<div class="al"></div></div>
+
+<hr>
+<p style="font-family:system-ui,sans-serif;font-size:0.8rem;color:var(--muted);text-align:center;margin-top:1rem;">
+  Grade 7 Science — Structures and Forces — Practice Workbook &nbsp;|&nbsp; Alberta 2007 PoS &nbsp;|&nbsp; LOs 7-4-01 through 7-4-05
+</p>
+
 </body>
 </html>

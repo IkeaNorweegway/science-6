@@ -151,6 +151,22 @@
 
   hr { border: none; border-top: 2px solid #e2e8f0; margin: 2rem 0; }
 
+  /* SVG diagram system */
+  .dg-boundary { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 1.5; }
+  .dg-line     { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
+  .dg-accent   { fill: none; stroke: #ea580c; stroke-width: 2; }
+  .dg-dashed   { fill: none; stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 4,3; }
+  .dg-label    { font-family: system-ui,sans-serif; font-size: 12px; fill: #334155; }
+  .dg-label-accent { font-family: system-ui,sans-serif; font-size: 12px; fill: #ea580c; font-weight: 700; }
+  .dg-point    { fill: #94a3b8; }
+  .dg-point-accent { fill: #ea580c; }
+
+  .svg-caption {
+    font-family: system-ui,sans-serif; font-size: 0.8rem; color: var(--muted);
+    text-align: center; margin-top: 0.25rem; margin-bottom: 0.75rem;
+  }
+  .svg-wrap { margin: 0.75rem 0; }
+
   @media print {
     body { font-size: 11pt; padding: 1.5cm; max-width: 100%;
             -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -160,354 +176,740 @@
 </style>
 </head>
 <body>
-<div class="about-callout"><h1>Heat and Temperature — Practice Workbook</h1><p style="font-family:system-ui;font-size:0.82rem;color:#475569;margin:0.2rem 0 0.5rem;">Temperature Scales · Particle Model · Heat Transfer · Specific Heat · Insulation</p><p>Grade 7 Science · Alberta Curriculum · Interleaved practice</p><p><strong>About this workbook:</strong> Questions are scrambled across all topics in this unit — figuring out which concept each question tests is part of the work.</p><p>★ Core — attempt all. Hints, word banks, or sentence starters are provided.</p><p>★★ Extended — same concepts, higher demand. Explain, justify, find errors, or apply to a new context.</p><p>Show all working. A correct answer with no working earns half marks.</p></div>
 
-<div class="forethought-block"><div class="meta-title">Before You Begin — Forethought</div><p>Which question do you think will be hardest? Write the number and one reason.</p>
-<p>I think Question <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> will be hardest because:</p>
-<div class="al"></div>
-<p>Which topic from this unit feels least solid going in?</p>
-<div class="al"></div>
-<hr style="margin:1rem 0;"><hr style="margin:1rem 0;"></div>
+<div class="about-callout">
+  <h1>Heat and Temperature — Practice Workbook</h1>
+  <p style="font-family:system-ui;font-size:0.82rem;color:#475569;margin:0.2rem 0 0.5rem;">Temperature Scales · Particle Model · Heat Transfer · Specific Heat · Insulation &amp; Applications</p>
+  <p>Grade 7 Science · Alberta Curriculum · Interleaved practice · v3</p>
+  <p><strong>About this workbook:</strong> Questions are scrambled across all topics in this unit — figuring out which concept each question tests is part of the work.</p>
+  <p>★ Core — attempt all. Hints are provided where indicated.</p>
+  <p>★★ Extended — same concepts, higher demand. Explain, justify, find the error, evaluate, or apply to a new context.</p>
+  <p><strong>Show your reasoning.</strong> A correct answer with no explanation earns partial credit. These questions ask you to think, not fill in blanks.</p>
+</div>
 
-<div class="section-heading">Questions — interleaved</div>
+<!-- FORETHOUGHT -->
+<div class="forethought-block">
+  <div class="meta-title">Before You Begin — Forethought</div>
+  <p>Skim all 12 questions before writing anything. Then answer these two questions.</p>
+  <p>I think Question <span style="display:inline-block;border-bottom:2px solid #334155;min-width:60px;">&nbsp;</span> will be hardest because:</p>
+  <div class="al"></div>
+  <p>Which cluster from this unit feels least solid going in? (circle one)</p>
+  <p style="font-family:system-ui;font-size:0.88rem;">Temperature/Kelvin &nbsp;·&nbsp; Heat vs. Temperature &nbsp;·&nbsp; Particle Model &nbsp;·&nbsp; Heat Transfer Modes &nbsp;·&nbsp; Specific Heat &nbsp;·&nbsp; Applications</p>
+</div>
 
+<div class="section-heading">Questions — interleaved across all clusters</div>
+
+<!-- Q1 — Cluster 1, Apply -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q1</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Temperature scales</p>
-  <p>Complete the conversion table. Show working for each calculation using the formula K = °C + 273.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">Kelvin</span><span class="term">Celsius</span><span class="term">absolute zero</span><span class="term">273</span></div></div>
-<table>
-<thead><tr>
-<th>Celsius</th>
-<th>Kelvin</th>
-<th>Show your working</th>
-</tr></thead><tbody>
-<tr>
-<td>0 °C</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> K</td>
-<td></td>
-</tr>
-<tr>
-<td>100 °C</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> K</td>
-<td></td>
-</tr>
-<tr>
-<td>−40 °C</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> K</td>
-<td></td>
-</tr>
-<tr>
-<td>20 °C</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> K</td>
-<td></td>
-</tr>
-<tr>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> °C</td>
-<td>310 K (body temperature)</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>What is absolute zero in Celsius? <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> °C</p>
-<p>Why is there no negative temperature on the Kelvin scale?</p>
-<div class="starter">Sentence starter: There are no negative Kelvin temperatures because 0 K represents <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q1</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge badge-err">Error analysis</span>
+  </div>
+  <p class="q-context">Cluster 1 — Temperature and measurement · Apply</p>
+
+  <div class="misconception">
+    <div class="err-label">Student claim to evaluate</div>
+    <p class="student-claim">"Fort McMurray hit −40°C last night. That means it was basically at absolute zero — way colder than room temperature, which is close to zero Kelvin."</p>
+  </div>
+
+  <p><strong>(a)</strong> Convert −40°C to Kelvin using K = °C + 273. Show your working.</p>
+  <div class="work-box">Working space — K = °C + 273</div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Convert "room temperature" (20°C) to Kelvin.</p>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> Using your two answers, evaluate the student's claim. Identify <em>two specific errors</em> in what they said.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <div class="hint"><span class="hint-label">Hint</span>Absolute zero is 0 K. What is that in Celsius? Is −40°C anywhere near 0 K?</div>
 </div>
 
+<!-- Q2 — Cluster 2, Evaluate -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q2</span><span class="badge badge-ext">★★ Extended</span><span class="badge badge-err">Error analysis</span></div>
-  <p class="q-context">Heat vs. temperature</p>
-  <p>A student says: <em>"I spilled a cup of boiling water (100°C) on myself. My friend fell into a swimming pool at 30°C. Obviously the cup was more dangerous because it was hotter."</em></p>
-<p>a) The student has partially confused heat and temperature. Using the cup-vs-bathtub analogy from your notes, explain the difference between heat and temperature.</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>b) Which scenario actually transfers more total heat energy to a person — the cup of boiling water or the swimming pool — and why? (Consider the amount of water in each.)</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) In which direction does heat always flow? What happens when two objects in contact reach the same temperature?</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q2</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge badge-err">Error analysis</span>
+  </div>
+  <p class="q-context">Cluster 2 — Heat vs. temperature · Evaluate</p>
+
+  <div class="misconception">
+    <div class="err-label">Student claim to evaluate</div>
+    <p class="student-claim">"I spilled a cup of boiling water (100°C) on my arm. My friend jumped into Sylvan Lake at 22°C. Obviously the cup was more dangerous because it was hotter."</p>
+  </div>
+
+  <p><strong>(a)</strong> Is the student right that "hotter" means more dangerous? What is the student confusing about heat and temperature?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Which scenario could actually transfer <em>more total heat energy</em> to a person's body — the cup or the lake? Explain your reasoning using the cup-vs-bathtub analogy.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> Heat always flows from __________ to __________. In both scenarios (cup and lake), in which direction is heat flowing relative to the person's body (37°C)?</p>
+  <div class="al"></div>
 </div>
 
+<!-- Q3 — Cluster 4, Analyze, SVG thermos -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q3</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Modes of heat transfer</p>
-  <p>Match each scenario to the correct mode of heat transfer. Then explain the mechanism in one sentence.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">conduction</span><span class="term">convection</span><span class="term">radiation</span></div></div>
-<table>
-<thead><tr>
-<th>Scenario</th>
-<th>Mode</th>
-<th>Mechanism (one sentence)</th>
-</tr></thead><tbody>
-<tr>
-<td>You feel warmth from the sun on your face through a window</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>A metal spoon in hot soup becomes warm throughout</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Hot air rises from a baseboard heater and circulates around the room</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>The Earth is warmed from 150 million km away by the sun</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<div class="hint"><span class="hint-label">Hint</span>One of these mechanisms does not require any medium (no matter at all).</div>
+  <div class="q-header">
+    <span class="badge badge-num">Q3</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge badge-vis">Diagram</span>
+  </div>
+  <p class="q-context">Cluster 4 — Modes of heat transfer · Analyze</p>
+
+  <p>The diagram below shows a cross-section of a thermos. Three features are labelled with arrows. Answer the questions below using the diagram.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 420 260" width="420" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section diagram of a thermos showing outer wall, vacuum layer, inner wall with liquid, and plastic cap">
+
+      <!-- Outer wall -->
+      <rect x="80" y="40" width="200" height="200" rx="6" class="dg-boundary"/>
+      <!-- Vacuum gap fill (white to indicate vacuum) -->
+      <rect x="100" y="55" width="160" height="172" rx="4" style="fill:#ffffff;stroke:none;"/>
+      <!-- Inner wall -->
+      <rect x="120" y="70" width="120" height="157" rx="3" class="dg-boundary"/>
+      <!-- Liquid inside -->
+      <rect x="123" y="140" width="114" height="84" rx="2" style="fill:#bfdbfe;stroke:none;"/>
+      <!-- Liquid label -->
+      <text x="180" y="185" class="dg-label" text-anchor="middle">liquid</text>
+
+      <!-- Plastic cap — top rectangle -->
+      <rect x="80" y="28" width="200" height="18" rx="3" style="fill:#e2e8f0;stroke:#94a3b8;stroke-width:1.5;"/>
+      <text x="180" y="41" class="dg-label" text-anchor="middle">plastic cap</text>
+
+      <!-- Vacuum label inside gap -->
+      <text x="107" y="148" class="dg-label" text-anchor="middle" style="font-size:10px;">vacuum</text>
+      <text x="107" y="160" class="dg-label" text-anchor="middle" style="font-size:10px;">layer</text>
+
+      <!-- Arrow 1 — pointing to vacuum layer -->
+      <line x1="50" y1="130" x2="98" y2="130" class="dg-line"/>
+      <polygon points="98,126 106,130 98,134" class="dg-point"/>
+      <text x="5" y="120" class="dg-label" style="font-size:11px;">Feature A:</text>
+      <text x="5" y="133" class="dg-label" style="font-size:11px;">vacuum layer</text>
+
+      <!-- Arrow 2 — pointing to inner shiny wall -->
+      <line x1="340" y1="100" x2="243" y2="100" class="dg-line"/>
+      <polygon points="243,96 235,100 243,104" class="dg-point"/>
+      <text x="345" y="95" class="dg-label" style="font-size:11px;">Feature B:</text>
+      <text x="345" y="108" class="dg-label" style="font-size:11px;">shiny inner wall</text>
+
+      <!-- Arrow 3 — pointing to plastic cap -->
+      <line x1="340" y1="37" x2="283" y2="37" class="dg-line"/>
+      <polygon points="283,33 275,37 283,41" class="dg-point"/>
+      <text x="345" y="32" class="dg-label" style="font-size:11px;">Feature C:</text>
+      <text x="345" y="45" class="dg-label" style="font-size:11px;">plastic cap</text>
+
+      <!-- Dashed divider between vacuum and inner wall -->
+      <line x1="120" y1="70" x2="120" y2="227" class="dg-dashed"/>
+      <line x1="240" y1="70" x2="240" y2="227" class="dg-dashed"/>
+
+    </svg>
+    <p class="svg-caption">Fig. 1 — Thermos cross-section (schematic). Vacuum layer is between outer and inner walls.</p>
+  </div>
+
+  <p><strong>(a)</strong> For each labelled feature, identify which mode(s) of heat transfer it is designed to block. Complete the table.</p>
+
+  <table>
+    <thead><tr>
+      <th>Feature</th>
+      <th>Mode(s) blocked</th>
+      <th>Brief explanation</th>
+    </tr></thead>
+    <tbody>
+    <tr>
+      <td>A — Vacuum layer</td>
+      <td><div class="al"></div></td>
+      <td><div class="al"></div></td>
+    </tr>
+    <tr>
+      <td>B — Shiny inner wall</td>
+      <td><div class="al"></div></td>
+      <td><div class="al"></div></td>
+    </tr>
+    <tr>
+      <td>C — Plastic cap</td>
+      <td><div class="al"></div></td>
+      <td><div class="al"></div></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong>(b)</strong> Explain specifically why the <em>shiny</em> wall blocks radiation better than a dull or dark wall would.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q4 — Cluster 3, Analyze -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q4</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Specific heat capacity</p>
-  <p>The notes describe a key difference between Alberta and coastal BC: Alberta has much more extreme temperature swings than Vancouver, even though both are at similar latitudes.</p>
-<p>a) What is specific heat capacity? Which has higher specific heat — water or sand/soil?</p>
-<div class="al"></div>
-<p>b) Use specific heat capacity and the idea of a "thermal reservoir" to explain why Vancouver has milder winters and cooler summers than Calgary.</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) Why is water used as the coolant in car radiators and as the coolant in nuclear reactors? What specific property makes it better than alternatives like sand or air?</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q4</span>
+    <span class="badge badge-ext">★★ Extended</span>
+  </div>
+  <p class="q-context">Cluster 3 — Particle model applied to heat · Analyze</p>
+
+  <p>A railroad track is laid at 20°C. Each section is 18.6 m long, and a 1 cm expansion gap is left between sections. On a July afternoon the track reaches 55°C.</p>
+
+  <div class="misconception">
+    <div class="err-label">Student claim to evaluate</div>
+    <p class="student-claim">"We don't need the gaps — the track might get a tiny bit longer but it'll just stay in place. No big deal."</p>
+  </div>
+
+  <p><strong>(a)</strong> Using the particle model, explain what happens to the metal particles in the rail as the temperature rises from 20°C to 55°C. Be specific about vibration and spacing.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Why would removing the expansion gaps cause the track to buckle? Use your particle-level explanation to explain the <em>mechanism</em> of buckling — what is the track trying to do, and what happens when it can't?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> What would you tell a new engineer about why the gap must be sized for the <em>maximum</em> expected summer temperature, not the installation temperature?</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q5 — Cluster 5, Apply -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q5</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Particle model</p>
-  <p>Use the particle model to complete each explanation.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">faster</span><span class="term">further apart</span><span class="term">expands</span><span class="term">contracts</span><span class="term">closer together</span><span class="term">slows</span><span class="term">expansion gaps</span><span class="term">buckle</span></div></div>
-<p>When a solid is heated, its particles move <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and vibrate <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> from each other, causing the material to <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>. When a solid is cooled, its particles <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and move <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>, causing the material to <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span>.</p>
-<p>Railroad tracks are built with <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> between sections. Without these gaps, the tracks would <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> in summer heat.</p>
-<p>In the space below, draw two particle diagrams side by side: (a) a cold solid and (b) a warm solid. Show the difference in particle spacing.</p>
-<p>Cold solid:                                 Warm solid:</p>
-<p>&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
+  <div class="q-header">
+    <span class="badge badge-num">Q5</span>
+    <span class="badge badge-core">★ Core</span>
+  </div>
+  <p class="q-context">Cluster 5 — Specific heat capacity · Apply</p>
+
+  <p>Two identical cups sit in direct sunlight — one full of dry sand, one full of water, both starting at 18°C. After 20 minutes you measure: sand = 45°C, water = 24°C.</p>
+
+  <p><strong>(a)</strong> Which material has the <em>higher</em> specific heat capacity? How do you know from the data?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Both cups received the same amount of energy from the sun. Use specific heat capacity to explain why the sand temperature rose so much more than the water temperature.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> A student suggests filling a solar collector with sand instead of water: "Sand gets way hotter — it'll store more energy." Evaluate this suggestion. Is the student right? Explain what specific heat capacity actually tells us about energy storage.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q6 — Cluster 6, Evaluate -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q6</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Insulation and applications</p>
-  <p>A thermos keeps hot soup hot AND can keep cold drinks cold. It has three features: a vacuum layer between the inner and outer walls, shiny inner walls, and a plastic cap.</p>
-<p>a) Explain how insulation works. (Does it generate heat? Create cold? What does it actually do?)</p>
-<div class="al"></div>
-<p>b) Complete the table matching each thermos feature to the heat transfer mode it blocks and the mechanism.</p>
-<table>
-<thead><tr>
-<th>Thermos feature</th>
-<th>Heat transfer mode blocked</th>
-<th>How it works</th>
-</tr></thead><tbody>
-<tr>
-<td>Vacuum layer</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> and <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
-<td>No medium means no particle-to-particle transfer and no fluid circulation</td>
-</tr>
-<tr>
-<td>Shiny inner walls</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
-<td></td>
-</tr>
-<tr>
-<td>Plastic cap</td>
-<td><span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></td>
-<td>Plastic is a poor <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> compared to metal</td>
-</tr>
-</tbody></table>
-<p>c) A student says: "The thermos keeps my hot soup warm." Is this an accurate statement? Correct it using precise language from your notes.</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q6</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 6 — Applications · Evaluate</p>
+
+  <p>The Red Deer River downstream of a power plant has had three consecutive summers with major fish kills. The plant draws cold river water for cooling and releases it 8°C warmer. The plant manager says: <em>"Just wait — the river will fix itself in a few weeks."</em></p>
+
+  <p><strong>(a)</strong> Warmer water holds less dissolved oxygen. Using the particle model, explain <em>why</em> warmer water has less capacity to hold dissolved gases.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Using specific heat capacity, explain why the Red Deer River (a large body of water) takes a long time to cool back down after warm water is discharged — even if the plant stops releasing warm water tomorrow.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> Evaluate the plant manager's claim. Name at least two factors that determine whether the river ecosystem recovers, and explain whether "just waiting" is a scientifically defensible response.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- MIDPOINT -->
 <div class="midpoint-block">
-<div class="meta-title">Midpoint Check</div>
-<p>Which question has been hardest so far? Circle its number above.</p>
-<div class="al"></div>
-<p>Was it hard because you did not know the idea, or because the question asked in an unfamiliar way?</p>
-<div class="al"></div>
-<p>What did you do when you got stuck?</p>
-<div class="al"></div>
-<hr style="margin:1rem 0;">
+  <div class="meta-title">Midpoint Check — after Q6</div>
+  <p>Which question has been hardest so far? Write its number: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:50px;">&nbsp;</span></p>
+  <p>Was it hard because you <em>didn't know the idea</em>, or because the question asked in an <em>unfamiliar way</em>?</p>
+  <div class="al"></div>
+  <p>What did you do when you got stuck?</p>
+  <div class="al"></div>
 </div>
 
+<!-- Q7 — Cluster 2, Analyze -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q7</span><span class="badge badge-core">★ Core</span><span class="badge badge-err">Error analysis</span></div>
-  <p class="q-context">Heat vs. temperature</p>
-  <p>Correct this common statement: <em>"Close the door — you're letting the cold in."</em></p>
-<div class="hint"><span class="hint-label">Hint</span>Think about what is actually moving in or out, and in which direction heat travels.</div>
-<p>a) What is actually happening when you open the door on a cold Alberta winter day?</p>
-<div class="starter">Sentence starter: Opening the door does not let cold in — instead, <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></div>
-<p>b) A student says "cold air blew in and froze my feet." Rewrite this sentence to accurately describe what happened using the language of heat transfer.</p>
-<div class="al"></div>
-<p>c) Which direction does heat always move — from hot to cold, or cold to hot? Give one everyday example.</p>
-<p>Direction: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Example: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+  <div class="q-header">
+    <span class="badge badge-num">Q7</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge badge-err">Error analysis</span>
+  </div>
+  <p class="q-context">Cluster 2 — Heat vs. temperature · Analyze</p>
+
+  <p>A common thing people say on a cold Alberta winter day: <em>"Close the door — you're letting the cold in."</em></p>
+
+  <div class="hint"><span class="hint-label">Hint</span>Think about what heat always does — which direction it always travels. Is "cold" a thing that moves?</div>
+
+  <p><strong>(a)</strong> Using the language of heat transfer, describe what is <em>actually</em> happening when you open the door on a −30°C January morning in Edmonton.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> A student says: "Cold air blew in from outside and froze my feet." Rewrite this sentence accurately using only heat transfer vocabulary.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> What is actually travelling across the doorway, and in which direction? Why can you never say "cold travels into the house"?</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q8 — Cluster 4, Analyze, SVG three materials -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q8</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Modes of heat transfer</p>
-  <p>You sit on a metal chair and a wooden chair that have both been in the same classroom for hours. The metal chair feels much colder than the wooden one.</p>
-<p>a) Measure both chairs with a thermometer. What temperature would you expect them to show? Explain.</p>
-<div class="al"></div>
-<p>b) Why does the metal chair feel colder if they are actually the same temperature? Your answer must use the word "conduction" and explain what is happening at the particle level between your body and each chair.</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>c) Using this example, explain what property makes a material a good insulator versus a good conductor.</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q8</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge badge-vis">Diagram</span>
+    <span class="badge badge-err">Misconception</span>
+  </div>
+  <p class="q-context">Cluster 4 — Modes of heat transfer · Analyze</p>
+
+  <p>The diagram shows three identical slabs (same size, same temperature difference across them: left face = 20°C room temperature, right face = 37°C body temperature). Each slab is a different material.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 500 200" width="500" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three material slabs side by side: Metal, Wood, and Foam, each with the same temperature difference across them">
+
+      <!-- Metal slab -->
+      <rect x="30" y="50" width="110" height="110" class="dg-boundary" style="fill:#e2e8f0;"/>
+      <text x="85" y="100" class="dg-label" text-anchor="middle" style="font-weight:700;">METAL</text>
+
+      <!-- Wood slab -->
+      <rect x="195" y="50" width="110" height="110" class="dg-boundary" style="fill:#fef3c7;"/>
+      <text x="250" y="100" class="dg-label" text-anchor="middle" style="font-weight:700;">WOOD</text>
+
+      <!-- Foam slab -->
+      <rect x="360" y="50" width="110" height="110" class="dg-boundary" style="fill:#f0fdf4;"/>
+      <text x="415" y="100" class="dg-label" text-anchor="middle" style="font-weight:700;">FOAM</text>
+
+      <!-- Left-side temperature labels -->
+      <text x="12" y="108" class="dg-label" text-anchor="middle" style="font-size:11px;">20°C</text>
+      <line x1="25" y1="105" x2="30" y2="105" class="dg-line"/>
+
+      <text x="177" y="108" class="dg-label" text-anchor="middle" style="font-size:11px;">20°C</text>
+      <line x1="190" y1="105" x2="195" y2="105" class="dg-line"/>
+
+      <text x="342" y="108" class="dg-label" text-anchor="middle" style="font-size:11px;">20°C</text>
+      <line x1="355" y1="105" x2="360" y2="105" class="dg-line"/>
+
+      <!-- Right-side temperature labels -->
+      <text x="148" y="108" class="dg-label" text-anchor="middle" style="font-size:11px;">37°C</text>
+      <line x1="140" y1="105" x2="145" y2="105" class="dg-line"/>
+
+      <text x="313" y="108" class="dg-label" text-anchor="middle" style="font-size:11px;">37°C</text>
+      <line x1="305" y1="105" x2="310" y2="105" class="dg-line"/>
+
+      <text x="478" y="108" class="dg-label" text-anchor="middle" style="font-size:11px;">37°C</text>
+      <line x1="470" y1="105" x2="475" y2="105" class="dg-line"/>
+
+      <!-- Arrow showing heat direction in metal (fastest) -->
+      <line x1="50" y1="170" x2="120" y2="170" class="dg-accent"/>
+      <polygon points="120,166 130,170 120,174" style="fill:#ea580c;"/>
+      <text x="85" y="185" class="dg-label-accent" text-anchor="middle" style="font-size:10px;">fastest</text>
+
+      <!-- Arrow in wood -->
+      <line x1="215" y1="170" x2="275" y2="170" class="dg-line"/>
+      <polygon points="275,166 285,170 275,174" class="dg-point"/>
+      <text x="250" y="185" class="dg-label" text-anchor="middle" style="font-size:10px;">medium</text>
+
+      <!-- Arrow in foam (slowest — short dashed) -->
+      <line x1="380" y1="170" x2="415" y2="170" class="dg-dashed"/>
+      <text x="415" y="185" class="dg-label" text-anchor="middle" style="font-size:10px;">slowest</text>
+
+      <!-- Label: "Same ΔT across each slab" -->
+      <text x="250" y="20" class="dg-label" text-anchor="middle" style="font-size:11px;">All three slabs: same size, same temperature difference (ΔT = 17°C)</text>
+
+    </svg>
+    <p class="svg-caption">Fig. 2 — Three material slabs with identical temperature difference. Arrow length indicates relative rate of heat flow.</p>
+  </div>
+
+  <p><strong>(a)</strong> Rank the three materials from fastest to slowest at conducting heat. Explain your ranking using the particle model — why do metal particles transfer heat faster than wood or foam particles?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> You reach into a freezer and grab a metal tray and a plastic bag. The metal tray feels much colder. Using this diagram and your particle model answer above, explain why — even though both items are at the same temperature.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> This question targets a specific and common misconception about heat and materials. Name the misconception and explain precisely why it is wrong.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q9 — Cluster 3, Apply, SVG heating curve -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q9</span><span class="badge badge-core">★ Core</span></div>
-  <p class="q-context">Temperature scales</p>
-  <p>Fill in the blanks about the Kelvin scale and absolute zero.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">0</span><span class="term">−273</span><span class="term">kinetic</span><span class="term">scientific</span><span class="term">average</span><span class="term">no</span><span class="term">K = °C + 273</span></div></div>
-<p>The Kelvin scale is used in <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> contexts. Its zero point (0 K) is called absolute zero, which equals <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> °C. At absolute zero, particles theoretically have <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> kinetic energy — they are not moving.</p>
-<p>Temperature measures the <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> energy of particles in a substance. The conversion formula is: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>There is <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> negative temperature on the Kelvin scale because you cannot have less than zero particle movement.</p>
+  <div class="q-header">
+    <span class="badge badge-num">Q9</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge badge-vis">Diagram</span>
+  </div>
+  <p class="q-context">Cluster 3 — Particle model · Apply</p>
+
+  <p>The graph below shows a heating curve for water, from −10°C to above 100°C. Heat is added at a constant rate throughout.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heating curve for water showing temperature vs time with two plateaus at 0°C and 100°C">
+
+      <!-- Axes -->
+      <line x1="60" y1="240" x2="440" y2="240" class="dg-line"/>
+      <line x1="60" y1="30"  x2="60"  y2="240" class="dg-line"/>
+
+      <!-- Axis arrows -->
+      <polygon points="436,236 444,240 436,244" class="dg-point"/>
+      <polygon points="56,34 60,26 64,34" class="dg-point"/>
+
+      <!-- Axis labels -->
+      <text x="248" y="258" class="dg-label" text-anchor="middle">Time (minutes)</text>
+      <text x="18" y="140" class="dg-label" text-anchor="middle" transform="rotate(-90,18,140)">Temperature (°C)</text>
+
+      <!-- Gridlines (dashed) at 0°C and 100°C -->
+      <!-- 0°C is at y=180, 100°C is at y=80 (scale: -10°C=190, 110°C=70) -->
+      <line x1="60" y1="180" x2="440" y2="180" class="dg-dashed"/>
+      <line x1="60" y1="80"  x2="440" y2="80"  class="dg-dashed"/>
+
+      <!-- Y-axis tick labels -->
+      <text x="52" y="194" class="dg-label" text-anchor="end" style="font-size:11px;">0°C</text>
+      <text x="52" y="94"  class="dg-label" text-anchor="end" style="font-size:11px;">100°C</text>
+      <text x="52" y="244" class="dg-label" text-anchor="end" style="font-size:11px;">−10°C</text>
+      <text x="52" y="76"  class="dg-label" text-anchor="end" style="font-size:11px;">110°C</text>
+
+      <!-- X-axis tick labels -->
+      <text x="60"  y="254" class="dg-label" text-anchor="middle" style="font-size:11px;">0</text>
+      <text x="145" y="254" class="dg-label" text-anchor="middle" style="font-size:11px;">5</text>
+      <text x="230" y="254" class="dg-label" text-anchor="middle" style="font-size:11px;">10</text>
+      <text x="315" y="254" class="dg-label" text-anchor="middle" style="font-size:11px;">20</text>
+      <text x="400" y="254" class="dg-label" text-anchor="middle" style="font-size:11px;">30</text>
+
+      <!-- Heating curve segments:
+           0→5 min: -10°C → 0°C (rise)
+           5→12 min: plateau at 0°C (Phase change A)
+           12→22 min: 0°C → 100°C (rise)
+           22→28 min: plateau at 100°C (Phase change B — labeled with ?)
+           28→30 min: 100°C → 108°C (short rise)
+      -->
+      <!-- Segment 1: rise from (-10) to 0 -->
+      <line x1="60" y1="190" x2="145" y2="180" class="dg-accent"/>
+      <!-- Segment 2: plateau at 0°C (Phase A) -->
+      <line x1="145" y1="180" x2="247" y2="180" class="dg-accent"/>
+      <!-- Phase A label -->
+      <text x="196" y="172" class="dg-label-accent" text-anchor="middle" style="font-size:11px;">Phase change A</text>
+
+      <!-- Segment 3: rise from 0 to 100 -->
+      <line x1="247" y1="180" x2="332" y2="80" class="dg-accent"/>
+      <!-- Segment 4: plateau at 100°C (Phase B) -->
+      <line x1="332" y1="80" x2="400" y2="80" class="dg-accent"/>
+      <!-- Phase B label with ? -->
+      <text x="366" y="70" class="dg-label-accent" text-anchor="middle" style="font-size:11px;">Phase change B = ?</text>
+
+      <!-- Segment 5: short rise after 100°C -->
+      <line x1="400" y1="80" x2="430" y2="72" class="dg-accent"/>
+
+      <!-- Dots at key transitions -->
+      <circle cx="145" cy="180" r="3" class="dg-point-accent"/>
+      <circle cx="247" cy="180" r="3" class="dg-point-accent"/>
+      <circle cx="332" cy="80"  r="3" class="dg-point-accent"/>
+      <circle cx="400" cy="80"  r="3" class="dg-point-accent"/>
+
+    </svg>
+    <p class="svg-caption">Fig. 3 — Heating curve for water. Heat is added at a constant rate throughout. Phase change B is unlabelled — you will name it.</p>
+  </div>
+
+  <p><strong>(a)</strong> During Phase change A (the flat section at 0°C), heat is still being added — but the temperature does not rise. Using the particle model, explain where the energy is going if not into raising the temperature.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Label Phase change B. What is happening to the water particles at 100°C? Why does the temperature stop rising again?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c) Predict:</strong> If you continued adding heat past 110°C (as a gas), would you see another flat plateau? Explain why or why not.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q10 — Cluster 1, Evaluate -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q10</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Particle model</p>
-  <p>An ice cube is placed on a hot plate. A temperature probe records the temperature every minute. The temperature rises steadily, then stays flat at 0°C for several minutes, then rises again.</p>
-<p>a) Using the particle model, explain why the temperature stays flat at 0°C even though the hot plate is still adding heat.</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>b) What is happening to the particles during the flat portion of the graph?</p>
-<div class="al"></div>
-<p>c) If you continued heating past 100°C, would you see another flat portion? What would be happening physically?</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q10</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge badge-err">Claim evaluation</span>
+  </div>
+  <p class="q-context">Cluster 1 — Temperature and measurement · Evaluate</p>
+
+  <p>Two scientists are arguing about what "twice as hot" means:</p>
+
+  <div class="misconception">
+    <div class="err-label">Scientist A</div>
+    <p class="student-claim">"200 K is twice as hot as 100 K — the particles have twice the kinetic energy and are moving twice as fast."</p>
+  </div>
+
+  <div class="misconception" style="margin-top:0.5rem;">
+    <div class="err-label">Scientist B</div>
+    <p class="student-claim">"200°C is twice as hot as 100°C — you can see it right there on the thermometer."</p>
+  </div>
+
+  <p><strong>(a)</strong> Convert both Celsius temperatures (100°C and 200°C) to Kelvin. Show working.</p>
+  <div class="work-box">Working space</div>
+
+  <p><strong>(b)</strong> Is Scientist A's claim defensible? Why does "twice as hot" only make physical sense when measured in Kelvin?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> Is Scientist B's claim defensible? Use your conversions to explain the problem with doubling a Celsius temperature.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(d)</strong> In physical terms, what does "twice the temperature (in Kelvin)" actually mean about the particles?</p>
+  <div class="al"></div>
 </div>
 
+<!-- Q11 — Cluster 6, Apply, Alberta context -->
 <div class="question-card">
-  <div class="q-header"><span class="badge badge-num">Q11</span><span class="badge badge-core">★ Core</span><span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span></div>
-  <p class="q-context">Specific heat capacity</p>
-  <p>The Athabasca Sand Dunes in northeastern Alberta can reach surface temperatures of 50°C+ on a summer day, while the surrounding air stays much cooler.</p>
-<div class="word-bank"><div class="label">Word bank</div><div class="terms"><span class="term">specific heat capacity</span><span class="term">sand</span><span class="term">water</span><span class="term">heats</span><span class="term">cools</span><span class="term">low</span><span class="term">high</span></div></div>
-<p>This is because sand has a <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> compared to water. A material with low specific heat <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> up quickly (and <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> down quickly) when heat is added or removed. A material with <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span> specific heat (like water) changes temperature much more slowly for the same amount of energy added.</p>
-<p>This is the same reason the sand at a beach gets scorching hot while the lake water stays relatively cool on a summer afternoon.</p>
-<p>On a separate line, explain in one sentence why Chestermere Lake moderates the temperature of the surrounding Calgary suburb on hot summer days.</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q11</span>
+    <span class="badge badge-core">★ Core</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 6 — Applications and technology · Apply</p>
+
+  <p>An Edmonton homeowner (winters reach −40°C) is choosing between three wall designs, all 10 cm thick:</p>
+  <ul>
+    <li><strong>Design A:</strong> 10 cm solid concrete</li>
+    <li><strong>Design B:</strong> 10 cm fiberglass batt insulation</li>
+    <li><strong>Design C:</strong> 10 cm solid wood framing</li>
+  </ul>
+
+  <p><strong>(a)</strong> Using your knowledge of conduction, rank the three designs from <em>best</em> to <em>worst</em> at slowing heat loss through the wall. Justify your ranking — don't just list them.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Which mode of heat transfer does fiberglass insulation <em>primarily</em> reduce? How does it do this — what is physically happening inside the insulation batt?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> A contractor tells the homeowner: "More insulation always keeps your house warmer." Is this accurate? What does insulation actually do — does it generate heat, or something else?</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- Q12 — Cluster 5, Evaluate -->
 <div class="question-card extended">
-  <div class="q-header"><span class="badge badge-num">Q12</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Insulation and applications</p>
-  <p>An industrial power plant uses river water from the North Saskatchewan River as a coolant. It draws in cold river water, uses it to cool equipment, and releases warm water back into the river.</p>
-<p>a) What is thermal pollution? Explain the physical mechanism — what property of the warmer water makes it harmful to fish?</p>
-<div class="al"></div>
-<div class="al"></div>
-<p>b) Warm water holds less dissolved oxygen than cold water. Using your knowledge of specific heat capacity, explain why a large river takes a long time to cool back down after warm water is discharged.</p>
-<div class="al"></div>
-<p>c) A student says: "Just build a bigger cooling tower to cool the water before releasing it." The cooling tower works by evaporation. Identify which mode of heat transfer is primarily involved in the evaporation cooling process and explain how it works.</p>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">Q12</span>
+    <span class="badge badge-ext">★★ Extended</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Cluster 5 — Specific heat capacity · Evaluate</p>
+
+  <p>Vancouver, BC (49°N) has much milder winters and cooler summers than Edmonton, AB (53°N), despite both cities being at similar latitudes.</p>
+
+  <p><strong>(a)</strong> Using the term <em>specific heat capacity</em> correctly, explain the role of the Pacific Ocean in moderating Vancouver's climate. Why does the ocean resist large temperature swings?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Explain why Edmonton experiences much larger temperature swings (−40°C in winter, +35°C in summer) while Vancouver rarely sees either extreme. Your answer must reference thermal mass / thermal reservoir.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c) Prediction:</strong> Climate change is warming ocean surface temperatures and making ocean temperatures more variable. If the Pacific Ocean's heat storage capacity became less stable — if ocean surface temperatures fluctuated more dramatically from season to season — what would happen to Vancouver's climate pattern? Be specific.</p>
+  <div class="al"></div>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- REFLECTION -->
 <div class="reflection-block">
-<div class="meta-title">Reflection</div>
-<ol>
-<li>Which questions were hardest? Write the numbers.</li>
-</ol>
-<div class="al"></div>
-<ol>
-<li>Was it hard because you did not know the concept, or because the question asked in an unfamiliar way?</li>
-</ol>
-<div class="al"></div>
-<ol>
-<li>What is one thing you would do differently before the next session?</li>
-</ol>
-<div class="al"></div>
-<ol>
-<li>Rate your understanding of your toughest concept: 1 — Lost &nbsp; 2 — Partial &nbsp; 3 — Got it &nbsp; 4 — Could teach it</li>
-</ol>
-<p>One piece of evidence for your rating:</p>
-<div class="al"></div>
-<hr style="margin:1rem 0;">
+  <div class="meta-title">Reflection — before stretch questions</div>
+  <ol>
+    <li>Which questions were hardest? Write the numbers.</li>
+  </ol>
+  <div class="al"></div>
+  <ol start="2">
+    <li>For your hardest question: was it hard because you didn't know the concept, or because the question asked in an unfamiliar way?</li>
+  </ol>
+  <div class="al"></div>
+  <div class="al"></div>
+  <ol start="3">
+    <li>What is one specific thing you would do differently before the next practice session?</li>
+  </ol>
+  <div class="al"></div>
+  <ol start="4">
+    <li>Rate your understanding of the toughest concept: &nbsp; 1 — Lost &nbsp; 2 — Partial &nbsp; 3 — Got it &nbsp; 4 — Could teach it</li>
+  </ol>
+  <p>One piece of evidence for your rating:</p>
+  <div class="al"></div>
 </div>
 
-<div class="stretch-header"><h2>Stretch — Challenge Questions</h2><p>★★ All stretch questions. Attempt after completing all previous questions.</p></div>
+<!-- STRETCH -->
+<div class="stretch-header">
+  <h2>Stretch — Challenge Questions</h2>
+  <p>Attempt after completing all previous questions. All are Evaluate or Create level.</p>
+</div>
 
+<!-- S1 — Clusters 1+3 -->
 <div class="stretch-card">
-  <div class="q-header"><span class="badge badge-num">S1</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Temperature scales + Particle model</p>
-  <p>Scientists use the Kelvin scale rather than Celsius for most physics calculations.</p>
-<p>a) A temperature doubles from 100°C to 200°C. In Kelvin, what are these temperatures? Has the particle kinetic energy actually doubled?</p>
-<div class="work-box">Show working…</div>
-<div class="al"></div>
-<p>b) If a student claims "200°C is twice as hot as 100°C so particles are moving twice as fast," evaluate this claim using your knowledge of Kelvin and absolute zero.</p>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">S1</span>
+    <span class="badge badge-stretch">Stretch</span>
+  </div>
+  <p class="q-context">Clusters 1 + 3 — Temperature scales · Particle model · Evaluate / Create</p>
+
+  <p>A scientist is building a thermometer that must be accurate to 0.1 K near absolute zero. Room temperature is 293 K.</p>
+
+  <p><strong>(a)</strong> Convert 0.1 K to Celsius. Show working. What does this tell you about how precise this instrument must be?</p>
+  <div class="work-box">Working space</div>
+  <div class="al"></div>
+
+  <p><strong>(b)</strong> Why is the Kelvin scale preferred over Celsius for scientific measurement near absolute zero? What would go wrong if scientists used Celsius for ratios near 0 K?</p>
+  <div class="al"></div>
+  <div class="al"></div>
+
+  <p><strong>(c)</strong> At absolute zero, the particle model predicts that all particle motion stops. But physicists say true absolute zero can never be reached. In one sentence, state why — referring to what quantum mechanics says about the minimum energy a particle can have.</p>
+  <div class="al"></div>
 </div>
 
+<!-- S2 — Clusters 4+6 -->
 <div class="stretch-card">
-  <div class="q-header"><span class="badge badge-num">S2</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Modes of heat transfer + Insulation</p>
-  <p>A mug of hot cocoa (90°C) sits on a wooden table in a room at 20°C.</p>
-<p>Explain ALL the ways heat is leaving the mug. For each, identify the mode of transfer and describe what is happening physically. Then recommend one design change to the mug that would slow each mode.</p>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
-<div class="al"></div>
+  <div class="q-header">
+    <span class="badge badge-num">S2</span>
+    <span class="badge badge-stretch">Stretch</span>
+  </div>
+  <p class="q-context">Clusters 4 + 6 — Heat transfer modes · Applications · Evaluate</p>
+
+  <p>A mug of hot tea (85°C) sits on a wooden table in a room at 22°C. Without touching it, list all three modes by which the mug loses heat.</p>
+
+  <p>For each mode, answer all three sub-questions:</p>
+
+  <table>
+    <thead><tr>
+      <th>Mode</th>
+      <th>(a) What is physically happening?</th>
+      <th>(b) What feature of the mug/environment drives this mode?</th>
+      <th>(c) One design change to reduce this mode</th>
+    </tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>Conduction</strong></td>
+      <td><div class="al"></div><div class="al"></div></td>
+      <td><div class="al"></div></td>
+      <td><div class="al"></div></td>
+    </tr>
+    <tr>
+      <td><strong>Convection</strong></td>
+      <td><div class="al"></div><div class="al"></div></td>
+      <td><div class="al"></div></td>
+      <td><div class="al"></div></td>
+    </tr>
+    <tr>
+      <td><strong>Radiation</strong></td>
+      <td><div class="al"></div><div class="al"></div></td>
+      <td><div class="al"></div></td>
+      <td><div class="al"></div></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p>Which single design modification would give the biggest total reduction in heat loss? Justify your choice.</p>
+  <div class="al"></div>
+  <div class="al"></div>
 </div>
 
+<!-- S3 — Clusters 5+6, Alberta -->
 <div class="stretch-card">
-  <div class="q-header"><span class="badge badge-num">S3</span><span class="badge badge-ext">★★ Extended</span></div>
-  <p class="q-context">Specific heat capacity + Insulation + Alberta context</p>
-  <p>An Alberta family is redesigning their home near Edmonton for maximum energy efficiency. Edmonton has temperatures ranging from −40°C in January to +35°C in July.</p>
-<p>Give three specific design recommendations. For each: name the science principle involved (specific heat, insulation, or a heat transfer mode), and explain how it reduces heating or cooling costs.</p>
-<p>Recommendation 1: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Science principle: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Recommendation 2: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Science principle: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Recommendation 3: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
-<p>Science principle: <span style="display:inline-block;border-bottom:2px solid #334155;min-width:80px;">&nbsp;</span></p>
+  <div class="q-header">
+    <span class="badge badge-num">S3</span>
+    <span class="badge badge-stretch">Stretch</span>
+    <span class="badge" style="background:#dcfce7;color:#166534;">Alberta</span>
+  </div>
+  <p class="q-context">Clusters 5 + 6 — Specific heat · Insulation · Create / Evaluate</p>
+
+  <p>Design a passive solar home for a family moving to Lethbridge, AB. Lethbridge has extreme temperature swings, abundant sunshine, and frequent Chinook winds (sudden warm winter winds from the west). The home must minimize heating costs in winter AND cooling costs in summer.</p>
+
+  <p>Give <strong>three specific design features</strong>. For each: name the heat science principle, explain how it works, and explain how Lethbridge's specific climate (Chinooks, sunshine patterns) affects your design choice.</p>
+
+  <p><strong>Feature 1:</strong></p>
+  <div class="al"></div>
+  <p>Heat science principle: <span style="display:inline-block;border-bottom:1px solid #cbd5e1;min-width:200px;">&nbsp;</span></p>
+  <p>How it works:</p>
+  <div class="al"></div>
+  <p>Why Lethbridge's climate matters for this choice:</p>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>Feature 2:</strong></p>
+  <div class="al"></div>
+  <p>Heat science principle: <span style="display:inline-block;border-bottom:1px solid #cbd5e1;min-width:200px;">&nbsp;</span></p>
+  <p>How it works:</p>
+  <div class="al"></div>
+  <p>Why Lethbridge's climate matters for this choice:</p>
+  <div class="al"></div>
+
+  <p style="margin-top:0.75rem;"><strong>Feature 3:</strong></p>
+  <div class="al"></div>
+  <p>Heat science principle: <span style="display:inline-block;border-bottom:1px solid #cbd5e1;min-width:200px;">&nbsp;</span></p>
+  <p>How it works:</p>
+  <div class="al"></div>
+  <p>Why Lethbridge's climate matters for this choice:</p>
+  <div class="al"></div>
 </div>
 
+<!-- SELF-ASSESSMENT -->
 <div class="self-assess">
-<div class="self-assess-header">Self-Assessment</div>
-<div class="self-assess-body">
-<div class="sa-row"><div class="sa-header">Skill</div><div class="sa-header">Got it ✓</div><div class="sa-header">Getting there</div><div class="sa-header">Not yet</div></div>
-<div class="sa-row">
-<div>I can convert between Celsius and Kelvin and explain what absolute zero means</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
+  <div class="self-assess-header">Self-Assessment — one row per cluster</div>
+  <div class="self-assess-body">
+    <div class="sa-row">
+      <div class="sa-header">Skill</div>
+      <div class="sa-header">Got it ✓</div>
+      <div class="sa-header">Getting there</div>
+      <div class="sa-header">Not yet</div>
+    </div>
+    <div class="sa-row">
+      <div>I can explain the difference between temperature and heat using the cup vs. bathtub analogy</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can use the Kelvin scale and explain what absolute zero means physically</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can use the particle model to explain thermal expansion, contraction, and the change-of-state plateau</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can identify conduction, convection, and radiation and explain why metal feels colder than wood</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can explain specific heat capacity and connect it to coastal vs. inland climate differences</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+    <div class="sa-row">
+      <div>I can evaluate real-world insulation and thermal pollution scenarios using heat science</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+      <div class="sa-check">☐</div>
+    </div>
+  </div>
 </div>
-<div class="sa-row">
-<div>I can explain the difference between heat and temperature using the cup-vs-bathtub analogy</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
+
+<div style="margin-top:1.5rem;">
+  <p>One question I still have about heat and temperature:</p>
+  <div class="al"></div>
 </div>
-<div class="sa-row">
-<div>I can use the particle model to explain thermal expansion, contraction, and the change-of-state plateau</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can identify and explain conduction, convection, and radiation with the metal-vs-wood example</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can explain specific heat capacity and connect it to Alberta vs. Vancouver climate differences</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-<div class="sa-row">
-<div>I can explain how a thermos works and what thermal pollution is</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-<div class="sa-check">☐</div>
-</div>
-</div></div>
-<div style="margin-top:1.5rem;"><p>One question I still have about heat and temperature:</p>
-<div class="al"></div></div>
+
 </body>
 </html>
