@@ -203,50 +203,103 @@
   <p class="q-context">Cluster 1 &mdash; Cell theory and plant cells &middot; Apply</p>
 
   <div class="svg-wrap">
-    <svg viewBox="0 0 560 360" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plant cell diagram with three labelled structures and two blank label boxes for students to identify">
+    <svg viewBox="0 0 640 460" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plant cell diagram showing cell wall, cell membrane, central vacuole, nucleus with nucleolus, and three chloroplasts. Three structures are labelled and two have blank question boxes.">
+      <defs>
+        <marker id="pc-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+          <path d="M0,0 L8,3.5 L0,7 Z" fill="#64748b"/>
+        </marker>
+        <marker id="pc-arrow-r" markerWidth="8" markerHeight="8" refX="1" refY="3.5" orient="auto">
+          <path d="M8,0 L0,3.5 L8,7 Z" fill="#64748b"/>
+        </marker>
+      </defs>
 
-      <!-- Cell wall (outer rectangle, large) -->
-      <rect x="110" y="30" width="300" height="260" rx="22" ry="22" class="dg-boundary" />
+      <!-- ── Cell wall (thick, rigid outer layer) ── -->
+      <rect x="70" y="18" width="450" height="400" rx="65" ry="65"
+            style="fill:#f8fafc;stroke:#475569;stroke-width:4;"/>
 
-      <!-- Cell membrane (inner rectangle, close to wall) -->
-      <rect x="122" y="42" width="276" height="236" rx="15" ry="15" class="dg-boundary" />
+      <!-- ── Cell membrane (thin layer just inside wall) ── -->
+      <rect x="88" y="36" width="414" height="364" rx="54" ry="54"
+            style="fill:none;stroke:#16a34a;stroke-width:1.5;stroke-dasharray:6,3;"/>
 
-      <!-- Large central vacuole -->
-      <rect x="160" y="90" width="160" height="140" rx="12" ry="12" class="dg-boundary" />
+      <!-- ── Central vacuole (large, blue — fills most of interior) ── -->
+      <rect x="128" y="72" width="265" height="268" rx="42" ry="42"
+            style="fill:#dbeafe;stroke:#93c5fd;stroke-width:1.5;"/>
+      <!-- Tonoplast (vacuole membrane) subtle inner line -->
+      <rect x="136" y="80" width="249" height="252" rx="36" ry="36"
+            style="fill:none;stroke:#bfdbfe;stroke-width:1;"/>
 
-      <!-- Nucleus (circle, lower-right area) -->
-      <circle cx="330" cy="215" r="32" class="dg-boundary" />
+      <!-- ── Nucleus (right of vacuole, dominant structure) ── -->
+      <!-- Nuclear envelope outer -->
+      <circle cx="415" cy="205" r="68"
+              style="fill:#fef3c7;stroke:#d97706;stroke-width:2;"/>
+      <!-- Nuclear envelope inner (double membrane effect) -->
+      <circle cx="415" cy="205" r="60"
+              style="fill:#fef9c3;stroke:#fbbf24;stroke-width:1;stroke-dasharray:4,2;"/>
+      <!-- Nucleoplasm -->
+      <circle cx="415" cy="205" r="58"
+              style="fill:#fefce8;stroke:none;"/>
+      <!-- Nucleolus (dense body inside nucleus) -->
+      <ellipse cx="408" cy="198" rx="20" ry="17"
+               style="fill:#fcd34d;stroke:#d97706;stroke-width:1.5;"/>
 
-      <!-- Chloroplast 1 (small oval, upper-left zone) -->
-      <ellipse cx="145" cy="75" rx="20" ry="10" class="dg-boundary" />
+      <!-- ── Chloroplasts (3, lens-shaped with internal grana lines) ── -->
+      <!-- Chloroplast 1 — upper left cytoplasm -->
+      <ellipse cx="109" cy="72" rx="33" ry="15"
+               style="fill:#4ade80;stroke:#15803d;stroke-width:1.5;"/>
+      <line x1="80"  y1="72" x2="142" y2="72" style="stroke:#15803d;stroke-width:1;stroke-dasharray:3,2;"/>
+      <line x1="85"  y1="65" x2="85"  y2="79" style="stroke:#15803d;stroke-width:0.8;"/>
+      <line x1="100" y1="60" x2="100" y2="84" style="stroke:#15803d;stroke-width:0.8;"/>
+      <line x1="115" y1="58" x2="115" y2="86" style="stroke:#15803d;stroke-width:0.8;"/>
+      <line x1="130" y1="60" x2="130" y2="84" style="stroke:#15803d;stroke-width:0.8;"/>
 
-      <!-- Chloroplast 2 (small oval, lower-left zone) -->
-      <ellipse cx="145" cy="250" rx="20" ry="10" class="dg-boundary" />
+      <!-- Chloroplast 2 — left cytoplasm strip -->
+      <ellipse cx="100" cy="210" rx="33" ry="15"
+               style="fill:#4ade80;stroke:#15803d;stroke-width:1.5;"/>
+      <line x1="71"  y1="210" x2="133" y2="210" style="stroke:#15803d;stroke-width:1;stroke-dasharray:3,2;"/>
+      <line x1="77"  y1="203" x2="77"  y2="217" style="stroke:#15803d;stroke-width:0.8;"/>
+      <line x1="92"  y1="198" x2="92"  y2="222" style="stroke:#15803d;stroke-width:0.8;"/>
+      <line x1="107" y1="197" x2="107" y2="223" style="stroke:#15803d;stroke-width:0.8;"/>
+      <line x1="122" y1="199" x2="122" y2="221" style="stroke:#15803d;stroke-width:0.8;"/>
 
-      <!-- Annotation: cell wall -> label top-left -->
-      <line x1="110" y1="50" x2="75" y2="22" class="dg-line" />
-      <text x="10" y="20" class="dg-label">Cell wall</text>
+      <!-- Chloroplast 3 — lower cytoplasm -->
+      <ellipse cx="240" cy="368" rx="33" ry="15"
+               style="fill:#4ade80;stroke:#15803d;stroke-width:1.5;"/>
+      <line x1="211" y1="368" x2="273" y2="368" style="stroke:#15803d;stroke-width:1;stroke-dasharray:3,2;"/>
+      <line x1="217" y1="361" x2="217" y2="375" style="stroke:#15803d;stroke-width:0.8;"/>
+      <line x1="232" y1="357" x2="232" y2="379" style="stroke:#15803d;stroke-width:0.8;"/>
+      <line x1="247" y1="356" x2="247" y2="380" style="stroke:#15803d;stroke-width:0.8;"/>
+      <line x1="262" y1="358" x2="262" y2="378" style="stroke:#15803d;stroke-width:0.8;"/>
 
-      <!-- Annotation: chloroplasts -> label top-right -->
-      <line x1="165" y1="70" x2="220" y2="15" class="dg-line" />
-      <text x="222" y="14" class="dg-label">Chloroplasts</text>
+      <!-- ══ ANNOTATION LINES + LABELS ══ -->
 
-      <!-- Annotation: nucleus -> label right -->
-      <line x1="362" y1="215" x2="420" y2="215" class="dg-line" />
-      <text x="424" y="219" class="dg-label">Nucleus</text>
+      <!-- Cell wall → top-left label -->
+      <line x1="95" y1="42" x2="40" y2="18" style="stroke:#64748b;stroke-width:1.2;" marker-end="url(#pc-arrow-r)"/>
+      <text x="5" y="16" style="font-family:system-ui,sans-serif;font-size:12px;fill:#1e293b;font-weight:600;">Cell wall</text>
 
-      <!-- Blank box 1: cell membrane (annotated left side) -->
-      <line x1="122" y1="165" x2="60" y2="185" class="dg-line" />
-      <rect x="5" y="178" width="88" height="22" rx="4" ry="4" class="dg-boundary" />
-      <text x="49" y="193" text-anchor="middle" class="dg-label-accent">?</text>
+      <!-- Chloroplasts → top label (from chloroplast 1) -->
+      <line x1="130" y1="60" x2="290" y2="10" style="stroke:#64748b;stroke-width:1.2;" marker-end="url(#pc-arrow-r)"/>
+      <text x="295" y="14" style="font-family:system-ui,sans-serif;font-size:12px;fill:#1e293b;font-weight:600;">Chloroplasts</text>
 
-      <!-- Blank box 2: vacuole (annotated bottom) -->
-      <line x1="240" y1="230" x2="240" y2="318" class="dg-line" />
-      <rect x="188" y="318" width="104" height="22" rx="4" ry="4" class="dg-boundary" />
-      <text x="240" y="333" text-anchor="middle" class="dg-label-accent">?</text>
+      <!-- Nucleus → right label -->
+      <line x1="483" y1="205" x2="525" y2="205" style="stroke:#64748b;stroke-width:1.2;" marker-end="url(#pc-arrow)"/>
+      <text x="530" y="209" style="font-family:system-ui,sans-serif;font-size:12px;fill:#1e293b;font-weight:600;">Nucleus</text>
+
+      <!-- ? box 1 — cell membrane (left side, pointing to dashed green line) -->
+      <line x1="88" y1="200" x2="28" y2="225" style="stroke:#64748b;stroke-width:1.2;" marker-end="url(#pc-arrow-r)"/>
+      <rect x="2" y="228" width="90" height="24" rx="5"
+            style="fill:white;stroke:#16a34a;stroke-width:1.5;"/>
+      <text x="47" y="244" text-anchor="middle"
+            style="font-family:system-ui,sans-serif;font-size:13px;fill:#16a34a;font-weight:700;">?</text>
+
+      <!-- ? box 2 — central vacuole (bottom, pointing into blue area) -->
+      <line x1="255" y1="340" x2="255" y2="415" style="stroke:#64748b;stroke-width:1.2;" marker-end="url(#pc-arrow)"/>
+      <rect x="190" y="418" width="130" height="24" rx="5"
+            style="fill:white;stroke:#16a34a;stroke-width:1.5;"/>
+      <text x="255" y="434" text-anchor="middle"
+            style="font-family:system-ui,sans-serif;font-size:13px;fill:#16a34a;font-weight:700;">?</text>
 
     </svg>
-    <p class="svg-caption">Figure 1 &mdash; Plant cell diagram. Three structures are labelled. Two structures have blank label boxes (marked ?) &mdash; identify these and explain their function in part (a).</p>
+    <p class="svg-caption">Figure 1 &mdash; Plant cell diagram. Cell wall (thick gray border), chloroplasts (green, with internal grana lines), and nucleus (yellow, with dense nucleolus) are labelled. Identify the two structures marked <strong>?</strong> and explain their function in part (a).</p>
   </div>
 
   <div class="word-bank">
