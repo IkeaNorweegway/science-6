@@ -445,14 +445,42 @@
   <li>Temperature: ~5,000–6,000°C — hotter than outer core, but solid because <span class="b b-md">&nbsp;</span> is so extreme that it keeps it solid</li>
 </ul>
 <p><strong>Diagram — label the four layers:</strong></p>
-<pre>     ___________
-    /   [  1  ] \
-   / [ [  2  ] ] \
-  | [ [ [3/4] ] ] |
-   \ [ [  2  ] ] /
-    \   [  1  ] /
-     -----------</pre>
-<p><em>Label each layer with its name. Add arrows showing where convection currents flow in the mantle.</em></p>
+<div class="svg-wrap" style="margin:1rem 0;">
+<svg viewBox="0 0 460 300" width="460" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section diagram of Earth's four internal layers">
+  <defs>
+    <marker id="el-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <!-- Crust (outermost, green) -->
+  <circle cx="200" cy="150" r="130" style="fill:#86efac;stroke:#94a3b8;stroke-width:1.5;"/>
+  <!-- Mantle (yellow) -->
+  <circle cx="200" cy="150" r="115" style="fill:#fef08a;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:4,3;"/>
+  <!-- Outer core (orange) -->
+  <circle cx="200" cy="150" r="75"  style="fill:#fdba74;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:4,3;"/>
+  <!-- Inner core (red) -->
+  <circle cx="200" cy="150" r="40"  style="fill:#fca5a5;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:4,3;"/>
+  <!-- Convection arrows in mantle -->
+  <path d="M 200,42 A 108,108 0 0,1 305,148" style="fill:none;stroke:var(--unit);stroke-width:1.5;stroke-dasharray:5,3;" marker-end="url(#el-arrow)"/>
+  <path d="M 200,258 A 108,108 0 0,1 95,152"  style="fill:none;stroke:var(--unit);stroke-width:1.5;stroke-dasharray:5,3;" marker-end="url(#el-arrow)"/>
+  <!-- Label leader lines and fill-in boxes (right side) -->
+  <line x1="322" y1="112" x2="358" y2="95" style="stroke:#64748b;stroke-width:1;" marker-end="url(#el-arrow)"/>
+  <rect x="360" y="80" width="92" height="22" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="406" y="95" class="dg-label" text-anchor="middle" style="fill:#94a3b8;">1. ___________</text>
+  <line x1="308" y1="152" x2="358" y2="135" style="stroke:#64748b;stroke-width:1;" marker-end="url(#el-arrow)"/>
+  <rect x="360" y="120" width="92" height="22" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="406" y="135" class="dg-label" text-anchor="middle" style="fill:#94a3b8;">2. ___________</text>
+  <line x1="272" y1="178" x2="358" y2="173" style="stroke:#64748b;stroke-width:1;" marker-end="url(#el-arrow)"/>
+  <rect x="360" y="158" width="92" height="22" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="406" y="173" class="dg-label" text-anchor="middle" style="fill:#94a3b8;">3. ___________</text>
+  <line x1="232" y1="172" x2="360" y2="210" style="stroke:#64748b;stroke-width:1;" marker-end="url(#el-arrow)"/>
+  <rect x="360" y="197" width="92" height="22" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="406" y="212" class="dg-label" text-anchor="middle" style="fill:#94a3b8;">4. ___________</text>
+  <!-- Convection note -->
+  <text x="200" y="286" class="dg-label-sm" text-anchor="middle" style="fill:var(--unit-dark);">Dashed arcs show convection current direction in the mantle</text>
+</svg>
+<p style="font-family:system-ui;font-size:0.78rem;color:#64748b;text-align:center;margin-top:0.2rem;">Fig. — Earth's internal layers. Label each numbered layer with its name.</p>
+</div>
 <p><strong>How do we know?</strong> Seismic waves travel at different speeds through different materials and <span class="b b-md">&nbsp;</span> or <span class="b b-md">&nbsp;</span> at layer boundaries. By analysing the paths and timings of these waves recorded at many stations, scientists mapped Earth's interior without ever seeing it.</p>
 <div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
 <p><em>Cover your notes. Answer from memory.</em></p>

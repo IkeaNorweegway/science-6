@@ -669,10 +669,45 @@
 <p>Where does the lost energy go? <span class="b b-md">&nbsp;</span> (used for movement, growth, body heat, digestion).</p>
 <p><strong>The Energy Pyramid:</strong></p>
 <p>An energy pyramid shows the amount of energy available at each trophic level. The base is <span class="b b-md">&nbsp;</span> and each level above is <span class="b b-md">&nbsp;</span>.</p>
-<pre>          [Tertiary consumers]     ← very little energy
-        [Secondary consumers]
-      [Primary consumers]
-    [Producers]                    ← most energy is here</pre>
+<div class="svg-wrap" style="margin:1rem 0;">
+<svg viewBox="0 0 480 240" width="480" height="240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Energy pyramid showing four trophic levels with producers at the base">
+  <defs>
+    <marker id="ep-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <!-- Level 4 — Tertiary consumers (top, narrowest) -->
+  <polygon points="210,20 270,20 310,70 170,70" class="dg-boundary" style="fill:#fef2f2;stroke:#94a3b8;"/>
+  <text x="240" y="51" class="dg-label" text-anchor="middle">Tertiary consumers</text>
+  <!-- Level 3 — Secondary consumers -->
+  <polygon points="170,75 310,75 350,125 130,125" class="dg-boundary" style="fill:#fff7ed;stroke:#94a3b8;"/>
+  <text x="240" y="106" class="dg-label" text-anchor="middle">Secondary consumers</text>
+  <!-- Level 2 — Primary consumers -->
+  <polygon points="130,130 350,130 390,180 90,180" class="dg-boundary" style="fill:#fefce8;stroke:#94a3b8;"/>
+  <text x="240" y="161" class="dg-label" text-anchor="middle">Primary consumers</text>
+  <!-- Level 1 — Producers (base, widest) -->
+  <polygon points="90,185 390,185 430,235 50,235" class="dg-boundary" style="fill:var(--unit-light);stroke:var(--unit-border);"/>
+  <text x="240" y="216" class="dg-label" text-anchor="middle" style="font-weight:600;fill:var(--unit-dark);">Producers</text>
+  <!-- Annotation: very little energy (right) -->
+  <line x1="315" y1="45" x2="375" y2="45" style="stroke:#94a3b8;stroke-width:1;" marker-end="url(#ep-arrow)"/>
+  <text x="380" y="42" class="dg-label-sm" style="fill:#64748b;">← very little</text>
+  <text x="380" y="54" class="dg-label-sm" style="fill:#64748b;">energy here</text>
+  <!-- Annotation: most energy (right) -->
+  <line x1="435" y1="210" x2="395" y2="210" style="stroke:var(--unit);stroke-width:1.5;" marker-end="url(#ep-arrow)"/>
+  <text x="438" y="206" class="dg-label-accent" style="font-size:11px;">most energy</text>
+  <text x="438" y="218" class="dg-label-accent" style="font-size:11px;">available here</text>
+  <!-- Blank label boxes (fill-in) -->
+  <rect x="4" y="36" width="80" height="20" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="44" y="50" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">≈ _____ kJ</text>
+  <rect x="4" y="91" width="80" height="20" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="44" y="105" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">≈ _____ kJ</text>
+  <rect x="4" y="146" width="80" height="20" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="44" y="160" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">≈ _____ kJ</text>
+  <rect x="4" y="201" width="80" height="20" rx="3" style="fill:var(--unit-light);stroke:var(--unit-border);stroke-width:1;"/>
+  <text x="44" y="215" class="dg-label-sm" text-anchor="middle" style="fill:var(--unit-dark);">10,000 kJ</text>
+</svg>
+<p style="font-family:system-ui;font-size:0.78rem;color:#64748b;text-align:center;margin-top:0.2rem;">Fig. — Energy pyramid. Fill in the energy amounts for each level using the 10% rule.</p>
+</div>
 <p><em>Label the pyramid above. Add approximate energy amounts if producers have 10,000 units.</em></p>
 <div class="connection">
   <div class="c-label">MISCONCEPTION</div>

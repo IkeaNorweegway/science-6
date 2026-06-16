@@ -616,16 +616,64 @@
 </div>
 <p><strong>Why vascular tissue is important in plant evolution:</strong> Early plants (mosses, liverworts) have no vascular tissue — they must remain <span class="b b-md">&nbsp;</span> to ground water. Vascular plants can grow <span class="b b-md">&nbsp;</span> because they can transport water up from the ground regardless of how far above the soil they are.</p>
 <p><strong>Diagram: label the parts below</strong></p>
-<pre>           [flower]
-              |
-         [leaf]---[leaf]
-              |
-           [stem]
-              |
-         ___________
-        |  [roots]  |
-        |___________|</pre>
-<p>On the diagram: mark where xylem travels upward (↑) and where phloem travels downward (↓).</p>
+<div class="svg-wrap" style="margin:1rem 0;">
+<svg viewBox="0 0 340 320" width="340" height="320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plant anatomy diagram showing flower, leaves, stem, and roots with xylem and phloem labels">
+  <defs>
+    <marker id="pl-up" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto">
+      <path d="M4,0 L8,8 L0,8 Z" fill="var(--unit)"/>
+    </marker>
+    <marker id="pl-dn" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto">
+      <path d="M4,8 L8,0 L0,0 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <!-- Soil rectangle -->
+  <rect x="50" y="220" width="240" height="90" rx="4" style="fill:#d6b896;stroke:#a16207;stroke-width:1.5;"/>
+  <text x="170" y="280" class="dg-label-sm" text-anchor="middle" style="fill:#78350f;">soil</text>
+  <!-- Roots -->
+  <line x1="170" y1="220" x2="170" y2="270" style="stroke:#92400e;stroke-width:3;"/>
+  <line x1="170" y1="255" x2="130" y2="295" style="stroke:#92400e;stroke-width:2;"/>
+  <line x1="170" y1="255" x2="210" y2="295" style="stroke:#92400e;stroke-width:2;"/>
+  <line x1="170" y1="265" x2="140" y2="305" style="stroke:#92400e;stroke-width:1.5;"/>
+  <line x1="170" y1="265" x2="200" y2="305" style="stroke:#92400e;stroke-width:1.5;"/>
+  <!-- Roots label box -->
+  <rect x="195" y="258" width="70" height="20" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="230" y="272" class="dg-label" text-anchor="middle" style="fill:#94a3b8;">__________</text>
+  <!-- Stem -->
+  <rect x="160" y="130" width="20" height="92" rx="3" style="fill:#84cc16;stroke:#4d7c0f;stroke-width:1.5;"/>
+  <!-- Stem label box -->
+  <rect x="202" y="162" width="70" height="20" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="237" y="176" class="dg-label" text-anchor="middle" style="fill:#94a3b8;">__________</text>
+  <line x1="202" y1="172" x2="182" y2="172" style="stroke:#94a3b8;stroke-width:1;"/>
+  <!-- Leaves -->
+  <ellipse cx="130" cy="155" rx="28" ry="14" style="fill:#4ade80;stroke:#15803d;stroke-width:1.5;" transform="rotate(-20,130,155)"/>
+  <ellipse cx="210" cy="155" rx="28" ry="14" style="fill:#4ade80;stroke:#15803d;stroke-width:1.5;" transform="rotate(20,210,155)"/>
+  <line x1="160" y1="162" x2="130" y2="155" style="stroke:#4d7c0f;stroke-width:1.5;"/>
+  <line x1="180" y1="162" x2="210" y2="155" style="stroke:#4d7c0f;stroke-width:1.5;"/>
+  <!-- Leaf label box -->
+  <rect x="35" y="138" width="70" height="20" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="70" y="152" class="dg-label" text-anchor="middle" style="fill:#94a3b8;">__________</text>
+  <line x1="105" y1="148" x2="128" y2="153" style="stroke:#94a3b8;stroke-width:1;"/>
+  <!-- Flower -->
+  <circle cx="170" cy="105" r="10" style="fill:#fde047;stroke:#ca8a04;stroke-width:1.5;"/>
+  <circle cx="170" cy="90"  r="7"  style="fill:#fbbf24;stroke:#ca8a04;stroke-width:1;"/>
+  <circle cx="158" cy="99"  r="7"  style="fill:#fbbf24;stroke:#ca8a04;stroke-width:1;"/>
+  <circle cx="182" cy="99"  r="7"  style="fill:#fbbf24;stroke:#ca8a04;stroke-width:1;"/>
+  <circle cx="163" cy="115" r="7"  style="fill:#fbbf24;stroke:#ca8a04;stroke-width:1;"/>
+  <circle cx="177" cy="115" r="7"  style="fill:#fbbf24;stroke:#ca8a04;stroke-width:1;"/>
+  <line x1="170" y1="130" x2="170" y2="118" style="stroke:#4d7c0f;stroke-width:1.5;"/>
+  <!-- Flower label box -->
+  <rect x="202" y="88" width="70" height="20" rx="3" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1;"/>
+  <text x="237" y="102" class="dg-label" text-anchor="middle" style="fill:#94a3b8;">__________</text>
+  <line x1="202" y1="98" x2="185" y2="103" style="stroke:#94a3b8;stroke-width:1;"/>
+  <!-- Xylem arrow (up, green) -->
+  <line x1="148" y1="210" x2="148" y2="145" style="stroke:var(--unit);stroke-width:2;" marker-end="url(#pl-up)"/>
+  <text x="120" y="182" class="dg-label-accent" style="font-size:10px;writing-mode:vertical-rl;text-anchor:middle;">Xylem ↑</text>
+  <!-- Phloem arrow (down, amber) -->
+  <line x1="192" y1="145" x2="192" y2="210" style="stroke:#f59e0b;stroke-width:2;" marker-end="url(#pl-dn)"/>
+  <text x="215" y="182" class="dg-label-sm" style="font-size:10px;fill:#b45309;writing-mode:vertical-rl;text-anchor:middle;">Phloem ↓</text>
+</svg>
+<p style="font-family:system-ui;font-size:0.78rem;color:#64748b;text-align:center;margin-top:0.2rem;">Fig. — Plant anatomy. Label each blank box with the correct plant part. Xylem (green ↑) carries water up; phloem (amber ↓) carries glucose down.</p>
+</div>
 <div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
 <p><em>Cover your notes. Answer from memory.</em></p>
   <li>Name two functions of the root system and two functions of the shoot system.<div class="al"></div></li>
@@ -678,11 +726,48 @@
   <p><em>"Plants get their food from the soil through their roots."</em>  <strong>Why this fails:</strong> In 1648, Jan Baptist van Helmont planted a willow seedling in 90 kg of dry soil. After 5 years, the willow gained 74 kg of mass. The soil lost only 57 grams. Where did the 74 kg come from? Not the soil — mostly from <span class="b b-md">&nbsp;</span> and <span class="b b-md">&nbsp;</span> in the air. This experiment showed that plants build their mass from air, not soil. Soil provides minerals dissolved in water, but the <em>food</em> (energy) a plant runs on comes from photosynthesis.</p>
 </div>
 <p><strong>The photosynthesis equation:</strong></p>
-<pre>               light energy
-                    ↓
-  carbon dioxide + water ──────→ glucose + oxygen
-     (CO₂)       (H₂O)           (C₆H₁₂O₆)  (O₂)
-     (from ____) (from ____)                 (released into ____)</pre>
+<div class="svg-wrap" style="margin:1rem 0;">
+<svg viewBox="0 0 520 160" width="520" height="160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Photosynthesis equation diagram showing inputs and outputs with fill-in blanks">
+  <defs>
+    <marker id="ps-arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#059669"/>
+    </marker>
+    <marker id="ps-down" markerWidth="8" markerHeight="10" refX="4" refY="8" orient="auto">
+      <path d="M0,0 L8,0 L4,10 Z" fill="#ca8a04"/>
+    </marker>
+  </defs>
+  <!-- Light energy label + down arrow -->
+  <text x="260" y="22" class="dg-label" text-anchor="middle" style="fill:#ca8a04;font-weight:600;">light energy</text>
+  <line x1="260" y1="28" x2="260" y2="58" style="stroke:#ca8a04;stroke-width:2;" marker-end="url(#ps-down)"/>
+  <!-- Reactant boxes (left) -->
+  <rect x="30" y="65" width="110" height="35" rx="5" style="fill:#dbeafe;stroke:#60a5fa;stroke-width:1.5;"/>
+  <text x="85" y="80" class="dg-label" text-anchor="middle">carbon dioxide</text>
+  <text x="85" y="93" class="dg-label-sm" text-anchor="middle">(CO₂)</text>
+  <text x="85" y="120" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">(from ____________)</text>
+  <rect x="160" y="65" width="90" height="35" rx="5" style="fill:#dbeafe;stroke:#60a5fa;stroke-width:1.5;"/>
+  <text x="205" y="80" class="dg-label" text-anchor="middle">water</text>
+  <text x="205" y="93" class="dg-label-sm" text-anchor="middle">(H₂O)</text>
+  <text x="205" y="120" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">(from ____________)</text>
+  <!-- Plus sign -->
+  <text x="147" y="88" class="dg-label" text-anchor="middle" style="font-size:16px;font-weight:700;fill:#64748b;">+</text>
+  <!-- Arrow -->
+  <line x1="255" y1="82" x2="305" y2="82" style="stroke:#059669;stroke-width:2.5;" marker-end="url(#ps-arrow)"/>
+  <!-- Product boxes (right) -->
+  <rect x="310" y="65" width="90" height="35" rx="5" style="fill:#d1fae5;stroke:#34d399;stroke-width:1.5;"/>
+  <text x="355" y="80" class="dg-label" text-anchor="middle">glucose</text>
+  <text x="355" y="93" class="dg-label-sm" text-anchor="middle">(C₆H₁₂O₆)</text>
+  <rect x="415" y="65" width="90" height="35" rx="5" style="fill:#d1fae5;stroke:#34d399;stroke-width:1.5;"/>
+  <text x="460" y="80" class="dg-label" text-anchor="middle">oxygen</text>
+  <text x="460" y="93" class="dg-label-sm" text-anchor="middle">(O₂)</text>
+  <text x="460" y="120" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">(released into ________)</text>
+  <!-- Plus sign between products -->
+  <text x="404" y="88" class="dg-label" text-anchor="middle" style="font-size:16px;font-weight:700;fill:#64748b;">+</text>
+  <!-- REACTANTS / PRODUCTS labels -->
+  <text x="140" y="150" class="dg-label-sm" text-anchor="middle" style="fill:#1d4ed8;font-weight:600;">REACTANTS (inputs)</text>
+  <text x="415" y="150" class="dg-label-sm" text-anchor="middle" style="fill:#059669;font-weight:600;">PRODUCTS (outputs)</text>
+</svg>
+<p style="font-family:system-ui;font-size:0.78rem;color:#64748b;text-align:center;margin-top:0.2rem;">Fig. — Photosynthesis equation. Fill in the three blanks: where does CO₂ come from? Where does H₂O come from? Where is O₂ released?</p>
+</div>
 <p>Fill in the blanks:</p>
 <ul>
   <li>CO₂ comes from: <span class="b b-md">&nbsp;</span> via tiny pores in leaves</li>
@@ -695,12 +780,51 @@
 <p><strong>Why photosynthesis matters to ecosystems:</strong></p>
 <p>Photosynthesis is the entry point of <span class="b b-md">&nbsp;</span> into almost every food chain on Earth. Producers convert <span class="b b-md">&nbsp;</span> energy into <span class="b b-md">&nbsp;</span> energy that all consumers depend on. Without photosynthesis, almost no life on Earth could survive.</p>
 <p><strong>A simple diagram — fill in the missing labels:</strong></p>
-<pre>        Sunlight
-           ↓
-    [Chloroplast]
-    CO₂ ──→ [     ] ──→ glucose (food for the plant)
-    H₂O ──→               ↓
-                          O₂ released into air</pre>
+<div class="svg-wrap" style="margin:1rem 0;">
+<svg viewBox="0 0 420 220" width="420" height="220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chloroplast photosynthesis flow diagram showing sunlight, CO2 and water inputs, and glucose and oxygen outputs">
+  <defs>
+    <marker id="cp-arrow" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#059669"/>
+    </marker>
+    <marker id="cp-down" markerWidth="8" markerHeight="9" refX="4" refY="7" orient="auto">
+      <path d="M0,0 L8,0 L4,9 Z" fill="#059669"/>
+    </marker>
+    <marker id="cp-sun" markerWidth="8" markerHeight="9" refX="4" refY="7" orient="auto">
+      <path d="M0,0 L8,0 L4,9 Z" fill="#ca8a04"/>
+    </marker>
+  </defs>
+  <!-- Sunlight label + arrow down -->
+  <text x="210" y="20" class="dg-label" text-anchor="middle" style="fill:#ca8a04;font-weight:600;font-size:13px;">☀ Sunlight</text>
+  <line x1="210" y1="26" x2="210" y2="60" style="stroke:#ca8a04;stroke-width:2;" marker-end="url(#cp-sun)"/>
+  <!-- Chloroplast box (central, fill-in) -->
+  <rect x="148" y="65" width="124" height="50" rx="8" style="fill:#d1fae5;stroke:var(--unit);stroke-width:2;"/>
+  <text x="210" y="87" class="dg-label" text-anchor="middle" style="fill:var(--unit-dark);font-weight:600;">Chloroplast</text>
+  <rect x="158" y="94" width="104" height="18" rx="3" style="fill:white;stroke:var(--unit-border);stroke-width:1;"/>
+  <text x="210" y="107" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">____________ pigment</text>
+  <!-- CO2 input arrow -->
+  <text x="45" y="88" class="dg-label" text-anchor="middle">CO₂</text>
+  <line x1="75" y1="88" x2="145" y2="88" style="stroke:var(--unit);stroke-width:2;" marker-end="url(#cp-arrow)"/>
+  <!-- H2O input arrow -->
+  <text x="45" y="108" class="dg-label" text-anchor="middle">H₂O</text>
+  <line x1="75" y1="108" x2="145" y2="102" style="stroke:var(--unit);stroke-width:2;" marker-end="url(#cp-arrow)"/>
+  <!-- Glucose output arrow -->
+  <line x1="272" y1="82" x2="355" y2="82" style="stroke:var(--unit);stroke-width:2;" marker-end="url(#cp-arrow)"/>
+  <rect x="358" y="68" width="55" height="28" rx="4" style="fill:#d1fae5;stroke:var(--unit-border);stroke-width:1.5;"/>
+  <text x="385" y="82" class="dg-label" text-anchor="middle">glucose</text>
+  <text x="385" y="93" class="dg-label-sm" text-anchor="middle">(food)</text>
+  <!-- O2 output arrow -->
+  <line x1="272" y1="100" x2="355" y2="110" style="stroke:var(--unit);stroke-width:2;" marker-end="url(#cp-arrow)"/>
+  <rect x="358" y="102" width="55" height="28" rx="4" style="fill:#f1f5f9;stroke:#cbd5e1;stroke-width:1.5;"/>
+  <text x="385" y="116" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">____________</text>
+  <text x="385" y="128" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">released</text>
+  <!-- Fill-in labels below inputs -->
+  <text x="45" y="135" class="dg-label-sm" text-anchor="middle" style="fill:#94a3b8;">from ___________</text>
+  <!-- Instruction -->
+  <text x="210" y="175" class="dg-label-sm" text-anchor="middle" style="fill:#64748b;">Fill in: (1) the pigment inside the chloroplast</text>
+  <text x="210" y="189" class="dg-label-sm" text-anchor="middle" style="fill:#64748b;">(2) where CO₂ and H₂O come from  (3) the missing output gas</text>
+</svg>
+<p style="font-family:system-ui;font-size:0.78rem;color:#64748b;text-align:center;margin-top:0.2rem;">Fig. — Photosynthesis in the chloroplast. Complete the three blanks.</p>
+</div>
 <div class="retrieval"><div class="r-label">Retrieval Check</div><ol>
 <p><em>Cover your notes. Answer from memory.</em></p>
   <li>Complete: Photosynthesis uses <span class="b b-md">&nbsp;</span>, <span class="b b-md">&nbsp;</span>, and <span class="b b-md">&nbsp;</span> to produce <span class="b b-md">&nbsp;</span> and <span class="b b-md">&nbsp;</span>.<div class="al"></div></li>
