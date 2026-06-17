@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interactions and Ecosystems — Teacher Notes | Grade 7 Science — v2</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: #1e293b;
+  background: #fff;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 28px 32px 56px;
+}
+:root {
+  --accent: #059669;
+  --accent-light: #d1fae5;
+  --accent-mid: #047857;
+}
+h1 { font-size: 22pt; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+h2 { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 32px 0 10px; border-bottom: 2px solid var(--accent-light); padding-bottom: 4px; }
+h3 { font-size: 11.5pt; font-weight: 700; color: #334155; margin: 0; text-transform: uppercase; letter-spacing: .04em; padding: 8px 12px; background: #f1f5f9; border-bottom: 1px solid #e2e8f0; }
+h4 { font-size: 11pt; font-weight: 700; color: var(--accent); margin: 16px 0 4px; }
+p { margin-bottom: 8px; }
+ul, ol { margin: 6px 0 10px 22px; }
+li { margin-bottom: 4px; }
+strong { font-weight: 700; }
+em { font-style: italic; color: #475569; }
+table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
+th { background: var(--accent-light); color: var(--accent); font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid var(--accent-light); }
+td { padding: 8px 10px; border: 1px solid #e2e8f0; vertical-align: top; }
+tr:nth-child(even) td { background: #f8fafc; }
+pre, code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 4px; }
+pre { padding: 10px 14px; margin: 8px 0; white-space: pre; overflow-x: auto; }
+code { padding: 1px 5px; }
+hr { border: none; border-top: 2px solid #e2e8f0; margin: 24px 0; }
+.teacher-banner { background: var(--accent); color: #fff; padding: 6px 16px; border-radius: 6px; font-size: 9pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
+.show { border-left: 4px solid #64748b; background: #f8fafc; padding: 10px 14px; margin: 0; }
+.say  { border-left: 4px solid #0284c7; background: #f0f9ff; padding: 10px 14px; margin: 0; border-top: 1px solid #e8f4fb; }
+.cue  { border-left: 4px solid #6366f1; background: #eef2ff; padding: 10px 14px; margin: 0; border-top: 1px solid #e8eeff; }
+.beat-label { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 5px; }
+.show .beat-label { color: #475569; }
+.say  .beat-label { color: #0284c7; }
+.cue  .beat-label { color: #4f46e5; }
+.beat { border: 1px solid #e2e8f0; border-radius: 8px; margin: 44px 0 0; overflow: hidden; }
+.flag { border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 14px 0; font-size: 10.5pt; }
+.flag .flag-label { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 5px; display: block; }
+.flag-misconception { border-left: 4px solid #dc2626; background: #fef2f2; }
+.flag-misconception .flag-label { color: #dc2626; }
+.flag-pacing { border-left: 4px solid #d97706; background: #fffbeb; }
+.flag-pacing .flag-label { color: #b45309; }
+.flag-alberta { border-left: 4px solid #16a34a; background: #f0fdf4; }
+.flag-alberta .flag-label { color: #15803d; }
+.answer-guide { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+.answer-guide .ag-label { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: #16a34a; margin-bottom: 8px; display: block; }
+.answer-guide ol { margin-left: 18px; }
+.answer-guide li { margin-bottom: 10px; }
+.section-meta { font-size: 9.5pt; color: #64748b; margin: 3px 0 14px; }
+.section-meta span { background: #f1f5f9; border: 1px solid #e2e8f0; padding: 1px 8px; border-radius: 10px; font-weight: 600; margin-right: 5px; white-space: nowrap; }
+.flags-summary th { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+@media print { body { padding: 12px 18px; } h2 { page-break-before: always; } .beat { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="teacher-banner">Teacher Copy — Not for Students</div>
+<h1>Grade 7 Science — Interactions and Ecosystems</h1>
+<p style="color:#64748b;margin-bottom:6px;">Teacher Notes Package · SHOW / SAY / CUE format · v2</p>
+<hr/>
+<h2>How to Use This Document</h2>
+<table>
+<tr><th>Label</th><th>What it contains</th></tr>
+<tr><td><strong>SHOW</strong></td><td>What is visible to students — draw on the board or project. One thing per beat.</td></tr>
+<tr><td><strong>SAY</strong></td><td>Key phrases and questions. Not a script — prompts for fluent delivery. Answers to blanks shown in <strong>[brackets]</strong>.</td></tr>
+<tr><td><strong>CUE</strong></td><td>The exact signal for students to write. Four types: ★ Write / ✎ Draw / ⊡ Think / ↩ Check</td></tr>
+</table>
+<h2>Unit at a Glance</h2>
+<table>
+<tr><th>Lesson</th><th>Content</th><th>Student notes section</th></tr>
+<tr><td>1</td><td>Section 1: What is an ecosystem? Pre-knowledge check</td><td>Pre-K + S1</td></tr>
+<tr><td>2</td><td>Section 1 continued: Alberta ecosystems</td><td>S1</td></tr>
+<tr><td>3</td><td>Section 2: Producers, consumers, decomposers</td><td>S2</td></tr>
+<tr><td>4</td><td>Section 2 continued: Building food webs (card activity)</td><td>S2</td></tr>
+<tr><td>5</td><td>Section 2 continued: Food webs in Alberta</td><td>S2</td></tr>
+<tr><td>6</td><td>Section 3: The 10% rule and energy pyramids</td><td>S3</td></tr>
+<tr><td>7</td><td>Section 3 continued: Energy pyramid and ecosystem implications</td><td>S3</td></tr>
+<tr><td>8</td><td>Section 4: Biodiversity</td><td>S4</td></tr>
+<tr><td>9</td><td>Section 4 continued: Keystone species</td><td>S4</td></tr>
+<tr><td>10</td><td>Section 5: Natural disturbances and succession</td><td>S5</td></tr>
+<tr><td>11</td><td>Section 5 continued: Human-caused change and invasive species</td><td>S5</td></tr>
+<tr><td>12</td><td>Section 5 continued: Alberta species at risk</td><td>S5</td></tr>
+<tr><td>13</td><td>Section 6: Ecosystem services</td><td>S6</td></tr>
+<tr><td>14</td><td>Section 6 continued: TEK and Indigenous stewardship</td><td>S6</td></tr>
+<tr><td>15</td><td>Retrieval practice</td><td>—</td></tr>
+<tr><td>16</td><td>Unit synthesis</td><td>Synthesis</td></tr>
+<tr><td>17</td><td>Test</td><td>—</td></tr>
+</table>
+<p><em>Students arrive thinking ecology is about naming animals. It's actually about relationships — energy moving through a system, species depending on each other in non-obvious ways, and humans embedded in (not above) the system. The biggest conceptual move is from "list of species" thinking to "system" thinking. The energy pyramid and the wolf reintroduction scenario are the two highest-leverage moments in the unit.</em></p>
+<h2>Materials per Lesson</h2>
+<ul>
+<li><strong>Every lesson:</strong> Student notes packages, whiteboard / projector</li>
+<li><strong>Lesson 1:</strong> 3-minute Alberta ecosystem video clip (boreal forest or grassland)</li>
+<li><strong>Lesson 2:</strong> Map of Alberta's five ecosystem types; images of each</li>
+<li><strong>Lesson 4:</strong> Organism cards (boreal forest species set — see lab notes)</li>
+<li><strong>Lesson 5:</strong> Real Alberta food web diagram with 8–10 species</li>
+<li><strong>Lesson 6:</strong> 1000 paperclips (or visual substitute) for 10% rule demonstration</li>
+<li><strong>Lesson 9:</strong> Wolf reintroduction scenario materials (Yellowstone or Alberta analog)</li>
+<li><strong>Lesson 11:</strong> Zebra mussel prevention video (Alberta government); purple loosestrife images</li>
+<li><strong>Lesson 12:</strong> Table of Alberta species at risk</li>
+<li><strong>Lesson 13:</strong> Municipal water treatment plant cost reference</li>
+<li><strong>Lesson 14:</strong> TEK video or invited Knowledge Keeper; Blackfoot burning practices / Cree land relationship materials</li>
+</ul>
+<hr/>
+<h2>Section 1 — Ecosystems and Components</h2>
+<p class="section-meta"><span>Lessons 1–2</span> <span>2 beats</span> <span>1 misconception flag</span></p>
+<p><em>Lessons 1–2 · Student notes: Section 1</em></p>
+
+<div class="beat"><h3>Beat 1.1 — What Is an Ecosystem?</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Play a 3-minute clip of an Alberta ecosystem (boreal forest or grassland). Ask: "What did you see?" List all answers on board. Then draw a line — one side "Living (biotic)," one side "Non-living (abiotic)." Let students do the sorting.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"An ecosystem isn't just the animals — it's everything, including the water, the soil, the temperature, the light, and all the invisible organisms. A list of species is not an ecosystem."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Pre-knowledge check (page 1 of notes) — do NOT correct. Collect observations of what students believe before instruction. These are your teaching targets. Then Section 1 vocabulary table and ecosystems definition.</p>
+</div></div>
+<div class="flag flag-misconception">
+<div class="flag-label">Misconception Flag — Humans Are External to Ecosystems</div>
+<p>Frame from Day 1: humans are not observers of ecosystems — we are embedded in them. Reinforce this in Lesson 13 (ecosystem services). If students describe ecosystems as things "out in nature" separate from human communities, address it here. "What ecosystem are you in right now?" is a useful opening move.</p>
+</div>
+
+<div class="beat"><h3>Beat 1.2 — Alberta Ecosystems</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Map of Alberta's five ecosystem types. Images of each. Ask students to predict: "Which abiotic factors differ between grassland and boreal forest?"</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"The abiotic factors set the rules. Everything living in an ecosystem has adapted to those specific conditions. Change the abiotic factors and the biotic community changes."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Students fill Section 1 notes: biotic vs. abiotic factors, Alberta ecosystem types. Exit Ticket 1.</p>
+</div></div>
+
+<hr/>
+<h2>Section 2 — Energy Flow</h2>
+<p class="section-meta"><span>Lessons 3–5</span> <span>3 beats</span> <span>1 misconception flag</span></p>
+<p><em>Lessons 3–5 · Student notes: Section 2</em></p>
+
+<div class="beat"><h3>Beat 2.1 — Producers, Consumers, and Decomposers</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Dead mouse in the forest thought experiment. "What happens to this mouse over the next year? Name every organism involved." Draw a web of organisms that respond to this mouse's death.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Decomposers are not cleanup crew. They are the nutrient recyclers — without them, nutrients lock up permanently in dead matter and producers starve."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Students fill Section 2 vocabulary table: producer, consumer, decomposer, trophic level. Guided notes on trophic levels. <em>Address decomposer misconception before moving on.</em></p>
+</div></div>
+<div class="flag flag-misconception">
+<div class="flag-label">Misconception Flag — Decomposers Are Not Important</div>
+<p>State the wrong idea explicitly; use the dead mouse scenario to show what happens without decomposers (nutrients locked in dead matter, producers starve, system collapses). This is the opening beat for Lesson 3 — address before notes. If more than 25% of students miss the decomposer question on Exit Ticket 2, reteach at the start of Lesson 5 before moving on.</p>
+</div>
+
+<div class="beat"><h3>Beat 2.2 — Building Food Webs</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Give students organism cards (boreal forest species). Have them arrange and connect with arrows. Compare webs across groups.<br/>
+Key card set needed: aspen, willow, grass, snowshoe hare, moose, beaver, lynx, wolf, great horned owl, raven, decomposer bacteria, mushrooms.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"The arrow means energy — it flows FROM what is eaten TO what eats it. The arrow is not 'who chases whom.'"</p>
+<p>"Why is the food web harder to draw than a food chain?" — discussion, not a written question. Let groups compare webs and explain differences.</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ⊡ Think</div>
+<p>"Why is the food web harder to draw than a food chain?" Discussion question. Students note one observation about raven's position in their web (raven is an omnivore and scavenger that links many chains).</p>
+</div></div>
+
+<div class="beat"><h3>Beat 2.3 — Food Webs in Alberta</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: A real Alberta food web diagram (boreal forest or grassland, 8–10 species). Ask: "What happens if we remove beavers? Trace every chain that includes them."</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Removing one species from a food web rarely affects only its immediate predator or prey. The effects cascade."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Students complete Section 2 continued notes. Exit Ticket 2.</p>
+</div></div>
+
+<hr/>
+<h2>Section 3 — Energy Pyramids</h2>
+<p class="section-meta"><span>Lessons 6–7</span> <span>2 beats</span> <span>1 misconception flag</span></p>
+<p><em>Lessons 6–7 · Student notes: Section 3</em></p>
+
+<div class="beat"><h3>Beat 3.1 — The 10% Rule</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: 1000 kg of grass → how much deer? → how much wolf? Walk through visually, not mathematically.<br/>
+Use a stack of 1000 paperclips at the base → 100 → 10 → 1. Or draw stacked bars shrinking by 90% each level.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Most of the energy at each level is lost as heat — used for movement, body maintenance, digestion. Only ~10% passes on. This is not inefficiency — it's physics."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write + ✎ Draw</div>
+<p>Students draw and label the energy pyramid in Section 3 notes with the 10% rule at each level. <em>Address misconception before the pyramid notes.</em></p>
+</div></div>
+<div class="flag flag-misconception">
+<div class="flag-label">Misconception Flag — Energy Increases Up the Food Chain</div>
+<p>Address in Lesson 6 before pyramid notes. Use the paperclip visual to invert student expectation before explaining. Students intuitively think "more powerful = more energy" — the wolf at the top of the pyramid has the least energy available to it. The pyramid inverts what they expect.</p>
+</div>
+
+<div class="beat"><h3>Beat 3.2 — Energy Pyramids and Ecosystem Implications</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Why are there so few wolves compared to moose? Map the population sizes onto the pyramid. Then: "What happens to the wolf population if the moose population drops by 50%?"</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Large territories exist because there isn't much energy at the top. A wolf doesn't have a large territory because it enjoys hiking — it needs that much area to find enough food."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Students fill Section 3 notes: pyramid implications, territory size explanation. Exit Ticket 3.</p>
+</div></div>
+
+<hr/>
+<h2>Section 4 — Biodiversity</h2>
+<p class="section-meta"><span>Lessons 8–9</span> <span>2 beats</span> <span>0 flags</span></p>
+<p><em>Lessons 8–9 · Student notes: Section 4</em></p>
+
+<div class="beat"><h3>Beat 4.1 — What Is Biodiversity?</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Monoculture field vs. wild meadow images side by side. Ask: "Which is more resilient to a pest? Why?"</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Biodiversity is insurance. If 30 species eat grasshoppers, a disease that kills grasshoppers doesn't collapse the ecosystem. If only one species does, the collapse cascades."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Students fill Section 4 vocabulary: biodiversity, species richness, resilience.</p>
+</div></div>
+
+<div class="beat"><h3>Beat 4.2 — Keystone Species</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Wolf reintroduction at Yellowstone (Alberta analog works too). Tell the story: wolf removal → ecosystem cascade → wolf reintroduction → recovery. Have students map each cause onto a food web.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"A keystone species is like a load-bearing wall. Remove it and everything else shifts. The wolf doesn't just eat elk — it changes elk behaviour, which changes vegetation, which changes beavers, which changes rivers."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ⊡ Think</div>
+<p>"What keystone species might be most important in a boreal forest? Why?" — pair-share, not collected. Section 4 continued notes. Exit Ticket 4.</p>
+</div></div>
+
+<hr/>
+<h2>Section 5 — Environmental Change</h2>
+<p class="section-meta"><span>Lessons 10–12</span> <span>3 beats</span> <span>1 misconception flag</span></p>
+<p><em>Lessons 10–12 · Student notes: Section 5</em></p>
+
+<div class="beat"><h3>Beat 5.1 — Natural Disturbances and Succession</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Boreal forest fire — before and after photos (5 years post-fire). Ask: "Is this ecosystem destroyed?" Let students predict recovery timeline before explaining.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Natural disturbances are part of the system. Boreal forest fires are actually necessary — jack pine cones only open and release seeds after exposure to fire. The forest evolved with fire."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Students fill Section 5 first half: natural disturbances, succession, resilience examples.</p>
+</div></div>
+
+<div class="beat"><h3>Beat 5.2 — Human-Caused Change and Invasive Species</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Zebra mussel prevention video (Alberta government). Show purple loosestrife choking a wetland vs. a healthy native wetland side by side.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Invasive species are not just aggressive competitors. They succeed because they escaped the predators and parasites that controlled them in their home ecosystem. We import only the competitor, not the controls."</p>
+<p>Tipping point concept — briefly: "Some changes can't be undone. Name one example you already know about."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Students fill Section 5 second half: invasive species definition, tipping point concept. Exit Ticket 5.</p>
+</div></div>
+<div class="flag flag-misconception">
+<div class="flag-label">Misconception Flag — Nature Always Recovers</div>
+<p>Address in Lesson 11 before environmental change notes. Show tipping point examples and contrast: fire in boreal forest (recovers because system evolved with fire) vs. permafrost loss or coral bleaching (may not recover — tipping point crossed). The key distinction: resilience has limits, and some human-caused changes push past those limits.</p>
+</div>
+
+<div class="beat"><h3>Beat 5.3 — Alberta Species at Risk</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Table of Alberta species at risk. Students choose one, do a 10-minute research sprint, then share one fact with the class.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Being 'at risk' doesn't mean endangered everywhere — it means the specific population or subspecies in Canada/Alberta is threatened. Context matters."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Students record one species, the threat, and one fact. Brief whole-class share.</p>
+</div></div>
+
+<hr/>
+<h2>Section 6 — Sustainability and Stewardship</h2>
+<p class="section-meta"><span>Lessons 13–14</span> <span>2 beats</span> <span>1 pacing flag</span></p>
+<p><em>Lessons 13–14 · Student notes: Section 6</em></p>
+
+<div class="beat"><h3>Beat 6.1 — Ecosystem Services</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: "If the boreal forest disappeared tomorrow, what would it cost?" Walk through: water filtration, carbon storage, biodiversity maintenance, climate regulation.<br/>
+Reference: municipal water treatment plant cost ($50–200M CAD). A wetland does the same job for free.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Ecosystem services are invisible until they're gone. We don't pay for the air we breathe or the water filtering that wetlands do. That doesn't mean they have no value — it means we're not charging ourselves the true cost of destroying them."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>Students fill Section 6 ecosystem services list and the water treatment plant cost comparison. "What is the wetland 'worth'?" — written response.</p>
+</div></div>
+
+<div class="beat"><h3>Beat 6.2 — TEK and Indigenous Stewardship</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Invite a Knowledge Keeper if possible — or use video of Blackfoot burning practices, Cree land relationships. Frame TEK as a different kind of knowledge production, not a lesser kind.</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"TEK is built from thousands of years of observation in one specific place. Western ecology has been practising for about 200 years globally. These are complementary — not competing — ways of knowing."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write</div>
+<p>"What does it mean to be a steward of an ecosystem rather than just a user of it?" — written reflection, not collected. Section 6 continued. Exit Ticket 6.</p>
+</div></div>
+<div class="flag flag-pacing">
+<div class="flag-label">Pacing Flag — TEK Lesson Needs Full Class Time</div>
+<p>TEK is not a cultural add-on — it is core content about what counts as evidence and how different knowledge systems contribute. If inviting a Knowledge Keeper, arrange well in advance. If using video, preview it for classroom suitability. The goal: students understand TEK as a legitimate, long-term, empirically grounded knowledge system — not as folklore or separate from science but as part of it.</p>
+</div>
+
+<hr/>
+<h2>Unit Synthesis — Facilitation Notes</h2>
+<p class="section-meta"><span>Lessons 15–16</span> <span>1 beat</span> <span>0 flags</span></p>
+
+<div class="beat"><h3>Beat 7.1 — Retrieval Practice and Synthesis</h3><div class="show">
+<div class="beat-label">Show</div>
+<p>Board: Six section headings —<br/>
+S1: Ecosystems · S2: Energy Flow · S3: Energy Pyramids · S4: Biodiversity · S5: Environmental Change · S6: Sustainability and Stewardship</p>
+</div><div class="say">
+<div class="beat-label">Say</div>
+<p>"Workbook Parts C and D independently, then pair-check. Teacher circulates to address remaining gaps."</p>
+<p>"Then: Unit Synthesis from memory (notes closed). Then return to Pre-Knowledge Check on page 1 — write responses to final prompts. Collect and read before the test."</p>
+</div><div class="cue">
+<div class="beat-label">Cue — ★ Write + ↩ Check</div>
+<p>Students complete workbook independently, pair-check, then synthesis from memory. Return to Pre-Knowledge Check and complete final prompts. Collect — read for revision targets before the test.</p>
+</div></div>
+
+<hr/>
+<h2>Assessment Notes</h2>
+<p><strong>Quiz (mid-unit after Section 3):</strong> Ecosystems, energy flow, and energy pyramids — LO 7-1-01 and 7-1-02 (partially).</p>
+<p><strong>Test:</strong> All five LOs. Extended response must include at least one food web interpretation question, one environmental change scenario, and one claim-with-evidence question.</p>
+<p><strong>Exit tickets:</strong> Check before next class. If more than 25% of students miss the decomposer question on ET2, reteach at the start of Lesson 5.</p>
+<hr/>
+<h2>Key Flags Summary</h2>
+<table class="flags-summary">
+<tr><th>Flag type</th><th>Location</th><th>Core issue</th></tr>
+<tr><td>Misconception</td><td>S1 Beat 1.1</td><td>Humans are external to ecosystems — wrong; humans are embedded in and dependent on ecosystems</td></tr>
+<tr><td>Misconception</td><td>S2 Beat 2.1</td><td>Decomposers are not important — wrong; they are the nutrient recyclers without which producers starve</td></tr>
+<tr><td>Misconception</td><td>S3 Beat 3.1</td><td>Energy increases up the food chain — wrong; ~90% is lost at each level; top predators have least energy available</td></tr>
+<tr><td>Misconception</td><td>S5 Beat 5.2</td><td>Nature always recovers — wrong; some changes cross tipping points and cannot be undone</td></tr>
+<tr><td>Pacing</td><td>S6 Beat 6.2</td><td>TEK lesson needs full class time; not a cultural add-on; arrange Knowledge Keeper visit well in advance</td></tr>
+</table>
+</body>
+</html>
