@@ -1,0 +1,357 @@
+{
+  "site": "Mr. Bremness — Classroom Materials",
+  "base_url": "https://ikeanorweegway.github.io/science-6",
+  "updated": "2026-06-18",
+  "assignments": [
+    {
+      "id": "sci6-climate-workbook",
+      "title": "Gr. 6 Science — Climate Workbook",
+      "subject": "Science",
+      "grade_level": "6",
+      "description": "Climate unit workbook covering greenhouse effect, fossil fuels, renewable energy, and climate solutions",
+      "url": "/materials/sci6-climate-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of climate concepts, greenhouse effect, and fossil fuels", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Applies concepts to real-world climate situations and explains cause-effect relationships", "max_points": 4 },
+        { "name": "Communication", "description": "Uses scientific vocabulary correctly and communicates ideas clearly in writing", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Diagrams are accurate, fully labelled, and support understanding", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-energy-resources-workbook",
+      "title": "Gr. 6 Science — Energy Resources Workbook",
+      "subject": "Science",
+      "grade_level": "6",
+      "description": "Energy resources unit covering renewable and non-renewable energy, energy transfer, and conservation",
+      "url": "/materials/sci6-energy-resources-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of energy types, sources, and transformations", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Applies energy concepts to evaluate resources and explain energy chains", "max_points": 4 },
+        { "name": "Communication", "description": "Uses scientific vocabulary correctly and explains ideas clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Energy diagrams and flow charts are accurate and labelled", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-forces-workbook",
+      "title": "Gr. 6 Science — Forces Workbook",
+      "subject": "Science",
+      "grade_level": "6",
+      "description": "Forces unit covering contact and non-contact forces, friction, gravity, and simple machines",
+      "url": "/materials/sci6-forces-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of force types, Newton's laws basics, and simple machines", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Applies force concepts to explain everyday situations and predict outcomes", "max_points": 4 },
+        { "name": "Communication", "description": "Uses scientific vocabulary correctly and explains reasoning clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Force diagrams show correct direction, magnitude notation, and labels", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-living-systems-workbook",
+      "title": "Gr. 6 Science — Living Systems Workbook",
+      "subject": "Science",
+      "grade_level": "6",
+      "description": "Living systems unit covering cells, organ systems, ecosystems, and biodiversity",
+      "url": "/materials/sci6-living-systems-workbook-gr6-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of cell structures, organ systems, and ecosystem relationships", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Applies biological concepts to explain how systems interact and maintain balance", "max_points": 4 },
+        { "name": "Communication", "description": "Uses scientific vocabulary correctly and explains biological processes clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Cell and system diagrams are accurate, labelled, and detailed", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-matter-workbook",
+      "title": "Gr. 6 Science — Matter Workbook",
+      "subject": "Science",
+      "grade_level": "6",
+      "description": "Matter unit covering states of matter, physical and chemical changes, atoms and molecules",
+      "url": "/materials/sci6-matter-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of matter properties, states, and particle theory", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Distinguishes physical vs chemical changes and explains matter transformations", "max_points": 4 },
+        { "name": "Communication", "description": "Uses scientific vocabulary correctly and explains concepts clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Particle diagrams for each state of matter are accurate and labelled", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-space-workbook",
+      "title": "Gr. 6 Science — Space Workbook",
+      "subject": "Science",
+      "grade_level": "6",
+      "description": "Space unit covering the solar system, moon phases, seasons, and space exploration",
+      "url": "/materials/sci6-space-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of solar system structure, moon phases, and seasons", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Explains planetary motion, eclipses, and seasonal changes using space concepts", "max_points": 4 },
+        { "name": "Communication", "description": "Uses scientific vocabulary correctly and explains space phenomena clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Solar system and moon phase diagrams are accurate, to scale where noted, and labelled", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-heat-temperature-workbook",
+      "title": "Gr. 7 Science — Heat & Temperature Workbook",
+      "subject": "Science",
+      "grade_level": "7",
+      "description": "Heat and temperature unit covering particle theory, heat transfer (conduction, convection, radiation), and thermal expansion",
+      "url": "/materials/sci7-heat-temperature-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of heat transfer methods and particle theory of heat", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Applies heat transfer concepts to explain everyday phenomena and thermal systems", "max_points": 4 },
+        { "name": "Communication", "description": "Uses scientific vocabulary correctly and explains heat concepts clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Heat transfer diagrams show direction of energy flow and are correctly labelled", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-interactions-ecosystems-workbook",
+      "title": "Gr. 7 Science — Interactions & Ecosystems Workbook",
+      "subject": "Science",
+      "grade_level": "7",
+      "description": "Ecosystems unit covering food webs, biotic/abiotic factors, population dynamics, and human impact",
+      "url": "/materials/sci7-interactions-ecosystems-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of ecosystem relationships, food webs, and ecological roles", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Analyses ecosystem changes and explains consequences of population shifts or human impact", "max_points": 4 },
+        { "name": "Communication", "description": "Uses ecological vocabulary correctly and communicates complex relationships clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Food webs and ecosystem diagrams are complete, correctly directional, and labelled", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-planet-earth-workbook",
+      "title": "Gr. 7 Science — Planet Earth Workbook",
+      "subject": "Science",
+      "grade_level": "7",
+      "description": "Earth science unit covering plate tectonics, rock cycle, erosion, and Earth's layers",
+      "url": "/materials/sci7-planet-earth-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of Earth's structure, plate tectonics, and rock types", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Applies Earth science concepts to explain geological events and landscape formation", "max_points": 4 },
+        { "name": "Communication", "description": "Uses geological vocabulary correctly and explains Earth processes clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Cross-section and tectonic diagrams are accurate, detailed, and labelled", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-plants-food-fibre-workbook",
+      "title": "Gr. 7 Science — Plants for Food & Fibre Workbook",
+      "subject": "Science",
+      "grade_level": "7",
+      "description": "Plants unit covering plant structures, photosynthesis, reproduction, and agricultural applications",
+      "url": "/materials/sci7-plants-food-fibre-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of plant structures, photosynthesis, and reproduction", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Applies plant biology to explain growth conditions, reproduction strategies, and agriculture", "max_points": 4 },
+        { "name": "Communication", "description": "Uses botanical vocabulary correctly and explains plant processes clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Plant structure and cell diagrams are accurate, detailed, and fully labelled", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-structures-forces-workbook",
+      "title": "Gr. 7 Science — Structures & Forces Workbook",
+      "subject": "Science",
+      "grade_level": "7",
+      "description": "Structures unit covering load types, structural design, materials properties, and failure analysis",
+      "url": "/materials/sci7-structures-forces-workbook-v1.html",
+      "rubric": [
+        { "name": "Knowledge & Understanding", "description": "Demonstrates accurate knowledge of load types, structural elements, and materials properties", "max_points": 4 },
+        { "name": "Application & Analysis", "description": "Analyses structural designs, identifies weak points, and explains how forces are distributed", "max_points": 4 },
+        { "name": "Communication", "description": "Uses engineering and science vocabulary correctly and explains structural concepts clearly", "max_points": 4 },
+        { "name": "Diagrams / Visuals", "description": "Structural diagrams show force vectors, joints, and labelled components correctly", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "math9-algebra-workbook",
+      "title": "Math 9 — Algebra Workbook",
+      "subject": "Math",
+      "grade_level": "9",
+      "description": "Algebra unit covering polynomials, linear equations, and linear relations",
+      "url": "/materials/math-9/worksheets/algebra/math9-algebra-workbook-v1.html",
+      "rubric": [
+        { "name": "Conceptual Understanding", "description": "Shows understanding of algebraic concepts, polynomial structure, and equation types", "max_points": 4 },
+        { "name": "Procedural Accuracy", "description": "Carries out algebraic manipulations and equation solving correctly with minimal errors", "max_points": 4 },
+        { "name": "Problem Solving", "description": "Selects appropriate strategies and applies them effectively to multi-step problems", "max_points": 4 },
+        { "name": "Communication / Reasoning", "description": "Shows work clearly, explains reasoning, and uses correct mathematical notation", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "math9-measurement-geometry-workbook",
+      "title": "Math 9 — Measurement & Geometry Workbook",
+      "subject": "Math",
+      "grade_level": "9",
+      "description": "Measurement and geometry unit covering similarity, measurement, and circle geometry",
+      "url": "/materials/math-9/worksheets/measurement-geometry/math9-measurement-geometry-workbook-v1.html",
+      "rubric": [
+        { "name": "Conceptual Understanding", "description": "Shows understanding of similarity, scale factors, and circle geometry theorems", "max_points": 4 },
+        { "name": "Procedural Accuracy", "description": "Carries out geometric constructions and calculations correctly", "max_points": 4 },
+        { "name": "Problem Solving", "description": "Applies geometric reasoning to solve multi-step measurement and geometry problems", "max_points": 4 },
+        { "name": "Communication / Reasoning", "description": "Shows construction steps clearly, justifies geometric reasoning, uses correct notation", "max_points": 4 }
+      ]
+    },
+
+    { "_comment": "── CONCEPT QUIZZES — main progress markers, 16 pts each ──────────────" },
+
+    {
+      "id": "sci6-climate-quiz",
+      "title": "Gr. 6 Science — Climate Concept Quiz",
+      "subject": "Science",
+      "grade_level": "6",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on the Climate unit — greenhouse effect, fossil fuels, renewable energy, and climate solutions",
+      "url": "/materials/sci6-climate-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Defines or identifies a key climate concept (e.g. greenhouse effect, greenhouse gases)", "max_points": 4 },
+        { "name": "Q2", "description": "Explains a climate process or cause-effect relationship (e.g. how CO₂ traps heat)", "max_points": 4 },
+        { "name": "Q3", "description": "Applies climate concepts to a real-world situation or compares energy sources", "max_points": 4 },
+        { "name": "Q4", "description": "Analyses a climate solution or evaluates its effectiveness using evidence", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-energy-resources-quiz",
+      "title": "Gr. 6 Science — Energy Resources Concept Quiz",
+      "subject": "Science",
+      "grade_level": "6",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on the Energy Resources unit — renewable/non-renewable, energy transfer, and conservation",
+      "url": "/materials/sci6-energy-resources-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Defines or identifies a key energy concept (e.g. renewable vs non-renewable, energy transformation)", "max_points": 4 },
+        { "name": "Q2", "description": "Explains an energy transfer process or describes an energy chain", "max_points": 4 },
+        { "name": "Q3", "description": "Applies energy concepts to evaluate or compare specific energy sources", "max_points": 4 },
+        { "name": "Q4", "description": "Analyses an energy conservation strategy or evaluates trade-offs using evidence", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-forces-quiz",
+      "title": "Gr. 6 Science — Forces Concept Quiz",
+      "subject": "Science",
+      "grade_level": "6",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on the Forces unit — contact/non-contact forces, friction, gravity, simple machines",
+      "url": "/materials/sci6-forces-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Defines or identifies a force type or simple machine", "max_points": 4 },
+        { "name": "Q2", "description": "Explains how a force acts on an object or describes the effect of friction/gravity", "max_points": 4 },
+        { "name": "Q3", "description": "Applies force concepts to predict the motion or outcome of a situation", "max_points": 4 },
+        { "name": "Q4", "description": "Draws and labels a force diagram or analyses how a simple machine changes force", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-living-systems-quiz",
+      "title": "Gr. 6 Science — Living Systems Concept Quiz",
+      "subject": "Science",
+      "grade_level": "6",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on Living Systems — cells, organ systems, ecosystems, biodiversity",
+      "url": "/materials/sci6-living-systems-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Identifies or defines a key biological structure (cell organelle, organ, or ecosystem component)", "max_points": 4 },
+        { "name": "Q2", "description": "Explains the function of an organ system or describes how cells work together", "max_points": 4 },
+        { "name": "Q3", "description": "Applies biological concepts to explain an ecosystem relationship or biodiversity role", "max_points": 4 },
+        { "name": "Q4", "description": "Labels a cell or system diagram, or analyses how removing a species affects an ecosystem", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-matter-quiz",
+      "title": "Gr. 6 Science — Matter Concept Quiz",
+      "subject": "Science",
+      "grade_level": "6",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on Matter — states of matter, physical/chemical changes, particle theory",
+      "url": "/materials/sci6-matter-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Defines a matter concept or identifies the properties of a state of matter", "max_points": 4 },
+        { "name": "Q2", "description": "Explains particle arrangement in each state or describes particle theory of matter", "max_points": 4 },
+        { "name": "Q3", "description": "Classifies changes as physical or chemical and justifies the classification", "max_points": 4 },
+        { "name": "Q4", "description": "Draws particle diagrams for states of matter or analyses a matter transformation", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci6-space-quiz",
+      "title": "Gr. 6 Science — Space Concept Quiz",
+      "subject": "Science",
+      "grade_level": "6",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on Space — solar system, moon phases, seasons, space exploration",
+      "url": "/materials/sci6-space-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Identifies a solar system body or explains a moon phase", "max_points": 4 },
+        { "name": "Q2", "description": "Explains what causes seasons or describes Earth's movement around the Sun", "max_points": 4 },
+        { "name": "Q3", "description": "Applies space concepts to explain an eclipse, tide, or planetary phenomenon", "max_points": 4 },
+        { "name": "Q4", "description": "Labels a diagram of moon phases or the solar system, or evaluates a space exploration challenge", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-heat-temperature-quiz",
+      "title": "Gr. 7 Science — Heat & Temperature Concept Quiz",
+      "subject": "Science",
+      "grade_level": "7",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on Heat & Temperature — particle theory, conduction, convection, radiation, thermal expansion",
+      "url": "/materials/sci7-heat-temperature-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Defines heat, temperature, or thermal energy using particle theory", "max_points": 4 },
+        { "name": "Q2", "description": "Explains one method of heat transfer (conduction, convection, or radiation) with an example", "max_points": 4 },
+        { "name": "Q3", "description": "Applies heat transfer concepts to explain a real-world situation or design problem", "max_points": 4 },
+        { "name": "Q4", "description": "Compares two heat transfer methods or draws a diagram showing direction of energy flow", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-interactions-ecosystems-quiz",
+      "title": "Gr. 7 Science — Interactions & Ecosystems Concept Quiz",
+      "subject": "Science",
+      "grade_level": "7",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on Interactions & Ecosystems — food webs, biotic/abiotic, population dynamics, human impact",
+      "url": "/materials/sci7-interactions-ecosystems-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Defines an ecological term (biotic, abiotic, producer, consumer, decomposer, etc.)", "max_points": 4 },
+        { "name": "Q2", "description": "Explains a feeding relationship or describes energy flow through a food web", "max_points": 4 },
+        { "name": "Q3", "description": "Predicts how a population change would affect other parts of an ecosystem", "max_points": 4 },
+        { "name": "Q4", "description": "Draws or completes a food web, or analyses a human impact on an ecosystem", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-planet-earth-quiz",
+      "title": "Gr. 7 Science — Planet Earth Concept Quiz",
+      "subject": "Science",
+      "grade_level": "7",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on Planet Earth — plate tectonics, rock cycle, erosion, Earth's layers",
+      "url": "/materials/sci7-planet-earth-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Identifies a layer of Earth or a rock type and describes its characteristics", "max_points": 4 },
+        { "name": "Q2", "description": "Explains a step in the rock cycle or describes how plate movement causes earthquakes/volcanoes", "max_points": 4 },
+        { "name": "Q3", "description": "Applies plate tectonics to explain the formation of a specific landform or geological feature", "max_points": 4 },
+        { "name": "Q4", "description": "Labels an Earth cross-section or rock cycle diagram, or analyses an erosion scenario", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-plants-food-fibre-quiz",
+      "title": "Gr. 7 Science — Plants for Food & Fibre Concept Quiz",
+      "subject": "Science",
+      "grade_level": "7",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on Plants — structures, photosynthesis, reproduction, and agriculture",
+      "url": "/materials/sci7-plants-food-fibre-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Identifies a plant structure and describes its function (root, stem, leaf, flower, etc.)", "max_points": 4 },
+        { "name": "Q2", "description": "Explains the process of photosynthesis — inputs, outputs, and where it occurs", "max_points": 4 },
+        { "name": "Q3", "description": "Compares sexual and asexual reproduction in plants, or explains pollination/seed dispersal", "max_points": 4 },
+        { "name": "Q4", "description": "Labels a plant cell or flower diagram, or evaluates an agricultural practice using plant biology", "max_points": 4 }
+      ]
+    },
+    {
+      "id": "sci7-structures-forces-quiz",
+      "title": "Gr. 7 Science — Structures & Forces Concept Quiz",
+      "subject": "Science",
+      "grade_level": "7",
+      "type": "concept-quiz",
+      "description": "4-question concept quiz on Structures & Forces — load types, structural design, materials, failure analysis",
+      "url": "/materials/sci7-structures-forces-quiz-v1.html",
+      "rubric": [
+        { "name": "Q1", "description": "Defines a structural term or identifies a load type (compression, tension, shear, torsion)", "max_points": 4 },
+        { "name": "Q2", "description": "Explains how a structural element (beam, arch, truss) distributes force", "max_points": 4 },
+        { "name": "Q3", "description": "Applies structural concepts to explain why a design succeeded or failed", "max_points": 4 },
+        { "name": "Q4", "description": "Draws a labelled structural diagram with force vectors, or evaluates a material choice", "max_points": 4 }
+      ]
+    }
+  ]
+}

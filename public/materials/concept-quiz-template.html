@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  CONCEPT QUIZ TEMPLATE — Mr. Bremness Classroom Materials   ║
+  ║  Copy this file and fill in the 4 marked sections below.    ║
+  ║  Each quiz follows an identical layout — one page, 16 pts.  ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  HOW TO USE:
+  1. Copy this file → rename to e.g. sci6-climate-quiz-v1.html
+  2. Fill in UNIT_NAME, COURSE_LABEL, ACCENT_COLOR below
+  3. Fill in Q1–Q4 question text
+  4. Add to gradescope-manifest.json as a concept-quiz entry
+-->
+<title>Concept Quiz — [UNIT_NAME]</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* ── FILL IN: choose one accent ───────────────────────────── */
+    --accent:       #0891b2;   /* sci6/sci7: #0891b2 (cyan)       */
+                               /* math9:     #4f46e5 (indigo)     */
+    --accent-light: #ecfeff;   /* sci: #ecfeff  |  math: #eef2ff  */
+    --accent-dark:  #164e63;   /* sci: #164e63  |  math: #312e81  */
+    --accent-mid:   #06b6d4;   /* sci: #06b6d4  |  math: #6366f1  */
+    /* ────────────────────────────────────────────────────────── */
+  }
+
+  @page { size: A4; margin: 14mm 16mm; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: #1e293b;
+    background: #fff;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px 24px 24px;
+  }
+
+  /* ── Header ───────────────────────────────────────────────── */
+  .quiz-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .quiz-header-left { flex: 1; }
+  .quiz-label {
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+  .quiz-title {
+    font-size: 16pt;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+  }
+  .quiz-sub {
+    font-size: 9pt;
+    color: #64748b;
+    margin-top: 3px;
+  }
+  .student-box {
+    flex-shrink: 0;
+    margin-left: 20px;
+    text-align: center;
+  }
+  .student-box-label {
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 3px;
+  }
+  .student-code-input {
+    width: 72px;
+    height: 40px;
+    border: 2.5px solid #1e293b;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18pt;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: #cbd5e1;
+    background: #f8fafc;
+  }
+
+  /* ── Student info row ─────────────────────────────────────── */
+  .info-row {
+    display: flex;
+    gap: 24px;
+    font-size: 9.5pt;
+    color: #475569;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .info-field {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex: 1;
+  }
+  .info-field span { font-weight: 600; white-space: nowrap; }
+  .info-line {
+    flex: 1;
+    border-bottom: 1px solid #94a3b8;
+    min-width: 60px;
+  }
+
+  /* ── Question blocks ──────────────────────────────────────── */
+  .questions { display: flex; flex-direction: column; gap: 8px; }
+
+  .q-block {
+    border: 1.5px solid #e2e8f0;
+    border-left: 4px solid var(--accent-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px 12px;
+    background: #fff;
+  }
+
+  .q-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .q-num {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+  .q-text {
+    font-size: 10pt;
+    color: #1e293b;
+    flex: 1;
+    font-weight: 500;
+  }
+  .q-score {
+    flex-shrink: 0;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 9pt;
+    color: #64748b;
+  }
+  .score-box {
+    width: 28px;
+    height: 22px;
+    border: 1.5px solid #94a3b8;
+    border-radius: 4px;
+    background: #f8fafc;
+  }
+
+  .answer-lines { margin-top: 4px; }
+  .al {
+    display: block;
+    border-bottom: 1px solid #cbd5e1;
+    height: 1.75rem;
+    margin: 3px 0;
+  }
+
+  /* ── Total bar ────────────────────────────────────────────── */
+  .total-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 2px solid #e2e8f0;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .total-score {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .total-box {
+    width: 38px;
+    height: 28px;
+    border: 2px solid #1e293b;
+    border-radius: 5px;
+    background: #f8fafc;
+  }
+
+  /* ── Footer ───────────────────────────────────────────────── */
+  .quiz-footer {
+    margin-top: 8px;
+    font-size: 8pt;
+    color: #94a3b8;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<div class="quiz-header">
+  <div class="quiz-header-left">
+    <div class="quiz-label">Concept Quiz</div>
+    <!-- ▼ FILL IN: Unit name -->
+    <div class="quiz-title">[Unit Name]</div>
+    <!-- ▼ FILL IN: e.g. "Grade 6 Science" or "Math 9" -->
+    <div class="quiz-sub">[Course Label] &nbsp;·&nbsp; 16 marks</div>
+  </div>
+  <div class="student-box">
+    <div class="student-box-label">Student Code</div>
+    <div class="student-code-input">S__</div>
+  </div>
+</div>
+
+<!-- ═══════════════ INFO ROW ═══════════════ -->
+<div class="info-row">
+  <div class="info-field"><span>Name:</span><div class="info-line"></div></div>
+  <div class="info-field"><span>Date:</span><div class="info-line"></div></div>
+  <div class="info-field"><span>Class:</span><div class="info-line"></div></div>
+</div>
+
+<!-- ═══════════════ QUESTIONS ═══════════════ -->
+<div class="questions">
+
+  <!-- ── Q1 ── -->
+  <div class="q-block">
+    <div class="q-top">
+      <span class="q-num">Q1.</span>
+      <!-- ▼ FILL IN: Question text -->
+      <span class="q-text">[Question 1 text — define a key term or identify a concept]</span>
+      <div class="q-score"><div class="score-box"></div>/ 4</div>
+    </div>
+    <div class="answer-lines">
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+    </div>
+  </div>
+
+  <!-- ── Q2 ── -->
+  <div class="q-block">
+    <div class="q-top">
+      <span class="q-num">Q2.</span>
+      <!-- ▼ FILL IN: Question text -->
+      <span class="q-text">[Question 2 text — explain a process or relationship]</span>
+      <div class="q-score"><div class="score-box"></div>/ 4</div>
+    </div>
+    <div class="answer-lines">
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+    </div>
+  </div>
+
+  <!-- ── Q3 ── -->
+  <div class="q-block">
+    <div class="q-top">
+      <span class="q-num">Q3.</span>
+      <!-- ▼ FILL IN: Question text -->
+      <span class="q-text">[Question 3 text — apply a concept to a new situation]</span>
+      <div class="q-score"><div class="score-box"></div>/ 4</div>
+    </div>
+    <div class="answer-lines">
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+    </div>
+  </div>
+
+  <!-- ── Q4 ── -->
+  <div class="q-block">
+    <div class="q-top">
+      <span class="q-num">Q4.</span>
+      <!-- ▼ FILL IN: Question text -->
+      <span class="q-text">[Question 4 text — analyse, evaluate, or diagram]</span>
+      <div class="q-score"><div class="score-box"></div>/ 4</div>
+    </div>
+    <div class="answer-lines">
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+      <span class="al"></span>
+    </div>
+  </div>
+
+</div><!-- /questions -->
+
+<!-- ═══════════════ TOTAL ═══════════════ -->
+<div class="total-bar">
+  <span>TOTAL</span>
+  <div class="total-score">
+    <div class="total-box"></div>
+    <span>/ 16</span>
+  </div>
+</div>
+
+<div class="quiz-footer">Mr. Bremness · Classroom Materials</div>
+
+</body>
+</html>
