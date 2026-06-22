@@ -30,11 +30,15 @@ const teacherFileRefs: Record<string, { notes: string; notesEF: string; workbook
 };
 const refs = teacherFileRefs[unitSlug!] ?? teacherFileRefs['matter'];
 
+const teacherNotesVersion: Record<string, number> = {
+  'climate': 2,
+};
+
 // Teacher HTML materials (to be built and placed in public/materials/)
 const teacherMaterials: { label: string; href: string; tag: string; color: string }[] = [
   {
     label: 'Teacher Notes — Full SHOW/SAY/CUE Guide',
-    href: `${base}materials/sci6-${unitSlug}-teachernotes-v1.html`,
+    href: `${base}materials/sci6-${unitSlug}-teachernotes-v${teacherNotesVersion[unitSlug!] ?? 1}.html`,
     tag: 'Teacher Notes',
     color: 'border-l-amber-500 bg-amber-50',
   },

@@ -13,6 +13,7 @@ const units = [
     colorLight: '#d1fae5',
     colorBorder: '#6ee7b7',
     tagStyle: 'bg-emerald-100 text-emerald-800',
+    teacherGuideVersion: 2,
     misconceptions: ['Ecosystems can recover from any disturbance', 'Decomposers are not important', 'Food chains are linear in nature'],
   },
   {
@@ -25,6 +26,7 @@ const units = [
     colorLight: '#dcfce7',
     colorBorder: '#86efac',
     tagStyle: 'bg-green-100 text-green-800',
+    teacherGuideVersion: 2,
     misconceptions: ['Plants get food from soil', 'Photosynthesis and respiration are opposites', 'GMO and selective breeding are the same'],
   },
   {
@@ -37,6 +39,7 @@ const units = [
     colorLight: '#ffedd5',
     colorBorder: '#fdba74',
     tagStyle: 'bg-orange-100 text-orange-800',
+    teacherGuideVersion: 3,
     misconceptions: ['Cold travels into warm spaces', 'Metal is colder than wood', 'Heat and temperature are the same'],
   },
   {
@@ -49,6 +52,7 @@ const units = [
     colorLight: '#ede9fe',
     colorBorder: '#c4b5fd',
     tagStyle: 'bg-violet-100 text-violet-800',
+    teacherGuideVersion: 2,
     misconceptions: ['Simple machines reduce the work done', 'Heavier = more stable', 'Compression and tension are the same'],
   },
   {
@@ -61,6 +65,7 @@ const units = [
     colorLight: '#fef3c7',
     colorBorder: '#fcd34d',
     tagStyle: 'bg-amber-100 text-amber-800',
+    teacherGuideVersion: 2,
     misconceptions: ['Continents are fixed', 'Volcanoes and earthquakes happen everywhere', 'Sedimentary rocks form quickly'],
   },
 ];
@@ -101,7 +106,7 @@ const units = [
             <span class="text-sm font-medium text-slate-700">SHOW / SAY / CUE · Lesson Sequence · Lab Notes</span>
           </div>
           <a
-            href={`${base}science7/view/${u.slug}/sci7-${u.slug}-teacherguide-v1`}
+            href={`${base}science7/view/${u.slug}/sci7-${u.slug}-teacherguide-v${u.teacherGuideVersion}`}
             target="_blank"
             rel="noopener"
             class="flex-shrink-0 text-sm font-semibold text-amber-700 hover:text-amber-900 border border-amber-300 hover:border-amber-500 px-4 py-1.5 rounded-lg transition-colors whitespace-nowrap"
