@@ -400,13 +400,46 @@
   <div class="q-body">
     <p><strong>Visual question.</strong> Label the six phase changes on the diagram. Use the word bank.</p>
     <div class="word-bank">Word bank: melting · freezing · evaporation · condensation · sublimation · deposition</div>
-    <pre>                    _________________
-           ┌────────────────────────────────┐
-           ↑                                ↓  _________________
-           |                                |
-       SOLID  ──────────────────────▶  LIQUID  ──────────────────▶  GAS
-              ◀────────────────────          ◀──────────────────
-     _________________ (this way)     _________________ (this way)</pre>
+    <svg viewBox="0 0 720 260" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ah1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1e293b"/></marker>
+      </defs>
+      <!-- State labels -->
+      <rect x="40" y="100" width="120" height="44" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1.5"/>
+      <text x="100" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">SOLID</text>
+      <rect x="290" y="100" width="120" height="44" rx="6" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+      <text x="350" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">LIQUID</text>
+      <rect x="540" y="100" width="120" height="44" rx="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1.5"/>
+      <text x="600" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">GAS</text>
+      <!-- Forward arrows (heating): melting, evaporation -->
+      <line x1="160" y1="112" x2="286" y2="112" stroke="#1e293b" stroke-width="1.5" marker-end="url(#ah1)"/>
+      <line x1="175" y1="100" x2="270" y2="100" stroke="none"/>
+      <line x1="410" y1="112" x2="536" y2="112" stroke="#1e293b" stroke-width="1.5" marker-end="url(#ah1)"/>
+      <!-- Forward labels (blanks) -->
+      <line x1="180" y1="102" x2="270" y2="102" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="225" y="97" text-anchor="middle" font-size="11" fill="#64748b" font-style="italic">(label)</text>
+      <line x1="430" y1="102" x2="520" y2="102" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="475" y="97" text-anchor="middle" font-size="11" fill="#64748b" font-style="italic">(label)</text>
+      <!-- Reverse arrows (cooling): freezing, condensation -->
+      <line x1="290" y1="136" x2="164" y2="136" stroke="#1e293b" stroke-width="1.5" marker-end="url(#ah1)"/>
+      <line x1="540" y1="136" x2="414" y2="136" stroke="#1e293b" stroke-width="1.5" marker-end="url(#ah1)"/>
+      <!-- Reverse labels (blanks) -->
+      <line x1="180" y1="152" x2="270" y2="152" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="225" y="167" text-anchor="middle" font-size="11" fill="#64748b" font-style="italic">(label)</text>
+      <line x1="430" y1="152" x2="520" y2="152" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="475" y="167" text-anchor="middle" font-size="11" fill="#64748b" font-style="italic">(label)</text>
+      <!-- Sublimation arrow (top, SOLID → GAS) -->
+      <path d="M 100 100 Q 100 30, 350 30 Q 600 30, 600 100" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#ah1)"/>
+      <line x1="290" y1="22" x2="410" y2="22" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="350" y="17" text-anchor="middle" font-size="11" fill="#64748b" font-style="italic">(label)</text>
+      <!-- Deposition arrow (top, GAS → SOLID) -->
+      <path d="M 600 100 Q 600 55, 350 55 Q 100 55, 100 100" fill="none" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#ah1)"/>
+      <line x1="290" y1="62" x2="410" y2="62" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="350" y="77" text-anchor="middle" font-size="11" fill="#64748b" font-style="italic">(label)</text>
+      <!-- Heating / Cooling legend -->
+      <text x="225" y="195" text-anchor="middle" font-size="11" fill="#475569">→ = add heat</text>
+      <text x="225" y="212" text-anchor="middle" font-size="11" fill="#475569">← = remove heat</text>
+    </svg>
     <p>Circle the phase changes that need <strong>HEATING</strong>. Put a box around the ones that need <strong>COOLING</strong>.</p>
   </div>
 </div>
@@ -470,19 +503,38 @@
   </div>
   <div class="q-body">
     <p><strong>Visual question.</strong> Two beakers are shown below. Complete the particle diagrams inside each beaker.</p>
-    <pre>Beaker A — Liquid Water              Beaker B — Ice floating on water
+    <svg viewBox="0 0 720 280" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" xmlns="http://www.w3.org/2000/svg">
+      <!-- Beaker A -->
+      <text x="160" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Beaker A — Liquid Water</text>
+      <!-- Beaker outline -->
+      <path d="M 60 40 L 60 240 L 260 240 L 260 40" fill="none" stroke="#1e293b" stroke-width="2"/>
+      <!-- Water fill area -->
+      <rect x="62" y="80" width="196" height="158" fill="#dbeafe" opacity="0.3" stroke="none"/>
+      <!-- Water surface line -->
+      <line x1="62" y1="80" x2="258" y2="80" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <!-- Draw-here area -->
+      <rect x="80" y="90" width="160" height="130" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="5 3"/>
+      <text x="160" y="150" text-anchor="middle" font-size="11" fill="#94a3b8">(draw liquid particle</text>
+      <text x="160" y="166" text-anchor="middle" font-size="11" fill="#94a3b8">arrangement here)</text>
 
-┌─────────────────┐                  ┌─────────────────────────┐
-│                 │                  │  ┌───────────────────┐  │
-│                 │                  │  │   ICE (solid)     │  │
-│  (draw liquid   │                  │  │  (draw particles  │  │
-│   particle      │                  │  │   — more or less  │  │
-│   arrangement   │                  │  │   spread out than │  │
-│   here)         │                  │  │   liquid below?)  │  │
-│                 │                  │  └───────────────────┘  │
-└─────────────────┘                  │  (draw liquid water     │
-                                     │   particles below ice)  │
-                                     └─────────────────────────┘</pre>
+      <!-- Beaker B -->
+      <text x="530" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Beaker B — Ice floating on water</text>
+      <!-- Beaker outline -->
+      <path d="M 400 40 L 400 240 L 660 240 L 660 40" fill="none" stroke="#1e293b" stroke-width="2"/>
+      <!-- Water fill area below ice -->
+      <rect x="402" y="150" width="256" height="88" fill="#dbeafe" opacity="0.3" stroke="none"/>
+      <!-- Water surface line -->
+      <line x1="402" y1="100" x2="658" y2="100" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <!-- Ice block floating -->
+      <rect x="420" y="70" width="220" height="80" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1.5"/>
+      <text x="530" y="100" text-anchor="middle" font-size="12" font-weight="600" fill="#0e7490">ICE (solid)</text>
+      <rect x="435" y="108" width="190" height="30" rx="3" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="530" y="128" text-anchor="middle" font-size="10" fill="#94a3b8">(draw particles here)</text>
+      <!-- Liquid below ice draw area -->
+      <rect x="420" y="160" width="220" height="65" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="5 3"/>
+      <text x="530" y="190" text-anchor="middle" font-size="11" fill="#94a3b8">(draw liquid water</text>
+      <text x="530" y="206" text-anchor="middle" font-size="11" fill="#94a3b8">particles below ice)</text>
+    </svg>
     <p>In Beaker B, which has more space between particles — the ice or the liquid water? <span class="al-sm">&nbsp;</span></p>
     <p>Why does ice float? Use the word "density" in your answer.</p>
     <div class="al"></div><div class="al"></div>
@@ -557,15 +609,28 @@
   </div>
   <div class="q-body">
     <p><strong>Visual question.</strong> Draw the particle arrangement for each state of matter in the boxes below. Do not look at your notes.</p>
-    <pre>SOLID                     LIQUID                    GAS
-┌──────────────────┐      ┌──────────────────┐      ┌──────────────────┐
-│                  │      │                  │      │                  │
-│                  │      │                  │      │                  │
-│  (draw here)     │      │  (draw here)     │      │  (draw here)     │
-│                  │      │                  │      │                  │
-└──────────────────┘      └──────────────────┘      └──────────────────┘
-Fixed shape? Y / N         Fixed shape? Y / N         Fixed shape? Y / N
-Fixed volume? Y / N        Fixed volume? Y / N        Fixed volume? Y / N</pre>
+    <svg viewBox="0 0 720 230" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" xmlns="http://www.w3.org/2000/svg">
+      <!-- SOLID box -->
+      <text x="110" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">SOLID</text>
+      <rect x="20" y="30" width="180" height="120" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="110" y="95" text-anchor="middle" font-size="11" fill="#94a3b8">(draw here)</text>
+      <text x="110" y="170" text-anchor="middle" font-size="11" fill="#475569">Fixed shape?  Y / N</text>
+      <text x="110" y="188" text-anchor="middle" font-size="11" fill="#475569">Fixed volume?  Y / N</text>
+
+      <!-- LIQUID box -->
+      <text x="360" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">LIQUID</text>
+      <rect x="270" y="30" width="180" height="120" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="360" y="95" text-anchor="middle" font-size="11" fill="#94a3b8">(draw here)</text>
+      <text x="360" y="170" text-anchor="middle" font-size="11" fill="#475569">Fixed shape?  Y / N</text>
+      <text x="360" y="188" text-anchor="middle" font-size="11" fill="#475569">Fixed volume?  Y / N</text>
+
+      <!-- GAS box -->
+      <text x="610" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">GAS</text>
+      <rect x="520" y="30" width="180" height="120" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="610" y="95" text-anchor="middle" font-size="11" fill="#94a3b8">(draw here)</text>
+      <text x="610" y="170" text-anchor="middle" font-size="11" fill="#475569">Fixed shape?  Y / N</text>
+      <text x="610" y="188" text-anchor="middle" font-size="11" fill="#475569">Fixed volume?  Y / N</text>
+    </svg>
   </div>
 </div>
 
@@ -722,19 +787,52 @@ Fixed volume? Y / N        Fixed volume? Y / N        Fixed volume? Y / N</pre>
   </div>
   <div class="q-body">
     <p><strong>Visual question.</strong> The thermometer below has some key temperatures marked. Write the correct label beside each mark.</p>
-    <pre>THERMOMETER:
-|──────|  ← 100°C   label: _______________________
-|      |
-|      |
-|──────|  ← 37°C    label: _______________________
-|      |
-|──────|  ← 20°C    label: _______________________
-|      |
-|      |
-|──────|  ← 0°C     label: _______________________
-|      |
-|──────|  ← −20°C   label: _______________________
-|______|</pre>
+    <svg viewBox="0 0 520 360" width="100%" style="max-width:520px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" xmlns="http://www.w3.org/2000/svg">
+      <!-- Thermometer body -->
+      <rect x="60" y="20" width="40" height="300" rx="20" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+      <!-- Mercury column (partial fill to ~37 C area) -->
+      <rect x="70" y="140" width="20" height="160" rx="4" fill="#ef4444" opacity="0.6"/>
+      <!-- Bulb at bottom -->
+      <circle cx="80" cy="310" r="18" fill="#ef4444" opacity="0.7" stroke="#1e293b" stroke-width="2"/>
+
+      <!-- 100 C mark -->
+      <line x1="55" y1="40" x2="105" y2="40" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="115" y="44" font-size="12" font-weight="600" fill="#1e293b">100°C</text>
+      <text x="180" y="44" font-size="11" fill="#475569">label:</text>
+      <line x1="215" y1="46" x2="420" y2="46" stroke="#94a3b8" stroke-width="1.5"/>
+
+      <!-- 37 C mark -->
+      <line x1="55" y1="120" x2="105" y2="120" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="115" y="124" font-size="12" font-weight="600" fill="#1e293b">37°C</text>
+      <text x="165" y="124" font-size="11" fill="#475569">label:</text>
+      <line x1="200" y1="126" x2="420" y2="126" stroke="#94a3b8" stroke-width="1.5"/>
+
+      <!-- 20 C mark -->
+      <line x1="55" y1="160" x2="105" y2="160" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="115" y="164" font-size="12" font-weight="600" fill="#1e293b">20°C</text>
+      <text x="165" y="164" font-size="11" fill="#475569">label:</text>
+      <line x1="200" y1="166" x2="420" y2="166" stroke="#94a3b8" stroke-width="1.5"/>
+
+      <!-- 0 C mark -->
+      <line x1="55" y1="230" x2="105" y2="230" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="115" y="234" font-size="12" font-weight="600" fill="#1e293b">0°C</text>
+      <text x="155" y="234" font-size="11" fill="#475569">label:</text>
+      <line x1="190" y1="236" x2="420" y2="236" stroke="#94a3b8" stroke-width="1.5"/>
+
+      <!-- -20 C mark -->
+      <line x1="55" y1="280" x2="105" y2="280" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="115" y="284" font-size="12" font-weight="600" fill="#1e293b">−20°C</text>
+      <text x="175" y="284" font-size="11" fill="#475569">label:</text>
+      <line x1="210" y1="286" x2="420" y2="286" stroke="#94a3b8" stroke-width="1.5"/>
+
+      <!-- Minor tick marks -->
+      <line x1="58" y1="80" x2="102" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="58" y1="195" x2="102" y2="195" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="58" y1="255" x2="102" y2="255" stroke="#e2e8f0" stroke-width="1"/>
+
+      <!-- Title -->
+      <text x="80" y="350" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">THERMOMETER</text>
+    </svg>
     <p>Which two temperatures are used as the reference points for the Celsius scale? Circle them above.</p>
     <p>Why were these two reference points chosen?</p>
     <div class="al"></div>
@@ -874,19 +972,82 @@ Fixed volume? Y / N        Fixed volume? Y / N        Fixed volume? Y / N</pre>
   </div>
   <div class="q-body">
     <p><strong>Visual question.</strong> Two students are reading the same thermometer. The thermometer reads 34°C when viewed at eye level.</p>
-    <pre>Student A — eye level:          Student B — looking down from above:
+    <svg viewBox="0 0 720 340" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ah-eye" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0891b2"/></marker>
+        <marker id="ah-err" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#dc2626"/></marker>
+      </defs>
 
-     ────                               ────
-    │ 36 │                             │ 36 │
-    │    │  ← liquid level             │    │  ← liquid level
-    │ 34 │                             │ 34 │
-    │    │                             │    │
-    │ 32 │                             │ 32 │
-     ────                               ────
+      <!-- ===== Student A (left) ===== -->
+      <text x="160" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Student A — eye level</text>
 
-Student A sees the liquid level      Student B looks down at an angle.
-straight on at eye level.            The liquid looks like it lines up
-                                      with the 36°C mark.</pre>
+      <!-- Thermometer tube A -->
+      <rect x="130" y="40" width="36" height="180" rx="18" fill="#f8fafc" stroke="#1e293b" stroke-width="1.5"/>
+      <!-- Mercury -->
+      <rect x="140" y="110" width="16" height="95" rx="3" fill="#ef4444" opacity="0.65"/>
+      <circle cx="148" cy="200" r="14" fill="#ef4444" opacity="0.7" stroke="#1e293b" stroke-width="1.5"/>
+      <!-- Scale marks -->
+      <line x1="125" y1="70" x2="171" y2="70" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="178" y="74" font-size="11" fill="#1e293b">36</text>
+      <line x1="125" y1="110" x2="171" y2="110" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="178" y="114" font-size="11" font-weight="600" fill="#1e293b">34</text>
+      <line x1="125" y1="150" x2="171" y2="150" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="178" y="154" font-size="11" fill="#1e293b">32</text>
+
+      <!-- Liquid level indicator -->
+      <line x1="115" y1="110" x2="90" y2="110" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4 2"/>
+      <text x="60" y="114" font-size="9" fill="#60a5fa">liquid level</text>
+
+      <!-- Eye (circle + dot) — at correct level -->
+      <circle cx="40" cy="110" r="10" fill="#f8fafc" stroke="#0891b2" stroke-width="1.5"/>
+      <circle cx="40" cy="110" r="3" fill="#0891b2"/>
+      <!-- Sight line — straight -->
+      <line x1="50" y1="110" x2="125" y2="110" stroke="#0891b2" stroke-width="1.5" marker-end="url(#ah-eye)" stroke-dasharray="6 3"/>
+
+      <!-- Caption A -->
+      <text x="160" y="250" text-anchor="middle" font-size="11" fill="#475569">Student A sees the liquid level</text>
+      <text x="160" y="266" text-anchor="middle" font-size="11" fill="#475569">straight on at eye level.</text>
+      <text x="160" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#0891b2">Correct reading: 34°C</text>
+
+      <!-- ===== Student B (right) ===== -->
+      <text x="530" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Student B — looking down</text>
+
+      <!-- Thermometer tube B -->
+      <rect x="500" y="40" width="36" height="180" rx="18" fill="#f8fafc" stroke="#1e293b" stroke-width="1.5"/>
+      <!-- Mercury -->
+      <rect x="510" y="110" width="16" height="95" rx="3" fill="#ef4444" opacity="0.65"/>
+      <circle cx="518" cy="200" r="14" fill="#ef4444" opacity="0.7" stroke="#1e293b" stroke-width="1.5"/>
+      <!-- Scale marks -->
+      <line x1="495" y1="70" x2="541" y2="70" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="548" y="74" font-size="11" fill="#1e293b">36</text>
+      <line x1="495" y1="110" x2="541" y2="110" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="548" y="114" font-size="11" font-weight="600" fill="#1e293b">34</text>
+      <line x1="495" y1="150" x2="541" y2="150" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="548" y="154" font-size="11" fill="#1e293b">32</text>
+
+      <!-- Liquid level indicator -->
+      <line x1="485" y1="110" x2="460" y2="110" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4 2"/>
+      <text x="425" y="114" font-size="9" fill="#60a5fa">liquid level</text>
+
+      <!-- Eye — above and to the left, looking down -->
+      <circle cx="420" cy="50" r="10" fill="#f8fafc" stroke="#dc2626" stroke-width="1.5"/>
+      <circle cx="420" cy="50" r="3" fill="#dc2626"/>
+      <!-- Sight line — angled down, appears to hit 36 mark -->
+      <line x1="430" y1="53" x2="495" y2="70" stroke="#dc2626" stroke-width="1.5" marker-end="url(#ah-err)" stroke-dasharray="6 3"/>
+      <!-- Apparent reading label -->
+      <text x="450" y="42" font-size="10" fill="#dc2626" font-style="italic">sees "36°C"</text>
+
+      <!-- Parallax error shading -->
+      <polygon points="430,53 495,70 495,110" fill="#dc2626" opacity="0.07"/>
+
+      <!-- Caption B -->
+      <text x="530" y="250" text-anchor="middle" font-size="11" fill="#475569">Student B looks down at an angle.</text>
+      <text x="530" y="266" text-anchor="middle" font-size="11" fill="#475569">The liquid appears to line up with 36°C.</text>
+      <text x="530" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">Parallax error: reads 36°C</text>
+
+      <!-- Bottom label -->
+      <text x="360" y="330" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Always read a thermometer at eye level to avoid parallax error.</text>
+    </svg>
     <p>What is the correct temperature reading? <span class="al-sm">&nbsp;</span></p>
     <p>Student B records 36°C. What kind of error is this called?</p>
     <div class="al"></div>

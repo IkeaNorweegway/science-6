@@ -392,13 +392,66 @@
 <div class="q-card">
   <div class="q-header"><span class="q-num">Q16</span><span class="badge-core">★ Core</span><span class="q-release">Opens after Lesson 2 · before-after processing — wind · diagram</span></div>
   <p>Look at the two devices below.</p>
-  <pre>   Device A: Traditional Windmill        Device B: Modern Wind Turbine
-   ┌──────────────────┐                  ┌──────────────────────┐
-   │   Wind blows     │                  │  Wind blows blades → │
-   │   blades →       │                  │  generator converts  │
-   │   turns millstone│                  │  motion → electricity│
-   │   (grinds grain) │                  │                      │
-   └──────────────────┘                  └──────────────────────┘</pre>
+  <svg viewBox="0 0 720 340" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrowQ16" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#1e293b"/></marker>
+    </defs>
+    <!-- Device A: Traditional Windmill -->
+    <text x="175" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Device A: Traditional Windmill</text>
+    <!-- windmill body -->
+    <rect x="155" y="140" width="40" height="140" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <!-- tapered top cap -->
+    <polygon points="145,145 205,145 195,110 155,110" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <!-- sails / blades — four simple rectangular sails -->
+    <line x1="175" y1="120" x2="175" y2="42" stroke="#1e293b" stroke-width="2"/>
+    <rect x="168" y="44" width="14" height="34" rx="1" fill="#e2e8f0" stroke="#1e293b" stroke-width="1"/>
+    <line x1="175" y1="120" x2="175" y2="198" stroke="#1e293b" stroke-width="2"/>
+    <rect x="168" y="156" width="14" height="34" rx="1" fill="#e2e8f0" stroke="#1e293b" stroke-width="1"/>
+    <line x1="175" y1="120" x2="97" y2="120" stroke="#1e293b" stroke-width="2"/>
+    <rect x="99" y="113" width="34" height="14" rx="1" fill="#e2e8f0" stroke="#1e293b" stroke-width="1"/>
+    <line x1="175" y1="120" x2="253" y2="120" stroke="#1e293b" stroke-width="2"/>
+    <rect x="217" y="113" width="34" height="14" rx="1" fill="#e2e8f0" stroke="#1e293b" stroke-width="1"/>
+    <!-- hub circle -->
+    <circle cx="175" cy="120" r="6" fill="#f8fafc" stroke="#1e293b" stroke-width="1.5"/>
+    <!-- ground -->
+    <line x1="100" y1="280" x2="250" y2="280" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- labels with fill-in blanks -->
+    <text x="175" y="302" text-anchor="middle" font-size="10.5" fill="#475569">Sails turn a</text>
+    <line x1="118" y1="318" x2="232" y2="318" stroke="#334155" stroke-width="1.5"/>
+    <text x="175" y="336" text-anchor="middle" font-size="10" fill="#94a3b8">(fill in)</text>
+
+    <!-- Device B: Modern Wind Turbine -->
+    <text x="530" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Device B: Modern Wind Turbine</text>
+    <!-- tower -->
+    <rect x="523" y="110" width="14" height="170" rx="1" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <!-- nacelle -->
+    <rect x="510" y="96" width="48" height="18" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <!-- hub -->
+    <circle cx="530" cy="105" r="7" fill="#f8fafc" stroke="#1e293b" stroke-width="1.5"/>
+    <!-- three blades -->
+    <line x1="530" y1="105" x2="530" y2="38" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="530" y1="105" x2="472" y2="140" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="530" y1="105" x2="588" y2="140" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- ground -->
+    <line x1="460" y1="280" x2="600" y2="280" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- arrow: motion to electricity -->
+    <line x1="562" y1="105" x2="620" y2="105" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrowQ16)"/>
+    <text x="640" y="100" font-size="10" fill="#475569">Generator</text>
+    <text x="640" y="114" font-size="10" fill="#475569">converts to</text>
+    <line x1="632" y1="128" x2="710" y2="128" stroke="#334155" stroke-width="1.5"/>
+    <text x="671" y="144" text-anchor="middle" font-size="10" fill="#94a3b8">(fill in)</text>
+    <!-- labels with fill-in blanks -->
+    <text x="530" y="302" text-anchor="middle" font-size="10.5" fill="#475569">Blades spin a</text>
+    <line x1="473" y1="318" x2="587" y2="318" stroke="#334155" stroke-width="1.5"/>
+    <text x="530" y="336" text-anchor="middle" font-size="10" fill="#94a3b8">(fill in)</text>
+    <!-- wind arrows on both sides -->
+    <text x="52" y="120" font-size="11" fill="#3b82f6" font-weight="600">Wind</text>
+    <line x1="18" y1="116" x2="46" y2="116" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowQ16)"/>
+    <text x="412" y="106" font-size="11" fill="#3b82f6" font-weight="600">Wind</text>
+    <line x1="378" y1="102" x2="406" y2="102" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowQ16)"/>
+    <!-- dividing line -->
+    <line x1="350" y1="14" x2="350" y2="340" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="6,4"/>
+  </svg>
   <p>Is Device A an example of using wind before or after processing? <span class="al-sm">&nbsp;</span></p>
   <p>Is Device B an example of using wind before or after processing? <span class="al-sm">&nbsp;</span></p>
   <p>Both devices use wind. What is the key difference between them?</p>
@@ -454,16 +507,39 @@
 <div class="q-card">
   <div class="q-header"><span class="q-num">Q20</span><span class="badge-ext">★★ Extended</span><span class="q-release">Opens after Lesson 2 · misconception: before/after maps to renewable/non-renewable</span></div>
   <p><strong>Error analysis.</strong> A student built the following diagram to show the two classification systems:</p>
-  <pre>   Student's diagram:
-   ┌──────────────────────────────────────────────────────┐
-   │  BEFORE PROCESSING          │  AFTER PROCESSING      │
-   │  (= Renewable)              │  (= Non-Renewable)     │
-   │                             │                        │
-   │  • Windmill (wind)          │  • Wind turbine        │
-   │  • Water wheel              │  • Hydroelectric dam   │
-   │  • Sunlight through window  │  • Solar panel         │
-   │                             │  • Gasoline (from oil) │
-   └──────────────────────────────────────────────────────┘</pre>
+  <svg viewBox="0 0 720 300" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" xmlns="http://www.w3.org/2000/svg">
+    <!-- title -->
+    <text x="360" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Student's Diagram</text>
+    <!-- outer border -->
+    <rect x="20" y="38" width="680" height="240" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <!-- vertical divider -->
+    <line x1="360" y1="38" x2="360" y2="278" stroke="#e2e8f0" stroke-width="1.5"/>
+    <!-- Left column header -->
+    <text x="190" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">BEFORE PROCESSING</text>
+    <text x="190" y="88" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="600">(= Renewable)</text>
+    <!-- Right column header -->
+    <text x="540" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">AFTER PROCESSING</text>
+    <text x="540" y="88" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="600">(= Non-Renewable)</text>
+    <!-- horizontal separator under headers -->
+    <line x1="40" y1="100" x2="340" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="380" y1="100" x2="680" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+    <!-- Left column items -->
+    <circle cx="56" cy="128" r="3.5" fill="#1e293b"/>
+    <text x="68" y="133" font-size="12" fill="#1e293b">Windmill (wind)</text>
+    <circle cx="56" cy="160" r="3.5" fill="#1e293b"/>
+    <text x="68" y="165" font-size="12" fill="#1e293b">Water wheel</text>
+    <circle cx="56" cy="192" r="3.5" fill="#1e293b"/>
+    <text x="68" y="197" font-size="12" fill="#1e293b">Sunlight through window</text>
+    <!-- Right column items -->
+    <circle cx="396" cy="128" r="3.5" fill="#1e293b"/>
+    <text x="408" y="133" font-size="12" fill="#1e293b">Wind turbine</text>
+    <circle cx="396" cy="160" r="3.5" fill="#1e293b"/>
+    <text x="408" y="165" font-size="12" fill="#1e293b">Hydroelectric dam</text>
+    <circle cx="396" cy="192" r="3.5" fill="#1e293b"/>
+    <text x="408" y="197" font-size="12" fill="#1e293b">Solar panel</text>
+    <circle cx="396" cy="224" r="3.5" fill="#1e293b"/>
+    <text x="408" y="229" font-size="12" fill="#1e293b">Gasoline (from oil)</text>
+  </svg>
   <p>Find <strong>two specific errors</strong> in this diagram. For each one, explain what is wrong and correct it.</p>
   <p>Error 1: <div class="al"></div></p>
   <p>Correction: <div class="al"></div></p>

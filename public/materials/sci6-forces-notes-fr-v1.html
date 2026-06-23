@@ -251,7 +251,25 @@
 </div>
 
 <h4>Exemple — lire un diagramme de forces</h4>
-<pre>        20 N →   [BOÎTE]   ← 8 N</pre>
+<svg viewBox="0 0 500 80" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow-right" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1e293b"/>
+    </marker>
+    <marker id="arrow-left" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#1e293b"/>
+    </marker>
+  </defs>
+  <!-- Box -->
+  <rect x="200" y="18" width="100" height="44" rx="4" fill="#64748b" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="250" y="46" text-anchor="middle" fill="white" font-size="14" font-weight="600">BOÎTE</text>
+  <!-- Left arrow (20 N) -->
+  <line x1="40" y1="40" x2="195" y2="40" stroke="#1e293b" stroke-width="2.5" marker-end="url(#arrow-right)"/>
+  <text x="110" y="28" text-anchor="middle" fill="#1e293b" font-size="13" font-weight="600">20 N</text>
+  <!-- Right arrow (8 N) -->
+  <line x1="460" y1="40" x2="305" y2="40" stroke="#1e293b" stroke-width="2.5" marker-end="url(#arrow-left)"/>
+  <text x="390" y="28" text-anchor="middle" fill="#1e293b" font-size="13" font-weight="600">8 N</text>
+</svg>
 <p>La force de 20 N pousse vers la <span class="b b-sm">&nbsp;</span>. La force de 8 N pousse vers la <span class="b b-sm">&nbsp;</span>. L'effet global est une poussée de <span class="b b-sm">&nbsp;</span> N vers la droite.</p>
 
 <div class="retrieval">
@@ -271,7 +289,7 @@
     </li>
     <li>
       Dessine deux flèches sur la boîte : 15 N vers la droite, 5 N vers la gauche. Étiquette chacune.
-      <pre>[              BOÎTE              ]</pre>
+      <div style="border:2px solid #94a3b8; border-radius:6px; padding:18px 32px; text-align:center; font-family:'Segoe UI',system-ui,sans-serif; color:#64748b; font-weight:600; font-size:1rem; max-width:420px; margin:0.75rem auto;">BOÎTE</div>
     </li>
     <li>
       <strong>★★</strong> Un élève dit : « La boîte ne bouge pas, donc il n'y a pas de forces. » Est-ce vrai ? Explique.
@@ -341,11 +359,31 @@
 <p><strong>Lien important :</strong> Les forces externes créent des forces à l'<span class="b b-md">&nbsp;</span> du matériau. On appelle ça des forces internes. (Voir la section 3.)</p>
 
 <h4>Diagramme de forces — trois forces sur une boîte</h4>
-<pre>          ↑ Force normale (plancher poussant vers le haut)
-          |
-Friction ←  [BOÎTE]  → Force appliquée
-          |
-          ↓ Gravité (poids vers le bas)</pre>
+<svg viewBox="0 0 720 300" width="100%" style="max-width:720px; display:block; margin:1rem auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="arrow-fd-u" markerWidth="10" markerHeight="7" refX="5" refY="0" orient="auto"><polygon points="0 7, 5 0, 10 7" fill="#7c3aed"/></marker>
+    <marker id="arrow-fd-d" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto"><polygon points="0 0, 5 7, 10 0" fill="#7c3aed"/></marker>
+    <marker id="arrow-fd-l" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto"><polygon points="10 0, 0 3.5, 10 7" fill="#7c3aed"/></marker>
+    <marker id="arrow-fd-r" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/></marker>
+  </defs>
+  <!-- Center box -->
+  <rect x="300" y="120" width="120" height="60" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="360" y="156" font-size="15" fill="#1e293b" text-anchor="middle" font-weight="700">BOÎTE</text>
+  <!-- Up arrow: Force normale -->
+  <line x1="360" y1="110" x2="360" y2="30" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-fd-u)"/>
+  <text x="375" y="48" font-size="12" fill="#1e293b">Force normale</text>
+  <text x="375" y="64" font-size="11" fill="#475569" font-style="italic">(plancher poussant vers le haut)</text>
+  <!-- Down arrow: Gravité -->
+  <line x1="360" y1="190" x2="360" y2="270" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-fd-d)"/>
+  <text x="375" y="258" font-size="12" fill="#1e293b">Gravité</text>
+  <text x="375" y="274" font-size="11" fill="#475569" font-style="italic">(poids vers le bas)</text>
+  <!-- Left arrow: Friction -->
+  <line x1="290" y1="150" x2="160" y2="150" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-fd-l)"/>
+  <text x="170" y="142" font-size="12" fill="#1e293b">Friction</text>
+  <!-- Right arrow: Force appliquée -->
+  <line x1="430" y1="150" x2="560" y2="150" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-fd-r)"/>
+  <text x="440" y="142" font-size="12" fill="#1e293b">Force appliquée</text>
+</svg>
 
 <div class="connection">
   <div class="label">Question de réflexion</div>
@@ -416,20 +454,60 @@ Friction ←  [BOÎTE]  → Force appliquée
 
 <h4>Tension — force de <span class="b b-sm">&nbsp;</span> ou d'<span class="b b-sm">&nbsp;</span></h4>
 <p>Les particules sont tirées <span class="b b-sm">&nbsp;</span> les unes des autres.</p>
-<pre>  ←—————[   MATÉRIAU   ]—————→
-  Traction                    Traction</pre>
+<svg viewBox="0 0 720 100" width="100%" style="max-width:720px; display:block; margin:1rem auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="arrow-tens-l" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto"><polygon points="10 0, 0 3.5, 10 7" fill="#7c3aed"/></marker>
+    <marker id="arrow-tens-r" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/></marker>
+  </defs>
+  <!-- Material box -->
+  <rect x="240" y="20" width="240" height="50" rx="6" fill="#f8fafc" stroke="#7c3aed" stroke-width="2"/>
+  <text x="360" y="51" font-size="15" fill="#1e293b" text-anchor="middle" font-weight="600">MATÉRIAU</text>
+  <!-- Left arrow pulling outward -->
+  <line x1="230" y1="45" x2="80" y2="45" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-tens-l)"/>
+  <text x="80" y="88" font-size="13" fill="#1e293b">Traction</text>
+  <!-- Right arrow pulling outward -->
+  <line x1="490" y1="45" x2="640" y2="45" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-tens-r)"/>
+  <text x="570" y="88" font-size="13" fill="#1e293b">Traction</text>
+</svg>
 <p><em>Exemples : une corde dans un tir à la corde ; un câble de pont suspendu ; un élastique étiré</em></p>
 
 <h4>Compression — force de <span class="b b-sm">&nbsp;</span> ou d'<span class="b b-sm">&nbsp;</span></h4>
 <p>Les particules sont poussées <span class="b b-sm">&nbsp;</span> les unes vers les autres.</p>
-<pre>  →—————[   MATÉRIAU   ]←—————
-  Poussée                     Poussée</pre>
+<svg viewBox="0 0 720 100" width="100%" style="max-width:720px; display:block; margin:1rem auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="arrow-comp-r" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/></marker>
+    <marker id="arrow-comp-l" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto"><polygon points="10 0, 0 3.5, 10 7" fill="#7c3aed"/></marker>
+  </defs>
+  <!-- Material box -->
+  <rect x="240" y="20" width="240" height="50" rx="6" fill="#f8fafc" stroke="#7c3aed" stroke-width="2"/>
+  <text x="360" y="51" font-size="15" fill="#1e293b" text-anchor="middle" font-weight="600">MATÉRIAU</text>
+  <!-- Left arrow pushing right (inward) -->
+  <line x1="80" y1="45" x2="230" y2="45" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-comp-r)"/>
+  <text x="80" y="88" font-size="13" fill="#1e293b">Poussée</text>
+  <!-- Right arrow pushing left (inward) -->
+  <line x1="640" y1="45" x2="490" y2="45" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-comp-l)"/>
+  <text x="570" y="88" font-size="13" fill="#1e293b">Poussée</text>
+</svg>
 <p><em>Exemples : les pieds d'une chaise quand tu t'assieds ; un ressort écrasé ; un pilier de béton</em></p>
 
 <h4>Cisaillement — force de <span class="b b-sm">&nbsp;</span></h4>
 <p>Des couches de particules glissent dans des directions <span class="b b-md">&nbsp;</span>.</p>
-<pre>  ———→  [COUCHE DU HAUT  ]
-        [COUCHE DU BAS   ]  ←———</pre>
+<svg viewBox="0 0 720 160" width="100%" style="max-width:720px; display:block; margin:1rem auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="arrow-shear-r" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/></marker>
+    <marker id="arrow-shear-l" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto"><polygon points="10 0, 0 3.5, 10 7" fill="#7c3aed"/></marker>
+  </defs>
+  <!-- Top layer -->
+  <rect x="230" y="20" width="260" height="50" rx="6" fill="#f8fafc" stroke="#7c3aed" stroke-width="2"/>
+  <text x="360" y="51" font-size="14" fill="#1e293b" text-anchor="middle" font-weight="600">COUCHE DU HAUT</text>
+  <!-- Arrow pushing top right -->
+  <line x1="100" y1="45" x2="220" y2="45" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-shear-r)"/>
+  <!-- Bottom layer -->
+  <rect x="230" y="80" width="260" height="50" rx="6" fill="#f8fafc" stroke="#7c3aed" stroke-width="2"/>
+  <text x="360" y="111" font-size="14" fill="#1e293b" text-anchor="middle" font-weight="600">COUCHE DU BAS</text>
+  <!-- Arrow pushing bottom left -->
+  <line x1="620" y1="105" x2="500" y2="105" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-shear-l)"/>
+</svg>
 <p><em>Exemples : des ciseaux qui coupent du papier ; couper du fromage</em></p>
 
 <h4>Torsion — force de <span class="b b-sm">&nbsp;</span></h4>
@@ -519,15 +597,67 @@ Friction ←  [BOÎTE]  → Force appliquée
 <p>Un trombone légèrement plié → revient à sa forme (sous la limite élastique).<br>Un trombone très plié → reste plié (<span class="b b-md">&nbsp;</span> la limite élastique).</p>
 
 <h4>Avant / pendant / après — élastique contre plastique</h4>
-<pre>ÉLASTIQUE :
-Avant :   [— — — —]
-Pendant : [— — — — — —]   ← étiré
-Après :   [— — — —]        ← revient comme avant
+<svg viewBox="0 0 720 340" width="100%" style="max-width:720px; display:block; margin:1rem auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <!-- Élastique section -->
+  <text x="20" y="28" font-size="16" font-weight="700" fill="#16a34a">ÉLASTIQUE</text>
+  <!-- Avant -->
+  <text x="40" y="66" font-size="13" fill="#1e293b">Avant :</text>
+  <rect x="140" y="48" width="180" height="30" rx="4" fill="#f8fafc" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="156" y1="63" x2="170" y2="63" stroke="#16a34a" stroke-width="2"/>
+  <line x1="182" y1="63" x2="196" y2="63" stroke="#16a34a" stroke-width="2"/>
+  <line x1="208" y1="63" x2="222" y2="63" stroke="#16a34a" stroke-width="2"/>
+  <line x1="234" y1="63" x2="248" y2="63" stroke="#16a34a" stroke-width="2"/>
+  <!-- Pendant -->
+  <text x="40" y="116" font-size="13" fill="#1e293b">Pendant :</text>
+  <rect x="140" y="98" width="260" height="30" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="156" y1="113" x2="170" y2="113" stroke="#16a34a" stroke-width="2"/>
+  <line x1="188" y1="113" x2="202" y2="113" stroke="#16a34a" stroke-width="2"/>
+  <line x1="220" y1="113" x2="234" y2="113" stroke="#16a34a" stroke-width="2"/>
+  <line x1="252" y1="113" x2="266" y2="113" stroke="#16a34a" stroke-width="2"/>
+  <line x1="284" y1="113" x2="298" y2="113" stroke="#16a34a" stroke-width="2"/>
+  <line x1="316" y1="113" x2="330" y2="113" stroke="#16a34a" stroke-width="2"/>
+  <text x="416" y="118" font-size="12" fill="#16a34a" font-style="italic">← étiré</text>
+  <!-- Après -->
+  <text x="40" y="166" font-size="13" fill="#1e293b">Après :</text>
+  <rect x="140" y="148" width="180" height="30" rx="4" fill="#f8fafc" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="156" y1="163" x2="170" y2="163" stroke="#16a34a" stroke-width="2"/>
+  <line x1="182" y1="163" x2="196" y2="163" stroke="#16a34a" stroke-width="2"/>
+  <line x1="208" y1="163" x2="222" y2="163" stroke="#16a34a" stroke-width="2"/>
+  <line x1="234" y1="163" x2="248" y2="163" stroke="#16a34a" stroke-width="2"/>
+  <text x="336" y="168" font-size="12" fill="#16a34a" font-style="italic">← revient comme avant</text>
 
-PLASTIQUE :
-Avant :   [— — — —]
-Pendant : [— — — — — —]   ← étiré
-Après :   [— — — — —]      ← reste plus long : changement permanent</pre>
+  <!-- Divider -->
+  <line x1="20" y1="200" x2="700" y2="200" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Plastique section -->
+  <text x="20" y="228" font-size="16" font-weight="700" fill="#dc2626">PLASTIQUE</text>
+  <!-- Avant -->
+  <text x="40" y="266" font-size="13" fill="#1e293b">Avant :</text>
+  <rect x="140" y="248" width="180" height="30" rx="4" fill="#f8fafc" stroke="#dc2626" stroke-width="1.5"/>
+  <line x1="156" y1="263" x2="170" y2="263" stroke="#dc2626" stroke-width="2"/>
+  <line x1="182" y1="263" x2="196" y2="263" stroke="#dc2626" stroke-width="2"/>
+  <line x1="208" y1="263" x2="222" y2="263" stroke="#dc2626" stroke-width="2"/>
+  <line x1="234" y1="263" x2="248" y2="263" stroke="#dc2626" stroke-width="2"/>
+  <!-- Pendant -->
+  <text x="40" y="316" font-size="13" fill="#1e293b">Pendant :</text>
+  <rect x="140" y="298" width="260" height="30" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="156" y1="313" x2="170" y2="313" stroke="#dc2626" stroke-width="2"/>
+  <line x1="188" y1="313" x2="202" y2="313" stroke="#dc2626" stroke-width="2"/>
+  <line x1="220" y1="313" x2="234" y2="313" stroke="#dc2626" stroke-width="2"/>
+  <line x1="252" y1="313" x2="266" y2="313" stroke="#dc2626" stroke-width="2"/>
+  <line x1="284" y1="313" x2="298" y2="313" stroke="#dc2626" stroke-width="2"/>
+  <line x1="316" y1="313" x2="330" y2="313" stroke="#dc2626" stroke-width="2"/>
+  <text x="416" y="318" font-size="12" fill="#dc2626" font-style="italic">← étiré</text>
+  <!-- Après -->
+  <text x="40" y="366" font-size="13" fill="#1e293b">Après :</text>
+  <rect x="140" y="348" width="220" height="30" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <line x1="156" y1="363" x2="170" y2="363" stroke="#dc2626" stroke-width="2"/>
+  <line x1="186" y1="363" x2="200" y2="363" stroke="#dc2626" stroke-width="2"/>
+  <line x1="216" y1="363" x2="230" y2="363" stroke="#dc2626" stroke-width="2"/>
+  <line x1="246" y1="363" x2="260" y2="363" stroke="#dc2626" stroke-width="2"/>
+  <line x1="276" y1="363" x2="290" y2="363" stroke="#dc2626" stroke-width="2"/>
+  <text x="376" y="368" font-size="12" fill="#dc2626" font-style="italic">← reste plus long : changement permanent</text>
+</svg>
 
 <h4>Pourquoi c'est important en ingénierie</h4>
 <ul>

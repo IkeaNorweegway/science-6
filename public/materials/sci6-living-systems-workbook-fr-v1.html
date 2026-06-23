@@ -159,19 +159,48 @@
   <div class="q-header"><span class="q-num">Q6</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · sources des ingrédients · visuel</span></div>
   <div class="q-body">
     <p>Une plante pousse sur un rebord de fenêtre. Étiquette l'endroit où chaque ingrédient de la photosynthèse entre dans la plante.</p>
-    <pre>                ☀ Lumière du soleil
-                    |
-          ┌─────────┴─────────┐
-          │      FEUILLE      │
-          │                   │
-          │  CO₂ entre : ___  │
-          │  O₂ sort :   ___  │
-          └─────────┬─────────┘
-                    │ TIGE
-          ┌─────────┴─────────┐
-          │      RACINES      │
-          │  _____ entre      │
-          └───────────────────┘</pre>
+    <svg viewBox="0 0 400 420" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" aria-label="Diagramme de photosynthèse d'une plante avec soleil, feuille, tige et racines">
+      <defs>
+        <marker id="arrow-plant" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#1e293b"/></marker>
+      </defs>
+      <!-- Soleil -->
+      <circle cx="200" cy="38" r="26" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <text x="200" y="43" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">&#9728;</text>
+      <text x="200" y="18" text-anchor="middle" font-size="12" font-weight="600" fill="#1e293b">Lumière du soleil</text>
+      <!-- Flèche lumière -->
+      <line x1="200" y1="66" x2="200" y2="100" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-plant)"/>
+      <text x="230" y="88" font-size="10" fill="#92400e" font-style="italic">énergie lumineuse</text>
+      <!-- Feuille -->
+      <rect x="100" y="104" width="200" height="110" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+      <text x="200" y="128" text-anchor="middle" font-size="14" font-weight="700" fill="#065f46">FEUILLE</text>
+      <!-- Flèche CO2 entrée -->
+      <line x1="60" y1="150" x2="98" y2="150" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-plant)"/>
+      <text x="38" y="145" text-anchor="end" font-size="11" fill="#1e293b">CO₂</text>
+      <!-- Blanc CO2 -->
+      <text x="112" y="155" font-size="11" fill="#1e293b">CO₂ entre :</text>
+      <line x1="196" y1="156" x2="280" y2="156" stroke="#94a3b8" stroke-width="1.5"/>
+      <!-- Flèche O2 sortie -->
+      <line x1="98" y1="185" x2="60" y2="185" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-plant)"/>
+      <text x="38" y="180" text-anchor="end" font-size="11" fill="#1e293b">O₂</text>
+      <!-- Blanc O2 -->
+      <text x="112" y="190" font-size="11" fill="#1e293b">O₂ sort :</text>
+      <line x1="182" y1="191" x2="280" y2="191" stroke="#94a3b8" stroke-width="1.5"/>
+      <!-- Tige -->
+      <rect x="180" y="214" width="40" height="60" rx="4" fill="#a7f3d0" stroke="#059669" stroke-width="1.5"/>
+      <text x="200" y="250" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">TIGE</text>
+      <!-- Racines -->
+      <rect x="110" y="278" width="180" height="80" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+      <text x="200" y="302" text-anchor="middle" font-size="14" font-weight="700" fill="#78350f">RACINES</text>
+      <!-- Flèche eau entrée -->
+      <line x1="60" y1="330" x2="108" y2="330" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-plant)"/>
+      <text x="38" y="325" text-anchor="end" font-size="11" fill="#2563eb">H₂O</text>
+      <!-- Blanc eau -->
+      <line x1="120" y1="335" x2="210" y2="335" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="218" y="335" font-size="11" fill="#1e293b">entre</text>
+      <!-- Ligne de sol -->
+      <line x1="80" y1="370" x2="320" y2="370" stroke="#92400e" stroke-width="2" stroke-dasharray="6,3"/>
+      <text x="330" y="374" font-size="10" fill="#92400e" font-style="italic">niveau du sol</text>
+    </svg>
     <p>Pourquoi cette plante doit-elle être près d'une fenêtre? Utilise l'équation de la photosynthèse dans ta réponse.</p>
     <div class="al"></div><div class="al"></div>
   </div>
@@ -219,19 +248,42 @@
   <div class="q-header"><span class="q-num">Q10</span><span class="badge-core">★ De base</span><span class="t-note">après leçon 3 · photosynthèse · visuel : compléter le diagramme</span></div>
   <div class="q-body">
     <p><strong>Question visuelle.</strong> Complète le diagramme résumé de la photosynthèse en remplissant chaque case vide.</p>
-    <pre>[_____________]    [_____________]    [_____________]
- de l'air           des racines         du soleil
-       \                 |                 /
-        \                |                /
-         └──────────────┬──────────────┘
-                        │
-                 PHOTOSYNTHÈSE
-                 (dans les _____)
-                        │
-           ┌────────────┴──────────────┐
-           │                           │
-    [_____________]            [_____________]
-    nourriture de la plante    libéré dans l'air</pre>
+    <svg viewBox="0 0 520 340" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" aria-label="Diagramme résumé de la photosynthèse avec entrées et sorties">
+      <defs>
+        <marker id="arrow-photo" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#1e293b"/></marker>
+      </defs>
+      <!-- Case entrée 1 -->
+      <rect x="10" y="10" width="140" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="22" y1="34" x2="138" y2="34" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="80" y="62" text-anchor="middle" font-size="10" fill="#64748b">de l'air</text>
+      <!-- Case entrée 2 -->
+      <rect x="190" y="10" width="140" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="202" y1="34" x2="318" y2="34" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="260" y="62" text-anchor="middle" font-size="10" fill="#64748b">des racines</text>
+      <!-- Case entrée 3 -->
+      <rect x="370" y="10" width="140" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="382" y1="34" x2="498" y2="34" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="440" y="62" text-anchor="middle" font-size="10" fill="#64748b">du soleil</text>
+      <!-- Flèches vers photosynthèse -->
+      <line x1="80" y1="70" x2="230" y2="130" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-photo)"/>
+      <line x1="260" y1="70" x2="260" y2="130" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-photo)"/>
+      <line x1="440" y1="70" x2="290" y2="130" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-photo)"/>
+      <!-- Case photosynthèse -->
+      <rect x="170" y="134" width="180" height="56" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+      <text x="260" y="157" text-anchor="middle" font-size="14" font-weight="700" fill="#065f46">PHOTOSYNTHÈSE</text>
+      <text x="260" y="178" text-anchor="middle" font-size="11" fill="#065f46">(dans les <tspan fill="#94a3b8">________</tspan>)</text>
+      <!-- Flèches vers sorties -->
+      <line x1="210" y1="190" x2="120" y2="240" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-photo)"/>
+      <line x1="310" y1="190" x2="400" y2="240" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-photo)"/>
+      <!-- Case sortie 1 -->
+      <rect x="40" y="248" width="160" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="52" y1="272" x2="188" y2="272" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="120" y="302" text-anchor="middle" font-size="10" fill="#64748b">nourriture de la plante</text>
+      <!-- Case sortie 2 -->
+      <rect x="320" y="248" width="160" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="332" y1="272" x2="468" y2="272" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="400" y="302" text-anchor="middle" font-size="10" fill="#64748b">libéré dans l'air</text>
+    </svg>
   </div>
 </div>
 
@@ -252,7 +304,29 @@
   <div class="q-body">
     <p>Utilise les organismes suivants pour construire une chaîne alimentaire d'une prairie albertaine. Dessine ta chaîne et ajoute des flèches montrant la direction du flux d'énergie.</p>
     <div class="word-bank">Organismes : coyote · herbe · campagnol · faucon</div>
-    <pre>________ → ________ → ________ → ________</pre>
+    <svg viewBox="0 0 520 60" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" aria-label="Chaîne alimentaire avec quatre cases vides reliées par des flèches">
+      <defs>
+        <marker id="arrow-chain" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#059669"/></marker>
+      </defs>
+      <!-- Case 1 -->
+      <rect x="5" y="10" width="105" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="15" y1="36" x2="100" y2="36" stroke="#94a3b8" stroke-width="1.5"/>
+      <!-- Flèche 1 -->
+      <line x1="114" y1="28" x2="138" y2="28" stroke="#059669" stroke-width="2" marker-end="url(#arrow-chain)"/>
+      <!-- Case 2 -->
+      <rect x="142" y="10" width="105" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="152" y1="36" x2="237" y2="36" stroke="#94a3b8" stroke-width="1.5"/>
+      <!-- Flèche 2 -->
+      <line x1="251" y1="28" x2="275" y2="28" stroke="#059669" stroke-width="2" marker-end="url(#arrow-chain)"/>
+      <!-- Case 3 -->
+      <rect x="279" y="10" width="105" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="289" y1="36" x2="374" y2="36" stroke="#94a3b8" stroke-width="1.5"/>
+      <!-- Flèche 3 -->
+      <line x1="388" y1="28" x2="412" y2="28" stroke="#059669" stroke-width="2" marker-end="url(#arrow-chain)"/>
+      <!-- Case 4 -->
+      <rect x="416" y="10" width="105" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="426" y1="36" x2="511" y2="36" stroke="#94a3b8" stroke-width="1.5"/>
+    </svg>
     <p>Qu'est-ce que chaque flèche veut dire dans une chaîne alimentaire?</p>
     <div class="al"></div>
     <p>Ajoute maintenant un organisme de plus pour allonger la chaîne dans un sens ou dans l'autre. Nomme l'organisme et explique où il se place.</p>
@@ -407,16 +481,11 @@
   <div class="q-body">
     <p><strong>Question visuelle.</strong> Dessine un réseau alimentaire qui relie ces organismes d'une zone humide albertaine. Les flèches pointent dans la direction du flux d'énergie.</p>
     <div class="word-bank">Organismes : quenouille · canard · rat musqué · brochet · algues · libellule · héron · bactéries décomposeurs</div>
-    <pre>Utilise cet espace pour dessiner ton réseau alimentaire :
-
-
-
-
-(dessine tes organismes et tes flèches ici)
-
-
-
-</pre>
+    <svg viewBox="0 0 600 320" width="100%" style="max-width:720px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" aria-label="Espace de dessin vide pour le réseau alimentaire">
+      <rect x="2" y="2" width="596" height="316" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="300" y="155" text-anchor="middle" font-size="13" fill="#94a3b8" font-style="italic">Utilise cet espace pour dessiner ton réseau alimentaire</text>
+      <text x="300" y="175" text-anchor="middle" font-size="11" fill="#cbd5e1">(dessine tes organismes et tes flèches ici)</text>
+    </svg>
     <p>Quel organisme de ton réseau, s'il était enlevé, causerait le plus de perturbation? Encercle-le et explique :</p>
     <div class="al"></div>
   </div>
@@ -469,13 +538,12 @@
   <div class="q-body">
     <p>Complète la cascade conditionnelle. Chaque SI mène au ALORS suivant.</p>
     <p><strong>Condition de départ :</strong> Une longue sécheresse réduit l'eau disponible dans une prairie.</p>
-    <pre>SI le niveau d'eau baisse ALORS ___________________________________________
-
-SI _________________________ ALORS les producteurs (herbe) ne peuvent pas ____
-
-SI l'herbe ne peut pas _____ ALORS les consommateurs primaires (campagnols) vont
-
-SI la population de campagnols _____ ALORS les consommateurs secondaires (coyotes)</pre>
+    <div style="border:1.5px solid #e2e8f0; border-radius:0.5rem; padding:1rem 1.25rem; margin:0.6rem 0; background:#f8fafc; font-family:'Segoe UI',system-ui,sans-serif; font-size:0.88rem; line-height:2.2; color:#1e293b;">
+      <strong style="color:#059669;">SI</strong> le niveau d'eau baisse <strong style="color:#059669;">ALORS</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:60%; min-width:12rem; vertical-align:bottom;">&nbsp;</span><br>
+      <strong style="color:#059669;">SI</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:28%; min-width:8rem; vertical-align:bottom;">&nbsp;</span> <strong style="color:#059669;">ALORS</strong> les producteurs (herbe) ne peuvent pas <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:28%; min-width:8rem; vertical-align:bottom;">&nbsp;</span><br>
+      <strong style="color:#059669;">SI</strong> l'herbe ne peut pas <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:18%; min-width:5rem; vertical-align:bottom;">&nbsp;</span> <strong style="color:#059669;">ALORS</strong> les consommateurs primaires (campagnols) vont <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:24%; min-width:7rem; vertical-align:bottom;">&nbsp;</span><br>
+      <strong style="color:#059669;">SI</strong> la population de campagnols <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:14%; min-width:4rem; vertical-align:bottom;">&nbsp;</span> <strong style="color:#059669;">ALORS</strong> les consommateurs secondaires (coyotes) vont <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:20%; min-width:6rem; vertical-align:bottom;">&nbsp;</span>
+    </div>
     <p>Quel type de raisonnement cette cascade démontre-t-elle? Fais le lien avec ce que tu sais de la programmation informatique.</p>
     <div class="al"></div>
   </div>
@@ -508,12 +576,28 @@ SI la population de campagnols _____ ALORS les consommateurs secondaires (coyote
   <div class="q-body">
     <p><strong>Question visuelle.</strong> Un élève trouve une feuille qui est en partie verte et en partie jaune pâle. Il teste toute la feuille pour détecter l'amidon à l'aide d'une solution d'iode.</p>
     <p>Dans le schéma de feuille ci-dessous, colorie les zones qui deviendront sombres (amidon présent) et laisse les zones non colorées (pas d'amidon).</p>
-    <pre>   Schéma de feuille :
-  ┌──────────────────┐
-  │  VERTE  │ JAUNE  │
-  │  zone   │ zone   │
-  │         │        │
-  └──────────────────┘</pre>
+    <svg viewBox="0 0 340 200" width="100%" style="max-width:480px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif" aria-label="Schéma de feuille divisée en zones verte et jaune pour le test d'amidon">
+      <!-- Forme de la feuille -->
+      <path d="M170,15 C250,15 310,60 310,110 C310,155 250,185 170,185 C90,185 30,155 30,110 C30,60 90,15 170,15 Z" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+      <!-- Ligne de séparation -->
+      <line x1="170" y1="15" x2="170" y2="185" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <!-- Remplissage zone verte -->
+      <path d="M170,15 C90,15 30,60 30,110 C30,155 90,185 170,185 Z" fill="#d1fae5" stroke="none"/>
+      <!-- Remplissage zone jaune -->
+      <path d="M170,15 C250,15 310,60 310,110 C310,155 250,185 170,185 Z" fill="#fef9c3" stroke="none"/>
+      <!-- Contour de la feuille par-dessus -->
+      <path d="M170,15 C250,15 310,60 310,110 C310,155 250,185 170,185 C90,185 30,155 30,110 C30,60 90,15 170,15 Z" fill="none" stroke="#94a3b8" stroke-width="2"/>
+      <!-- Nervure centrale -->
+      <line x1="170" y1="15" x2="170" y2="185" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <!-- Pétiole -->
+      <line x1="170" y1="185" x2="170" y2="198" stroke="#94a3b8" stroke-width="2"/>
+      <!-- Étiquettes -->
+      <text x="100" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">VERTE</text>
+      <text x="100" y="112" text-anchor="middle" font-size="11" fill="#065f46">zone</text>
+      <text x="240" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">JAUNE</text>
+      <text x="240" y="112" text-anchor="middle" font-size="11" fill="#92400e">zone</text>
+      <text x="170" y="8" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">Schéma de feuille</text>
+    </svg>
     <p>Colorie la zone avec de l'amidon : <span class="al-sm">&nbsp;</span></p>
     <p>Explique ta prédiction :</p>
     <div class="al"></div>
@@ -599,15 +683,13 @@ SI la population de campagnols _____ ALORS les consommateurs secondaires (coyote
   <div class="q-header"><span class="s-num">S4</span><span class="badge-ext">★★ Approfondi</span><span class="t-note">multi-concepts : logique conditionnelle + photosynthèse + réseau alimentaire</span></div>
   <div class="q-body">
     <p>Une énorme éruption volcanique envoie des cendres dans l'atmosphère, bloquant environ 70 % de la lumière du soleil en Amérique du Nord pendant deux ans. Écris une cascade conditionnelle d'<strong>au moins cinq étapes</strong>, reliant cet événement à ses effets sur les producteurs, les consommateurs, les décomposeurs et les conditions abiotiques.</p>
-    <pre>SI la lumière du soleil est réduite de 70 % ALORS _________________________
-
-SI ___________________________ ALORS ___________________________________
-
-SI ___________________________ ALORS ___________________________________
-
-SI ___________________________ ALORS ___________________________________
-
-SI ___________________________ ALORS ___________________________________</pre>
+    <div style="border:1.5px solid #ddd6fe; border-radius:0.5rem; padding:1rem 1.25rem; margin:0.6rem 0; background:#faf5ff; font-family:'Segoe UI',system-ui,sans-serif; font-size:0.88rem; line-height:2.2; color:#1e293b;">
+      <strong style="color:#6d28d9;">SI</strong> la lumière du soleil est réduite de 70 % <strong style="color:#6d28d9;">ALORS</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:55%; min-width:10rem; vertical-align:bottom;">&nbsp;</span><br>
+      <strong style="color:#6d28d9;">SI</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:30%; min-width:8rem; vertical-align:bottom;">&nbsp;</span> <strong style="color:#6d28d9;">ALORS</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:50%; min-width:10rem; vertical-align:bottom;">&nbsp;</span><br>
+      <strong style="color:#6d28d9;">SI</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:30%; min-width:8rem; vertical-align:bottom;">&nbsp;</span> <strong style="color:#6d28d9;">ALORS</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:50%; min-width:10rem; vertical-align:bottom;">&nbsp;</span><br>
+      <strong style="color:#6d28d9;">SI</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:30%; min-width:8rem; vertical-align:bottom;">&nbsp;</span> <strong style="color:#6d28d9;">ALORS</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:50%; min-width:10rem; vertical-align:bottom;">&nbsp;</span><br>
+      <strong style="color:#6d28d9;">SI</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:30%; min-width:8rem; vertical-align:bottom;">&nbsp;</span> <strong style="color:#6d28d9;">ALORS</strong> <span style="display:inline-block; border-bottom:1.5px solid #94a3b8; width:50%; min-width:10rem; vertical-align:bottom;">&nbsp;</span>
+    </div>
     <p>Après la disparition des cendres et le retour du soleil, décris une raison pour laquelle l'écosystème pourrait se rétablir et une raison pour laquelle il pourrait ne pas revenir à son état d'origine.</p>
     <p>Raison pour laquelle il pourrait se rétablir : <div class="al"></div></p>
     <p>Raison pour laquelle il pourrait ne pas se rétablir complètement : <div class="al"></div></p>

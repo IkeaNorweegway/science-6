@@ -444,9 +444,33 @@
 <hr class="section-break">
 <h2 class="section-title">Part B: Short Answer (20 marks)</h2>
 <p><strong>16.</strong> Complete the food web below by adding THREE more organisms and drawing arrows to show energy flow. Your additions must include: one producer, one additional consumer, and one decomposer. (4 marks)</p>
-<pre>Grass ──────────────────→ Deer ──────────────→ Wolf
-  ↑
-(add organisms and connections here)</pre>
+<svg viewBox="0 0 580 160" width="100%" style="max-width:580px; display:block; margin:1rem auto;" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#334155"/>
+    </marker>
+  </defs>
+  <!-- Grass (producer - green) -->
+  <rect x="10" y="30" width="120" height="44" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="70" y="57" text-anchor="middle" font-size="14" font-weight="600" fill="#166534">Grass</text>
+  <!-- Arrow Grass -> Deer -->
+  <line x1="130" y1="52" x2="200" y2="52" stroke="#334155" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <!-- Deer (consumer - orange) -->
+  <rect x="210" y="30" width="120" height="44" rx="6" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="270" y="57" text-anchor="middle" font-size="14" font-weight="600" fill="#9a3412">Deer</text>
+  <!-- Arrow Deer -> Wolf -->
+  <line x1="330" y1="52" x2="400" y2="52" stroke="#334155" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <!-- Wolf (consumer - orange) -->
+  <rect x="410" y="30" width="120" height="44" rx="6" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="470" y="57" text-anchor="middle" font-size="14" font-weight="600" fill="#9a3412">Wolf</text>
+  <!-- Trophic labels -->
+  <text x="70" y="22" text-anchor="middle" font-size="10" fill="#64748b">Producer</text>
+  <text x="270" y="22" text-anchor="middle" font-size="10" fill="#64748b">Primary Consumer</text>
+  <text x="470" y="22" text-anchor="middle" font-size="10" fill="#64748b">Secondary Consumer</text>
+  <!-- Blank space below for student additions -->
+  <rect x="10" y="95" width="520" height="50" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="270" y="124" text-anchor="middle" font-size="12" fill="#94a3b8" font-style="italic">(add organisms and connections here)</text>
+</svg>
 <p><strong>17.</strong> Using the food web from Q16, answer the following: (6 marks)</p>
 <p>a) At what trophic level is the deer? <span class="b b-md">&nbsp;</span></p>
 <p>b) If wolves were removed from this ecosystem, predict what would happen to (i) the deer population and (ii) the grass population over 5 years. Explain each.</p>
