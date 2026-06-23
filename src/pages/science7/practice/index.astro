@@ -493,7 +493,7 @@ function renderGrid() {
       <p class="text-xs text-slate-400">${t.summary}</p>
       <div class="mt-3 flex gap-2">
         <span class="text-xs font-semibold group-hover:underline" style="color: ${t.color};">Start Practice →</span>
-        <button data-print="${t.id}" class="text-xs font-medium text-slate-400 hover:text-slate-700 ml-auto" onclick="event.stopPropagation()">🖨 Print</button>
+        <button data-print="${t.id}" class="text-xs font-medium text-slate-400 hover:text-slate-700 ml-auto">🖨 Print</button>
       </div>
     </button>`;
   }).join('');
@@ -537,7 +537,8 @@ function showProblem() {
   checkBtn.disabled = false;
   checkBtn.classList.remove('opacity-50');
   feedback.classList.add('hidden');
-  feedbackSolution.classList.add('hidden');
+  feedback.style.display = 'none';
+  feedbackSolution.style.display = 'none';
   nextBtn.classList.add('hidden');
   if (p.hint) {
     hintToggle.classList.remove('hidden');
@@ -570,18 +571,19 @@ function checkAnswer() {
   }
 
   feedback.classList.remove('hidden');
+  feedback.style.display = 'block';
   if (correct) {
     score++;
     feedback.className = 'rounded-xl border border-emerald-200 bg-emerald-50 p-4 mb-4';
     feedbackText.className = 'font-semibold text-sm text-emerald-700';
     feedbackText.textContent = 'Correct!';
-    feedbackSolution.classList.add('hidden');
+    feedbackSolution.style.display = 'none';
     pvProgress.textContent = `Problem ${currentIndex + 1} of ${problems.length}  ·  ${score} correct`;
   } else {
     feedback.className = 'rounded-xl border border-red-200 bg-red-50 p-4 mb-4';
     feedbackText.className = 'font-semibold text-sm text-red-700 mb-1';
     feedbackText.textContent = `Not quite — the answer is: ${p.answer}`;
-    feedbackSolution.classList.remove('hidden');
+    feedbackSolution.style.display = 'block';
     feedbackSolution.textContent = p.solution;
   }
   nextBtn.classList.remove('hidden');
