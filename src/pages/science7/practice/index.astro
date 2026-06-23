@@ -66,16 +66,23 @@ const base = import.meta.env.BASE_URL;
         <span>Date: ________________</span>
       </div>
     </div>
-    <div id="print-problems" class="space-y-6"></div>
+    <div id="print-problems" class="print-columns"></div>
     <div id="print-answers" class="mt-12 pt-6 border-t-2 border-slate-400">
       <h2 class="text-lg font-bold mb-4">Answer Key</h2>
-      <div id="print-answer-list" class="space-y-4 text-sm"></div>
+      <div id="print-answer-list" class="print-columns text-sm"></div>
     </div>
   </div>
 
 </BaseLayout>
 
 <style is:global>
+  .print-columns {
+    columns: 2;
+    column-gap: 2rem;
+  }
+  .print-columns > div {
+    break-inside: avoid;
+  }
   @media print {
     nav, .back-bar, #topic-grid, #problem-view, #summary-view,
     footer, header, .mb-8:first-child { display: none !important; }
@@ -628,17 +635,17 @@ function printWorksheet(topicId) {
 
   document.getElementById('print-title').textContent = `Prereq Practice — ${topic.name}`;
   document.getElementById('print-problems').innerHTML = printProblems.map((p, i) =>
-    `<div class="flex gap-3">
-      <span class="font-bold text-slate-400 w-8 flex-shrink-0">${i+1}.</span>
-      <div class="flex-1">
-        <p class="text-sm mb-3">${p.question.replace(/\n/g, '<br>')}</p>
-        <div class="border-b border-slate-200 pb-4"></div>
+    `<div class="mb-5">
+      <div class="flex gap-2 mb-2">
+        <span class="font-bold text-slate-400 flex-shrink-0">${i+1}.</span>
+        <p class="text-sm">${p.question.replace(/\n/g, '<br>')}</p>
       </div>
+      <div style="border:1px solid #cbd5e1; border-radius:0.5rem; min-height:3.5rem; padding:0.5rem;"></div>
     </div>`
   ).join('');
   document.getElementById('print-answer-list').innerHTML = printProblems.map((p, i) =>
-    `<div class="flex gap-3">
-      <span class="font-bold text-slate-400 w-8 flex-shrink-0">${i+1}.</span>
+    `<div class="flex gap-2 mb-4">
+      <span class="font-bold text-slate-400 flex-shrink-0">${i+1}.</span>
       <div class="flex-1">
         <p class="font-medium text-sm mb-1">Answer: ${p.answer}</p>
         <pre class="text-xs text-slate-500 whitespace-pre-wrap font-sans">${p.solution}</pre>
