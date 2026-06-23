@@ -83,11 +83,25 @@ const base = import.meta.env.BASE_URL;
   .print-columns > div {
     break-inside: avoid;
   }
+  .print-problem {
+    display: flex;
+    flex-direction: column;
+  }
   @media print {
     nav, .back-bar, #topic-grid, #problem-view, #summary-view,
     footer, header, .mb-8:first-child { display: none !important; }
     #print-sheet { display: block !important; }
     #print-answers { page-break-before: always; }
+    #print-problems {
+      columns: 2;
+      column-gap: 2rem;
+      height: calc(100vh - 8rem);
+    }
+    .print-problem {
+      height: calc((100vh - 8rem) / 5);
+      margin-bottom: 0;
+      padding-bottom: 0.25rem;
+    }
   }
 </style>
 
@@ -635,12 +649,12 @@ function printWorksheet(topicId) {
 
   document.getElementById('print-title').textContent = `Prereq Practice — ${topic.name}`;
   document.getElementById('print-problems').innerHTML = printProblems.map((p, i) =>
-    `<div class="mb-5">
-      <div class="flex gap-2 mb-2">
+    `<div class="print-problem">
+      <div class="flex gap-2 mb-1">
         <span class="font-bold text-slate-400 flex-shrink-0">${i+1}.</span>
         <p class="text-sm">${p.question.replace(/\n/g, '<br>')}</p>
       </div>
-      <div style="border:1px solid #cbd5e1; border-radius:0.5rem; min-height:3.5rem; padding:0.5rem;"></div>
+      <div style="border:1px solid #cbd5e1; border-radius:0.5rem; flex:1; min-height:2rem;"></div>
     </div>`
   ).join('');
   document.getElementById('print-answer-list').innerHTML = printProblems.map((p, i) =>
