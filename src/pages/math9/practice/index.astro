@@ -1,0 +1,905 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout course="math9" title="Prereq Practice — Math 9">
+
+  <div class="mb-8">
+    <p class="text-xs font-bold uppercase tracking-widest text-math9-600 mb-2">Math 9</p>
+    <h1 class="text-3xl font-bold text-slate-900 mb-2">Prereq Practice</h1>
+    <p class="text-slate-500">Pick the topic you're about to start. We'll quiz you on the skills you need to be ready.</p>
+  </div>
+
+  <!-- ── STATE 1: Topic Grid ── -->
+  <div id="topic-grid" class="grid sm:grid-cols-2 gap-3">
+    <!-- filled by JS -->
+  </div>
+
+  <!-- ── STATE 2: Problem View ── -->
+  <div id="problem-view" class="hidden max-w-xl mx-auto">
+    <button id="back-btn" class="text-sm text-slate-400 hover:text-slate-700 mb-4 transition-colors">&larr; Back to topics</button>
+    <div class="flex items-center justify-between mb-4">
+      <h2 id="pv-title" class="text-lg font-bold text-slate-800"></h2>
+      <span id="pv-progress" class="text-xs font-medium text-slate-400"></span>
+    </div>
+    <div class="bg-white rounded-xl border border-slate-200 p-6 mb-4">
+      <p id="pv-question" class="text-base font-medium text-slate-800 mb-4 leading-relaxed"></p>
+      <button id="hint-toggle" class="hidden text-xs text-math9-600 hover:text-math9-800 mb-3 transition-colors">Show hint</button>
+      <div id="hint-box" class="hidden text-sm text-slate-500 bg-slate-50 border border-slate-200 rounded-lg p-3 mb-4"></div>
+      <div class="flex gap-2">
+        <input id="answer-input" type="text" autocomplete="off" spellcheck="false"
+          class="flex-1 border border-slate-300 rounded-lg px-4 py-2.5 text-base focus:outline-none focus:ring-2 focus:ring-math9-400 focus:border-math9-400" placeholder="Your answer…" />
+        <button id="check-btn" class="bg-math9-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-math9-700 transition-colors whitespace-nowrap">Check</button>
+      </div>
+    </div>
+    <div id="feedback" class="hidden rounded-xl border p-4 mb-4">
+      <p id="feedback-text" class="font-semibold text-sm mb-1"></p>
+      <pre id="feedback-solution" class="hidden text-sm leading-relaxed whitespace-pre-wrap font-sans mt-2"></pre>
+    </div>
+    <button id="next-btn" class="hidden w-full bg-math9-100 text-math9-700 font-semibold py-2.5 rounded-lg hover:bg-math9-200 transition-colors">Next &rarr;</button>
+  </div>
+
+  <!-- ── STATE 3: Summary ── -->
+  <div id="summary-view" class="hidden max-w-md mx-auto text-center">
+    <div class="bg-white rounded-xl border border-slate-200 p-8 mb-6">
+      <p id="sum-title" class="text-lg font-bold text-slate-800 mb-4"></p>
+      <p id="sum-score" class="text-5xl font-bold text-math9-600 mb-2"></p>
+      <p id="sum-label" class="text-sm text-slate-400 mb-6"></p>
+      <div class="w-full bg-slate-100 rounded-full h-3 mb-6">
+        <div id="sum-bar" class="h-3 rounded-full transition-all"></div>
+      </div>
+    </div>
+    <div class="flex gap-3">
+      <button id="retry-btn" class="flex-1 bg-math9-600 text-white font-semibold py-2.5 rounded-lg hover:bg-math9-700 transition-colors">Try Again</button>
+      <button id="pick-btn" class="flex-1 bg-slate-100 text-slate-700 font-semibold py-2.5 rounded-lg hover:bg-slate-200 transition-colors">Pick Another Topic</button>
+    </div>
+  </div>
+
+  <!-- ── PRINT SHEET (hidden, shown only during print) ── -->
+  <div id="print-sheet" class="hidden">
+    <div id="print-header" class="text-center mb-8">
+      <h1 id="print-title" class="text-2xl font-bold mb-1"></h1>
+      <p class="text-sm text-slate-500 mb-4">Prereq Practice — Math 9</p>
+      <div class="flex justify-between border-b border-slate-300 pb-2 text-sm">
+        <span>Name: ________________________________</span>
+        <span>Date: ________________</span>
+      </div>
+    </div>
+    <div id="print-problems" class="space-y-6"></div>
+    <div id="print-answers" class="mt-12 pt-6 border-t-2 border-slate-400">
+      <h2 class="text-lg font-bold mb-4">Answer Key</h2>
+      <div id="print-answer-list" class="space-y-4 text-sm"></div>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style is:global>
+  @media print {
+    nav, .back-bar, #topic-grid, #problem-view, #summary-view,
+    footer, header, .mb-8:first-child { display: none !important; }
+    #print-sheet { display: block !important; }
+    #print-answers { page-break-before: always; }
+  }
+</style>
+
+<script define:vars={{ base }}>
+// ─── UTILITIES ───
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); return b === 0 ? a : gcd(b, a % b); }
+function simplify(n, d) { const g = gcd(n, d); return [n / g, d / g]; }
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) { const j = randInt(0, i); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+function fmtSign(n) { return n < 0 ? `(${n})` : `${n}`; }
+function fmtTerm(coeff, first) {
+  if (first) return `${coeff}`;
+  return coeff >= 0 ? `+ ${coeff}` : `− ${Math.abs(coeff)}`;
+}
+
+// ─── GENERATORS: 1. Rational Numbers ───
+function genMultTables() {
+  const a = randInt(2, 12), b = randInt(2, 12);
+  return { question: `What is ${a} × ${b}?`, answer: `${a * b}`,
+    solution: `${a} × ${b} = ${a * b}`,
+    hint: `Think of ${a} groups of ${b}.`,
+    accept: i => parseInt(i) === a * b };
+}
+function genFactorsOf() {
+  const n = randInt(12, 48);
+  const factors = [];
+  for (let i = 1; i <= n; i++) if (n % i === 0) factors.push(i);
+  return { question: `List all factors of ${n} (separate with commas).`, answer: factors.join(', '),
+    solution: `Factors of ${n}: ${factors.join(', ')}\nCheck each number 1 to ${n} — if ${n} ÷ that number has no remainder, it's a factor.`,
+    hint: `Start from 1 and work up. Remember factors come in pairs.`,
+    accept: i => {
+      const got = i.split(/[,\s]+/).map(Number).filter(x => !isNaN(x)).sort((a,b)=>a-b);
+      return JSON.stringify(got) === JSON.stringify(factors);
+    }};
+}
+function genEquivFraction() {
+  const n = randInt(1, 8), d = randInt(n + 1, 12), m = randInt(2, 5);
+  return { question: `Find an equivalent fraction to ${n}/${d} with denominator ${d * m}.`,
+    answer: `${n * m}/${d * m}`,
+    solution: `${n}/${d} — multiply top and bottom by ${m}\n${n} × ${m} = ${n * m}\n${d} × ${m} = ${d * m}\nAnswer: ${n * m}/${d * m}`,
+    hint: `What did you multiply ${d} by to get ${d * m}? Do the same to the numerator.`,
+    accept: i => i.replace(/\s/g, '') === `${n * m}/${d * m}` };
+}
+function genSimplifyFraction() {
+  const g = randInt(2, 6), n = randInt(1, 8), d = randInt(n + 1, 10);
+  const num = n * g, den = d * g;
+  return { question: `Simplify ${num}/${den} to lowest terms.`, answer: `${n}/${d}`,
+    solution: `GCF of ${num} and ${den} is ${g}\n${num} ÷ ${g} = ${n}\n${den} ÷ ${g} = ${d}\nAnswer: ${n}/${d}`,
+    hint: `Find the greatest common factor of ${num} and ${den}, then divide both by it.`,
+    accept: i => { const p = i.replace(/\s/g,'').split('/'); return p.length===2 && parseInt(p[0])===n && parseInt(p[1])===d; }};
+}
+function genDecFracPercent() {
+  const pairs = [[0.25,'1/4','25%'],[0.5,'1/2','50%'],[0.75,'3/4','75%'],[0.2,'1/5','20%'],[0.4,'2/5','40%'],[0.1,'1/10','10%'],[0.125,'1/8','12.5%']];
+  const [dec, frac, pct] = pairs[randInt(0, pairs.length - 1)];
+  const mode = randInt(0, 2);
+  if (mode === 0) return { question: `Convert ${dec} to a fraction in lowest terms.`, answer: frac,
+    solution: `${dec} as a fraction:\n${dec} = ${frac}`, hint: `Think about place value — what is ${dec} out of 1?`,
+    accept: i => i.replace(/\s/g,'') === frac };
+  if (mode === 1) return { question: `Convert ${frac} to a percent.`, answer: pct,
+    solution: `${frac} as a percent:\nDivide: ${frac} = ${dec}\n${dec} × 100 = ${pct}`, hint: `First convert to a decimal, then multiply by 100.`,
+    accept: i => i.replace(/\s/g,'').replace('%','') === pct.replace('%','') };
+  return { question: `Convert ${pct} to a decimal.`, answer: `${dec}`,
+    solution: `${pct} as a decimal:\n${pct} ÷ 100 = ${dec}`, hint: `Divide by 100 — move the decimal two places left.`,
+    accept: i => parseFloat(i) === dec };
+}
+function genOrderIntegers() {
+  const nums = Array.from({length: 5}, () => randInt(-20, 20));
+  const sorted = [...nums].sort((a,b) => a - b);
+  return { question: `Order from least to greatest: ${nums.join(', ')}`, answer: sorted.join(', '),
+    solution: `Place on a number line:\nFarthest left (most negative) → farthest right (most positive)\n${sorted.join(', ')}`,
+    hint: `Negative numbers go left on the number line. More negative = smaller.`,
+    accept: i => { const got = i.split(/[,\s]+/).map(Number).filter(x=>!isNaN(x)); return JSON.stringify(got)===JSON.stringify(sorted); }};
+}
+
+// ─── GENERATORS: 2. Square Roots ───
+function genMultiply2Digit() {
+  const a = randInt(11, 19), b = randInt(11, 19);
+  return { question: `What is ${a} × ${b}?`, answer: `${a * b}`,
+    solution: `${a} × ${b}\n= ${a} × ${Math.floor(b/10)*10} + ${a} × ${b%10}\n= ${a * Math.floor(b/10)*10} + ${a * (b%10)}\n= ${a * b}`,
+    hint: `Break ${b} into ${Math.floor(b/10)*10} + ${b%10} and multiply each part.`,
+    accept: i => parseInt(i) === a * b };
+}
+function genSquareArea() {
+  const s = randInt(2, 15);
+  return { question: `A square has side length ${s} cm. What is its area?`, answer: `${s * s} cm²`,
+    solution: `Area of a square = side × side\n= ${s} × ${s}\n= ${s * s} cm²`,
+    hint: `Area of a square = side × side.`,
+    accept: i => parseInt(i.replace(/[^\d]/g,'')) === s * s };
+}
+function genFactorPairs() {
+  const n = randInt(12, 50);
+  const pairs = [];
+  for (let i = 1; i * i <= n; i++) if (n % i === 0) pairs.push(`${i} × ${n/i}`);
+  return { question: `List all factor pairs of ${n} (e.g. "1 × ${n}, 2 × ...").`, answer: pairs.join(', '),
+    solution: `Factor pairs of ${n}:\n${pairs.join('\n')}`,
+    hint: `Start from 1 × ${n} and work inward.`,
+    accept: i => {
+      const got = i.split(/[,;]+/).map(s => s.trim().split(/\s*[×x*]\s*/).map(Number).sort((a,b)=>a-b)).sort((a,b)=>a[0]-b[0]);
+      const exp = pairs.map(s => s.split(' × ').map(Number).sort((a,b)=>a-b)).sort((a,b)=>a[0]-b[0]);
+      return JSON.stringify(got) === JSON.stringify(exp);
+    }};
+}
+function genEvalExponent() {
+  const b = randInt(2, 10), e = randInt(2, 3);
+  const val = Math.pow(b, e);
+  return { question: `Evaluate: ${b}${e === 2 ? '²' : '³'}`, answer: `${val}`,
+    solution: `${b}${e === 2 ? '²' : '³'} = ${Array(e).fill(b).join(' × ')} = ${val}`,
+    hint: `${b}${e === 2 ? '²' : '³'} means ${Array(e).fill(b).join(' × ')}.`,
+    accept: i => parseInt(i) === val };
+}
+function genIdentifyHypotenuse() {
+  const a = randInt(3, 12), b = randInt(a, 15);
+  const c = Math.round(Math.sqrt(a*a + b*b) * 10) / 10;
+  return { question: `A right triangle has legs ${a} cm and ${b} cm. Which side is the hypotenuse — the longest side opposite the right angle? What is its length (round to 1 decimal)?`,
+    answer: `${c}`,
+    solution: `The hypotenuse is the longest side, opposite the right angle.\na² + b² = c²\n${a}² + ${b}² = c²\n${a*a} + ${b*b} = c²\n${a*a+b*b} = c²\nc = √${a*a+b*b} ≈ ${c}`,
+    hint: `The hypotenuse is always across from the right angle. Use a² + b² = c².`,
+    accept: i => Math.abs(parseFloat(i) - c) < 0.15 };
+}
+
+// ─── GENERATORS: 3. Powers & Exponents ───
+function genMultDivFluency() {
+  const op = randInt(0, 1);
+  if (op === 0) { const a = randInt(3, 12), b = randInt(3, 12); return { question: `${a} × ${b} = ?`, answer: `${a*b}`, solution: `${a} × ${b} = ${a*b}`, hint: `Think of ${a} groups of ${b}.`, accept: i => parseInt(i) === a*b }; }
+  const b = randInt(2, 12), q = randInt(2, 12), a = b * q;
+  return { question: `${a} ÷ ${b} = ?`, answer: `${q}`, solution: `${a} ÷ ${b} = ${q}\nBecause ${b} × ${q} = ${a}`, hint: `What number times ${b} gives ${a}?`, accept: i => parseInt(i) === q };
+}
+function genRepeatedMult() {
+  const b = randInt(2, 9), e = randInt(2, 5);
+  const expr = Array(e).fill(b).join(' × ');
+  return { question: `Write as a power: ${expr}`, answer: `${b}^${e}`,
+    solution: `${expr}\n= ${b} multiplied ${e} times\n= ${b}^${e} (base ${b}, exponent ${e})`,
+    hint: `Count how many times ${b} is multiplied. That count is the exponent.`,
+    accept: i => { const c = i.replace(/\s/g,''); return c === `${b}^${e}` || c === `${b}${e===2?'²':e===3?'³':''}` || c === `${b}**${e}`; }};
+}
+function genBEDMAS() {
+  const a = randInt(2, 8), b = randInt(1, 5), c = randInt(2, 4), d = randInt(1, 9);
+  const expr = `${a} + ${b} × ${c}²`;
+  const val = a + b * c * c;
+  return { question: `Evaluate: ${expr}`, answer: `${val}`,
+    solution: `${expr}\n= ${a} + ${b} × ${c*c}  (exponent first)\n= ${a} + ${b*c*c}  (multiply next)\n= ${val}  (add last)`,
+    hint: `BEDMAS: do the exponent first, then multiply, then add.`,
+    accept: i => parseInt(i) === val };
+}
+function genMultDivNeg() {
+  const a = randInt(2, 10) * (randInt(0,1) ? 1 : -1), b = randInt(2, 10) * (randInt(0,1) ? 1 : -1);
+  const op = randInt(0, 1);
+  if (op === 0) return { question: `${fmtSign(a)} × ${fmtSign(b)} = ?`, answer: `${a*b}`, solution: `${fmtSign(a)} × ${fmtSign(b)}\n${a<0!==b<0 ? 'Different signs → negative' : 'Same signs → positive'}\n${Math.abs(a)} × ${Math.abs(b)} = ${Math.abs(a*b)}\nAnswer: ${a*b}`, hint: `Same signs → positive. Different signs → negative.`, accept: i => parseInt(i) === a*b };
+  const q = a, prod = a * b;
+  return { question: `${fmtSign(prod)} ÷ ${fmtSign(b)} = ?`, answer: `${q}`, solution: `${fmtSign(prod)} ÷ ${fmtSign(b)}\n${prod<0!==b<0 ? 'Different signs → negative' : 'Same signs → positive'}\n${Math.abs(prod)} ÷ ${Math.abs(b)} = ${Math.abs(q)}\nAnswer: ${q}`, hint: `Same signs → positive. Different signs → negative.`, accept: i => parseInt(i) === q };
+}
+function genNegBasePower() {
+  const b = randInt(2, 5), e = randInt(2, 3);
+  const withBrackets = Math.pow(-b, e);
+  const without = -Math.pow(b, e);
+  const mode = randInt(0, 1);
+  if (mode === 0) return { question: `Evaluate: (−${b})${e===2?'²':'³'}`, answer: `${withBrackets}`,
+    solution: `(−${b})${e===2?'²':'³'}\n= ${Array(e).fill(`(−${b})`).join(' × ')}\n= ${withBrackets}\n${e%2===0 ? 'Even exponent → positive result' : 'Odd exponent → negative result'}`,
+    hint: `The negative is inside the brackets, so it gets raised to the power too.`,
+    accept: i => parseInt(i) === withBrackets };
+  return { question: `Evaluate: −${b}${e===2?'²':'³'}`, answer: `${without}`,
+    solution: `−${b}${e===2?'²':'³'}\n= −(${b}${e===2?'²':'³'})\n= −(${Math.pow(b,e)})\n= ${without}\nThe negative is NOT raised to the power — only ${b} is.`,
+    hint: `Without brackets, only ${b} is squared. The negative stays in front.`,
+    accept: i => parseInt(i) === without };
+}
+
+// ─── GENERATORS: 4. Linear Relations ───
+function genPlotPoint() {
+  const x = randInt(-8, 8), y = randInt(-8, 8);
+  return { question: `Where would you plot the point (${x}, ${y})? State the quadrant (I, II, III, IV) or axis.`,
+    answer: x===0||y===0 ? 'on an axis' : (x>0&&y>0?'I':x<0&&y>0?'II':x<0&&y<0?'III':'IV'),
+    solution: `(${x}, ${y})\nx = ${x} → move ${x>0?'right':'left'} ${Math.abs(x)}\ny = ${y} → move ${y>0?'up':'down'} ${Math.abs(y)}\n${x===0||y===0?'The point is on an axis.':'Quadrant '+(x>0&&y>0?'I':x<0&&y>0?'II':x<0&&y<0?'III':'IV')}`,
+    hint: `x tells you left/right, y tells you up/down. Quadrant I is top-right, going counter-clockwise.`,
+    accept: i => { const c = i.trim().toUpperCase().replace(/[^IVX1234AXIS]/gi,''); const ans = x===0||y===0?'AXIS':(x>0&&y>0?'I':x<0&&y>0?'II':x<0&&y<0?'III':'IV'); return c.includes(ans); }};
+}
+function genPatternRule() {
+  const start = randInt(-5, 10), diff = randInt(-5, 8);
+  if (diff === 0) return genPatternRule();
+  const seq = Array.from({length: 5}, (_, i) => start + diff * i);
+  return { question: `Find the common difference: ${seq.join(', ')}, …`, answer: `${diff}`,
+    solution: `${seq[1]} − ${seq[0]} = ${diff}\n${seq[2]} − ${seq[1]} = ${diff}\nThe common difference is ${diff}.`,
+    hint: `Subtract any term from the next term.`,
+    accept: i => parseInt(i) === diff };
+}
+function genCompleteTable() {
+  const m = randInt(1, 5) * (randInt(0,1)?1:-1), b = randInt(-10, 10);
+  const x = randInt(-5, 5);
+  const y = m * x + b;
+  const rule = `y = ${m===1?'':m===-1?'−':m}x ${b>=0?'+ '+b:'− '+Math.abs(b)}`;
+  return { question: `If ${rule}, find y when x = ${x}.`, answer: `${y}`,
+    solution: `${rule}\ny = ${m===1?'':m===-1?'−':m}(${x}) ${b>=0?'+ '+b:'− '+Math.abs(b)}\ny = ${m*x} ${b>=0?'+ '+b:'− '+Math.abs(b)}\ny = ${y}`,
+    hint: `Substitute ${x} for x and calculate.`,
+    accept: i => parseInt(i) === y };
+}
+function genAddSubIntegers() {
+  const a = randInt(-20, 20), b = randInt(-20, 20);
+  const op = randInt(0, 1);
+  if (op === 0) return { question: `${fmtSign(a)} + ${fmtSign(b)} = ?`, answer: `${a+b}`, solution: `${fmtSign(a)} + ${fmtSign(b)} = ${a+b}`, hint: `Same signs: add and keep the sign. Different signs: subtract and keep the sign of the larger absolute value.`, accept: i => parseInt(i) === a+b };
+  return { question: `${fmtSign(a)} − ${fmtSign(b)} = ?`, answer: `${a-b}`, solution: `${fmtSign(a)} − ${fmtSign(b)}\n= ${fmtSign(a)} + ${fmtSign(-b)}\n= ${a-b}`, hint: `Subtracting is the same as adding the opposite.`, accept: i => parseInt(i) === a-b };
+}
+function genIndepDep() {
+  const scenarios = [
+    { text: 'The more hours you study, the higher your test score.', ind: 'hours', dep: 'test score' },
+    { text: 'As the temperature drops, hot chocolate sales increase.', ind: 'temperature', dep: 'sales' },
+    { text: 'The faster a car drives, the more gas it uses per km.', ind: 'speed', dep: 'gas usage' },
+    { text: 'As a plant gets more sunlight, it grows taller.', ind: 'sunlight', dep: 'height' },
+    { text: 'The more people at a party, the more pizza is needed.', ind: 'people', dep: 'pizza' },
+  ];
+  const s = scenarios[randInt(0, scenarios.length - 1)];
+  return { question: `"${s.text}"\nWhat is the independent variable?`, answer: s.ind,
+    solution: `Independent (you control): ${s.ind}\nDependent (it responds): ${s.dep}\nThe independent variable is what changes first or what you choose.`,
+    hint: `The independent variable is the one you control or that changes first.`,
+    accept: i => i.toLowerCase().includes(s.ind.toLowerCase()) };
+}
+
+// ─── GENERATORS: 5. Linear Equations ───
+function genIntegerOps() {
+  const a = randInt(-15, 15), b = randInt(-15, 15);
+  const ops = ['+', '−', '×', '÷'];
+  const op = randInt(0, 3);
+  if (op === 3) { const q = randInt(-10,10); if (q===0||b===0) return genIntegerOps(); const prod = q*b; return { question: `${fmtSign(prod)} ÷ ${fmtSign(b)} = ?`, answer:`${q}`, solution:`${fmtSign(prod)} ÷ ${fmtSign(b)} = ${q}`, hint:'Same signs → positive. Different signs → negative.', accept:i=>parseInt(i)===q }; }
+  const res = op===0?a+b:op===1?a-b:a*b;
+  const opSym = op===0?'+':op===1?'−':'×';
+  return { question: `${fmtSign(a)} ${opSym} ${fmtSign(b)} = ?`, answer: `${res}`,
+    solution: `${fmtSign(a)} ${opSym} ${fmtSign(b)} = ${res}`, hint: op < 2 ? 'Same signs: add and keep sign. Different signs: subtract.' : 'Same signs → positive. Different signs → negative.',
+    accept: i => parseInt(i) === res };
+}
+function genInverseOp() {
+  const ops = [['addition','subtraction'],['subtraction','addition'],['multiplication','division'],['division','multiplication']];
+  const [op, inv] = ops[randInt(0, ops.length - 1)];
+  return { question: `What is the inverse operation of ${op}?`, answer: inv,
+    solution: `${op} ↔ ${inv}\nInverse operations "undo" each other.`,
+    hint: `Inverse means "undo". What undoes ${op}?`,
+    accept: i => i.toLowerCase().trim() === inv };
+}
+function genOneStepEq() {
+  const x = randInt(-12, 12);
+  const mode = randInt(0, 3);
+  if (mode === 0) { const b = randInt(1,15); return { question: `Solve: x + ${b} = ${x+b}`, answer:`${x}`, solution:`x + ${b} = ${x+b}\nx = ${x+b} − ${b}\nx = ${x}`, hint:`Subtract ${b} from both sides.`, accept:i=>parseInt(i)===x }; }
+  if (mode === 1) { const b = randInt(1,15); return { question: `Solve: x − ${b} = ${x-b}`, answer:`${x}`, solution:`x − ${b} = ${x-b}\nx = ${x-b} + ${b}\nx = ${x}`, hint:`Add ${b} to both sides.`, accept:i=>parseInt(i)===x }; }
+  if (mode === 2) { const a = randInt(2,9); return { question: `Solve: ${a}x = ${a*x}`, answer:`${x}`, solution:`${a}x = ${a*x}\nx = ${a*x} ÷ ${a}\nx = ${x}`, hint:`Divide both sides by ${a}.`, accept:i=>parseInt(i)===x }; }
+  const a = randInt(2,7); if(x===0) return genOneStepEq(); const prod = a*x;
+  return { question: `Solve: x/${a} = ${x}`, answer:`${a*x}`, solution:`x/${a} = ${x}\nx = ${x} × ${a}\nx = ${a*x}`, hint:`Multiply both sides by ${a}.`, accept:i=>parseInt(i)===a*x };
+}
+function genEvalExpression() {
+  const a = randInt(2, 8), b = randInt(-10, 10), x = randInt(-5, 5);
+  const val = a * x + b;
+  return { question: `Evaluate ${a}x + ${b >= 0 ? b : `(${b})`} when x = ${x}.`, answer: `${val}`,
+    solution: `${a}x + ${b >= 0 ? b : `(${b})`} when x = ${x}\n= ${a}(${x}) + ${b >= 0 ? b : `(${b})`}\n= ${a*x} + ${b >= 0 ? b : `(${b})`}\n= ${val}`,
+    hint: `Replace x with ${x} and calculate step by step.`,
+    accept: i => parseInt(i) === val };
+}
+function genBEDMAS2() {
+  const a = randInt(2, 8), b = randInt(2, 6), c = randInt(1, 5), d = randInt(1, 10);
+  const val = a * (b + c) - d;
+  return { question: `Evaluate: ${a}(${b} + ${c}) − ${d}`, answer: `${val}`,
+    solution: `${a}(${b} + ${c}) − ${d}\n= ${a}(${b+c})  (brackets first)\n= ${a*(b+c)} − ${d}  (multiply)\n= ${val}`,
+    hint: `BEDMAS: brackets first, then multiply, then subtract.`,
+    accept: i => parseInt(i) === val };
+}
+
+// ─── GENERATORS: 6. Polynomials ───
+function genAddSubNeg() {
+  const a = randInt(-20, 20), b = randInt(-20, 20);
+  const op = randInt(0, 1);
+  const res = op === 0 ? a + b : a - b;
+  return { question: `${fmtSign(a)} ${op===0?'+':'−'} ${fmtSign(b)} = ?`, answer: `${res}`,
+    solution: op === 0 ? `${fmtSign(a)} + ${fmtSign(b)} = ${res}` : `${fmtSign(a)} − ${fmtSign(b)} = ${fmtSign(a)} + ${fmtSign(-b)} = ${res}`,
+    hint: 'Same signs → add, keep sign. Different signs → subtract, keep sign of larger.',
+    accept: i => parseInt(i) === res };
+}
+function genDistributive() {
+  const a = randInt(2, 7), b = randInt(1, 9), c = randInt(1, 9);
+  const res = a * b + a * c;
+  return { question: `Use the distributive property: ${a}(${b} + ${c}) = ?`, answer: `${res}`,
+    solution: `${a}(${b} + ${c})\n= ${a} × ${b} + ${a} × ${c}\n= ${a*b} + ${a*c}\n= ${res}`,
+    hint: `Multiply ${a} by each number inside the brackets.`,
+    accept: i => parseInt(i) === res };
+}
+function genMultIntegers() {
+  const a = randInt(-10, 10), b = randInt(-10, 10);
+  if (a === 0 || b === 0) return genMultIntegers();
+  return { question: `${fmtSign(a)} × ${fmtSign(b)} = ?`, answer: `${a*b}`,
+    solution: `${fmtSign(a)} × ${fmtSign(b)}\n${a<0!==b<0?'Different signs → negative':'Same signs → positive'}\n${Math.abs(a)} × ${Math.abs(b)} = ${Math.abs(a*b)}\nAnswer: ${a*b}`,
+    hint: 'Same signs → positive. Different signs → negative.',
+    accept: i => parseInt(i) === a*b };
+}
+function genVariableNotation() {
+  const coeff = randInt(2, 9), x = randInt(1, 8);
+  return { question: `If x = ${x}, what is ${coeff}x?`, answer: `${coeff * x}`,
+    solution: `${coeff}x means ${coeff} × x\n= ${coeff} × ${x}\n= ${coeff * x}`,
+    hint: `${coeff}x means ${coeff} × x.`,
+    accept: i => parseInt(i) === coeff * x };
+}
+function genXplusXvsXtimesX() {
+  const x = randInt(2, 10);
+  const mode = randInt(0, 1);
+  if (mode === 0) return { question: `If x = ${x}, what is x + x?`, answer: `${x+x}`,
+    solution: `x + x = ${x} + ${x} = ${x+x}\n(Adding x to itself — same as 2x)`,
+    hint: `x + x is the same as 2x.`,
+    accept: i => parseInt(i) === x+x };
+  return { question: `If x = ${x}, what is x × x?`, answer: `${x*x}`,
+    solution: `x × x = ${x} × ${x} = ${x*x}\n(Multiplying x by itself — same as x²)`,
+    hint: `x × x is x squared, or x².`,
+    accept: i => parseInt(i) === x*x };
+}
+
+// ─── GENERATORS: 7. Circle Geometry ───
+function genRadiusDiameter() {
+  const r = randInt(2, 20);
+  const mode = randInt(0, 1);
+  if (mode === 0) return { question: `A circle has radius ${r} cm. What is the diameter?`, answer: `${2*r} cm`,
+    solution: `Diameter = 2 × radius\n= 2 × ${r}\n= ${2*r} cm`, hint: `Diameter is always double the radius.`,
+    accept: i => parseInt(i.replace(/[^\d]/g,'')) === 2*r };
+  const d = r * 2;
+  return { question: `A circle has diameter ${d} cm. What is the radius?`, answer: `${r} cm`,
+    solution: `Radius = diameter ÷ 2\n= ${d} ÷ 2\n= ${r} cm`, hint: `Radius is half the diameter.`,
+    accept: i => parseInt(i.replace(/[^\d]/g,'')) === r };
+}
+function genMissingAngle() {
+  const a = randInt(20, 80), b = randInt(20, 80);
+  const c = 180 - a - b;
+  if (c <= 0) return genMissingAngle();
+  return { question: `A triangle has angles of ${a}° and ${b}°. What is the third angle?`, answer: `${c}°`,
+    solution: `Angles in a triangle sum to 180°\n${a}° + ${b}° + ? = 180°\n? = 180° − ${a}° − ${b}°\n? = ${c}°`,
+    hint: `All three angles must add up to 180°.`,
+    accept: i => parseInt(i.replace(/[^\d]/g,'')) === c };
+}
+function genPythagorean() {
+  const triples = [[3,4,5],[5,12,13],[6,8,10],[8,15,17],[7,24,25],[9,12,15]];
+  const [a, b, c] = triples[randInt(0, triples.length - 1)];
+  const mode = randInt(0, 2);
+  if (mode === 0) return { question: `A right triangle has legs ${a} and ${b}. Find the hypotenuse.`, answer: `${c}`,
+    solution: `a² + b² = c²\n${a}² + ${b}² = c²\n${a*a} + ${b*b} = c²\n${a*a+b*b} = c²\nc = √${a*a+b*b} = ${c}`,
+    hint: `Use a² + b² = c². Plug in the two legs.`,
+    accept: i => parseInt(i) === c };
+  if (mode === 1) return { question: `A right triangle has hypotenuse ${c} and one leg ${a}. Find the other leg.`, answer: `${b}`,
+    solution: `a² + b² = c²\n${a}² + b² = ${c}²\n${a*a} + b² = ${c*c}\nb² = ${c*c} − ${a*a}\nb² = ${c*c-a*a}\nb = √${c*c-a*a} = ${b}`,
+    hint: `Rearrange: b² = c² − a².`,
+    accept: i => parseInt(i) === b };
+  return { question: `A right triangle has hypotenuse ${c} and one leg ${b}. Find the other leg.`, answer: `${a}`,
+    solution: `a² + b² = c²\na² + ${b}² = ${c}²\na² + ${b*b} = ${c*c}\na² = ${c*c} − ${b*b}\na² = ${c*c-b*b}\na = √${c*c-b*b} = ${a}`,
+    hint: `Rearrange: a² = c² − b².`,
+    accept: i => parseInt(i) === a };
+}
+function genCircleParts() {
+  const parts = [
+    { q: 'A line segment from the center of a circle to any point on the circle is called a...', a: 'radius' },
+    { q: 'A line segment that passes through the center and touches two points on the circle is called a...', a: 'diameter' },
+    { q: 'A line segment connecting two points on a circle (but not passing through the center) is called a...', a: 'chord' },
+    { q: 'The distance around a circle is called the...', a: 'circumference' },
+  ];
+  const p = parts[randInt(0, parts.length - 1)];
+  return { question: p.q, answer: p.a, solution: `Answer: ${p.a}`, hint: `Think about the parts of a circle you learned in grade 7.`, accept: i => i.trim().toLowerCase() === p.a };
+}
+function genAngleSums() {
+  const a = randInt(25, 75);
+  return { question: `Two angles in a triangle are ${a}° and 90°. What is the third angle?`, answer: `${90 - a}°`,
+    solution: `Angles in a triangle = 180°\n${a}° + 90° + ? = 180°\n? = 180° − 90° − ${a}°\n? = ${90-a}°`,
+    hint: `It's a right triangle — one angle is 90°. What do the other two add up to?`,
+    accept: i => parseInt(i.replace(/[^\d]/g,'')) === 90-a };
+}
+
+// ─── GENERATORS: 8. Surface Area & Volume ───
+function genAreaRect() {
+  const l = randInt(3, 15), w = randInt(2, 12);
+  return { question: `Find the area of a rectangle with length ${l} cm and width ${w} cm.`, answer: `${l*w} cm²`,
+    solution: `Area = length × width\n= ${l} × ${w}\n= ${l*w} cm²`,
+    hint: `Area of a rectangle = length × width.`,
+    accept: i => parseInt(i.replace(/[^\d]/g,'')) === l*w };
+}
+function genAreaTriangle() {
+  const b = randInt(4, 16), h = randInt(3, 12);
+  const area = b * h / 2;
+  return { question: `Find the area of a triangle with base ${b} cm and height ${h} cm.`, answer: `${area} cm²`,
+    solution: `Area = ½ × base × height\n= ½ × ${b} × ${h}\n= ${b*h} ÷ 2\n= ${area} cm²`,
+    hint: `Area of a triangle = ½ × base × height.`,
+    accept: i => parseFloat(i.replace(/[^\d.]/g,'')) === area };
+}
+function genAreaCircle() {
+  const r = randInt(2, 10);
+  const area = Math.round(Math.PI * r * r * 100) / 100;
+  return { question: `Find the area of a circle with radius ${r} cm. Round to 2 decimal places. (Use π ≈ 3.14)`,
+    answer: `${(3.14 * r * r).toFixed(2)} cm²`,
+    solution: `Area = πr²\n= π × ${r}²\n= 3.14 × ${r*r}\n= ${(3.14 * r * r).toFixed(2)} cm²`,
+    hint: `Area of a circle = π × r². Use 3.14 for π.`,
+    accept: i => { const v = parseFloat(i.replace(/[^\d.]/g,'')); return Math.abs(v - 3.14*r*r) < 0.5 || Math.abs(v - area) < 0.5; }};
+}
+function genCircumference() {
+  const r = randInt(2, 12);
+  const c = Math.round(2 * 3.14 * r * 100) / 100;
+  return { question: `Find the circumference of a circle with radius ${r} cm. Round to 2 decimal places. (Use π ≈ 3.14)`,
+    answer: `${c.toFixed(2)} cm`,
+    solution: `Circumference = 2πr\n= 2 × 3.14 × ${r}\n= ${c.toFixed(2)} cm`,
+    hint: `C = 2πr. Use 3.14 for π.`,
+    accept: i => { const v = parseFloat(i.replace(/[^\d.]/g,'')); return Math.abs(v - c) < 0.5; }};
+}
+function genUnitConvert() {
+  const conversions = [
+    { from: 'cm', to: 'mm', factor: 10 }, { from: 'm', to: 'cm', factor: 100 },
+    { from: 'mm', to: 'cm', factor: 0.1 }, { from: 'cm', to: 'm', factor: 0.01 },
+  ];
+  const conv = conversions[randInt(0, conversions.length - 1)];
+  const val = conv.factor >= 1 ? randInt(1, 20) : randInt(10, 500);
+  const result = val * conv.factor;
+  return { question: `Convert ${val} ${conv.from} to ${conv.to}.`, answer: `${result} ${conv.to}`,
+    solution: `${val} ${conv.from} × ${conv.factor} = ${result} ${conv.to}\n(1 ${conv.from} = ${conv.factor} ${conv.to})`,
+    hint: `1 cm = 10 mm, 1 m = 100 cm.`,
+    accept: i => { const v = parseFloat(i.replace(/[^\d.]/g,'')); return Math.abs(v - result) < 0.01; }};
+}
+
+// ─── GENERATORS: 9. Similarity & Scale ───
+function genWriteRatio() {
+  const a = randInt(2, 15), b = randInt(2, 15);
+  const scenarios = [`${a} cats to ${b} dogs`, `${a} wins to ${b} losses`, `${a} boys to ${b} girls`];
+  const s = scenarios[randInt(0, scenarios.length - 1)];
+  return { question: `Write as a ratio: ${s}`, answer: `${a}:${b}`,
+    solution: `${s}\n= ${a}:${b} or ${a}/${b}`,
+    hint: `Write the first number, then a colon, then the second number.`,
+    accept: i => { const c = i.replace(/\s/g,''); return c === `${a}:${b}` || c === `${a}/${b}` || c === `${a}to${b}`; }};
+}
+function genSolveProportion() {
+  const a = randInt(2, 8), b = randInt(2, 8), c = randInt(2, 8);
+  const d = b * c / a;
+  if (!Number.isInteger(d) || d <= 0) return genSolveProportion();
+  return { question: `Solve: ${a}/${b} = ${c}/x`, answer: `${d}`,
+    solution: `${a}/${b} = ${c}/x\nCross-multiply: ${a} × x = ${b} × ${c}\n${a}x = ${b*c}\nx = ${b*c} ÷ ${a}\nx = ${d}`,
+    hint: `Cross-multiply: ${a} × x = ${b} × ${c}.`,
+    accept: i => parseInt(i) === d };
+}
+function genEquivRatio() {
+  const a = randInt(1, 8), b = randInt(1, 8), m = randInt(2, 5);
+  return { question: `Find an equivalent ratio to ${a}:${b} by multiplying both parts by ${m}.`, answer: `${a*m}:${b*m}`,
+    solution: `${a}:${b}\n${a} × ${m} = ${a*m}\n${b} × ${m} = ${b*m}\nEquivalent ratio: ${a*m}:${b*m}`,
+    hint: `Multiply both ${a} and ${b} by ${m}.`,
+    accept: i => i.replace(/\s/g,'') === `${a*m}:${b*m}` };
+}
+function genMultDivDecimals() {
+  const a = randInt(2, 15), b = randInt(1, 9);
+  const mode = randInt(0, 1);
+  if (mode === 0) { const dec = b / 10; return { question: `${a} × ${dec} = ?`, answer: `${a*dec}`, solution: `${a} × ${dec}\n= ${a} × ${b} ÷ 10\n= ${a*b} ÷ 10\n= ${a*dec}`, hint: `Multiply ${a} × ${b}, then divide by 10.`, accept: i => Math.abs(parseFloat(i) - a*dec) < 0.01 }; }
+  const whole = a * b; const dec = b / 10;
+  return { question: `${whole} ÷ ${dec} = ?`, answer: `${whole/dec}`, solution: `${whole} ÷ ${dec}\n= ${whole} ÷ ${b} × 10\n= ${whole/b} × 10\n= ${whole/dec}`, hint: `Move the decimal to make the divisor a whole number.`, accept: i => Math.abs(parseFloat(i) - whole/dec) < 0.1 };
+}
+function genCompareFractions() {
+  const n1 = randInt(1, 7), d1 = randInt(n1+1, 12), n2 = randInt(1, 7), d2 = randInt(n2+1, 12);
+  const v1 = n1/d1, v2 = n2/d2;
+  const ans = v1 > v2 ? `${n1}/${d1}` : v1 < v2 ? `${n2}/${d2}` : 'equal';
+  return { question: `Which is greater: ${n1}/${d1} or ${n2}/${d2}?`, answer: ans,
+    solution: `Cross-multiply to compare:\n${n1} × ${d2} = ${n1*d2}\n${n2} × ${d1} = ${n2*d1}\n${n1*d2} ${n1*d2>n2*d1?'>':n1*d2<n2*d1?'<':'='} ${n2*d1}\nSo ${ans === 'equal' ? 'they are equal' : ans + ' is greater'}.`,
+    hint: `Cross-multiply to compare without finding a common denominator.`,
+    accept: i => { const c = i.replace(/\s/g,'').toLowerCase(); if (ans==='equal') return c.includes('equal')||c.includes('same'); return c.includes(ans.replace(/\s/g,'')); }};
+}
+
+// ─── GENERATORS: 10. Statistics ───
+function genCalcMean() {
+  const n = randInt(4, 6);
+  const nums = Array.from({length: n}, () => randInt(2, 30));
+  const sum = nums.reduce((a,b)=>a+b, 0);
+  const mean = Math.round(sum / n * 10) / 10;
+  return { question: `Find the mean: ${nums.join(', ')}`, answer: `${mean}`,
+    solution: `Mean = sum ÷ count\n= (${nums.join(' + ')}) ÷ ${n}\n= ${sum} ÷ ${n}\n= ${mean}`,
+    hint: `Add all the numbers, then divide by how many there are.`,
+    accept: i => Math.abs(parseFloat(i) - mean) < 0.15 };
+}
+function genFindMedian() {
+  const n = randInt(0, 1) ? 5 : 7;
+  const nums = Array.from({length: n}, () => randInt(1, 30));
+  const sorted = [...nums].sort((a,b) => a-b);
+  const median = sorted[Math.floor(n/2)];
+  return { question: `Find the median: ${nums.join(', ')}`, answer: `${median}`,
+    solution: `Sort the data: ${sorted.join(', ')}\nMiddle value (position ${Math.floor(n/2)+1}): ${median}`,
+    hint: `Sort the numbers first. The median is the middle value.`,
+    accept: i => parseInt(i) === median };
+}
+function genPlotPointStats() {
+  const x = randInt(0, 10), y = randInt(0, 10);
+  return { question: `On a coordinate grid, the point (${x}, ${y}) means: move ___ on the x-axis and ___ on the y-axis. What values fill the blanks?`,
+    answer: `${x}, ${y}`,
+    solution: `(${x}, ${y})\nFirst value (${x}) → x-axis (horizontal, right)\nSecond value (${y}) → y-axis (vertical, up)`,
+    hint: `The first number is always x (horizontal), the second is y (vertical).`,
+    accept: i => { const p = i.split(/[,\s]+/).map(Number).filter(n=>!isNaN(n)); return p[0]===x && p[1]===y; }};
+}
+function genReadTable() {
+  const data = Array.from({length: 4}, (_, i) => [i+1, randInt(2, 20)]);
+  const idx = randInt(0, 3);
+  return { question: `Table: ${data.map(d=>`x=${d[0]}→y=${d[1]}`).join(', ')}. What is y when x = ${data[idx][0]}?`,
+    answer: `${data[idx][1]}`,
+    solution: `Look up x = ${data[idx][0]} in the table.\ny = ${data[idx][1]}`,
+    hint: `Find x = ${data[idx][0]} and read the y value next to it.`,
+    accept: i => parseInt(i) === data[idx][1] };
+}
+function genIndepDepStats() {
+  const scenarios = [
+    { text: 'Hours of sleep vs. energy level the next day', ind: 'hours of sleep', dep: 'energy level' },
+    { text: 'Amount of rainfall vs. height of grass', ind: 'rainfall', dep: 'height of grass' },
+    { text: 'Age of a car vs. its resale value', ind: 'age', dep: 'resale value' },
+  ];
+  const s = scenarios[randInt(0, scenarios.length - 1)];
+  return { question: `"${s.text}"\nWhich is the dependent variable?`, answer: s.dep,
+    solution: `Independent (cause): ${s.ind}\nDependent (effect): ${s.dep}\nThe dependent variable responds to changes in the independent variable.`,
+    hint: `The dependent variable is the one that responds or changes because of the other.`,
+    accept: i => i.toLowerCase().includes(s.dep.split(' ')[0].toLowerCase()) };
+}
+
+// ─── GENERATORS: 11. Probability ───
+function genListOutcomes() {
+  const events = [
+    { item: 'a standard die', outcomes: ['1','2','3','4','5','6'] },
+    { item: 'a coin', outcomes: ['heads','tails'] },
+    { item: 'a spinner with sections Red, Blue, Green', outcomes: ['Red','Blue','Green'] },
+  ];
+  const e = events[randInt(0, events.length - 1)];
+  return { question: `List all possible outcomes when you roll/flip/spin ${e.item}.`, answer: e.outcomes.join(', '),
+    solution: `All possible outcomes of ${e.item}:\n${e.outcomes.join(', ')}\nTotal: ${e.outcomes.length} outcomes`,
+    hint: `Think of every possible result.`,
+    accept: i => { const got = i.toLowerCase().split(/[,\s]+/).filter(Boolean).sort(); const exp = e.outcomes.map(o=>o.toLowerCase()).sort(); return JSON.stringify(got)===JSON.stringify(exp); }};
+}
+function genFavorableOutcomes() {
+  const total = randInt(8, 20);
+  const fav = randInt(1, total - 1);
+  const items = ['red marbles', 'blue cards', 'winning tickets', 'green gumballs'];
+  const item = items[randInt(0, items.length - 1)];
+  return { question: `A bag has ${total} items. ${fav} are ${item}. How many favorable outcomes for drawing a ${item.replace(/s$/, '')}?`,
+    answer: `${fav}`,
+    solution: `Favorable outcomes = number of ${item}\n= ${fav}`,
+    hint: `Favorable means the outcome you want.`,
+    accept: i => parseInt(i) === fav };
+}
+function genProbFraction() {
+  const total = randInt(6, 20), fav = randInt(1, total - 1);
+  const [sn, sd] = simplify(fav, total);
+  return { question: `A spinner has ${total} equal sections. ${fav} are blue. What is P(blue) as a simplified fraction?`,
+    answer: `${sn}/${sd}`,
+    solution: `P(blue) = favorable ÷ total\n= ${fav}/${total}\n= ${sn}/${sd} (simplified by dividing by ${gcd(fav,total)})`,
+    hint: `P(event) = favorable outcomes ÷ total outcomes. Then simplify.`,
+    accept: i => { const p = i.replace(/\s/g,'').split('/'); return p.length===2 && parseInt(p[0])===sn && parseInt(p[1])===sd; }};
+}
+function genFracToDecPercent() {
+  const n = randInt(1, 9), d = randInt(n+1, 10);
+  const dec = Math.round(n / d * 1000) / 1000;
+  const pct = Math.round(dec * 100 * 10) / 10;
+  const mode = randInt(0, 1);
+  if (mode === 0) return { question: `Convert ${n}/${d} to a decimal (round to 3 places).`, answer: `${dec}`,
+    solution: `${n}/${d}\n= ${n} ÷ ${d}\n= ${dec}`, hint: `Divide numerator by denominator.`,
+    accept: i => Math.abs(parseFloat(i) - dec) < 0.005 };
+  return { question: `Convert ${n}/${d} to a percent (round to 1 decimal place).`, answer: `${pct}%`,
+    solution: `${n}/${d}\n= ${n} ÷ ${d} = ${dec}\n${dec} × 100 = ${pct}%`, hint: `Divide, then multiply by 100.`,
+    accept: i => Math.abs(parseFloat(i.replace('%','')) - pct) < 0.15 };
+}
+function genSimplifyFrac() {
+  const g = randInt(2, 7), n = randInt(1, 8), d = randInt(n+1, 10);
+  const num = n*g, den = d*g;
+  return { question: `Simplify: ${num}/${den}`, answer: `${n}/${d}`,
+    solution: `GCF of ${num} and ${den} is ${g}\n${num} ÷ ${g} = ${n}\n${den} ÷ ${g} = ${d}\n= ${n}/${d}`,
+    hint: `Find the GCF and divide both top and bottom.`,
+    accept: i => { const p = i.replace(/\s/g,'').split('/'); return p.length===2 && parseInt(p[0])===n && parseInt(p[1])===d; }};
+}
+function genCountSystematic() {
+  const shirts = randInt(2, 4), pants = randInt(2, 4);
+  return { question: `You have ${shirts} shirts and ${pants} pants. How many different outfits can you make?`,
+    answer: `${shirts * pants}`,
+    solution: `Each shirt can pair with each pair of pants\n${shirts} shirts × ${pants} pants = ${shirts*pants} outfits`,
+    hint: `Multiply the number of choices for each item.`,
+    accept: i => parseInt(i) === shirts * pants };
+}
+
+// ─── TOPIC REGISTRY ───
+const TOPICS = [
+  { id: 'rational-numbers', name: 'Rational Numbers', num: 1, summary: 'Times tables, factors, fractions, decimals, integers', generators: [genMultTables, genFactorsOf, genEquivFraction, genSimplifyFraction, genDecFracPercent, genOrderIntegers] },
+  { id: 'square-roots', name: 'Square Roots', num: 2, summary: 'Multiplication, area, factor pairs, exponents', generators: [genMultiply2Digit, genSquareArea, genFactorPairs, genEvalExponent, genIdentifyHypotenuse] },
+  { id: 'powers-exponents', name: 'Powers & Exponents', num: 3, summary: 'Mult/div fluency, BEDMAS, negative integers', generators: [genMultDivFluency, genRepeatedMult, genBEDMAS, genMultDivNeg, genNegBasePower] },
+  { id: 'linear-relations', name: 'Linear Relations', num: 4, summary: 'Coordinates, patterns, tables, integers', generators: [genPlotPoint, genPatternRule, genCompleteTable, genAddSubIntegers, genIndepDep] },
+  { id: 'linear-equations', name: 'Linear Equations', num: 5, summary: 'Integer operations, inverse ops, one-step equations, BEDMAS', generators: [genIntegerOps, genInverseOp, genOneStepEq, genEvalExpression, genBEDMAS2] },
+  { id: 'polynomials', name: 'Polynomials', num: 6, summary: 'Negatives, distributive property, variable notation', generators: [genAddSubNeg, genDistributive, genMultIntegers, genVariableNotation, genXplusXvsXtimesX] },
+  { id: 'circle-geometry', name: 'Circle Geometry', num: 7, summary: 'Circle parts, angles, Pythagorean theorem', generators: [genRadiusDiameter, genMissingAngle, genPythagorean, genCircleParts, genAngleSums] },
+  { id: 'measurement', name: 'Surface Area & Volume', num: 8, summary: 'Area formulas, circumference, unit conversion', generators: [genAreaRect, genAreaTriangle, genAreaCircle, genCircumference, genUnitConvert] },
+  { id: 'similarity', name: 'Similarity & Scale', num: 9, summary: 'Ratios, proportions, decimals, fractions', generators: [genWriteRatio, genSolveProportion, genEquivRatio, genMultDivDecimals, genCompareFractions] },
+  { id: 'statistics', name: 'Statistics & Scatter Plots', num: 10, summary: 'Mean, median, coordinates, tables', generators: [genCalcMean, genFindMedian, genPlotPointStats, genReadTable, genIndepDepStats] },
+  { id: 'probability', name: 'Probability', num: 11, summary: 'Outcomes, fractions, percents, counting', generators: [genListOutcomes, genFavorableOutcomes, genProbFraction, genFracToDecPercent, genSimplifyFrac, genCountSystematic] },
+];
+
+// ─── APP STATE ───
+let currentTopic = null;
+let problems = [];
+let currentIndex = 0;
+let score = 0;
+let answered = false;
+
+// ─── DOM REFS ───
+const topicGrid = document.getElementById('topic-grid');
+const problemView = document.getElementById('problem-view');
+const summaryView = document.getElementById('summary-view');
+const backBtn = document.getElementById('back-btn');
+const pvTitle = document.getElementById('pv-title');
+const pvProgress = document.getElementById('pv-progress');
+const pvQuestion = document.getElementById('pv-question');
+const hintToggle = document.getElementById('hint-toggle');
+const hintBox = document.getElementById('hint-box');
+const answerInput = document.getElementById('answer-input');
+const checkBtn = document.getElementById('check-btn');
+const feedback = document.getElementById('feedback');
+const feedbackText = document.getElementById('feedback-text');
+const feedbackSolution = document.getElementById('feedback-solution');
+const nextBtn = document.getElementById('next-btn');
+const sumTitle = document.getElementById('sum-title');
+const sumScore = document.getElementById('sum-score');
+const sumLabel = document.getElementById('sum-label');
+const sumBar = document.getElementById('sum-bar');
+const retryBtn = document.getElementById('retry-btn');
+const pickBtn = document.getElementById('pick-btn');
+
+// ─── localStorage ───
+const STORAGE_KEY = 'math9-practice-progress';
+function loadProgress() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; } }
+function saveProgress(topicId, s, total) {
+  const prog = loadProgress();
+  const prev = prog[topicId] || { best: 0, attempts: 0 };
+  prog[topicId] = { best: Math.max(prev.best, s), attempts: prev.attempts + 1, lastDate: new Date().toISOString().slice(0,10) };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(prog));
+}
+
+// ─── RENDER TOPIC GRID ───
+function renderGrid() {
+  const prog = loadProgress();
+  topicGrid.innerHTML = TOPICS.map(t => {
+    const p = prog[t.id];
+    const badge = p ? `<span class="text-xs font-semibold ${p.best>=4?'text-emerald-600':'text-slate-400'}">Best: ${p.best}/5</span>` : '';
+    return `<button data-topic="${t.id}" class="text-left bg-white rounded-xl border border-slate-200 border-l-4 border-l-indigo-400 px-5 py-4 hover:bg-indigo-50 transition-colors group">
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-xs font-bold text-indigo-400">Topic ${t.num}</span>
+        ${badge}
+      </div>
+      <p class="font-bold text-slate-800 text-sm mb-1 group-hover:text-indigo-700 transition-colors">${t.name}</p>
+      <p class="text-xs text-slate-400">${t.summary}</p>
+      <div class="mt-3 flex gap-2">
+        <span class="text-xs font-semibold text-indigo-600 group-hover:underline">Start Practice →</span>
+        <button data-print="${t.id}" class="text-xs font-medium text-slate-400 hover:text-slate-700 ml-auto" onclick="event.stopPropagation()">🖨 Print</button>
+      </div>
+    </button>`;
+  }).join('');
+}
+
+// ─── GENERATE PROBLEM SET ───
+function generateProblems(topic) {
+  const gens = topic.generators.length > 5 ? shuffle(topic.generators).slice(0, 5) : [...topic.generators];
+  return gens.map(g => { for (let i = 0; i < 10; i++) { try { return g(); } catch {} } return g(); });
+}
+
+// ─── SHOW/HIDE STATES ───
+function showState(state) {
+  topicGrid.classList.toggle('hidden', state !== 'grid');
+  topicGrid.classList.toggle('sm:grid-cols-2', state === 'grid');
+  topicGrid.classList.toggle('grid', state === 'grid');
+  problemView.classList.toggle('hidden', state !== 'problem');
+  summaryView.classList.toggle('hidden', state !== 'summary');
+}
+
+// ─── SELECT TOPIC ───
+function selectTopic(topicId) {
+  currentTopic = TOPICS.find(t => t.id === topicId);
+  if (!currentTopic) return;
+  problems = generateProblems(currentTopic);
+  currentIndex = 0;
+  score = 0;
+  showState('problem');
+  pvTitle.textContent = currentTopic.name;
+  showProblem();
+}
+
+// ─── SHOW PROBLEM ───
+function showProblem() {
+  answered = false;
+  const p = problems[currentIndex];
+  pvProgress.textContent = `Problem ${currentIndex + 1} of ${problems.length}  ·  ${score} correct`;
+  pvQuestion.textContent = p.question;
+  answerInput.value = '';
+  answerInput.disabled = false;
+  checkBtn.disabled = false;
+  checkBtn.classList.remove('opacity-50');
+  feedback.classList.add('hidden');
+  feedbackSolution.classList.add('hidden');
+  nextBtn.classList.add('hidden');
+  if (p.hint) {
+    hintToggle.classList.remove('hidden');
+    hintToggle.textContent = 'Show hint';
+    hintBox.classList.add('hidden');
+    hintBox.textContent = p.hint;
+  } else {
+    hintToggle.classList.add('hidden');
+    hintBox.classList.add('hidden');
+  }
+  setTimeout(() => answerInput.focus(), 50);
+}
+
+// ─── CHECK ANSWER ───
+function checkAnswer() {
+  if (answered) return;
+  const p = problems[currentIndex];
+  const input = answerInput.value.trim();
+  if (!input) return;
+  answered = true;
+  answerInput.disabled = true;
+  checkBtn.disabled = true;
+  checkBtn.classList.add('opacity-50');
+
+  let correct = false;
+  if (p.accept) {
+    correct = p.accept(input);
+  } else {
+    correct = input.toLowerCase().replace(/\s+/g,' ') === p.answer.toLowerCase().replace(/\s+/g,' ');
+  }
+
+  feedback.classList.remove('hidden');
+  if (correct) {
+    score++;
+    feedback.className = 'rounded-xl border border-emerald-200 bg-emerald-50 p-4 mb-4';
+    feedbackText.className = 'font-semibold text-sm text-emerald-700';
+    feedbackText.textContent = 'Correct!';
+    feedbackSolution.classList.add('hidden');
+    pvProgress.textContent = `Problem ${currentIndex + 1} of ${problems.length}  ·  ${score} correct`;
+  } else {
+    feedback.className = 'rounded-xl border border-red-200 bg-red-50 p-4 mb-4';
+    feedbackText.className = 'font-semibold text-sm text-red-700 mb-1';
+    feedbackText.textContent = `Not quite — the answer is ${p.answer}`;
+    feedbackSolution.classList.remove('hidden');
+    feedbackSolution.textContent = p.solution;
+  }
+  nextBtn.classList.remove('hidden');
+  nextBtn.focus();
+}
+
+// ─── NEXT / SUMMARY ───
+function nextProblem() {
+  currentIndex++;
+  if (currentIndex >= problems.length) {
+    showSummary();
+  } else {
+    showProblem();
+  }
+}
+
+function showSummary() {
+  saveProgress(currentTopic.id, score, problems.length);
+  showState('summary');
+  sumTitle.textContent = currentTopic.name;
+  sumScore.textContent = `${score} / ${problems.length}`;
+  sumLabel.textContent = score === problems.length ? 'Perfect! You\'re ready.' : score >= 3 ? 'Good work — review the ones you missed.' : 'Keep practicing — you\'ll get there!';
+  const pct = (score / problems.length) * 100;
+  sumBar.style.width = `${pct}%`;
+  sumBar.className = `h-3 rounded-full transition-all ${pct >= 80 ? 'bg-emerald-500' : pct >= 60 ? 'bg-amber-400' : 'bg-red-400'}`;
+}
+
+// ─── PRINT ───
+function printWorksheet(topicId) {
+  const topic = TOPICS.find(t => t.id === topicId);
+  if (!topic) return;
+  const printProblems = [];
+  const gens = [...topic.generators];
+  // Generate 10 problems: cycle through generators twice
+  for (let round = 0; round < 2; round++) {
+    for (const g of gens) {
+      if (printProblems.length >= 10) break;
+      for (let attempt = 0; attempt < 10; attempt++) {
+        try { printProblems.push(g()); break; } catch {}
+      }
+    }
+  }
+
+  document.getElementById('print-title').textContent = `Prereq Practice — ${topic.name}`;
+  document.getElementById('print-problems').innerHTML = printProblems.map((p, i) =>
+    `<div class="flex gap-3">
+      <span class="font-bold text-slate-400 w-8 flex-shrink-0">${i+1}.</span>
+      <div class="flex-1">
+        <p class="text-sm mb-3">${p.question}</p>
+        <div class="border-b border-slate-200 pb-4"></div>
+      </div>
+    </div>`
+  ).join('');
+  document.getElementById('print-answer-list').innerHTML = printProblems.map((p, i) =>
+    `<div class="flex gap-3">
+      <span class="font-bold text-slate-400 w-8 flex-shrink-0">${i+1}.</span>
+      <div class="flex-1">
+        <p class="font-medium text-sm mb-1">Answer: ${p.answer}</p>
+        <pre class="text-xs text-slate-500 whitespace-pre-wrap font-sans">${p.solution}</pre>
+      </div>
+    </div>`
+  ).join('');
+
+  document.getElementById('print-sheet').classList.remove('hidden');
+  window.print();
+  document.getElementById('print-sheet').classList.add('hidden');
+}
+
+// ─── EVENT LISTENERS ───
+topicGrid.addEventListener('click', e => {
+  const printBtn = e.target.closest('[data-print]');
+  if (printBtn) { printWorksheet(printBtn.dataset.print); return; }
+  const card = e.target.closest('[data-topic]');
+  if (card) selectTopic(card.dataset.topic);
+});
+backBtn.addEventListener('click', () => { showState('grid'); renderGrid(); });
+checkBtn.addEventListener('click', checkAnswer);
+answerInput.addEventListener('keydown', e => { if (e.key === 'Enter') { if (answered) nextProblem(); else checkAnswer(); } });
+nextBtn.addEventListener('click', nextProblem);
+retryBtn.addEventListener('click', () => selectTopic(currentTopic.id));
+pickBtn.addEventListener('click', () => { showState('grid'); renderGrid(); });
+hintToggle.addEventListener('click', () => {
+  const showing = !hintBox.classList.contains('hidden');
+  hintBox.classList.toggle('hidden');
+  hintToggle.textContent = showing ? 'Show hint' : 'Hide hint';
+});
+
+// ─── INIT ───
+renderGrid();
+</script>
