@@ -46,9 +46,10 @@ const base = import.meta.env.BASE_URL;
       <p id="sum-title" class="text-lg font-bold text-slate-800 mb-4"></p>
       <p id="sum-score" class="text-5xl font-bold text-math9-600 mb-2"></p>
       <p id="sum-label" class="text-sm text-slate-400 mb-6"></p>
-      <div class="w-full bg-slate-100 rounded-full h-3 mb-6">
+      <div class="w-full bg-slate-100 rounded-full h-3 mb-4">
         <div id="sum-bar" class="h-3 rounded-full transition-all"></div>
       </div>
+      <div id="sum-skills" class="text-left space-y-2 mt-4 pt-4 border-t border-slate-100"></div>
     </div>
     <div class="flex gap-3">
       <button id="retry-btn" class="flex-1 bg-math9-600 text-white font-semibold py-2.5 rounded-lg hover:bg-math9-700 transition-colors">Try Again</button>
@@ -677,17 +678,85 @@ function genCountSystematic() {
 
 // ─── TOPIC REGISTRY ───
 const TOPICS = [
-  { id: 'rational-numbers', name: 'Rational Numbers', num: 1, summary: 'Times tables, factors, fractions, decimals, integers', generators: [genMultTables, genFactorsOf, genEquivFraction, genSimplifyFraction, genDecFracPercent, genOrderIntegers] },
-  { id: 'square-roots', name: 'Square Roots', num: 2, summary: 'Multiplication, area, factor pairs, exponents', generators: [genMultiply2Digit, genSquareArea, genFactorPairs, genEvalExponent, genIdentifyHypotenuse] },
-  { id: 'powers-exponents', name: 'Powers & Exponents', num: 3, summary: 'Mult/div fluency, BEDMAS, negative integers', generators: [genMultDivFluency, genRepeatedMult, genBEDMAS, genMultDivNeg, genNegBasePower] },
-  { id: 'linear-relations', name: 'Linear Relations', num: 4, summary: 'Coordinates, patterns, tables, integers', generators: [genPlotPoint, genPatternRule, genCompleteTable, genAddSubIntegers, genIndepDep] },
-  { id: 'linear-equations', name: 'Linear Equations', num: 5, summary: 'Integer operations, inverse ops, one-step equations, BEDMAS', generators: [genIntegerOps, genInverseOp, genOneStepEq, genEvalExpression, genBEDMAS2] },
-  { id: 'polynomials', name: 'Polynomials', num: 6, summary: 'Negatives, distributive property, variable notation', generators: [genAddSubNeg, genDistributive, genMultIntegers, genVariableNotation, genXplusXvsXtimesX] },
-  { id: 'circle-geometry', name: 'Circle Geometry', num: 7, summary: 'Circle parts, angles, Pythagorean theorem', generators: [genRadiusDiameter, genMissingAngle, genPythagorean, genCircleParts, genAngleSums] },
-  { id: 'measurement', name: 'Surface Area & Volume', num: 8, summary: 'Area formulas, circumference, unit conversion', generators: [genAreaRect, genAreaTriangle, genAreaCircle, genCircumference, genUnitConvert] },
-  { id: 'similarity', name: 'Similarity & Scale', num: 9, summary: 'Ratios, proportions, decimals, fractions', generators: [genWriteRatio, genSolveProportion, genEquivRatio, genMultDivDecimals, genCompareFractions] },
-  { id: 'statistics', name: 'Statistics & Scatter Plots', num: 10, summary: 'Mean, median, coordinates, tables', generators: [genCalcMean, genFindMedian, genPlotPointStats, genReadTable, genIndepDepStats] },
-  { id: 'probability', name: 'Probability', num: 11, summary: 'Outcomes, fractions, percents, counting', generators: [genListOutcomes, genFavorableOutcomes, genProbFraction, genFracToDecPercent, genSimplifyFrac, genCountSystematic] },
+  { id: 'rational-numbers', name: 'Rational Numbers', num: 1, summary: 'Times tables, factors, fractions, decimals, integers', skills: [
+    { name: 'Multiplication tables', gen: genMultTables },
+    { name: 'Factors of a number', gen: genFactorsOf },
+    { name: 'Equivalent fractions', gen: genEquivFraction },
+    { name: 'Simplify fractions', gen: genSimplifyFraction },
+    { name: 'Decimal / fraction / percent', gen: genDecFracPercent },
+    { name: 'Order integers', gen: genOrderIntegers },
+  ]},
+  { id: 'square-roots', name: 'Square Roots', num: 2, summary: 'Multiplication, area, factor pairs, exponents', skills: [
+    { name: 'Two-digit multiplication', gen: genMultiply2Digit },
+    { name: 'Area of a square', gen: genSquareArea },
+    { name: 'Factor pairs', gen: genFactorPairs },
+    { name: 'Evaluate exponents', gen: genEvalExponent },
+    { name: 'Pythagorean theorem', gen: genIdentifyHypotenuse },
+  ]},
+  { id: 'powers-exponents', name: 'Powers & Exponents', num: 3, summary: 'Mult/div fluency, BEDMAS, negative integers', skills: [
+    { name: 'Multiply & divide', gen: genMultDivFluency },
+    { name: 'Repeated multiplication', gen: genRepeatedMult },
+    { name: 'Order of operations', gen: genBEDMAS },
+    { name: 'Negative integer operations', gen: genMultDivNeg },
+    { name: 'Negative base powers', gen: genNegBasePower },
+  ]},
+  { id: 'linear-relations', name: 'Linear Relations', num: 4, summary: 'Coordinates, patterns, tables, integers', skills: [
+    { name: 'Plot points / quadrants', gen: genPlotPoint },
+    { name: 'Pattern rules', gen: genPatternRule },
+    { name: 'Complete a table', gen: genCompleteTable },
+    { name: 'Add & subtract integers', gen: genAddSubIntegers },
+    { name: 'Independent vs dependent', gen: genIndepDep },
+  ]},
+  { id: 'linear-equations', name: 'Linear Equations', num: 5, summary: 'Integer operations, inverse ops, one-step equations, BEDMAS', skills: [
+    { name: 'Integer operations', gen: genIntegerOps },
+    { name: 'Inverse operations', gen: genInverseOp },
+    { name: 'One-step equations', gen: genOneStepEq },
+    { name: 'Evaluate expressions', gen: genEvalExpression },
+    { name: 'BEDMAS', gen: genBEDMAS2 },
+  ]},
+  { id: 'polynomials', name: 'Polynomials', num: 6, summary: 'Negatives, distributive property, variable notation', skills: [
+    { name: 'Add & subtract negatives', gen: genAddSubNeg },
+    { name: 'Distributive property', gen: genDistributive },
+    { name: 'Multiply integers', gen: genMultIntegers },
+    { name: 'Variable notation', gen: genVariableNotation },
+    { name: 'x + x vs x × x', gen: genXplusXvsXtimesX },
+  ]},
+  { id: 'circle-geometry', name: 'Circle Geometry', num: 7, summary: 'Circle parts, angles, Pythagorean theorem', skills: [
+    { name: 'Radius & diameter', gen: genRadiusDiameter },
+    { name: 'Missing angle in triangle', gen: genMissingAngle },
+    { name: 'Pythagorean theorem', gen: genPythagorean },
+    { name: 'Parts of a circle', gen: genCircleParts },
+    { name: 'Angle sums', gen: genAngleSums },
+  ]},
+  { id: 'measurement', name: 'Surface Area & Volume', num: 8, summary: 'Area formulas, circumference, unit conversion', skills: [
+    { name: 'Area of rectangle', gen: genAreaRect },
+    { name: 'Area of triangle', gen: genAreaTriangle },
+    { name: 'Area of circle', gen: genAreaCircle },
+    { name: 'Circumference', gen: genCircumference },
+    { name: 'Unit conversion', gen: genUnitConvert },
+  ]},
+  { id: 'similarity', name: 'Similarity & Scale', num: 9, summary: 'Ratios, proportions, decimals, fractions', skills: [
+    { name: 'Write a ratio', gen: genWriteRatio },
+    { name: 'Solve a proportion', gen: genSolveProportion },
+    { name: 'Equivalent ratios', gen: genEquivRatio },
+    { name: 'Multiply & divide decimals', gen: genMultDivDecimals },
+    { name: 'Compare fractions', gen: genCompareFractions },
+  ]},
+  { id: 'statistics', name: 'Statistics & Scatter Plots', num: 10, summary: 'Mean, median, coordinates, tables', skills: [
+    { name: 'Calculate mean', gen: genCalcMean },
+    { name: 'Find median', gen: genFindMedian },
+    { name: 'Plot points', gen: genPlotPointStats },
+    { name: 'Read a table', gen: genReadTable },
+    { name: 'Independent vs dependent', gen: genIndepDepStats },
+  ]},
+  { id: 'probability', name: 'Probability', num: 11, summary: 'Outcomes, fractions, percents, counting', skills: [
+    { name: 'List outcomes', gen: genListOutcomes },
+    { name: 'Count favorable outcomes', gen: genFavorableOutcomes },
+    { name: 'Probability as fraction', gen: genProbFraction },
+    { name: 'Fraction to decimal/percent', gen: genFracToDecPercent },
+    { name: 'Simplify fractions', gen: genSimplifyFrac },
+    { name: 'Systematic counting', gen: genCountSystematic },
+  ]},
 ];
 
 // ─── APP STATE ───
@@ -722,6 +791,7 @@ const pickBtn = document.getElementById('pick-btn');
 
 // ─── localStorage ───
 const STORAGE_KEY = 'math9-practice-progress';
+const SKILLS_KEY = 'math9-practice-skills';
 function loadProgress() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; } }
 function saveProgress(topicId, s, total) {
   const prog = loadProgress();
@@ -729,21 +799,48 @@ function saveProgress(topicId, s, total) {
   prog[topicId] = { best: Math.max(prev.best, s), attempts: prev.attempts + 1, lastDate: new Date().toISOString().slice(0,10) };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(prog));
 }
+function loadSkills() { try { return JSON.parse(localStorage.getItem(SKILLS_KEY)) || {}; } catch { return {}; } }
+function recordSkill(skillId, correct) {
+  const skills = loadSkills();
+  const prev = skills[skillId] || { correct: 0, total: 0 };
+  prev.total++;
+  if (correct) prev.correct++;
+  skills[skillId] = prev;
+  localStorage.setItem(SKILLS_KEY, JSON.stringify(skills));
+}
+function skillStatus(skillId) {
+  const skills = loadSkills();
+  const s = skills[skillId];
+  if (!s || s.total === 0) return 'new';
+  const rate = s.correct / s.total;
+  if (rate >= 0.8 && s.total >= 2) return 'mastered';
+  if (rate >= 0.5) return 'developing';
+  return 'needs-work';
+}
+function skillId(topicId, skillName) { return topicId + '::' + skillName; }
 
 // ─── RENDER TOPIC GRID ───
+const statusDot = { mastered: '🟢', developing: '🟡', 'needs-work': '🔴', 'new': '⚪' };
+const statusLabel = { mastered: 'Mastered', developing: 'Developing', 'needs-work': 'Needs work', 'new': '' };
+
 function renderGrid() {
   const prog = loadProgress();
   topicGrid.innerHTML = TOPICS.map(t => {
     const p = prog[t.id];
     const badge = p ? `<span class="text-xs font-semibold ${p.best>=4?'text-emerald-600':'text-slate-400'}">Best: ${p.best}/5</span>` : '';
+    const skillDots = t.skills.map(s => {
+      const st = skillStatus(skillId(t.id, s.name));
+      return `<span title="${s.name}: ${statusLabel[st] || 'Not tried'}" style="cursor:default;">${statusDot[st]}</span>`;
+    }).join(' ');
     return `<button data-topic="${t.id}" class="text-left bg-white rounded-xl border border-slate-200 border-l-4 border-l-indigo-400 px-5 py-4 hover:bg-indigo-50 transition-colors group">
       <div class="flex items-center justify-between mb-1">
         <span class="text-xs font-bold text-indigo-400">Topic ${t.num}</span>
         ${badge}
       </div>
       <p class="font-bold text-slate-800 text-sm mb-1 group-hover:text-indigo-700 transition-colors">${t.name}</p>
-      <p class="text-xs text-slate-400">${t.summary}</p>
-      <div class="mt-3 flex gap-2">
+      <p class="text-xs text-slate-400 mb-2">${t.summary}</p>
+      <div class="text-xs mb-2">${skillDots}</div>
+      <div class="flex gap-2">
         <span class="text-xs font-semibold text-indigo-600 group-hover:underline">Start Practice →</span>
         <button data-print="${t.id}" class="text-xs font-medium text-slate-400 hover:text-slate-700 ml-auto">🖨 Print</button>
       </div>
@@ -753,8 +850,11 @@ function renderGrid() {
 
 // ─── GENERATE PROBLEM SET ───
 function generateProblems(topic) {
-  const gens = topic.generators.length > 5 ? shuffle(topic.generators).slice(0, 5) : [...topic.generators];
-  return gens.map(g => { for (let i = 0; i < 10; i++) { try { return g(); } catch {} } return g(); });
+  const skillList = topic.skills.length > 5 ? shuffle(topic.skills).slice(0, 5) : [...topic.skills];
+  return skillList.map(s => {
+    for (let i = 0; i < 10; i++) { try { const p = s.gen(); p._skill = s.name; return p; } catch {} }
+    const p = s.gen(); p._skill = s.name; return p;
+  });
 }
 
 // ─── SHOW/HIDE STATES ───
@@ -821,6 +921,10 @@ function checkAnswer() {
     correct = input.toLowerCase().replace(/\s+/g,' ') === p.answer.toLowerCase().replace(/\s+/g,' ');
   }
 
+  if (p._skill && currentTopic) {
+    recordSkill(skillId(currentTopic.id, p._skill), correct);
+  }
+
   if (correct) {
     score++;
     feedback.className = 'rounded-xl border border-emerald-200 bg-emerald-50 p-4 mb-4';
@@ -860,6 +964,19 @@ function showSummary() {
   const pct = (score / problems.length) * 100;
   sumBar.style.width = `${pct}%`;
   sumBar.className = `h-3 rounded-full transition-all ${pct >= 80 ? 'bg-emerald-500' : pct >= 60 ? 'bg-amber-400' : 'bg-red-400'}`;
+
+  const sumSkills = document.getElementById('sum-skills');
+  sumSkills.innerHTML = '<p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Skill Tracker</p>' +
+    currentTopic.skills.map(s => {
+      const sid = skillId(currentTopic.id, s.name);
+      const st = skillStatus(sid);
+      const data = loadSkills()[sid];
+      const info = data ? `${data.correct}/${data.total} correct` : 'Not tried';
+      return `<div class="flex items-center justify-between gap-2 text-sm">
+        <span class="flex items-center gap-2"><span>${statusDot[st]}</span> ${s.name}</span>
+        <span class="text-xs text-slate-400">${info}</span>
+      </div>`;
+    }).join('');
 }
 
 // ─── PRINT ───
@@ -867,13 +984,12 @@ function printWorksheet(topicId) {
   const topic = TOPICS.find(t => t.id === topicId);
   if (!topic) return;
   const printProblems = [];
-  const gens = [...topic.generators];
-  // Generate 10 problems: cycle through generators twice
+  const skills = [...topic.skills];
   for (let round = 0; round < 2; round++) {
-    for (const g of gens) {
+    for (const s of skills) {
       if (printProblems.length >= 10) break;
       for (let attempt = 0; attempt < 10; attempt++) {
-        try { printProblems.push(g()); break; } catch {}
+        try { printProblems.push(s.gen()); break; } catch {}
       }
     }
   }

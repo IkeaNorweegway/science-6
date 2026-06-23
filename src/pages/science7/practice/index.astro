@@ -46,9 +46,10 @@ const base = import.meta.env.BASE_URL;
       <p id="sum-title" class="text-lg font-bold text-slate-800 mb-4"></p>
       <p id="sum-score" class="text-5xl font-bold mb-2" style="color: #059669;"></p>
       <p id="sum-label" class="text-sm text-slate-400 mb-6"></p>
-      <div class="w-full bg-slate-100 rounded-full h-3 mb-6">
+      <div class="w-full bg-slate-100 rounded-full h-3 mb-4">
         <div id="sum-bar" class="h-3 rounded-full transition-all"></div>
       </div>
+      <div id="sum-skills" class="text-left space-y-2 mt-4 pt-4 border-t border-slate-100"></div>
     </div>
     <div class="flex gap-3">
       <button id="retry-btn" class="flex-1 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-colors" style="background-color: #059669;">Try Again</button>
@@ -444,19 +445,49 @@ function genRockCycle() {
 const TOPICS = [
   { id: 'interactions-ecosystems', name: 'Interactions & Ecosystems', num: 1, color: '#059669',
     summary: 'Biotic/abiotic, producers, consumers, food chains, energy flow',
-    generators: [genBioticAbiotic, genProducerConsumer, genFoodChainOrder, genEcosystemVocab, genEnergyFlow] },
+    skills: [
+      { name: 'Biotic vs abiotic', gen: genBioticAbiotic },
+      { name: 'Producers vs consumers', gen: genProducerConsumer },
+      { name: 'Food chain roles', gen: genFoodChainOrder },
+      { name: 'Ecosystem vocabulary', gen: genEcosystemVocab },
+      { name: 'Energy flow', gen: genEnergyFlow },
+    ]},
   { id: 'plants-food-fibre', name: 'Plants for Food & Fibre', num: 2, color: '#16a34a',
     summary: 'Plant parts, needs, cells, photosynthesis, pollination',
-    generators: [genPlantParts, genPlantNeeds, genCellBasics, genPhotosynthesisBasics, genPollinationSeed] },
+    skills: [
+      { name: 'Plant parts & functions', gen: genPlantParts },
+      { name: 'Plant needs', gen: genPlantNeeds },
+      { name: 'Cell basics', gen: genCellBasics },
+      { name: 'Photosynthesis', gen: genPhotosynthesisBasics },
+      { name: 'Pollination & seeds', gen: genPollinationSeed },
+    ]},
   { id: 'heat-temperature', name: 'Heat & Temperature', num: 3, color: '#ea580c',
     summary: 'States of matter, particles, heat vs temp, energy, state changes',
-    generators: [genStatesOfMatter, genParticleModel, genHeatVsTemp, genEnergyForms, genStateChanges] },
+    skills: [
+      { name: 'States of matter', gen: genStatesOfMatter },
+      { name: 'Particle model', gen: genParticleModel },
+      { name: 'Heat vs temperature', gen: genHeatVsTemp },
+      { name: 'Forms of energy', gen: genEnergyForms },
+      { name: 'State changes', gen: genStateChanges },
+    ]},
   { id: 'structures-forces', name: 'Structures & Forces', num: 4, color: '#7c3aed',
     summary: 'Forces, structure types, loads, internal forces, simple machines',
-    generators: [genForceBasics, genStructureTypes, genLoadTypes, genInternalForces, genSimpleMachines] },
+    skills: [
+      { name: 'Force basics', gen: genForceBasics },
+      { name: 'Structure types', gen: genStructureTypes },
+      { name: 'Load types', gen: genLoadTypes },
+      { name: 'Internal forces', gen: genInternalForces },
+      { name: 'Simple machines', gen: genSimpleMachines },
+    ]},
   { id: 'planet-earth', name: 'Planet Earth', num: 5, color: '#d97706',
     summary: 'Earth layers, rock types, weathering, minerals, rock cycle',
-    generators: [genEarthLayers, genRockTypes, genWeatheringErosion, genMinerals, genRockCycle] },
+    skills: [
+      { name: 'Earth layers', gen: genEarthLayers },
+      { name: 'Rock types', gen: genRockTypes },
+      { name: 'Weathering & erosion', gen: genWeatheringErosion },
+      { name: 'Minerals', gen: genMinerals },
+      { name: 'Rock cycle', gen: genRockCycle },
+    ]},
 ];
 
 // ─── APP STATE ───
@@ -491,6 +522,7 @@ const pickBtn = document.getElementById('pick-btn');
 
 // ─── localStorage ───
 const STORAGE_KEY = 'sci7-practice-progress';
+const SKILLS_KEY = 'sci7-practice-skills';
 function loadProgress() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; } }
 function saveProgress(topicId, s, total) {
   const prog = loadProgress();
@@ -498,21 +530,48 @@ function saveProgress(topicId, s, total) {
   prog[topicId] = { best: Math.max(prev.best, s), attempts: prev.attempts + 1, lastDate: new Date().toISOString().slice(0,10) };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(prog));
 }
+function loadSkills() { try { return JSON.parse(localStorage.getItem(SKILLS_KEY)) || {}; } catch { return {}; } }
+function recordSkill(skillId, correct) {
+  const skills = loadSkills();
+  const prev = skills[skillId] || { correct: 0, total: 0 };
+  prev.total++;
+  if (correct) prev.correct++;
+  skills[skillId] = prev;
+  localStorage.setItem(SKILLS_KEY, JSON.stringify(skills));
+}
+function skillStatus(skillId) {
+  const skills = loadSkills();
+  const s = skills[skillId];
+  if (!s || s.total === 0) return 'new';
+  const rate = s.correct / s.total;
+  if (rate >= 0.8 && s.total >= 2) return 'mastered';
+  if (rate >= 0.5) return 'developing';
+  return 'needs-work';
+}
+function skillId(topicId, skillName) { return topicId + '::' + skillName; }
 
 // ─── RENDER TOPIC GRID ───
+const statusDot = { mastered: '🟢', developing: '🟡', 'needs-work': '🔴', 'new': '⚪' };
+const statusLabel = { mastered: 'Mastered', developing: 'Developing', 'needs-work': 'Needs work', 'new': '' };
+
 function renderGrid() {
   const prog = loadProgress();
   topicGrid.innerHTML = TOPICS.map(t => {
     const p = prog[t.id];
     const badge = p ? `<span class="text-xs font-semibold ${p.best>=4?'text-emerald-600':'text-slate-400'}">Best: ${p.best}/5</span>` : '';
+    const skillDots = t.skills.map(s => {
+      const st = skillStatus(skillId(t.id, s.name));
+      return `<span title="${s.name}: ${statusLabel[st] || 'Not tried'}" style="cursor:default;">${statusDot[st]}</span>`;
+    }).join(' ');
     return `<button data-topic="${t.id}" class="text-left bg-white rounded-xl border border-slate-200 border-l-4 px-5 py-4 hover:opacity-90 transition-colors group" style="border-left-color: ${t.color};">
       <div class="flex items-center justify-between mb-1">
         <span class="text-xs font-bold" style="color: ${t.color};">Unit ${t.num}</span>
         ${badge}
       </div>
       <p class="font-bold text-slate-800 text-sm mb-1 group-hover:underline transition-colors">${t.name}</p>
-      <p class="text-xs text-slate-400">${t.summary}</p>
-      <div class="mt-3 flex gap-2">
+      <p class="text-xs text-slate-400 mb-2">${t.summary}</p>
+      <div class="text-xs mb-2">${skillDots}</div>
+      <div class="flex gap-2">
         <span class="text-xs font-semibold group-hover:underline" style="color: ${t.color};">Start Practice →</span>
         <button data-print="${t.id}" class="text-xs font-medium text-slate-400 hover:text-slate-700 ml-auto">🖨 Print</button>
       </div>
@@ -522,8 +581,11 @@ function renderGrid() {
 
 // ─── GENERATE PROBLEM SET ───
 function generateProblems(topic) {
-  const gens = topic.generators.length > 5 ? shuffle(topic.generators).slice(0, 5) : [...topic.generators];
-  return gens.map(g => { for (let i = 0; i < 10; i++) { try { return g(); } catch {} } return g(); });
+  const skillList = topic.skills.length > 5 ? shuffle(topic.skills).slice(0, 5) : [...topic.skills];
+  return skillList.map(s => {
+    for (let i = 0; i < 10; i++) { try { const p = s.gen(); p._skill = s.name; return p; } catch {} }
+    const p = s.gen(); p._skill = s.name; return p;
+  });
 }
 
 // ─── SHOW/HIDE STATES ───
@@ -590,6 +652,10 @@ function checkAnswer() {
     correct = normalize(input) === normalize(p.answer);
   }
 
+  if (p._skill && currentTopic) {
+    recordSkill(skillId(currentTopic.id, p._skill), correct);
+  }
+
   if (correct) {
     score++;
     feedback.className = 'rounded-xl border border-emerald-200 bg-emerald-50 p-4 mb-4';
@@ -629,6 +695,19 @@ function showSummary() {
   const pct = (score / problems.length) * 100;
   sumBar.style.width = `${pct}%`;
   sumBar.className = `h-3 rounded-full transition-all ${pct >= 80 ? 'bg-emerald-500' : pct >= 60 ? 'bg-amber-400' : 'bg-red-400'}`;
+
+  const sumSkills = document.getElementById('sum-skills');
+  sumSkills.innerHTML = '<p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Skill Tracker</p>' +
+    currentTopic.skills.map(s => {
+      const sid = skillId(currentTopic.id, s.name);
+      const st = skillStatus(sid);
+      const data = loadSkills()[sid];
+      const info = data ? `${data.correct}/${data.total} correct` : 'Not tried';
+      return `<div class="flex items-center justify-between gap-2 text-sm">
+        <span class="flex items-center gap-2"><span>${statusDot[st]}</span> ${s.name}</span>
+        <span class="text-xs text-slate-400">${info}</span>
+      </div>`;
+    }).join('');
 }
 
 // ─── PRINT ───
@@ -636,12 +715,12 @@ function printWorksheet(topicId) {
   const topic = TOPICS.find(t => t.id === topicId);
   if (!topic) return;
   const printProblems = [];
-  const gens = [...topic.generators];
+  const skills = [...topic.skills];
   for (let round = 0; round < 2; round++) {
-    for (const g of gens) {
+    for (const s of skills) {
       if (printProblems.length >= 10) break;
       for (let attempt = 0; attempt < 10; attempt++) {
-        try { printProblems.push(g()); break; } catch {}
+        try { printProblems.push(s.gen()); break; } catch {}
       }
     }
   }
