@@ -33,11 +33,11 @@ const base = import.meta.env.BASE_URL;
         <button id="check-btn" class="text-white font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition-colors whitespace-nowrap" style="background-color: #059669;">Check</button>
       </div>
     </div>
-    <div id="feedback" class="hidden rounded-xl border p-4 mb-4">
+    <div id="feedback" style="display:none;" class="rounded-xl border p-4 mb-4">
       <p id="feedback-text" class="font-semibold text-sm mb-1"></p>
-      <pre id="feedback-solution" class="hidden text-sm leading-relaxed whitespace-pre-wrap font-sans mt-2"></pre>
+      <pre id="feedback-solution" style="display:none;" class="text-sm leading-relaxed whitespace-pre-wrap font-sans mt-2"></pre>
     </div>
-    <button id="next-btn" class="hidden w-full font-semibold py-2.5 rounded-lg transition-colors" style="background-color: #d1fae5; color: #047857;">Next &rarr;</button>
+    <button id="next-btn" style="display:none; background-color: #d1fae5; color: #047857;" class="w-full font-semibold py-2.5 rounded-lg transition-colors">Next &rarr;</button>
   </div>
 
   <!-- ── STATE 3: Summary ── -->
@@ -557,10 +557,9 @@ function showProblem() {
   answerInput.disabled = false;
   checkBtn.disabled = false;
   checkBtn.classList.remove('opacity-50');
-  feedback.classList.add('hidden');
   feedback.style.display = 'none';
   feedbackSolution.style.display = 'none';
-  nextBtn.classList.add('hidden');
+  nextBtn.style.display = 'none';
   if (p.hint) {
     hintToggle.classList.remove('hidden');
     hintToggle.textContent = 'Show hint';
@@ -591,23 +590,23 @@ function checkAnswer() {
     correct = normalize(input) === normalize(p.answer);
   }
 
-  feedback.classList.remove('hidden');
-  feedback.style.display = 'block';
   if (correct) {
     score++;
     feedback.className = 'rounded-xl border border-emerald-200 bg-emerald-50 p-4 mb-4';
+    feedback.style.display = 'block';
     feedbackText.className = 'font-semibold text-sm text-emerald-700';
     feedbackText.textContent = 'Correct!';
     feedbackSolution.style.display = 'none';
     pvProgress.textContent = `Problem ${currentIndex + 1} of ${problems.length}  ·  ${score} correct`;
   } else {
     feedback.className = 'rounded-xl border border-red-200 bg-red-50 p-4 mb-4';
+    feedback.style.display = 'block';
     feedbackText.className = 'font-semibold text-sm text-red-700 mb-1';
     feedbackText.textContent = `Not quite — the answer is: ${p.answer}`;
-    feedbackSolution.style.display = 'block';
     feedbackSolution.textContent = p.solution;
+    feedbackSolution.style.display = 'block';
   }
-  nextBtn.classList.remove('hidden');
+  nextBtn.style.display = 'block';
   nextBtn.focus();
 }
 
