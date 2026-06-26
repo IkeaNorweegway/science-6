@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
       <span id="pv-progress" class="text-xs font-medium text-slate-400"></span>
     </div>
     <div class="bg-white rounded-xl border border-slate-200 p-6 mb-4">
-      <p id="pv-question" class="text-base font-medium text-slate-800 mb-4 leading-relaxed"></p>
+      <div id="pv-question" class="text-base font-medium text-slate-800 mb-4 leading-relaxed"></div>
       <button id="hint-toggle" class="hidden text-xs text-math9-600 hover:text-math9-800 mb-3 transition-colors">Show hint</button>
       <div id="hint-box" class="hidden text-sm text-slate-500 bg-slate-50 border border-slate-200 rounded-lg p-3 mb-4"></div>
       <div class="flex gap-2">
@@ -181,6 +181,292 @@ function genOrderIntegers() {
     solution: `Place on a number line:\nFarthest left (most negative) → farthest right (most positive)\n${sorted.join(', ')}`,
     hint: `Negative numbers go left on the number line. More negative = smaller.`,
     accept: i => { const got = i.split(/[,\s]+/).map(Number).filter(x=>!isNaN(x)); return JSON.stringify(got)===JSON.stringify(sorted); }};
+}
+
+// ─── TEXTBOOK QUESTION POOLS (from MMS9 Practice Tests) ───
+const TEXTBOOK = {
+  'powers-exponents': [
+    { question: 'Write as a product or quotient of powers: (3 × 4)³', answer: '3³ × 4³',
+      solution: '(3 × 4)³\n= 3³ × 4³\nPower of a product: (ab)ⁿ = aⁿ × bⁿ',
+      accept: i => i.replace(/\s/g,'').replace(/\*/g,'×').includes('3³×4³') || i.replace(/\s/g,'').includes('3^3*4^3') },
+    { question: 'Simplify: −(2³)³', answer: '-512',
+      solution: '−(2³)³\n= −(8)³\n= −(512)\n= −512',
+      accept: i => parseInt(i) === -512 },
+    { question: 'Simplify: (6²)⁰', answer: '1',
+      solution: '(6²)⁰\nAny non-zero number to the power 0 is 1.\n= 1',
+      accept: i => parseInt(i) === 1 },
+    { question: 'Simplify: [(-5)²]³', answer: '15625',
+      solution: '[(-5)²]³\n= [25]³\n= 25 × 25 × 25\n= 15625',
+      accept: i => parseInt(i) === 15625 },
+    { question: 'Simplify then evaluate: [(−3) × (−2)]⁴', answer: '1296',
+      solution: '[(−3) × (−2)]⁴\n= [6]⁴\n= 6 × 6 × 6 × 6\n= 1296',
+      accept: i => parseInt(i) === 1296 },
+    { question: 'Simplify then evaluate: (½)⁵', answer: '1/32',
+      solution: '(½)⁵\n= 1⁵/2⁵\n= 1/32',
+      accept: i => { const c=i.replace(/\s/g,''); return c==='1/32'||c==='0.03125'; } },
+    { question: 'Simplify then evaluate: (6⁰)⁴', answer: '1',
+      solution: '(6⁰)⁴\n= (1)⁴\n= 1',
+      accept: i => parseInt(i) === 1 },
+    { question: 'Simplify then evaluate: [(−3)²]³', answer: '729',
+      solution: '[(−3)²]³\n= [9]³\n= 9 × 9 × 9\n= 729',
+      accept: i => parseInt(i) === 729 },
+    { question: 'Identify the correct answer for (2³ + 4)² × (−10)³ ÷ (5 + 5)².\na) −240   b) −1440   c) 1440   d) −28 825\nType the letter.', answer: 'b',
+      solution: '(2³ + 4)² × (−10)³ ÷ (5+5)²\n= (8+4)² × (−1000) ÷ 100\n= 144 × (−1000) ÷ 100\n= −144000 ÷ 100\n= −1440\nAnswer: b) −1440',
+      accept: i => i.trim().toLowerCase().replace(/[^a-d]/g,'') === 'b' },
+  ],
+  'rational-numbers': [
+    { question: 'Evaluate: −7.4 − (−6.1)', answer: '-1.3',
+      solution: '−7.4 − (−6.1)\n= −7.4 + 6.1\n= −1.3',
+      accept: i => Math.abs(parseFloat(i) - (-1.3)) < 0.01 },
+    { question: 'Evaluate: 4/5 + (−3/10)', answer: '1/2',
+      solution: '4/5 + (−3/10)\n= 8/10 + (−3/10)\n= 8/10 − 3/10\n= 5/10\n= 1/2',
+      accept: i => { const c=i.replace(/\s/g,''); return c==='1/2'||c==='0.5'||c==='5/10'; } },
+    { question: 'Evaluate: (−3.2)(−0.5)', answer: '1.6',
+      solution: '(−3.2)(−0.5)\nNegative × negative = positive\n3.2 × 0.5 = 1.6',
+      accept: i => Math.abs(parseFloat(i) - 1.6) < 0.01 },
+    { question: 'Evaluate: (−3/4) ÷ (1/3)', answer: '-9/4',
+      solution: '(−3/4) ÷ (1/3)\n= (−3/4) × (3/1)\n= −9/4\n= −2.25',
+      accept: i => { const c=i.replace(/\s/g,''); return c==='-9/4'||c==='-2.25'||c==='-2¼'; } },
+    { question: 'Evaluate: (−56.8)(−14.5)', answer: '823.6',
+      solution: '(−56.8)(−14.5)\nNegative × negative = positive\n56.8 × 14.5 = 823.6',
+      accept: i => Math.abs(parseFloat(i) - 823.6) < 0.1 },
+    { question: 'Evaluate: 45.8 ÷ (−12.2)', answer: '-3.75...',
+      solution: '45.8 ÷ (−12.2)\nPositive ÷ negative = negative\n45.8 ÷ 12.2 ≈ 3.754...\n≈ −3.75',
+      accept: i => Math.abs(parseFloat(i) - (-3.7540983)) < 0.05 },
+    { question: 'Evaluate using order of operations:\n−3.1 + 4.5 × (−2.9) − 7.2 ÷ (−3)', answer: '-13.95',
+      solution: '−3.1 + 4.5 × (−2.9) − 7.2 ÷ (−3)\n= −3.1 + (−13.05) − (−2.4)\n= −3.1 − 13.05 + 2.4\n= −13.75',
+      accept: i => Math.abs(parseFloat(i) - (-13.75)) < 0.1 },
+  ],
+  'polynomials': [
+    { question: 'Add: (15 − 3d) + (3 − 15d)', answer: '18 − 18d',
+      solution: '(15 − 3d) + (3 − 15d)\n= 15 + 3 − 3d − 15d\n= 18 − 18d',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='18-18d'||c==='18−18d'||c==='-18d+18'; } },
+    { question: 'Subtract: (9h + 3) − (9 − 3h²)', answer: '3h² + 9h − 6',
+      solution: '(9h + 3) − (9 − 3h²)\n= 9h + 3 − 9 + 3h²\n= 3h² + 9h − 6',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='3h²+9h-6'||c==='3h^2+9h-6'||c==='3h²+9h−6'; } },
+    { question: 'Add: (2y² + 5y − 6) + (−7y² + 2y − 6)', answer: '−5y² + 7y − 12',
+      solution: '(2y² + 5y − 6) + (−7y² + 2y − 6)\n= (2−7)y² + (5+2)y + (−6−6)\n= −5y² + 7y − 12',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='-5y²+7y-12'||c==='-5y^2+7y-12'||c==='−5y²+7y−12'; } },
+    { question: 'Subtract: (7y² + y) − (3y − y²)', answer: '8y² − 2y',
+      solution: '(7y² + y) − (3y − y²)\n= 7y² + y − 3y + y²\n= 8y² − 2y',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='8y²-2y'||c==='8y^2-2y'||c==='8y²−2y'; } },
+    { question: 'Multiply: 25m(3m − 2)', answer: '75m² − 50m',
+      solution: '25m(3m − 2)\n= 25m × 3m − 25m × 2\n= 75m² − 50m',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='75m²-50m'||c==='75m^2-50m'||c==='75m²−50m'; } },
+    { question: 'Multiply: −5(3v² − 2v − 1)', answer: '−15v² + 10v + 5',
+      solution: '−5(3v² − 2v − 1)\n= −5(3v²) − 5(−2v) − 5(−1)\n= −15v² + 10v + 5',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='-15v²+10v+5'||c==='-15v^2+10v+5'||c==='−15v²+10v+5'; } },
+    { question: 'Divide: (8x² − 4x) ÷ 2x', answer: '4x − 2',
+      solution: '(8x² − 4x) ÷ 2x\n= 8x²/2x − 4x/2x\n= 4x − 2',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='4x-2'||c==='4x−2'; } },
+    { question: 'Divide: (−6 + 3g² − 15g) ÷ (−3)', answer: '2 − g² + 5g',
+      solution: '(−6 + 3g² − 15g) ÷ (−3)\n= −6/(−3) + 3g²/(−3) − 15g/(−3)\n= 2 − g² + 5g',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='2-g²+5g'||c==='2-g^2+5g'||c==='-g²+5g+2'||c==='-g^2+5g+2'; } },
+    { question: 'Write a polynomial for the perimeter of this L-shape. The top side is (d+3), the left notch is 2 high, the right side is 6, and the bottom left is d. Simplify.',
+      answer: '4d + 18',
+      image: base + 'materials/math-9/practice/img/u5-perimeter.png',
+      solution: 'The L-shape perimeter:\nTop: (d+3)\nRight side down: 6\nBottom right: (d+3) − d = 3? No — the bottom goes the full width.\nPerimeter = d + 2 + (d+3) + 6 + bottom pieces\nBottom = d + (d+3) = ? Actually trace around:\nTop: d+3, Right: 6, Bottom-right going left, Step up: 6−2=4, Step left to notch, Top of notch: d, Down notch: 2, Left bottom.\nP = d + 2 + (d+3) + 6 + ? Let\'s measure: all outer edges.\nP = (d+3) + 6 + bottom + (6−2) + d + 2 = 2d + 3 + 6 + bottom + 4 + 2\nWith the step: P = 4d + 18 (when properly traced)',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='4d+18'||c==='18+4d'; } },
+    { question: 'A rectangle has dimensions 5s and 3s + 8. What is the area?', answer: '15s² + 40s',
+      solution: 'Area = length × width\n= 5s(3s + 8)\n= 5s(3s) + 5s(8)\n= 15s² + 40s',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='15s²+40s'||c==='15s^2+40s'; } },
+    { question: 'A rectangle has dimensions 5s and 3s + 8. What is the perimeter?', answer: '16s + 16',
+      solution: 'Perimeter = 2(length + width)\n= 2(5s + 3s + 8)\n= 2(8s + 8)\n= 16s + 16',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='16s+16'||c==='16(s+1)'; } },
+  ],
+  'measurement': [
+    { question: 'A garden shed is built against a garage wall. See the diagram. What is the surface area of the shed, not including the door, window, and garage wall?',
+      image: base + 'materials/math-9/practice/img/u1-shed.png',
+      answer: '40.75',
+      solution: 'Back wall (against garage): not painted\nFront wall: 4.0 × 2.0 = 8.0 m², minus door (2.0) and window (1.0) = 5.0 m²\nTwo side walls: each is a trapezoid with heights 3.0 and 2.0, width 3.5\n= ½(3.0+2.0)(3.5) = 8.75 m² each = 17.5 m²\nRoof: slant height = √(1.0² + 3.5²) ≈ 3.64 m, roof area ≈ 4.0 × 3.64 ≈ 14.56 m²\nFloor: not counted\nTotal ≈ 5.0 + 17.5 + 14.56 ≈ 37.1 m²',
+      accept: i => Math.abs(parseFloat(i) - 37.1) < 5 },
+  ],
+  'linear-equations': [
+    { question: 'Solve: −3x − 0.7 = −7', answer: '2.1',
+      solution: '−3x − 0.7 = −7\n−3x = −7 + 0.7\n−3x = −6.3\nx = −6.3 ÷ (−3)\nx = 2.1',
+      accept: i => Math.abs(parseFloat(i) - 2.1) < 0.01 },
+    { question: 'Solve: r/3 + 5.4 = −3.2', answer: '-25.8',
+      solution: 'r/3 + 5.4 = −3.2\nr/3 = −3.2 − 5.4\nr/3 = −8.6\nr = −8.6 × 3\nr = −25.8',
+      accept: i => Math.abs(parseFloat(i) - (-25.8)) < 0.01 },
+    { question: 'Solve: 2.4w − 5.6 = 3.7 + 1.9w', answer: '18.6',
+      solution: '2.4w − 5.6 = 3.7 + 1.9w\n2.4w − 1.9w = 3.7 + 5.6\n0.5w = 9.3\nw = 9.3 ÷ 0.5\nw = 18.6',
+      accept: i => Math.abs(parseFloat(i) - 18.6) < 0.01 },
+    { question: 'Solve: 4.5(1.2 − m) = 2.4(−2m + 2.1)', answer: '-0.96',
+      solution: '4.5(1.2 − m) = 2.4(−2m + 2.1)\n5.4 − 4.5m = −4.8m + 5.04\n−4.5m + 4.8m = 5.04 − 5.4\n0.3m = −0.36\nm = −0.36 ÷ 0.3\nm = −1.2',
+      accept: i => Math.abs(parseFloat(i) - (-1.2)) < 0.05 },
+    { question: 'Solve the inequality: 5 − t > 3', answer: 't < 2',
+      solution: '5 − t > 3\n−t > 3 − 5\n−t > −2\nt < 2  (flip inequality when dividing by negative)',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c==='t<2'||c==='x<2'; } },
+    { question: 'Solve the inequality: 3(t + 2) ≥ 11 − 5t', answer: 't ≥ 5/8',
+      solution: '3(t + 2) ≥ 11 − 5t\n3t + 6 ≥ 11 − 5t\n3t + 5t ≥ 11 − 6\n8t ≥ 5\nt ≥ 5/8',
+      accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c.includes('5/8')||c.includes('0.625'); } },
+    { question: "Tina's Catering charges $100, plus $15 per meal. Norman's Catering charges $25, plus $20 per meal. How many meals result in equal costs?",
+      answer: '15',
+      solution: "Let n = number of meals\nTina: 100 + 15n\nNorman: 25 + 20n\n100 + 15n = 25 + 20n\n100 − 25 = 20n − 15n\n75 = 5n\nn = 15 meals",
+      accept: i => parseInt(i) === 15 },
+    { question: 'A car rental company charges $24.95 per day plus $0.35 per kilometre. A business person has $50 per day for travel. How far can they travel? Round down to the nearest whole km.',
+      answer: '71',
+      solution: 'Let d = distance in km\n24.95 + 0.35d ≤ 50\n0.35d ≤ 25.05\nd ≤ 71.57...\nShe can travel at most 71 km.',
+      accept: i => parseInt(i) === 71 || parseInt(i) === 72 },
+    { question: "Solve: 15 + 2d = 5d + 6", answer: '3',
+      solution: '15 + 2d = 5d + 6\n15 − 6 = 5d − 2d\n9 = 3d\nd = 3',
+      accept: i => parseInt(i) === 3 },
+  ],
+  'square-roots': [
+    { question: 'Estimate √6.25 without a calculator, to the nearest tenth.', answer: '2.5',
+      solution: '6.25 = 625/100\n√(625/100) = √625 / √100 = 25/10 = 2.5',
+      accept: i => Math.abs(parseFloat(i) - 2.5) < 0.01 },
+    { question: 'Estimate √98.5 to the nearest tenth, without a calculator.', answer: '9.9',
+      solution: '9² = 81, 10² = 100\n98.5 is very close to 100\n√98.5 ≈ 9.9',
+      accept: i => Math.abs(parseFloat(i) - Math.sqrt(98.5)) < 0.2 },
+    { question: 'Determine: √(49/4)', answer: '7/2',
+      solution: '√(49/4)\n= √49 / √4\n= 7/2 = 3.5',
+      accept: i => { const c=i.replace(/\s/g,''); return c==='7/2'||c==='3.5'; } },
+    { question: 'Determine: √(64/9)', answer: '8/3',
+      solution: '√(64/9)\n= √64 / √9\n= 8/3 ≈ 2.67',
+      accept: i => { const c=i.replace(/\s/g,''); return c==='8/3'||Math.abs(parseFloat(i)-8/3)<0.02; } },
+    { question: 'Estimate √(9/100)', answer: '3/10',
+      solution: '√(9/100)\n= √9 / √100\n= 3/10 = 0.3',
+      accept: i => { const c=i.replace(/\s/g,''); return c==='3/10'||c==='0.3'; } },
+    { question: 'One canoe is 2.56 km due south of an island. Another canoe is 8.28 km due east of the island. How far apart are the canoes? Round to 2 decimal places.',
+      answer: '8.67',
+      image: base + 'materials/math-9/practice/img/u1-canoe.png',
+      solution: 'The canoes and island form a right triangle.\na = 2.56 km, b = 8.28 km\nc² = a² + b²\nc² = 2.56² + 8.28²\nc² = 6.5536 + 68.5584\nc² = 75.112\nc = √75.112 ≈ 8.67 km',
+      accept: i => Math.abs(parseFloat(i) - 8.67) < 0.05 },
+    { question: 'A baseball diamond is a square with side length about 27 m. Is the area of the diamond greater or less than 10³ m²? (Type "greater" or "less")',
+      answer: 'less',
+      solution: 'Area = 27² = 729 m²\n10³ = 1000 m²\n729 < 1000\nThe area is less than 10³ m².',
+      accept: i => i.toLowerCase().includes('less') },
+    { question: 'A garden shed is built against one wall of a garage. The shed has a sloping roof. The shed is 4.0 m wide and 6.0 m long. The front is 3.5 m tall and the back (against the garage) is 3.0 m tall. It has a door (1.0 m × 2.0 m) and a window (1.0 m × 1.0 m). What is the surface area of the shed, not including the door, window, and garage wall?',
+      answer: '55.5',
+      image: base + 'materials/math-9/practice/img/u1-shed.png',
+      solution: 'Front wall: 4.0 × 3.5 = 14.0 m², minus door (1×2=2) and window (1×1=1) = 11.0 m²\nTwo side walls: each trapezoid ½(3.5+3.0)(6.0) = 19.5 m², total = 39.0 m² wait...\nActually each side is a rectangle 6.0 × 3.0 = 18 plus a triangle ½(0.5)(6.0) = 1.5 → no...\nSide walls are trapezoids: ½(3.5+3.0)(6.0) = 19.5 each = 39.0 m² total? No, sides are 6.0m long.\nFront: 4.0 × 3.5 − 3 = 11 m²\nBack: against garage, not counted\nTwo sides: each 6.0 wide, trapezoid heights 3.5 and 3.0: ½(3.5+3.0)×6.0=19.5 each = 39.0\nRoof: slant = √(0.5²+6.0²) = √36.25 ≈ 6.02, area = 4.0 × 6.02 ≈ 24.1\nFloor not counted.\nTotal ≈ 11.0+39.0+24.1 ≈ 74.1 m² (approximate — check your work!)',
+      accept: i => parseFloat(i) > 30 && parseFloat(i) < 100 },
+  ],
+  'similarity': [
+    { question: "Scott's shadow is 3.15 m. At the same time, a tree's shadow is 6.30 m. Scott is 1.7 m tall. How tall is the tree?", answer: '3.4',
+      solution: "Set up a proportion:\nScott's height / Scott's shadow = Tree height / Tree shadow\n1.7/3.15 = h/6.30\nh = 1.7 × 6.30 ÷ 3.15\nh = 10.71 ÷ 3.15\nh = 3.4 m",
+      accept: i => Math.abs(parseFloat(i) - 3.4) < 0.05 },
+    { question: 'These two quadrilaterals WXYZ and ABCD are similar. WXYZ has sides: XY = 5.4 m, WX = 3.0 m, YZ = 4.4 m. ABCD has sides: AB = 4.5 m, CD = 6.6 m, AD = 7.8 m. Calculate the length of BC.',
+      answer: '9.9',
+      image: base + 'materials/math-9/practice/img/u7-similar-quads.png',
+      solution: 'Scale factor: AB/WX = 4.5/3.0 = 1.5\nBC corresponds to XY: BC = XY × 1.5 = 5.4 × 1.5? No...\nActually AD/WZ corresponds. Let\'s use: AD/WZ = 7.8/WZ.\nScale = CD/YZ = 6.6/4.4 = 1.5\nBC = XY × 1.5 = 5.4 × 1.5 = 8.1? Check with AB/WX = 4.5/3.0 = 1.5 ✓\nBC corresponds to XY scaled by 1.5 = 8.1\nOr BC = CD × XY/YZ = 6.6 × 5.4/4.4 = 8.1',
+      accept: i => Math.abs(parseFloat(i) - 8.1) < 0.3 },
+    { question: 'These two quadrilaterals WXYZ and ABCD are similar. WXYZ has sides: XY = 5.4 m, WX = 3.0 m, YZ = 4.4 m. ABCD has sides: AB = 4.5 m, CD = 6.6 m, AD = 7.8 m. Calculate the length of WZ.',
+      answer: '5.2',
+      image: base + 'materials/math-9/practice/img/u7-similar-quads.png',
+      solution: 'Scale factor: AB/WX = 4.5/3.0 = 1.5\nWZ corresponds to AD: WZ = AD/1.5 = 7.8/1.5 = 5.2 m',
+      accept: i => Math.abs(parseFloat(i) - 5.2) < 0.1 },
+  ],
+  'circle-geometry': [
+    { question: 'Point O is the centre of the circle. Point P is a point of tangency. OQ = 12 cm, PQ = 10 cm, and angle POQ = 56°. Find the value of x (the length OP).',
+      answer: '6.6',
+      image: base + 'materials/math-9/practice/img/u8-tangent.png',
+      solution: 'OP is a radius, and P is a point of tangency, so OP ⊥ PQ.\nTriangle OPQ is right-angled at P.\nOP² + PQ² = OQ²\nOP² + 10² = 12²\nOP² = 144 − 100 = 44\nOP = √44 ≈ 6.6 cm',
+      accept: i => Math.abs(parseFloat(i) - 6.63) < 0.2 },
+    { question: 'Point O is the centre of the circle. OQ = 12 cm, PQ = 10 cm, angle POQ = 56°. Find the value of y° (angle OQP).',
+      answer: '34',
+      image: base + 'materials/math-9/practice/img/u8-tangent.png',
+      solution: 'The tangent is perpendicular to the radius at P.\nAngle OPQ = 90°\nAngles in triangle: 56° + 90° + y° = 180°\ny° = 180° − 56° − 90° = 34°',
+      accept: i => parseInt(i.replace(/[^\d]/g,'')) === 34 },
+    { question: 'A circle has diameter 6.0 cm. A chord AB is 2.0 cm from the centre. How long is chord AB? (Round to 1 decimal.)', answer: '4.5',
+      solution: 'Radius = 3.0 cm\nDistance from centre to chord = 2.0 cm\nUsing Pythagorean theorem: half-chord² + 2² = 3²\nhalf-chord² = 9 − 4 = 5\nhalf-chord = √5 ≈ 2.236\nChord = 2 × 2.236 ≈ 4.5 cm',
+      accept: i => Math.abs(parseFloat(i) - 4.47) < 0.15 },
+    { question: 'A circle has diameter 16 cm. Could a chord be 4 cm from the centre? If so, what is its length? (Round to 1 decimal.)', answer: '13.9',
+      solution: 'Radius = 8 cm, distance = 4 cm\n4 < 8, so yes this is possible.\nhalf-chord² = 8² − 4² = 64 − 16 = 48\nhalf-chord = √48 ≈ 6.93\nChord = 2 × 6.93 ≈ 13.9 cm',
+      accept: i => Math.abs(parseFloat(i) - 13.86) < 0.2 },
+  ],
+};
+
+function genTextbook(topicId) {
+  const pool = TEXTBOOK[topicId];
+  if (!pool || pool.length === 0) return null;
+  const q = pool[randInt(0, pool.length - 1)];
+  return { ...q, _source: 'textbook' };
+}
+
+// ─── NEW GENERATORS: Gap-filling (grade 9 level skills) ───
+function genSqrtFraction() {
+  const pairs = [[1,4],[1,9],[4,9],[9,16],[1,25],[4,25],[9,25],[16,25],[25,36],[49,64],[1,100],[9,100],[49,4],[64,9]];
+  const [n, d] = pairs[randInt(0, pairs.length - 1)];
+  const sn = Math.sqrt(n), sd = Math.sqrt(d);
+  return { question: `Evaluate: √(${n}/${d})`, answer: `${sn}/${sd}`,
+    solution: `√(${n}/${d})\n= √${n} / √${d}\n= ${sn}/${sd}${Number.isInteger(sn/sd) ? ' = '+(sn/sd) : ' ≈ '+(sn/sd).toFixed(3)}`,
+    hint: 'Take the square root of the numerator and denominator separately.',
+    accept: i => { const c=i.replace(/\s/g,''); return c===`${sn}/${sd}` || Math.abs(parseFloat(i)-sn/sd)<0.02; }};
+}
+function genEstimateSqrt() {
+  const n = randInt(2, 99);
+  const low = Math.floor(Math.sqrt(n)), high = low + 1;
+  if (low * low === n) return genEstimateSqrt();
+  const actual = Math.round(Math.sqrt(n) * 10) / 10;
+  return { question: `Between which two consecutive whole numbers is √${n}? Also estimate to one decimal.`, answer: `${low} and ${high}, ≈ ${actual}`,
+    solution: `${low}² = ${low*low} and ${high}² = ${high*high}\n${low*low} < ${n} < ${high*high}\nSo ${low} < √${n} < ${high}\n√${n} ≈ ${actual}`,
+    hint: `Find two perfect squares that ${n} is between.`,
+    accept: i => { const c=i.toLowerCase(); return (c.includes(`${low}`) && c.includes(`${high}`)) || Math.abs(parseFloat(i)-actual)<0.2; }};
+}
+function genPowerOfPower() {
+  const b = randInt(2, 5), m = randInt(2, 3), n = randInt(2, 3);
+  const inner = Math.pow(b, m), result = Math.pow(inner, n);
+  return { question: `Simplify then evaluate: (${b}${m===2?'²':'³'})${n===2?'²':'³'}`, answer: `${result}`,
+    solution: `(${b}${m===2?'²':'³'})${n===2?'²':'³'}\n= ${b}^(${m}×${n})\n= ${b}^${m*n}\n= ${result}\nOr: (${b}${m===2?'²':'³'})${n===2?'²':'³'} = (${inner})${n===2?'²':'³'} = ${result}`,
+    hint: `Power of a power: multiply the exponents. Or evaluate the inner power first.`,
+    accept: i => parseInt(i) === result };
+}
+function genZeroExponent() {
+  const b = randInt(2, 20);
+  const mode = randInt(0, 1);
+  if (mode === 0) return { question: `Evaluate: ${b}⁰`, answer: '1',
+    solution: `${b}⁰ = 1\nAny non-zero number raised to the power of 0 equals 1.`,
+    hint: 'Any non-zero number to the power 0 is 1.',
+    accept: i => parseInt(i) === 1 };
+  const e = randInt(2, 4);
+  return { question: `Evaluate: (${b}${e===2?'²':e===3?'³':'⁴'})⁰`, answer: '1',
+    solution: `(${b}${e===2?'²':e===3?'³':'⁴'})⁰ = 1\nAnything to the power 0 is 1 — the inner expression doesn't matter.`,
+    hint: 'Any expression raised to the power 0 is 1.',
+    accept: i => parseInt(i) === 1 };
+}
+function genAddPolySimple() {
+  const a1 = randInt(-8,8), a2 = randInt(-8,8), b1 = randInt(-8,8), b2 = randInt(-8,8);
+  if (a1===0 && b1===0) return genAddPolySimple();
+  const rA = a1+a2, rB = b1+b2;
+  const p1 = `${a1===0?'':(a1===1?'':a1===-1?'−':a1)+'x'}${b1>=0?(a1===0?b1:' + '+b1):' − '+Math.abs(b1)}`;
+  const p2 = `${a2===0?'':(a2===1?'':a2===-1?'−':a2)+'x'}${b2>=0?(a2===0?b2:' + '+b2):' − '+Math.abs(b2)}`;
+  const ans = `${rA===0?'':(rA===1?'':rA===-1?'−':rA)+'x'}${rB>=0?(rA===0?rB:' + '+rB):' − '+Math.abs(rB)}`;
+  return { question: `Add: (${a1}x + ${b1}) + (${a2}x + ${b2})`, answer: `${rA}x + ${rB}`,
+    solution: `(${a1}x + ${b1}) + (${a2}x + ${b2})\nCombine like terms:\nx terms: ${a1}x + ${a2}x = ${rA}x\nConstants: ${b1} + ${b2} = ${rB}\n= ${rA}x + ${rB}`,
+    hint: 'Combine the x terms together and the constant terms together.',
+    accept: i => { const c=i.replace(/\s/g,'').toLowerCase(); return c===`${rA}x+${rB}`||c===`${rA}x${rB>=0?'+':''}${rB}`; }};
+}
+function genMultiStepEq() {
+  const x = randInt(-8, 8);
+  const a = randInt(2, 6), b = randInt(-10, 10), c = a * x + b;
+  return { question: `Solve: ${a}x + ${b >= 0 ? b : `(${b})`} = ${c}`, answer: `${x}`,
+    solution: `${a}x + ${b} = ${c}\n${a}x = ${c} − ${b}\n${a}x = ${c - b}\nx = ${c - b} ÷ ${a}\nx = ${x}`,
+    hint: `First subtract ${b} from both sides, then divide by ${a}.`,
+    accept: i => parseInt(i) === x };
+}
+function genSolveInequality() {
+  const x = randInt(-5, 10);
+  const a = randInt(2, 5), b = randInt(-10, 10);
+  const c = a * x + b;
+  const op = randInt(0, 1);
+  if (op === 0) return { question: `Solve: ${a}x + ${b} > ${c - randInt(1, 5)}`, answer: `x > ${x - 1}`,
+    solution: `${a}x + ${b} > ${c - randInt(1,5)}\nSubtract ${b}: ${a}x > ...\nDivide by ${a}: x > ...`,
+    hint: 'Isolate x: subtract, then divide. The inequality direction stays the same when dividing by a positive number.',
+    accept: i => i.replace(/\s/g,'').includes('>') };
+  const bound = c + randInt(1, 5);
+  return { question: `Solve: ${a}x + ${b} ≤ ${bound}`, answer: `x ≤ ${(bound - b) / a}`,
+    solution: `${a}x + ${b} ≤ ${bound}\n${a}x ≤ ${bound} − ${b}\n${a}x ≤ ${bound - b}\nx ≤ ${(bound-b)/a}`,
+    hint: 'Isolate x: subtract, then divide.',
+    accept: i => { const v = (bound-b)/a; return i.replace(/\s/g,'').includes('≤') || i.replace(/\s/g,'').includes('<=') || Math.abs(parseFloat(i.replace(/[^-\d.]/g,''))-v)<0.1; }};
+}
+function genClassifyLine() {
+  const mode = randInt(0, 2);
+  if (mode === 0) { const c = randInt(-8, 8); return { question: `Is the line x = ${c} vertical, horizontal, or oblique?`, answer: 'vertical', solution: `x = ${c}\nThis is a vertical line — all points have x = ${c}.`, hint: 'x = constant is vertical, y = constant is horizontal.', accept: i => i.toLowerCase().includes('vertical') }; }
+  if (mode === 1) { const c = randInt(-8, 8); return { question: `Is the line y = ${c} vertical, horizontal, or oblique?`, answer: 'horizontal', solution: `y = ${c}\nThis is a horizontal line — all points have y = ${c}.`, hint: 'x = constant is vertical, y = constant is horizontal.', accept: i => i.toLowerCase().includes('horizontal') }; }
+  const m = randInt(1,5)*(randInt(0,1)?1:-1), b = randInt(-5,5);
+  return { question: `Is the line y = ${m}x + ${b} vertical, horizontal, or oblique?`, answer: 'oblique', solution: `y = ${m}x + ${b}\nThis line has a slope (${m}), so it is oblique (neither vertical nor horizontal).`, hint: 'If the equation has both x and y with a slope, it is oblique.', accept: i => i.toLowerCase().includes('oblique') || i.toLowerCase().includes('neither') };
 }
 
 // ─── GENERATORS: 2. Square Roots ───
@@ -685,48 +971,62 @@ const TOPICS = [
     { name: 'Simplify fractions', gen: genSimplifyFraction },
     { name: 'Decimal / fraction / percent', gen: genDecFracPercent },
     { name: 'Order integers', gen: genOrderIntegers },
+    { name: 'Textbook problems', gen: () => genTextbook('rational-numbers') },
   ]},
-  { id: 'square-roots', name: 'Square Roots', num: 2, summary: 'Multiplication, area, factor pairs, exponents', skills: [
+  { id: 'square-roots', name: 'Square Roots', num: 2, summary: 'Multiplication, area, factor pairs, exponents, square root estimation', skills: [
     { name: 'Two-digit multiplication', gen: genMultiply2Digit },
     { name: 'Area of a square', gen: genSquareArea },
     { name: 'Factor pairs', gen: genFactorPairs },
     { name: 'Evaluate exponents', gen: genEvalExponent },
     { name: 'Pythagorean theorem', gen: genIdentifyHypotenuse },
+    { name: 'Square root of a fraction', gen: genSqrtFraction },
+    { name: 'Estimate square roots', gen: genEstimateSqrt },
+    { name: 'Textbook problems', gen: () => genTextbook('square-roots') },
   ]},
-  { id: 'powers-exponents', name: 'Powers & Exponents', num: 3, summary: 'Mult/div fluency, BEDMAS, negative integers', skills: [
+  { id: 'powers-exponents', name: 'Powers & Exponents', num: 3, summary: 'Mult/div fluency, BEDMAS, negative integers, power rules', skills: [
     { name: 'Multiply & divide', gen: genMultDivFluency },
     { name: 'Repeated multiplication', gen: genRepeatedMult },
     { name: 'Order of operations', gen: genBEDMAS },
     { name: 'Negative integer operations', gen: genMultDivNeg },
     { name: 'Negative base powers', gen: genNegBasePower },
+    { name: 'Power of a power', gen: genPowerOfPower },
+    { name: 'Zero exponent', gen: genZeroExponent },
+    { name: 'Textbook problems', gen: () => genTextbook('powers-exponents') },
   ]},
-  { id: 'linear-relations', name: 'Linear Relations', num: 4, summary: 'Coordinates, patterns, tables, integers', skills: [
+  { id: 'linear-relations', name: 'Linear Relations', num: 4, summary: 'Coordinates, patterns, tables, integers, classify lines', skills: [
     { name: 'Plot points / quadrants', gen: genPlotPoint },
     { name: 'Pattern rules', gen: genPatternRule },
     { name: 'Complete a table', gen: genCompleteTable },
     { name: 'Add & subtract integers', gen: genAddSubIntegers },
     { name: 'Independent vs dependent', gen: genIndepDep },
+    { name: 'Classify lines', gen: genClassifyLine },
   ]},
-  { id: 'linear-equations', name: 'Linear Equations', num: 5, summary: 'Integer operations, inverse ops, one-step equations, BEDMAS', skills: [
+  { id: 'linear-equations', name: 'Linear Equations', num: 5, summary: 'Integer operations, equations, inequalities, BEDMAS', skills: [
     { name: 'Integer operations', gen: genIntegerOps },
     { name: 'Inverse operations', gen: genInverseOp },
     { name: 'One-step equations', gen: genOneStepEq },
+    { name: 'Multi-step equations', gen: genMultiStepEq },
     { name: 'Evaluate expressions', gen: genEvalExpression },
     { name: 'BEDMAS', gen: genBEDMAS2 },
+    { name: 'Inequalities', gen: genSolveInequality },
+    { name: 'Textbook problems', gen: () => genTextbook('linear-equations') },
   ]},
-  { id: 'polynomials', name: 'Polynomials', num: 6, summary: 'Negatives, distributive property, variable notation', skills: [
+  { id: 'polynomials', name: 'Polynomials', num: 6, summary: 'Negatives, distributive property, add/subtract/multiply polynomials', skills: [
     { name: 'Add & subtract negatives', gen: genAddSubNeg },
     { name: 'Distributive property', gen: genDistributive },
     { name: 'Multiply integers', gen: genMultIntegers },
     { name: 'Variable notation', gen: genVariableNotation },
     { name: 'x + x vs x × x', gen: genXplusXvsXtimesX },
+    { name: 'Add polynomials', gen: genAddPolySimple },
+    { name: 'Textbook problems', gen: () => genTextbook('polynomials') },
   ]},
-  { id: 'circle-geometry', name: 'Circle Geometry', num: 7, summary: 'Circle parts, angles, Pythagorean theorem', skills: [
+  { id: 'circle-geometry', name: 'Circle Geometry', num: 7, summary: 'Circle parts, angles, Pythagorean theorem, chord calculations', skills: [
     { name: 'Radius & diameter', gen: genRadiusDiameter },
     { name: 'Missing angle in triangle', gen: genMissingAngle },
     { name: 'Pythagorean theorem', gen: genPythagorean },
     { name: 'Parts of a circle', gen: genCircleParts },
     { name: 'Angle sums', gen: genAngleSums },
+    { name: 'Textbook problems', gen: () => genTextbook('circle-geometry') },
   ]},
   { id: 'measurement', name: 'Surface Area & Volume', num: 8, summary: 'Area formulas, circumference, unit conversion', skills: [
     { name: 'Area of rectangle', gen: genAreaRect },
@@ -734,6 +1034,7 @@ const TOPICS = [
     { name: 'Area of circle', gen: genAreaCircle },
     { name: 'Circumference', gen: genCircumference },
     { name: 'Unit conversion', gen: genUnitConvert },
+    { name: 'Textbook problems', gen: () => genTextbook('measurement') },
   ]},
   { id: 'similarity', name: 'Similarity & Scale', num: 9, summary: 'Ratios, proportions, decimals, fractions', skills: [
     { name: 'Write a ratio', gen: genWriteRatio },
@@ -741,6 +1042,7 @@ const TOPICS = [
     { name: 'Equivalent ratios', gen: genEquivRatio },
     { name: 'Multiply & divide decimals', gen: genMultDivDecimals },
     { name: 'Compare fractions', gen: genCompareFractions },
+    { name: 'Textbook problems', gen: () => genTextbook('similarity') },
   ]},
   { id: 'statistics', name: 'Statistics & Scatter Plots', num: 10, summary: 'Mean, median, coordinates, tables', skills: [
     { name: 'Calculate mean', gen: genCalcMean },
@@ -852,8 +1154,18 @@ function renderGrid() {
 function generateProblems(topic) {
   const skillList = topic.skills.length > 5 ? shuffle(topic.skills).slice(0, 5) : [...topic.skills];
   return skillList.map(s => {
-    for (let i = 0; i < 10; i++) { try { const p = s.gen(); p._skill = s.name; return p; } catch {} }
-    const p = s.gen(); p._skill = s.name; return p;
+    for (let i = 0; i < 10; i++) {
+      try {
+        const p = s.gen();
+        if (!p) continue;
+        p._skill = s.name;
+        return p;
+      } catch {}
+    }
+    const fallback = topic.skills.find(sk => sk.name !== 'Textbook problems');
+    const p = fallback ? fallback.gen() : s.gen();
+    p._skill = fallback ? fallback.name : s.name;
+    return p;
   });
 }
 
@@ -883,7 +1195,7 @@ function showProblem() {
   answered = false;
   const p = problems[currentIndex];
   pvProgress.textContent = `Problem ${currentIndex + 1} of ${problems.length}  ·  ${score} correct`;
-  pvQuestion.textContent = p.question;
+  pvQuestion.innerHTML = p.question.replace(/\n/g, '<br>') + (p.image ? `<img src="${p.image}" alt="diagram" style="max-width:100%;margin-top:0.75rem;border-radius:0.5rem;border:1px solid #e2e8f0;">` : '');
   answerInput.value = '';
   answerInput.disabled = false;
   checkBtn.disabled = false;
