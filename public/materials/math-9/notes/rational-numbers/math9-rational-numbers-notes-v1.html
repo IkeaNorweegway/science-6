@@ -11,7 +11,7 @@ body {
   font-size: 11pt; line-height: 1.6; color: #1e293b;
   background: #fff; max-width: 780px; margin: 0 auto; padding: 28px 32px 48px;
 }
-:root { --accent: #1d4ed8; --accent-light: #eff6ff; --accent-mid: #3b82f6; }
+:root { --accent: #7c3aed; --accent-light: #f5f3ff; --accent-mid: #8b5cf6; }
 h1 { font-size: 22pt; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
 h2 { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 0 0 10px; border-bottom: 2px solid var(--accent-light); padding-bottom: 4px; }
 h3 { font-size: 11pt; font-weight: 700; color: #334155; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
@@ -21,9 +21,8 @@ ul, ol { margin: 6px 0 10px 20px; }
 li { margin-bottom: 4px; }
 strong { font-weight: 700; }
 em { font-style: italic; color: #475569; }
-.b { display: inline-block; border-bottom: 1.5px solid #334155; vertical-align: bottom; }
-.b-sm { width: 60px; } .b-md { width: 110px; } .b-lg { width: 170px; } .b-xl { width: 240px; }
-.al { display: block; border-bottom: 1px solid #94a3b8; height: 1.8rem; margin: 6px 0; }
+.b { display: inline-block; border-bottom: 2px solid #334155; vertical-align: bottom; min-height: 1.2em; }
+.b-sm { min-width: 80px; } .b-md { min-width: 130px; } .b-lg { min-width: 200px; } .b-xl { min-width: 280px; }
 table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
 th { background: var(--accent-light); color: #1e293b; font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid var(--accent-mid); }
 td { padding: 8px 10px; border: 1px solid #e2e8f0; vertical-align: top; }
@@ -52,6 +51,40 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
 .section-break { border: none; border-top: 2px dashed #e2e8f0; margin: 28px 0; }
 .answer-key-header { background: #1e293b; color: #fff; padding: 8px 14px; border-radius: 6px; margin: 20px 0 16px; font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 .answer { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 10px 14px; margin: 8px 0; font-size: 10.5pt; }
+
+/* ── Fractions ── */
+.frac {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.85em;
+  line-height: 1.15;
+  margin: 0 1px;
+}
+.frac .num { border-bottom: 1.5px solid currentColor; padding: 0 3px 1px; }
+.frac .den { padding: 1px 3px 0; }
+
+/* ── Response areas ── */
+.response {
+  display: block;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.35rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: #fafbfc;
+}
+.response-sm  { min-height: 2.5rem; }
+.response-md  { min-height: 5rem; }
+.response-lg  { min-height: 8rem; }
+.response-xl  { min-height: 12rem; }
+.response-grid {
+  background-image: radial-gradient(circle, #d1d5db 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+  background-position: 9px 9px;
+  background-color: #fafbfc;
+}
+
 @media print {
   body { padding: 16px 20px; font-size: 10.5pt; }
   h1 { font-size: 18pt; }
@@ -60,6 +93,11 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
   .question, .retrieval, .misconception, .connection,
   .self-check, .worked-example, .learning-target,
   .name-row, table, figure { break-inside: avoid; }
+  .response { border-color: #94a3b8; background: #fff; break-inside: avoid; }
+  .response-grid {
+    background-image: radial-gradient(circle, #c0c4c9 0.6px, transparent 0.6px);
+    background-color: #fff;
+  }
   h2, h3, h4 { break-after: avoid; }
   p { orphans: 3; widows: 3; }
 }
@@ -110,11 +148,11 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
       <div class="label">Before you start — no marks, no correction, be honest</div>
       <p><em>No marks. No correction. Be honest — write exactly what you think right now.</em></p>
       <p>What is a rational number? What makes a number "rational"?</p>
-      <span class="al"></span><span class="al"></span>
+      <div class="response response-md"></div>
       <p>Give one example of adding two fractions that you remember from before. Show your work.</p>
-      <span class="al"></span><span class="al"></span>
+      <div class="response response-md"></div>
       <p>What happens when you divide a number by a fraction — does the answer get bigger or smaller? Why do you think that?</p>
-      <span class="al"></span><span class="al"></span>
+      <div class="response response-md"></div>
       <p><em>You will come back to this page at the end of the unit. Do not erase your answers.</em></p>
     </div>
   </div>
@@ -126,12 +164,12 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <h3>Vocabulary</h3>
     <table>
       <tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr>
-      <tr><td>Rational number</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Numerator</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Denominator</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Equivalent fractions</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Opposite (of a rational number)</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Absolute value</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
+      <tr><td>Rational number</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Numerator</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Denominator</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Equivalent fractions</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Opposite (of a rational number)</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Absolute value</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
     </table>
 
     <h3>Guided Notes</h3>
@@ -139,45 +177,45 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <p>This includes:</p>
     <ul>
       <li>All integers: 5 = <span class="b b-sm"></span>/1, −3 = <span class="b b-sm"></span>/1</li>
-      <li>All fractions: 3/4, −7/8</li>
+      <li>All fractions: <span class="frac"><span class="num">3</span><span class="den">4</span></span>, −<span class="frac"><span class="num">7</span><span class="den">8</span></span></li>
       <li>All terminating decimals: 0.75 = <span class="b b-sm"></span>/100</li>
       <li>All repeating decimals: 0.333... = <span class="b b-sm"></span>/3</li>
     </ul>
 
     <p><strong>Every rational number has three equivalent sign forms:</strong></p>
     <div class="worked-example">
-      <p>−3/4 is the same as: 3/(−4) and −(3/4)</p>
+      <p>−<span class="frac"><span class="num">3</span><span class="den">4</span></span> is the same as: <span class="frac"><span class="num">3</span><span class="den">(−4)</span></span> and −(<span class="frac"><span class="num">3</span><span class="den">4</span></span>)</p>
       <p>All three represent the same point on the number line.</p>
     </div>
 
     <p><strong>Comparing rational numbers:</strong></p>
     <table>
       <tr><th>Statement</th><th>True or False?</th><th>Reason</th></tr>
-      <tr><td>−1/2 &gt; −3/4</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>−5/6 &lt; −7/8</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>2/3 &gt; 3/4</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
+      <tr><td>−<span class="frac"><span class="num">1</span><span class="den">2</span></span> &gt; −<span class="frac"><span class="num">3</span><span class="den">4</span></span></td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>−<span class="frac"><span class="num">5</span><span class="den">6</span></span> &lt; −<span class="frac"><span class="num">7</span><span class="den">8</span></span></td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td><span class="frac"><span class="num">2</span><span class="den">3</span></span> &gt; <span class="frac"><span class="num">3</span><span class="den">4</span></span></td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
     </table>
 
     <p><strong>Method — Use a common denominator:</strong></p>
-    <p>Compare −5/6 and −7/8.</p>
+    <p>Compare −<span class="frac"><span class="num">5</span><span class="den">6</span></span> and −<span class="frac"><span class="num">7</span><span class="den">8</span></span>.</p>
     <div class="worked-example">
       <p>Common denominator: <span class="b b-sm"></span></p>
-      <p>−5/6 = −<span class="b b-sm"></span>/24 &nbsp;&nbsp; −7/8 = −<span class="b b-sm"></span>/24</p>
-      <p>Compare: −<span class="b b-sm"></span>/24 <span class="b b-sm"></span> −<span class="b b-sm"></span>/24, so −5/6 <span class="b b-sm"></span> −7/8</p>
+      <p>−<span class="frac"><span class="num">5</span><span class="den">6</span></span> = −<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">24</span></span> &nbsp;&nbsp; −<span class="frac"><span class="num">7</span><span class="den">8</span></span> = −<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">24</span></span></p>
+      <p>Compare: −<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">24</span></span> <span class="b b-sm"></span> −<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">24</span></span>, so −<span class="frac"><span class="num">5</span><span class="den">6</span></span> <span class="b b-sm"></span> −<span class="frac"><span class="num">7</span><span class="den">8</span></span></p>
     </div>
 
     <p><strong>Key insight with negatives:</strong> For negative fractions, the fraction that is <span class="b b-lg"></span> in absolute value is actually <span class="b b-lg"></span> in value.<br>
-    <em>(−1/4 is greater than −3/4 even though 1/4 &lt; 3/4)</em></p>
+    <em>(−<span class="frac"><span class="num">1</span><span class="den">4</span></span> is greater than −<span class="frac"><span class="num">3</span><span class="den">4</span></span> even though <span class="frac"><span class="num">1</span><span class="den">4</span></span> &lt; <span class="frac"><span class="num">3</span><span class="den">4</span></span>)</em></p>
 
     <div class="misconception">
       <div class="label">Misconception</div>
-      <p><strong>Wrong idea:</strong> "−3/4 is bigger than −1/4 because 3/4 is bigger than 1/4."</p>
-      <p>Why it fails: On the number line, negative numbers to the <em>right</em> are greater. −1/4 sits to the right of −3/4, so −1/4 &gt; −3/4. Think of it as debt: owing $0.25 is better (closer to 0) than owing $0.75.</p>
-      <p>Correct: −1/4 &gt; −3/4</p>
+      <p><strong>Wrong idea:</strong> "−<span class="frac"><span class="num">3</span><span class="den">4</span></span> is bigger than −<span class="frac"><span class="num">1</span><span class="den">4</span></span> because <span class="frac"><span class="num">3</span><span class="den">4</span></span> is bigger than <span class="frac"><span class="num">1</span><span class="den">4</span></span>."</p>
+      <p>Why it fails: On the number line, negative numbers to the <em>right</em> are greater. −<span class="frac"><span class="num">1</span><span class="den">4</span></span> sits to the right of −<span class="frac"><span class="num">3</span><span class="den">4</span></span>, so −<span class="frac"><span class="num">1</span><span class="den">4</span></span> &gt; −<span class="frac"><span class="num">3</span><span class="den">4</span></span>. Think of it as debt: owing $0.25 is better (closer to 0) than owing $0.75.</p>
+      <p>Correct: −<span class="frac"><span class="num">1</span><span class="den">4</span></span> &gt; −<span class="frac"><span class="num">3</span><span class="den">4</span></span></p>
     </div>
 
     <p><strong>Place these rational numbers in order from least to greatest:</strong></p>
-    <p>1/2, −3/4, −1/3, 0, 5/6, −1</p>
+    <p><span class="frac"><span class="num">1</span><span class="den">2</span></span>, −<span class="frac"><span class="num">3</span><span class="den">4</span></span>, −<span class="frac"><span class="num">1</span><span class="den">3</span></span>, 0, <span class="frac"><span class="num">5</span><span class="den">6</span></span>, −1</p>
     <p><span class="b b-md"></span>, <span class="b b-md"></span>, <span class="b b-md"></span>, <span class="b b-md"></span>, <span class="b b-md"></span>, <span class="b b-md"></span></p>
     <p>Draw them on the number line:</p>
     <figure style="margin:12px 0;overflow-x:auto;">
@@ -213,11 +251,11 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <div class="retrieval">
       <div class="retrieval-header">Retrieval Check — Close Your Notes</div>
       <ol>
-        <li>Is the number −8 a rational number? Explain.<span class="al"></span><span class="al"></span></li>
-        <li>Write −5/3 in two equivalent sign forms.<span class="al"></span></li>
-        <li>Which is greater: −2/3 or −3/4? Show your comparison.<span class="al"></span><span class="al"></span></li>
-        <li>Order from least to greatest: 0.5, −3/4, −1/2, 1/4.<span class="al"></span></li>
-        <li><em>(Stretch)</em> Is every integer a rational number? Is every rational number an integer? Explain both.<span class="al"></span><span class="al"></span></li>
+        <li>Is the number −8 a rational number? Explain.<div class="response response-md"></div></li>
+        <li>Write −<span class="frac"><span class="num">5</span><span class="den">3</span></span> in two equivalent sign forms.<div class="response response-sm"></div></li>
+        <li>Which is greater: −<span class="frac"><span class="num">2</span><span class="den">3</span></span> or −<span class="frac"><span class="num">3</span><span class="den">4</span></span>? Show your comparison.<div class="response response-md"></div></li>
+        <li>Order from least to greatest: 0.5, −<span class="frac"><span class="num">3</span><span class="den">4</span></span>, −<span class="frac"><span class="num">1</span><span class="den">2</span></span>, <span class="frac"><span class="num">1</span><span class="den">4</span></span>.<div class="response response-sm"></div></li>
+        <li><em>(Stretch)</em> Is every integer a rational number? Is every rational number an integer? Explain both.<div class="response response-md"></div></li>
       </ol>
     </div>
     <div class="self-check">
@@ -233,10 +271,10 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <h3>Vocabulary</h3>
     <table>
       <tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr>
-      <tr><td>Common denominator</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Least common denominator (LCD)</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Mixed number</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Improper fraction</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
+      <tr><td>Common denominator</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Least common denominator (LCD)</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Mixed number</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Improper fraction</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
     </table>
 
     <h3>Guided Notes</h3>
@@ -250,49 +288,49 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     </ol>
 
     <p><strong>Worked Example 1 — Positive fractions:</strong></p>
-    <p>3/4 + 5/6</p>
+    <p><span class="frac"><span class="num">3</span><span class="den">4</span></span> + <span class="frac"><span class="num">5</span><span class="den">6</span></span></p>
     <div class="worked-example">
       <p>Step 1: LCD of 4 and 6 = <span class="b b-sm"></span></p>
-      <p>Step 2: 3/4 = <span class="b b-sm"></span>/12 &nbsp;&nbsp; 5/6 = <span class="b b-sm"></span>/12</p>
-      <p>Step 3: <span class="b b-sm"></span>/12 + <span class="b b-sm"></span>/12 = <span class="b b-sm"></span>/12</p>
+      <p>Step 2: <span class="frac"><span class="num">3</span><span class="den">4</span></span> = <span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span> &nbsp;&nbsp; <span class="frac"><span class="num">5</span><span class="den">6</span></span> = <span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span></p>
+      <p>Step 3: <span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span> + <span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span> = <span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span></p>
       <p>Step 4: Simplify: <span class="b b-md"></span></p>
     </div>
 
     <p><strong>Explain Step 2:</strong> Why do we multiply both the numerator and denominator by the same number when rewriting the fraction?</p>
-    <span class="al"></span><span class="al"></span>
+    <div class="response response-md"></div>
 
     <p><strong>Worked Example 2 — Negative fractions:</strong></p>
-    <p>−1/3 + (−3/4)</p>
+    <p>−<span class="frac"><span class="num">1</span><span class="den">3</span></span> + (−<span class="frac"><span class="num">3</span><span class="den">4</span></span>)</p>
     <div class="worked-example">
       <p>LCD = <span class="b b-sm"></span></p>
-      <p>−1/3 = −<span class="b b-sm"></span>/12 &nbsp;&nbsp; −3/4 = −<span class="b b-sm"></span>/12</p>
-      <p>−<span class="b b-sm"></span>/12 + (−<span class="b b-sm"></span>/12) = −<span class="b b-sm"></span>/12</p>
+      <p>−<span class="frac"><span class="num">1</span><span class="den">3</span></span> = −<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span> &nbsp;&nbsp; −<span class="frac"><span class="num">3</span><span class="den">4</span></span> = −<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span></p>
+      <p>−<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span> + (−<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span>) = −<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">12</span></span></p>
       <p>Simplified: <span class="b b-md"></span></p>
     </div>
 
     <p><strong>Pattern:</strong> Adding two negative rationals always gives a <span class="b b-lg"></span> result.</p>
 
     <p><strong>Worked Example 3 — Mixed signs (the harder case):</strong></p>
-    <p>−5/6 + 1/2</p>
+    <p>−<span class="frac"><span class="num">5</span><span class="den">6</span></span> + <span class="frac"><span class="num">1</span><span class="den">2</span></span></p>
     <div class="worked-example">
       <p>LCD = <span class="b b-sm"></span></p>
-      <p>−5/6 = −5/6 &nbsp;&nbsp; 1/2 = <span class="b b-sm"></span>/6</p>
-      <p>−5/6 + <span class="b b-sm"></span>/6 = −<span class="b b-sm"></span>/6</p>
+      <p>−<span class="frac"><span class="num">5</span><span class="den">6</span></span> = −<span class="frac"><span class="num">5</span><span class="den">6</span></span> &nbsp;&nbsp; <span class="frac"><span class="num">1</span><span class="den">2</span></span> = <span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">6</span></span></p>
+      <p>−<span class="frac"><span class="num">5</span><span class="den">6</span></span> + <span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">6</span></span> = −<span class="frac"><span class="num"><span class="b b-sm"></span></span><span class="den">6</span></span></p>
     </div>
 
     <p><strong>Explain:</strong> When the signs differ, do you add or subtract the numerators? How do you determine the sign of the answer?</p>
-    <span class="al"></span><span class="al"></span>
+    <div class="response response-md"></div>
 
     <div class="misconception">
       <div class="label">Misconception</div>
-      <p><strong>Wrong idea:</strong> 1/2 + 1/3 = 2/5 (add numerators, add denominators)</p>
-      <p>Why it fails: Denominators name the <em>kind</em> of pieces (halves, thirds). You cannot add pieces of different sizes by just counting them — just like you cannot add 2 hours + 3 minutes and say "5 hour-minutes." Convert first: 1/2 = 3/6 and 1/3 = 2/6, so 1/2 + 1/3 = 3/6 + 2/6 = 5/6.</p>
-      <p>Check: 2/5 = 0.40. But 1/2 + 1/3 = 0.5 + 0.333 = 0.833. These are very different numbers.</p>
+      <p><strong>Wrong idea:</strong> <span class="frac"><span class="num">1</span><span class="den">2</span></span> + <span class="frac"><span class="num">1</span><span class="den">3</span></span> = <span class="frac"><span class="num">2</span><span class="den">5</span></span> (add numerators, add denominators)</p>
+      <p>Why it fails: Denominators name the <em>kind</em> of pieces (halves, thirds). You cannot add pieces of different sizes by just counting them — just like you cannot add 2 hours + 3 minutes and say "5 hour-minutes." Convert first: <span class="frac"><span class="num">1</span><span class="den">2</span></span> = <span class="frac"><span class="num">3</span><span class="den">6</span></span> and <span class="frac"><span class="num">1</span><span class="den">3</span></span> = <span class="frac"><span class="num">2</span><span class="den">6</span></span>, so <span class="frac"><span class="num">1</span><span class="den">2</span></span> + <span class="frac"><span class="num">1</span><span class="den">3</span></span> = <span class="frac"><span class="num">3</span><span class="den">6</span></span> + <span class="frac"><span class="num">2</span><span class="den">6</span></span> = <span class="frac"><span class="num">5</span><span class="den">6</span></span>.</p>
+      <p>Check: <span class="frac"><span class="num">2</span><span class="den">5</span></span> = 0.40. But <span class="frac"><span class="num">1</span><span class="den">2</span></span> + <span class="frac"><span class="num">1</span><span class="den">3</span></span> = 0.5 + 0.333 = 0.833. These are very different numbers.</p>
     </div>
 
     <p><strong>Subtracting: treat it as adding the opposite.</strong></p>
-    <p>5/8 − (−3/8)</p>
-    <p>= 5/8 + <span class="b b-sm"></span> = <span class="b b-md"></span></p>
+    <p><span class="frac"><span class="num">5</span><span class="den">8</span></span> − (−<span class="frac"><span class="num">3</span><span class="den">8</span></span>)</p>
+    <p>= <span class="frac"><span class="num">5</span><span class="den">8</span></span> + <span class="b b-sm"></span> = <span class="b b-md"></span></p>
 
     <p><strong>Alberta context — Temperature change:</strong><br>
     In Fort McMurray, the temperature on Monday was −7.5°C. By Wednesday it had risen 11.25°C. What was Wednesday's temperature?</p>
@@ -301,11 +339,11 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <div class="retrieval">
       <div class="retrieval-header">Retrieval Check — Close Your Notes</div>
       <ol>
-        <li>Find: 2/3 + (−5/6)<span class="al"></span></li>
-        <li>Find: −3/4 − (−1/2)<span class="al"></span></li>
-        <li>Find: −1/2 + (−2/3) + 1/4<span class="al"></span></li>
-        <li>A student adds 1/4 + 2/3 and gets 3/7. What did they do wrong? Write the correct answer.<span class="al"></span><span class="al"></span></li>
-        <li><em>(Stretch)</em> Find: −2⅓ + 1¾. Hint: convert mixed numbers to improper fractions first.<span class="al"></span><span class="al"></span></li>
+        <li>Find: <span class="frac"><span class="num">2</span><span class="den">3</span></span> + (−<span class="frac"><span class="num">5</span><span class="den">6</span></span>)<div class="response response-sm"></div></li>
+        <li>Find: −<span class="frac"><span class="num">3</span><span class="den">4</span></span> − (−<span class="frac"><span class="num">1</span><span class="den">2</span></span>)<div class="response response-sm"></div></li>
+        <li>Find: −<span class="frac"><span class="num">1</span><span class="den">2</span></span> + (−<span class="frac"><span class="num">2</span><span class="den">3</span></span>) + <span class="frac"><span class="num">1</span><span class="den">4</span></span><div class="response response-sm"></div></li>
+        <li>A student adds <span class="frac"><span class="num">1</span><span class="den">4</span></span> + <span class="frac"><span class="num">2</span><span class="den">3</span></span> and gets <span class="frac"><span class="num">3</span><span class="den">7</span></span>. What did they do wrong? Write the correct answer.<div class="response response-md"></div></li>
+        <li><em>(Stretch)</em> Find: −2⅓ + 1¾. Hint: convert mixed numbers to improper fractions first.<div class="response response-md"></div></li>
       </ol>
     </div>
     <div class="self-check">
@@ -327,9 +365,9 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <h3>Vocabulary</h3>
     <table>
       <tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr>
-      <tr><td>Product</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Simplify before multiplying (cross-cancel)</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Reciprocal</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
+      <tr><td>Product</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Simplify before multiplying (cross-cancel)</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Reciprocal</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
     </table>
 
     <h3>Guided Notes</h3>
@@ -342,10 +380,10 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <p><strong>Sign rules for multiplication:</strong></p>
     <table>
       <tr><th>Signs of the two factors</th><th>Sign of the product</th></tr>
-      <tr><td>Positive × Positive</td><td><span class="al"></span></td></tr>
-      <tr><td>Negative × Negative</td><td><span class="al"></span></td></tr>
-      <tr><td>Positive × Negative</td><td><span class="al"></span></td></tr>
-      <tr><td>Negative × Positive</td><td><span class="al"></span></td></tr>
+      <tr><td>Positive × Positive</td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Negative × Negative</td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Positive × Negative</td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Negative × Positive</td><td><div class="response response-sm"></div></td></tr>
     </table>
 
     <p><strong>Quick rule:</strong> Count the negatives. If there is an <span class="b b-lg"></span> number of negative factors, the product is negative.</p>
@@ -415,9 +453,9 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <h3>Vocabulary</h3>
     <table>
       <tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr>
-      <tr><td>Reciprocal</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Quotient</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Divisor</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
+      <tr><td>Reciprocal</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Quotient</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Divisor</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
     </table>
 
     <h3>Guided Notes</h3>
@@ -427,10 +465,10 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <p>To find a reciprocal: flip the fraction (swap numerator and denominator).</p>
     <table>
       <tr><th>Fraction</th><th>Reciprocal</th></tr>
-      <tr><td>3/4</td><td><span class="al"></span></td></tr>
-      <tr><td>−5/2</td><td><span class="al"></span></td></tr>
-      <tr><td>7 (= 7/1)</td><td><span class="al"></span></td></tr>
-      <tr><td>−1/3</td><td><span class="al"></span></td></tr>
+      <tr><td>3/4</td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>−5/2</td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>7 (= 7/1)</td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>−1/3</td><td><div class="response response-sm"></div></td></tr>
     </table>
 
     <div class="misconception">
@@ -500,9 +538,9 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <h3>Vocabulary</h3>
     <table>
       <tr><th>Term</th><th>Definition in your own words</th><th>One example</th></tr>
-      <tr><td>BEDMAS</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Evaluate</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>Nested brackets</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
+      <tr><td>BEDMAS</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Evaluate</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>Nested brackets</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
     </table>
 
     <h3>Guided Notes</h3>
@@ -547,10 +585,10 @@ code { font-family: 'Courier New', monospace; font-size: 10pt; background: #f1f5
     <p><strong>Interleaved practice — name the first step before calculating:</strong></p>
     <table>
       <tr><th>Expression</th><th>First step</th><th>Answer</th></tr>
-      <tr><td>3/4 × (−2/3) + 1/2</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>(1/3 + 1/6) ÷ (−1/2)</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>−(−2/3)<sup>2</sup></td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
-      <tr><td>1/2 ÷ 1/4 − 3/2</td><td><span class="al"></span></td><td><span class="al"></span></td></tr>
+      <tr><td>3/4 × (−2/3) + 1/2</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>(1/3 + 1/6) ÷ (−1/2)</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>−(−2/3)<sup>2</sup></td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
+      <tr><td>1/2 ÷ 1/4 − 3/2</td><td><div class="response response-sm"></div></td><td><div class="response response-sm"></div></td></tr>
     </table>
 
     <div class="retrieval">
